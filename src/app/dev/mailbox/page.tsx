@@ -1,11 +1,12 @@
 import { notFound } from "next/navigation";
 import { query } from "@/server/db";
+import { devMailboxEnabled } from "@/server/email";
 
 export const dynamic = "force-dynamic";
 
 /** Development-only inbox used when no e-mail provider is configured. Disabled in production. */
 export default async function DevMailbox() {
-  if (process.env.NODE_ENV === "production") notFound();
+  if (!devMailboxEnabled()) notFound();
   const mails = await query<{ id: string; to_email: string; subject: string; html: string; created_at: string }>(`select * from dev_mailbox order by created_at desc limit 20`);
   return (
     <main id="main" className="mx-auto max-w-3xl px-4 py-10">

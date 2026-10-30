@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { api } from "@/lib/client";
 import { ErrorNote } from "@/components/ui";
@@ -26,8 +25,7 @@ export function ForgotForm() {
   );
 }
 
-export function ResetForm() {
-  const token = useSearchParams().get("token") ?? "";
+export function ResetForm({ token }: { token: string }) {
   const [pw, setPw] = useState("");
   const [pw2, setPw2] = useState("");
   const [done, setDone] = useState(false);

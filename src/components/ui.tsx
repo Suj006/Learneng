@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Character, CHARACTER_INFO, type CharacterName, type Mood } from "./Character";
 import { speak } from "@/lib/client";
@@ -93,11 +93,9 @@ export interface AwardLike {
 const PARTICLES: Record<string, string[]> = { confetti: ["🎉", "✨", "🎊", "⭐"], stars: ["🌠", "⭐", "✨"], hearts: ["💖", "💜", "💛"], fireworks: ["🎆", "🎇", "✨", "💥"] };
 
 export function Burst({ kind = "confetti" }: { kind?: string }) {
-  const reduce = useReducedMotion();
-  if (reduce) return null;
   const items = PARTICLES[kind] ?? PARTICLES.confetti;
   return (
-    <div className="pointer-events-none fixed inset-0 z-[60] overflow-hidden" aria-hidden>
+    <div className="pointer-events-none fixed inset-0 z-[60] overflow-hidden motion-reduce:hidden" aria-hidden>
       {Array.from({ length: 28 }, (_, i) => (
         <motion.span key={i} className="absolute text-2xl" style={{ left: `${(i * 37) % 100}%`, top: "-5%" }}
           initial={{ y: 0, opacity: 1, rotate: 0 }} animate={{ y: "110vh", opacity: [1, 1, 0], rotate: 360 * (i % 2 ? 1 : -1) }}

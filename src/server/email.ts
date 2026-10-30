@@ -17,11 +17,16 @@ export async function sendEmail(to: string, subject: string, html: string): Prom
     if (!res.ok) throw new Error(`E-mail provider error ${res.status}`);
     return;
   }
-  if (process.env.NODE_ENV === "production") {
+  if (!devMailboxEnabled()) {
     throw new Error("No e-mail provider configured (set RESEND_API_KEY).");
   }
   await query(`insert into dev_mailbox (to_email, subject, html) values ($1,$2,$3)`, [to, subject, html]);
   console.info(`[dev-mail] to=${to} subject="${subject}" — open /dev/mailbox to read it`);
+}
+
+/** Dev mailbox: always in development; in a production build only for explicitly configured staging/QA. */
+export function devMailboxEnabled() {
+  return process.env.NODE_ENV !== "production" || process.env.EMAIL_TRANSPORT === "dev-mailbox";
 }
 
 export function emailLayout(title: string, body: string) {

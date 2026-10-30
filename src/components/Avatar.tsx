@@ -1,5 +1,5 @@
 "use client";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export interface AvatarLook {
   skin: string; hair: string; hair_color: string; outfit: string; shoes: string; accessory: string | null; background: string; expression: string; magic_object: string | null;
@@ -84,7 +84,6 @@ function Outfit({ art, skin }: { art: string; skin: string }) {
 }
 
 export function Avatar({ look, art, size = 160, pet, className = "", celebrate = false }: { look: AvatarLook; art: AvatarArt; size?: number; pet?: string | null; className?: string; celebrate?: boolean }) {
-  const reduce = useReducedMotion();
   const skin = SKIN[look.skin] ?? SKIN["tone-3"];
   const hairStyle = art[look.hair]?.art ?? "short";
   const outfitArt = art[look.outfit]?.art ?? "hoodie:#7047FF";
@@ -95,7 +94,7 @@ export function Avatar({ look, art, size = 160, pet, className = "", celebrate =
   return (
     <div className={`relative overflow-hidden rounded-[28%] ${className}`} style={{ width: size, height: size, background: bg }}>
       <motion.svg viewBox="0 0 200 240" width="100%" height="100%" aria-label="Your avatar" role="img"
-        animate={reduce ? undefined : celebrate ? { y: [0, -12, 0] } : { y: [0, -3, 0] }} transition={{ duration: celebrate ? 0.8 : 3, repeat: Infinity }}>
+        animate={celebrate ? { y: [0, -12, 0] } : { y: [0, -3, 0] }} transition={{ duration: celebrate ? 0.8 : 3, repeat: Infinity }}>
         <ellipse cx={100} cy={232} rx={54} ry={6} fill="#000" opacity={0.15} />
         <rect x={78} y={184} width={18} height={34} rx={8} fill={legs} /><rect x={104} y={184} width={18} height={34} rx={8} fill={legs} />
         <ellipse cx={86} cy={222} rx={16} ry={8} fill={shoe} stroke="#00000020" /><ellipse cx={114} cy={222} rx={16} ry={8} fill={shoe} stroke="#00000020" />

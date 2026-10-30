@@ -12,7 +12,7 @@ interface Created { attemptId: string; questions: (Q & { i: number })[]; meta: {
 interface Result { score: number; correct: number; total: number; passed: boolean; results: boolean[]; answers: string[]; reward: AwardLike | null }
 
 /** Plays any server-scored challenge: bosses, weekly/monthly, mystery, special events, family and listening. */
-export function ChallengePlayer({ kind, ref, guide = "max", backHref = "/world", allowDifficulty = false, familyId }: { kind: string; ref?: string; guide?: CharacterName; backHref?: string; allowDifficulty?: boolean; familyId?: string }) {
+export function ChallengePlayer({ kind, refSlug, guide = "max", backHref = "/world", allowDifficulty = false, familyId }: { kind: string; refSlug?: string; guide?: CharacterName; backHref?: string; allowDifficulty?: boolean; familyId?: string }) {
   const router = useRouter();
   const [difficulty, setDifficulty] = useState<"easy" | "normal" | "hard">("normal");
   const [c, setC] = useState<Created | null>(null);
@@ -25,7 +25,7 @@ export function ChallengePlayer({ kind, ref, guide = "max", backHref = "/world",
   const [timer] = useState(() => startTimer());
   const load = async (d = difficulty) => {
     setErr(null); setC(null); setResult(null); setAnswers([]); setI(0); setStarted(false);
-    const qs = new URLSearchParams({ ...(ref ? { ref } : {}), ...(familyId ? { family: familyId } : {}), difficulty: d });
+    const qs = new URLSearchParams({ ...(refSlug ? { ref: refSlug } : {}), ...(familyId ? { family: familyId } : {}), difficulty: d });
     try { setC(await api<Created>(`/api/challenge/${kind}?${qs}`)); } catch (e) { setErr((e as Error).message); }
   };
   useEffect(() => { load(); /* eslint-disable-next-line react-hooks/exhaustive-deps */ }, []);

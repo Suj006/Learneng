@@ -23,7 +23,7 @@ export function AdminLogin() {
   const [password, setPassword] = useState("");
   const [err, setErr] = useState<string | null>(null);
   return (
-    <form className="card space-y-3 p-6" onSubmit={async (e) => { e.preventDefault(); try { const r = await api<{ redirect: string }>("/api/auth/login-admin", { body: { email, password } }); router.push(r.redirect); router.refresh(); } catch (x) { setErr((x as Error).message); } }}>
+    <form className="card space-y-3 p-6" onSubmit={async (e) => { e.preventDefault(); try { const r = await api<{ redirect: string }>("/api/auth/login-admin", { body: { email, password } }); window.location.assign(r.redirect); } catch (x) { setErr((x as Error).message); } }}>
       <input className="input" type="email" placeholder="Admin e-mail" value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="username" />
       <input className="input" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} autoComplete="current-password" />
       <ErrorNote error={err} /><button className="btn-primary w-full">Log in</button>

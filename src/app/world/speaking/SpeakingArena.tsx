@@ -3,6 +3,7 @@ import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { api, listenOnce, speak, speechAccuracy, speechRecognitionCtor, startTimer } from "@/lib/client";
 import { Celebration, CharacterSays, Progress, type AwardLike } from "@/components/ui";
+import { useMounted } from "@/lib/useMounted";
 
 type Scenario = { slug: string; title: string; emoji: string; lines: string[] };
 
@@ -16,7 +17,8 @@ export function SpeakingArena({ scenarios, words }: { scenarios: Scenario[]; wor
   const [listening, setListening] = useState(false);
   const [award, setAward] = useState<AwardLike | null>(null);
   const [timer, setTimer] = useState(() => startTimer());
-  const supported = typeof window !== "undefined" && !!speechRecognitionCtor();
+  const mounted = useMounted();
+  const supported = mounted && !!speechRecognitionCtor();
 
   const begin = (s: Scenario) => { setActive(s); setI(0); setScores([]); setTimer(() => startTimer()); };
 

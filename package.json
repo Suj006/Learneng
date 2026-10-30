@@ -2,7 +2,7 @@
   "name": "ping-vibe",
   "version": "0.1.0",
   "private": true,
-  "description": "PING VIBE \u2014 Your World. Your Words. Your Vibe. Gamified English learning for kids aged 5\u201313.",
+  "description": "PING VIBE — Your World. Your Words. Your Vibe. Gamified English learning for kids aged 5–13.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -35,6 +35,7 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "autoprefixer": "^10.4.21",
+    "axe-core": "^4.10.3",
     "postcss": "^8.5.32",
     "tailwindcss": "^3.4.17",
     "tsx": "^4.20.5",

@@ -3,13 +3,15 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { listenOnce, speak, speechAccuracy, speechRecognitionCtor } from "@/lib/client";
 import { Character } from "@/components/Character";
+import { useMounted } from "@/lib/useMounted";
 
 export interface WordData { id: string; word: string; phonetic: string; part_of_speech: string; meaning: string; explanation: string; example: string; usage: string; synonyms: string[]; antonyms: string[]; emoji: string; difficulty: number; band: number }
 
 export function WordCard({ w, index, total }: { w: WordData; index?: number; total?: number }) {
   const [heard, setHeard] = useState<{ text: string; score: number } | null>(null);
   const [listening, setListening] = useState(false);
-  const canListen = typeof window !== "undefined" && !!speechRecognitionCtor();
+  const mounted = useMounted();
+  const canListen = mounted && !!speechRecognitionCtor();
   async function repeat() {
     setListening(true); setHeard(null);
     try { const t = await listenOnce(); setHeard({ text: t, score: speechAccuracy(w.word, t) }); }

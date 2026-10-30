@@ -32,7 +32,7 @@ export function WorldHeader({ d }: { d: HeaderData }) {
   }
   async function logout() {
     await api("/api/auth/logout", { body: {} }).catch(() => {});
-    router.push("/login"); router.refresh();
+    window.location.assign("/login");
   }
   return (
     <>

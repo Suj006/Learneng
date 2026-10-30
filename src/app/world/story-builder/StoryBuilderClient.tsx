@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { WritingCanvas } from "@/components/play/WritingCanvas";
 
@@ -8,7 +8,9 @@ const WORDS = ["suddenly", "mysterious", "brave", "glimmer", "astonished", "whis
 
 export function StoryBuilderClient({ pools, minWords }: { pools: { characters: string[]; locations: string[]; objects: string[]; situations: string[] }; minWords: number }) {
   const roll = () => ({ character: pick(pools.characters), location: pick(pools.locations), object: pick(pools.objects), situation: pick(pools.situations) });
-  const [s, setS] = useState(roll);
+  // Roll after mount: random values must not differ between server and client render.
+  const [s, setS] = useState({ character: pools.characters[0], location: pools.locations[0], object: pools.objects[0], situation: pools.situations[0] });
+  useEffect(() => setS(roll()), []); // eslint-disable-line react-hooks/exhaustive-deps
   const [go, setGo] = useState(false);
   if (go) {
     return <WritingCanvas kind="story_builder" meta={{ ...s, minWords: String(minWords), words: WORDS.join(",") }}

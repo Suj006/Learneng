@@ -22,5 +22,5 @@ export const POST = publicRoute(async (req) => {
     await createPendingChild(parentId, { name: d.childName, birthMonth: d.birthMonth, birthYear: d.birthYear, grade: d.grade });
     await sendVerification(parentId, email, d.childName);
   }
-  return ok({ ok: true, devMailbox: !process.env.RESEND_API_KEY && process.env.NODE_ENV !== "production" });
+  return ok({ ok: true, devMailbox: !process.env.RESEND_API_KEY && (process.env.NODE_ENV !== "production" || process.env.EMAIL_TRANSPORT === "dev-mailbox") });
 });

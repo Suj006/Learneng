@@ -1,15 +1,12 @@
 "use client";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { api } from "@/lib/client";
 import { Character } from "@/components/Character";
 import { ErrorNote } from "@/components/ui";
 
-export function LoginForm() {
-  const params = useSearchParams();
-  const router = useRouter();
-  const [tab, setTab] = useState<"child" | "parent">(params.get("as") === "parent" ? "parent" : "child");
+export function LoginForm({ initialTab = "child" }: { initialTab?: "child" | "parent" }) {
+  const [tab, setTab] = useState<"child" | "parent">(initialTab);
   const [username, setUsername] = useState("");
   const [pin, setPin] = useState("");
   const [email, setEmail] = useState("");
@@ -26,8 +23,8 @@ export function LoginForm() {
       const r = tab === "child"
         ? await api<{ redirect: string }>("/api/auth/login-child", { body: { username, pin } })
         : await api<{ redirect: string }>("/api/auth/login-parent", { body: { email, password } });
-      router.push(r.redirect);
-      router.refresh();
+      // Identity changed: full navigation so no previous user's client cache is reused.
+      window.location.assign(r.redirect);
     } catch (err) {
       setError((err as Error).message);
       setUnverified(Boolean((err as any).data?.unverified));

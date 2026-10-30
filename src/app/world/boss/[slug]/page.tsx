@@ -9,5 +9,5 @@ export default async function BossPage({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const b = await one<{ title: string; kingdom: string }>(`select title, kingdom from boss_battles where slug = $1`, [slug]);
   if (!b) notFound();
-  return <><PageTitle title={b.title} back={`/world/map/${b.kingdom}`} /><ChallengePlayer kind="boss" ref={slug} guide={GUIDE[b.kingdom] ?? "max"} allowDifficulty backHref={`/world/map/${b.kingdom}`} /></>;
+  return <><PageTitle title={b.title} back={`/world/map/${b.kingdom}`} /><ChallengePlayer kind="boss" refSlug={slug} guide={GUIDE[b.kingdom] ?? "max"} allowDifficulty backHref={`/world/map/${b.kingdom}`} /></>;
 }

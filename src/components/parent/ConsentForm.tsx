@@ -22,7 +22,7 @@ export function ConsentForm({ child }: { child: { id: string; name: string } }) 
   }
   async function launch() {
     const r = await api<{ redirect: string }>("/api/parent/launch", { body: { childId: child.id } });
-    router.push(r.redirect); router.refresh();
+    window.location.assign(r.redirect);
   }
 
   if (done) {

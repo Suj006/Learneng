@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { BrandLogo } from "@/components/BrandLogo";
 import { Character, CHARACTER_INFO, type CharacterName } from "@/components/Character";
 import { Scene, type SceneName } from "@/components/Scenes";
@@ -41,7 +41,6 @@ const PARENTS = [
 ];
 
 export default function Landing() {
-  const reduce = useReducedMotion();
   return (
     <main id="main" className="overflow-x-hidden">
       {/* NAV */}
@@ -62,7 +61,7 @@ export default function Landing() {
       <section className="relative min-h-[100dvh] bg-vibe-hero pt-24">
         <div className="absolute inset-0 opacity-40"><Scene name="islands" /></div>
         <div className="absolute inset-0 bg-gradient-to-b from-vibe-midnight/30 via-vibe-midnight/40 to-vibe-midnight" />
-        {!reduce && FLOATING.map((w, i) => (
+        {FLOATING.map((w, i) => (
           <motion.span key={w} className="pointer-events-none absolute hidden select-none rounded-full border border-white/10 bg-white/5 px-3 py-1 font-display text-sm text-vibe-lavender/70 backdrop-blur sm:block"
             style={{ left: `${(i * 97) % 92}%`, top: `${18 + ((i * 53) % 65)}%` }}
             animate={{ y: [0, -18, 0], opacity: [0.4, 0.9, 0.4] }} transition={{ duration: 6 + (i % 4), repeat: Infinity, delay: i * 0.5 }}>

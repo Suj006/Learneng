@@ -1,5 +1,5 @@
 "use client";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export type CharacterName = "max" | "lexi" | "speaky" | "grammy" | "story";
 export type Mood = "welcome" | "excited" | "thinking" | "explaining" | "celebrating" | "encouraging" | "surprised" | "hint";
@@ -188,9 +188,8 @@ function Story({ mood }: { mood: Mood }) {
 const BODIES: Record<CharacterName, (p: { mood: Mood }) => React.ReactElement> = { max: Max, lexi: Lexi, speaky: Speaky, grammy: Grammy, story: Story };
 
 export function Character({ name, mood = "welcome", size = 160, className = "", still = false }: { name: CharacterName; mood?: Mood; size?: number; className?: string; still?: boolean }) {
-  const reduce = useReducedMotion();
   const Body = BODIES[name] ?? Max;
-  const animate = still || reduce ? undefined
+  const animate = still ? undefined
     : mood === "celebrating" || mood === "excited" ? { y: [0, -14, 0], rotate: [0, -3, 3, 0] }
     : mood === "thinking" ? { rotate: [0, -4, 0] }
     : mood === "surprised" ? { scale: [1, 1.06, 1] }

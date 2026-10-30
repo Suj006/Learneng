@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { api, listenOnce, speechRecognitionCtor, startTimer } from "@/lib/client";
 import { Celebration, CharacterSays, ErrorNote, Progress, type AwardLike } from "@/components/ui";
+import { useMounted } from "@/lib/useMounted";
 
 export interface Feedback {
   score: number; breakdown: Record<string, number>; positives: string[]; corrections: { original: string; corrected: string; why: string }[];
@@ -23,7 +24,8 @@ export function WritingCanvas({ kind, topic, meta, existing }: {
   const [err, setErr] = useState<string | null>(null);
   const [dictating, setDictating] = useState(false);
   const [timer] = useState(() => startTimer());
-  const canDictate = typeof window !== "undefined" && !!speechRecognitionCtor();
+  const mounted = useMounted();
+  const canDictate = mounted && !!speechRecognitionCtor();
   const area = useRef<HTMLTextAreaElement>(null);
   const words = (text.match(/[A-Za-z']+/g) ?? []).length;
   const sentences = (text.match(/[^.!?]+[.!?]+/g) ?? []).length + (/[A-Za-z]\s*$/.test(text) ? 1 : 0);

@@ -8,7 +8,7 @@ const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "
 
 export function LaunchButton({ childId, name }: { childId: string; name: string }) {
   const router = useRouter();
-  return <button className="btn-primary btn-sm" onClick={async () => { const r = await api<{ redirect: string }>("/api/parent/launch", { body: { childId } }); router.push(r.redirect); router.refresh(); }}>Start {name}'s session 🚀</button>;
+  return <button className="btn-primary btn-sm" onClick={async () => { const r = await api<{ redirect: string }>("/api/parent/launch", { body: { childId } }); window.location.assign(r.redirect); }}>Start {name}'s session 🚀</button>;
 }
 
 export function AddChild({ grades }: { grades: { grade: string; label: string }[] }) {

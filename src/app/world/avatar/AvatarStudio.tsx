@@ -25,22 +25,22 @@ export function AvatarStudio({ initial, items, hairColors, pet }: { initial: Ful
   const list = items.filter((i) => i.category === tab || (tab === "accessory" && i.category === "costume"));
   return (
     <div className="grid gap-6 lg:grid-cols-[340px_1fr]">
-      <div className="card flex flex-col items-center gap-4 p-6 lg:sticky lg:top-24 lg:self-start">
-        <Avatar look={look} art={art} size={260} pet={pet} />
-        <div><div className="label text-center">Skin tone</div><div className="flex gap-2">{Object.entries(SKIN).map(([k, c]) => <button key={k} aria-label={`Skin tone ${k}`} onClick={() => setLook({ ...look, skin: k })} className={`h-9 w-9 rounded-full border-4 ${look.skin === k ? "border-vibe-aqua" : "border-transparent"}`} style={{ background: c }} />)}</div></div>
+      <div className="card flex min-w-0 flex-col items-center gap-4 p-4 sm:p-6 lg:sticky lg:top-24 lg:self-start">
+        <Avatar look={look} art={art} size={220} pet={pet} />
+        <div><div className="label text-center">Skin tone</div><div className="flex flex-wrap justify-center gap-2">{Object.entries(SKIN).map(([k, c]) => <button key={k} aria-label={`Skin tone ${k}`} onClick={() => setLook({ ...look, skin: k })} className={`h-9 w-9 rounded-full border-4 ${look.skin === k ? "border-vibe-aqua" : "border-transparent"}`} style={{ background: c }} />)}</div></div>
         <div><div className="label text-center">Hair colour</div><div className="flex flex-wrap justify-center gap-2">{hairColors.map((c) => <button key={c} aria-label={`Hair colour ${c}`} onClick={() => setLook({ ...look, hair_color: c })} className={`h-8 w-8 rounded-full border-4 ${look.hair_color === c ? "border-vibe-aqua" : "border-transparent"}`} style={{ background: c }} />)}</div></div>
         <button className="btn-primary w-full" onClick={async () => { setErr(null); try { await api("/api/avatar", { body: look }); setMsg("Saved! Looking awesome ✨"); router.refresh(); } catch (e) { setErr((e as Error).message); } }}>Save my look</button>
         {msg && <p className="text-sm text-vibe-mint">{msg}</p>}<ErrorNote error={err} />
       </div>
-      <div>
+      <div className="min-w-0">
         <div className="row-scroll">{TABS.map((x) => <button key={x.key} onClick={() => setTab(x.key)} className={`btn btn-sm shrink-0 ${tab === x.key ? "bg-vibe-cta text-white" : "btn-ghost"}`}>{x.label}</button>)}</div>
-        <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-4">
+        <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3 xl:grid-cols-4">
           {t.optional && <button onClick={() => setLook({ ...look, [t.field]: null })} className={`card p-4 text-center ${!look[t.field] ? "ring-2 ring-vibe-aqua" : ""}`}><div className="text-4xl">🚫</div><div className="mt-1 text-sm font-bold">None</div></button>}
           {list.map((i) => {
             const on = look[t.field] === i.slug;
             return (
               <button key={i.slug} disabled={!i.owned} onClick={() => setLook({ ...look, [t.field]: i.slug })}
-                className={`card border-2 p-4 text-center transition ${RARITY[i.rarity].ring} ${on ? "ring-2 ring-vibe-aqua" : ""} ${i.owned ? "hover:-translate-y-0.5" : "opacity-50"}`}>
+                className={`card min-w-0 break-words border-2 p-3 text-center transition sm:p-4 ${RARITY[i.rarity].ring} ${on ? "ring-2 ring-vibe-aqua" : ""} ${i.owned ? "hover:-translate-y-0.5" : "opacity-50"}`}>
                 <div className="text-4xl">{i.emoji}</div><div className="mt-1 text-sm font-bold">{i.title}</div>
                 <div className={`text-[11px] ${RARITY[i.rarity].text}`}>{RARITY[i.rarity].label}</div>
                 {!i.owned && <div className="mt-1 text-[11px]">{i.level_exclusive ? `🔒 Level ${i.min_level} reward` : `🔒 ${i.cost_coins ? `🪙${i.cost_coins}` : ""}${i.cost_crystals ? ` 💎${i.cost_crystals}` : ""}${i.min_level > 1 ? ` · Lv ${i.min_level}` : ""}`}</div>}

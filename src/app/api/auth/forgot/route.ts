@@ -20,5 +20,5 @@ export const POST = publicRoute(async (req) => {
        <p style="margin:28px 0"><a href="${url}" style="background:#7047FF;color:#fff;padding:14px 26px;border-radius:999px;text-decoration:none;font-weight:bold">Choose a new password</a></p>
        <p style="color:#9a93c9;font-size:13px">This link expires in 1 hour. If you didn't ask, ignore this e-mail — your password won't change.</p>`));
   }
-  return ok({ ok: true, devMailbox: !process.env.RESEND_API_KEY && process.env.NODE_ENV !== "production" });
+  return ok({ ok: true, devMailbox: !process.env.RESEND_API_KEY && (process.env.NODE_ENV !== "production" || process.env.EMAIL_TRANSPORT === "dev-mailbox") });
 });
