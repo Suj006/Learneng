@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  @apply bg-vibe-midnight text-white font-body antialiased;
+  min-height: 100dvh;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-display text-base font-semibold tracking-wide transition
+      focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-vibe-aqua/60 disabled:cursor-not-allowed disabled:opacity-50 select-none;
+    min-height: 48px; /* touch-friendly */
+  }
+  .btn-primary { @apply btn bg-vibe-cta text-white shadow-glow hover:brightness-110 active:scale-[0.97]; }
+  .btn-sun { @apply btn bg-vibe-sun text-vibe-midnight shadow-glow-sun hover:brightness-105 active:scale-[0.97]; }
+  .btn-ghost { @apply btn border border-white/20 bg-white/5 text-white backdrop-blur hover:bg-white/10 active:scale-[0.97]; }
+  .btn-sm { @apply px-4 py-2 text-sm; min-height: 40px; }
+
+  .glass { @apply rounded-4xl border border-white/10 bg-white/[0.06] backdrop-blur-xl; }
+  .card { @apply glass shadow-card; }
+
+  .input {
+    @apply w-full rounded-2xl border border-white/15 bg-white/[0.07] px-4 py-3 text-base text-white placeholder-white/40 outline-none transition
+      focus:border-vibe-aqua focus:ring-4 focus:ring-vibe-aqua/25;
+    min-height: 48px;
+  }
+  .label { @apply mb-2 block font-display text-sm font-semibold text-vibe-lavender; }
+
+  .chip { @apply inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-vibe-lavender; }
+
+  .title-xl { @apply font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl; }
+  .title-lg { @apply font-display text-3xl font-bold tracking-tight sm:text-4xl; }
+  .title-md { @apply font-display text-xl font-bold sm:text-2xl; }
+
+  .text-gradient { @apply bg-gradient-to-r from-vibe-sun via-vibe-coral to-vibe-purple-light bg-clip-text text-transparent; }
+  .text-gradient-aqua { @apply bg-gradient-to-r from-vibe-aqua via-vibe-lavender to-vibe-purple-light bg-clip-text text-transparent; }
+
+  .row-scroll {
+    @apply flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4;
+    scrollbar-width: none;
+  }
+  .row-scroll::-webkit-scrollbar { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

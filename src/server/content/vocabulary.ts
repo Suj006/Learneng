@@ -1,0 +1,151 @@
+/**
+ * Seed vocabulary — 4 bands, written for Indian classrooms (simple Indian-English
+ * contexts: festivals, cricket, monsoon, tiffin…). Admins extend this via the CMS.
+ *   Band 1: Pre-KG–UKG · Band 2: Grades 1–2 · Band 3: Grades 3–4 · Band 4: Grades 5–7
+ * Tuple: [word, pos, phonetic, meaning, kid explanation, example, real-life usage, synonyms, antonyms, emoji, difficulty]
+ */
+type W = [string, string, string, string, string, string, string, string[], string[], string, number];
+
+const band1: W[] = [
+  ["apple", "noun", "AP-uhl", "A round fruit that is red, green or yellow.", "An apple is crunchy and sweet. It grows on a tree!", "I eat a red apple.", "You can say: 'Can I have an apple, please?'", [], [], "🍎", 1],
+  ["ball", "noun", "bawl", "A round toy that you throw, kick or bounce.", "A ball is round. You can play catch with it!", "The ball is blue.", "At the park: 'Throw the ball to me!'", [], [], "⚽", 1],
+  ["cat", "noun", "kat", "A small furry animal that says 'meow'.", "A cat has soft fur, whiskers and a long tail.", "The cat is sleeping.", "Point and say: 'Look, a cat!'", ["kitty"], [], "🐱", 1],
+  ["dog", "noun", "dawg", "A friendly animal that barks.", "A dog wags its tail when it is happy!", "My dog can run fast.", "Say: 'The dog says woof!'", ["puppy"], [], "🐶", 1],
+  ["happy", "adjective", "HAP-ee", "Feeling good and full of joy.", "When you smile and laugh, you are happy!", "I am happy today.", "Tell a friend: 'I am happy to see you!'", ["glad", "joyful"], ["sad"], "😊", 1],
+  ["sad", "adjective", "sad", "Feeling unhappy.", "When you feel like crying, you feel sad.", "The boy is sad.", "You can say: 'I feel sad. Can I have a hug?'", ["unhappy"], ["happy"], "😢", 1],
+  ["big", "adjective", "big", "Large in size.", "An elephant is big. A mouse is not!", "That is a big bus.", "Say: 'Look at that big tree!'", ["large"], ["small"], "🐘", 1],
+  ["small", "adjective", "smawl", "Little in size.", "An ant is small. You can hold it on one finger!", "I have a small toy.", "Say: 'I want the small cup.'", ["little", "tiny"], ["big"], "🐜", 1],
+  ["sun", "noun", "sun", "The big bright star that gives us light in the day.", "The sun shines in the sky and keeps us warm.", "The sun is hot.", "In the morning say: 'The sun is up!'", [], ["moon"], "☀️", 1],
+  ["moon", "noun", "moon", "The bright round thing we see in the night sky.", "At night, look up! The moon is glowing.", "I can see the moon.", "At bedtime: 'Good night, moon!'", [], ["sun"], "🌙", 1],
+  ["star", "noun", "star", "A tiny twinkling light in the night sky.", "Stars twinkle, twinkle at night!", "I see a star.", "Make a wish on a star!", [], [], "⭐", 1],
+  ["tree", "noun", "tree", "A tall plant with a trunk, branches and leaves.", "Birds make nests in trees. Trees give us shade!", "The tree is tall.", "Say: 'Let's sit under the tree.'", [], [], "🌳", 1],
+  ["fish", "noun", "fish", "An animal that lives and swims in water.", "A fish swims with its fins and tail.", "The fish can swim.", "At an aquarium: 'Look at the orange fish!'", [], [], "🐟", 1],
+  ["bird", "noun", "burd", "An animal with feathers and wings that can fly.", "Birds sing 'tweet tweet' in the morning!", "A bird is on the tree.", "Say: 'The bird is flying high!'", [], [], "🐦", 1],
+  ["jump", "verb", "jump", "To push yourself up into the air with your legs.", "Bend your knees and jump up high like a frog!", "I can jump high.", "In a game: 'Jump over the line!'", ["hop", "leap"], [], "🐸", 1],
+  ["run", "verb", "run", "To move very fast on your feet.", "When you run, your legs go fast fast fast!", "We run in the park.", "Say: 'Let's run to the gate!'", ["race"], ["walk"], "🏃", 1],
+  ["hot", "adjective", "hot", "Very warm.", "Fire is hot. Do not touch it!", "The tea is hot.", "Say: 'Careful, the milk is hot!'", ["warm"], ["cold"], "🔥", 1],
+  ["cold", "adjective", "kohld", "Not warm; chilly.", "Ice cream is cold. Brrr!", "The ice is cold.", "Say: 'I feel cold. I need a sweater.'", ["chilly"], ["hot"], "🧊", 1],
+  ["smile", "verb", "smyl", "To make a happy face with your mouth.", "When you smile, your lips curve up like a rainbow!", "Mom smiles at me.", "For a photo: 'Everyone smile!'", ["grin"], ["frown"], "😁", 1],
+  ["book", "noun", "buk", "Pages with words and pictures that you read.", "A book has stories inside it!", "I like this book.", "At school: 'Open your book, please.'", [], [], "📖", 1],
+  ["cake", "noun", "kayk", "A sweet, soft food we eat on birthdays.", "On your birthday, you blow candles on a cake!", "The cake is yummy.", "Say: 'Happy birthday! Let's cut the cake!'", [], [], "🎂", 1],
+  ["rain", "noun", "rayn", "Drops of water falling from clouds.", "In the monsoon, rain goes pitter-patter!", "The rain is falling.", "Say: 'Take your umbrella, it is raining!'", ["shower"], [], "🌧️", 1],
+  ["hat", "noun", "hat", "Something you wear on your head.", "A hat keeps the sun off your head.", "I wear a yellow hat.", "Say: 'Wear your hat, it is sunny!'", ["cap"], [], "🎩", 1],
+  ["car", "noun", "kar", "A machine with four wheels that people ride in.", "A car goes vroom vroom on the road!", "Dad drives a car.", "Say: 'Let's go in the car.'", [], [], "🚗", 1],
+  ["milk", "noun", "milk", "A white drink that comes from cows.", "Milk makes your bones strong!", "I drink milk every day.", "Say: 'May I have a glass of milk?'", [], [], "🥛", 1],
+  ["sing", "verb", "sing", "To make music with your voice.", "La la la! When you sing, you make music.", "We sing a song.", "Say: 'Let's sing together!'", [], [], "🎤", 1],
+  ["clap", "verb", "klap", "To hit your hands together to make a sound.", "Clap clap! We clap when someone does well.", "Clap your hands!", "Say: 'Let's clap for our friend!'", [], [], "👏", 1],
+  ["duck", "noun", "duk", "A water bird that says 'quack'.", "A duck swims in the pond and says quack quack!", "The duck is yellow.", "At the lake: 'Look, ducks!'", [], [], "🦆", 1],
+  ["flower", "noun", "FLOW-er", "The colourful part of a plant.", "Flowers smell nice. Bees love them!", "The flower is pink.", "Say: 'What a pretty flower!'", ["blossom"], [], "🌸", 1],
+  ["friend", "noun", "frend", "Someone you like and play with.", "A friend shares toys and makes you laugh!", "She is my friend.", "Say: 'Will you be my friend?'", ["buddy", "pal"], [], "🤝", 1],
+];
+
+const band2: W[] = [
+  ["brave", "adjective", "brayv", "Not afraid to do something hard or scary.", "When you try something new even if you feel scared, you are brave!", "The brave girl climbed the tall slide.", "Say: 'I was brave at the doctor today!'", ["bold", "fearless"], ["scared"], "🦁", 2],
+  ["gentle", "adjective", "JEN-tuhl", "Kind and soft, not rough.", "Be gentle with a puppy — touch it softly.", "Be gentle with the baby.", "Say: 'Please be gentle with my book.'", ["soft", "kind"], ["rough"], "🕊️", 2],
+  ["quick", "adjective", "kwik", "Fast; done in a short time.", "A cheetah is quick. Zoom!", "The rabbit is very quick.", "Say: 'Be quick, the bus is here!'", ["fast", "speedy"], ["slow"], "🐇", 2],
+  ["giggle", "verb", "GIG-uhl", "To laugh in a light, silly way.", "Tee-hee! When something is funny, you giggle.", "The babies giggle at the clown.", "Say: 'That joke made me giggle!'", ["chuckle", "laugh"], ["cry"], "🤭", 2],
+  ["whisper", "verb", "WIS-per", "To speak very softly.", "Shh! When you whisper, only someone close can hear.", "She whispered a secret to me.", "In the library: 'Let's whisper.'", ["murmur"], ["shout"], "🤫", 2],
+  ["shout", "verb", "showt", "To say something very loudly.", "When you shout, everyone can hear you!", "Do not shout in class.", "On the field: 'Shout if you need help!'", ["yell"], ["whisper"], "📣", 2],
+  ["bright", "adjective", "bryt", "Full of light or shining strongly.", "The sun is bright — it makes you squint!", "The room is bright and sunny.", "Say: 'Your torch is very bright!'", ["shiny", "brilliant"], ["dark", "dim"], "💡", 2],
+  ["curious", "adjective", "KYOOR-ee-uhs", "Wanting to know or learn about something.", "When you ask 'Why? How?', you are curious!", "The curious cat looked inside the box.", "Say: 'I am curious about dinosaurs.'", ["inquisitive"], ["bored"], "🧐", 2],
+  ["tiny", "adjective", "TY-nee", "Very, very small.", "An ant is tiny. A ladybug is tiny too!", "I found a tiny shell.", "Say: 'Look at that tiny puppy!'", ["little", "small"], ["huge"], "🐞", 2],
+  ["delicious", "adjective", "dih-LISH-uhs", "Tasting very good.", "Yum! When food tastes super good, it is delicious.", "Grandma's ladoos are delicious.", "Say: 'This dosa is delicious!'", ["tasty", "yummy"], ["yucky"], "😋", 2],
+  ["garden", "noun", "GAR-duhn", "A place where flowers, plants or vegetables grow.", "In a garden you can find flowers, bees and butterflies!", "We planted seeds in the garden.", "Say: 'Let's water the garden.'", [], [], "🌻", 2],
+  ["puddle", "noun", "PUD-uhl", "A small pool of water on the ground.", "After the rain, you can splash in a puddle!", "He jumped into the puddle.", "Say: 'Watch out for the puddle!'", [], [], "💧", 2],
+  ["rainbow", "noun", "RAYN-boh", "A curve of colours in the sky after rain.", "A rainbow has seven colours, like a sky ribbon!", "We saw a rainbow after the rain.", "Say: 'Look up — a rainbow!'", [], [], "🌈", 2],
+  ["sparkle", "verb", "SPAR-kuhl", "To shine with tiny flashes of light.", "Glitter and diamonds sparkle in the light!", "Diwali lights sparkle at night.", "Say: 'Your shoes sparkle!'", ["glitter", "twinkle"], [], "✨", 2],
+  ["wobble", "verb", "WOB-uhl", "To move from side to side in a shaky way.", "Jelly wobbles when you shake the plate!", "My loose tooth wobbles.", "Say: 'The table wobbles a little.'", ["shake", "wiggle"], [], "🍮", 2],
+  ["cozy", "adjective", "KOH-zee", "Warm, soft and comfortable.", "Snuggling in a blanket feels cozy!", "My bed is warm and cozy.", "Say: 'This sweater is so cozy.'", ["snug", "comfy"], ["uncomfortable"], "🛋️", 2],
+  ["polite", "adjective", "puh-LYT", "Showing good manners.", "Saying 'please' and 'thank you' is polite!", "Rohan is always polite to his teachers.", "Say: 'Thank you!' — that is polite.", ["courteous"], ["rude"], "🙏", 2],
+  ["share", "verb", "shair", "To let others use or have some of what you have.", "When you share your crayons, everyone can colour!", "Let us share the tiffin.", "Say: 'Do you want to share my snack?'", ["give"], ["keep"], "🍪", 2],
+  ["explore", "verb", "ek-SPLOR", "To go around a new place to find out about it.", "Explorers look around new places to discover things!", "We explored the forest trail.", "Say: 'Let's explore the museum!'", ["discover"], [], "🧭", 2],
+  ["collect", "verb", "kuh-LEKT", "To bring things together and keep them.", "Some children collect stamps, shells or stickers!", "I collect colourful stones.", "Say: 'Please collect the papers.'", ["gather"], ["scatter"], "🐚", 2],
+  ["quiet", "adjective", "KWY-uht", "Making little or no noise.", "In the library we stay quiet — shh!", "The class is quiet now.", "Say: 'Please be quiet, the baby is sleeping.'", ["silent", "calm"], ["noisy", "loud"], "🤐", 2],
+  ["strong", "adjective", "strawng", "Having lots of power; not weak.", "An elephant is strong — it can lift a log!", "My grandpa is very strong.", "Say: 'Milk makes my bones strong.'", ["powerful"], ["weak"], "💪", 2],
+  ["heavy", "adjective", "HEV-ee", "Hard to lift because it weighs a lot.", "A big bag of rice is heavy!", "This school bag is heavy.", "Say: 'Can you help me? This box is heavy.'", [], ["light"], "🏋️", 2],
+  ["empty", "adjective", "EMP-tee", "Having nothing inside.", "When your glass has no water, it is empty.", "My water bottle is empty.", "Say: 'The cookie jar is empty!'", [], ["full"], "🫙", 2],
+  ["helpful", "adjective", "HELP-fuhl", "Ready and happy to help.", "When you help Mom set the table, you are helpful!", "Ananya is helpful at home.", "Say: 'Thank you, you are so helpful!'", ["useful", "kind"], ["unhelpful"], "🤲", 2],
+  ["careful", "adjective", "KAIR-fuhl", "Paying attention so nothing goes wrong.", "Be careful when you cross the road — look both ways!", "Be careful with the glass.", "Say: 'Be careful on the stairs!'", ["cautious"], ["careless"], "⚠️", 2],
+  ["journey", "noun", "JUR-nee", "A trip from one place to another.", "Going to your grandma's town by train is a journey!", "Our train journey was long.", "Say: 'Have a safe journey!'", ["trip"], [], "🚂", 2],
+  ["tumble", "verb", "TUM-buhl", "To fall down suddenly and roll.", "Oops! The toys tumbled off the shelf.", "Jack and Jill tumbled down the hill.", "Say: 'Careful, don't tumble!'", ["fall"], [], "🤸", 2],
+  ["festival", "noun", "FES-tih-vuhl", "A special day or time of celebration.", "Diwali, Eid, Christmas and Pongal are festivals!", "Holi is a festival of colours.", "Say: 'Which festival do you like best?'", ["celebration"], [], "🪔", 2],
+  ["neighbour", "noun", "NAY-ber", "A person who lives next to you or near you.", "The people next door are your neighbours.", "Our neighbour has a cute puppy.", "Say: 'Good morning, neighbour!'", [], [], "🏡", 2],
+];
+
+const band3: W[] = [
+  ["enormous", "adjective", "ih-NOR-muhs", "Extremely big.", "Bigger than big — like an elephant or a blue whale!", "The elephant is enormous!", "Say: 'That's an enormous pizza!'", ["huge", "gigantic"], ["tiny"], "🐘", 3],
+  ["magnificent", "adjective", "mag-NIF-ih-suhnt", "Extremely beautiful and impressive.", "The Taj Mahal is magnificent — it makes you say 'Wow!'", "The palace looked magnificent at night.", "Say: 'What a magnificent sunset!'", ["splendid", "grand"], ["ordinary"], "🏰", 3],
+  ["adventure", "noun", "ad-VEN-cher", "An exciting or unusual experience.", "Exploring a jungle or a cave is an adventure!", "Our camping trip was a real adventure.", "Say: 'Let's go on an adventure!'", ["expedition", "quest"], [], "🗺️", 3],
+  ["courage", "noun", "KUR-ij", "The ability to do something that frightens you.", "Courage is being brave even when your knees shake!", "It takes courage to speak on stage.", "Say: 'You showed great courage today.'", ["bravery"], ["fear"], "🛡️", 3],
+  ["ancient", "adjective", "AYN-shuhnt", "Very, very old.", "Dinosaurs lived in ancient times — millions of years ago!", "We visited an ancient temple in Hampi.", "Say: 'This coin looks ancient!'", ["old"], ["modern"], "🏛️", 3],
+  ["fragile", "adjective", "FRAJ-uhl", "Easily broken or damaged.", "Glass and eggs are fragile — handle with care!", "The vase is fragile.", "A label might say: 'Fragile — handle with care.'", ["delicate"], ["sturdy"], "🥚", 3],
+  ["mysterious", "adjective", "mih-STEER-ee-uhs", "Strange and hard to explain.", "A locked box with no key is mysterious!", "We heard a mysterious sound in the attic.", "Say: 'This story has a mysterious ending.'", ["puzzling", "strange"], ["obvious"], "🕵️", 3],
+  ["astonished", "adjective", "uh-STON-isht", "Very surprised.", "When something amazes you so much your mouth drops open!", "I was astonished by the magic trick.", "Say: 'I was astonished to see snow!'", ["amazed"], ["unsurprised"], "😲", 3],
+  ["generous", "adjective", "JEN-er-uhs", "Happy to give and share with others.", "A generous person shares their things kindly.", "My generous uncle bought books for everyone.", "Say: 'That was very generous of you!'", ["kind", "giving"], ["selfish"], "🎁", 3],
+  ["vanish", "verb", "VAN-ish", "To disappear suddenly.", "Poof! The magician made the rabbit vanish!", "The rainbow vanished after a few minutes.", "Say: 'My eraser has vanished again!'", ["disappear"], ["appear"], "🎩", 3],
+  ["glimmer", "verb", "GLIM-er", "To shine faintly.", "A tiny light that shines softly is glimmering.", "Fireflies glimmered in the dark.", "Say: 'I saw a light glimmer far away.'", ["flicker", "twinkle"], [], "🕯️", 3],
+  ["cautious", "adjective", "KAW-shuhs", "Careful to avoid danger.", "A cautious person looks carefully before doing something.", "Be cautious near the river bank.", "Say: 'Be cautious on the wet floor.'", ["careful"], ["reckless"], "🚸", 3],
+  ["delighted", "adjective", "dih-LY-tid", "Very pleased and happy.", "When you get exactly the gift you wanted, you are delighted!", "She was delighted with her medal.", "Say: 'I am delighted to meet you!'", ["thrilled", "overjoyed"], ["disappointed"], "🥳", 3],
+  ["determined", "adjective", "dih-TUR-mind", "Not giving up until you succeed.", "Trying again and again to ride a cycle means you are determined!", "He was determined to win the race.", "Say: 'I am determined to finish my project.'", ["persistent"], ["hesitant"], "🎯", 3],
+  ["fascinating", "adjective", "FAS-uh-nay-ting", "Extremely interesting.", "Something so interesting you can't stop looking at it!", "Space is a fascinating subject.", "Say: 'This documentary is fascinating!'", ["amazing", "captivating"], ["boring"], "🔭", 3],
+  ["gloomy", "adjective", "GLOO-mee", "Dark, dull or sad.", "A grey, cloudy day can feel gloomy.", "The sky was gloomy before the storm.", "Say: 'Why are you looking so gloomy?'", ["dreary", "dull"], ["cheerful"], "🌥️", 3],
+  ["harvest", "noun", "HAR-vist", "The time when crops are gathered from the fields.", "Farmers collect rice and wheat at harvest. Pongal and Baisakhi are harvest festivals!", "The harvest was good this year.", "Say: 'Farmers are busy during the harvest.'", ["crop", "yield"], [], "🌾", 3],
+  ["imagine", "verb", "ih-MAJ-in", "To make a picture of something in your mind.", "Close your eyes and imagine a flying elephant!", "Imagine you could fly over the city.", "Say: 'Imagine if we lived on the moon!'", ["picture", "dream"], [], "💭", 3],
+  ["loyal", "adjective", "LOY-uhl", "Always supporting and standing by someone.", "A loyal friend is always on your side.", "Dogs are loyal animals.", "Say: 'Thanks for being a loyal friend.'", ["faithful"], ["disloyal"], "🐕", 3],
+  ["marvellous", "adjective", "MAR-vuh-luhs", "Wonderful; extremely good.", "Something so good it makes you cheer!", "We had a marvellous time at the fair.", "Say: 'What a marvellous drawing!'", ["wonderful", "superb"], ["terrible"], "🎡", 3],
+  ["nervous", "adjective", "NUR-vuhs", "Worried or a little afraid about something.", "Butterflies in your tummy before a test? That is feeling nervous.", "I felt nervous before my dance show.", "Say: 'It's okay to feel nervous.'", ["anxious", "worried"], ["calm", "relaxed"], "😬", 3],
+  ["peculiar", "adjective", "pih-KYOOL-yer", "Strange or unusual.", "A cat that barks would be peculiar!", "There was a peculiar smell in the kitchen.", "Say: 'That's a peculiar-looking bug.'", ["odd", "unusual"], ["normal"], "🦄", 3],
+  ["rescue", "verb", "RES-kyoo", "To save someone from danger.", "Firefighters rescue people and even kittens stuck in trees!", "The team rescued the puppy from the drain.", "Say: 'The lifeguard rescued the swimmer.'", ["save"], ["abandon"], "🚒", 3],
+  ["scatter", "verb", "SKAT-er", "To throw or spread things in many directions.", "When you drop marbles, they scatter everywhere!", "The wind scattered the leaves.", "Say: 'Don't scatter your toys on the floor.'", ["spread"], ["gather", "collect"], "🍂", 3],
+  ["swift", "adjective", "swift", "Moving very fast.", "A swift bird zips through the sky like an arrow!", "The swift horse won the race.", "Say: 'That was a swift reply!'", ["quick", "rapid"], ["slow"], "🦅", 3],
+  ["timid", "adjective", "TIM-id", "Shy and easily frightened.", "A timid mouse hides when people come near.", "The timid kitten hid under the bed.", "Say: 'Don't be timid — say hello!'", ["shy"], ["bold", "confident"], "🐭", 3],
+  ["wander", "verb", "WON-der", "To walk around slowly without a fixed plan.", "Wandering is walking here and there just to look around!", "We wandered through the market.", "Say: 'Don't wander away from the group.'", ["roam"], [], "🚶", 3],
+  ["eager", "adjective", "EE-ger", "Wanting to do something very much.", "When you can't wait to open your birthday gifts, you are eager!", "The students were eager to start the experiment.", "Say: 'I'm eager to learn coding!'", ["keen", "excited"], ["unwilling"], "🙋", 3],
+  ["remarkable", "adjective", "rih-MAR-kuh-buhl", "Unusual in a way that gets attention.", "Something so special that people talk about it!", "She made a remarkable recovery.", "Say: 'That's a remarkable painting.'", ["extraordinary", "amazing"], ["ordinary"], "🌟", 3],
+  ["protect", "verb", "pruh-TEKT", "To keep someone or something safe.", "A helmet protects your head when you cycle!", "We must protect our forests.", "Say: 'Sunscreen protects your skin.'", ["guard", "shield"], ["harm"], "🦺", 3],
+];
+
+const band4: W[] = [
+  ["perseverance", "noun", "pur-suh-VEER-uhns", "Continuing to try even when something is difficult.", "Practising a hard piano piece every day until you get it right — that's perseverance.", "Her perseverance helped her solve the tough puzzle.", "A coach might say: 'Perseverance wins matches.'", ["persistence", "determination"], ["laziness"], "🧗", 4],
+  ["resilient", "adjective", "rih-ZIL-yuhnt", "Able to recover quickly from difficulties.", "A resilient person bounces back like a rubber ball after a setback.", "The resilient team won after losing the first match.", "Say: 'Plants in the desert are resilient.'", ["tough", "strong"], ["fragile"], "🌱", 4],
+  ["eloquent", "adjective", "EL-uh-kwuhnt", "Able to speak or write clearly and beautifully.", "An eloquent speaker chooses words so well that people love to listen.", "Her eloquent speech moved the audience.", "Say: 'That was an eloquent answer.'", ["articulate", "fluent"], ["inarticulate"], "🎙️", 4],
+  ["ambiguous", "adjective", "am-BIG-yoo-uhs", "Having more than one possible meaning.", "'I saw her duck' is ambiguous — a bird, or did she bend down?", "The question was ambiguous, so I asked the teacher.", "Say: 'Your instructions are a bit ambiguous.'", ["unclear", "vague"], ["clear"], "❓", 4],
+  ["benevolent", "adjective", "buh-NEV-uh-luhnt", "Kind and wanting to do good for others.", "A benevolent person helps others without expecting anything back.", "The benevolent king built schools for every village.", "Say: 'The benevolent donor funded the library.'", ["kind", "charitable"], ["cruel"], "🤝", 4],
+  ["meticulous", "adjective", "muh-TIK-yuh-luhs", "Very careful about every small detail.", "A meticulous person checks everything twice and keeps things perfectly neat.", "Riya is meticulous about her science diagrams.", "Say: 'This map is drawn with meticulous care.'", ["thorough", "precise"], ["careless", "sloppy"], "🔍", 4],
+  ["inevitable", "adjective", "in-EV-ih-tuh-buhl", "Certain to happen; cannot be avoided.", "Getting wet in a monsoon downpour without an umbrella is inevitable!", "Change is inevitable as we grow up.", "Say: 'With so little practice, the loss was inevitable.'", ["unavoidable", "certain"], ["avoidable"], "⏳", 4],
+  ["vivid", "adjective", "VIV-id", "Very bright, clear or detailed.", "Vivid colours pop; a vivid dream feels almost real.", "She described the festival in vivid detail.", "Say: 'I have a vivid memory of my first day at school.'", ["bright", "striking"], ["dull"], "🎨", 4],
+  ["contemplate", "verb", "KON-tuhm-playt", "To think deeply about something.", "When you sit quietly and think hard about a big question, you contemplate it.", "He contemplated the stars from the rooftop.", "Say: 'I need time to contemplate my choice.'", ["ponder", "consider"], ["ignore"], "🤔", 4],
+  ["diligent", "adjective", "DIL-ih-juhnt", "Working hard and carefully.", "A diligent student finishes homework carefully and on time.", "The diligent farmer worked from sunrise to sunset.", "Say: 'Thank you for your diligent effort.'", ["hardworking", "industrious"], ["lazy"], "📚", 4],
+  ["empathy", "noun", "EM-puh-thee", "The ability to understand and share someone's feelings.", "Empathy is imagining how a friend feels and caring about it.", "She showed empathy when her friend lost the match.", "Say: 'Empathy makes us better friends.'", ["compassion", "understanding"], ["indifference"], "💞", 4],
+  ["frugal", "adjective", "FROO-guhl", "Careful not to waste money or resources.", "A frugal person saves money and avoids waste.", "Being frugal, Grandpa reuses every jar.", "Say: 'Let's be frugal with water.'", ["thrifty", "economical"], ["wasteful"], "🪙", 4],
+  ["innovative", "adjective", "IN-uh-vay-tiv", "Using new and creative ideas.", "An innovative invention solves a problem in a brand-new way.", "ISRO used innovative technology for Chandrayaan.", "Say: 'That's an innovative science project!'", ["creative", "inventive"], ["traditional"], "🚀", 4],
+  ["jubilant", "adjective", "JOO-buh-luhnt", "Extremely happy and celebrating.", "When your team wins the final over, the crowd is jubilant!", "Jubilant fans danced after India won.", "Say: 'The class was jubilant about the holiday.'", ["joyful", "elated"], ["miserable"], "🎉", 4],
+  ["lethargic", "adjective", "luh-THAR-jik", "Feeling slow and without energy.", "When you feel too sleepy and lazy to move, you are lethargic.", "The heat made everyone lethargic.", "Say: 'I feel lethargic after skipping breakfast.'", ["sluggish", "tired"], ["energetic"], "🦥", 4],
+  ["ominous", "adjective", "OM-ih-nuhs", "Giving the feeling that something bad will happen.", "Dark clouds and thunder can feel ominous.", "An ominous silence filled the old house.", "Say: 'Those clouds look ominous.'", ["threatening", "menacing"], ["promising"], "⛈️", 4],
+  ["pragmatic", "adjective", "prag-MAT-ik", "Dealing with things in a sensible, practical way.", "A pragmatic person chooses what actually works.", "Taking the metro was a pragmatic choice in traffic.", "Say: 'Let's find a pragmatic solution.'", ["practical", "sensible"], ["idealistic"], "🛠️", 4],
+  ["reluctant", "adjective", "rih-LUK-tuhnt", "Not wanting to do something.", "If you drag your feet to clean your room, you're reluctant!", "He was reluctant to jump into the cold pool.", "Say: 'I was reluctant at first, but it was fun.'", ["unwilling", "hesitant"], ["eager"], "🙅", 4],
+  ["serene", "adjective", "suh-REEN", "Calm, peaceful and untroubled.", "A still lake at sunrise feels serene.", "The hill station was serene and green.", "Say: 'The garden is so serene in the morning.'", ["peaceful", "tranquil"], ["chaotic"], "🏞️", 4],
+  ["tenacious", "adjective", "tuh-NAY-shuhs", "Holding firmly to a goal; not giving up.", "A tenacious player keeps chasing the ball till the last second.", "The tenacious climber reached the summit.", "Say: 'Be tenacious about your dreams.'", ["persistent", "determined"], ["weak-willed"], "🐢", 4],
+  ["transparent", "adjective", "trans-PAIR-uhnt", "Clear enough to see through; also honest and open.", "Glass is transparent. An honest person is transparent too!", "The jellyfish was almost transparent.", "Say: 'Let's be transparent about our mistakes.'", ["clear", "see-through"], ["opaque"], "🪟", 4],
+  ["versatile", "adjective", "VUR-suh-tyl", "Able to do many different things well.", "A versatile player can bat, bowl and field brilliantly.", "Rice is a versatile food.", "Say: 'She is a versatile musician.'", ["adaptable", "all-round"], ["limited"], "🎭", 4],
+  ["wary", "adjective", "WAIR-ee", "Careful because something could be dangerous.", "Being wary means watching out — like when a stranger offers you sweets.", "Be wary of unknown links online.", "Say: 'Be wary of stray dogs.'", ["cautious", "careful"], ["trusting"], "👀", 4],
+  ["zealous", "adjective", "ZEL-uhs", "Full of energy and enthusiasm for something.", "A zealous fan cheers louder than anyone else!", "The zealous volunteers cleaned the whole beach.", "Say: 'She is zealous about saving animals.'", ["enthusiastic", "passionate"], ["apathetic"], "🔥", 4],
+  ["sustainable", "adjective", "suh-STAY-nuh-buhl", "Able to continue without harming the environment.", "Sustainable choices protect Earth for the future — like using cloth bags.", "Solar power is a sustainable energy source.", "Say: 'Let's choose sustainable products.'", ["eco-friendly"], ["wasteful"], "♻️", 4],
+  ["collaborate", "verb", "kuh-LAB-uh-rayt", "To work together with others.", "When your group builds a project together, you collaborate.", "We collaborated on a model of the solar system.", "Say: 'Let's collaborate on this poster.'", ["cooperate", "team up"], ["compete"], "🧩", 4],
+  ["consequence", "noun", "KON-suh-kwens", "A result of an action.", "If you forget your umbrella, getting wet is the consequence!", "Every choice has a consequence.", "Say: 'Think about the consequences first.'", ["result", "outcome"], ["cause"], "🔗", 4],
+  ["hypothesis", "noun", "hy-POTH-uh-sis", "An idea that can be tested to see if it is true.", "Scientists make a hypothesis, then test it with an experiment!", "Our hypothesis was that plants grow faster in sunlight.", "Say: 'Let's test your hypothesis.'", ["theory", "prediction"], [], "🧪", 4],
+  ["articulate", "adjective", "ar-TIK-yuh-lit", "Able to express ideas clearly.", "An articulate person explains things so everyone understands.", "Meera gave an articulate presentation.", "Say: 'You were very articulate in the debate.'", ["eloquent", "clear"], ["muddled"], "🗣️", 4],
+  ["abundant", "adjective", "uh-BUN-duhnt", "Existing in large amounts; more than enough.", "In the mango season, mangoes are abundant!", "Kerala has abundant rainfall.", "Say: 'Fresh fruit is abundant in summer.'", ["plentiful", "ample"], ["scarce"], "🥭", 4],
+];
+
+export interface SeedWord {
+  word: string; part_of_speech: string; phonetic: string; meaning: string; explanation: string;
+  example: string; usage: string; synonyms: string[]; antonyms: string[]; emoji: string; difficulty: number; band: number;
+}
+
+export const VOCABULARY: SeedWord[] = ([[1, band1], [2, band2], [3, band3], [4, band4]] as [number, W[]][]).flatMap(
+  ([band, list]) =>
+    list.map(([word, part_of_speech, phonetic, meaning, explanation, example, usage, synonyms, antonyms, emoji, difficulty]) => ({
+      word, part_of_speech, phonetic, meaning, explanation, example, usage, synonyms, antonyms, emoji, difficulty, band,
+    })),
+);
