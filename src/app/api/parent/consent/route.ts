@@ -10,7 +10,7 @@ export const POST = parentRoute(async (req, parent) => {
   const d = await body(req, z.object({
     childId: z.string().uuid(),
     pin: pinSchema,
-    consents: z.object({ learning_data: z.literal(true, { errorMap: () => ({ message: "Consent to process learning data is required to use PING VIBE." }) }), ai_feedback: z.boolean(), speech_in_browser: z.boolean() }),
+    consents: z.object({ learning_data: z.literal(true, { error: "Consent to process learning data is required to use PING VIBE." }), ai_feedback: z.boolean(), speech_in_browser: z.boolean() }),
   }));
   if (!parent.email_verified_at) throw new HttpError(403, "Please verify your e-mail first.");
   const child = await one<{ id: string; username: string; status: string }>(`select id, username, status from children where id = $1 and parent_id = $2`, [d.childId, parent.id]);

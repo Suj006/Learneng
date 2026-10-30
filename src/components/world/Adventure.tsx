@@ -8,6 +8,7 @@ import { Avatar, type AvatarArt, type AvatarLook } from "@/components/Avatar";
 import { Scene, type SceneName } from "@/components/Scenes";
 import { Celebration, Progress, type AwardLike } from "@/components/ui";
 import { MissionCard, type MissionData } from "./MissionCard";
+import { BrandLogo } from "@/components/BrandLogo";
 import { api } from "@/lib/client";
 
 export interface AdventureData {
@@ -167,7 +168,7 @@ export function Adventure({ d }: { d: AdventureData }) {
         <section className="card relative overflow-hidden p-6">
           <div className="absolute inset-0 bg-vibe-cta opacity-20" />
           <div className="relative flex flex-wrap items-center gap-4">
-            <span className="text-5xl">{d.events[0].emoji}</span>
+            <span className="hidden rounded-2xl bg-white/95 p-1 sm:block"><BrandLogo width={96} fallback="sm" /></span><span className="text-5xl">{d.events[0].emoji}</span>
             <div className="flex-1"><span className="chip">Special event</span><h2 className="title-md mt-1">{d.events[0].title}</h2><p className="text-vibe-lavender">{d.events[0].description}</p></div>
             <Link href="/world/challenge/special" className="btn-sun">Join the event</Link>
           </div>

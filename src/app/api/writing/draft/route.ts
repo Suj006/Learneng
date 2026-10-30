@@ -11,7 +11,7 @@ export const POST = childRoute(async (req, child) => {
     kind: z.enum(["topic", "story_builder"]),
     title: z.string().trim().min(1).max(120),
     content: z.string().max(6000, "That's a very long piece! Please keep it under 6000 characters."),
-    meta: z.record(z.string().max(120)).optional(),
+    meta: z.record(z.string(), z.string().max(120)).optional(),
   }));
   if (d.submissionId) {
     const row = await one<{ id: string }>(

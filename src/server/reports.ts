@@ -43,11 +43,11 @@ export async function childReport(childId: string): Promise<ChildReport> {
     [childId, APP_TZ],
   ))!;
   const daily = await query<{ day: string; minutes: number; xp: number }>(
-    `with days as (select to_char(d, 'YYYY-MM-DD') day from generate_series((now() at time zone $2)::date - 6, (now() at time zone $2)::date, interval '1 day') d)
-     select days.day,
-       coalesce((select sum(seconds) from activity_log a where a.child_id = $1 and to_char(a.created_at at time zone $2, 'YYYY-MM-DD') = days.day),0)::int / 60 minutes,
-       coalesce((select sum(amount) from xp_transactions x where x.child_id = $1 and to_char(x.created_at at time zone $2, 'YYYY-MM-DD') = days.day),0)::int xp
-     from days order by days.day`,
+    `with days as (select to_char(d, 'YYYY-MM-DD') as dkey from generate_series((now() at time zone $2)::date - 6, (now() at time zone $2)::date, interval '1 day') d)
+     select days.dkey as "day",
+       coalesce((select sum(seconds) from activity_log a where a.child_id = $1 and to_char(a.created_at at time zone $2, 'YYYY-MM-DD') = days.dkey),0)::int / 60 as minutes,
+       coalesce((select sum(amount) from xp_transactions x where x.child_id = $1 and to_char(x.created_at at time zone $2, 'YYYY-MM-DD') = days.dkey),0)::int as xp
+     from days order by days.dkey`,
     [childId, APP_TZ],
   );
   return { ...r, daily };
@@ -87,7 +87,7 @@ export async function annualJourney(childId: string, grade: string) {
        (select count(*)::int from learning_plans where grade = $2) plan_days
      from child_profiles p where p.child_id = $1`, [childId, grade]);
   const months = await query<{ month: string; words: number; mastered: number; days: number; xp: number; minutes: number }>(
-    `with m as (select to_char(date_trunc('month', d), 'YYYY-MM') month from generate_series(date_trunc('month', now()) - interval '5 months', date_trunc('month', now()), interval '1 month') d)
+    `with m as (select to_char(date_trunc('month', d), 'YYYY-MM') as month from generate_series(date_trunc('month', now()) - interval '5 months', date_trunc('month', now()), interval '1 month') d)
      select m.month,
        (select count(*)::int from child_vocabulary_progress where child_id = $1 and to_char(first_seen_at at time zone $2,'YYYY-MM') = m.month) words,
        (select count(*)::int from child_vocabulary_progress where child_id = $1 and to_char(mastered_at at time zone $2,'YYYY-MM') = m.month) mastered,

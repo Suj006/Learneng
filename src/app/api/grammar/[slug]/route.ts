@@ -17,9 +17,9 @@ export const POST = childRoute(async (req, child, params: { slug: string }) => {
   const total = d.items.length;
   const score = Math.round((correct / total) * 100);
   await query(
-    `insert into grammar_progress (child_id, topic_id, best_score, attempts, completed_at) values ($1,$2,$3,1, case when $3 >= 60 then now() end)
-     on conflict (child_id, topic_id) do update set best_score = greatest(grammar_progress.best_score, $3), attempts = grammar_progress.attempts + 1,
-       completed_at = coalesce(grammar_progress.completed_at, case when $3 >= 60 then now() end)`,
+    `insert into grammar_progress (child_id, topic_id, best_score, attempts, completed_at) values ($1,$2,$3::smallint,1, case when $3::smallint >= 60 then now() end)
+     on conflict (child_id, topic_id) do update set best_score = greatest(grammar_progress.best_score, $3::smallint), attempts = grammar_progress.attempts + 1,
+       completed_at = coalesce(grammar_progress.completed_at, case when $3::smallint >= 60 then now() end)`,
     [child.id, t.id, score]);
   await logActivity(child.id, "grammar", d.seconds, { topic: params.slug, score });
   await markActivity(child.id, "grammar");

@@ -4,6 +4,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Character, CHARACTER_INFO, type CharacterName, type Mood } from "./Character";
 import { speak } from "@/lib/client";
+import { BrandLogo } from "./BrandLogo";
 
 export function SpeakButton({ text, label = "Listen", className = "" }: { text: string; label?: string; className?: string }) {
   return (
@@ -118,7 +119,8 @@ export function Celebration({ award, title, message, who = "max", onClose, celeb
         <Burst kind={level ? "fireworks" : celebration.replace("anim-", "")} />
         <motion.div initial={{ scale: 0.85, y: 20 }} animate={{ scale: 1, y: 0 }} className="card relative w-full max-w-md overflow-hidden p-6 text-center">
           <div className="absolute inset-0 -z-10 bg-vibe-hero opacity-80" />
-          <Character name={who} mood="celebrating" size={120} className="mx-auto" />
+          <div className="mx-auto mb-1 w-fit rounded-2xl bg-white/95 px-2 py-1"><BrandLogo width={110} fallback="sm" /></div>
+          <Character name={who} mood="celebrating" size={110} className="mx-auto" />
           <h2 className="title-md mt-2">{level ? `LEVEL ${level.id}!` : title}</h2>
           {level && <p className="mt-1 font-display text-lg text-vibe-sun">You are now {level.name}!</p>}
           {message && <div className="mt-2 text-vibe-lavender">{message}</div>}

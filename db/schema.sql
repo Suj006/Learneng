@@ -115,7 +115,7 @@ create index if not exists auth_sessions_subject_idx on auth_sessions (subject_t
 create table if not exists auth_tokens (
   token_hash text primary key,
   parent_id  uuid not null references parents(id) on delete cascade,
-  purpose    text not null check (purpose in ('verify_email')),
+  purpose    text not null check (purpose in ('verify_email','reset_password')),
   expires_at timestamptz not null,
   used_at    timestamptz,
   created_at timestamptz not null default now()
@@ -778,3 +778,5 @@ create table if not exists events (
 
 -- ── Forward-compatible column upgrades for existing databases ─────────
 alter table child_profiles add column if not exists onboarded_at timestamptz;
+alter table auth_tokens drop constraint if exists auth_tokens_purpose_check;
+alter table auth_tokens add constraint auth_tokens_purpose_check check (purpose in ('verify_email','reset_password'));

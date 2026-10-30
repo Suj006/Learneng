@@ -23,6 +23,10 @@ const config: Config = {
           lavender: "#EAE4FF",
           mint: "#5BE3A8",
           pink: "#FF7AC6",
+          magenta: "#F2358D",
+          sky: "#1FB6F2",
+          lime: "#6BCF3A",
+          violet: "#9B3FE6",
         },
       },
       fontFamily: {
@@ -39,7 +43,7 @@ const config: Config = {
       backgroundImage: {
         "vibe-hero":
           "radial-gradient(1200px 600px at 70% -10%, rgba(112,71,255,0.55), transparent 60%), radial-gradient(900px 500px at 0% 30%, rgba(57,213,232,0.25), transparent 60%), radial-gradient(800px 500px at 100% 80%, rgba(255,107,107,0.22), transparent 60%)",
-        "vibe-cta": "linear-gradient(135deg, #7047FF 0%, #A35BFF 50%, #FF6B6B 100%)",
+        "vibe-cta": "linear-gradient(135deg, #7047FF 0%, #9B3FE6 45%, #F2358D 100%)",
         "vibe-aqua": "linear-gradient(135deg, #39D5E8 0%, #7047FF 100%)",
         "vibe-sun": "linear-gradient(135deg, #FFD65A 0%, #FF6B6B 100%)",
       },

@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Character, CHARACTER_INFO, type CharacterName } from "@/components/Character";
 import { Scene, type SceneName } from "@/components/Scenes";
 import { Burst } from "@/components/ui";
+import { BrandLogo } from "@/components/BrandLogo";
 import { api, speak } from "@/lib/client";
 
 const CAST: { who: CharacterName; line: string }[] = [
@@ -34,7 +35,8 @@ export function Welcome({ name, kingdoms }: { name: string; kingdoms: { slug: st
         {step === 0 && (
           <motion.div key="s0" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, y: -20 }} className="flex flex-col items-center">
             <Burst />
-            <Character name="max" mood="excited" size={220} />
+            <div className="mb-2 rounded-[2rem] bg-white/95 p-3 shadow-card"><BrandLogo width="min(360px, 80vw)" priority /></div>
+            <Character name="max" mood="excited" size={170} />
             <h1 className="title-lg mt-4">Hey {name}! Welcome to PING VIBE!</h1>
             <p className="mt-3 max-w-xl text-xl text-vibe-lavender">Your magical adventure starts right here! I'm MAX, your adventure buddy.</p>
             <div className="mt-6 flex gap-3"><button className="btn-ghost" onClick={() => say(`Hey ${name}! Welcome to PING VIBE! Your magical adventure starts right here!`)}>🔊 Hear MAX</button><button className="btn-primary text-lg" onClick={next}>Hi MAX! 👋</button></div>

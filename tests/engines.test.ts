@@ -141,3 +141,15 @@ describe("offline writing evaluator", () => {
     expect(readingGrade("The cat is big. I like the cat.")).toBeLessThan(readingGrade("Meticulous contemplation of inevitable consequences characterises sustainable innovation."));
   });
 });
+
+import { pickClientIp } from "@/server/api";
+describe("rate-limit client IP (regression BUG-002)", () => {
+  const h = (o: Record<string, string>) => ({ get: (k: string) => o[k.toLowerCase()] ?? null });
+  it("ignores the spoofable left-most X-Forwarded-For entry", () => {
+    expect(pickClientIp(h({ "x-forwarded-for": "6.6.6.6, 203.0.113.9" }))).toBe("203.0.113.9");
+  });
+  it("prefers platform-set headers", () => {
+    expect(pickClientIp(h({ "x-vercel-forwarded-for": "198.51.100.7", "x-forwarded-for": "6.6.6.6" }))).toBe("198.51.100.7");
+    expect(pickClientIp(h({}))).toBe("local");
+  });
+});

@@ -99,8 +99,8 @@ export const KINGDOMS = [
   { slug: "word-wizards-arena", title: "Word Wizards Arena", emoji: "🏟️", art: "arena", description: "Play 10 word games with words you know.", href: "/world/arcade", unlock_level: 1 },
   { slug: "storytelling-castle", title: "Storytelling Castle", emoji: "🏰", art: "castle", description: "Write, imagine and build stories with STORY.", href: "/world/writing", unlock_level: 1 },
   { slug: "reading-ocean", title: "Reading Ocean", emoji: "🌊", art: "ocean", description: "Dive into illustrated stories and quizzes.", href: "/world/reading", unlock_level: 1 },
-  { slug: "grammar-galaxy", title: "Grammar Galaxy", emoji: "🪐", art: "galaxy", description: "Grammar missions with GRAMMY the wizard.", href: "/world/grammar", unlock_level: 2 },
-  { slug: "speaking-mountains", title: "Speaking Mountains", emoji: "🏔️", art: "mountains", description: "Speak, listen and shine with SPEAKY.", href: "/world/speaking", unlock_level: 3 },
+  { slug: "grammar-galaxy", title: "Grammar Galaxy", emoji: "🪐", art: "galaxy", description: "Grammar missions with GRAMMY the wizard.", href: "/world/grammar", unlock_level: 3 },
+  { slug: "speaking-mountains", title: "Speaking Mountains", emoji: "🏔️", art: "mountains", description: "Speak, listen and shine with SPEAKY.", href: "/world/speaking", unlock_level: 5 },
 ];
 
 /** Recurring events by calendar date (lunar festivals like Diwali/Holi/Eid are added yearly by admins). */

@@ -84,7 +84,7 @@ export function DrillRunner({ topic }: { topic: string }) {
         ))}</div>
         {picked !== null && <><p className="mt-3 text-sm text-vibe-aqua">💡 {e.hint}</p><button className="btn-primary mt-4" autoFocus onClick={async () => {
           setPicked(null);
-          if (i + 1 === ex.length) { try { const r = await api<{ award: AwardLike }>("/api/grammar/practice", { body: { topic, correct: correct, total: ex.length, seconds: timer() } }); setAward(r.award); } catch {} }
+          if (i + 1 === ex.length) { try { const r = await api<{ award: AwardLike }>("/api/grammar/practice", { body: { topic, correct: correct, total: ex.length, seconds: timer() } }); setAward(r.award); } catch { /* practice still counts as learning; the reward call is best-effort and retried next set */ } }
           setI(i + 1);
         }}>Next →</button></>}
       </div>

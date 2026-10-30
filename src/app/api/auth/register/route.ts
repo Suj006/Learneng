@@ -1,14 +1,14 @@
 import { body, clientIp, HttpError, ok, publicRoute } from "@/server/api";
 import { registerSchema } from "@/lib/validation";
 import { one } from "@/server/db";
-import { rateLimit } from "@/server/ratelimit";
+import { ipRateLimit, rateLimit } from "@/server/ratelimit";
 import { assertGrade, createPendingChild, registerParent, sendVerification } from "@/server/accounts";
 import { emailLayout, sendEmail } from "@/server/email";
 
 export const POST = publicRoute(async (req) => {
-  const ip = await clientIp();
-  if (!(await rateLimit(`register:${ip}`, 8, 3600))) throw new HttpError(429, "Too many sign-ups from this network. Please try again in an hour.");
+  // Validate first: typo-and-retry by a parent must not count towards the limit.
   const d = await body(req, registerSchema);
+  if (!(await ipRateLimit(`register:${await clientIp()}`, 8, 3600))) throw new HttpError(429, "Too many sign-ups from this network. Please try again in an hour.");
   const email = d.parentEmail.toLowerCase();
   await assertGrade(d.grade).catch(() => { throw new HttpError(400, "Please choose a grade."); });
 

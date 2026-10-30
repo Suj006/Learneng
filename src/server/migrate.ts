@@ -47,7 +47,7 @@ async function bootstrapAdmin(db: Queryable) {
 }
 
 /** Bump when seed content changes; seeding is additive (never overwrites admin edits). */
-export const SEED_VERSION = "2026-10-30.6";
+export const SEED_VERSION = "2026-10-30.8";
 
 const j = (v: unknown) => JSON.stringify(v);
 

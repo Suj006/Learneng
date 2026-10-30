@@ -19,13 +19,25 @@ async function assertSameOrigin(req: NextRequest) {
   if (!host || new URL(origin).host !== host) throw new HttpError(403, "Cross-site request blocked.");
 }
 
+const MAX_BODY = 64 * 1024;
+
 export async function body<T>(req: NextRequest, schema: ZodType<T>): Promise<T> {
   let raw: unknown;
-  try { raw = await req.json(); } catch { throw new HttpError(400, "Invalid request."); }
+  try {
+    const text = await req.text();
+    if (text.length > MAX_BODY) throw new HttpError(413, "That's too much at once! Please send something shorter.");
+    raw = JSON.parse(text);
+  } catch (e) {
+    if (e instanceof HttpError) throw e;
+    throw new HttpError(400, "Invalid request.");
+  }
   const parsed = schema.safeParse(raw);
   if (!parsed.success) {
     const first = parsed.error.issues[0];
-    throw new HttpError(400, first?.message && first.message !== "Required" ? first.message : `Please check “${first?.path.join(".") || "the form"}”.`);
+    const field = first?.path.join(".") || "the form";
+    // Custom messages are written for families; zod's technical defaults are replaced by a friendly one.
+    const technical = !first?.message || /^Invalid|^Too (small|big)|expected|received/i.test(first.message);
+    throw new HttpError(400, technical ? `Please check “${field}”.` : first.message);
   }
   return parsed.data;
 }
@@ -52,7 +64,18 @@ export const childRoute = (fn: Handler<ChildCtx>) => wrap(currentChild, fn);
 export const parentRoute = (fn: Handler<ParentCtx>) => wrap(currentParent, fn);
 export const adminRoute = (fn: Handler<{ id: string; email: string; name: string }>) => wrap(currentAdmin, fn);
 
+/**
+ * Client IP for rate limiting. Never trusts the client-controlled left-most X-Forwarded-For
+ * entry: prefers headers set by the platform (Vercel), else the right-most hop appended by
+ * the nearest trusted proxy.
+ */
 export async function clientIp() {
-  const h = await headers();
-  return (h.get("x-forwarded-for") ?? "").split(",")[0].trim() || h.get("x-real-ip") || "local";
+  return pickClientIp(await headers());
+}
+
+export function pickClientIp(h: Pick<Headers, "get">) {
+  const platform = h.get("x-vercel-forwarded-for") ?? h.get("x-real-ip");
+  if (platform) return platform.split(",")[0].trim();
+  const hops = (h.get("x-forwarded-for") ?? "").split(",").map((s) => s.trim()).filter(Boolean);
+  return hops[hops.length - 1] ?? "local";
 }

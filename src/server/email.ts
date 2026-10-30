@@ -27,8 +27,9 @@ export async function sendEmail(to: string, subject: string, html: string): Prom
 export function emailLayout(title: string, body: string) {
   return `<!doctype html><html><body style="margin:0;background:#17132C;font-family:Arial,sans-serif;color:#fff">
   <div style="max-width:560px;margin:0 auto;padding:32px 24px">
-    <div style="font-size:28px;font-weight:800;letter-spacing:1px;color:#FFD65A">PING VIBE</div>
-    <div style="font-size:13px;color:#EAE4FF;margin-bottom:24px">Your World. Your Words. Your Vibe.</div>
+    <div style="background:#ffffff;border-radius:20px;padding:10px;text-align:center;margin-bottom:20px">
+      <img src="${process.env.APP_URL ?? "http://localhost:3000"}/assets/brand/ping-vibe-logo.png" width="300" alt="PING VIBE — Your World. Your Words. Your Vibe." style="width:300px;max-width:100%;height:auto;display:inline-block" />
+    </div>
     <div style="background:#211B3F;border-radius:20px;padding:24px">
       <h1 style="font-size:22px;margin:0 0 12px">${title}</h1>${body}
     </div>

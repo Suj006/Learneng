@@ -68,7 +68,8 @@ export function LoginForm() {
         <button className="btn-primary w-full text-lg" disabled={busy}>{busy ? "Opening portal…" : tab === "child" ? "Enter PING VIBE 🚀" : "Log in"}</button>
       </form>
       <p className="mt-6 text-center text-sm text-vibe-lavender">New here? <Link href="/signup" className="font-bold text-vibe-aqua">Start your adventure</Link></p>
-      {tab === "child" && <p className="mt-2 text-center text-xs text-vibe-lavender/70">Forgot your PIN? Ask your parent — they can reset it from the parent dashboard.</p>}
+      {tab === "child" ? <p className="mt-2 text-center text-xs text-vibe-lavender/70">Forgot your PIN? Ask your parent — they can reset it from the parent dashboard.</p>
+        : <p className="mt-2 text-center text-sm"><Link href="/forgot-password" className="text-vibe-aqua">Forgot password?</Link></p>}
     </div>
   );
 }

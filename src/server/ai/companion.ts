@@ -8,7 +8,7 @@ import { one } from "../db";
 const PII = [
   /\b\d{10}\b/, /\+?\d[\d\s-]{8,}\d/, /[\w.+-]+@[\w-]+\.[\w.]+/, /\b(my|our) (home )?address\b/i, /\b(pin ?code|aadhaar|password)\b/i,
 ];
-const BLOCKED = /\b(kill|suicide|sex|porn|drugs?|gun|weapon|alcohol|beer|cigarette|naked)\b/i;
+const BLOCKED = /\b(kill(s|ed|ing)?|suicid\w*|sex\w*|porn\w*|drugs?|guns?|weapons?|alcohol\w*|beers?|cigarettes?|smok(e|ing)|naked|bombs?|blood)\b/i;
 
 export type CompanionReply = { reply: string; source: "claude" | "dictionary" | "safety" };
 

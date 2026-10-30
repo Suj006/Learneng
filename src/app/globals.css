@@ -39,7 +39,7 @@ body {
   .title-lg { @apply font-display text-3xl font-bold tracking-tight sm:text-4xl; }
   .title-md { @apply font-display text-xl font-bold sm:text-2xl; }
 
-  .text-gradient { @apply bg-gradient-to-r from-vibe-sun via-vibe-coral to-vibe-purple-light bg-clip-text text-transparent; }
+  .text-gradient { @apply bg-gradient-to-r from-vibe-magenta via-vibe-sun to-vibe-sky bg-clip-text text-transparent; }
   .text-gradient-aqua { @apply bg-gradient-to-r from-vibe-aqua via-vibe-lavender to-vibe-purple-light bg-clip-text text-transparent; }
 
   .row-scroll {

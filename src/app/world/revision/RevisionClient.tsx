@@ -40,7 +40,7 @@ export function RevisionClient() {
       {fb && <button className="btn-primary mt-4 w-full" autoFocus onClick={async () => {
         setFb(null);
         if (i + 1 < qs.length) return setI(i + 1);
-        try { const r = await api<{ award: AwardLike }>("/api/revision/complete", { body: { correct: score, total: qs.length, seconds: elapsed() } }); setAward(r.award); } catch {}
+        try { const r = await api<{ award: AwardLike }>("/api/revision/complete", { body: { correct: score, total: qs.length, seconds: elapsed() } }); setAward(r.award); } catch (e) { setErr((e as Error).message); }
         setFinished(true);
       }}>{i + 1 < qs.length ? "Next →" : "Finish"}</button>}
       <ErrorNote error={err} />

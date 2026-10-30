@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { requireChild } from "@/server/session";
 import { timeline } from "@/server/world";
-import { Logo } from "@/components/Logo";
+import { PingVibeLogo } from "@/components/PingVibeLogo";
 import { PrintButton } from "./PrintButton";
 
 export default async function Certificate({ params }: { params: Promise<{ kind: string }> }) {
@@ -12,7 +12,7 @@ export default async function Certificate({ params }: { params: Promise<{ kind: 
   return (
     <div className="mx-auto max-w-3xl">
       <div className="relative overflow-hidden rounded-[2rem] border-8 border-double border-vibe-sun bg-gradient-to-br from-[#FFF8E1] to-[#EAE4FF] p-10 text-center text-vibe-midnight print:border-4">
-        <div className="mx-auto w-fit rounded-2xl bg-vibe-midnight px-4 py-2"><Logo size="sm" /></div>
+        <div className="mx-auto w-fit"><PingVibeLogo width={260} fallback="md" /></div>
         <p className="mt-6 font-display text-lg uppercase tracking-[0.3em] text-vibe-purple">Certificate of Achievement</p>
         <p className="mt-6 text-lg">This certifies that Explorer</p>
         <p className="mt-2 font-display text-5xl font-bold">{child.display_name}</p>

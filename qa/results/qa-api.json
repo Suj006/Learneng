@@ -1,0 +1,1726 @@
+{
+  "generated_at": "2026-10-30T16:31:36.505Z",
+  "base": "http://localhost:3000",
+  "results": [
+    {
+      "id": "AUTH-001",
+      "module": "Registration",
+      "severity": "High",
+      "scenario": "Valid registration accepted",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTH-002",
+      "module": "Registration",
+      "severity": "High",
+      "scenario": "Empty child name rejected",
+      "status": "PASS",
+      "actual": "400 Please enter your child's first name."
+    },
+    {
+      "id": "AUTH-003",
+      "module": "Registration",
+      "severity": "High",
+      "scenario": "Whitespace-only child name rejected",
+      "status": "PASS",
+      "actual": "400 Please enter your child's first name."
+    },
+    {
+      "id": "AUTH-004",
+      "module": "Registration",
+      "severity": "High",
+      "scenario": "Invalid e-mail rejected",
+      "status": "PASS",
+      "actual": "400 Please enter a valid e-mail address."
+    },
+    {
+      "id": "AUTH-005",
+      "module": "Registration",
+      "severity": "High",
+      "scenario": "Missing birth month rejected",
+      "status": "PASS",
+      "actual": "400 Please check “birthMonth”."
+    },
+    {
+      "id": "AUTH-006",
+      "module": "Registration",
+      "severity": "High",
+      "scenario": "Invalid month (13) rejected",
+      "status": "PASS",
+      "actual": "400 Please check “birthMonth”."
+    },
+    {
+      "id": "AUTH-007",
+      "module": "Registration",
+      "severity": "High",
+      "scenario": "Birth year outside 5–13 age range rejected",
+      "status": "PASS",
+      "actual": "400 PING VIBE is for children aged 5–13."
+    },
+    {
+      "id": "AUTH-008",
+      "module": "Registration",
+      "severity": "High",
+      "scenario": "Missing grade rejected",
+      "status": "PASS",
+      "actual": "400 Please choose a grade."
+    },
+    {
+      "id": "AUTH-009",
+      "module": "Registration",
+      "severity": "High",
+      "scenario": "Unsupported grade rejected",
+      "status": "PASS",
+      "actual": "400 Please choose a grade."
+    },
+    {
+      "id": "AUTH-010",
+      "module": "Registration",
+      "severity": "High",
+      "scenario": "Extremely long name (41+ chars) rejected",
+      "status": "PASS",
+      "actual": "400 Name is too long."
+    },
+    {
+      "id": "AUTH-011",
+      "module": "Registration",
+      "severity": "High",
+      "scenario": "Special characters / markup in name rejected",
+      "status": "PASS",
+      "actual": "400 Use letters only for the name."
+    },
+    {
+      "id": "AUTH-012",
+      "module": "Registration",
+      "severity": "High",
+      "scenario": "Weak password rejected",
+      "status": "PASS",
+      "actual": "400 Password needs at least 8 characters."
+    },
+    {
+      "id": "AUTH-013",
+      "module": "Registration",
+      "severity": "High",
+      "scenario": "Missing parent declaration rejected",
+      "status": "PASS",
+      "actual": "400 Only a parent or legal guardian can create an account."
+    },
+    {
+      "id": "AUTH-014",
+      "module": "Registration",
+      "severity": "High",
+      "scenario": "Duplicate e-mail: same neutral response (no account enumeration)",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTH-015",
+      "module": "Registration",
+      "severity": "High",
+      "scenario": "Malformed JSON returns 400, not 500",
+      "status": "PASS",
+      "actual": "400"
+    },
+    {
+      "id": "AUTH-020",
+      "module": "E-mail verification",
+      "severity": "Critical",
+      "scenario": "Invalid verification token → expired page, no session",
+      "status": "PASS",
+      "actual": "http://localhost:3000/verify?expired=1"
+    },
+    {
+      "id": "AUTH-021",
+      "module": "E-mail verification",
+      "severity": "Critical",
+      "scenario": "Verification + consent creates an active Explorer",
+      "status": "PASS",
+      "actual": "turbofalcon303"
+    },
+    {
+      "id": "AUTH-022",
+      "module": "E-mail verification",
+      "severity": "Critical",
+      "scenario": "Verification e-mail generated with link",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTH-030",
+      "module": "Login & sessions",
+      "severity": "Critical",
+      "scenario": "Parent login with correct credentials",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTH-031",
+      "module": "Login & sessions",
+      "severity": "Critical",
+      "scenario": "Parent login with wrong password → 401",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTH-032",
+      "module": "Login & sessions",
+      "severity": "Critical",
+      "scenario": "Parent login with empty credentials → 400",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTH-033",
+      "module": "Login & sessions",
+      "severity": "Critical",
+      "scenario": "Unverified parent blocked with resend option",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTH-034",
+      "module": "Login & sessions",
+      "severity": "Critical",
+      "scenario": "Resend verification accepted",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTH-035",
+      "module": "Login & sessions",
+      "severity": "Critical",
+      "scenario": "Child login with wrong PIN → 401",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTH-036",
+      "module": "Login & sessions",
+      "severity": "Critical",
+      "scenario": "Child login non-6-digit PIN → 400",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTH-037",
+      "module": "Login & sessions",
+      "severity": "Critical",
+      "scenario": "Second browser session for same child works",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTH-038",
+      "module": "Login & sessions",
+      "severity": "Critical",
+      "scenario": "Logged-out session token is rejected server-side",
+      "status": "PASS",
+      "actual": "401"
+    },
+    {
+      "id": "AUTH-039",
+      "module": "Login & sessions",
+      "severity": "Critical",
+      "scenario": "First session still valid after other device logs out",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTH-040",
+      "module": "Login & sessions",
+      "severity": "Critical",
+      "scenario": "Child PIN brute force locked after 5 attempts (429)",
+      "status": "PASS",
+      "actual": "429"
+    },
+    {
+      "id": "AUTH-041",
+      "module": "Login & sessions",
+      "severity": "Critical",
+      "scenario": "Forgot password e-mails a reset link",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTH-042",
+      "module": "Login & sessions",
+      "severity": "Critical",
+      "scenario": "Forgot password for unknown e-mail: same neutral response",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTH-043",
+      "module": "Login & sessions",
+      "severity": "Critical",
+      "scenario": "Reset with weak password rejected",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTH-044",
+      "module": "Login & sessions",
+      "severity": "Critical",
+      "scenario": "Reset with valid token updates password",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTH-045",
+      "module": "Login & sessions",
+      "severity": "Critical",
+      "scenario": "Reset token cannot be reused",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTH-046",
+      "module": "Login & sessions",
+      "severity": "Critical",
+      "scenario": "Old parent sessions revoked after reset",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTH-047",
+      "module": "Login & sessions",
+      "severity": "Critical",
+      "scenario": "Login works with the new password",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTH-048",
+      "module": "Login & sessions",
+      "severity": "Critical",
+      "scenario": "Login with old password fails",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTHZ-001",
+      "module": "Authorisation & data isolation",
+      "severity": "Critical",
+      "scenario": "Unauthenticated → protected pages redirect to login",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTHZ-002",
+      "module": "Authorisation & data isolation",
+      "severity": "Critical",
+      "scenario": "Unauthenticated API → 401",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTHZ-003",
+      "module": "Authorisation & data isolation",
+      "severity": "Critical",
+      "scenario": "Child cannot open parent dashboard",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTHZ-004",
+      "module": "Authorisation & data isolation",
+      "severity": "Critical",
+      "scenario": "Child cannot call parent APIs",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTHZ-005",
+      "module": "Authorisation & data isolation",
+      "severity": "Critical",
+      "scenario": "Parent cannot open admin",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTHZ-006",
+      "module": "Authorisation & data isolation",
+      "severity": "Critical",
+      "scenario": "Parent cannot call admin APIs",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTHZ-007",
+      "module": "Authorisation & data isolation",
+      "severity": "Critical",
+      "scenario": "Child cannot call admin APIs",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTHZ-008",
+      "module": "Authorisation & data isolation",
+      "severity": "Critical",
+      "scenario": "Parent cannot view another family's child report",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTHZ-009",
+      "module": "Authorisation & data isolation",
+      "severity": "Critical",
+      "scenario": "Parent cannot export another family's child data",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTHZ-010",
+      "module": "Authorisation & data isolation",
+      "severity": "Critical",
+      "scenario": "Parent cannot delete another family's child",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTHZ-011",
+      "module": "Authorisation & data isolation",
+      "severity": "Critical",
+      "scenario": "Parent cannot reset another family's child PIN",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTHZ-012",
+      "module": "Authorisation & data isolation",
+      "severity": "Critical",
+      "scenario": "Parent cannot launch another family's child session",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTHZ-013",
+      "module": "Authorisation & data isolation",
+      "severity": "Critical",
+      "scenario": "Parent cannot send family challenge to another child",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTHZ-014",
+      "module": "Authorisation & data isolation",
+      "severity": "Critical",
+      "scenario": "Child A cannot read child B's writing page (not-found, no content leak)",
+      "status": "PASS",
+      "actual": "307"
+    },
+    {
+      "id": "AUTHZ-015",
+      "module": "Authorisation & data isolation",
+      "severity": "Critical",
+      "scenario": "Child A cannot overwrite child B's draft",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTHZ-016",
+      "module": "Authorisation & data isolation",
+      "severity": "Critical",
+      "scenario": "Child A cannot submit child B's writing",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTHZ-017",
+      "module": "Authorisation & data isolation",
+      "severity": "Critical",
+      "scenario": "Child A cannot submit child B's challenge attempt",
+      "status": "PASS",
+      "actual": "400 Challenge not found."
+    },
+    {
+      "id": "AUTHZ-018",
+      "module": "Authorisation & data isolation",
+      "severity": "Critical",
+      "scenario": "Child cannot answer a word outside their own quest",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTHZ-019",
+      "module": "Authorisation & data isolation",
+      "severity": "Critical",
+      "scenario": "Child cannot revise a word they haven't discovered",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "AUTHZ-020",
+      "module": "Authorisation & data isolation",
+      "severity": "Critical",
+      "scenario": "Answer keys never sent to the client (challenge payload)",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-001",
+      "module": "Onboarding",
+      "severity": "High",
+      "scenario": "First login redirects to play-based welcome (no assessment)",
+      "status": "PASS",
+      "actual": "/world/welcome"
+    },
+    {
+      "id": "LRN-002",
+      "module": "Onboarding",
+      "severity": "High",
+      "scenario": "Welcome grants gift and routes to first quest",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-003",
+      "module": "Onboarding",
+      "severity": "High",
+      "scenario": "Welcome gift cannot be claimed twice",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-004",
+      "module": "Onboarding",
+      "severity": "High",
+      "scenario": "Daily Adventure renders after onboarding",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-010",
+      "module": "Daily Word Quest",
+      "severity": "High",
+      "scenario": "10 new words generated",
+      "status": "PASS",
+      "actual": "10"
+    },
+    {
+      "id": "LRN-011",
+      "module": "Daily Word Quest",
+      "severity": "High",
+      "scenario": "Words match grade band (G3 → band 3)",
+      "status": "PASS",
+      "actual": "3,3,3,3,3,3,3,3,3,3"
+    },
+    {
+      "id": "LRN-012",
+      "module": "Daily Word Quest",
+      "severity": "High",
+      "scenario": "Each word has meaning, phonetic, example, emoji",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-013",
+      "module": "Daily Word Quest",
+      "severity": "High",
+      "scenario": "Five challenge rounds generated",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-014",
+      "module": "Daily Word Quest",
+      "severity": "High",
+      "scenario": "Quest is stable on reload (same 10 words — resume works)",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-015",
+      "module": "Daily Word Quest",
+      "severity": "High",
+      "scenario": "Completing before answering is refused",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-016",
+      "module": "Daily Word Quest",
+      "severity": "High",
+      "scenario": "Mid-quest close & reopen: answered questions are remembered",
+      "status": "PASS",
+      "actual": "5"
+    },
+    {
+      "id": "LRN-017",
+      "module": "Daily Word Quest",
+      "severity": "High",
+      "scenario": "Server validates correct answers",
+      "status": "PASS",
+      "actual": "11"
+    },
+    {
+      "id": "LRN-018",
+      "module": "Daily Word Quest",
+      "severity": "High",
+      "scenario": "Re-answering does not change score (first attempt counts)",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-019",
+      "module": "Daily Word Quest",
+      "severity": "High",
+      "scenario": "Quest completion awards XP scaled by accuracy",
+      "status": "PASS",
+      "actual": "100"
+    },
+    {
+      "id": "LRN-020",
+      "module": "Daily Word Quest",
+      "severity": "High",
+      "scenario": "Quest XP not duplicated",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-021",
+      "module": "Daily Word Quest",
+      "severity": "High",
+      "scenario": "Vocabulary history: 10 words discovered, none mastered on day 1",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-022",
+      "module": "Daily Word Quest",
+      "severity": "High",
+      "scenario": "Revision set available from discovered words",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-023",
+      "module": "Daily Word Quest",
+      "severity": "High",
+      "scenario": "Spaced repetition: repeated same-day correct answers do NOT grant mastery",
+      "status": "PASS",
+      "actual": "box=1 status=practising"
+    },
+    {
+      "id": "LRN-030",
+      "module": "Creative Writing",
+      "severity": "High",
+      "scenario": "Writing page offers topics",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-031",
+      "module": "Creative Writing",
+      "severity": "High",
+      "scenario": "Empty draft save allowed but submit refused",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-032",
+      "module": "Creative Writing",
+      "severity": "High",
+      "scenario": "Over-long submission (>6000 chars) rejected",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-033",
+      "module": "Creative Writing",
+      "severity": "High",
+      "scenario": "Draft save then update same draft",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-034",
+      "module": "Creative Writing",
+      "severity": "High",
+      "scenario": "Submission evaluated with score, corrections and encouragement",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-035",
+      "module": "Creative Writing",
+      "severity": "High",
+      "scenario": "Original vs corrected sentences provided",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-036",
+      "module": "Creative Writing",
+      "severity": "High",
+      "scenario": "Resubmitting an evaluated piece is refused",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-037",
+      "module": "Creative Writing",
+      "severity": "High",
+      "scenario": "Claude writing evaluation (real AI)",
+      "status": "BLOCKED",
+      "actual": "BLOCKED: ANTHROPIC_API_KEY not configured — offline evaluator used and labelled"
+    },
+    {
+      "id": "LRN-038",
+      "module": "Creative Writing",
+      "severity": "High",
+      "scenario": "Draft cannot be edited after evaluation",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-040",
+      "module": "Grammar Galaxy",
+      "severity": "High",
+      "scenario": "Grammar mission scored server-side (all correct = 100%)",
+      "status": "PASS",
+      "actual": "100"
+    },
+    {
+      "id": "LRN-041",
+      "module": "Grammar Galaxy",
+      "severity": "High",
+      "scenario": "Duplicate exercise indices rejected",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-042",
+      "module": "Grammar Galaxy",
+      "severity": "High",
+      "scenario": "Out-of-range exercise index rejected",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-043",
+      "module": "Grammar Galaxy",
+      "severity": "High",
+      "scenario": "Unknown grammar topic → 404",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-044-articles",
+      "module": "Grammar Galaxy",
+      "severity": "High",
+      "scenario": "Endless drill \"articles\" generates valid exercises",
+      "status": "PASS",
+      "actual": "6"
+    },
+    {
+      "id": "LRN-044-nouns",
+      "module": "Grammar Galaxy",
+      "severity": "High",
+      "scenario": "Endless drill \"nouns\" generates valid exercises",
+      "status": "PASS",
+      "actual": "6"
+    },
+    {
+      "id": "LRN-044-verbs",
+      "module": "Grammar Galaxy",
+      "severity": "High",
+      "scenario": "Endless drill \"verbs\" generates valid exercises",
+      "status": "PASS",
+      "actual": "6"
+    },
+    {
+      "id": "LRN-044-adjectives",
+      "module": "Grammar Galaxy",
+      "severity": "High",
+      "scenario": "Endless drill \"adjectives\" generates valid exercises",
+      "status": "PASS",
+      "actual": "6"
+    },
+    {
+      "id": "LRN-044-opposites",
+      "module": "Grammar Galaxy",
+      "severity": "High",
+      "scenario": "Endless drill \"opposites\" generates valid exercises",
+      "status": "PASS",
+      "actual": "6"
+    },
+    {
+      "id": "LRN-044-synonyms",
+      "module": "Grammar Galaxy",
+      "severity": "High",
+      "scenario": "Endless drill \"synonyms\" generates valid exercises",
+      "status": "PASS",
+      "actual": "6"
+    },
+    {
+      "id": "LRN-044-sentence",
+      "module": "Grammar Galaxy",
+      "severity": "High",
+      "scenario": "Endless drill \"sentence\" generates valid exercises",
+      "status": "PASS",
+      "actual": "6"
+    },
+    {
+      "id": "LRN-045-pronouns",
+      "module": "Grammar Galaxy",
+      "severity": "High",
+      "scenario": "Grammar topic page \"pronouns\" loads",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-045-verbs",
+      "module": "Grammar Galaxy",
+      "severity": "High",
+      "scenario": "Grammar topic page \"verbs\" loads",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-045-adjectives",
+      "module": "Grammar Galaxy",
+      "severity": "High",
+      "scenario": "Grammar topic page \"adjectives\" loads",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-045-articles",
+      "module": "Grammar Galaxy",
+      "severity": "High",
+      "scenario": "Grammar topic page \"articles\" loads",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-045-prepositions",
+      "module": "Grammar Galaxy",
+      "severity": "High",
+      "scenario": "Grammar topic page \"prepositions\" loads",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-045-punctuation",
+      "module": "Grammar Galaxy",
+      "severity": "High",
+      "scenario": "Grammar topic page \"punctuation\" loads",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-045-sentence-construction",
+      "module": "Grammar Galaxy",
+      "severity": "High",
+      "scenario": "Grammar topic page \"sentence-construction\" loads",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-045-adverbs",
+      "module": "Grammar Galaxy",
+      "severity": "High",
+      "scenario": "Grammar topic page \"adverbs\" loads",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-045-conjunctions",
+      "module": "Grammar Galaxy",
+      "severity": "High",
+      "scenario": "Grammar topic page \"conjunctions\" loads",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-045-tenses",
+      "module": "Grammar Galaxy",
+      "severity": "High",
+      "scenario": "Grammar topic page \"tenses\" loads",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-045-subject-verb-agreement",
+      "module": "Grammar Galaxy",
+      "severity": "High",
+      "scenario": "Grammar topic page \"subject-verb-agreement\" loads",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-045-active-passive",
+      "module": "Grammar Galaxy",
+      "severity": "High",
+      "scenario": "Grammar topic page \"active-passive\" loads",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-045-direct-indirect",
+      "module": "Grammar Galaxy",
+      "severity": "High",
+      "scenario": "Grammar topic page \"direct-indirect\" loads",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-050",
+      "module": "Reading Adventures",
+      "severity": "High",
+      "scenario": "Reading quiz scored (all correct)",
+      "status": "PASS",
+      "actual": "100"
+    },
+    {
+      "id": "LRN-051",
+      "module": "Reading Adventures",
+      "severity": "High",
+      "scenario": "Wrong answer count length rejected",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-052",
+      "module": "Reading Adventures",
+      "severity": "High",
+      "scenario": "Reward-locked story redirects to shop (story text not sent)",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-053",
+      "module": "Reading Adventures",
+      "severity": "High",
+      "scenario": "Reading XP once per story (no farming)",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-060",
+      "module": "Speaking & Listening",
+      "severity": "High",
+      "scenario": "Speaking session recorded with accuracy only (no audio)",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-061",
+      "module": "Speaking & Listening",
+      "severity": "High",
+      "scenario": "Unsupported-browser fallback (accuracy=null) accepted",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-062",
+      "module": "Speaking & Listening",
+      "severity": "High",
+      "scenario": "Unknown speaking scenario rejected",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-063",
+      "module": "Speaking & Listening",
+      "severity": "High",
+      "scenario": "Listening Lab generates 8 audio questions",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-064",
+      "module": "Speaking & Listening",
+      "severity": "High",
+      "scenario": "Listening scored server-side",
+      "status": "PASS",
+      "actual": "4"
+    },
+    {
+      "id": "LRN-070-word-match",
+      "module": "Word Games Arcade",
+      "severity": "High",
+      "scenario": "Game page \"word-match\" loads",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-070-spell-master",
+      "module": "Word Games Arcade",
+      "severity": "High",
+      "scenario": "Game page \"spell-master\" loads",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-070-missing-word",
+      "module": "Word Games Arcade",
+      "severity": "High",
+      "scenario": "Game page \"missing-word\" loads",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-070-picture-vocabulary",
+      "module": "Word Games Arcade",
+      "severity": "High",
+      "scenario": "Game page \"picture-vocabulary\" loads",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-070-word-race",
+      "module": "Word Games Arcade",
+      "severity": "High",
+      "scenario": "Game page \"word-race\" loads",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-070-sentence-builder",
+      "module": "Word Games Arcade",
+      "severity": "High",
+      "scenario": "Game page \"sentence-builder\" loads",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-070-word-detective",
+      "module": "Word Games Arcade",
+      "severity": "High",
+      "scenario": "Game page \"word-detective\" loads",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-070-word-hunter",
+      "module": "Word Games Arcade",
+      "severity": "High",
+      "scenario": "Game page \"word-hunter\" loads",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-070-treasure-hunt",
+      "module": "Word Games Arcade",
+      "severity": "High",
+      "scenario": "Game page \"treasure-hunt\" loads",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-070-boss-battle",
+      "module": "Word Games Arcade",
+      "severity": "High",
+      "scenario": "Game page \"boss-battle\" loads",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-071",
+      "module": "Word Games Arcade",
+      "severity": "High",
+      "scenario": "Game result awards XP and best score",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-072",
+      "module": "Word Games Arcade",
+      "severity": "High",
+      "scenario": "Inflated game score is clamped to max",
+      "status": "PASS",
+      "actual": "5"
+    },
+    {
+      "id": "LRN-073",
+      "module": "Word Games Arcade",
+      "severity": "High",
+      "scenario": "Unknown game rejected",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-074",
+      "module": "Word Games Arcade",
+      "severity": "High",
+      "scenario": "Client-scored games never grant mastery",
+      "status": "PASS",
+      "actual": "0"
+    },
+    {
+      "id": "LRN-080",
+      "module": "AI companion",
+      "severity": "Critical",
+      "scenario": "LEXI answers vocabulary question",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-081",
+      "module": "AI companion",
+      "severity": "Critical",
+      "scenario": "Phone number blocked",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-082",
+      "module": "AI companion",
+      "severity": "Critical",
+      "scenario": "E-mail address blocked",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-083",
+      "module": "AI companion",
+      "severity": "Critical",
+      "scenario": "Unsafe topic redirected to a trusted adult",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LRN-084",
+      "module": "AI companion",
+      "severity": "Critical",
+      "scenario": "Real Claude companion response",
+      "status": "BLOCKED",
+      "actual": "BLOCKED: ANTHROPIC_API_KEY not configured — dictionary mode verified instead"
+    },
+    {
+      "id": "GAM-001",
+      "module": "XP, levels & economy",
+      "severity": "High",
+      "scenario": "Profile shows Level 2 after ~250 XP",
+      "status": "PASS",
+      "actual": "Level 7"
+    },
+    {
+      "id": "GAM-002",
+      "module": "XP, levels & economy",
+      "severity": "High",
+      "scenario": "Insufficient coins / level → friendly refusal",
+      "status": "PASS",
+      "actual": "Reach Level 8 to unlock this!"
+    },
+    {
+      "id": "GAM-003",
+      "module": "XP, levels & economy",
+      "severity": "High",
+      "scenario": "Redeem affordable item deducts coins",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "GAM-004",
+      "module": "XP, levels & economy",
+      "severity": "High",
+      "scenario": "Cannot buy the same item twice",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "GAM-005",
+      "module": "XP, levels & economy",
+      "severity": "High",
+      "scenario": "Level-exclusive reward cannot be bought",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "GAM-006",
+      "module": "XP, levels & economy",
+      "severity": "High",
+      "scenario": "Crystal item refused without crystals",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "GAM-007",
+      "module": "XP, levels & economy",
+      "severity": "High",
+      "scenario": "Invalid reward slug → 404",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "GAM-008",
+      "module": "XP, levels & economy",
+      "severity": "High",
+      "scenario": "Avatar saved with owned items",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "GAM-009",
+      "module": "XP, levels & economy",
+      "severity": "High",
+      "scenario": "Avatar rejects un-owned item",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "GAM-010",
+      "module": "XP, levels & economy",
+      "severity": "High",
+      "scenario": "Avatar rejects item in wrong slot",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "GAM-011",
+      "module": "XP, levels & economy",
+      "severity": "High",
+      "scenario": "Avatar rejects off-palette colour",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "GAM-012",
+      "module": "XP, levels & economy",
+      "severity": "High",
+      "scenario": "Avatar persists after reload",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "GAM-020",
+      "module": "Missions",
+      "severity": "High",
+      "scenario": "Completed daily mission claimable",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "GAM-021",
+      "module": "Missions",
+      "severity": "High",
+      "scenario": "Mission reward idempotent (claim twice)",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "GAM-022",
+      "module": "Missions",
+      "severity": "High",
+      "scenario": "Unfinished mission cannot be claimed",
+      "status": "PASS",
+      "actual": "That mission isn't available right now."
+    },
+    {
+      "id": "GAM-023",
+      "module": "Missions",
+      "severity": "High",
+      "scenario": "Unknown mission refused",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "GAM-030",
+      "module": "Bosses, map & world",
+      "severity": "High",
+      "scenario": "Boss above level is locked",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "GAM-031",
+      "module": "Bosses, map & world",
+      "severity": "High",
+      "scenario": "Boss battle created (easy = 6 rounds)",
+      "status": "PASS",
+      "actual": "6"
+    },
+    {
+      "id": "GAM-032",
+      "module": "Bosses, map & world",
+      "severity": "High",
+      "scenario": "Losing a boss gives practice XP only, no penalty",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "GAM-033",
+      "module": "Bosses, map & world",
+      "severity": "High",
+      "scenario": "Locked treasure cannot be claimed",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "GAM-034",
+      "module": "Bosses, map & world",
+      "severity": "High",
+      "scenario": "Non-treasure location cannot be claimed",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "GAM-035",
+      "module": "Bosses, map & world",
+      "severity": "High",
+      "scenario": "Pet choose refused when not unlocked",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "GAM-036",
+      "module": "Bosses, map & world",
+      "severity": "High",
+      "scenario": "First pet (Hoot, 10 words) unlocked from learning",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "GAM-037",
+      "module": "Bosses, map & world",
+      "severity": "High",
+      "scenario": "Unlock notifications created (pets/milestones)",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "CON-001",
+      "module": "Concurrency & transactions",
+      "severity": "Critical",
+      "scenario": "8 parallel quest completions → exactly one XP award",
+      "status": "PASS",
+      "actual": "[91,0,0,0,0,0,0,0]"
+    },
+    {
+      "id": "CON-002",
+      "module": "Concurrency & transactions",
+      "severity": "Critical",
+      "scenario": "6 parallel mission claims → one reward",
+      "status": "PASS",
+      "actual": "[30,0,0,0,0,0]"
+    },
+    {
+      "id": "CON-003",
+      "module": "Concurrency & transactions",
+      "severity": "Critical",
+      "scenario": "5 parallel purchases of same item → one success, no double spend",
+      "status": "PASS",
+      "actual": "200,400,400,400,400"
+    },
+    {
+      "id": "CON-004",
+      "module": "Concurrency & transactions",
+      "severity": "Critical",
+      "scenario": "5 parallel Surprise Box opens → one award",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "CON-005",
+      "module": "Concurrency & transactions",
+      "severity": "Critical",
+      "scenario": "3 children start quests simultaneously, each gets own words",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "GRD-PRE_KG",
+      "module": "Grade journeys",
+      "severity": "High",
+      "scenario": "PRE_KG child receives band-1 words",
+      "status": "PASS",
+      "actual": "1111111111"
+    },
+    {
+      "id": "GRD-UKG",
+      "module": "Grade journeys",
+      "severity": "High",
+      "scenario": "UKG child receives band-1 words",
+      "status": "PASS",
+      "actual": "1111111111"
+    },
+    {
+      "id": "GRD-G7",
+      "module": "Grade journeys",
+      "severity": "High",
+      "scenario": "G7 child receives band-4 words",
+      "status": "PASS",
+      "actual": "4444444444"
+    },
+    {
+      "id": "GRD-G1",
+      "module": "Grade journeys",
+      "severity": "High",
+      "scenario": "Grade 1 child receives band-2 words",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "GRD-WRITE-PRE_KG",
+      "module": "Grade journeys",
+      "severity": "High",
+      "scenario": "PRE_KG writing topics are age-graded",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "GRD-WRITE-G7",
+      "module": "Grade journeys",
+      "severity": "High",
+      "scenario": "G7 writing topics are age-graded",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "PAR-001",
+      "module": "Parent dashboard",
+      "severity": "High",
+      "scenario": "Dashboard shows the child's real data (words introduced = 10)",
+      "status": "PASS",
+      "actual": "200"
+    },
+    {
+      "id": "PAR-002",
+      "module": "Parent dashboard",
+      "severity": "High",
+      "scenario": "Child report renders observations disclaimer",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "PAR-003",
+      "module": "Parent dashboard",
+      "severity": "High",
+      "scenario": "Settings save",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "PAR-004",
+      "module": "Parent dashboard",
+      "severity": "High",
+      "scenario": "Companion disabled by parent is enforced",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "PAR-005",
+      "module": "Parent dashboard",
+      "severity": "High",
+      "scenario": "Family challenge created from child's words",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "PAR-006",
+      "module": "Parent dashboard",
+      "severity": "High",
+      "scenario": "Family challenge rejects undiscovered words",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "PAR-007",
+      "module": "Parent dashboard",
+      "severity": "High",
+      "scenario": "PIN reset signs the child out",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "PAR-008",
+      "module": "Parent dashboard",
+      "severity": "High",
+      "scenario": "Regression BUG-006: after PIN reset the locked-out child can log in; progress intact",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "PAR-009",
+      "module": "Parent dashboard",
+      "severity": "High",
+      "scenario": "DPDP export contains learning data, no PIN/password hashes",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "PAR-010",
+      "module": "Parent dashboard",
+      "severity": "High",
+      "scenario": "Parent adds a second child (pending consent)",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "PAR-011",
+      "module": "Parent dashboard",
+      "severity": "High",
+      "scenario": "Deleting a child erases data and ends their sessions",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "ADM-001",
+      "module": "Administration",
+      "severity": "High",
+      "scenario": "Admin login",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "ADM-002",
+      "module": "Administration",
+      "severity": "High",
+      "scenario": "Admin wrong password → 401",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "ADM-003-admin",
+      "module": "Administration",
+      "severity": "High",
+      "scenario": "Admin page /admin renders",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "ADM-003-admin-content",
+      "module": "Administration",
+      "severity": "High",
+      "scenario": "Admin page /admin/content renders",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "ADM-003-admin-economy",
+      "module": "Administration",
+      "severity": "High",
+      "scenario": "Admin page /admin/economy renders",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "ADM-003-admin-events",
+      "module": "Administration",
+      "severity": "High",
+      "scenario": "Admin page /admin/events renders",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "ADM-003-admin-vocabulary",
+      "module": "Administration",
+      "severity": "High",
+      "scenario": "Admin page /admin/vocabulary renders",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "ADM-003-admin-grades",
+      "module": "Administration",
+      "severity": "High",
+      "scenario": "Admin page /admin/grades renders",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "ADM-010",
+      "module": "Administration",
+      "severity": "High",
+      "scenario": "Manual vocabulary passes validation gates → review queue",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "ADM-011",
+      "module": "Administration",
+      "severity": "High",
+      "scenario": "Unsafe/low-quality word fails safety, mechanics & difficulty gates",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "ADM-012",
+      "module": "Administration",
+      "severity": "High",
+      "scenario": "Pending item visible in review queue",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "ADM-013",
+      "module": "Administration",
+      "severity": "High",
+      "scenario": "Approve & publish → word live in vocabulary master",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "ADM-014",
+      "module": "Administration",
+      "severity": "High",
+      "scenario": "Gen endpoint without AI key returns clear error",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "ADM-015",
+      "module": "Administration",
+      "severity": "High",
+      "scenario": "XP config update persists",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "ADM-016",
+      "module": "Administration",
+      "severity": "High",
+      "scenario": "Invalid XP config rejected",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "ADM-017",
+      "module": "Administration",
+      "severity": "High",
+      "scenario": "Daily XP ceiling update",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "ADM-018",
+      "module": "Administration",
+      "severity": "High",
+      "scenario": "Append levels beyond 250 (unlimited progression)",
+      "status": "PASS",
+      "actual": "255"
+    },
+    {
+      "id": "ADM-019",
+      "module": "Administration",
+      "severity": "High",
+      "scenario": "Create event (mission + card auto-created)",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "ADM-020",
+      "module": "Administration",
+      "severity": "High",
+      "scenario": "Invalid event slug rejected",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "ADM-021",
+      "module": "Administration",
+      "severity": "High",
+      "scenario": "Add new grade generates its 365-day plan",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "ADM-022",
+      "module": "Administration",
+      "severity": "High",
+      "scenario": "Admin vocabulary edit validates input",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "SEC-001",
+      "module": "Security",
+      "severity": "Critical",
+      "scenario": "GET with foreign origin harmless (read-only)",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "SEC-002",
+      "module": "Security",
+      "severity": "Critical",
+      "scenario": "Cross-site POST blocked (CSRF origin check)",
+      "status": "PASS",
+      "actual": "403"
+    },
+    {
+      "id": "SEC-003",
+      "module": "Security",
+      "severity": "Critical",
+      "scenario": "SQL injection in username has no effect",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "SEC-004",
+      "module": "Security",
+      "severity": "Critical",
+      "scenario": "SQL injection in admin search is parameterised",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "SEC-005",
+      "module": "Security",
+      "severity": "Critical",
+      "scenario": "Stored XSS in writing is escaped on render",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "SEC-006",
+      "module": "Security",
+      "severity": "Critical",
+      "scenario": "Oversized request body rejected (413)",
+      "status": "PASS",
+      "actual": "413"
+    },
+    {
+      "id": "SEC-007",
+      "module": "Security",
+      "severity": "Critical",
+      "scenario": "Cron endpoints require secret",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "SEC-008",
+      "module": "Security",
+      "severity": "Critical",
+      "scenario": "Security headers present",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "SEC-009",
+      "module": "Security",
+      "severity": "Critical",
+      "scenario": "No secrets in page HTML",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "SEC-010",
+      "module": "Security",
+      "severity": "Critical",
+      "scenario": "Session cookie is HttpOnly + SameSite",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "SEC-011",
+      "module": "Security",
+      "severity": "Critical",
+      "scenario": "Explorer username contains no real name",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "SEC-012",
+      "module": "Security",
+      "severity": "Critical",
+      "scenario": "Regression BUG-001: invalid attempts don't consume the sign-up limit",
+      "status": "PASS",
+      "actual": ""
+    }
+  ]
+}

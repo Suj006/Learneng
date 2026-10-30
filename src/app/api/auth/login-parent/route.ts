@@ -2,13 +2,13 @@ import { z } from "zod";
 import { body, clientIp, HttpError, ok, publicRoute } from "@/server/api";
 import { one } from "@/server/db";
 import { verifyPassword } from "@/server/crypto";
-import { rateLimit, resetRateLimit } from "@/server/ratelimit";
+import { ipRateLimit, rateLimit, resetRateLimit } from "@/server/ratelimit";
 import { createSession } from "@/server/session";
 
 export const POST = publicRoute(async (req) => {
   const { email, password } = await body(req, z.object({ email: z.string().trim().email("Enter a valid e-mail."), password: z.string().min(1).max(128) }));
   const bucket = `login-parent:${email.toLowerCase()}`;
-  if (!(await rateLimit(bucket, 8, 900)) || !(await rateLimit(`login-ip:${await clientIp()}`, 40, 900)))
+  if (!(await rateLimit(bucket, 8, 900)) || !(await ipRateLimit(`login-ip:${await clientIp()}`, 40, 900)))
     throw new HttpError(429, "Too many attempts. Please wait 15 minutes and try again.");
   const p = await one<{ id: string; password_hash: string; email_verified_at: string | null; consent_given_at: string | null }>(
     `select id, password_hash, email_verified_at, consent_given_at from parents where lower(email) = lower($1)`, [email]);
