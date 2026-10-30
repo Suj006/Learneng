@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-30T16:31:36.505Z",
-  "base": "http://localhost:3000",
+  "generated_at": "2026-10-30T17:16:05.909Z",
+  "base": "http://localhost:3002",
   "results": [
     {
       "id": "AUTH-001",
@@ -128,7 +128,7 @@
       "severity": "Critical",
       "scenario": "Invalid verification token → expired page, no session",
       "status": "PASS",
-      "actual": "http://localhost:3000/verify?expired=1"
+      "actual": "http://localhost:3002/verify?expired=1"
     },
     {
       "id": "AUTH-021",
@@ -136,7 +136,7 @@
       "severity": "Critical",
       "scenario": "Verification + consent creates an active Explorer",
       "status": "PASS",
-      "actual": "turbofalcon303"
+      "actual": "cometdragon166"
     },
     {
       "id": "AUTH-022",
@@ -1208,7 +1208,7 @@
       "severity": "High",
       "scenario": "Unfinished mission cannot be claimed",
       "status": "PASS",
-      "actual": "That mission isn't available right now."
+      "actual": "Keep going — this mission isn't finished yet!"
     },
     {
       "id": "GAM-023",

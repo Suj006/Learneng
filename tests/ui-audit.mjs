@@ -20,7 +20,6 @@ const t = (id, module, severity, scenario, cond, actual = "") => {
   R.push({ id, module, severity, scenario, status, actual: String(actual).slice(0, 300) });
   console.log(`${status === "PASS" ? "✅" : status === "BLOCKED" ? "⛔" : "❌"} ${id} ${scenario}${status !== "PASS" ? ` — ${String(actual).slice(0, 200)}` : ""}`);
 };
-const KNOWN_MISSING_LOGO = "/assets/brand/ping-vibe-logo.png";
 const VIEWPORTS = [[320, 640], [375, 812], [430, 932], [768, 1024], [1024, 768], [1366, 768], [1440, 900], [1920, 1080]];
 const BASELINE_VPS = new Set(["375", "768", "1440"]);
 // Pages whose content is intentionally random/fresh (today's words, rotating topics, generated grids/questions,
@@ -128,8 +127,8 @@ async function sweep(label, pages, cookieStr) {
       const errs = [];
       page.on("console", (m) => { if (m.type() === "error" && !m.text().includes("404") ) errs.push(m.text()); });
       page.on("pageerror", (e) => errs.push(e.message));
-      page.on("requestfailed", (r) => { if (!r.url().includes(KNOWN_MISSING_LOGO) && !r.url().includes("_next/webpack-hmr") && !r.url().includes("_rsc=")) errs.push(`failed: ${r.url()}`); });
-      page.on("response", (r) => { if (r.status() >= 400 && !r.url().includes(KNOWN_MISSING_LOGO) && !r.url().includes("favicon")) errs.push(`${r.status()} ${r.url()}`); });
+      page.on("requestfailed", (r) => { if (!r.url().includes("_next/webpack-hmr") && !r.url().includes("_rsc=")) errs.push(`failed: ${r.url()}`); });
+      page.on("response", (r) => { if (r.status() >= 400 && !r.url().includes("favicon")) errs.push(`${r.status()} ${r.url()}`); });
       const res = await page.goto(BASE + p, { waitUntil: "networkidle" }).catch((e) => ({ status: () => 0, e }));
       await page.waitForTimeout(150).catch(() => {});
       const m = await page.evaluate(() => {
@@ -141,7 +140,7 @@ async function sweep(label, pages, cookieStr) {
           if (!r.width || st.visibility === "hidden" || el.closest(".row-scroll") || el.closest("[aria-hidden=true]") || el.closest(".sr-only")) return false;
           return r.right > vw + 2 || r.left < -2;
         }).map((el) => (el.textContent || el.getAttribute("aria-label") || el.tagName).trim().slice(0, 30));
-        const broken = [...document.images].filter((i) => i.complete && i.naturalWidth === 0 && !i.src.includes("ping-vibe-logo")).map((i) => i.src);
+        const broken = [...document.images].filter((i) => i.complete && i.naturalWidth === 0).map((i) => i.src);
         const small = [...document.querySelectorAll("button, a.btn, a[class*=btn]")].filter((b) => { const r = b.getBoundingClientRect(); return r.width > 0 && r.height > 0 && r.height < 32; }).length;
         return { over, clipped, broken, small };
       });
@@ -151,6 +150,9 @@ async function sweep(label, pages, cookieStr) {
       t(`CON-${id}`, "Console", "Medium", `${label} ${p} @${vp[0]}px: no console/network errors`, errs.length === 0, errs.slice(0, 3).join(" | "));
       if (BASELINE_VPS.has(String(vp[0]))) {
         const name = `${label}${p.replace(/[^a-z0-9]+/gi, "_")}_${vp[0]}.jpg`;
+        // let entrance fades (opacity still animates under reduced motion) settle before capture
+        await page.waitForTimeout(1200).catch(() => {});
+        await page.evaluate(() => Promise.race([Promise.all(document.getAnimations().map((a) => a.finished)), new Promise((r) => setTimeout(r, 1500))])).catch(() => {});
         await page.screenshot({ path: `${SHOTS}/${name}`, type: "jpeg", quality: 60 });
         const base = `${BASELINE}/${name}`;
         if (UPDATE || !fs.existsSync(base)) fs.copyFileSync(`${SHOTS}/${name}`, base);

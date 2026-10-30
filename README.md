@@ -21,7 +21,9 @@ PING VIBE is a gamified English-learning universe for children aged 5–13 (Pre-
 9. [Database](#database)
 10. [Deployment (Vercel + Supabase)](#deployment-vercel--supabase)
 11. [Testing](#testing)
-12. [Known limitations and next steps](#known-limitations-and-next-steps)
+12. [Brand assets (official logo)](#brand-assets-official-logo)
+13. [Quality assurance](#quality-assurance)
+14. [Known limitations and next steps](#known-limitations-and-next-steps)
 
 ---
 
@@ -69,7 +71,7 @@ All items below work end to end and are persisted server-side.
 |---|---|
 | **Brand & design** | Original design system (Tailwind tokens), 5 original SVG characters × 8 interaction states (welcome, excited, thinking, explaining, celebrating, encouraging, surprised, hint), 7 illustrated SVG kingdom scenes, reduced-motion support, mobile-first layouts with a bottom nav on phones |
 | **Public site** | Story-driven landing page with all 11 sections, Netflix-style rows, privacy notice |
-| **Auth** | Parent registration, e-mail verification, consent records, child PIN login, parent/child/admin roles, scrypt hashing, DB-backed sessions (httpOnly cookies), rate limiting, same-origin checks |
+| **Auth** | Parent registration, e-mail verification, consent records, child PIN login, parent/child/admin roles, scrypt hashing, DB-backed sessions (httpOnly cookies), self-service password reset (single-use hashed tokens, all sessions revoked, no account enumeration), rate limiting with spoof-resistant client IPs, same-origin checks |
 | **Onboarding** | Animated character welcome, buddy introductions and kingdom tour, then straight into the first Word Quest with a welcome gift. No test. |
 | **Daily Word Quest** | Plan-driven daily words, word cards (TTS pronunciation, phonetics, meaning, explanation, example, real-life usage, synonyms/antonyms, "repeat the word" speech check), 5 challenge rounds, server-validated answers, hints after mistakes |
 | **Vocabulary mastery** | Discovered → Practising → Mastered via a Leitner spaced-repetition system. Mastery requires correct answers on **different days**, never just viewing. Includes a revision engine, notebook (search/filter/favourite/listen) and words-used-in-writing/speaking tracking |
@@ -190,6 +192,10 @@ See `.env.example`.
 | `ADMIN_EMAIL`, `ADMIN_PASSWORD` | Bootstrap administrator (only when none exists) |
 | `CRON_SECRET` | Bearer token for `/api/cron/*` |
 | `APP_TIMEZONE` | Day boundaries (default `Asia/Kolkata`) |
+| `EMAIL_TRANSPORT` | Set to `dev-mailbox` to use `/dev/mailbox` even in a production build (staging and QA only, never live) |
+| `IP_RATE_LIMIT_MULTIPLIER` | Scales the per-network limits. Leave unset in production; QA uses it so one machine can create many synthetic families |
+| `NEXT_DIST_DIR` | Alternative build directory, so a production build can run next to `next dev` |
+| `PGLITE_DIR` | Embedded database location when `DATABASE_URL` is empty (default `.data/pingvibe`) |
 
 ## Database
 
@@ -216,7 +222,7 @@ See `.env.example`.
 npm test
 ```
 
-19 unit tests cover the level curve and milestones, the 3,650-row curriculum and its rotation, topic generation, seed-content integrity (answer keys, examples contain their words, metric references), answer validation, a/an rules and the offline evaluator.
+21 unit tests cover client-IP parsing for rate limits, the level curve and milestones, the 3,650-row curriculum and its rotation, topic generation, seed-content integrity (answer keys, examples contain their words, metric references), answer validation, a/an rules and the offline evaluator.
 
 ```bash
 npm run typecheck
@@ -228,7 +234,92 @@ node tests/e2e-api.mjs http://localhost:3000
 
 The end-to-end script runs against a running dev server. It covers registration → verification → consent → child login → welcome → quest → rewards → challenges → missions → writing → shop → avatar → companion safety, every child, parent and admin page, DPDP export, family challenges and admin validation.
 
+## Brand assets (official logo)
+
+The official PING VIBE logo is the master asset. It must be used exactly as supplied: no recreation in HTML/CSS, no AI regeneration, and no recolouring, cropping, stretching or filters.
+
+1. Commit the original file unchanged as **`public/assets/brand/ping-vibe-logo.png`**.
+   - It is assumed to be 1536×1024.
+   - If it isn't, update `LOGO_WIDTH`/`LOGO_HEIGHT` in `src/components/PingVibeLogo.tsx` and `W`/`H` in `src/components/BrandLogo.tsx`.
+2. Run `npm run brand:assets`. This creates the favicon, app icons, a compact mark and the Open Graph image in `public/assets/brand/derived/`.
+   - It uses `sharp` with `fit: contain` on a padded canvas, so the original is never overwritten or cropped.
+3. Restart the server. The root layout detects the file and picks up the derived icons.
+
+Where the logo appears:
+- Landing page header, hero, story section and footer.
+- Sign-up, login and password pages.
+- Child, parent and admin headers.
+- Welcome, loading, celebration, certificate, error and 404 pages.
+- E-mails.
+
+`<PingVibeLogo />` is used in server components and `<BrandLogo />` in client components. Until the file is present, both render the interim text wordmark instead of a broken image. See `public/assets/brand/README.md`.
+
+## Quality assurance
+
+The full audit lives in [`qa/`](qa/). Start with [`qa/PRODUCTION_READINESS_REPORT.md`](qa/PRODUCTION_READINESS_REPORT.md). Every test uses **synthetic data only**.
+
+**1. Unit tests**
+
+```bash
+npx vitest run
+```
+
+**2. API, database, security and learning suite (215+ checks)**
+
+Run it against any running server:
+
+```bash
+BASE_URL=http://localhost:3000 node tests/qa-api.mjs
+```
+
+**3. Browser checks**
+
+Covers the browser journey, 8 viewports, console errors, axe-core accessibility and visual regression:
+
+```bash
+node tests/ui-audit.mjs
+```
+
+Add `--update-baseline` to accept new screenshots.
+
+**4. Performance and 30-child load**
+
+First make a production build in a separate directory:
+
+```bash
+NEXT_DIST_DIR=.next-prod npx next build
+```
+
+Start it with its own database and the dev mailbox:
+
+```bash
+PGLITE_DIR=.data-prod EMAIL_TRANSPORT=dev-mailbox IP_RATE_LIMIT_MULTIPLIER=100 NEXT_DIST_DIR=.next-prod npx next start -p 3001
+```
+
+Then run the perf suite against it:
+
+```bash
+BASE_URL=http://localhost:3001 node tests/perf.mjs
+```
+
+**5. Aggregate report**
+
+Writes `qa/results/test-execution-report.json` and `qa/COMPLETE_TEST_CASES.md`:
+
+```bash
+node scripts/qa-report.mjs
+```
+
+Notes:
+- Tests that need a service that isn't configured (for example `ANTHROPIC_API_KEY`) are reported as **BLOCKED**, never as passed.
+- Use `IP_RATE_LIMIT_MULTIPLIER=100` on the server under test. The suites create many families from one IP.
+
 ## Known limitations and next steps
+
+- **Open QA items:** see [`qa/BUG_REGISTER.md`](qa/BUG_REGISTER.md).
+  - The official logo file must be committed.
+  - Live Claude tests are blocked until a key is provided.
+  - 30-child load p95 must be re-checked on managed Postgres; embedded PGlite is single-connection.
 
 - **Vocabulary runway:** see *Content system and honest coverage*. It needs AI enrichment plus review of the 757 queued headwords and further batches.
 - **Illustrations** for words and story scenes use emoji. Commissioned artwork can be added to `vocabulary_master` and `reading_stories` later.

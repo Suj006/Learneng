@@ -11,3 +11,5 @@ coverage
 qa/screenshots/current
 qa/results/journey1-failure.png
 .data-prod
+.data-prod2
+.next-prod2

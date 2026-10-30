@@ -4,6 +4,8 @@ import fs from "node:fs";
 import path from "node:path";
 import "./globals.css";
 import { MotionProvider } from "@/components/MotionProvider";
+import { BrandAssetProvider } from "@/components/BrandLogo";
+import { brandLogoPresent } from "@/components/PingVibeLogo";
 
 const display = Fredoka({ subsets: ["latin"], variable: "--font-display", weight: ["500", "600", "700"] });
 const bodyFont = Nunito({ subsets: ["latin"], variable: "--font-body", weight: ["400", "600", "700", "800"] });
@@ -29,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en-IN" className={`${display.variable} ${bodyFont.variable}`}>
       <body>
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-vibe-midnight">Skip to content</a>
-        <MotionProvider>{children}</MotionProvider>
+        <MotionProvider><BrandAssetProvider present={brandLogoPresent()}>{children}</BrandAssetProvider></MotionProvider>
       </body>
     </html>
   );

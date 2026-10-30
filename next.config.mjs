@@ -5,6 +5,8 @@ const securityHeaders = [
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
   // Microphone is needed by the Speaking Arena (speech recognition happens in the browser; no audio is uploaded).
   { key: "Permissions-Policy", value: "camera=(), geolocation=(), microphone=(self)" },
+  // HTTPS-only in production (ignored by browsers over plain http, so local dev is unaffected).
+  ...(process.env.NODE_ENV === "production" ? [{ key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains" }] : []),
 ];
 
 const nextConfig = {

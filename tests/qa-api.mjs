@@ -371,6 +371,9 @@ t("SEC-006", "Oversized request body rejected (413)", big.status === 413, big.st
 t("SEC-007", "Cron endpoints require secret", (await fetch(BASE + "/api/cron/reminders")).status === 401 && (await fetch(BASE + "/api/cron/content")).status === 401);
 const hd = await fetch(BASE + "/");
 t("SEC-008", "Security headers present", hd.headers.get("x-frame-options") === "DENY" && hd.headers.get("x-content-type-options") === "nosniff" && !hd.headers.get("x-powered-by"));
+t("SEC-013", "Referrer-Policy and Permissions-Policy (microphone self only) present", hd.headers.get("referrer-policy") === "strict-origin-when-cross-origin" && /microphone=\(self\)/.test(hd.headers.get("permissions-policy") ?? ""));
+// HSTS is only emitted by production builds; run with QA_PRODUCTION=1 against `next start`.
+t("SEC-014", "HSTS header on production build", process.env.QA_PRODUCTION === "1" ? /max-age=\d{7,}/.test(hd.headers.get("strict-transport-security") ?? "") : null, process.env.QA_PRODUCTION === "1" ? hd.headers.get("strict-transport-security") : "Not a production build (set QA_PRODUCTION=1)");
 const home = await hd.text();
 t("SEC-009", "No secrets in page HTML", !/sk-ant|RESEND|SESSION_SECRET|ADMIN_PASSWORD|DATABASE_URL/.test(home));
 const ck = (await client().call("/api/auth/login-child", { username: H.username, pin: "482915" })).headers.getSetCookie?.()[0] ?? "";
