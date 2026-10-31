@@ -16,7 +16,7 @@ export default async function Reading() {
        (s.reward is null or exists (select 1 from child_rewards r where r.child_id = $1 and r.slug = s.reward)) owned,
        sp.best_score best, sp.completed_at is not null done
      from reading_stories s left join story_progress sp on sp.story_id = s.id and sp.child_id = $1 where s.active
-     order by abs(s.band - $2), s.band`, [child.id, band]);
+     order by abs(s.band - $2), s.band, s.slug`, [child.id, band]);
   return (
     <div>
       <PageTitle title="📚 Reading Adventures" subtitle="Stories matched to your reading level come first. Finish a story to collect its card!" />

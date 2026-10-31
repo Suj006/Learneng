@@ -61,7 +61,11 @@ export function AudioProvider({ initialPrefs, policy, serverTts }: { initialPref
     window.addEventListener("click", tap, { capture: true });
     document.addEventListener("visibilitychange", vis);
     window.addEventListener("pagehide", audio.suspend.bind(audio));
-    const t = setTimeout(() => { if (!audio.unlocked && (audio.musicActive || audio.voiceActive)) setHint(true); }, 1200);
+    // Friendly activation hint, at most once per browser session.
+    const t = setTimeout(() => {
+      let seen = false; try { seen = sessionStorage.getItem("pv-audio-hint") === "1"; sessionStorage.setItem("pv-audio-hint", "1"); } catch { /* ignore */ }
+      if (!seen && !audio.unlocked && (audio.musicActive || audio.voiceActive)) setHint(true);
+    }, 1200);
     return () => {
       clearTimeout(t);
       window.removeEventListener("pointerdown", unlock, { capture: true });
@@ -84,15 +88,18 @@ export function AudioProvider({ initialPrefs, policy, serverTts }: { initialPref
   const c = audio.caption;
   return (
     <>
-      <AnimatePresence>
-        {hint && !audio.unlocked && (
-          <motion.button key="hint" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 20 }}
-            onClick={() => { audio.unlock(); setHint(false); }}
-            className="fixed bottom-24 left-1/2 z-40 -translate-x-1/2 rounded-full border border-white/15 bg-vibe-midnight-2/95 px-5 py-3 font-display text-sm font-bold shadow-card backdrop-blur lg:bottom-6">
-            🔊 Tap to turn on music &amp; voices
-          </motion.button>
-        )}
-      </AnimatePresence>
+      {/* Centred by a flex wrapper: the slide-in animation sets `transform`, which would cancel a translate-based centring. */}
+      <div className="pointer-events-none fixed inset-x-0 bottom-24 z-40 flex justify-center px-4 lg:bottom-6">
+        <AnimatePresence>
+          {hint && !audio.unlocked && (
+            <motion.button key="hint" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 20 }}
+              onClick={() => { audio.unlock(); setHint(false); }}
+              className="pointer-events-auto rounded-full border border-white/15 bg-vibe-midnight-2/95 px-5 py-3 font-display text-sm font-bold shadow-card backdrop-blur">
+              🔊 Tap to turn on music &amp; voices
+            </motion.button>
+          )}
+        </AnimatePresence>
+      </div>
       {/* Captions sit just under the header (action buttons live lower down) and never block taps: only ✕ is clickable. */}
       <div aria-live="polite" className="pointer-events-none fixed inset-x-3 top-[4.5rem] z-[45] flex justify-center">
         <AnimatePresence>

@@ -111,6 +111,8 @@ async function journey() {
 // ── Responsive / console / images / visual regression ─────────────────────────
 async function cookieCtx(cookieStr, vp) {
   const ctx = await browser.newContext({ viewport: { width: vp[0], height: vp[1] }, reducedMotion: "reduce" });
+  // Screenshots must be deterministic: start with music and voices off so no audio hint or caption appears mid-capture.
+  await ctx.addInitScript(() => { try { localStorage.setItem("pv-audio-v1", JSON.stringify({ musicOn: false, voiceOn: false })); } catch {} });
   if (cookieStr) {
     const [name, value] = cookieStr.split("=");
     await ctx.addCookies([{ name, value, url: BASE }]);

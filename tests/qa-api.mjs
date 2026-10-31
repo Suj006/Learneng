@@ -263,7 +263,7 @@ t("GAM-021", "Mission reward idempotent (claim twice)", (await F.child.call("/ap
 // RW-003: two simultaneous purchases of the same item → one succeeds, the other gets a friendly 400 (never a 500)
 const buyFam = await makeFamily("G3", "Kavi"); await buyFam.child.call("/api/welcome", {});
 const [b1, b2] = await Promise.all([buyFam.child.call("/api/rewards/redeem", { slug: "expr-wink" }), buyFam.child.call("/api/rewards/redeem", { slug: "expr-wink" })]);
-t("GAM-022", "Double-tap purchase: exactly one succeeds, no 500", [b1.status, b2.status].sort().join() === "200,400", `${b1.status} ${b2.status} ${b2.data.error ?? ""}`);
+t("GAM-040", "Double-tap purchase: exactly one succeeds, no 500", [b1.status, b2.status].sort().join() === "200,400", `${b1.status} ${b2.status} ${b2.data.error ?? ""}`);
 const notDone = await F.child.call("/api/missions/claim", { slug: "w-words-50" });
 t("GAM-022", "Unfinished mission cannot be claimed", notDone.status === 400, notDone.data.error);
 t("GAM-023", "Unknown mission refused", (await F.child.call("/api/missions/claim", { slug: "x" })).status === 400);
