@@ -86,6 +86,50 @@ export const THEME_SEED: ThemeDef[] = [
       glowA: "#852DEB", glowB: "#16B9E9", glowC: "#FF4FA3", shadow: "#08041E", shadowAlpha: 0.7,
     },
   },
+  {
+    slug: "forest-adventure", name: "Forest Adventure", emoji: "🌲", tagline: "Leafy greens and woodland gold",
+    tokens: {
+      mode: "light", bg: "#F6FBF2", bg2: "#E3F3DC", surface: "#FFFFFF", surfaceAlpha: 0.94, surface2: "#FFFFFF", surface3: "#EEF7E8",
+      ink: "#1D3416", inkSoft: "#4A5A42", line: "#1D3416", lineAlpha: 0.13, glass: "#2E7D32",
+      primary: "#2E7D32", secondary: "#8BC34A", accent: "#C68A00", ctaFrom: "#2E7D32", ctaTo: "#1B6B4A", onPrimary: "#FFFFFF",
+      success: "#4CAF50", reward: "#FFC93C", error: "#D9473A", orange: "#F08C2E", pink: "#E86A92",
+      primaryInk: "#1E6A23", secondaryInk: "#3D6B12", successInk: "#22760F", rewardInk: "#765000", errorInk: "#B42318", orangeInk: "#9C4D00", pinkInk: "#AD1F55", accentInk: "#7A5200",
+      glowA: "#8BC34A", glowB: "#2E7D32", glowC: "#FFC93C", shadow: "#1D3416", shadowAlpha: 0.16,
+    },
+  },
+  {
+    slug: "coral-carnival", name: "Coral Carnival", emoji: "🎠", tagline: "Coral, peach and carnival teal",
+    tokens: {
+      mode: "light", bg: "#FFF8F5", bg2: "#FFE9E1", surface: "#FFFFFF", surfaceAlpha: 0.94, surface2: "#FFFFFF", surface3: "#FFF1EB",
+      ink: "#3D1A14", inkSoft: "#66504A", line: "#3D1A14", lineAlpha: 0.12, glass: "#E8505B",
+      primary: "#E8505B", secondary: "#14B8A6", accent: "#FFB347", ctaFrom: "#D63A4A", ctaTo: "#B8336A", onPrimary: "#FFFFFF",
+      success: "#2BB673", reward: "#FFC845", error: "#D62D3E", orange: "#FF8A4C", pink: "#FF6F91",
+      primaryInk: "#B42332", secondaryInk: "#0B6F64", successInk: "#12704A", rewardInk: "#7A5200", errorInk: "#B11E2E", orangeInk: "#A23E12", pinkInk: "#B4234F", accentInk: "#8A4B00",
+      glowA: "#FF8A80", glowB: "#14B8A6", glowC: "#FFB347", shadow: "#3D1A14", shadowAlpha: 0.16,
+    },
+  },
+  {
+    slug: "starlight-dream", name: "Starlight Dream", emoji: "✨", tagline: "Soft starlight blues and lilac",
+    tokens: {
+      mode: "light", bg: "#F7F8FF", bg2: "#E7E9FF", surface: "#FFFFFF", surfaceAlpha: 0.94, surface2: "#FFFFFF", surface3: "#EFF0FF",
+      ink: "#1F2150", inkSoft: "#4E5170", line: "#1F2150", lineAlpha: 0.12, glass: "#5B5FE0",
+      primary: "#5B5FE0", secondary: "#38BDF8", accent: "#C084FC", ctaFrom: "#4F52D6", ctaTo: "#7C3AED", onPrimary: "#FFFFFF",
+      success: "#34C38F", reward: "#FFD166", error: "#E5484D", orange: "#FF9F5A", pink: "#F472B6",
+      primaryInk: "#3F43C4", secondaryInk: "#0A6E99", successInk: "#157551", rewardInk: "#775000", errorInk: "#B81C22", orangeInk: "#9C4D00", pinkInk: "#B0226E", accentInk: "#7E22CE",
+      glowA: "#C084FC", glowB: "#38BDF8", glowC: "#FFD166", shadow: "#1F2150", shadowAlpha: 0.16,
+    },
+  },
+  {
+    slug: "arctic-wonderland", name: "Arctic Wonderland", emoji: "❄️", tagline: "Icy blues and aurora green",
+    tokens: {
+      mode: "light", bg: "#F5FBFF", bg2: "#E2F1FB", surface: "#FFFFFF", surfaceAlpha: 0.95, surface2: "#FFFFFF", surface3: "#EAF5FC",
+      ink: "#10283D", inkSoft: "#435A6E", line: "#10283D", lineAlpha: 0.12, glass: "#1E78B4",
+      primary: "#1E78B4", secondary: "#5BD1D7", accent: "#7AE582", ctaFrom: "#1A6EA6", ctaTo: "#1F7A8C", onPrimary: "#FFFFFF",
+      success: "#38B26B", reward: "#FFD25E", error: "#E0475A", orange: "#FF9E57", pink: "#F27BB0",
+      primaryInk: "#155F91", secondaryInk: "#0B6A70", successInk: "#16703E", rewardInk: "#765000", errorInk: "#B42339", orangeInk: "#9C4D00", pinkInk: "#AA2468", accentInk: "#1F7034",
+      glowA: "#5BD1D7", glowB: "#7AE582", glowC: "#B3E5FC", shadow: "#10283D", shadowAlpha: 0.15,
+    },
+  },
 ];
 
 export const DEFAULT_THEME = "rainbow-wonder";

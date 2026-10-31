@@ -2,8 +2,8 @@ import { describe, expect, it } from "vitest";
 import { DEFAULT_THEME, THEME_SEED, THEME_TOKEN_KEYS, contrastChecks, themeStylesheet } from "../src/lib/theme/themes";
 
 describe("colour themes", () => {
-  it("ships the five themes with Rainbow Wonder as the default", () => {
-    expect(THEME_SEED.map((t) => t.slug)).toEqual(["rainbow-wonder", "ocean-splash", "candy-galaxy", "sunshine-garden", "twilight-magic"]);
+  it("ships nine themes (the original five first) with Rainbow Wonder as the default", () => {
+    expect(THEME_SEED.map((t) => t.slug)).toEqual(["rainbow-wonder", "ocean-splash", "candy-galaxy", "sunshine-garden", "twilight-magic", "forest-adventure", "coral-carnival", "starlight-dream", "arctic-wonderland"]);
     expect(DEFAULT_THEME).toBe("rainbow-wonder");
   });
   it("Rainbow Wonder uses the official logo palette", () => {
