@@ -46,7 +46,7 @@ export default async function WorldLayout({ children }: { children: React.ReactN
       <main id="main" className="mx-auto max-w-7xl px-4 pb-28 pt-6 sm:px-6 lg:pb-12">{children}</main>
       <BreakReminder minutes={minutes} />
       </div>
-      <AudioProvider initialPrefs={p?.audio_prefs ?? null} policy={{ musicAllowed: p?.music_allowed ?? true, voicesAllowed: p?.voices_allowed ?? true }} serverTts={ttsEnabled()} />
+      <AudioProvider initialPrefs={p?.audio_prefs ?? null} policy={{ musicAllowed: p?.music_allowed ?? true, voicesAllowed: p?.voices_allowed ?? true }} serverTts={ttsEnabled()} band={w.child.band} />
     </div>
   );
 }

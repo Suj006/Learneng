@@ -20,3 +20,13 @@ export function spellingTip(typedRaw: string, correctRaw: string) {
   return `Look closely: ${correctRaw.toUpperCase().split("").join(" ")}.`;
 }
 
+
+/** Approximate "sound it out" chunks (vowel-group heuristic) — a reading aid, not dictionary syllabification. */
+export function soundOut(word: string): string[] {
+  const w = word.toLowerCase();
+  if (w.length <= 3 || /\s/.test(w)) return [word];
+  const parts = w.match(/[^aeiouy]*[aeiouy]+(?:[^aeiouy]*$|[^aeiouy](?=[^aeiouy]))?/g) ?? [w];
+  // Fold a trailing silent "e" chunk back into the previous part (e.g. "ti" + "me" → "time").
+  if (parts.length > 1 && /^[^aeiouy]*e$/.test(parts[parts.length - 1])) { const last = parts.pop()!; parts[parts.length - 1] += last; }
+  return parts.join("") === w ? parts : [word];
+}

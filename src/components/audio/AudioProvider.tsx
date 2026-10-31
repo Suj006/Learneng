@@ -30,7 +30,8 @@ const NAMES: Record<string, string> = { lexi: "LEXI", grammy: "GRAMMY", speaky: 
  * current page, plays soft tap sounds for buttons, pauses everything when the tab is hidden, saves preferences and
  * shows captions for spoken lines.
  */
-export function AudioProvider({ initialPrefs, policy, serverTts }: { initialPrefs: Partial<AudioPrefs> | null; policy: AudioPolicy; serverTts: boolean }) {
+export function AudioProvider({ initialPrefs, policy, serverTts, band = 2 }: { initialPrefs: Partial<AudioPrefs> | null; policy: AudioPolicy; serverTts: boolean; band?: number }) {
+  audio.band = band;
   const path = usePathname();
   useAudioState();
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);

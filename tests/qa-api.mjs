@@ -388,6 +388,8 @@ for (const [grade, n] of [["PRE_KG", 2], ["G1", 2], ["G2", 3], ["G3", 3], ["G4",
   const qd = await k.child.call("/api/quest");
   t(`LX5-${grade}`, `${grade}: ${n} daily missions, 5 new words, greeted by real name`, new RegExp(`>0/${n}<`).test(home) && qd.data.newWords.length === 5 && /Welcome back, Jia!/.test(home), `${home.match(/>\d\/\d</)?.[0]} words=${qd.data.newWords?.length}`);
 }
+const disc = await F.child.call("/world/discoveries");
+t("LX5-DISC", "My Learning Discoveries renders for the child and is private (parent session redirected)", disc.status === 200 && /My Learning Discoveries/.test(String(disc.data)) && (await F.parent.call("/world/discoveries")).status !== 200);
 const pub = await (await fetch(BASE + "/api/public/discover?band=1")).json();
 t("LX5-HOME-1", "Public Word of the Day, puzzle and Story of the Day (band 1 content only)", pub.word?.band === 1 && pub.puzzle?.options?.includes(pub.puzzle.answer) && pub.story?.band >= 1 && pub.cloud.every((c) => c.band === 1));
 

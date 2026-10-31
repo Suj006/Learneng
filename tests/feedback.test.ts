@@ -12,3 +12,12 @@ describe("mistake feedback", () => {
     expect(mistakeWords(4, "astonish").title).toBe("Not quite.");
   });
 });
+
+import { soundOut } from "../src/lib/feedback";
+describe("sound it out", () => {
+  it("splits longer words into readable chunks that rebuild the word", () => {
+    for (const w of ["astonish", "beautiful", "adventure", "elephant", "magnificent"]) expect(soundOut(w).join("")).toBe(w);
+    expect(soundOut("astonish").length).toBeGreaterThan(1);
+  });
+  it("keeps short words whole", () => expect(soundOut("cat")).toEqual(["cat"]));
+});

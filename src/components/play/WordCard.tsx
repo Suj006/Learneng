@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { listenOnce, speak, speechAccuracy, speechRecognitionCtor } from "@/lib/client";
+import { soundOut } from "@/lib/feedback";
 import { Character } from "@/components/Character";
 import { useMounted } from "@/lib/useMounted";
 
@@ -29,8 +30,10 @@ export function WordCard({ w, index, total }: { w: WordData; index?: number; tot
         <div className="flex-1 text-center sm:text-left">
           <h2 className="font-display text-5xl font-bold uppercase tracking-wide sm:text-6xl">{w.word}</h2>
           <p className="mt-1 text-lg text-vibe-aqua-ink">{w.phonetic} · <i>{w.part_of_speech}</i></p>
+          {soundOut(w.word).length > 1 && <p className="text-sm text-vibe-lavender">Sound it out: <b className="tracking-wide">{soundOut(w.word).join(" · ")}</b></p>}
           <div className="mt-3 flex flex-wrap justify-center gap-2 sm:justify-start">
-            <button className="btn-primary btn-sm" onClick={() => speak(w.word, { rate: 0.75 })}>🔊 Listen</button>
+            <button className="btn-primary btn-sm" onClick={() => speak(w.word, { rate: 0.85 })}>🔊 Listen</button>
+            <button className="btn-ghost btn-sm" onClick={() => speak(soundOut(w.word).join(" ... "), { rate: 0.55 })}>🐢 Slowly</button>
             <button className="btn-ghost btn-sm" onClick={() => speak(w.example)}>🔊 Example</button>
             {canListen && <button className="btn-ghost btn-sm" onClick={repeat} disabled={listening}>{listening ? "🎙️ Listening…" : "🎙️ Repeat the word"}</button>}
           </div>

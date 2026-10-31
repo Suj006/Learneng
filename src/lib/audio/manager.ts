@@ -24,6 +24,8 @@ class AudioManager {
   unlocked = false;
   caption: Caption | null = null;
   serverTts = false;
+  /** Child's age band (1–4) so character lines suit their age. */
+  band = 2;
   private ctx: AudioContext | null = null;
   private master: GainNode | null = null;
   private musicBus: GainNode | null = null;
