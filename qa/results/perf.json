@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-30T17:14:02.128Z",
-  "base": "http://localhost:3002",
+  "generated_at": "2026-10-31T03:13:16.507Z",
+  "base": "http://localhost:3001",
   "children": 30,
   "results": [
     {
@@ -9,7 +9,7 @@
       "severity": "Medium",
       "scenario": "/: LCP < 2.5s, TTFB < 800ms, CLS < 0.1 (warm)",
       "status": "PASS",
-      "actual": "cold TTFB 15ms LCP 312ms | warm TTFB 4ms DCL 32ms LCP 200ms CLS 0.000 transfer 264KB"
+      "actual": "cold TTFB 7ms LCP 212ms | warm TTFB 8ms DCL 34ms LCP 144ms CLS 0.000 transfer 250KB"
     },
     {
       "id": "PERF-login",
@@ -17,7 +17,7 @@
       "severity": "Medium",
       "scenario": "/login: LCP < 2.5s, TTFB < 800ms, CLS < 0.1 (warm)",
       "status": "PASS",
-      "actual": "cold TTFB 23ms LCP 208ms | warm TTFB 23ms DCL 70ms LCP 124ms CLS 0.000 transfer 254KB"
+      "actual": "cold TTFB 16ms LCP 100ms | warm TTFB 11ms DCL 39ms LCP 76ms CLS 0.000 transfer 255KB"
     },
     {
       "id": "PERF-child-dashboard",
@@ -25,7 +25,7 @@
       "severity": "Medium",
       "scenario": "/world: LCP < 2.5s, TTFB < 800ms, CLS < 0.1 (warm)",
       "status": "PASS",
-      "actual": "cold TTFB 442ms LCP 656ms | warm TTFB 118ms DCL 181ms LCP 392ms CLS 0.000 transfer 269KB"
+      "actual": "cold TTFB 107ms LCP 328ms | warm TTFB 87ms DCL 110ms LCP 236ms CLS 0.000 transfer 270KB"
     },
     {
       "id": "PERF-quest",
@@ -33,7 +33,7 @@
       "severity": "Medium",
       "scenario": "/world/quest: LCP < 2.5s, TTFB < 800ms, CLS < 0.1 (warm)",
       "status": "PASS",
-      "actual": "cold TTFB 42ms LCP 360ms | warm TTFB 27ms DCL 47ms LCP 184ms CLS 0.000 transfer 261KB"
+      "actual": "cold TTFB 26ms LCP 288ms | warm TTFB 22ms DCL 47ms LCP 132ms CLS 0.000 transfer 262KB"
     },
     {
       "id": "PERF-parent-dashboard",
@@ -41,7 +41,7 @@
       "severity": "Medium",
       "scenario": "/parent: LCP < 2.5s, TTFB < 800ms, CLS < 0.1 (warm)",
       "status": "PASS",
-      "actual": "cold TTFB 35ms LCP 172ms | warm TTFB 34ms DCL 80ms LCP 136ms CLS 0.000 transfer 244KB"
+      "actual": "cold TTFB 22ms LCP 112ms | warm TTFB 21ms DCL 42ms LCP 72ms CLS 0.000 transfer 245KB"
     },
     {
       "id": "LOAD-001",
@@ -49,15 +49,15 @@
       "severity": "Medium",
       "scenario": "30 concurrent children (660 requests): no 5xx",
       "status": "PASS",
-      "actual": "0 errors in 15.5s (42.5 req/s)"
+      "actual": "0 errors in 14.8s (44.6 req/s)"
     },
     {
       "id": "LOAD-002",
       "module": "Performance",
       "severity": "Medium",
       "scenario": "30 concurrent children: API p95 < 1500ms",
-      "status": "FAIL",
-      "actual": "p50 384ms p95 2554ms max 8411ms"
+      "status": "PASS",
+      "actual": "p50 365ms p95 1496ms max 9816ms"
     },
     {
       "id": "LOAD-003",

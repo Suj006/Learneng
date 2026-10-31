@@ -1,6 +1,6 @@
 # PING VIBE — API & Database Test Report
 
-**API suite (`tests/qa-api.mjs`): 215 checks — 213 PASS · 0 FAIL · 2 BLOCKED.** Run against a production build (`next build` + `next start`) on a fresh embedded Postgres (PGlite). Raw results: `results/qa-api.json`.
+**API suite (`tests/qa-api.mjs`): 217 checks — 215 PASS · 0 FAIL · 2 BLOCKED.** Run against a production build (`next build` + `next start`) on a fresh embedded Postgres (PGlite). Raw results: `results/qa-api.json`.
 
 ## Coverage by module
 
@@ -25,7 +25,7 @@
 | Grade journeys | 6 / 0 / 0 |
 | Parent dashboard | 11 / 0 / 0 |
 | Administration | 21 / 0 / 0 |
-| Security | 12 / 0 / 0 |
+| Security | 14 / 0 / 0 |
 
 ## API contract checks
 

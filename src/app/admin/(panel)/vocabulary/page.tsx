@@ -12,7 +12,7 @@ export default async function Vocabulary({ searchParams }: { searchParams: Promi
     <div className="space-y-4">
       <h1 className="title-lg">Vocabulary master</h1>
       <p className="text-sm text-vibe-lavender">{counts.map((c) => `Band ${c.band}: ${c.n}`).join(" · ")} published. New words are added through the Content Studio review queue.</p>
-      <form className="flex gap-2"><input name="q" defaultValue={q} className="input max-w-xs" placeholder="Search" /><select name="band" defaultValue={band} className="input w-32"><option value="">All bands</option>{[1, 2, 3, 4].map((b) => <option key={b}>{b}</option>)}</select><button className="btn-ghost btn-sm">Filter</button></form>
+      <form className="flex gap-2"><input name="q" defaultValue={q} className="input max-w-xs" placeholder="Search" /><select aria-label="Band" name="band" defaultValue={band} className="input w-32"><option value="">All bands</option>{[1, 2, 3, 4].map((b) => <option key={b}>{b}</option>)}</select><button className="btn-ghost btn-sm">Filter</button></form>
       {words.map((w) => <details key={w.id} className="card p-4"><summary className="cursor-pointer"><b>{w.emoji} {w.word}</b> <span className="text-sm text-vibe-lavender">· band {w.band} · {w.category} · {w.source} · {w.status}</span></summary><div className="mt-3"><VocabEditor w={w} /></div></details>)}
     </div>
   );

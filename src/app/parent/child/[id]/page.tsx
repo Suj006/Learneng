@@ -49,8 +49,8 @@ export default async function ChildReportPage({ params }: { params: Promise<{ id
           <h2 className="title-md">Annual learning journey</h2>
           <p className="mt-1 text-sm text-vibe-lavender">Day {j.journey_day} of the {j.plan_days}-day {gradeLabel(c.grade)} programme. Missed days never skip content.</p>
           <div className="mt-4 space-y-3 text-sm">
-            <div><div className="flex justify-between"><span>Learning days completed</span><b>{j.days_done} / {j.plan_days}</b></div><Progress value={j.days_done} max={j.plan_days} className="mt-1 h-2" /></div>
-            <div><div className="flex justify-between"><span>Activities completed</span><b>{j.activities_done} / {j.activities_total}</b></div><Progress value={j.activities_done} max={j.activities_total} className="mt-1 h-2" color="bg-vibe-aqua" /></div>
+            <div><div className="flex justify-between"><span>Learning days completed</span><b>{j.days_done} / {j.plan_days}</b></div><Progress label="Learning days completed" value={j.days_done} max={j.plan_days} className="mt-1 h-2" /></div>
+            <div><div className="flex justify-between"><span>Activities completed</span><b>{j.activities_done} / {j.activities_total}</b></div><Progress label="Activities completed" value={j.activities_done} max={j.activities_total} className="mt-1 h-2" color="bg-vibe-aqua" /></div>
           </div>
         </div>
         <div className="card p-6"><h2 className="title-md">Last 7 days</h2><div className="mt-3"><Bars label="Minutes per day" value="Minutes learning per day" rows={r.daily.map((d) => ({ key: d.day.slice(8), v: d.minutes }))} /></div></div>

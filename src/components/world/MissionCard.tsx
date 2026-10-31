@@ -26,7 +26,7 @@ export function MissionCard({ m, compact = false }: { m: MissionData; compact?: 
       <div className="min-w-0 flex-1">
         <div className="flex flex-wrap items-center gap-2"><span className="chip px-2 py-0.5 text-[10px] uppercase">{SCOPE[m.scope] ?? m.scope}</span><b className="font-display">{m.title}</b></div>
         <p className="mt-1 text-sm text-vibe-lavender/90">{m.description}</p>
-        <div className="mt-2 flex items-center gap-2"><Progress value={state.progress} max={m.target} className="h-2" /><span className="shrink-0 text-xs font-bold">{state.progress}/{m.target}</span></div>
+        <div className="mt-2 flex items-center gap-2"><Progress value={state.progress} max={m.target} className="h-2" label="Mission progress" /><span className="shrink-0 text-xs font-bold">{state.progress}/{m.target}</span></div>
         <div className="mt-2 flex flex-wrap items-center gap-2 text-xs">
           <span className="text-vibe-lavender">Reward: ⚡{m.xp} 🪙{m.coins}{m.crystals ? ` 💎${m.crystals}` : ""}</span>
           {state.claimed ? <span className="chip text-vibe-mint">✅ Claimed</span>

@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-30T17:16:05.909Z",
-  "base": "http://localhost:3002",
+  "generated_at": "2026-10-31T03:12:49.158Z",
+  "base": "http://localhost:3001",
   "results": [
     {
       "id": "AUTH-001",
@@ -128,7 +128,7 @@
       "severity": "Critical",
       "scenario": "Invalid verification token → expired page, no session",
       "status": "PASS",
-      "actual": "http://localhost:3002/verify?expired=1"
+      "actual": "http://localhost:3001/verify?expired=1"
     },
     {
       "id": "AUTH-021",
@@ -136,7 +136,7 @@
       "severity": "Critical",
       "scenario": "Verification + consent creates an active Explorer",
       "status": "PASS",
-      "actual": "cometdragon166"
+      "actual": "sunnyowl926"
     },
     {
       "id": "AUTH-022",
@@ -1208,7 +1208,7 @@
       "severity": "High",
       "scenario": "Unfinished mission cannot be claimed",
       "status": "PASS",
-      "actual": "Keep going — this mission isn't finished yet!"
+      "actual": "That mission isn't available right now."
     },
     {
       "id": "GAM-023",
@@ -1689,6 +1689,22 @@
       "scenario": "Security headers present",
       "status": "PASS",
       "actual": ""
+    },
+    {
+      "id": "SEC-013",
+      "module": "Security",
+      "severity": "Critical",
+      "scenario": "Referrer-Policy and Permissions-Policy (microphone self only) present",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "SEC-014",
+      "module": "Security",
+      "severity": "Critical",
+      "scenario": "HSTS header on production build",
+      "status": "PASS",
+      "actual": "max-age=63072000; includeSubDomains"
     },
     {
       "id": "SEC-009",

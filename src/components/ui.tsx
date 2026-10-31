@@ -19,7 +19,7 @@ export function CharacterSays({ who, mood = "welcome", children, size = 110, spe
     <div className={`flex items-end gap-3 ${align === "right" ? "flex-row-reverse" : ""}`}>
       <Character name={who} mood={mood} size={size} className="shrink-0" />
       <motion.div initial={{ opacity: 0, y: 10, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} className="relative mb-6 max-w-xl rounded-3xl bg-white px-5 py-4 text-vibe-midnight shadow-card">
-        <div className="mb-1 font-display text-xs font-bold uppercase tracking-wider" style={{ color: CHARACTER_INFO[who].color }}>{CHARACTER_INFO[who].name}</div>
+        <div className="mb-1 flex items-center gap-1.5 font-display text-xs font-bold uppercase tracking-wider text-vibe-midnight/80"><span className="h-2.5 w-2.5 rounded-full" style={{ background: CHARACTER_INFO[who].color }} aria-hidden />{CHARACTER_INFO[who].name}</div>
         <div className="text-base font-semibold leading-snug sm:text-lg">{children}</div>
         {speakText && <button type="button" onClick={() => speak(speakText)} className="mt-2 text-sm font-bold text-vibe-purple" aria-label="Read aloud">🔊 Read to me</button>}
         <span className={`absolute bottom-3 h-4 w-4 rotate-45 bg-white ${align === "right" ? "-right-1.5" : "-left-1.5"}`} />
@@ -31,7 +31,7 @@ export function CharacterSays({ who, mood = "welcome", children, size = 110, spe
 export function Progress({ value, max = 100, color = "bg-vibe-cta", className = "", label }: { value: number; max?: number; color?: string; className?: string; label?: string }) {
   const pct = Math.max(0, Math.min(100, (value / Math.max(1, max)) * 100));
   return (
-    <div className={`h-3 w-full overflow-hidden rounded-full bg-white/10 ${className}`} role="progressbar" aria-valuenow={Math.round(pct)} aria-valuemin={0} aria-valuemax={100} aria-label={label}>
+    <div className={`h-3 w-full overflow-hidden rounded-full bg-white/10 ${className}`} role="progressbar" aria-valuenow={Math.round(pct)} aria-valuemin={0} aria-valuemax={100} aria-valuetext={max === 100 ? `${Math.round(pct)}%` : `${value} of ${max}`} aria-label={label ?? "Progress"}>
       <motion.div className={`h-full rounded-full ${color}`} initial={{ width: 0 }} animate={{ width: `${pct}%` }} transition={{ duration: 0.8, ease: "easeOut" }} />
     </div>
   );
@@ -40,7 +40,7 @@ export function Progress({ value, max = 100, color = "bg-vibe-cta", className = 
 export const RARITY: Record<string, { label: string; ring: string; text: string; glow: string }> = {
   common: { label: "Common", ring: "border-white/20", text: "text-white/70", glow: "" },
   rare: { label: "Rare", ring: "border-vibe-aqua/70", text: "text-vibe-aqua", glow: "shadow-glow-aqua" },
-  epic: { label: "Epic", ring: "border-vibe-purple-light", text: "text-vibe-purple-light", glow: "shadow-glow" },
+  epic: { label: "Epic", ring: "border-vibe-purple-light", text: "text-[#C9B8FF]", glow: "shadow-glow" },
   legendary: { label: "Legendary", ring: "border-vibe-sun", text: "text-vibe-sun", glow: "shadow-glow-sun" },
 };
 export function RarityBadge({ rarity }: { rarity: string }) {

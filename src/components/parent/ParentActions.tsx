@@ -21,9 +21,9 @@ export function AddChild({ grades }: { grades: { grade: string; label: string }[
   return (
     <form className="card grid gap-3 p-5 sm:grid-cols-5" onSubmit={async (e) => { e.preventDefault(); setErr(null); try { const r = await api<{ redirect: string }>("/api/parent/children", { body: { ...f, birthMonth: Number(f.birthMonth), birthYear: Number(f.birthYear) } }); router.push(r.redirect); } catch (x) { setErr((x as Error).message); } }}>
       <input className="input sm:col-span-2" placeholder="First name" value={f.childName} onChange={(e) => setF({ ...f, childName: e.target.value })} />
-      <select className="input" value={f.birthMonth} onChange={(e) => setF({ ...f, birthMonth: e.target.value })}><option value="">Month</option>{MONTHS.map((m, i) => <option key={m} value={i + 1}>{m}</option>)}</select>
-      <select className="input" value={f.birthYear} onChange={(e) => setF({ ...f, birthYear: e.target.value })}><option value="">Year</option>{Array.from({ length: 12 }, (_, i) => y - 3 - i).map((v) => <option key={v}>{v}</option>)}</select>
-      <select className="input" value={f.grade} onChange={(e) => setF({ ...f, grade: e.target.value })}><option value="">Grade</option>{grades.map((g) => <option key={g.grade} value={g.grade}>{g.label}</option>)}</select>
+      <select aria-label="Birth month" className="input" value={f.birthMonth} onChange={(e) => setF({ ...f, birthMonth: e.target.value })}><option value="">Month</option>{MONTHS.map((m, i) => <option key={m} value={i + 1}>{m}</option>)}</select>
+      <select aria-label="Birth year" className="input" value={f.birthYear} onChange={(e) => setF({ ...f, birthYear: e.target.value })}><option value="">Year</option>{Array.from({ length: 12 }, (_, i) => y - 3 - i).map((v) => <option key={v}>{v}</option>)}</select>
+      <select aria-label="Grade" className="input" value={f.grade} onChange={(e) => setF({ ...f, grade: e.target.value })}><option value="">Grade</option>{grades.map((g) => <option key={g.grade} value={g.grade}>{g.label}</option>)}</select>
       <div className="sm:col-span-5"><ErrorNote error={err} /><button className="btn-primary btn-sm mt-2">Continue to consent</button></div>
     </form>
   );
@@ -65,7 +65,7 @@ export function FamilyChallenge({ childId, words }: { childId: string; words: { 
       <div className="mt-3 flex max-h-40 flex-wrap gap-2 overflow-y-auto">
         {words.map((w) => <button key={w.id} type="button" onClick={() => setSel(sel.includes(w.id) ? sel.filter((x) => x !== w.id) : [...sel, w.id].slice(0, 10))} className={`chip ${sel.includes(w.id) ? "bg-vibe-purple text-white" : ""}`}>{w.emoji} {w.word}</button>)}
       </div>
-      <div className="mt-3 grid gap-2 sm:grid-cols-2"><input className="input" value={title} onChange={(e) => setTitle(e.target.value)} maxLength={60} /><input className="input" value={message} placeholder="A short encouraging note (optional)" onChange={(e) => setMessage(e.target.value)} maxLength={200} /></div>
+      <div className="mt-3 grid gap-2 sm:grid-cols-2"><input className="input" aria-label="Challenge title" value={title} onChange={(e) => setTitle(e.target.value)} maxLength={60} /><input className="input" aria-label="Encouraging note (optional)" value={message} placeholder="A short encouraging note (optional)" onChange={(e) => setMessage(e.target.value)} maxLength={200} /></div>
       <button className="btn-primary btn-sm mt-3" onClick={async () => { setErr(null); try { await api("/api/parent/family", { body: { childId, title, message, wordIds: sel } }); setMsg("Challenge sent! 🎉"); setSel([]); } catch (x) { setErr((x as Error).message); } }}>Send challenge ({sel.length})</button>
       {msg && <p className="mt-2 text-sm text-vibe-mint">{msg}</p>}<ErrorNote error={err} />
     </div>
@@ -81,7 +81,7 @@ export function SettingsForm({ initial }: { initial: { reminders_enabled: boolea
       <form className="card space-y-4 p-6" onSubmit={async (e) => { e.preventDefault(); await api("/api/parent/settings", { body: s }); setMsg("Saved ✅"); }}>
         <h2 className="title-md">Learning settings</h2>
         <label className="flex items-center gap-3"><input type="checkbox" className="h-5 w-5 accent-vibe-purple" checked={s.reminders_enabled} onChange={(e) => setS({ ...s, reminders_enabled: e.target.checked })} /> Send me one gentle daily reminder e-mail if my child hasn't learned yet (never sent to children).</label>
-        <label className="flex items-center gap-3">Reminder time: <select className="input w-32" value={s.reminder_hour} onChange={(e) => setS({ ...s, reminder_hour: Number(e.target.value) })}>{Array.from({ length: 24 }, (_, h) => <option key={h} value={h}>{String(h).padStart(2, "0")}:00</option>)}</select></label>
+        <label className="flex items-center gap-3">Reminder time: <select aria-label="Reminder hour" className="input w-32" value={s.reminder_hour} onChange={(e) => setS({ ...s, reminder_hour: Number(e.target.value) })}>{Array.from({ length: 24 }, (_, h) => <option key={h} value={h}>{String(h).padStart(2, "0")}:00</option>)}</select></label>
         <label className="flex items-center gap-3"><input type="checkbox" className="h-5 w-5 accent-vibe-purple" checked={s.companion_enabled} onChange={(e) => setS({ ...s, companion_enabled: e.target.checked })} /> Allow LEXI AI chat (educational questions only, nothing stored).</label>
         <p className="text-xs text-vibe-lavender">Healthy-use safeguards are always on: age-based break reminders (15–30 min), a daily reward ceiling, forgiving learning rhythm (rest days never reset progress) and no pressure notifications to children.</p>
         <button className="btn-primary btn-sm">Save settings</button>{msg && <span className="ml-3 text-sm text-vibe-mint">{msg}</span>}

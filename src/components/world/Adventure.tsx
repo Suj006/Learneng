@@ -194,7 +194,7 @@ export function Adventure({ d }: { d: AdventureData }) {
             <div className={k.unlocked ? "" : "grayscale"}><Scene name={k.art as SceneName} /></div>
             <div className="absolute inset-0 bg-gradient-to-t from-vibe-midnight via-vibe-midnight/30 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-4"><b className="font-display text-lg">{k.emoji} {k.title}</b>
-              {k.unlocked ? <Progress value={k.progress} className="mt-2 h-2" /> : <span className="mt-1 block text-sm text-vibe-sun">🔒 Unlocks at Level {k.unlock_level}</span>}</div>
+              {k.unlocked ? <Progress value={k.progress} className="mt-2 h-2" label={`${k.title} progress`} /> : <span className="mt-1 block text-sm text-vibe-sun">🔒 Unlocks at Level {k.unlock_level}</span>}</div>
           </Link>
         ))}</div>
       </section>
@@ -206,7 +206,7 @@ export function Adventure({ d }: { d: AdventureData }) {
             <div className="flex items-start justify-between"><span className="text-4xl transition group-hover:scale-110">{m.emoji}</span>{skillOf(m.skill) && <span className="chip px-2 text-[10px]">{skillOf(m.skill)}</span>}</div>
             <b className="mt-3 font-display leading-tight">{m.title}</b><p className="mt-1 flex-1 text-xs text-vibe-lavender/90">{m.desc}</p>
             <div className="mt-3 text-xs font-bold text-vibe-aqua">{m.status}</div>
-            {m.pct > 0 && <Progress value={m.pct} className="mt-2 h-1.5" />}
+            {m.pct > 0 && <Progress value={m.pct} className="mt-2 h-1.5" label="Mission progress" />}
             <span className="btn-primary btn-sm mt-3 w-full">Start</span>
           </Link>
         ))}</div>

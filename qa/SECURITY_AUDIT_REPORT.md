@@ -6,7 +6,7 @@ Scope: the application code in this repository, its dependencies and its HTTP su
 
 | Category | Result |
 |---|---|
-| Automated security checks (SEC-001…012) | 12 / 12 PASS |
+| Automated security checks (SEC-001…014) | 14 / 14 PASS (production build) |
 | Authorisation and isolation checks (AUTHZ-001…020) | 20 / 20 PASS |
 | `npm audit --omit=dev` | **0 vulnerabilities** (was: 1 critical Next.js advisory plus others; fixed, BUG-013) |
 | Secrets in repository / HTML | None found. `.env.local` is gitignored, and SEC-009 checks the rendered HTML. |
@@ -23,7 +23,7 @@ Scope: the application code in this repository, its dependencies and its HTTP su
 | Account enumeration | Neutral responses for duplicate sign-up and unknown reset e-mail | AUTH-014, AUTH-042 |
 | SQL injection | Parameterised queries only | SEC-003/004 |
 | XSS | React escaping; no `dangerouslySetInnerHTML` with user data; strict name validation | SEC-005, AUTH-011 |
-| Clickjacking / sniffing | `X-Frame-Options: DENY`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy` (microphone limited to self), HSTS in production | SEC-008 |
+| Clickjacking / sniffing | `X-Frame-Options: DENY`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy` (microphone limited to self), HSTS in production (added during this audit, BUG-021) | SEC-008, SEC-013, SEC-014 |
 | DoS via payload | 64 KB body limit, length caps on writing (6,000 chars) | SEC-006, LRN-032 |
 | Unauthenticated cron | `CRON_SECRET` bearer required | SEC-007 |
 | IDOR across families/children | Every query scoped by the session's parent or child id | AUTHZ-008…019 |

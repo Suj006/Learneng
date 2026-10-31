@@ -21,7 +21,7 @@ export function BrandLogo({ width = 200, className = "", fallback = "md", priori
   const ref = useRef<HTMLImageElement>(null);
   // A load error that happens before hydration never reaches onError — detect it after mount.
   useEffect(() => { const img = ref.current; if (img?.complete && img.naturalWidth === 0) setFailed(true); }, []);
-  if (!present || failed) return <Logo size={fallback} tagline={fallback === "lg"} />;
+  if (!present || failed) return <Logo size={fallback} tagline={fallback === "lg"} badge />;
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img ref={ref} src={SRC} alt="PING VIBE — Your World. Your Words. Your Vibe." width={W} height={H} onError={() => setFailed(true)}

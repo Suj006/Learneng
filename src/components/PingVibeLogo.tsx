@@ -22,7 +22,7 @@ export function brandLogoPresent() {
  * Server component (checks the asset exists); pass it as a prop/children into client components.
  */
 export function PingVibeLogo({ width = 240, priority = false, className = "", fallback = "md" }: { width?: number | string; priority?: boolean; className?: string; fallback?: "sm" | "md" | "lg" }) {
-  if (!brandLogoPresent()) return <Logo size={fallback} tagline={fallback === "lg"} />;
+  if (!brandLogoPresent()) return <Logo size={fallback} tagline={fallback === "lg"} badge />;
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img src={LOGO_SRC} alt="PING VIBE — Your World. Your Words. Your Vibe." width={LOGO_WIDTH} height={LOGO_HEIGHT}

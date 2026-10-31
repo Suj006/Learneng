@@ -137,7 +137,9 @@ async function sweep(label, pages, cookieStr) {
         // interactive elements pushed outside the viewport horizontally (clipped controls)
         const clipped = [...document.querySelectorAll("a,button,input,select,textarea")].filter((el) => {
           const r = el.getBoundingClientRect(); const st = getComputedStyle(el);
-          if (!r.width || st.visibility === "hidden" || el.closest(".row-scroll") || el.closest("[aria-hidden=true]") || el.closest(".sr-only")) return false;
+          // controls inside a horizontally scrollable container are reachable (focus scrolls them into view)
+          const inScroller = (() => { for (let a = el.parentElement; a; a = a.parentElement) { const o = getComputedStyle(a).overflowX; if ((o === "auto" || o === "scroll") && a.scrollWidth > a.clientWidth) return true; } return false; })();
+          if (!r.width || st.visibility === "hidden" || inScroller || el.closest("[aria-hidden=true]") || el.closest(".sr-only")) return false;
           return r.right > vw + 2 || r.left < -2;
         }).map((el) => (el.textContent || el.getAttribute("aria-label") || el.tagName).trim().slice(0, 30));
         const broken = [...document.images].filter((i) => i.complete && i.naturalWidth === 0).map((i) => i.src);
@@ -183,7 +185,7 @@ async function a11y(label, pages, cookieStr) {
     await page.addScriptTag({ content: AXE });
     const res = await page.evaluate(async () => {
       const r = await window.axe.run(document, { runOnly: { type: "tag", values: ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"] } });
-      return r.violations.map((v) => ({ id: v.id, impact: v.impact, nodes: v.nodes.length, help: v.help }));
+      return r.violations.map((v) => ({ id: v.id, impact: v.impact, nodes: v.nodes.length, help: v.help, targets: v.nodes.slice(0, 6).map((n) => ({ target: n.target.join(" "), html: n.html.slice(0, 160), why: (n.failureSummary || "").slice(0, 200) })) }));
     });
     const serious = res.filter((v) => v.impact === "critical" || v.impact === "serious");
     t(`A11Y-${label}-${p.replace(/[^a-z0-9]+/gi, "-") || "home"}`, "Accessibility", "Medium", `${label} ${p}: no critical/serious axe violations (WCAG 2.2 AA)`, serious.length === 0, res.map((v) => `${v.impact}:${v.id}(${v.nodes})`).join(", "));
@@ -199,7 +201,7 @@ async function a11y(label, pages, cookieStr) {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto(BASE + pages[0]);
   const dur = await page.evaluate(() => getComputedStyle(document.querySelector(".animate-twinkle, .animate-float, body")).animationDuration);
-  t(`A11Y-${label}-reduced-motion`, "Accessibility", "Medium", `${label}: prefers-reduced-motion disables CSS animation`, /0\.00|0s|1e-05s/.test(dur), dur);
+  t(`A11Y-${label}-reduced-motion`, "Accessibility", "Medium", `${label}: prefers-reduced-motion disables CSS animation`, (parseFloat(dur) * (/ms$/.test(dur) ? 0.001 : 1)) <= 0.01, dur);
   await ctx.close();
 }
 

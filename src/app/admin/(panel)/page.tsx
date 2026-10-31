@@ -11,7 +11,7 @@ export default async function AdminHome() {
   return (
     <div className="space-y-10">
       <section><h1 className="title-lg">Launch objectives</h1>
-        <div className="mt-4 grid gap-3 md:grid-cols-5">{a.objectives.map((o) => <div key={o.name} className={`card p-4 ${o.ok ? "border-vibe-mint/40" : "border-vibe-sun/50"}`}><div className="text-xs uppercase text-vibe-lavender">{o.ok ? "✅" : "⚠️"} {o.name}</div><div className="mt-1 text-sm font-bold">{o.target}</div><div className="mt-2 text-xs text-vibe-lavender">{o.actual}</div></div>)}</div>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-5 [&>*]:min-w-0 [overflow-wrap:anywhere]">{a.objectives.map((o) => <div key={o.name} className={`card p-4 ${o.ok ? "border-vibe-mint/40" : "border-vibe-sun/50"}`}><div className="text-xs uppercase text-vibe-lavender">{o.ok ? "✅" : "⚠️"} {o.name}</div><div className="mt-1 text-sm font-bold">{o.target}</div><div className="mt-2 text-xs text-vibe-lavender">{o.actual}</div></div>)}</div>
       </section>
       <section><h2 className="title-md">Learners</h2>
         <div className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-6">
@@ -29,17 +29,17 @@ export default async function AdminHome() {
           <Stat l="Speaking participants (30d)" v={k.speaking_participants} /><Stat l="Missions claimed" v={k.missions_claimed} /><Stat l="Reward redemptions" v={k.redemptions} /><Stat l="Bosses defeated" v={k.bosses_defeated} />
         </div>
       </section>
-      <section className="grid gap-6 lg:grid-cols-2">
+      <section className="grid gap-6 lg:grid-cols-2 [&>*]:min-w-0">
         <div className="card p-5"><h2 className="title-md">Activity health (30 days)</h2>
           <p className="text-xs text-vibe-lavender">Flags: 🔥 too hard (avg score &lt; 50), 💤 many quick exits (&gt; 30% under 20s) — candidates for redesign.</p>
-          <table className="mt-3 w-full text-left text-sm"><thead className="text-vibe-lavender"><tr><th>Activity</th><th>Sessions</th><th>Learners</th><th>Avg min</th><th>Avg score</th><th></th></tr></thead>
-            <tbody>{a.activities.map((r) => <tr key={r.module} className="border-t border-white/5"><td className="py-1.5">{r.module}</td><td>{r.sessions}</td><td>{r.learners}</td><td>{r.avg_minutes}</td><td>{r.avg_score ?? "—"}</td><td>{r.avg_score !== null && r.avg_score < 50 ? "🔥" : ""}{r.quick_exits / Math.max(1, r.sessions) > 0.3 ? "💤" : ""}</td></tr>)}</tbody></table>
+          <div className="mt-3 overflow-x-auto"><table className="w-full min-w-[480px] text-left text-sm"><thead className="text-vibe-lavender"><tr><th>Activity</th><th>Sessions</th><th>Learners</th><th>Avg min</th><th>Avg score</th><th></th></tr></thead>
+            <tbody>{a.activities.map((r) => <tr key={r.module} className="border-t border-white/5"><td className="py-1.5">{r.module}</td><td>{r.sessions}</td><td>{r.learners}</td><td>{r.avg_minutes}</td><td>{r.avg_score ?? "—"}</td><td>{r.avg_score !== null && r.avg_score < 50 ? "🔥" : ""}{r.quick_exits / Math.max(1, r.sessions) > 0.3 ? "💤" : ""}</td></tr>)}</tbody></table></div>
         </div>
         <div className="card p-5"><h2 className="title-md">Game engagement (30 days)</h2>
-          <ul className="mt-3 space-y-2 text-sm">{a.games.map((g) => <li key={g.game_slug} className="flex items-center gap-3"><span className="w-40">{g.game_slug}</span><Progress value={g.avg_pct} className="h-2" /><span className="w-24 text-right">{g.plays} plays</span></li>)}</ul>
+          <ul className="mt-3 space-y-2 text-sm">{a.games.map((g) => <li key={g.game_slug} className="flex items-center gap-3"><span className="w-28 shrink-0 truncate sm:w-40">{g.game_slug}</span><Progress value={g.avg_pct} className="h-2" label={`${g.game_slug} average score`} /><span className="w-20 shrink-0 text-right">{g.plays} plays</span></li>)}</ul>
         </div>
       </section>
-      <section className="grid gap-6 lg:grid-cols-2">
+      <section className="grid gap-6 lg:grid-cols-2 [&>*]:min-w-0">
         <div className="card p-5"><h2 className="title-md">Level distribution</h2><ul className="mt-3 space-y-1 text-sm">{a.levels.map((l) => <li key={l.tier_name} className="flex justify-between"><span>{l.tier_name}</span><b>{l.n}</b></li>)}</ul></div>
         <div className="card p-5"><h2 className="title-md">Kingdom unlocking</h2><ul className="mt-3 space-y-1 text-sm">{a.kingdoms.map((l) => <li key={l.title} className="flex justify-between"><span>{l.title}</span><b>{l.n} learners</b></li>)}</ul></div>
       </section>

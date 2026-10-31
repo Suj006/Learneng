@@ -21,14 +21,14 @@ The measurements are local, with no network latency. On a real 4G connection in 
 | ID | Check | Result | Measured |
 |---|---|---|---|
 | LOAD-001 | No 5xx under load | **PASS** | 0 errors in 660 requests (15.5 s, 42.5 req/s) |
-| LOAD-002 | API p95 < 1500 ms | **FAIL (OPEN-001)** | p50 384 ms · p95 2,554 ms · max 8,411 ms |
+| LOAD-002 | API p95 < 1500 ms | **UNSTABLE (OPEN-001)**: run 1 FAIL, run 2 PASS | Run 1: p50 384 ms · p95 2,554 ms · max 8,411 ms. Run 2 (after rebuild): p50 365 ms · p95 1,496 ms · max 9,816 ms |
 | LOAD-003 | Exactly one XP award per child under triple concurrent completion | **PASS** | 30/30 children = 1 award |
 
 ### Analysis of LOAD-002
 
 - The QA database is **PGlite, an embedded single-connection Postgres**, so every query from 30 users is serialised through one connection. That explains why the median is fine and the tail is long.
 - Correctness held: there were no errors and no double awards.
-- The result is therefore **not representative of production**, but it is reported as a FAIL because the target was not met in the tested environment.
+- The result is therefore **not representative of production**. It is still treated as an open item: the target is met only by a 4 ms margin in one of two runs, and single requests reach 8–10 s.
 - The intended production database is Supabase/Postgres with the session pooler, and it has not been load-tested.
 
 **Before launch:**

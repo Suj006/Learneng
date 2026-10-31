@@ -111,7 +111,7 @@ export default function Landing() {
           <h2 className="title-lg">Explore Your Learning Universe</h2>
           <p className="mt-2 text-vibe-lavender">Six magical kingdoms. Hundreds of missions. A new adventure every day.</p>
         </div>
-        <div className="row-scroll mt-8 px-4 sm:px-6 lg:mx-auto lg:max-w-7xl">
+        <div className="row-scroll mt-8 px-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-vibe-sun sm:px-6 lg:mx-auto lg:max-w-7xl" tabIndex={0} role="region" aria-label="Learning kingdoms (scroll sideways)">
           {UNIVERSE.map((u, i) => (
             <motion.article key={u.title} whileHover={{ y: -6 }} initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }}
               className="card group relative w-[78vw] max-w-[340px] shrink-0 snap-start overflow-hidden">

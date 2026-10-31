@@ -36,10 +36,10 @@ export function GenerateForm({ aiOn, grammarTopics, themes }: { aiOn: boolean; g
   const [f, setF] = useState({ kind: "vocabulary", band: 2, category: "", topic: grammarTopics[0]?.slug ?? "", count: 5 });
   return (
     <form className="card grid gap-3 p-5 md:grid-cols-6" onSubmit={(e) => { e.preventDefault(); a.run(async () => { const r = await api<{ produced: number; rejected: number }>("/api/admin/generate", { body: { kind: f.kind, band: f.band, count: f.count, category: f.category || undefined, topic: f.kind === "grammar" ? f.topic : undefined } }); return `Generated: ${r.produced} passed validation (pending review), ${r.rejected} auto-rejected.`; }); }}>
-      <select className="input" value={f.kind} onChange={(e) => setF({ ...f, kind: e.target.value })}>{[["vocabulary", "Vocabulary (from headwords)"], ["writing_topic", "Writing topics"], ["story", "Reading story"], ["grammar", "Grammar exercises"], ["speaking", "Speaking scenarios"]].map(([v, l]) => <option key={v} value={v}>{l}</option>)}</select>
-      <select className="input" value={f.band} onChange={(e) => setF({ ...f, band: Number(e.target.value) })}>{[1, 2, 3, 4].map((b) => <option key={b} value={b}>Band {b}</option>)}</select>
-      {f.kind === "grammar" ? <select className="input" value={f.topic} onChange={(e) => setF({ ...f, topic: e.target.value })}>{grammarTopics.map((t) => <option key={t.slug} value={t.slug}>{t.title}</option>)}</select>
-        : <select className="input" value={f.category} onChange={(e) => setF({ ...f, category: e.target.value })}><option value="">Any theme</option>{themes.map((t) => <option key={t.key} value={t.key}>{t.title}</option>)}</select>}
+      <select aria-label="Content type" className="input" value={f.kind} onChange={(e) => setF({ ...f, kind: e.target.value })}>{[["vocabulary", "Vocabulary (from headwords)"], ["writing_topic", "Writing topics"], ["story", "Reading story"], ["grammar", "Grammar exercises"], ["speaking", "Speaking scenarios"]].map(([v, l]) => <option key={v} value={v}>{l}</option>)}</select>
+      <select aria-label="Difficulty band" className="input" value={f.band} onChange={(e) => setF({ ...f, band: Number(e.target.value) })}>{[1, 2, 3, 4].map((b) => <option key={b} value={b}>Band {b}</option>)}</select>
+      {f.kind === "grammar" ? <select aria-label="Grammar topic" className="input" value={f.topic} onChange={(e) => setF({ ...f, topic: e.target.value })}>{grammarTopics.map((t) => <option key={t.slug} value={t.slug}>{t.title}</option>)}</select>
+        : <select aria-label="Category" className="input" value={f.category} onChange={(e) => setF({ ...f, category: e.target.value })}><option value="">Any theme</option>{themes.map((t) => <option key={t.key} value={t.key}>{t.title}</option>)}</select>}
       <input className="input" type="number" min={1} max={10} value={f.count} onChange={(e) => setF({ ...f, count: Number(e.target.value) })} aria-label="Count" />
       <button className="btn-primary md:col-span-2" disabled={a.busy || !aiOn}>{a.busy ? "Generating & validating…" : aiOn ? "Generate with Claude" : "Set ANTHROPIC_API_KEY to enable"}</button>
       <div className="md:col-span-6"><Status msg={a.msg} err={a.err} /></div>
@@ -58,12 +58,12 @@ export function ManualVocab() {
   const set = (k: keyof typeof f) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => setF({ ...f, [k]: k === "band" || k === "difficulty" ? Number(e.target.value) : e.target.value });
   return (
     <form className="card grid gap-2 p-5 md:grid-cols-4" onSubmit={(e) => { e.preventDefault(); a.run(async () => { const r = await api<{ validation: { passed: boolean } }>("/api/admin/manual", { body: { kind: "vocabulary", band: f.band, title: f.word, body: { ...f, synonyms: f.synonyms.split(",").map((s) => s.trim()).filter(Boolean), antonyms: f.antonyms.split(",").map((s) => s.trim()).filter(Boolean) } } }); return r.validation.passed ? "Added to the review queue ✅" : "Added to the queue — some validation checks failed, see details."; }); }}>
-      <input className="input" placeholder="word" value={f.word} onChange={set("word")} required /><select className="input" value={f.band} onChange={set("band")}>{[1, 2, 3, 4].map((b) => <option key={b} value={b}>Band {b}</option>)}</select>
+      <input className="input" placeholder="word" value={f.word} onChange={set("word")} required /><select aria-label="Difficulty band" className="input" value={f.band} onChange={set("band")}>{[1, 2, 3, 4].map((b) => <option key={b} value={b}>Band {b}</option>)}</select>
       <input className="input" placeholder="part of speech" value={f.part_of_speech} onChange={set("part_of_speech")} /><input className="input" placeholder="phonetic e.g. ih-NOR-muhs" value={f.phonetic} onChange={set("phonetic")} required />
       <input className="input md:col-span-2" placeholder="simple meaning" value={f.meaning} onChange={set("meaning")} required /><input className="input md:col-span-2" placeholder="child-friendly explanation" value={f.explanation} onChange={set("explanation")} required />
       <input className="input md:col-span-2" placeholder="example sentence (must contain the word)" value={f.example} onChange={set("example")} required /><input className="input md:col-span-2" placeholder="real-life usage" value={f.usage} onChange={set("usage")} />
       <input className="input" placeholder="synonyms, comma separated" value={f.synonyms} onChange={set("synonyms")} /><input className="input" placeholder="antonyms" value={f.antonyms} onChange={set("antonyms")} />
-      <input className="input" placeholder="emoji" value={f.emoji} onChange={set("emoji")} /><select className="input" value={f.difficulty} onChange={set("difficulty")}>{[1, 2, 3, 4, 5].map((d) => <option key={d} value={d}>Difficulty {d}</option>)}</select>
+      <input className="input" placeholder="emoji" value={f.emoji} onChange={set("emoji")} /><select aria-label="Difficulty" className="input" value={f.difficulty} onChange={set("difficulty")}>{[1, 2, 3, 4, 5].map((d) => <option key={d} value={d}>Difficulty {d}</option>)}</select>
       <button className="btn-primary md:col-span-4" disabled={a.busy}>Validate & add to review queue</button><div className="md:col-span-4"><Status msg={a.msg} err={a.err} /></div>
     </form>
   );
@@ -101,7 +101,7 @@ export function EventForm({ initial }: { initial?: { slug: string; title: string
       <input className="input" placeholder="slug" value={f.slug} onChange={(e) => setF({ ...f, slug: e.target.value })} disabled={!!initial} />
       <input className="input md:col-span-2" placeholder="title" value={f.title} onChange={(e) => setF({ ...f, title: e.target.value })} />
       <input className="input" placeholder="emoji" value={f.emoji} onChange={(e) => setF({ ...f, emoji: e.target.value })} />
-      <select className="input" value={f.kind} onChange={(e) => setF({ ...f, kind: e.target.value })}>{["festival", "seasonal", "special"].map((k) => <option key={k}>{k}</option>)}</select>
+      <select aria-label="Content type" className="input" value={f.kind} onChange={(e) => setF({ ...f, kind: e.target.value })}>{["festival", "seasonal", "special"].map((k) => <option key={k}>{k}</option>)}</select>
       <label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={f.active} onChange={(e) => setF({ ...f, active: e.target.checked })} /> active</label>
       <input className="input" type="number" min={1} max={12} value={f.month} onChange={(e) => setF({ ...f, month: Number(e.target.value) })} aria-label="Month" />
       <input className="input" type="number" min={1} max={31} value={f.day} onChange={(e) => setF({ ...f, day: Number(e.target.value) })} aria-label="Day" />
@@ -122,7 +122,7 @@ export function VocabEditor({ w }: { w: { id: string; word: string; meaning: str
     <form className="grid gap-2 md:grid-cols-6" onSubmit={(e) => { e.preventDefault(); a.run(() => api("/api/admin/vocabulary", { body: f })); }}>
       <input className="input" value={f.emoji} onChange={(e) => setF({ ...f, emoji: e.target.value })} aria-label="emoji" /><input className="input" value={f.phonetic} onChange={(e) => setF({ ...f, phonetic: e.target.value })} aria-label="phonetic" />
       <input className="input md:col-span-2" value={f.meaning} onChange={(e) => setF({ ...f, meaning: e.target.value })} aria-label="meaning" />
-      <select className="input" value={f.status} onChange={(e) => setF({ ...f, status: e.target.value })}>{["published", "draft", "archived"].map((s) => <option key={s}>{s}</option>)}</select>
+      <select aria-label="Status" className="input" value={f.status} onChange={(e) => setF({ ...f, status: e.target.value })}>{["published", "draft", "archived"].map((s) => <option key={s}>{s}</option>)}</select>
       <button className="btn-ghost btn-sm" disabled={a.busy}>Save</button>
       <input className="input md:col-span-3" value={f.explanation} onChange={(e) => setF({ ...f, explanation: e.target.value })} aria-label="explanation" />
       <input className="input md:col-span-3" value={f.example} onChange={(e) => setF({ ...f, example: e.target.value })} aria-label="example" />
@@ -138,7 +138,7 @@ export function GradeForm() {
     <form className="card grid gap-2 p-5 md:grid-cols-6" onSubmit={(e) => { e.preventDefault(); a.run(async () => { const r = await api<{ plans: number }>("/api/admin/grades", { body: f }); return `Saved — ${r.plans} plan days generated.`; }); }}>
       <input className="input" placeholder="code e.g. G8" value={f.grade} onChange={(e) => setF({ ...f, grade: e.target.value.toUpperCase() })} />
       <input className="input" placeholder="label e.g. Grade 8" value={f.label} onChange={(e) => setF({ ...f, label: e.target.value })} />
-      <select className="input" value={f.band} onChange={(e) => setF({ ...f, band: Number(e.target.value) })}>{[1, 2, 3, 4].map((b) => <option key={b} value={b}>Content band {b}</option>)}</select>
+      <select aria-label="Difficulty band" className="input" value={f.band} onChange={(e) => setF({ ...f, band: Number(e.target.value) })}>{[1, 2, 3, 4].map((b) => <option key={b} value={b}>Content band {b}</option>)}</select>
       <input className="input" type="number" value={f.new_words_per_day} onChange={(e) => setF({ ...f, new_words_per_day: Number(e.target.value) })} aria-label="New words per day" />
       <input className="input" type="number" value={f.sort_order} onChange={(e) => setF({ ...f, sort_order: Number(e.target.value) })} aria-label="Sort order" />
       <button className="btn-primary btn-sm" disabled={a.busy}>Save grade & build 365-day plan</button>
