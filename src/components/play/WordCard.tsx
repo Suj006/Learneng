@@ -22,19 +22,19 @@ export function WordCard({ w, index, total }: { w: WordData; index?: number; tot
       <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-vibe-aqua/20 blur-2xl" />
       <div className="flex flex-wrap items-center justify-between gap-2">
         {index !== undefined && <span className="chip">Word {index + 1} of {total}</span>}
-        <span className="chip text-vibe-sun">{"★".repeat(w.difficulty)}{"☆".repeat(5 - w.difficulty)} difficulty</span>
+        <span className="chip text-vibe-sun-ink">{"★".repeat(w.difficulty)}{"☆".repeat(5 - w.difficulty)} difficulty</span>
       </div>
       <div className="mt-6 flex flex-col items-center gap-6 sm:flex-row sm:items-start">
         <motion.div className="text-8xl sm:text-9xl" animate={{ y: [0, -8, 0] }} transition={{ duration: 3, repeat: Infinity }} aria-hidden>{w.emoji}</motion.div>
         <div className="flex-1 text-center sm:text-left">
           <h2 className="font-display text-5xl font-bold uppercase tracking-wide sm:text-6xl">{w.word}</h2>
-          <p className="mt-1 text-lg text-vibe-aqua">{w.phonetic} · <i>{w.part_of_speech}</i></p>
+          <p className="mt-1 text-lg text-vibe-aqua-ink">{w.phonetic} · <i>{w.part_of_speech}</i></p>
           <div className="mt-3 flex flex-wrap justify-center gap-2 sm:justify-start">
             <button className="btn-primary btn-sm" onClick={() => speak(w.word, { rate: 0.75 })}>🔊 Listen</button>
             <button className="btn-ghost btn-sm" onClick={() => speak(w.example)}>🔊 Example</button>
             {canListen && <button className="btn-ghost btn-sm" onClick={repeat} disabled={listening}>{listening ? "🎙️ Listening…" : "🎙️ Repeat the word"}</button>}
           </div>
-          {heard && <p className={`mt-2 text-sm font-semibold ${heard.score >= 80 ? "text-vibe-mint" : "text-vibe-sun"}`}>{heard.score < 0 ? "I couldn't hear you — try again in a quiet place!" : heard.score >= 80 ? `SPEAKY: Perfect! I heard “${heard.text}” 🎉` : `SPEAKY: I heard “${heard.text}”. Let's try once more — slowly: ${w.phonetic}`}</p>}
+          {heard && <p className={`mt-2 text-sm font-semibold ${heard.score >= 80 ? "text-vibe-mint-ink" : "text-vibe-sun-ink"}`}>{heard.score < 0 ? "I couldn't hear you — try again in a quiet place!" : heard.score >= 80 ? `SPEAKY: Perfect! I heard “${heard.text}” 🎉` : `SPEAKY: I heard “${heard.text}”. Let's try once more — slowly: ${w.phonetic}`}</p>}
         </div>
       </div>
       <div className="mt-6 grid gap-4 sm:grid-cols-2">

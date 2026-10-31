@@ -29,7 +29,7 @@ function MCQ({ prompt, options, answer, onPick, emoji, sentence }: { prompt: str
       <div className="mt-4 grid gap-3 sm:grid-cols-2">
         {options.map((o) => (
           <button key={o} disabled={!!picked} onClick={() => { setPicked(o); setTimeout(() => onPick(o === answer), 650); }}
-            className={`rounded-2xl border p-4 text-left font-semibold transition ${picked ? (o === answer ? "border-vibe-mint bg-vibe-mint/20" : o === picked ? "border-vibe-coral bg-vibe-coral/20" : "opacity-50") : "border-white/10 bg-white/5 hover:bg-white/10"}`}>{o}</button>
+            className={`rounded-2xl border p-4 text-left font-semibold transition ${picked ? (o === answer ? "border-vibe-mint bg-vibe-mint/20" : o === picked ? "border-vibe-coral bg-vibe-coral/20" : "opacity-50") : "border-line/10 bg-glass/5 hover:bg-glass/10"}`}>{o}</button>
         ))}
       </div>
     </div>
@@ -78,13 +78,13 @@ function PictureVocabulary({ words, band, onDone }: GameProps) {
       <Progress value={i} max={rounds.length} className="mb-4" />
       <p className="font-display text-2xl font-bold">{band === 1 ? "Drag the word onto the picture!" : "Drag (or tap) the matching word onto the picture."}</p>
       <div onDragOver={(e) => e.preventDefault()} onDrop={(e) => drop(e.dataTransfer.getData("text"))} onClick={() => drag && drop(drag)}
-        className={`mx-auto my-6 grid h-48 w-48 place-items-center rounded-[2.5rem] border-4 border-dashed text-8xl transition ${state === "ok" ? "border-vibe-mint bg-vibe-mint/20" : state === "no" ? "border-vibe-coral bg-vibe-coral/20" : "border-white/30 bg-white/5"}`}>
+        className={`mx-auto my-6 grid h-48 w-48 place-items-center rounded-[2.5rem] border-4 border-dashed text-8xl transition ${state === "ok" ? "border-vibe-mint bg-vibe-mint/20" : state === "no" ? "border-vibe-coral bg-vibe-coral/20" : "border-line/30 bg-glass/5"}`}>
         {w.emoji}
       </div>
       <div className="flex flex-wrap justify-center gap-3">
         {choices.map((c) => (
           <button key={c} draggable onDragStart={(e) => e.dataTransfer.setData("text", c)} onClick={() => (drag === c ? drop(c) : setDrag(c))}
-            className={`rounded-full border-2 px-5 py-3 font-display text-xl font-bold ${drag === c ? "border-vibe-aqua bg-vibe-aqua/30" : "border-white/20 bg-white/10"}`}>{c}</button>
+            className={`rounded-full border-2 px-5 py-3 font-display text-xl font-bold ${drag === c ? "border-vibe-aqua bg-vibe-aqua/30" : "border-line/20 bg-glass/10"}`}>{c}</button>
         ))}
       </div>
       <p className="mt-4 text-center text-sm text-vibe-lavender">Tip: tap a word, then tap the picture.</p>
@@ -114,8 +114,8 @@ function SpellMaster({ words, onDone }: GameProps) {
         <input className="input text-center text-2xl font-bold tracking-widest" value={typed} onChange={(e) => setTyped(e.target.value)} autoCapitalize="none" autoComplete="off" spellCheck={false} aria-label="Spell the word" disabled={fb !== null} />
         <button className="btn-primary">{fb === null ? "Check" : "Next"}</button>
       </form>
-      {fb === null && !hint && <button className="mt-2 text-sm text-vibe-aqua underline" onClick={() => setHint(true)}>Need a hint?</button>}
-      {fb !== null && <p className={`mt-3 font-bold ${fb ? "text-vibe-mint" : "text-vibe-coral"}`}>{fb ? "Spelled perfectly! ✨" : `It's spelled: ${w.word.toUpperCase().split("").join(" ")}`}</p>}
+      {fb === null && !hint && <button className="mt-2 text-sm text-vibe-aqua-ink underline" onClick={() => setHint(true)}>Need a hint?</button>}
+      {fb !== null && <p className={`mt-3 font-bold ${fb ? "text-vibe-mint-ink" : "text-vibe-coral-ink"}`}>{fb ? "Spelled perfectly! ✨" : `It's spelled: ${w.word.toUpperCase().split("").join(" ")}`}</p>}
     </div>
   );
 }
@@ -135,7 +135,7 @@ function WordRace({ words, onDone }: GameProps) {
   const options = useMemo(() => opts(q, words, (x) => x.meaning), [q, words]);
   return (
     <div>
-      <div className="mb-4 flex items-center gap-3"><span className="font-display text-3xl font-bold text-vibe-sun">⏱️ {left}s</span><Progress value={left} max={60} color="bg-vibe-sun" /><span className="chip">✅ {res.current.filter((r) => r.correct).length}</span></div>
+      <div className="mb-4 flex items-center gap-3"><span className="font-display text-3xl font-bold text-vibe-sun-ink">⏱️ {left}s</span><Progress value={left} max={60} color="bg-vibe-sun" /><span className="chip">✅ {res.current.filter((r) => r.correct).length}</span></div>
       <MCQ prompt={`What does “${q.word}” mean?`} options={options} answer={q.meaning} onPick={(ok) => { pushResult(res.current, { wordId: q.id, correct: ok }); let n = shuffle(words)[0]; if (n.id === q.id && words.length > 1) n = words.find((x) => x.id !== q.id)!; setQ(n); }} />
     </div>
   );
@@ -156,15 +156,15 @@ function SentenceBuilder({ words, onDone }: GameProps) {
     <div>
       <Progress value={i} max={rounds.length} className="mb-4" />
       <p className="font-display text-2xl font-bold">Build the sentence using “{w.word}” {w.emoji}</p>
-      <div className="glass my-4 min-h-16 p-4 text-xl font-semibold">{built || <span className="text-vibe-lavender/50">Tap the words in order…</span>}</div>
-      <div className="flex flex-wrap gap-2">{tokens.map((x) => <button key={x.k} disabled={picked.includes(x.k) || fb !== null} onClick={() => setPicked([...picked, x.k])} className={`rounded-full border border-white/20 px-4 py-2 font-semibold ${picked.includes(x.k) ? "opacity-30" : "bg-white/10"}`}>{x.t}</button>)}</div>
+      <div className="glass my-4 min-h-16 p-4 text-xl font-semibold">{built || <span className="text-vibe-lavender">Tap the words in order…</span>}</div>
+      <div className="flex flex-wrap gap-2">{tokens.map((x) => <button key={x.k} disabled={picked.includes(x.k) || fb !== null} onClick={() => setPicked([...picked, x.k])} className={`rounded-full border border-line/20 px-4 py-2 font-semibold ${picked.includes(x.k) ? "opacity-30" : "bg-glass/10"}`}>{x.t}</button>)}</div>
       <div className="mt-4 flex gap-2">
         <button className="btn-ghost btn-sm" disabled={!picked.length || fb !== null} onClick={() => setPicked(picked.slice(0, -1))}>↩ Undo</button>
         {fb === null
           ? <button className="btn-primary btn-sm" disabled={picked.length !== tokens.length} onClick={() => { const ok = built.toLowerCase() === target.toLowerCase(); setFb(ok); pushResult(res.current, { wordId: w.id, correct: ok }); }}>Check</button>
           : <button className="btn-primary btn-sm" onClick={() => { setFb(null); setPicked([]); if (i + 1 < rounds.length) setI(i + 1); else onDone({ score: res.current.filter((r) => r.correct).length, max: rounds.length, results: res.current }); }}>Next →</button>}
       </div>
-      {fb !== null && <p className={`mt-3 font-bold ${fb ? "text-vibe-mint" : "text-vibe-coral"}`}>{fb ? "Perfect sentence! 🧱" : `Correct order: “${w.example}”`}</p>}
+      {fb !== null && <p className={`mt-3 font-bold ${fb ? "text-vibe-mint-ink" : "text-vibe-coral-ink"}`}>{fb ? "Perfect sentence! 🧱" : `Correct order: “${w.example}”`}</p>}
     </div>
   );
 }
@@ -186,12 +186,12 @@ function WordDetective({ words, onDone }: GameProps) {
       <Progress value={i} max={rounds.length} className="mb-4" />
       <p className="font-display text-xl">🕵️ Case #{i + 1}: “{w.meaning}”</p>
       <p className="mt-1 text-sm text-vibe-lavender">Clue: it has {w.word.length} letters{misses >= 2 ? ` · picture clue: ${w.emoji}` : ""}{misses >= 4 ? ` · sounds like: ${w.phonetic}` : ""}</p>
-      <div className="my-6 flex flex-wrap justify-center gap-2">{letters.map((l, k) => <span key={k} className="grid h-12 w-10 place-items-center rounded-xl bg-white/10 font-display text-2xl font-bold uppercase">{guessed.includes(l) || solved || out ? l : ""}</span>)}</div>
+      <div className="my-6 flex flex-wrap justify-center gap-2">{letters.map((l, k) => <span key={k} className="grid h-12 w-10 place-items-center rounded-xl bg-glass/10 font-display text-2xl font-bold uppercase">{guessed.includes(l) || solved || out ? l : ""}</span>)}</div>
       <p className="text-sm">Magnifying glass power: {"🔎".repeat(Math.max(0, 6 - misses))}</p>
       {solved || out ? (
-        <div className="mt-4"><p className={`font-bold ${solved ? "text-vibe-mint" : "text-vibe-sun"}`}>{solved ? "Case solved! 🎉" : `The word was “${w.word}”. Great detective work!`}</p><button className="btn-primary mt-3" onClick={next}>Next case →</button></div>
+        <div className="mt-4"><p className={`font-bold ${solved ? "text-vibe-mint-ink" : "text-vibe-sun-ink"}`}>{solved ? "Case solved! 🎉" : `The word was “${w.word}”. Great detective work!`}</p><button className="btn-primary mt-3" onClick={next}>Next case →</button></div>
       ) : (
-        <div className="mx-auto mt-4 flex max-w-xl flex-wrap justify-center gap-1.5">{"abcdefghijklmnopqrstuvwxyz".split("").map((l) => <button key={l} disabled={guessed.includes(l)} onClick={() => setGuessed([...guessed, l])} className={`h-10 w-10 rounded-xl font-bold uppercase ${guessed.includes(l) ? (letters.includes(l) ? "bg-vibe-mint/40" : "bg-white/5 opacity-40") : "bg-white/10 hover:bg-white/20"}`}>{l}</button>)}</div>
+        <div className="mx-auto mt-4 flex max-w-xl flex-wrap justify-center gap-1.5">{"abcdefghijklmnopqrstuvwxyz".split("").map((l) => <button key={l} disabled={guessed.includes(l)} onClick={() => setGuessed([...guessed, l])} className={`h-10 w-10 rounded-xl font-bold uppercase ${guessed.includes(l) ? (letters.includes(l) ? "bg-vibe-mint/40" : "bg-glass/5 opacity-40") : "bg-glass/10 hover:bg-glass/20"}`}>{l}</button>)}</div>
       )}
     </div>
   );
@@ -236,7 +236,7 @@ function WordHunter({ words, onDone }: GameProps) {
   return (
     <div className="grid gap-6 md:grid-cols-[auto_1fr]">
       <div className="mx-auto grid gap-1" style={{ gridTemplateColumns: `repeat(${N}, minmax(0, 1fr))` }}>
-        {grid.flatMap((row, r) => row.map((ch, c) => { const id = `${r}-${c}`; return <button key={id} onClick={() => pick(id)} className={`grid h-9 w-9 place-items-center rounded-lg font-display font-bold sm:h-11 sm:w-11 ${foundCells.has(id) ? "bg-vibe-mint/50" : start === id ? "bg-vibe-aqua" : "bg-white/10 hover:bg-white/20"}`}>{ch}</button>; }))}
+        {grid.flatMap((row, r) => row.map((ch, c) => { const id = `${r}-${c}`; return <button key={id} onClick={() => pick(id)} className={`grid h-9 w-9 place-items-center rounded-lg font-display font-bold sm:h-11 sm:w-11 ${foundCells.has(id) ? "bg-vibe-mint/50" : start === id ? "bg-vibe-aqua" : "bg-glass/10 hover:bg-glass/20"}`}>{ch}</button>; }))}
       </div>
       <div>
         <p className="font-display text-lg">Tap the FIRST letter, then the LAST letter of each hidden word.</p>
@@ -269,7 +269,7 @@ function WordMatch({ words, onDone }: GameProps) {
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
         {tiles.map((t, k) => (
           <motion.button key={k} animate={shake === k ? { x: [0, -8, 8, 0] } : {}} onClick={() => tap(k)} disabled={matched.includes(t.id)}
-            className={`min-h-24 rounded-2xl border p-3 text-sm font-semibold transition ${matched.includes(t.id) ? "border-vibe-mint bg-vibe-mint/20 opacity-60" : sel === k ? "border-vibe-aqua bg-vibe-aqua/25" : t.kind === "w" ? "border-white/20 bg-vibe-purple/25 font-display text-lg" : "border-white/10 bg-white/5"}`}>{t.text}</motion.button>
+            className={`min-h-24 rounded-2xl border p-3 text-sm font-semibold transition ${matched.includes(t.id) ? "border-vibe-mint bg-vibe-mint/20 opacity-60" : sel === k ? "border-vibe-aqua bg-vibe-aqua/25" : t.kind === "w" ? "border-line/20 bg-vibe-purple/25 font-display text-lg" : "border-line/10 bg-glass/5"}`}>{t.text}</motion.button>
         ))}
       </div>
     </div>
@@ -372,7 +372,7 @@ export function GameRunner({ slug }: { slug: string }) {
         <div className="card p-6 text-center">
           <h2 className="title-lg">{result.score}/{result.max}</h2><p className="mt-1 text-vibe-lavender">Your best score: {result.best}</p>
           {result.score / result.max < 0.5 && ALTERNATIVE[slug] && (
-            <div className="mx-auto mt-4 max-w-md"><CharacterSays who="max" mood="encouraging" size={70}>That one was tricky! Want to warm up with <Link className="font-bold text-vibe-purple underline" href={`/world/arcade/${ALTERNATIVE[slug][0]}`}>{ALTERNATIVE[slug][1]}</Link> first?</CharacterSays></div>
+            <div className="mx-auto mt-4 max-w-md"><CharacterSays who="max" mood="encouraging" size={70}>That one was tricky! Want to warm up with <Link className="font-bold text-vibe-purple-ink underline" href={`/world/arcade/${ALTERNATIVE[slug][0]}`}>{ALTERNATIVE[slug][1]}</Link> first?</CharacterSays></div>
           )}
           <div className="mt-6 flex justify-center gap-3"><button className="btn-primary" onClick={() => { setResult(null); setRound(round + 1); timer.current = startTimer(); }}>Play again 🔁</button><Link href="/world/arcade" className="btn-ghost">More games</Link></div>
           {cele && <Celebration award={result.award} who="max" title={result.score / result.max >= 0.8 ? "Amazing game!" : "Great practice!"} message={`You scored ${result.score} out of ${result.max}.`} onClose={() => { setCele(false); router.refresh(); }} />}

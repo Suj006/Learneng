@@ -60,7 +60,7 @@ export function SignupForm({ grades }: { grades: { grade: string; label: string 
         <ol className="mt-4 space-y-2 text-sm text-vibe-lavender">
           <li>1️⃣ Verify your e-mail ✅</li><li>2️⃣ Review privacy & give consent</li><li>3️⃣ Set {f.childName || "your child"}'s secret PIN</li><li>4️⃣ Enter the PING VIBE universe!</li>
         </ol>
-        {done.devMailbox && <p className="mt-4 rounded-2xl bg-vibe-sun/15 p-3 text-sm text-vibe-sun">Developer mode: no e-mail provider is configured, so the link is in the <Link className="underline" href="/dev/mailbox">developer mailbox</Link>.</p>}
+        {done.devMailbox && <p className="mt-4 rounded-2xl bg-vibe-sun/15 p-3 text-sm text-vibe-sun-ink">Developer mode: no e-mail provider is configured, so the link is in the <Link className="underline" href="/dev/mailbox">developer mailbox</Link>.</p>}
         <Link href="/login?as=parent" className="btn-ghost mt-6">Go to parent login</Link>
       </div>
     );
@@ -83,7 +83,7 @@ export function SignupForm({ grades }: { grades: { grade: string; label: string 
         <Msg k="parentEmail" />
       </div>
       <fieldset>
-        <legend className="label">Birth month and year <span className="font-normal text-vibe-lavender/70">(we never ask for the full date)</span></legend>
+        <legend className="label">Birth month and year <span className="font-normal text-vibe-lavender">(we never ask for the full date)</span></legend>
         <div className="grid grid-cols-1 gap-3 min-[360px]:grid-cols-2">
           <div>
             <label className="sr-only" htmlFor="birthMonth">Birth month</label>
@@ -100,7 +100,7 @@ export function SignupForm({ grades }: { grades: { grade: string; label: string 
             <Msg k="birthYear" />
           </div>
         </div>
-        <p className="mt-1.5 text-xs text-vibe-lavender/70">PING VIBE is for Explorers aged {AGE_MIN}–{AGE_MAX}.</p>
+        <p className="mt-1.5 text-xs text-vibe-lavender">PING VIBE is for Explorers aged {AGE_MIN}–{AGE_MAX}.</p>
       </fieldset>
       <div>
         <label className="label" htmlFor="grade">Current grade</label>
@@ -117,13 +117,13 @@ export function SignupForm({ grades }: { grades: { grade: string; label: string 
       <div>
       <label className="flex items-start gap-3 text-sm text-vibe-lavender">
         <input id="isParent" type="checkbox" className="mt-0.5 h-6 w-6 shrink-0 accent-vibe-purple" checked={f.isParent} onChange={set("isParent")} {...invalid("isParent")} />
-        <span>I am the parent or legal guardian of this child. I've read the <Link href="/privacy" className="text-vibe-aqua underline" target="_blank">privacy notice</Link>.</span>
+        <span>I am the parent or legal guardian of this child. I've read the <Link href="/privacy" className="text-vibe-aqua-ink underline" target="_blank">privacy notice</Link>.</span>
       </label>
       <Msg k="isParent" />
       </div>
       <ErrorNote error={error} />
       <button className="btn-primary w-full text-lg" disabled={busy}>{busy ? "Creating…" : "Create account ✨"}</button>
-      <p className="text-center text-sm text-vibe-lavender">Already exploring? <Link href="/login" className="font-bold text-vibe-aqua">Log in</Link></p>
+      <p className="text-center text-sm text-vibe-lavender">Already exploring? <Link href="/login" className="font-bold text-vibe-aqua-ink">Log in</Link></p>
     </form>
   );
 }

@@ -6,7 +6,7 @@ import { CharacterSays, Celebration, ErrorNote, Progress, Spinner, type AwardLik
 import { api, startTimer } from "@/lib/client";
 
 type Ex = { i: number; q: string; options: string[]; hint: string };
-const md = (s: string) => s.split(/\*\*(.+?)\*\*/g).map((p, k) => (k % 2 ? <b key={k} className="text-vibe-sun">{p}</b> : p));
+const md = (s: string) => s.split(/\*\*(.+?)\*\*/g).map((p, k) => (k % 2 ? <b key={k} className="text-vibe-sun-ink">{p}</b> : p));
 
 export function GrammarMission({ topic, exercises }: { topic: { slug: string; title: string; explanation: string; examples: { sentence: string; note: string }[] }; exercises: Ex[] }) {
   const [phase, setPhase] = useState<"learn" | "play" | "done">("learn");
@@ -21,7 +21,7 @@ export function GrammarMission({ topic, exercises }: { topic: { slug: string; ti
     return (
       <div className="mx-auto max-w-3xl space-y-6">
         <CharacterSays who="grammy" mood="explaining" size={130} speakText={topic.explanation}>{topic.explanation}</CharacterSays>
-        <div className="grid gap-3">{topic.examples.map((e) => <div key={e.sentence} className="glass p-4"><p className="text-lg">{md(e.sentence)}</p><p className="text-sm text-vibe-aqua">{e.note}</p></div>)}</div>
+        <div className="grid gap-3">{topic.examples.map((e) => <div key={e.sentence} className="glass p-4"><p className="text-lg">{md(e.sentence)}</p><p className="text-sm text-vibe-aqua-ink">{e.note}</p></div>)}</div>
         <button className="btn-primary w-full text-lg" onClick={() => setPhase("play")}>Start the mission ({exercises.length} questions) 🚀</button>
       </div>
     );
@@ -46,8 +46,8 @@ export function GrammarMission({ topic, exercises }: { topic: { slug: string; ti
           const next = [...answers, k]; setAnswers(next); setHint(false);
           if (i + 1 < exercises.length) return setI(i + 1);
           try { const r = await api<NonNullable<typeof res>>(`/api/grammar/${topic.slug}`, { body: { items: exercises.map((x, n) => ({ i: x.i, answer: next[n] })), seconds: timer() } }); setRes(r); setPhase("done"); setCele(true); } catch (x) { setErr((x as Error).message); }
-        }} className="rounded-2xl border border-white/10 bg-white/5 p-4 text-left text-lg font-semibold hover:bg-white/10">{o}</button>)}</div>
-        {hint ? <p className="mt-4 text-sm text-vibe-aqua">🦉 GRAMMY's hint: {e.hint}</p> : <button className="mt-4 text-sm text-vibe-aqua underline" onClick={() => setHint(true)}>Ask GRAMMY for a hint</button>}
+        }} className="rounded-2xl border border-line/10 bg-glass/5 p-4 text-left text-lg font-semibold hover:bg-glass/10">{o}</button>)}</div>
+        {hint ? <p className="mt-4 text-sm text-vibe-aqua-ink">🦉 GRAMMY's hint: {e.hint}</p> : <button className="mt-4 text-sm text-vibe-aqua-ink underline" onClick={() => setHint(true)}>Ask GRAMMY for a hint</button>}
       </div>
       <ErrorNote error={err} />
     </div>
@@ -81,9 +81,9 @@ export function DrillRunner({ topic }: { topic: string }) {
         <p className="font-display text-2xl font-bold">{e.q}</p>
         <div className="mt-5 grid gap-3 sm:grid-cols-2">{e.options.map((o, k) => (
           <button key={o} disabled={picked !== null} onClick={() => { setPicked(k); cheer(k === e.answer); if (k === e.answer) setCorrect((c) => c + 1); }}
-            className={`rounded-2xl border p-4 text-left text-lg font-semibold ${picked === null ? "border-white/10 bg-white/5 hover:bg-white/10" : k === e.answer ? "border-vibe-mint bg-vibe-mint/20" : k === picked ? "border-vibe-coral bg-vibe-coral/20" : "opacity-50"}`}>{o}</button>
+            className={`rounded-2xl border p-4 text-left text-lg font-semibold ${picked === null ? "border-line/10 bg-glass/5 hover:bg-glass/10" : k === e.answer ? "border-vibe-mint bg-vibe-mint/20" : k === picked ? "border-vibe-coral bg-vibe-coral/20" : "opacity-50"}`}>{o}</button>
         ))}</div>
-        {picked !== null && <><p className="mt-3 text-sm text-vibe-aqua">💡 {e.hint}</p><button className="btn-primary mt-4" autoFocus onClick={async () => {
+        {picked !== null && <><p className="mt-3 text-sm text-vibe-aqua-ink">💡 {e.hint}</p><button className="btn-primary mt-4" autoFocus onClick={async () => {
           setPicked(null);
           if (i + 1 === ex.length) { try { const r = await api<{ award: AwardLike }>("/api/grammar/practice", { body: { topic, correct: correct, total: ex.length, seconds: timer() } }); setAward(r.award); } catch { /* practice still counts as learning; the reward call is best-effort and retried next set */ } }
           setI(i + 1);

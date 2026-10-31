@@ -20,7 +20,7 @@ export default async function ContentStudio() {
         <h1 className="title-lg">Content Studio</h1>
         <p className="mt-1 text-sm text-vibe-lavender">Honest coverage: <b>plan days</b> are structured daily plans (always 365 per grade). <b>Fresh vocabulary days</b> = how many learning days of never-seen published words a new child at that grade can receive today. Grow it by publishing reviewed words.</p>
         <div className="mt-4 overflow-x-auto"><table className="w-full min-w-[820px] text-left text-sm"><thead className="text-vibe-lavender"><tr><th>Grade</th><th>Band</th><th>Plan days</th><th>Words in band</th><th>Words available (band+)</th><th>Fresh vocab days</th><th>Queued headwords</th><th>Writing topics</th><th>Stories</th><th>Grammar ex.</th><th>Speaking</th></tr></thead>
-          <tbody>{cov.map((c) => <tr key={c.grade} className="border-t border-white/5"><td className="py-1.5 font-bold">{c.label}</td><td>{c.band}</td><td className={c.plans >= 365 ? "text-vibe-mint" : "text-vibe-coral"}>{c.plans}</td><td>{c.wordsInBand}</td><td>{c.wordsAvailable}</td><td className={c.vocabDays >= 365 ? "text-vibe-mint" : "text-vibe-sun"}>{c.vocabDays}</td><td>{c.candidates}</td><td>{c.topics}</td><td>{c.stories}</td><td>{c.grammarExercises}</td><td>{c.speaking}</td></tr>)}</tbody></table></div>
+          <tbody>{cov.map((c) => <tr key={c.grade} className="border-t border-line/5"><td className="py-1.5 font-bold">{c.label}</td><td>{c.band}</td><td className={c.plans >= 365 ? "text-vibe-mint-ink" : "text-vibe-coral-ink"}>{c.plans}</td><td>{c.wordsInBand}</td><td>{c.wordsAvailable}</td><td className={c.vocabDays >= 365 ? "text-vibe-mint-ink" : "text-vibe-sun-ink"}>{c.vocabDays}</td><td>{c.candidates}</td><td>{c.topics}</td><td>{c.stories}</td><td>{c.grammarExercises}</td><td>{c.speaking}</td></tr>)}</tbody></table></div>
         <p className="mt-2 text-xs text-vibe-lavender">Headword pipeline: {cands.map((c) => `band ${c.band} ${c.status}: ${c.n}`).join(" · ")}</p>
       </section>
       <section><h2 className="title-md">Generate with AI (validated, then reviewed)</h2>
@@ -33,8 +33,8 @@ export default async function ContentStudio() {
         <div className="mt-3 space-y-3">{pending.map((p) => (
           <article key={p.id} className="card p-4">
             <div className="flex flex-wrap items-center justify-between gap-2"><div><span className="chip">{p.kind}</span> <span className="chip">band {p.band}</span> <span className="chip">{p.source}</span> <b className="ml-1">{p.title}</b></div><ReviewButtons id={p.id} /></div>
-            <details className="mt-2 text-sm"><summary className="cursor-pointer text-vibe-aqua">Content & validation</summary>
-              <ul className="mt-2 grid gap-1 md:grid-cols-2">{p.validation.checks?.map((c) => <li key={c.name} className={c.passed ? "text-vibe-mint" : "text-vibe-coral"}>{c.passed ? "✓" : "✗"} {c.name}: <span className="text-vibe-lavender">{c.detail}</span></li>)}</ul>
+            <details className="mt-2 text-sm"><summary className="cursor-pointer text-vibe-aqua-ink">Content & validation</summary>
+              <ul className="mt-2 grid gap-1 md:grid-cols-2">{p.validation.checks?.map((c) => <li key={c.name} className={c.passed ? "text-vibe-mint-ink" : "text-vibe-coral-ink"}>{c.passed ? "✓" : "✗"} {c.name}: <span className="text-vibe-lavender">{c.detail}</span></li>)}</ul>
               <pre className="mt-2 max-h-64 overflow-auto rounded-xl bg-black/30 p-3 text-xs">{JSON.stringify(p.body, null, 2)}</pre>
             </details>
           </article>

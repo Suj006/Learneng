@@ -23,7 +23,7 @@ export default async function Reading() {
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {stories.map((s) => (
           <Link key={s.slug} href={s.owned ? `/world/reading/${s.slug}` : "/world/rewards"} className={`card group overflow-hidden transition hover:-translate-y-1 ${s.owned ? "" : "opacity-60"}`}>
-            <div className="relative h-36"><Scene name={s.cover as SceneName} /><span className="absolute left-4 top-4 text-5xl">{s.emoji}</span>{Math.abs(s.band - band) === 0 && <span className="chip absolute right-3 top-3 bg-vibe-midnight/80 text-vibe-sun">✨ Your level</span>}</div>
+            <div className="relative h-36"><Scene name={s.cover as SceneName} /><span className="absolute left-4 top-4 text-5xl">{s.emoji}</span>{Math.abs(s.band - band) === 0 && <span className="chip absolute right-3 top-3 bg-vibe-midnight/80 text-vibe-sun-ink">✨ Your level</span>}</div>
             <div className="p-5"><span className="chip">{s.genre}</span><h2 className="title-md mt-2">{s.title}</h2>
               <p className="mt-1 text-sm text-vibe-lavender">{!s.owned ? "🔒 Unlock in the Reward Shop" : s.done ? `✅ Read · quiz best ${s.best}%` : "New story!"}</p></div>
           </Link>

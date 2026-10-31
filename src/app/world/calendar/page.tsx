@@ -29,15 +29,15 @@ export default async function Calendar() {
                 const isToday = d.day === cal.current;
                 const theme = THEMES.find((t) => t.key === d.theme);
                 return (
-                  <details key={d.day} className={`group rounded-2xl border p-2 text-center text-xs ${d.completedOn ? "border-vibe-mint/50 bg-vibe-mint/15" : isToday ? "border-vibe-sun bg-vibe-sun/15" : d.day < cal.current ? "border-white/10 bg-white/5" : "border-white/5 bg-white/[0.03] opacity-80"}`}>
+                  <details key={d.day} className={`group rounded-2xl border p-2 text-center text-xs ${d.completedOn ? "border-vibe-mint/50 bg-vibe-mint/15" : isToday ? "border-vibe-sun bg-vibe-sun/15" : d.day < cal.current ? "border-line/10 bg-glass/5" : "border-line/5 bg-glass/[0.03] opacity-80"}`}>
                     <summary className="cursor-pointer list-none">
                       <div className="font-bold">{d.completedOn ? "✅" : isToday ? "⭐" : d.activities.includes("monthly_championship") ? "🏆" : d.activities.includes("weekly_assessment") ? "🏅" : theme?.emoji} {d.day}</div>
                     </summary>
                     <div className="mt-1 text-left text-[11px] text-vibe-lavender">
-                      <div className="font-bold text-white">{d.focus}</div>
+                      <div className="font-bold text-ink">{d.focus}</div>
                       <div>{d.activities.map((a) => ICON[a] ?? "•").join(" ")}</div>
                       {d.completedOn && <div>Done {d.completedOn}</div>}
-                      {d.completedOn && <Link className="text-vibe-aqua underline" href="/world/revision">Revise</Link>}
+                      {d.completedOn && <Link className="text-vibe-aqua-ink underline" href="/world/revision">Revise</Link>}
                     </div>
                   </details>
                 );

@@ -785,3 +785,18 @@ alter table auth_tokens add constraint auth_tokens_purpose_check check (purpose 
 alter table child_profiles add column if not exists audio_prefs jsonb;
 alter table parents add column if not exists music_allowed boolean not null default true;
 alter table parents add column if not exists voices_allowed boolean not null default true;
+
+-- Colour themes (31 Oct 2026): admin-managed theme registry and each child's appearance choice.
+create table if not exists color_themes (
+  slug        text primary key,
+  name        text not null,
+  emoji       text not null default '🎨',
+  tagline     text not null default '',
+  tokens      jsonb not null,
+  active      boolean not null default true,
+  is_default  boolean not null default false,
+  sort_order  int not null default 0,
+  updated_at  timestamptz not null default now()
+);
+alter table child_profiles add column if not exists color_theme text;
+alter table child_profiles add column if not exists motion text not null default 'full';

@@ -94,7 +94,7 @@ export function AudioProvider({ initialPrefs, policy, serverTts }: { initialPref
           {hint && !audio.unlocked && (
             <motion.button key="hint" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 20 }}
               onClick={() => { audio.unlock(); setHint(false); }}
-              className="pointer-events-auto rounded-full border border-white/15 bg-vibe-midnight-2/95 px-5 py-3 font-display text-sm font-bold shadow-card backdrop-blur">
+              className="pointer-events-auto rounded-full border border-line/15 bg-vibe-midnight-2/95 px-5 py-3 font-display text-sm font-bold shadow-card backdrop-blur">
               🔊 Tap to turn on music &amp; voices
             </motion.button>
           )}
@@ -105,10 +105,10 @@ export function AudioProvider({ initialPrefs, policy, serverTts }: { initialPref
         <AnimatePresence>
           {c && (
             <motion.div key={c.id} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 12 }}
-              className="flex max-w-lg items-center gap-3 rounded-3xl border border-white/10 bg-vibe-midnight-2/95 p-2.5 pr-2 shadow-card backdrop-blur">
+              className="flex max-w-lg items-center gap-3 rounded-3xl border border-line/10 bg-vibe-midnight-2/95 p-2.5 pr-2 shadow-card backdrop-blur">
               {c.who !== "narrator" && <Character name={c.who as CharacterName} mood="welcome" size={44} still className="shrink-0" />}
-              <p className="text-sm leading-snug">{NAMES[c.who] && <b className="mr-1 font-display text-vibe-sun">{NAMES[c.who]}:</b>}{c.text}</p>
-              <button onClick={() => { audio.stopVoice(); audio.clearCaption(); }} className="pointer-events-auto ml-1 grid h-10 w-10 shrink-0 place-items-center rounded-full hover:bg-white/10" aria-label="Close caption">✕</button>
+              <p className="text-sm leading-snug">{NAMES[c.who] && <b className="mr-1 font-display text-vibe-sun-ink">{NAMES[c.who]}:</b>}{c.text}</p>
+              <button onClick={() => { audio.stopVoice(); audio.clearCaption(); }} className="pointer-events-auto ml-1 grid h-10 w-10 shrink-0 place-items-center rounded-full hover:bg-glass/10" aria-label="Close caption">✕</button>
             </motion.div>
           )}
         </AnimatePresence>

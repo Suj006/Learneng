@@ -25,7 +25,7 @@ export default async function Arcade() {
               <span className="text-5xl transition group-hover:scale-110">{g.emoji}</span>
               <b className="mt-3 font-display text-lg leading-tight">{g.title}</b>
               <p className="mt-1 flex-1 text-xs text-vibe-lavender">{g.tagline}</p>
-              <span className="mt-3 text-xs font-bold text-vibe-aqua">{locked ? `🔒 Needs ${g.min_words} words` : g.plays ? `Best: ${g.best} · ${g.plays} plays` : "New!"}</span>
+              <span className="mt-3 text-xs font-bold text-vibe-aqua-ink">{locked ? `🔒 Needs ${g.min_words} words` : g.plays ? `Best: ${g.best} · ${g.plays} plays` : "New!"}</span>
             </Link>
           );
         })}

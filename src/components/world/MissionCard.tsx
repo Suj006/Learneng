@@ -30,15 +30,15 @@ export function MissionCard({ m, compact = false }: { m: MissionData; compact?: 
       {!compact && <Character name={m.character as CharacterName} mood={state.done ? "celebrating" : "welcome"} size={56} still className="shrink-0" />}
       <div className="min-w-0 flex-1">
         <div className="flex flex-wrap items-center gap-2"><span className="chip px-2 py-0.5 text-[10px] uppercase">{SCOPE[m.scope] ?? m.scope}</span><b className="font-display">{m.title}</b></div>
-        <p className="mt-1 text-sm text-vibe-lavender/90">{m.description}</p>
+        <p className="mt-1 text-sm text-vibe-lavender">{m.description}</p>
         <div className="mt-2 flex items-center gap-2"><Progress value={state.progress} max={m.target} className="h-2" label="Mission progress" /><span className="shrink-0 text-xs font-bold">{state.progress}/{m.target}</span></div>
         <div className="mt-2 flex flex-wrap items-center gap-2 text-xs">
           <span className="text-vibe-lavender">Reward: ⚡{m.xp} 🪙{m.coins}{m.crystals ? ` 💎${m.crystals}` : ""}</span>
-          {state.claimed ? <span className="chip text-vibe-mint">✅ Claimed</span>
+          {state.claimed ? <span className="chip text-vibe-mint-ink">✅ Claimed</span>
             : state.done ? <button onClick={claim} disabled={busy} aria-busy={busy} className="btn-sun btn-sm">{busy ? <><InlineSpinner /> Collecting…</> : err ? "Try again" : "Claim reward"}</button>
             : <Link href={m.href} className="btn-ghost btn-sm">Go →</Link>}
         </div>
-        {err && <p className="mt-1 text-xs text-vibe-coral">{err}</p>}
+        {err && <p className="mt-1 text-xs text-vibe-coral-ink">{err}</p>}
       </div>
       {award && <Celebration award={award.result} who={m.character as CharacterName} title="Mission complete!" message={award.card ? <>New collectible card: {award.card.emoji} <b>{award.card.title}</b></> : "MAX: Mission completed! Your next adventure is ready."} onClose={() => { setAward(null); router.refresh(); }} />}
     </div>

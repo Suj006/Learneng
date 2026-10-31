@@ -30,7 +30,7 @@ export function AvatarStudio({ initial, items, hairColors, pet }: { initial: Ful
         <div><div className="label text-center">Skin tone</div><div className="flex flex-wrap justify-center gap-2">{Object.entries(SKIN).map(([k, c]) => <button key={k} aria-label={`Skin tone ${k}`} onClick={() => setLook({ ...look, skin: k })} className={`h-9 w-9 rounded-full border-4 ${look.skin === k ? "border-vibe-aqua" : "border-transparent"}`} style={{ background: c }} />)}</div></div>
         <div><div className="label text-center">Hair colour</div><div className="flex flex-wrap justify-center gap-2">{hairColors.map((c) => <button key={c} aria-label={`Hair colour ${c}`} onClick={() => setLook({ ...look, hair_color: c })} className={`h-8 w-8 rounded-full border-4 ${look.hair_color === c ? "border-vibe-aqua" : "border-transparent"}`} style={{ background: c }} />)}</div></div>
         <button className="btn-primary w-full" onClick={async () => { setErr(null); try { await api("/api/avatar", { body: look }); setMsg("Saved! Looking awesome ✨"); router.refresh(); } catch (e) { setErr((e as Error).message); } }}>Save my look</button>
-        {msg && <p className="text-sm text-vibe-mint">{msg}</p>}<ErrorNote error={err} />
+        {msg && <p className="text-sm text-vibe-mint-ink">{msg}</p>}<ErrorNote error={err} />
       </div>
       <div className="min-w-0">
         <div className="row-scroll">{TABS.map((x) => <button key={x.key} onClick={() => setTab(x.key)} className={`btn btn-sm shrink-0 ${tab === x.key ? "bg-vibe-cta text-white" : "btn-ghost"}`}>{x.label}</button>)}</div>
@@ -48,7 +48,7 @@ export function AvatarStudio({ initial, items, hairColors, pet }: { initial: Ful
             );
           })}
         </div>
-        <p className="mt-4 text-sm text-vibe-lavender">Locked items can be unlocked in the <Link href="/world/rewards" className="text-vibe-aqua underline">Reward Shop</Link> with coins and crystals you earn by learning.</p>
+        <p className="mt-4 text-sm text-vibe-lavender">Locked items can be unlocked in the <Link href="/world/rewards" className="text-vibe-aqua-ink underline">Reward Shop</Link> with coins and crystals you earn by learning.</p>
       </div>
     </div>
   );

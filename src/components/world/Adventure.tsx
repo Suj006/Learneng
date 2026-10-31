@@ -90,7 +90,7 @@ export function Adventure({ d }: { d: AdventureData }) {
             {main ? (
               <Link href={main.href} className="btn-primary mt-5 text-lg">{main.emoji} {main.core ? "Today's main mission" : "Next"}: {main.title} →</Link>
             ) : (
-              <p className="mt-5 rounded-2xl bg-vibe-mint/15 p-3 font-semibold text-vibe-mint">🎉 Today's plan is complete! Free play below — or rest and come back tomorrow for Day {d.journey.day + 1}.</p>
+              <p className="mt-5 rounded-2xl bg-vibe-mint/15 p-3 font-semibold text-vibe-mint-ink">🎉 Today's plan is complete! Free play below — or rest and come back tomorrow for Day {d.journey.day + 1}.</p>
             )}
           </div>
           <div className="hidden md:block"><Avatar look={d.avatar} art={d.art} size={130} pet={d.pet?.emoji} /></div>
@@ -117,19 +117,19 @@ export function Adventure({ d }: { d: AdventureData }) {
             </button>
           ))}
         </div>
-        {err && <p className="mt-2 text-sm text-vibe-coral">{err}</p>}
+        {err && <p className="mt-2 text-sm text-vibe-coral-ink">{err}</p>}
       </section>
 
       {/* TODAY'S PLAN */}
       <section aria-labelledby="plan">
-        <div className="flex items-end justify-between"><h2 id="plan" className="title-md">🗓️ Today's Adventure Plan</h2><Link href="/world/calendar" className="text-sm font-bold text-vibe-aqua">365-day calendar →</Link></div>
+        <div className="flex items-end justify-between"><h2 id="plan" className="title-md">🗓️ Today's Adventure Plan</h2><Link href="/world/calendar" className="text-sm font-bold text-vibe-aqua-ink">365-day calendar →</Link></div>
         <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {d.journey.items.map((i, k) => (
-            <Link key={k} href={i.href} className={`glass flex items-start gap-3 p-4 transition hover:bg-white/10 ${i.done ? "opacity-70" : ""}`}>
+            <Link key={k} href={i.href} className={`glass flex items-start gap-3 p-4 transition hover:bg-glass/10 ${i.done ? "opacity-70" : ""}`}>
               <span className="text-3xl">{i.done ? "✅" : i.emoji}</span>
-              <span><b className="block font-display">{i.title}</b><span className="text-sm text-vibe-lavender/90">{i.detail}</span>
-                {i.core && !i.done && <span className="mt-1 block text-xs font-bold text-vibe-sun">★ Main mission</span>}
-                {i.adapted && <span className="mt-1 block text-xs font-bold text-vibe-aqua">✨ {i.adapted}</span>}</span>
+              <span><b className="block font-display">{i.title}</b><span className="text-sm text-vibe-lavender">{i.detail}</span>
+                {i.core && !i.done && <span className="mt-1 block text-xs font-bold text-vibe-sun-ink">★ Main mission</span>}
+                {i.adapted && <span className="mt-1 block text-xs font-bold text-vibe-aqua-ink">✨ {i.adapted}</span>}</span>
             </Link>
           ))}
         </div>
@@ -156,13 +156,13 @@ export function Adventure({ d }: { d: AdventureData }) {
 
       {d.family.length > 0 && (
         <section><h2 className="title-md">👨‍👩‍👧 Family challenges</h2>
-          <div className="mt-3 grid gap-3 sm:grid-cols-2">{d.family.map((f) => <Link key={f.id} href={`/world/challenge/family?family=${f.id}`} className="glass p-4 hover:bg-white/10"><b>{f.title}</b><p className="text-sm text-vibe-lavender">{f.message || "A challenge from your family!"}</p></Link>)}</div>
+          <div className="mt-3 grid gap-3 sm:grid-cols-2">{d.family.map((f) => <Link key={f.id} href={`/world/challenge/family?family=${f.id}`} className="glass p-4 hover:bg-glass/10"><b>{f.title}</b><p className="text-sm text-vibe-lavender">{f.message || "A challenge from your family!"}</p></Link>)}</div>
         </section>
       )}
 
       {/* MISSIONS */}
       <section aria-labelledby="missions">
-        <div className="flex items-end justify-between"><h2 id="missions" className="title-md">🎯 Missions</h2><Link href="/world/missions" className="text-sm font-bold text-vibe-aqua">All missions →</Link></div>
+        <div className="flex items-end justify-between"><h2 id="missions" className="title-md">🎯 Missions</h2><Link href="/world/missions" className="text-sm font-bold text-vibe-aqua-ink">All missions →</Link></div>
         <div className="mt-4 grid gap-3 md:grid-cols-2 lg:grid-cols-3">{d.missions.slice(0, 6).map((m) => <MissionCard key={m.slug} m={m} />)}</div>
       </section>
 
@@ -181,7 +181,7 @@ export function Adventure({ d }: { d: AdventureData }) {
       {d.recs.length > 0 && (
         <section><h2 className="title-md">💡 Your buddies suggest…</h2>
           <div className="row-scroll mt-4">{d.recs.map((r) => (
-            <Link key={r.title} href={r.href} className="glass flex w-72 shrink-0 snap-start gap-3 p-4 hover:bg-white/10">
+            <Link key={r.title} href={r.href} className="glass flex w-72 shrink-0 snap-start gap-3 p-4 hover:bg-glass/10">
               <Character name={r.who} mood="hint" size={60} still className="shrink-0" />
               <span><span className="text-xs font-bold uppercase" style={{ color: "var(--tw-prose-body)" }}>{r.emoji} {r.title}</span><span className="mt-1 block text-sm">“{r.reason}”</span></span>
             </Link>
@@ -190,13 +190,13 @@ export function Adventure({ d }: { d: AdventureData }) {
       )}
 
       {/* KINGDOMS */}
-      <section><div className="flex items-end justify-between"><h2 className="title-md">🗺️ Your Kingdoms</h2><Link href="/world/map" className="text-sm font-bold text-vibe-aqua">Open the map →</Link></div>
+      <section><div className="flex items-end justify-between"><h2 className="title-md">🗺️ Your Kingdoms</h2><Link href="/world/map" className="text-sm font-bold text-vibe-aqua-ink">Open the map →</Link></div>
         <div className="row-scroll mt-4">{d.kingdoms.map((k) => (
           <Link key={k.slug} href={k.unlocked ? `/world/map/${k.slug}` : "/world/map"} className="card relative h-44 w-72 shrink-0 snap-start overflow-hidden">
             <div className={k.unlocked ? "" : "grayscale"}><Scene name={k.art as SceneName} /></div>
             <div className="absolute inset-0 bg-gradient-to-t from-vibe-midnight via-vibe-midnight/30 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-4"><b className="font-display text-lg">{k.emoji} {k.title}</b>
-              {k.unlocked ? <Progress value={k.progress} className="mt-2 h-2" label={`${k.title} progress`} /> : <span className="mt-1 block text-sm text-vibe-sun">🔒 Unlocks at Level {k.unlock_level}</span>}</div>
+              {k.unlocked ? <Progress value={k.progress} className="mt-2 h-2" label={`${k.title} progress`} /> : <span className="mt-1 block text-sm text-vibe-sun-ink">🔒 Unlocks at Level {k.unlock_level}</span>}</div>
           </Link>
         ))}</div>
       </section>
@@ -206,8 +206,8 @@ export function Adventure({ d }: { d: AdventureData }) {
         <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">{modules.map((m) => (
           <Link key={m.title} href={m.href} className="card group flex flex-col p-4 transition hover:-translate-y-1">
             <div className="flex items-start justify-between"><span className="text-4xl transition group-hover:scale-110">{m.emoji}</span>{skillOf(m.skill) && <span className="chip px-2 text-[10px]">{skillOf(m.skill)}</span>}</div>
-            <b className="mt-3 font-display leading-tight">{m.title}</b><p className="mt-1 flex-1 text-xs text-vibe-lavender/90">{m.desc}</p>
-            <div className="mt-3 text-xs font-bold text-vibe-aqua">{m.status}</div>
+            <b className="mt-3 font-display leading-tight">{m.title}</b><p className="mt-1 flex-1 text-xs text-vibe-lavender">{m.desc}</p>
+            <div className="mt-3 text-xs font-bold text-vibe-aqua-ink">{m.status}</div>
             {m.pct > 0 && <Progress value={m.pct} className="mt-2 h-1.5" label="Mission progress" />}
             <span className="btn-primary btn-sm mt-3 w-full">Start</span>
           </Link>

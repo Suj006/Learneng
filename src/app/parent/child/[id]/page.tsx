@@ -19,11 +19,11 @@ function Bars({ rows, value, label }: { rows: { key: string; v: number }[]; valu
           <div key={r.key} className="flex flex-1 flex-col items-center gap-1">
             <span className="text-[10px] text-vibe-lavender">{r.v}</span>
             <div className="w-full rounded-t-lg bg-vibe-aqua/80" style={{ height: `${(r.v / max) * 100}%`, minHeight: r.v ? 4 : 1 }} />
-            <span className="text-[10px] text-vibe-lavender/70">{r.key}</span>
+            <span className="text-[10px] text-vibe-lavender">{r.key}</span>
           </div>
         ))}
       </div>
-      <figcaption className="mt-1 text-xs text-vibe-lavender/70">{value}</figcaption>
+      <figcaption className="mt-1 text-xs text-vibe-lavender">{value}</figcaption>
     </figure>
   );
 }
@@ -59,7 +59,7 @@ export default async function ChildReportPage({ params }: { params: Promise<{ id
       <section className="card p-6">
         <h2 className="title-md">Monthly summaries</h2>
         <div className="mt-4 overflow-x-auto"><table className="w-full min-w-[520px] text-left text-sm"><thead className="text-vibe-lavender"><tr><th className="py-2">Month</th><th>Learning days</th><th>Words discovered</th><th>Words mastered</th><th>Minutes</th><th>XP</th></tr></thead>
-          <tbody>{j.months.map((m) => <tr key={m.month} className="border-t border-white/5"><td className="py-2">{m.month}</td><td>{m.days}</td><td>{m.words}</td><td>{m.mastered}</td><td>{m.minutes}</td><td>{m.xp}</td></tr>)}</tbody></table></div>
+          <tbody>{j.months.map((m) => <tr key={m.month} className="border-t border-line/5"><td className="py-2">{m.month}</td><td>{m.days}</td><td>{m.words}</td><td>{m.mastered}</td><td>{m.minutes}</td><td>{m.xp}</td></tr>)}</tbody></table></div>
         <div className="mt-4"><Bars label="Vocabulary growth" value="Words discovered per month" rows={j.months.map((m) => ({ key: m.month.slice(5), v: m.words }))} /></div>
       </section>
 
@@ -68,13 +68,13 @@ export default async function ChildReportPage({ params }: { params: Promise<{ id
           <h2 className="title-md">Skill-wise development</h2>
           <p className="text-sm text-vibe-lavender">Each skill adapts independently. {masteredNodes}/{tree.length} skill-tree milestones achieved.</p>
           <ul className="mt-4 space-y-2 text-sm">{skills.map((s) => <li key={s.key} className="flex items-center gap-3"><span className="w-28">{s.title}</span>{s.confident ? <><Progress value={s.score} className="h-2" /><span className="chip w-36 justify-center">{s.level} · {s.growth}</span></> : <span className="text-xs text-vibe-lavender">Still observing ({s.attempts} interactions so far)</span>}</li>)}</ul>
-          <p className="mt-4 rounded-2xl bg-white/5 p-3 text-xs text-vibe-lavender">ℹ️ These are <b>ongoing learning observations</b> gathered quietly from everyday games, quests, reading, writing and speaking — not examination results or standardised proficiency scores. Estimates start neutral and only change after enough activity ({"≥"}15 interactions per skill), and PING VIBE never compares your child with other children. Your child sees only encouraging growth labels.</p>
+          <p className="mt-4 rounded-2xl bg-glass/5 p-3 text-xs text-vibe-lavender">ℹ️ These are <b>ongoing learning observations</b> gathered quietly from everyday games, quests, reading, writing and speaking — not examination results or standardised proficiency scores. Estimates start neutral and only change after enough activity ({"≥"}15 interactions per skill), and PING VIBE never compares your child with other children. Your child sees only encouraging growth labels.</p>
         </div>
         <div className="card p-6">
           <h2 className="title-md">Areas requiring improvement</h2>
           <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-vibe-lavender">{(improvementAreas(r).length ? improvementAreas(r) : ["No concerns right now — keep the gentle daily rhythm going!"]).map((a) => <li key={a}>{a}</li>)}</ul>
           <h3 className="mt-5 font-display font-bold">Milestones</h3>
-          <ul className="mt-2 space-y-1 text-sm">{tl.slice(-6).reverse().map((t) => <li key={t.kind}>{t.emoji} {t.title} <span className="text-vibe-lavender/60">· {new Date(t.achieved_at).toLocaleDateString()}</span></li>)}</ul>
+          <ul className="mt-2 space-y-1 text-sm">{tl.slice(-6).reverse().map((t) => <li key={t.kind}>{t.emoji} {t.title} <span className="text-vibe-lavender">· {new Date(t.achieved_at).toLocaleDateString()}</span></li>)}</ul>
         </div>
       </section>
 

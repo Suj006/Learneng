@@ -33,7 +33,7 @@ export function LoginForm({ initialTab = "child" }: { initialTab?: "child" | "pa
 
   return (
     <div className="card p-6 sm:p-8">
-      <div className="mb-6 grid grid-cols-2 gap-2 rounded-full bg-white/5 p-1" role="tablist">
+      <div className="mb-6 grid grid-cols-2 gap-2 rounded-full bg-glass/5 p-1" role="tablist">
         {(["child", "parent"] as const).map((t) => (
           <button key={t} role="tab" aria-selected={tab === t} onClick={() => { setTab(t); setError(null); }} className={`rounded-full py-3 font-display font-bold transition ${tab === t ? "bg-vibe-cta text-white shadow-glow" : "text-vibe-lavender"}`}>
             {t === "child" ? "🚀 I'm an Explorer" : "👪 I'm a Parent"}
@@ -58,15 +58,15 @@ export function LoginForm({ initialTab = "child" }: { initialTab?: "child" | "pa
         )}
         <ErrorNote error={error} />
         {unverified && (
-          <button type="button" className="text-sm font-bold text-vibe-aqua" onClick={async () => { await api("/api/auth/resend", { body: { email } }).catch(() => {}); setResent(true); }}>
+          <button type="button" className="text-sm font-bold text-vibe-aqua-ink" onClick={async () => { await api("/api/auth/resend", { body: { email } }).catch(() => {}); setResent(true); }}>
             {resent ? "✅ Sent! Check your inbox." : "Resend verification e-mail"}
           </button>
         )}
         <button className="btn-primary w-full text-lg" disabled={busy}>{busy ? "Opening portal…" : tab === "child" ? "Enter PING VIBE 🚀" : "Log in"}</button>
       </form>
-      <p className="mt-6 text-center text-sm text-vibe-lavender">New here? <Link href="/signup" className="font-bold text-vibe-aqua">Start your adventure</Link></p>
-      {tab === "child" ? <p className="mt-2 text-center text-xs text-vibe-lavender/70">Forgot your PIN? Ask your parent — they can reset it from the parent dashboard.</p>
-        : <p className="mt-2 text-center text-sm"><Link href="/forgot-password" className="text-vibe-aqua">Forgot password?</Link></p>}
+      <p className="mt-6 text-center text-sm text-vibe-lavender">New here? <Link href="/signup" className="font-bold text-vibe-aqua-ink">Start your adventure</Link></p>
+      {tab === "child" ? <p className="mt-2 text-center text-xs text-vibe-lavender">Forgot your PIN? Ask your parent — they can reset it from the parent dashboard.</p>
+        : <p className="mt-2 text-center text-sm"><Link href="/forgot-password" className="text-vibe-aqua-ink">Forgot password?</Link></p>}
     </div>
   );
 }

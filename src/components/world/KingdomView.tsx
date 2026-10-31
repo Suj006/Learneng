@@ -32,7 +32,7 @@ export function KingdomView({ k, level }: { k: { title: string; emoji: string; a
         </svg>
         {k.locations.map((l) => (
           <motion.button key={l.slug} onClick={() => setSel(l)} whileHover={{ scale: 1.1 }} animate={l.open && l.kind === "treasure" && !l.claimed ? { y: [0, -6, 0] } : undefined} transition={{ repeat: Infinity, duration: 1.6 }}
-            className={`absolute -translate-x-1/2 -translate-y-1/2 rounded-full border-2 p-2 text-2xl shadow-card sm:p-3 sm:text-3xl ${l.open ? "border-vibe-sun bg-vibe-midnight/80" : "border-white/20 bg-vibe-midnight/60"}`}
+            className={`absolute -translate-x-1/2 -translate-y-1/2 rounded-full border-2 p-2 text-2xl shadow-card sm:p-3 sm:text-3xl ${l.open ? "border-vibe-sun bg-vibe-midnight/80" : "border-line/20 bg-vibe-midnight/60"}`}
             style={{ left: `${l.x}%`, top: `${l.y}%` }} aria-label={l.hidden ? "Hidden location" : l.title}>
             {icon(l)}
           </motion.button>
@@ -45,7 +45,7 @@ export function KingdomView({ k, level }: { k: { title: string; emoji: string; a
             <b className="font-display text-lg">{sel.hidden ? "A hidden place…" : sel.title}</b>
             <p className="text-sm text-vibe-lavender">{sel.open ? (sel.kind === "treasure" ? (sel.claimed ? "You already opened this treasure." : `Contains 🪙${sel.reward_coins} and 💎${sel.reward_crystals}!`) : sel.kind === "boss" ? (sel.defeated ? "Boss defeated! Replay on a harder difficulty anytime." : "A boss battle awaits!") : "Open — go explore!") : `To unlock: ${sel.unlock_label} (${sel.progress}/${sel.unlock_target})`}</p>
             {!sel.open && <Progress value={sel.progress} max={sel.unlock_target} className="mt-2 h-2 max-w-xs" />}
-            {sel.kind === "boss" && sel.bossLevel && level < sel.bossLevel && <p className="text-sm text-vibe-sun">Reach Level {sel.bossLevel} to battle.</p>}
+            {sel.kind === "boss" && sel.bossLevel && level < sel.bossLevel && <p className="text-sm text-vibe-sun-ink">Reach Level {sel.bossLevel} to battle.</p>}
           </div>
           {sel.open && sel.kind === "treasure" && !sel.claimed && <button className="btn-sun" disabled={busy} aria-busy={busy} onClick={() => claim(sel)}>{busy ? <><InlineSpinner /> Opening…</> : "Open treasure!"}</button>}
           {sel.open && (sel.kind === "secret" && !sel.claimed && sel.reward_crystals > 0) && <button className="btn-sun" onClick={() => claim(sel)}>Collect secret reward</button>}

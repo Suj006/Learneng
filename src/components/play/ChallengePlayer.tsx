@@ -43,15 +43,15 @@ export function ChallengePlayer({ kind, refSlug, guide = "max", backHref = "/wor
           <div className="relative flex flex-col items-center gap-4 text-center">
             <motion.div className="text-8xl" animate={{ y: [0, -10, 0], rotate: isBoss ? [0, -5, 5, 0] : 0 }} transition={{ duration: 2.5, repeat: Infinity }}>{c.meta.emoji}</motion.div>
             <h1 className="title-lg">{c.meta.title}</h1>
-            {c.meta.villain && <p className="font-display text-vibe-coral">vs {c.meta.villain}</p>}
+            {c.meta.villain && <p className="font-display text-vibe-coral-ink">vs {c.meta.villain}</p>}
             <p className="max-w-xl text-lg text-vibe-lavender">{c.meta.intro}</p>
             {c.meta.rounds.length > 1 && <ol className="flex flex-wrap justify-center gap-2">{c.meta.rounds.map((r, k) => <li key={k} className="chip">Round {k + 1}: {r}</li>)}</ol>}
             {allowDifficulty && (
               <div className="flex gap-2" role="radiogroup" aria-label="Difficulty">
-                {(["easy", "normal", "hard"] as const).map((d) => <button key={d} role="radio" aria-checked={difficulty === d} onClick={() => { setDifficulty(d); load(d); }} className={`btn btn-sm ${difficulty === d ? "bg-vibe-aqua text-vibe-midnight" : "btn-ghost"}`}>{d === "easy" ? "🌱 Easy" : d === "normal" ? "⚔️ Normal" : "🔥 Hard"}</button>)}
+                {(["easy", "normal", "hard"] as const).map((d) => <button key={d} role="radio" aria-checked={difficulty === d} onClick={() => { setDifficulty(d); load(d); }} className={`btn btn-sm ${difficulty === d ? "bg-vibe-aqua text-vibe-night" : "btn-ghost"}`}>{d === "easy" ? "🌱 Easy" : d === "normal" ? "⚔️ Normal" : "🔥 Hard"}</button>)}
               </div>
             )}
-            <p className="text-sm text-vibe-lavender/80">{c.questions.length} questions · you can retry anytime — nothing earned is ever lost.</p>
+            <p className="text-sm text-vibe-lavender">{c.questions.length} questions · you can retry anytime — nothing earned is ever lost.</p>
             <button className="btn-primary text-lg" onClick={() => setStarted(true)}>{isBoss ? "Start the battle ⚔️" : "Let's go! 🚀"}</button>
           </div>
         </div>
@@ -65,7 +65,7 @@ export function ChallengePlayer({ kind, refSlug, guide = "max", backHref = "/wor
         <div className="card p-6 text-center">
           <Character name={guide} mood={result.passed ? "celebrating" : "encouraging"} size={130} className="mx-auto" />
           <h1 className="title-lg mt-2">{result.passed ? (isBoss ? `${c.meta.villain ?? "The boss"} is defeated!` : "Challenge complete!") : "So close, Explorer!"}</h1>
-          <p className="mt-2 text-lg">You scored <b className="text-vibe-sun">{result.score}%</b> ({result.correct}/{result.total})</p>
+          <p className="mt-2 text-lg">You scored <b className="text-vibe-sun-ink">{result.score}%</b> ({result.correct}/{result.total})</p>
           {!result.passed && <p className="mt-1 text-vibe-lavender">You need 70% to win. Every try trains your brain — and your progress is saved!</p>}
           <div className="mt-6 grid gap-2 text-left text-sm sm:grid-cols-2">
             {c.questions.map((q, k) => <div key={k} className={`rounded-2xl p-3 ${result.results[k] ? "bg-vibe-mint/10" : "bg-vibe-coral/10"}`}>{result.results[k] ? "✅" : "🔁"} {q.prompt.slice(0, 70)}{!result.results[k] && <div className="mt-1 text-vibe-lavender">Answer: <b>{result.answers[k]}</b></div>}</div>)}
@@ -95,7 +95,7 @@ export function ChallengePlayer({ kind, refSlug, guide = "max", backHref = "/wor
       ) : (
         <Progress value={i} max={c.questions.length} className="mb-6" />
       )}
-      <div className="flex items-center justify-between text-sm"><span className="chip text-vibe-sun">{String(q.round ?? "")}</span><span className="font-bold">{i + 1}/{c.questions.length}</span></div>
+      <div className="flex items-center justify-between text-sm"><span className="chip text-vibe-sun-ink">{String(q.round ?? "")}</span><span className="font-bold">{i + 1}/{c.questions.length}</span></div>
       <div className="card mt-3 p-6">
         <Question q={q} onAnswer={(a) => {
           const next = [...answers, a];

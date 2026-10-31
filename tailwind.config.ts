@@ -1,33 +1,34 @@
 import type { Config } from "tailwindcss";
 
 /**
- * PING VIBE design tokens.
- * Base palette from the brand brief, extended with tints/shades that were
- * needed once real layouts were composed (deep space backgrounds, glow tints).
+ * PING VIBE design tokens. Colours come from the active colour theme (CSS variables set by the theme engine);
+ * see src/lib/theme/themes.ts. Default theme: Rainbow Wonder (the official logo palette).
  */
+/** Tailwind colour that reads a theme variable and still supports opacity modifiers (e.g. bg-vibe-aqua/20). */
+const v = (name: string) => `rgb(var(--pv-${name}) / <alpha-value>)`;
+
 const config: Config = {
   content: ["./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
+        // Every colour reads a theme variable (src/lib/theme/themes.ts), so the whole app follows the selected theme.
         vibe: {
-          purple: "#7047FF",
-          "purple-light": "#9B7BFF",
-          "purple-dark": "#4F2BD9",
-          midnight: "#17132C",
-          "midnight-2": "#211B3F",
-          "midnight-3": "#2C2452",
-          coral: "#FF6B6B",
-          aqua: "#39D5E8",
-          sun: "#FFD65A",
-          lavender: "#EAE4FF",
-          mint: "#5BE3A8",
-          pink: "#FF7AC6",
-          magenta: "#F2358D",
-          sky: "#1FB6F2",
-          lime: "#6BCF3A",
-          violet: "#9B3FE6",
+          purple: v("primary"), "purple-light": v("primary"), "purple-dark": v("primary-ink"),
+          midnight: v("bg"), "midnight-2": v("surface-2"), "midnight-3": v("surface-3"),
+          lavender: v("ink-soft"),
+          aqua: v("secondary"), sky: v("secondary"),
+          sun: v("reward"), coral: v("error"), orange: v("orange"),
+          mint: v("success"), lime: v("success"),
+          pink: v("pink"), magenta: v("pink"), violet: v("accent"),
+          // Text-safe ("ink") versions of each accent for the theme's surfaces
+          "purple-ink": v("primary-ink"), "purple-light-ink": v("primary-ink"), "aqua-ink": v("secondary-ink"), "sky-ink": v("secondary-ink"),
+          "sun-ink": v("reward-ink"), "coral-ink": v("error-ink"), "orange-ink": v("orange-ink"), "mint-ink": v("success-ink"), "lime-ink": v("success-ink"),
+          "pink-ink": v("pink-ink"), "magenta-ink": v("pink-ink"), "violet-ink": v("accent-ink"),
+          // Fixed colours that must not change with the theme (text on yellow buttons, white speech bubbles, modal scrims)
+          night: "#19162F",
         },
+        ink: v("ink"), "ink-soft": v("ink-soft"), glass: v("glass"), line: v("line"), surface: v("surface-2"),
       },
       fontFamily: {
         display: ["var(--font-display)", "system-ui", "sans-serif"],
@@ -35,17 +36,17 @@ const config: Config = {
       },
       borderRadius: { "4xl": "2rem", "5xl": "2.5rem" },
       boxShadow: {
-        glow: "0 0 40px -8px rgba(112,71,255,0.65)",
-        "glow-aqua": "0 0 40px -8px rgba(57,213,232,0.6)",
-        "glow-sun": "0 0 40px -8px rgba(255,214,90,0.6)",
-        card: "0 20px 50px -20px rgba(8,4,30,0.8)",
+        glow: "0 10px 34px -10px rgb(var(--pv-primary) / 0.55)",
+        "glow-aqua": "0 10px 34px -10px rgb(var(--pv-secondary) / 0.55)",
+        "glow-sun": "0 10px 34px -10px rgb(var(--pv-reward) / 0.65)",
+        card: "0 18px 40px -18px rgb(var(--pv-shadow) / var(--pv-shadow-alpha))",
       },
       backgroundImage: {
         "vibe-hero":
-          "radial-gradient(1200px 600px at 70% -10%, rgba(112,71,255,0.55), transparent 60%), radial-gradient(900px 500px at 0% 30%, rgba(57,213,232,0.25), transparent 60%), radial-gradient(800px 500px at 100% 80%, rgba(255,107,107,0.22), transparent 60%)",
-        "vibe-cta": "linear-gradient(135deg, #7047FF 0%, #9B3FE6 45%, #F2358D 100%)",
-        "vibe-aqua": "linear-gradient(135deg, #39D5E8 0%, #7047FF 100%)",
-        "vibe-sun": "linear-gradient(135deg, #FFD65A 0%, #FF6B6B 100%)",
+          "radial-gradient(1200px 600px at 70% -10%, rgb(var(--pv-glow-a) / 0.22), transparent 60%), radial-gradient(900px 500px at 0% 30%, rgb(var(--pv-glow-b) / 0.2), transparent 60%), radial-gradient(800px 500px at 100% 80%, rgb(var(--pv-glow-c) / 0.2), transparent 60%)",
+        "vibe-cta": "linear-gradient(135deg, rgb(var(--pv-cta-from)) 0%, rgb(var(--pv-cta-to)) 100%)",
+        "vibe-aqua": "linear-gradient(135deg, rgb(var(--pv-secondary)) 0%, rgb(var(--pv-primary)) 100%)",
+        "vibe-sun": "linear-gradient(135deg, rgb(var(--pv-reward)) 0%, rgb(var(--pv-orange)) 100%)",
       },
       keyframes: {
         float: { "0%,100%": { transform: "translateY(0)" }, "50%": { transform: "translateY(-14px)" } },

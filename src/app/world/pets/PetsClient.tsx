@@ -18,14 +18,14 @@ export function PetsClient({ pets }: { pets: Pet[] }) {
       {pets.map((p) => {
         const nextGoal = NEXT.find((n) => (p.growth ?? 0) < n);
         return (
-          <article key={p.slug} className={`card border-2 p-5 ${p.owned ? `${RARITY[p.rarity].ring} ${p.active ? "shadow-glow" : ""}` : "border-white/5"}`}>
+          <article key={p.slug} className={`card border-2 p-5 ${p.owned ? `${RARITY[p.rarity].ring} ${p.active ? "shadow-glow" : ""}` : "border-line/5"}`}>
             <div className="flex items-start justify-between">
               <motion.button whileTap={{ scale: 1.3, rotate: 10 }} onClick={() => setSaid({ ...said, [p.slug]: !said[p.slug] })} disabled={!p.owned} className={`text-6xl ${p.owned ? "" : "grayscale opacity-40"}`} aria-label={`Play with ${p.name}`}>{p.emoji}</motion.button>
               <RarityBadge rarity={p.rarity} />
             </div>
-            <h2 className="mt-2 font-display text-xl font-bold">{p.owned ? (p.nickname ?? p.name) : p.name}{p.active && <span className="chip ml-2 text-vibe-mint">With you</span>}</h2>
+            <h2 className="mt-2 font-display text-xl font-bold">{p.owned ? (p.nickname ?? p.name) : p.name}{p.active && <span className="chip ml-2 text-vibe-mint-ink">With you</span>}</h2>
             <p className="text-sm text-vibe-lavender">{p.personality}</p>
-            {said[p.slug] && <p className="mt-2 rounded-2xl bg-white/10 p-2 text-sm">💬 “{p.hint_style}”</p>}
+            {said[p.slug] && <p className="mt-2 rounded-2xl bg-glass/10 p-2 text-sm">💬 “{p.hint_style}”</p>}
             {p.owned ? (
               <>
                 <p className="mt-3 text-sm"><b>{p.stage}</b> stage · grows with every learning activity</p>

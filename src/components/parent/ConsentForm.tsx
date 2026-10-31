@@ -30,7 +30,7 @@ export function ConsentForm({ child }: { child: { id: string; name: string } }) 
       <div className="card p-6">
         <CharacterSays who="max" mood="celebrating">{child.name}'s account is ready!</CharacterSays>
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
-          <div className="glass p-4"><div className="text-xs uppercase text-vibe-lavender">Explorer name</div><div className="font-display text-2xl font-bold text-vibe-sun">{done}</div></div>
+          <div className="glass p-4"><div className="text-xs uppercase text-vibe-lavender">Explorer name</div><div className="font-display text-2xl font-bold text-vibe-sun-ink">{done}</div></div>
           <div className="glass p-4"><div className="text-xs uppercase text-vibe-lavender">Secret PIN</div><div className="font-display text-2xl font-bold">The 6 digits you chose</div></div>
         </div>
         <p className="mt-3 text-sm text-vibe-lavender">Write these down for {child.name}. The Explorer name never contains their real name, for privacy. You can reset the PIN anytime.</p>
@@ -42,7 +42,7 @@ export function ConsentForm({ child }: { child: { id: string; name: string } }) 
   return (
     <form onSubmit={submit} className="card space-y-5 p-6" data-child-id={child.id}>
       <h2 className="title-md">Parental consent for {child.name}</h2>
-      <p className="text-sm text-vibe-lavender">Under India's Digital Personal Data Protection Act, 2023 we need your verifiable consent before {child.name} can use PING VIBE. Read the <a href="/privacy" target="_blank" className="text-vibe-aqua underline">privacy notice</a>.</p>
+      <p className="text-sm text-vibe-lavender">Under India's Digital Personal Data Protection Act, 2023 we need your verifiable consent before {child.name} can use PING VIBE. Read the <a href="/privacy" target="_blank" className="text-vibe-aqua-ink underline">privacy notice</a>.</p>
       {[
         ["learning_data", "Required", `I consent to PING VIBE processing ${child.name}'s first name, birth month/year, grade and learning records to provide personalised English learning.`],
         ["ai_feedback", "Optional", `Allow AI feedback: ${child.name}'s writing and questions to LEXI may be sent securely to our AI provider to generate feedback. (If off, the offline checker is used and LEXI chat is disabled.)`],
@@ -50,7 +50,7 @@ export function ConsentForm({ child }: { child: { id: string; name: string } }) 
       ].map(([k, tag, text]) => (
         <label key={k} className="glass flex gap-3 p-4 text-sm">
           <input type="checkbox" className="mt-1 h-5 w-5 shrink-0 accent-vibe-purple" checked={(c as any)[k]} onChange={(e) => setC({ ...c, [k]: e.target.checked })} />
-          <span><span className={`chip mr-2 ${tag === "Required" ? "text-vibe-coral" : ""}`}>{tag}</span>{text}</span>
+          <span><span className={`chip mr-2 ${tag === "Required" ? "text-vibe-coral-ink" : ""}`}>{tag}</span>{text}</span>
         </label>
       ))}
       <div className="grid gap-3 sm:grid-cols-2">

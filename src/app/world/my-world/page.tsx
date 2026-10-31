@@ -15,7 +15,7 @@ export default async function MyWorld() {
     <div>
       <PageTitle title="MY PING VIBE WORLD" subtitle={`${built} of ${s.buildings.length} places built · every learning milestone grows your world`} />
       <div className="card relative aspect-[4/5] overflow-hidden sm:aspect-[16/10]" style={{ background: "linear-gradient(180deg,#8EE3F5 0%,#BFF3D7 55%,#5BE3A8 56%,#2FBF71 100%)" }}>
-        <div className="absolute left-[8%] top-[6%] h-16 w-40 rounded-full bg-white/70 blur-sm" /><div className="absolute right-[10%] top-[10%] h-12 w-32 rounded-full bg-white/70 blur-sm" />
+        <div className="absolute left-[8%] top-[6%] h-16 w-40 rounded-full bg-glass/70 blur-sm" /><div className="absolute right-[10%] top-[10%] h-12 w-32 rounded-full bg-glass/70 blur-sm" />
         {s.buildings.map((b) => (
           <Link key={b.slug} href={b.unlocked ? b.href : "#"} title={b.unlocked ? b.title : `Locked: ${b.unlock_label}`}
             className={`absolute flex -translate-x-1/2 -translate-y-1/2 flex-col items-center text-center ${b.unlocked ? "" : "pointer-events-none opacity-40 grayscale"}`} style={{ left: `${b.x}%`, top: `${b.y}%` }}>
@@ -35,7 +35,7 @@ export default async function MyWorld() {
           ))}
           {built === s.buildings.length && <CharacterSays who="max" mood="celebrating">You've built EVERYTHING! You're a true world-builder!</CharacterSays>}
         </div>
-        <p className="mt-6 text-sm text-vibe-lavender">Decorations from the <Link href="/world/rewards" className="text-vibe-aqua underline">Reward Shop</Link> and level milestones appear in your world automatically.</p>
+        <p className="mt-6 text-sm text-vibe-lavender">Decorations from the <Link href="/world/rewards" className="text-vibe-aqua-ink underline">Reward Shop</Link> and level milestones appear in your world automatically.</p>
       </section>
     </div>
   );

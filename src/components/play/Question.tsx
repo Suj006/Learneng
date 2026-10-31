@@ -26,9 +26,9 @@ export function Question({ q, onAnswer, disabled, feedback, big = false }: { q: 
     if (feedback) {
       if (o === feedback.answer || (q.type === "fill_blank" && o.toLowerCase() === feedback.answer.toLowerCase())) return base + "border-vibe-mint bg-vibe-mint/20";
       if (o === choice && !feedback.correct) return base + "border-vibe-coral bg-vibe-coral/20";
-      return base + "border-white/10 bg-white/5 opacity-60";
+      return base + "border-line/10 bg-glass/5 opacity-60";
     }
-    return base + (choice === o ? "border-vibe-aqua bg-vibe-aqua/20" : "border-white/10 bg-white/5 hover:bg-white/10 active:scale-[0.99]");
+    return base + (choice === o ? "border-vibe-aqua bg-vibe-aqua/20" : "border-line/10 bg-glass/5 hover:bg-glass/10 active:scale-[0.99]");
   };
 
   return (
@@ -56,11 +56,11 @@ export function Question({ q, onAnswer, disabled, feedback, big = false }: { q: 
 
       {q.type === "order" && (
         <div className="mt-4">
-          <div className="glass min-h-16 p-3 text-lg font-semibold" aria-live="polite">{picked.length ? picked.join(" ") : <span className="text-vibe-lavender/60">Tap the words in order…</span>}</div>
+          <div className="glass min-h-16 p-3 text-lg font-semibold" aria-live="polite">{picked.length ? picked.join(" ") : <span className="text-vibe-lavender">Tap the words in order…</span>}</div>
           <div className="mt-3 flex flex-wrap gap-2">
             {pool.map((t, i) => {
               const used = picked.filter((p) => p === t).length >= pool.slice(0, i + 1).filter((p) => p === t).length;
-              return <button key={i} type="button" disabled={used || !!feedback} onClick={() => setPicked([...picked, t])} className={`rounded-full border border-white/15 px-4 py-2 font-semibold ${used ? "opacity-30" : "bg-white/10 hover:bg-white/20"}`}>{t}</button>;
+              return <button key={i} type="button" disabled={used || !!feedback} onClick={() => setPicked([...picked, t])} className={`rounded-full border border-line/15 px-4 py-2 font-semibold ${used ? "opacity-30" : "bg-glass/10 hover:bg-glass/20"}`}>{t}</button>;
             })}
           </div>
           <div className="mt-3 flex gap-2">
@@ -71,7 +71,7 @@ export function Question({ q, onAnswer, disabled, feedback, big = false }: { q: 
       )}
 
       {feedback && (
-        <p role="status" className={`mt-4 rounded-2xl p-3 font-semibold ${feedback.correct ? "bg-vibe-mint/15 text-vibe-mint" : "bg-vibe-coral/15 text-vibe-coral"}`}>
+        <p role="status" className={`mt-4 rounded-2xl p-3 font-semibold ${feedback.correct ? "bg-vibe-mint/15 text-vibe-mint-ink" : "bg-vibe-coral/15 text-vibe-coral-ink"}`}>
           {feedback.correct ? "✨ Correct! Brilliant!" : <>Nearly! The answer is <b>{feedback.answer}</b>. Every try makes your brain stronger!</>}
         </p>
       )}

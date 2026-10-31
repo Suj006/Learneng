@@ -16,7 +16,7 @@ export default async function DevMailbox() {
         {mails.length === 0 && <p className="text-vibe-lavender">No e-mails yet.</p>}
         {mails.map((m) => (
           <article key={m.id} className="card overflow-hidden">
-            <header className="border-b border-white/10 p-4 text-sm"><b>{m.subject}</b><div className="text-vibe-lavender">to {m.to_email} · {new Date(m.created_at).toLocaleString()}</div></header>
+            <header className="border-b border-line/10 p-4 text-sm"><b>{m.subject}</b><div className="text-vibe-lavender">to {m.to_email} · {new Date(m.created_at).toLocaleString()}</div></header>
             <div className="bg-white" dangerouslySetInnerHTML={{ __html: m.html }} />
           </article>
         ))}

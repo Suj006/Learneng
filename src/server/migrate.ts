@@ -11,6 +11,7 @@ import { headwordRows } from "./content/headwords";
 import { GRAMMAR_TOPICS } from "./content/grammar";
 import { STORIES } from "./content/stories";
 import { hashPassword } from "./crypto";
+import { DEFAULT_THEME, THEME_SEED } from "@/lib/theme/themes";
 
 /**
  * Applies the idempotent schema, then inserts seed content that is missing.
@@ -28,7 +29,16 @@ export async function migrate(db: Queryable) {
     await seed(db);
     await db.query(`insert into seed_meta (key, value) values ('version', $1) on conflict (key) do update set value = $1`, [SEED_VERSION]);
   }
+  await seedThemes(db);
   await bootstrapAdmin(db);
+}
+
+/** Adds any built-in colour theme that is missing (admin edits are never overwritten). Rainbow Wonder is the default. */
+async function seedThemes(db: Queryable) {
+  for (const [i, t] of THEME_SEED.entries()) {
+    await db.query(`insert into color_themes (slug, name, emoji, tagline, tokens, is_default, sort_order) values ($1,$2,$3,$4,$5,$6,$7) on conflict (slug) do nothing`,
+      [t.slug, t.name, t.emoji, t.tagline, JSON.stringify(t.tokens), t.slug === DEFAULT_THEME, i]);
+  }
 }
 
 /** Creates the first administrator from ADMIN_EMAIL / ADMIN_PASSWORD when none exists. */

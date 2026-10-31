@@ -21,10 +21,10 @@ export function CharacterSays({ who, mood = "welcome", children, size = 110, spe
   return (
     <div className={`flex items-end gap-3 ${align === "right" ? "flex-row-reverse" : ""}`}>
       <Character name={who} mood={mood} size={size} className="shrink-0" />
-      <motion.div initial={{ opacity: 0, y: 10, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} className="relative mb-6 max-w-xl rounded-3xl bg-white px-5 py-4 text-vibe-midnight shadow-card">
-        <div className="mb-1 flex items-center gap-1.5 font-display text-xs font-bold uppercase tracking-wider text-vibe-midnight/80"><span className="h-2.5 w-2.5 rounded-full" style={{ background: CHARACTER_INFO[who].color }} aria-hidden />{CHARACTER_INFO[who].name}</div>
+      <motion.div initial={{ opacity: 0, y: 10, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} className="relative mb-6 max-w-xl rounded-3xl bg-white px-5 py-4 text-vibe-night shadow-card">
+        <div className="mb-1 flex items-center gap-1.5 font-display text-xs font-bold uppercase tracking-wider text-vibe-night/80"><span className="h-2.5 w-2.5 rounded-full" style={{ background: CHARACTER_INFO[who].color }} aria-hidden />{CHARACTER_INFO[who].name}</div>
         <div className="text-base font-semibold leading-snug sm:text-lg">{children}</div>
-        {speakText && <button type="button" onClick={() => speak(speakText, { who: who as Speaker, rate: 1, server: true })} className="-ml-2 mt-1 inline-flex min-h-[40px] items-center gap-1 rounded-full px-2 text-sm font-bold text-vibe-purple hover:bg-vibe-purple/10" aria-label="Read aloud">🔊 Read to me</button>}
+        {speakText && <button type="button" onClick={() => speak(speakText, { who: who as Speaker, rate: 1, server: true })} className="-ml-2 mt-1 inline-flex min-h-[40px] items-center gap-1 rounded-full px-2 text-sm font-bold text-vibe-purple-ink hover:bg-vibe-purple/10" aria-label="Read aloud">🔊 Read to me</button>}
         <span className={`absolute bottom-3 h-4 w-4 rotate-45 bg-white ${align === "right" ? "-right-1.5" : "-left-1.5"}`} />
       </motion.div>
     </div>
@@ -34,17 +34,17 @@ export function CharacterSays({ who, mood = "welcome", children, size = 110, spe
 export function Progress({ value, max = 100, color = "bg-vibe-cta", className = "", label }: { value: number; max?: number; color?: string; className?: string; label?: string }) {
   const pct = Math.max(0, Math.min(100, (value / Math.max(1, max)) * 100));
   return (
-    <div className={`h-3 w-full overflow-hidden rounded-full bg-white/10 ${className}`} role="progressbar" aria-valuenow={Math.round(pct)} aria-valuemin={0} aria-valuemax={100} aria-valuetext={max === 100 ? `${Math.round(pct)}%` : `${value} of ${max}`} aria-label={label ?? "Progress"}>
+    <div className={`h-3 w-full overflow-hidden rounded-full bg-glass/10 ${className}`} role="progressbar" aria-valuenow={Math.round(pct)} aria-valuemin={0} aria-valuemax={100} aria-valuetext={max === 100 ? `${Math.round(pct)}%` : `${value} of ${max}`} aria-label={label ?? "Progress"}>
       <motion.div className={`h-full rounded-full ${color}`} initial={{ width: 0 }} animate={{ width: `${pct}%` }} transition={{ duration: 0.8, ease: "easeOut" }} />
     </div>
   );
 }
 
 export const RARITY: Record<string, { label: string; ring: string; text: string; glow: string }> = {
-  common: { label: "Common", ring: "border-white/20", text: "text-white/70", glow: "" },
-  rare: { label: "Rare", ring: "border-vibe-aqua/70", text: "text-vibe-aqua", glow: "shadow-glow-aqua" },
-  epic: { label: "Epic", ring: "border-vibe-purple-light", text: "text-[#C9B8FF]", glow: "shadow-glow" },
-  legendary: { label: "Legendary", ring: "border-vibe-sun", text: "text-vibe-sun", glow: "shadow-glow-sun" },
+  common: { label: "Common", ring: "border-line/20", text: "text-ink-soft", glow: "" },
+  rare: { label: "Rare", ring: "border-vibe-aqua/70", text: "text-vibe-aqua-ink", glow: "shadow-glow-aqua" },
+  epic: { label: "Epic", ring: "border-vibe-purple-light", text: "text-vibe-purple-ink", glow: "shadow-glow" },
+  legendary: { label: "Legendary", ring: "border-vibe-sun", text: "text-vibe-sun-ink", glow: "shadow-glow-sun" },
 };
 export function RarityBadge({ rarity }: { rarity: string }) {
   const r = RARITY[rarity] ?? RARITY.common;
@@ -52,7 +52,7 @@ export function RarityBadge({ rarity }: { rarity: string }) {
 }
 
 export function BackLink({ href = "/world", label = "Back" }: { href?: string; label?: string }) {
-  return <Link href={href} className="btn-ghost btn-sm" aria-label={label}>← {label}</Link>;
+  return <Link href={href} className="btn-ghost btn-sm shrink-0 whitespace-nowrap" aria-label={label}>← {label}</Link>;
 }
 
 export function PageTitle({ title, subtitle, back = "/world", right }: { title: string; subtitle?: string; back?: string | null; right?: React.ReactNode }) {
@@ -62,7 +62,7 @@ export function PageTitle({ title, subtitle, back = "/world", right }: { title: 
         {back && <BackLink href={back} />}
         <div>
           <h1 className="title-lg">{title}</h1>
-          {subtitle && <p className="mt-1 text-sm text-vibe-lavender/80 sm:text-base">{subtitle}</p>}
+          {subtitle && <p className="mt-1 text-sm text-vibe-lavender sm:text-base">{subtitle}</p>}
         </div>
       </div>
       {right}
@@ -72,7 +72,7 @@ export function PageTitle({ title, subtitle, back = "/world", right }: { title: 
 
 export function ErrorNote({ error }: { error: string | null }) {
   if (!error) return null;
-  return <p role="alert" className="mt-3 rounded-2xl bg-vibe-coral/15 px-4 py-3 text-sm font-semibold text-vibe-coral">{error}</p>;
+  return <p role="alert" className="mt-3 rounded-2xl bg-vibe-coral/15 px-4 py-3 text-sm font-semibold text-vibe-coral-ink">{error}</p>;
 }
 
 /** Small spinner for buttons that are working. */
@@ -83,7 +83,7 @@ export function InlineSpinner() {
 export function Spinner({ label = "Loading…" }: { label?: string }) {
   return (
     <div className="flex flex-col items-center justify-center gap-3 py-16 text-vibe-lavender" role="status">
-      <div className="h-12 w-12 animate-spin rounded-full border-4 border-white/15 border-t-vibe-aqua" />
+      <div className="h-12 w-12 animate-spin rounded-full border-4 border-line/15 border-t-vibe-aqua" />
       <span className="font-display">{label}</span>
     </div>
   );
@@ -150,49 +150,49 @@ export function Celebration({ award, title, message, who = "max", onClose, celeb
   return (
     <Portal>
     <AnimatePresence>
-      <motion.div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-vibe-midnight/80 p-4 backdrop-blur" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} role="dialog" aria-modal="true" aria-label={title}>
+      <motion.div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-vibe-night/55 p-4 backdrop-blur" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} role="dialog" aria-modal="true" aria-label={title}>
         <Burst kind={level ? "fireworks" : celebration.replace("anim-", "")} />
         <motion.div initial={{ scale: 0.85, y: 20 }} animate={{ scale: 1, y: 0 }} className="card relative my-auto max-h-[calc(100dvh-2rem)] w-full max-w-md overflow-y-auto overscroll-contain p-6 text-center">
           <div className="absolute inset-0 -z-10 bg-vibe-hero opacity-80" />
           <div className="mx-auto mb-1 w-fit rounded-2xl bg-white px-2 py-1"><BrandLogo width={110} fallback="sm" /></div>
           {reward ? (
-            <motion.div initial={{ scale: 0, rotate: -20 }} animate={{ scale: [0, 1.25, 1], rotate: 0 }} transition={{ duration: 0.7 }} className="mx-auto my-2 grid h-28 w-28 place-items-center rounded-full bg-white/10 text-7xl shadow-glow-sun" aria-hidden>{reward.emoji}</motion.div>
+            <motion.div initial={{ scale: 0, rotate: -20 }} animate={{ scale: [0, 1.25, 1], rotate: 0 }} transition={{ duration: 0.7 }} className="mx-auto my-2 grid h-28 w-28 place-items-center rounded-full bg-glass/10 text-7xl shadow-glow-sun" aria-hidden>{reward.emoji}</motion.div>
           ) : <Character name={who} mood="celebrating" size={110} className="mx-auto" />}
           <h2 className="title-md mt-2">{level ? `LEVEL ${level.id}!` : title}</h2>
           {reward && (
             <div className="mt-1">
-              <p className="font-display text-xl font-bold text-vibe-sun">{reward.title}</p>
+              <p className="font-display text-xl font-bold text-vibe-sun-ink">{reward.title}</p>
               {reward.category && <span className="chip mt-1">{reward.category}</span>}
             </div>
           )}
-          {level && <p className="mt-1 font-display text-lg text-vibe-sun">You are now {level.name}!</p>}
+          {level && <p className="mt-1 font-display text-lg text-vibe-sun-ink">You are now {level.name}!</p>}
           {message && <div className="mt-2 text-vibe-lavender">{message}</div>}
           {award && (award.xp || award.coins || award.crystals) ? (
             <div className="mt-4 flex flex-wrap justify-center gap-2">
-              {!!award.xp && <span className="chip bg-vibe-purple/30 text-base text-white">⚡ +{award.xp} XP</span>}
-              {!!award.coins && <span className="chip bg-vibe-sun/20 text-base text-vibe-sun">🪙 +{award.coins}</span>}
-              {!!award.crystals && <span className="chip bg-vibe-aqua/20 text-base text-vibe-aqua">💎 +{award.crystals}</span>}
+              {!!award.xp && <span className="chip bg-vibe-purple/15 text-base text-vibe-purple-ink">⚡ +{award.xp} XP</span>}
+              {!!award.coins && <span className="chip bg-vibe-sun/20 text-base text-vibe-sun-ink">🪙 +{award.coins}</span>}
+              {!!award.crystals && <span className="chip bg-vibe-aqua/20 text-base text-vibe-aqua-ink">💎 +{award.crystals}</span>}
             </div>
           ) : null}
           {reward?.cost && (reward.cost.coins || reward.cost.crystals) ? (
             <p className="mt-3 text-sm text-vibe-lavender">Spent {reward.cost.coins ? `🪙 ${reward.cost.coins}` : ""}{reward.cost.crystals ? ` 💎 ${reward.cost.crystals}` : ""}</p>
           ) : null}
-          {balance && <p className="mt-1 text-sm font-semibold">Your treasure now: <span className="text-vibe-sun">🪙 {balance.coins}</span> · <span className="text-vibe-aqua">💎 {balance.crystals}</span></p>}
-          {award?.duplicate && <p className="mt-3 text-sm text-vibe-lavender/70">Rewards for this were already collected — great practice!</p>}
-          {award?.capped && <p className="mt-3 text-sm text-vibe-lavender/70">You've collected today's rewards for this activity. Practising still makes you stronger! 💪</p>}
-          {award?.restReminder && <p className="mt-3 rounded-2xl bg-vibe-mint/15 p-3 text-sm text-vibe-mint">🌿 You've learned SO much today! Time to rest your eyes, play outside or read a book. See you tomorrow!</p>}
+          {balance && <p className="mt-1 text-sm font-semibold">Your treasure now: <span className="text-vibe-sun-ink">🪙 {balance.coins}</span> · <span className="text-vibe-aqua-ink">💎 {balance.crystals}</span></p>}
+          {award?.duplicate && <p className="mt-3 text-sm text-vibe-lavender">Rewards for this were already collected — great practice!</p>}
+          {award?.capped && <p className="mt-3 text-sm text-vibe-lavender">You've collected today's rewards for this activity. Practising still makes you stronger! 💪</p>}
+          {award?.restReminder && <p className="mt-3 rounded-2xl bg-vibe-mint/15 p-3 text-sm text-vibe-mint-ink">🌿 You've learned SO much today! Time to rest your eyes, play outside or read a book. See you tomorrow!</p>}
           {level && (level.rewards.length > 0 || level.coins > 0) && (
-            <div className="mt-4 rounded-2xl bg-white/5 p-3 text-left text-sm">
-              <div className="font-display font-bold text-vibe-sun">Level rewards</div>
+            <div className="mt-4 rounded-2xl bg-glass/5 p-3 text-left text-sm">
+              <div className="font-display font-bold text-vibe-sun-ink">Level rewards</div>
               {level.coins > 0 && <div>🪙 {level.coins} bonus coins</div>}
               {level.rewards.map((r) => <div key={r.title}>{r.emoji} {r.title}</div>)}
-              {level.mission && <div className="mt-1 text-vibe-aqua">{level.mission}</div>}
+              {level.mission && <div className="mt-1 text-vibe-aqua-ink">{level.mission}</div>}
             </div>
           )}
           {[...(award?.achievements ?? []), ...(award?.unlocks ?? [])].length > 0 && (
             <ul className="mt-4 space-y-1 text-left text-sm">
-              {award?.achievements?.map((a) => <li key={a.title} className="rounded-xl bg-white/5 px-3 py-2">🏅 {a.emoji} {a.title}</li>)}
-              {award?.unlocks?.map((u) => <li key={u.title} className="rounded-xl bg-white/5 px-3 py-2">{u.emoji} {u.title}</li>)}
+              {award?.achievements?.map((a) => <li key={a.title} className="rounded-xl bg-glass/5 px-3 py-2">🏅 {a.emoji} {a.title}</li>)}
+              {award?.unlocks?.map((u) => <li key={u.title} className="rounded-xl bg-glass/5 px-3 py-2">{u.emoji} {u.title}</li>)}
             </ul>
           )}
           <div className="mt-6 flex flex-wrap justify-center gap-3">

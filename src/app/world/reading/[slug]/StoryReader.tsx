@@ -18,8 +18,8 @@ export function StoryReader({ slug, pages, glossary, questions, known }: { slug:
   const gl = new Map(glossary.map((g) => [g.word.toLowerCase(), g.meaning]));
   const render = (text: string) => text.split(/(\s+)/).map((tok, k) => {
     const clean = tok.toLowerCase().replace(/[^a-z']/g, "");
-    if (gl.has(clean)) return <button key={k} onClick={() => setTip(`${clean}: ${gl.get(clean)}`)} className="rounded bg-vibe-sun/25 px-1 font-bold text-vibe-sun underline decoration-dotted">{tok}</button>;
-    if (known.includes(clean)) return <span key={k} className="rounded bg-vibe-aqua/20 px-0.5 text-vibe-aqua" title="A word you've discovered!">{tok}</span>;
+    if (gl.has(clean)) return <button key={k} onClick={() => setTip(`${clean}: ${gl.get(clean)}`)} className="rounded bg-vibe-sun/25 px-1 font-bold text-vibe-sun-ink underline decoration-dotted">{tok}</button>;
+    if (known.includes(clean)) return <span key={k} className="rounded bg-vibe-aqua/20 px-0.5 text-vibe-aqua-ink" title="A word you've discovered!">{tok}</span>;
     return tok;
   });
 
@@ -38,7 +38,7 @@ export function StoryReader({ slug, pages, glossary, questions, known }: { slug:
     return (
       <div className="mx-auto max-w-2xl"><Progress value={qi} max={questions.length} />
         <div className="card mt-6 p-6"><p className="font-display text-2xl font-bold">{q.q}</p>
-          <div className="mt-4 grid gap-3">{q.options.map((o, k) => <button key={o} className="rounded-2xl border border-white/10 bg-white/5 p-4 text-left font-semibold hover:bg-white/10" onClick={async () => {
+          <div className="mt-4 grid gap-3">{q.options.map((o, k) => <button key={o} className="rounded-2xl border border-line/10 bg-glass/5 p-4 text-left font-semibold hover:bg-glass/10" onClick={async () => {
             const next = [...answers, k]; setAnswers(next);
             if (qi + 1 < questions.length) return setQi(qi + 1);
             try { setRes(await api(`/api/reading/${slug}`, { body: { answers: next, seconds: timer() } })); setCele(true); } catch (e) { setErr((e as Error).message); }
@@ -55,7 +55,7 @@ export function StoryReader({ slug, pages, glossary, questions, known }: { slug:
         <button className="btn-ghost btn-sm mt-6" onClick={() => speak(p.text, { who: "story", rate: 0.95, server: true })}>🔊 Read it to me</button>
         {tip && <p className="mt-3 rounded-2xl bg-vibe-sun/15 p-3 text-sm">📖 {tip}</p>}
       </motion.div>
-      <p className="mt-2 text-xs text-vibe-lavender"><span className="text-vibe-sun">Yellow</span> = tap for meaning · <span className="text-vibe-aqua">Blue</span> = a word you've discovered</p>
+      <p className="mt-2 text-xs text-vibe-lavender"><span className="text-vibe-sun-ink">Yellow</span> = tap for meaning · <span className="text-vibe-aqua-ink">Blue</span> = a word you've discovered</p>
       <div className="mt-4 flex justify-between">
         <button className="btn-ghost" disabled={page === 0} onClick={() => { setPage(page - 1); setTip(null); }}>← Back</button>
         {page + 1 < pages.length ? <button className="btn-primary" onClick={() => { setPage(page + 1); setTip(null); }}>Next page →</button> : <button className="btn-sun" onClick={() => setQuiz(true)}>Story quiz! 🧠</button>}

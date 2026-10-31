@@ -24,13 +24,13 @@ export default async function Museum() {
       <PageTitle title="🏛️ My Achievement Museum" subtitle="Every trophy, certificate and milestone from your PING VIBE journey." />
       <section><h2 className="title-md">🏆 Trophy Hall</h2>
         <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">{achievements.map((a) => (
-          <div key={a.slug} className={`card flex flex-col items-center p-4 text-center ${a.unlocked_at ? "shadow-glow-sun" : "border-dashed border-white/20"}`}><span className={`text-4xl ${a.unlocked_at ? "" : "opacity-40 grayscale"}`}>{a.emoji}</span><b className="mt-2 text-sm">{a.title}</b><span className="mt-1 text-[11px] text-vibe-lavender">{a.unlocked_at ? new Date(a.unlocked_at).toLocaleDateString() : a.description}</span></div>
+          <div key={a.slug} className={`card flex flex-col items-center p-4 text-center ${a.unlocked_at ? "shadow-glow-sun" : "border-dashed border-line/20"}`}><span className={`text-4xl ${a.unlocked_at ? "" : "opacity-40 grayscale"}`}>{a.emoji}</span><b className="mt-2 text-sm">{a.title}</b><span className="mt-1 text-[11px] text-vibe-lavender">{a.unlocked_at ? new Date(a.unlocked_at).toLocaleDateString() : a.description}</span></div>
         ))}</div>
       </section>
       <section><h2 className="title-md">📜 Certificates</h2>
         <div className="mt-4 flex flex-wrap gap-3">{CERTS.map((c) => earned.has(c.kind)
           ? <Link key={c.kind} href={`/world/certificate/${c.kind}`} className="btn-sun btn-sm">🎓 {c.title}</Link>
-          : <span key={c.kind} className="chip border border-dashed border-white/20 text-vibe-lavender">🔒 {c.title}</span>)}</div>
+          : <span key={c.kind} className="chip border border-dashed border-line/20 text-vibe-lavender">🔒 {c.title}</span>)}</div>
       </section>
       <section><h2 className="title-md">🕰️ My Learning Journey</h2>
         <ol className="relative mt-4 space-y-4 border-l-2 border-vibe-purple/50 pl-6">

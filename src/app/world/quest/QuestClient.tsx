@@ -95,7 +95,7 @@ export function QuestClient() {
     };
     return (
       <div className="mx-auto max-w-3xl">
-        <div className="flex items-center justify-between gap-3"><span className="chip text-vibe-sun">Round {q.round}: {ROUNDS[q.round]}</span><span className="text-sm font-bold">{data.answered.length + 1}/{data.questions.length}</span></div>
+        <div className="flex items-center justify-between gap-3"><span className="chip text-vibe-sun-ink">Round {q.round}: {ROUNDS[q.round]}</span><span className="text-sm font-bold">{data.answered.length + 1}/{data.questions.length}</span></div>
         <Progress value={data.answered.length} max={data.questions.length} className="mt-3" />
         <div className="card mt-6 p-6"><Question q={q} onAnswer={answer} feedback={feedback} /></div>
         {feedback && !feedback.correct && (() => {

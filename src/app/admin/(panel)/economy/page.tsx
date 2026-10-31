@@ -16,7 +16,7 @@ export default async function Economy() {
       <XpTable rows={rows} ceiling={Number(ceil?.value ?? 1500)} />
       <section className="card p-5"><h2 className="title-md">Levels ({total!.n})</h2><div className="mt-3"><AddLevels total={total!.n} /></div>
         <div className="mt-4 overflow-x-auto"><table className="w-full min-w-[640px] text-left text-sm"><thead className="text-vibe-lavender"><tr><th>#</th><th>Name</th><th>XP</th><th>Mastered words</th><th>Milestone</th><th>Rewards</th></tr></thead>
-          <tbody>{levels.map((l) => <tr key={l.id} className="border-t border-white/5"><td className="py-1">{l.id}</td><td>{l.name}</td><td>{l.min_xp.toLocaleString()}</td><td>{l.min_words_mastered}</td><td>{l.milestone || ""}</td><td className="text-xs">{l.reward_coins ? `🪙${l.reward_coins} ` : ""}{l.reward_slugs.join(", ")}</td></tr>)}</tbody></table></div>
+          <tbody>{levels.map((l) => <tr key={l.id} className="border-t border-line/5"><td className="py-1">{l.id}</td><td>{l.name}</td><td>{l.min_xp.toLocaleString()}</td><td>{l.min_words_mastered}</td><td>{l.milestone || ""}</td><td className="text-xs">{l.reward_coins ? `🪙${l.reward_coins} ` : ""}{l.reward_slugs.join(", ")}</td></tr>)}</tbody></table></div>
       </section>
     </div>
   );

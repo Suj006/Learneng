@@ -34,10 +34,10 @@ export default async function Writing({ searchParams }: { searchParams: Promise<
           </Link>
         ))}
       </div>
-      <p className="mt-4 text-center"><Link href={cat ? `/world/writing?category=${cat}` : "/world/writing"} className="text-sm font-bold text-vibe-aqua">🔄 Show me different topics</Link></p>
+      <p className="mt-4 text-center"><Link href={cat ? `/world/writing?category=${cat}` : "/world/writing"} className="text-sm font-bold text-vibe-aqua-ink">🔄 Show me different topics</Link></p>
       {past.length > 0 && (
         <section className="mt-10"><h2 className="title-md">My writing</h2>
-          <div className="mt-3 grid gap-2 sm:grid-cols-2">{past.map((p) => <Link key={p.id} href={`/world/writing/${p.id}?mine=1`} className="glass flex justify-between p-4 hover:bg-white/10"><span>{p.title}</span><span className="chip">{p.status === "evaluated" ? `⭐ ${p.score}` : "Draft"}</span></Link>)}</div>
+          <div className="mt-3 grid gap-2 sm:grid-cols-2">{past.map((p) => <Link key={p.id} href={`/world/writing/${p.id}?mine=1`} className="glass flex justify-between p-4 hover:bg-glass/10"><span>{p.title}</span><span className="chip">{p.status === "evaluated" ? `⭐ ${p.score}` : "Draft"}</span></Link>)}</div>
         </section>
       )}
     </div>

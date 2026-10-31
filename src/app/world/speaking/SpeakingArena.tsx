@@ -80,10 +80,10 @@ export function SpeakingArena({ scenarios, words }: { scenarios: Scenario[]; wor
         </div>
         {last && (
           <div className="mt-5">
-            {last.score < 0 ? <p className="text-vibe-sun">I couldn't hear you. Let's try once more!</p> : (
+            {last.score < 0 ? <p className="text-vibe-sun-ink">I couldn't hear you. Let's try once more!</p> : (
               <>
                 <p className="text-sm text-vibe-lavender">I heard: “{last.heard}”</p>
-                <p className={`mt-1 font-display text-2xl font-bold ${last.score >= 80 ? "text-vibe-mint" : last.score >= 50 ? "text-vibe-sun" : "text-vibe-coral"}`}>{last.score}% clear</p>
+                <p className={`mt-1 font-display text-2xl font-bold ${last.score >= 80 ? "text-vibe-mint-ink" : last.score >= 50 ? "text-vibe-sun-ink" : "text-vibe-coral-ink"}`}>{last.score}% clear</p>
                 <p className="text-sm">{last.score >= 80 ? "SPEAKY: Super clear! 🎉" : "SPEAKY: You're getting better! Listen once more and try again."}</p>
               </>
             )}

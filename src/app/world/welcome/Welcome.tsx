@@ -40,7 +40,7 @@ export function Welcome({ name, kingdoms }: { name: string; kingdoms: { slug: st
   return (
     <div className="relative mx-auto flex min-h-[70vh] max-w-4xl flex-col items-center justify-center text-center">
       <div className="absolute inset-0 -z-10 opacity-30"><Scene name="islands" /></div>
-      <div className="mb-6 flex gap-2" aria-hidden>{[0, 1, 2, 3].map((i) => <span key={i} className={`h-2 w-8 rounded-full ${i <= step ? "bg-vibe-sun" : "bg-white/15"}`} />)}</div>
+      <div className="mb-6 flex gap-2" aria-hidden>{[0, 1, 2, 3].map((i) => <span key={i} className={`h-2 w-8 rounded-full ${i <= step ? "bg-vibe-sun" : "bg-glass/15"}`} />)}</div>
       <AnimatePresence mode="wait">
         {step === 0 && (
           <motion.div key="s0" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, y: -20 }} className="flex flex-col items-center">
@@ -54,7 +54,7 @@ export function Welcome({ name, kingdoms }: { name: string; kingdoms: { slug: st
         )}
         {step === 1 && (
           <motion.div key={`s1-${cast}`} initial={{ opacity: 0, x: 60 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -60 }} className="flex flex-col items-center">
-            <p className="font-display text-sm uppercase tracking-widest text-vibe-aqua">Meet your buddies · {cast + 1}/{CAST.length}</p>
+            <p className="font-display text-sm uppercase tracking-widest text-vibe-aqua-ink">Meet your buddies · {cast + 1}/{CAST.length}</p>
             <Character name={CAST[cast].who} mood={(["excited", "welcome", "celebrating", "explaining"] as const)[cast]} size={200} className="mt-2" />
             <h2 className="title-lg mt-2" style={{ color: CHARACTER_INFO[CAST[cast].who].color }}>{CHARACTER_INFO[CAST[cast].who].name}</h2>
             <p className="mt-2 max-w-lg text-xl">{CAST[cast].line}</p>

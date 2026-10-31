@@ -40,12 +40,12 @@ export function ChildAdmin({ childId, name }: { childId: string; name: string })
       </form>
       <div className="flex flex-wrap gap-2">
         <a className="btn-ghost btn-sm" href={`/api/parent/children/${childId}/export`}>⬇️ Download {name}'s data (JSON)</a>
-        <button className="btn-ghost btn-sm text-vibe-coral" onClick={async () => {
+        <button className="btn-ghost btn-sm text-vibe-coral-ink" onClick={async () => {
           if (!confirm(`Permanently delete ${name}'s profile and ALL learning data? This cannot be undone.`)) return;
           await api(`/api/parent/children/${childId}`, { method: "DELETE" }); router.push("/parent"); router.refresh();
         }}>🗑️ Delete profile & data</button>
       </div>
-      {msg && <p className="text-sm text-vibe-mint">{msg}</p>}<ErrorNote error={err} />
+      {msg && <p className="text-sm text-vibe-mint-ink">{msg}</p>}<ErrorNote error={err} />
     </div>
   );
 }
@@ -61,11 +61,11 @@ export function FamilyChallenge({ childId, words }: { childId: string; words: { 
     <div>
       <p className="text-sm text-vibe-lavender">Pick 3–10 words your child has discovered. They'll see your challenge (and message) in their Daily Adventure. Family quiz idea: let them quiz you on the same words!</p>
       <div className="mt-3 flex max-h-40 flex-wrap gap-2 overflow-y-auto">
-        {words.map((w) => <button key={w.id} type="button" onClick={() => setSel(sel.includes(w.id) ? sel.filter((x) => x !== w.id) : [...sel, w.id].slice(0, 10))} className={`chip ${sel.includes(w.id) ? "bg-vibe-purple text-white" : ""}`}>{w.emoji} {w.word}</button>)}
+        {words.map((w) => <button key={w.id} type="button" onClick={() => setSel(sel.includes(w.id) ? sel.filter((x) => x !== w.id) : [...sel, w.id].slice(0, 10))} className={`chip ${sel.includes(w.id) ? "bg-vibe-cta text-white" : ""}`}>{w.emoji} {w.word}</button>)}
       </div>
       <div className="mt-3 grid gap-2 sm:grid-cols-2"><input className="input" aria-label="Challenge title" value={title} onChange={(e) => setTitle(e.target.value)} maxLength={60} /><input className="input" aria-label="Encouraging note (optional)" value={message} placeholder="A short encouraging note (optional)" onChange={(e) => setMessage(e.target.value)} maxLength={200} /></div>
       <button className="btn-primary btn-sm mt-3" onClick={async () => { setErr(null); try { await api("/api/parent/family", { body: { childId, title, message, wordIds: sel } }); setMsg("Challenge sent! 🎉"); setSel([]); } catch (x) { setErr((x as Error).message); } }}>Send challenge ({sel.length})</button>
-      {msg && <p className="mt-2 text-sm text-vibe-mint">{msg}</p>}<ErrorNote error={err} />
+      {msg && <p className="mt-2 text-sm text-vibe-mint-ink">{msg}</p>}<ErrorNote error={err} />
     </div>
   );
 }
@@ -86,12 +86,12 @@ export function SettingsForm({ initial }: { initial: { reminders_enabled: boolea
         <label className="flex items-center gap-3"><input type="checkbox" className="h-5 w-5 accent-vibe-purple" checked={s.voices_allowed} onChange={(e) => setS({ ...s, voices_allowed: e.target.checked })} /> Allow character voices (spoken instructions are always shown as text too).</label>
         <p className="text-xs text-vibe-lavender">Children can also turn music, sound effects and voices off themselves with the 🔊 button. Sound is never needed to complete an activity.</p>
         <p className="text-xs text-vibe-lavender">Healthy-use safeguards are always on: age-based break reminders (15–30 min), a daily reward ceiling, forgiving learning rhythm (rest days never reset progress) and no pressure notifications to children.</p>
-        <button className="btn-primary btn-sm">Save settings</button>{msg && <span className="ml-3 text-sm text-vibe-mint">{msg}</span>}
+        <button className="btn-primary btn-sm">Save settings</button>{msg && <span className="ml-3 text-sm text-vibe-mint-ink">{msg}</span>}
       </form>
       <div className="card p-6">
-        <h2 className="title-md text-vibe-coral">Delete account</h2>
+        <h2 className="title-md text-vibe-coral-ink">Delete account</h2>
         <p className="mt-1 text-sm text-vibe-lavender">Permanently deletes your parent account, all Explorer profiles and every learning record.</p>
-        <button className="btn-ghost btn-sm mt-3 text-vibe-coral" onClick={async () => { if (!confirm("Delete everything permanently?")) return; await api("/api/parent/account", { method: "DELETE" }); router.push("/"); router.refresh(); }}>Delete my account</button>
+        <button className="btn-ghost btn-sm mt-3 text-vibe-coral-ink" onClick={async () => { if (!confirm("Delete everything permanently?")) return; await api("/api/parent/account", { method: "DELETE" }); router.push("/"); router.refresh(); }}>Delete my account</button>
       </div>
     </div>
   );

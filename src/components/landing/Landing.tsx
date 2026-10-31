@@ -44,13 +44,13 @@ export default function Landing() {
   return (
     <main id="main" className="overflow-x-hidden">
       {/* NAV */}
-      <header className="fixed inset-x-0 top-0 z-30 border-b border-white/5 bg-vibe-midnight/70 backdrop-blur-xl">
+      <header className="fixed inset-x-0 top-0 z-30 border-b border-line/5 bg-vibe-midnight/70 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
           <Link href="/" aria-label="PING VIBE home" className="rounded-xl bg-white p-0.5"><BrandLogo width={120} fallback="sm" priority /></Link>
           <nav className="flex items-center gap-2">
-            <a href="#universe" className="hidden px-3 text-sm font-semibold text-vibe-lavender hover:text-white md:inline">Universe</a>
-            <a href="#buddies" className="hidden px-3 text-sm font-semibold text-vibe-lavender hover:text-white md:inline">Buddies</a>
-            <a href="#parents" className="hidden px-3 text-sm font-semibold text-vibe-lavender hover:text-white md:inline">Parents</a>
+            <a href="#universe" className="hidden px-3 text-sm font-semibold text-vibe-lavender hover:text-ink md:inline">Universe</a>
+            <a href="#buddies" className="hidden px-3 text-sm font-semibold text-vibe-lavender hover:text-ink md:inline">Buddies</a>
+            <a href="#parents" className="hidden px-3 text-sm font-semibold text-vibe-lavender hover:text-ink md:inline">Parents</a>
             <Link href="/login" className="btn-ghost btn-sm">LOGIN</Link>
             <Link href="/signup" className="btn-primary btn-sm hidden sm:inline-flex">START</Link>
           </nav>
@@ -62,7 +62,7 @@ export default function Landing() {
         <div className="absolute inset-0 opacity-40"><Scene name="islands" /></div>
         <div className="absolute inset-0 bg-gradient-to-b from-vibe-midnight/30 via-vibe-midnight/40 to-vibe-midnight" />
         {FLOATING.map((w, i) => (
-          <motion.span key={w} className="pointer-events-none absolute hidden select-none rounded-full border border-white/10 bg-white/5 px-3 py-1 font-display text-sm text-vibe-lavender/70 backdrop-blur sm:block"
+          <motion.span key={w} className="pointer-events-none absolute hidden select-none rounded-full border border-line/10 bg-glass/5 px-3 py-1 font-display text-sm text-vibe-lavender backdrop-blur sm:block"
             style={{ left: `${(i * 97) % 92}%`, top: `${18 + ((i * 53) % 65)}%` }}
             animate={{ y: [0, -18, 0], opacity: [0.4, 0.9, 0.4] }} transition={{ duration: 6 + (i % 4), repeat: Infinity, delay: i * 0.5 }}>
             {w}
@@ -70,15 +70,15 @@ export default function Landing() {
         ))}
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 pb-20 pt-10 sm:px-6 lg:grid-cols-2 lg:pt-16">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-            <span className="chip mb-5 bg-white/10 text-vibe-sun">✨ For Explorers aged 5–13 · Pre-KG to Grade 7</span>
+            <span className="chip mb-5 bg-glass/10 text-vibe-sun-ink">✨ For Explorers aged 5–13 · Pre-KG to Grade 7</span>
             <div className="rounded-[2rem] bg-white p-3 shadow-card sm:p-4"><BrandLogo width="min(560px, 100%)" fallback="lg" priority /></div>
             <h1 className="sr-only">PING VIBE — Your World. Your Words. Your Vibe.</h1>
-            <p className="mt-5 max-w-xl text-lg text-vibe-lavender/90">Step into a world where every word unlocks a new adventure. Discover, play, learn and become an English champion!</p>
+            <p className="mt-5 max-w-xl text-lg text-vibe-lavender">Step into a world where every word unlocks a new adventure. Discover, play, learn and become an English champion!</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/signup" className="btn-primary px-8 py-4 text-lg">START YOUR ADVENTURE 🚀</Link>
               <Link href="/login" className="btn-ghost px-8 py-4 text-lg">LOGIN</Link>
             </div>
-            <div className="mt-8 flex flex-wrap gap-6 text-sm text-vibe-lavender/80">
+            <div className="mt-8 flex flex-wrap gap-6 text-sm text-vibe-lavender">
               <span>🗓️ 365-day plan for every grade</span><span>🏆 250 levels</span><span>🛡️ No ads · No public chat</span>
             </div>
           </motion.div>
@@ -89,7 +89,7 @@ export default function Landing() {
               <Character name="max" mood="welcome" size={260} />
               <Character name="speaky" mood="welcome" size={140} className="-ml-6 hidden sm:block" />
             </div>
-            <div className="glass mx-auto -mt-2 max-w-sm px-5 py-3 text-center font-display text-lg">“Hey Explorer! Ready for today's adventure?” <span className="text-vibe-aqua">— MAX</span></div>
+            <div className="glass mx-auto -mt-2 max-w-sm px-5 py-3 text-center font-display text-lg">“Hey Explorer! Ready for today's adventure?” <span className="text-vibe-aqua-ink">— MAX</span></div>
           </motion.div>
         </div>
       </section>
@@ -120,7 +120,7 @@ export default function Landing() {
               <div className="p-5">
                 <span className="chip">{u.tag}</span>
                 <h3 className="title-md mt-2">{u.title}</h3>
-                <p className="mt-2 text-sm text-vibe-lavender/90">{u.text}</p>
+                <p className="mt-2 text-sm text-vibe-lavender">{u.text}</p>
               </div>
             </motion.article>
           ))}
@@ -130,15 +130,15 @@ export default function Landing() {
       {/* DAILY WORD QUEST spotlight */}
       <section className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-20 sm:px-6 lg:grid-cols-2">
         <div>
-          <span className="chip text-vibe-aqua">Daily Word Quest</span>
+          <span className="chip text-vibe-aqua-ink">Daily Word Quest</span>
           <h2 className="title-lg mt-3">10 new words a day. Truly mastered, not just seen.</h2>
-          <p className="mt-4 text-vibe-lavender">Each word comes alive with pronunciation, a kid-friendly meaning, examples and real-life use. Words move from <b className="text-white">Discovered</b> to <b className="text-white">Practising</b> to <b className="text-vibe-sun">Mastered</b> only when your child shows they know them on different days — powered by spaced repetition.</p>
+          <p className="mt-4 text-vibe-lavender">Each word comes alive with pronunciation, a kid-friendly meaning, examples and real-life use. Words move from <b className="text-ink">Discovered</b> to <b className="text-ink">Practising</b> to <b className="text-vibe-sun-ink">Mastered</b> only when your child shows they know them on different days — powered by spaced repetition.</p>
         </div>
         <div className="card relative overflow-hidden p-6">
-          <div className="flex items-center justify-between"><span className="chip">Word 3 of 10</span><span className="chip text-vibe-sun">Grade 3–4</span></div>
+          <div className="flex items-center justify-between"><span className="chip">Word 3 of 10</span><span className="chip text-vibe-sun-ink">Grade 3–4</span></div>
           <div className="mt-6 flex items-center gap-5">
             <div className="text-7xl">🐘</div>
-            <div><div className="font-display text-4xl font-bold">ENORMOUS</div><div className="text-vibe-aqua">ih-NOR-muhs · adjective</div></div>
+            <div><div className="font-display text-4xl font-bold">ENORMOUS</div><div className="text-vibe-aqua-ink">ih-NOR-muhs · adjective</div></div>
           </div>
           <p className="mt-4 text-lg"><b>Meaning:</b> Extremely big.</p>
           <p className="mt-1 text-vibe-lavender">“The elephant is enormous!”</p>
@@ -157,8 +157,8 @@ export default function Landing() {
               <motion.div key={c} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="card flex flex-col items-center p-5 text-center">
                 <Character name={c} mood={(["welcome", "excited", "celebrating", "explaining", "hint"] as const)[i]} size={130} />
                 <h3 className="title-md mt-2" style={{ color: CHARACTER_INFO[c].color }}>{CHARACTER_INFO[c].name}</h3>
-                <div className="text-xs font-bold uppercase tracking-wider text-vibe-lavender/70">{CHARACTER_INFO[c].role}</div>
-                <p className="mt-3 text-sm text-vibe-lavender/90">{CHARACTER_INFO[c].bio}</p>
+                <div className="text-xs font-bold uppercase tracking-wider text-vibe-lavender">{CHARACTER_INFO[c].role}</div>
+                <p className="mt-3 text-sm text-vibe-lavender">{CHARACTER_INFO[c].bio}</p>
               </motion.div>
             ))}
           </div>
@@ -171,7 +171,7 @@ export default function Landing() {
         <p className="mt-2 text-vibe-lavender">Every reward is earned by learning. No purchases. No random loot boxes. Ever.</p>
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {REWARDS.map(([e, t, d]) => (
-            <div key={t} className="card flex gap-4 p-5"><div className="text-4xl">{e}</div><div><h3 className="font-display text-lg font-bold">{t}</h3><p className="text-sm text-vibe-lavender/90">{d}</p></div></div>
+            <div key={t} className="card flex gap-4 p-5"><div className="text-4xl">{e}</div><div><h3 className="font-display text-lg font-bold">{t}</h3><p className="text-sm text-vibe-lavender">{d}</p></div></div>
           ))}
         </div>
       </section>
@@ -182,7 +182,7 @@ export default function Landing() {
           <h2 className="title-lg">Parents love the progress. Kids love the adventure.</h2>
           <div className="mt-10 grid gap-4 md:grid-cols-2">
             {PARENTS.map(([e, t, d]) => (
-              <div key={t} className="glass p-6"><div className="text-3xl">{e}</div><h3 className="mt-2 font-display text-xl font-bold">{t}</h3><p className="mt-1 text-vibe-lavender/90">{d}</p></div>
+              <div key={t} className="glass p-6"><div className="text-3xl">{e}</div><h3 className="mt-2 font-display text-xl font-bold">{t}</h3><p className="mt-1 text-vibe-lavender">{d}</p></div>
             ))}
           </div>
         </div>
@@ -199,10 +199,10 @@ export default function Landing() {
         </div>
       </section>
 
-      <footer className="border-t border-white/5 py-10">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 text-sm text-vibe-lavender/70 sm:flex-row sm:px-6">
+      <footer className="border-t border-line/5 py-10">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 text-sm text-vibe-lavender sm:flex-row sm:px-6">
           <div className="rounded-2xl bg-white p-2"><BrandLogo width={150} fallback="sm" /></div>
-          <div className="flex gap-5"><Link href="/privacy" className="hover:text-white">Privacy & Parental Consent</Link><Link href="/login?as=parent" className="hover:text-white">Parent login</Link></div>
+          <div className="flex gap-5"><Link href="/privacy" className="hover:text-ink">Privacy & Parental Consent</Link><Link href="/login?as=parent" className="hover:text-ink">Parent login</Link></div>
           <span>© {new Date().getFullYear()} PING VIBE</span>
         </div>
       </footer>

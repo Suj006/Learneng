@@ -30,7 +30,7 @@ export function Shop({ items, wallet, equipped }: { items: Item[]; wallet: { coi
   const list = items.filter((i) => cat === "all" || i.category === cat);
   return (
     <div>
-      <div className="mb-4 flex flex-wrap gap-2"><span className="chip bg-vibe-sun/15 text-base text-vibe-sun">🪙 {wallet.coins} Vibe Coins</span><span className="chip bg-vibe-aqua/15 text-base text-vibe-aqua">💎 {wallet.crystals} Magic Crystals</span><span className="chip text-base">⭐ Level {wallet.level}</span></div>
+      <div className="mb-4 flex flex-wrap gap-2"><span className="chip bg-vibe-sun/15 text-base text-vibe-sun-ink">🪙 {wallet.coins} Vibe Coins</span><span className="chip bg-vibe-aqua/15 text-base text-vibe-aqua-ink">💎 {wallet.crystals} Magic Crystals</span><span className="chip text-base">⭐ Level {wallet.level}</span></div>
       <div className="row-scroll">{CATS.map(([k, l]) => <button key={k} onClick={() => setCat(k)} className={`btn btn-sm shrink-0 ${cat === k ? "bg-vibe-cta text-white" : "btn-ghost"}`}>{l}</button>)}</div>
       <div aria-live="polite"><ErrorNote error={err} /></div>
       <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
@@ -43,7 +43,7 @@ export function Shop({ items, wallet, equipped }: { items: Item[]; wallet: { coi
               <div className="flex justify-between"><span className="text-4xl">{i.emoji}</span><RarityBadge rarity={i.rarity} /></div>
               <b className="mt-2 font-display">{i.title}</b><p className="mt-1 flex-1 text-xs text-vibe-lavender">{i.description}</p>
               {i.owned ? (
-                equippable ? <button disabled={isOn || busy === i.slug} aria-busy={busy === i.slug} className="btn-ghost btn-sm mt-3" onClick={() => equip(i)}>{isOn ? "In use ✅" : busy === i.slug ? <InlineSpinner /> : "Use"}</button> : <span className="chip mt-3 justify-center text-vibe-mint">Owned ✅</span>
+                equippable ? <button disabled={isOn || busy === i.slug} aria-busy={busy === i.slug} className="btn-ghost btn-sm mt-3" onClick={() => equip(i)}>{isOn ? "In use ✅" : busy === i.slug ? <InlineSpinner /> : "Use"}</button> : <span className="chip mt-3 justify-center text-vibe-mint-ink">Owned ✅</span>
               ) : i.level_exclusive ? <span className="chip mt-3 justify-center">🔒 Reach Level {i.min_level}</span>
                 : <button disabled={locked || !!busy} aria-busy={busy === i.slug} aria-label={locked ? undefined : `Unlock ${i.title}`} className="btn-sun btn-sm mt-3" onClick={() => redeem(i)}>
                     {locked ? `🔒 Level ${i.min_level}` : busy === i.slug ? <><InlineSpinner /> Unlocking…</> : <>{i.cost_coins ? `🪙 ${i.cost_coins}` : ""}{i.cost_crystals ? ` 💎 ${i.cost_crystals}` : ""}</>}

@@ -23,9 +23,9 @@ export default async function MapPage() {
         </svg>
         {map.map((k, i) => (
           <Link key={k.slug} href={k.unlocked ? `/world/map/${k.slug}` : "#"} aria-disabled={!k.unlocked}
-            className={`absolute w-[24%] overflow-hidden rounded-3xl border-2 shadow-card transition hover:scale-105 ${k.unlocked ? "border-white/30" : "pointer-events-none border-white/10 grayscale"}`} style={{ left: `${POS[i % POS.length].x}%`, top: `${POS[i % POS.length].y}%` }}>
+            className={`absolute w-[24%] overflow-hidden rounded-3xl border-2 shadow-card transition hover:scale-105 ${k.unlocked ? "border-line/30" : "pointer-events-none border-line/10 grayscale"}`} style={{ left: `${POS[i % POS.length].x}%`, top: `${POS[i % POS.length].y}%` }}>
             <div className="aspect-[16/9]"><Scene name={k.art as SceneName} /></div>
-            <div className="absolute inset-x-0 bottom-0 bg-vibe-midnight/80 p-2"><b className="font-display text-sm">{k.emoji} {k.title}</b>{k.unlocked ? <Progress value={k.progress} className="mt-1 h-1.5" label={`${k.title} progress`} /> : <span className="block text-xs text-vibe-sun">🔒 Level {k.unlock_level}</span>}</div>
+            <div className="absolute inset-x-0 bottom-0 bg-vibe-midnight/80 p-2"><b className="font-display text-sm">{k.emoji} {k.title}</b>{k.unlocked ? <Progress value={k.progress} className="mt-1 h-1.5" label={`${k.title} progress`} /> : <span className="block text-xs text-vibe-sun-ink">🔒 Level {k.unlock_level}</span>}</div>
           </Link>
         ))}
       </div>

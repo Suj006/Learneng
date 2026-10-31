@@ -15,7 +15,7 @@ function useAction() {
   };
   return { busy, msg, err, run };
 }
-const Status = ({ msg, err }: { msg: string | null; err: string | null }) => <>{msg && <p className="mt-2 text-sm text-vibe-mint">{msg}</p>}<ErrorNote error={err} /></>;
+const Status = ({ msg, err }: { msg: string | null; err: string | null }) => <>{msg && <p className="mt-2 text-sm text-vibe-mint-ink">{msg}</p>}<ErrorNote error={err} /></>;
 
 export function AdminLogin() {
   const router = useRouter();
@@ -77,7 +77,7 @@ export function XpTable({ rows, ceiling }: { rows: { key: string; label: string;
   return (
     <div className="card p-5">
       <div className="overflow-x-auto"><table className="w-full min-w-[560px] text-left text-sm"><thead className="text-vibe-lavender"><tr><th>Activity</th><th>XP</th><th>Coins</th><th>Crystals</th><th>Payouts / day</th></tr></thead>
-        <tbody>{r.map((x, i) => <tr key={x.key} className="border-t border-white/5"><td className="py-1.5">{x.label}</td>{(["xp", "coins", "crystals", "daily_cap"] as const).map((k) => <td key={k}><input className="input w-24 py-1" type="number" min={0} aria-label={`${x.label}: ${{ xp: "XP", coins: "coins", crystals: "crystals", daily_cap: "payouts per day" }[k]}`} value={x[k]} onChange={(e) => upd(i, k, e.target.value)} /></td>)}</tr>)}</tbody></table></div>
+        <tbody>{r.map((x, i) => <tr key={x.key} className="border-t border-line/5"><td className="py-1.5">{x.label}</td>{(["xp", "coins", "crystals", "daily_cap"] as const).map((k) => <td key={k}><input className="input w-24 py-1" type="number" min={0} aria-label={`${x.label}: ${{ xp: "XP", coins: "coins", crystals: "crystals", daily_cap: "payouts per day" }[k]}`} value={x[k]} onChange={(e) => upd(i, k, e.target.value)} /></td>)}</tr>)}</tbody></table></div>
       <div className="mt-4 flex flex-wrap items-end gap-3">
         <div><label className="label" htmlFor="ceil">Daily XP ceiling per child (healthy-use limit)</label><input id="ceil" className="input w-40" type="number" value={c} onChange={(e) => setC(Number(e.target.value))} /></div>
         <button className="btn-primary btn-sm" disabled={a.busy} onClick={() => a.run(async () => { await api("/api/admin/xp", { body: { rows: r } }); await api("/api/admin/settings", { body: { daily_xp_ceiling: c } }); })}>Save economy</button>

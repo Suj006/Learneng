@@ -29,13 +29,13 @@ export function NotebookClient() {
         <input className="input max-w-xs" placeholder="🔍 Search words…" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Search words" />
         <div className="row-scroll flex-1 pb-0">{FILTERS.map(([k, l]) => <button key={k} onClick={() => setFilter(k)} className={`btn btn-sm shrink-0 ${filter === k ? "bg-vibe-cta text-white" : "btn-ghost"}`}>{l}</button>)}</div>
       </div>
-      <p className="mt-3 text-sm text-vibe-lavender">{words.length} words · {words.filter((w) => w.status === "mastered").length} mastered{due.length ? <> · <Link className="text-vibe-aqua underline" href={`/world/revision?words=${due.join(",")}`}>Revise these {due.length} now</Link></> : null}</p>
+      <p className="mt-3 text-sm text-vibe-lavender">{words.length} words · {words.filter((w) => w.status === "mastered").length} mastered{due.length ? <> · <Link className="text-vibe-aqua-ink underline" href={`/world/revision?words=${due.join(",")}`}>Revise these {due.length} now</Link></> : null}</p>
       <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {list.map((w) => (
           <article key={w.id} className="glass p-4">
             <div className="flex items-start gap-3">
               <span className="text-4xl">{w.emoji}</span>
-              <div className="min-w-0 flex-1"><b className="font-display text-xl">{w.word}</b> <span className="text-xs text-vibe-aqua">{w.phonetic}</span><p className="text-sm">{w.meaning}</p></div>
+              <div className="min-w-0 flex-1"><b className="font-display text-xl">{w.word}</b> <span className="text-xs text-vibe-aqua-ink">{w.phonetic}</span><p className="text-sm">{w.meaning}</p></div>
               <button aria-label={w.favourite ? "Remove favourite" : "Add favourite"} onClick={async () => { await api("/api/words/favourite", { body: { wordId: w.id, favourite: !w.favourite } }); setWords(words.map((x) => (x.id === w.id ? { ...x, favourite: !x.favourite } : x))); }} className="text-2xl">{w.favourite ? "❤️" : "🤍"}</button>
             </div>
             <p className="mt-2 text-xs italic text-vibe-lavender">“{w.example}”</p>

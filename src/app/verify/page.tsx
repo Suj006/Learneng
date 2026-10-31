@@ -15,7 +15,7 @@ export default async function VerifyPage({ searchParams }: { searchParams: Promi
     <AuthShell>
       <div className="card p-8">
         <CharacterSays who="max" mood="excited">Thanks for joining PING VIBE! Press the button to verify your e-mail.</CharacterSays>
-        {token ? <a href={`/api/auth/verify?token=${encodeURIComponent(token)}`} className="btn-primary mt-6">Verify my e-mail ✅</a> : <p className="mt-4 text-vibe-coral">Missing verification token.</p>}
+        {token ? <a href={`/api/auth/verify?token=${encodeURIComponent(token)}`} className="btn-primary mt-6">Verify my e-mail ✅</a> : <p className="mt-4 text-vibe-coral-ink">Missing verification token.</p>}
       </div>
     </AuthShell>
   );
