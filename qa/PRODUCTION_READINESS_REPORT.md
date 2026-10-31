@@ -7,11 +7,11 @@
 > **Not ready for public launch.**
 > **Ready for a small, consented pilot** once the two High open items below are closed and the three sign-offs are given.
 
-No automated test is failing on the final build, and every defect found in this audit has been fixed and re-tested. Launch still depends on things this audit could not verify:
+Every code defect found in this audit has been fixed and re-tested. The only failing automated check is the infrastructure-dependent load latency test (LOAD-002). Launch still depends on things this audit could not verify:
 
 1. **OPEN-002 (High):** the official logo file is not in the repository. The site shows an interim text wordmark, and the favicon and social images are not generated.
 2. **OPEN-003 (High, Blocked):** the live Claude integration (writing evaluation, companion) has not been exercised, because no API key was available. Offline fallbacks work, but they are **not** evidence that the AI integration works.
-3. **OPEN-001 (Medium):** 30-child concurrent load on the embedded test database is at the latency target. One run failed (p95 2.55 s) and one passed by 4 ms. Correctness held in both. It must be measured on managed Postgres.
+3. **OPEN-001 (Medium):** 30-child concurrent load on the embedded single-connection test database misses the p95 target: 2.55 s, 1.50 s and 2.04 s across three runs, against a 1.5 s target. There were 0 errors and exactly-once awards in every run. It must be measured on managed Postgres.
 4. **Not executed:**
    - real devices (iOS Safari, Android)
    - screen readers
@@ -27,13 +27,13 @@ We do **not** claim the software is defect-free. The results below show what was
 
 | Area | Result |
 |---|---|
-| Test cases executed | __TOTAL__ |
-| Unit tests | __UNIT__ |
+| Test cases executed | **1,449**: 1,446 PASS · **1 FAIL** (LOAD-002) · 2 BLOCKED (live Claude). Plus 9 areas not executed (see the master test plan, §8). |
+| Unit tests | 21 / 21 PASS |
 | API / database / security / learning | 217 checks: 215 PASS · 0 FAIL · 2 BLOCKED (production build) |
-| Browser journey, 45 pages × 8 viewports, console, axe WCAG 2.2 AA, target size, visual regression | __UI__ |
-| Performance (production build) | All page budgets met (LCP 72–328 ms warm, CLS 0.000). Load: 0 errors and exactly-once awards. p95 borderline (OPEN-001). |
+| Browser journey, 45 pages × 8 viewports, console, axe WCAG 2.2 AA, target size, visual regression | 1,203 checks: 1,203 PASS · 0 FAIL · 0 BLOCKED (production build) |
+| Performance (production build) | All page budgets met (final run: warm LCP 80–280 ms, CLS 0.000). Load: 0 errors and exactly-once awards. **p95 2.04 s FAIL** on the embedded DB (OPEN-001). |
 | Dependencies | `npm audit --omit=dev`: 0 vulnerabilities |
-| Defects | 25 found and fixed (1 Critical, 6 High, 9 Medium, 9 Low). 3 open or blocked items (2 High, 1 Medium). |
+| Defects | 26 found and fixed (1 Critical, 6 High, 10 Medium, 9 Low). 3 open or blocked items (2 High, 1 Medium). |
 
 The machine-readable version is in `results/test-execution-report.json`.
 

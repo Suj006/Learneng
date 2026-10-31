@@ -2,7 +2,7 @@
 
 **Tool:** Playwright Chromium device emulation (`tests/ui-audit.mjs`), run against `next dev` with synthetic accounts.
 
-**Final run:** __RSP_SUMMARY__
+**Final run:** production build: **344 responsive checks (45 pages across 8 viewports) PASS · 344 console/network checks PASS · 344 target-size checks PASS · 69 visual-regression comparisons PASS (0 FAIL, 0 BLOCKED).** Raw data: `results/ui-audit.json`. Screenshots: `screenshots/baseline/`.
 
 ## Viewports
 

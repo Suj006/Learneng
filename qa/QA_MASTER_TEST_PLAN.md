@@ -90,8 +90,7 @@
 
 ## 7. Environment
 
-- **UI audit:** `next dev` on :3000.
-- **API suite and perf:** production build (`next build` and `next start`) on a separate port and database.
+- **Final runs of every suite:** production build (`next build` and `next start`) on :3000 with a fresh database. Earlier iterations of the UI audit used `next dev`, but the dev badge, on-demand compilation and a memory-threshold restart made screenshots and timings noisy.
 - **Database:** embedded PGlite (Postgres 16 compatible), started fresh for each run.
 - **Rate limits:** `IP_RATE_LIMIT_MULTIPLIER=100` so that one test machine can create many synthetic families. Per-account limits (PIN lockout, sign-up) are unchanged and are tested.
 - **E-mail:** dev mailbox (`EMAIL_TRANSPORT=dev-mailbox`). No mail is sent externally.

@@ -1,0 +1,345 @@
+{
+  "product": "PING VIBE",
+  "generated_at": "2026-10-31T04:34:09.268Z",
+  "environment": "Synthetic data only; local Next.js dev (UI) and production build (API/perf) on embedded PGlite. No real children's data used.",
+  "totals": {
+    "total": 1449,
+    "passed": 1446,
+    "failed": 1,
+    "blocked": 2,
+    "not_executed_areas": 9
+  },
+  "unit_tests": {
+    "total": 21,
+    "passed": 21,
+    "failed": 0
+  },
+  "suites": [
+    {
+      "name": "API, database, security & learning",
+      "command": "node tests/qa-api.mjs",
+      "executed": true,
+      "generated_at": "2026-10-31T04:32:46.572Z",
+      "base": "http://localhost:3000",
+      "total": 217,
+      "passed": 215,
+      "failed": 0,
+      "blocked": 2
+    },
+    {
+      "name": "UI journeys, responsive, console, accessibility & visual",
+      "command": "node tests/ui-audit.mjs",
+      "executed": true,
+      "generated_at": "2026-10-31T04:32:30.471Z",
+      "base": "http://localhost:3000",
+      "total": 1203,
+      "passed": 1203,
+      "failed": 0,
+      "blocked": 0
+    },
+    {
+      "name": "Performance & load",
+      "command": "node tests/perf.mjs",
+      "executed": true,
+      "generated_at": "2026-10-31T04:33:13.076Z",
+      "base": "http://localhost:3000",
+      "total": 8,
+      "passed": 7,
+      "failed": 1,
+      "blocked": 0
+    }
+  ],
+  "by_module": [
+    {
+      "suite": "API, database, security & learning",
+      "module": "Registration",
+      "total": 15,
+      "passed": 15,
+      "failed": 0,
+      "blocked": 0
+    },
+    {
+      "suite": "API, database, security & learning",
+      "module": "E-mail verification",
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "blocked": 0
+    },
+    {
+      "suite": "API, database, security & learning",
+      "module": "Login & sessions",
+      "total": 19,
+      "passed": 19,
+      "failed": 0,
+      "blocked": 0
+    },
+    {
+      "suite": "API, database, security & learning",
+      "module": "Authorisation & data isolation",
+      "total": 20,
+      "passed": 20,
+      "failed": 0,
+      "blocked": 0
+    },
+    {
+      "suite": "API, database, security & learning",
+      "module": "Onboarding",
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "blocked": 0
+    },
+    {
+      "suite": "API, database, security & learning",
+      "module": "Daily Word Quest",
+      "total": 14,
+      "passed": 14,
+      "failed": 0,
+      "blocked": 0
+    },
+    {
+      "suite": "API, database, security & learning",
+      "module": "Creative Writing",
+      "total": 9,
+      "passed": 8,
+      "failed": 0,
+      "blocked": 1
+    },
+    {
+      "suite": "API, database, security & learning",
+      "module": "Grammar Galaxy",
+      "total": 24,
+      "passed": 24,
+      "failed": 0,
+      "blocked": 0
+    },
+    {
+      "suite": "API, database, security & learning",
+      "module": "Reading Adventures",
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "blocked": 0
+    },
+    {
+      "suite": "API, database, security & learning",
+      "module": "Speaking & Listening",
+      "total": 5,
+      "passed": 5,
+      "failed": 0,
+      "blocked": 0
+    },
+    {
+      "suite": "API, database, security & learning",
+      "module": "Word Games Arcade",
+      "total": 14,
+      "passed": 14,
+      "failed": 0,
+      "blocked": 0
+    },
+    {
+      "suite": "API, database, security & learning",
+      "module": "AI companion",
+      "total": 5,
+      "passed": 4,
+      "failed": 0,
+      "blocked": 1
+    },
+    {
+      "suite": "API, database, security & learning",
+      "module": "XP, levels & economy",
+      "total": 12,
+      "passed": 12,
+      "failed": 0,
+      "blocked": 0
+    },
+    {
+      "suite": "API, database, security & learning",
+      "module": "Missions",
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "blocked": 0
+    },
+    {
+      "suite": "API, database, security & learning",
+      "module": "Bosses, map & world",
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "blocked": 0
+    },
+    {
+      "suite": "API, database, security & learning",
+      "module": "Concurrency & transactions",
+      "total": 5,
+      "passed": 5,
+      "failed": 0,
+      "blocked": 0
+    },
+    {
+      "suite": "API, database, security & learning",
+      "module": "Grade journeys",
+      "total": 6,
+      "passed": 6,
+      "failed": 0,
+      "blocked": 0
+    },
+    {
+      "suite": "API, database, security & learning",
+      "module": "Parent dashboard",
+      "total": 11,
+      "passed": 11,
+      "failed": 0,
+      "blocked": 0
+    },
+    {
+      "suite": "API, database, security & learning",
+      "module": "Administration",
+      "total": 21,
+      "passed": 21,
+      "failed": 0,
+      "blocked": 0
+    },
+    {
+      "suite": "API, database, security & learning",
+      "module": "Security",
+      "total": 14,
+      "passed": 14,
+      "failed": 0,
+      "blocked": 0
+    },
+    {
+      "suite": "UI journeys, responsive, console, accessibility & visual",
+      "module": "Journey 1",
+      "total": 8,
+      "passed": 8,
+      "failed": 0,
+      "blocked": 0
+    },
+    {
+      "suite": "UI journeys, responsive, console, accessibility & visual",
+      "module": "Responsive",
+      "total": 344,
+      "passed": 344,
+      "failed": 0,
+      "blocked": 0
+    },
+    {
+      "suite": "UI journeys, responsive, console, accessibility & visual",
+      "module": "Accessibility",
+      "total": 438,
+      "passed": 438,
+      "failed": 0,
+      "blocked": 0
+    },
+    {
+      "suite": "UI journeys, responsive, console, accessibility & visual",
+      "module": "Console",
+      "total": 344,
+      "passed": 344,
+      "failed": 0,
+      "blocked": 0
+    },
+    {
+      "suite": "UI journeys, responsive, console, accessibility & visual",
+      "module": "Visual regression",
+      "total": 69,
+      "passed": 69,
+      "failed": 0,
+      "blocked": 0
+    },
+    {
+      "suite": "Performance & load",
+      "module": "Performance",
+      "total": 8,
+      "passed": 7,
+      "failed": 1,
+      "blocked": 0
+    }
+  ],
+  "failed_tests": [
+    {
+      "id": "LOAD-002",
+      "module": "Performance",
+      "scenario": "30 concurrent children: API p95 < 1500ms",
+      "actual": "p50 355ms p95 2038ms max 8616ms"
+    }
+  ],
+  "blocked_tests": [
+    {
+      "id": "LRN-037",
+      "module": "Creative Writing",
+      "scenario": "Claude writing evaluation (real AI)",
+      "actual": "BLOCKED: ANTHROPIC_API_KEY not configured — offline evaluator used and labelled"
+    },
+    {
+      "id": "LRN-084",
+      "module": "AI companion",
+      "scenario": "Real Claude companion response",
+      "actual": "BLOCKED: ANTHROPIC_API_KEY not configured — dictionary mode verified instead"
+    }
+  ],
+  "not_executed": [
+    "Real-device testing (iOS Safari, Android Chrome, tablets)",
+    "Lighthouse audits",
+    "Screen-reader walkthrough (NVDA/VoiceOver)",
+    "Load on managed Postgres",
+    "Live Claude API",
+    "Live e-mail delivery (Resend)",
+    "Penetration test by a third party",
+    "Educational content review by teachers",
+    "Usability sessions with children"
+  ],
+  "defects": {
+    "total": 29,
+    "found_by_severity": {
+      "Critical": 1,
+      "High": 8,
+      "Medium": 11,
+      "Low": 9
+    },
+    "fixed": 26,
+    "open_by_severity": {
+      "Critical": 0,
+      "High": 2,
+      "Medium": 1,
+      "Low": 0
+    },
+    "open": [
+      {
+        "id": "OPEN-001",
+        "severity": "Medium",
+        "status": "Open",
+        "title": "API p95 at or above the 1.5s target with 30 concurrent children on embedded PGlite (unstable)"
+      },
+      {
+        "id": "OPEN-002",
+        "severity": "High",
+        "status": "Open",
+        "title": "Official master logo file not present in the repository"
+      },
+      {
+        "id": "OPEN-003",
+        "severity": "High",
+        "status": "Blocked",
+        "title": "Real Claude writing evaluation and companion not tested"
+      }
+    ]
+  },
+  "release_recommendation": {
+    "decision": "NOT READY FOR PUBLIC RELEASE — READY FOR CONTROLLED PILOT AFTER BLOCKERS CLEARED",
+    "blockers": [
+      "OPEN-002: Official master logo file not present in the repository",
+      "OPEN-003: Real Claude writing evaluation and companion not tested"
+    ],
+    "required_sign_offs": [
+      "Technical QA",
+      "Educational QA",
+      "Child UX QA"
+    ],
+    "pilot": "Small consented pilot with families in Pre-KG, Grade 2, Grade 5 and Grade 7"
+  },
+  "disclaimer": "This report reflects the automated and manual checks listed. It does not certify the software as defect-free."
+}

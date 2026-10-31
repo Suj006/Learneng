@@ -1,6 +1,6 @@
 # PING VIBE — Learning Module Test Report
 
-**Result: 79 executed, 77 PASS, 0 FAIL, 2 BLOCKED** (LRN-001…084), plus 6 grade-band checks (GRD-*, all PASS) and unit tests of the engines. Executed with synthetic Explorers across Pre-KG, UKG, Grade 1, Grade 3 and Grade 7.
+**Result (API): 79 executed, 77 PASS, 0 FAIL, 2 BLOCKED** (LRN-001…084), plus 6 grade-band checks (GRD-*, all PASS) and unit tests of the engines. Executed with synthetic Explorers across Pre-KG, UKG, Grade 1, Grade 3 and Grade 7.
 
 ## Onboarding (assessment removed)
 
@@ -24,6 +24,7 @@ Skill intelligence:
 | Grade-appropriate bands (Pre-KG/UKG → 1, G1 → 2, G3 → 3, G7 → 4) | LRN-011, GRD-* | PASS |
 | Resume after reload or mid-quest close | LRN-014, LRN-016 | PASS |
 | Server-side answer validation; first attempt counts | LRN-017/018 | PASS |
+| A typed answer is never wiped when the next question appears (**BUG-026**, found by the browser journey and fixed in the shared `Question` component used by the quest, revision and challenges) | UI-J1-* | PASS |
 | Cannot complete before answering; XP scaled by accuracy and awarded once | LRN-015, LRN-019/020 | PASS |
 | No mastery on day 1, even with repeated same-day correct answers (Leitner box ≥ 4 across different days) | LRN-021, LRN-023 | PASS |
 | Arcade games never grant mastery | LRN-074 | PASS |

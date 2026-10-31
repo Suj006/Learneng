@@ -2,7 +2,7 @@
 
 **Standard:** WCAG 2.2 Level AA, checked automatically with **axe-core 4.10.3** (rule tags `wcag2a`, `wcag2aa`, `wcag21a`, `wcag21aa`, `wcag22aa`). Keyboard, target-size and motion checks are also scripted in `tests/ui-audit.mjs`.
 
-**Final run:** __A11Y_SUMMARY__
+**Final run:** production build, synthetic accounts: **438 accessibility checks, 438 PASS, 0 FAIL, 0 BLOCKED.** That is 45 axe page scans with 0 serious/critical violations, 45 keyboard skip-link checks, 4 reduced-motion checks and 344 target-size checks (45 pages × 8 viewports, less redirects). Raw data: `results/ui-audit.json` and `results/axe-details.jsonl`.
 
 > Automated tools find roughly a third to a half of accessibility issues. These results do **not** show full WCAG conformance. Screen-reader walkthroughs (NVDA, VoiceOver, TalkBack) and testing with children who use assistive technology have **not** been done.
 

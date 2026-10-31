@@ -280,7 +280,9 @@ Covers the browser journey, 8 viewports, console errors, axe-core accessibility 
 node tests/ui-audit.mjs
 ```
 
-Add `--update-baseline` to accept new screenshots.
+Add `--update-baseline` to accept new screenshots. Set `ONLY=<regex>` to limit the sweep to matching pages, for example to refresh selected baselines.
+
+Run it against a production build (`next start`, port 3000, with `EMAIL_TRANSPORT=dev-mailbox`). In development the Next.js dev indicator and on-demand compilation make screenshots and timings noisy.
 
 **4. Performance and 30-child load**
 
