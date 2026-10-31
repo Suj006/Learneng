@@ -1,6 +1,6 @@
 {
   "product": "PING VIBE",
-  "generated_at": "2026-10-31T04:34:09.268Z",
+  "generated_at": "2026-10-31T05:52:37.246Z",
   "environment": "Synthetic data only; local Next.js dev (UI) and production build (API/perf) on embedded PGlite. No real children's data used.",
   "totals": {
     "total": 1449,
@@ -19,7 +19,7 @@
       "name": "API, database, security & learning",
       "command": "node tests/qa-api.mjs",
       "executed": true,
-      "generated_at": "2026-10-31T04:32:46.572Z",
+      "generated_at": "2026-10-31T05:51:44.332Z",
       "base": "http://localhost:3000",
       "total": 217,
       "passed": 215,
@@ -30,7 +30,7 @@
       "name": "UI journeys, responsive, console, accessibility & visual",
       "command": "node tests/ui-audit.mjs",
       "executed": true,
-      "generated_at": "2026-10-31T04:32:30.471Z",
+      "generated_at": "2026-10-31T05:51:27.443Z",
       "base": "http://localhost:3000",
       "total": 1203,
       "passed": 1203,
@@ -41,7 +41,7 @@
       "name": "Performance & load",
       "command": "node tests/perf.mjs",
       "executed": true,
-      "generated_at": "2026-10-31T04:33:13.076Z",
+      "generated_at": "2026-10-31T05:52:12.894Z",
       "base": "http://localhost:3000",
       "total": 8,
       "passed": 7,
@@ -264,7 +264,7 @@
       "id": "LOAD-002",
       "module": "Performance",
       "scenario": "30 concurrent children: API p95 < 1500ms",
-      "actual": "p50 355ms p95 2038ms max 8616ms"
+      "actual": "p50 389ms p95 1943ms max 10451ms"
     }
   ],
   "blocked_tests": [
@@ -300,10 +300,10 @@
       "Medium": 11,
       "Low": 9
     },
-    "fixed": 26,
+    "fixed": 27,
     "open_by_severity": {
       "Critical": 0,
-      "High": 2,
+      "High": 1,
       "Medium": 1,
       "Low": 0
     },
@@ -313,12 +313,6 @@
         "severity": "Medium",
         "status": "Open",
         "title": "API p95 at or above the 1.5s target with 30 concurrent children on embedded PGlite (unstable)"
-      },
-      {
-        "id": "OPEN-002",
-        "severity": "High",
-        "status": "Open",
-        "title": "Official master logo file not present in the repository"
       },
       {
         "id": "OPEN-003",
@@ -331,7 +325,6 @@
   "release_recommendation": {
     "decision": "NOT READY FOR PUBLIC RELEASE — READY FOR CONTROLLED PILOT AFTER BLOCKERS CLEARED",
     "blockers": [
-      "OPEN-002: Official master logo file not present in the repository",
       "OPEN-003: Real Claude writing evaluation and companion not tested"
     ],
     "required_sign_offs": [

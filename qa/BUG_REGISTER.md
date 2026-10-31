@@ -8,7 +8,8 @@ Source of truth: `defects.json` (machine-readable). Severity scale:
 
 **Summary:** 29 entries.
 - 26 defects found and fixed: 1 Critical, 6 High, 10 Medium, 9 Low.
-- 3 open or blocked items: OPEN-001 Medium, OPEN-002 High, OPEN-003 High (blocked).
+- 2 open or blocked items: OPEN-001 Medium, OPEN-003 High (blocked).
+- Closed: OPEN-002 (official logo missing). The brand owner supplied the file on 31 Oct 2026, and it is committed unchanged.
 
 Every fixed defect was reproduced first, fixed at the root cause, and re-tested by a named regression check. No test was disabled, and no error was hidden, to get a pass.
 
@@ -43,12 +44,17 @@ Every fixed defect was reproduced first, fixed at the root cause, and re-tested 
 | BUG-025 | Low | Test harness | Accessibility audit covered only 11 of 45 pages, and one timeout could crash the run | axe and keyboard checks on every page; per-page BLOCKED recording; waits for fades | A11Y-*, KBD-* |
 | BUG-016 | Low | Test harness | Visual baselines captured mid-animation | Settle animations before capture; baselines regenerated | VIS-* |
 
+## Closed
+
+| ID | Sev | Item | Resolution |
+|---|---|---|---|
+| OPEN-002 | High | Official master logo not in the repository | The supplied `pingvibe.jpg` (1536×1024) is committed byte-for-byte as `public/assets/brand/ping-vibe-logo.jpg`. Favicon, app icons and the OG image are generated as separate derivatives. Logo containers are solid white so the artwork's background is seamless. Every placement was reviewed and re-audited. |
+
 ## Open / blocked
 
 | ID | Sev | Status | Item | Next action | Owner |
 |---|---|---|---|---|---|
-| OPEN-002 | High | Open | Official master logo file not committed; the interim wordmark shows and the favicon/OG derivatives are not generated | Commit `public/assets/brand/ping-vibe-logo.png` (original file), run `npm run brand:assets`, re-run ui-audit | Brand owner |
 | OPEN-003 | High | Blocked | Live Claude writing evaluation and companion untested (LRN-037, LRN-084) | Provide a staging `ANTHROPIC_API_KEY` and re-run `tests/qa-api.mjs` | Engineering |
-| OPEN-001 | Medium | Open | API p95 at the 1.5s target with 30 concurrent children on embedded PGlite. It is unstable: 2,554 ms in one run and 1,496 ms in the next, with a max of 8–10 s. Both runs had 0 errors and correct awards. | Re-run `tests/perf.mjs` against managed Postgres with pooling | Engineering / DevOps |
+| OPEN-001 | Medium | Open | API p95 above the 1.5 s target with 30 concurrent children on embedded PGlite: 2,554 / 1,496 / 2,038 / 1,943 ms across four runs, with a max of 8–10 s. Every run had 0 errors and correct awards. | Re-run `tests/perf.mjs` against managed Postgres with pooling | Engineering / DevOps |
 
 Full reproduction steps, expected and actual results for every entry are in `defects.json`.

@@ -2,7 +2,7 @@
 import { createContext, useContext, useEffect, useRef, useState } from "react";
 import { Logo } from "./Logo";
 
-const SRC = "/assets/brand/ping-vibe-logo.png";
+const SRC = "/assets/brand/ping-vibe-logo.jpg";
 const W = 1536, H = 1024;
 
 /** Whether the master logo file exists on the server (decided once in the root layout). */

@@ -5,13 +5,13 @@ import { Logo } from "./Logo";
 /** Master logo dimensions (3:2). Update if the official file has a different size. */
 export const LOGO_WIDTH = 1536;
 export const LOGO_HEIGHT = 1024;
-export const LOGO_SRC = "/assets/brand/ping-vibe-logo.png";
+export const LOGO_SRC = "/assets/brand/ping-vibe-logo.jpg";
 
 let present: boolean | null = null;
 export function brandLogoPresent() {
   if (present === null) {
     present = fs.existsSync(path.join(process.cwd(), "public", LOGO_SRC));
-    if (!present && process.env.NODE_ENV !== "production") console.warn("[brand] public/assets/brand/ping-vibe-logo.png is missing — showing the interim wordmark.");
+    if (!present && process.env.NODE_ENV !== "production") console.warn("[brand] public/assets/brand/ping-vibe-logo.jpg is missing — showing the interim wordmark.");
   }
   return present;
 }

@@ -6,7 +6,7 @@ export const metadata = { title: "Privacy & Parental Consent" };
 export default function Privacy() {
   return (
     <main id="main" className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
-      <Link href="/" className="inline-block rounded-3xl bg-white/95 p-2"><PingVibeLogo width={220} fallback="md" /></Link>
+      <Link href="/" className="inline-block rounded-3xl bg-white p-2"><PingVibeLogo width={220} fallback="md" /></Link>
       <h1 className="title-lg mt-8">Privacy & Parental Consent Notice</h1>
       <p className="mt-2 text-sm text-vibe-lavender">Version 2026-10-dpdp-v1 · Written in plain language for parents and guardians.</p>
       <div className="mt-8 space-y-6 leading-relaxed text-vibe-lavender">

@@ -46,7 +46,7 @@ export default function Landing() {
       {/* NAV */}
       <header className="fixed inset-x-0 top-0 z-30 border-b border-white/5 bg-vibe-midnight/70 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
-          <Link href="/" aria-label="PING VIBE home"><BrandLogo width={88} fallback="sm" priority /></Link>
+          <Link href="/" aria-label="PING VIBE home" className="rounded-xl bg-white p-0.5"><BrandLogo width={120} fallback="sm" priority /></Link>
           <nav className="flex items-center gap-2">
             <a href="#universe" className="hidden px-3 text-sm font-semibold text-vibe-lavender hover:text-white md:inline">Universe</a>
             <a href="#buddies" className="hidden px-3 text-sm font-semibold text-vibe-lavender hover:text-white md:inline">Buddies</a>
@@ -71,7 +71,7 @@ export default function Landing() {
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 pb-20 pt-10 sm:px-6 lg:grid-cols-2 lg:pt-16">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <span className="chip mb-5 bg-white/10 text-vibe-sun">✨ For Explorers aged 5–13 · Pre-KG to Grade 7</span>
-            <div className="rounded-[2rem] bg-white/95 p-3 shadow-card sm:p-4"><BrandLogo width="min(560px, 100%)" fallback="lg" priority /></div>
+            <div className="rounded-[2rem] bg-white p-3 shadow-card sm:p-4"><BrandLogo width="min(560px, 100%)" fallback="lg" priority /></div>
             <h1 className="sr-only">PING VIBE — Your World. Your Words. Your Vibe.</h1>
             <p className="mt-5 max-w-xl text-lg text-vibe-lavender/90">Step into a world where every word unlocks a new adventure. Discover, play, learn and become an English champion!</p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -192,7 +192,7 @@ export default function Landing() {
       <section className="relative overflow-hidden py-24 text-center">
         <div className="absolute inset-0 bg-vibe-hero" />
         <div className="relative mx-auto max-w-3xl px-4">
-          <div className="mx-auto w-fit rounded-[2rem] bg-white/95 p-3 shadow-card"><BrandLogo width="min(320px, 80vw)" /></div>
+          <div className="mx-auto w-fit rounded-[2rem] bg-white p-3 shadow-card"><BrandLogo width="min(320px, 80vw)" /></div>
           <h2 className="title-xl mt-6">ENTER. EXPLORE. LEARN. LEVEL UP!</h2>
           <p className="mt-4 text-lg text-vibe-lavender">Registration takes one minute: your child's first name, your e-mail, month & year of birth and grade.</p>
           <Link href="/signup" className="btn-primary mt-8 px-10 py-4 text-lg">START YOUR ADVENTURE</Link>
@@ -201,7 +201,7 @@ export default function Landing() {
 
       <footer className="border-t border-white/5 py-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 text-sm text-vibe-lavender/70 sm:flex-row sm:px-6">
-          <div className="rounded-2xl bg-white/95 p-2"><BrandLogo width={150} fallback="sm" /></div>
+          <div className="rounded-2xl bg-white p-2"><BrandLogo width={150} fallback="sm" /></div>
           <div className="flex gap-5"><Link href="/privacy" className="hover:text-white">Privacy & Parental Consent</Link><Link href="/login?as=parent" className="hover:text-white">Parent login</Link></div>
           <span>© {new Date().getFullYear()} PING VIBE</span>
         </div>

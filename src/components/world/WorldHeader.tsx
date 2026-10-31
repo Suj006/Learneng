@@ -38,7 +38,7 @@ export function WorldHeader({ d }: { d: HeaderData }) {
     <>
       <header className="sticky top-0 z-30 border-b border-white/5 bg-vibe-midnight/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center gap-3 px-4 py-2.5 sm:px-6">
-          <Link href="/world" className="hidden shrink-0 rounded-xl bg-white/95 px-1 md:block" aria-label="PING VIBE — Daily Adventure"><BrandLogo width={72} fallback="sm" /></Link>
+          <Link href="/world" className="hidden shrink-0 rounded-xl bg-white px-1 md:block" aria-label="PING VIBE — Daily Adventure"><BrandLogo width={96} fallback="sm" /></Link>
           <Link href="/world/avatar" className="shrink-0" aria-label="My avatar"><Avatar look={d.avatar} art={d.art} size={44} pet={null} /></Link>
           <div className="min-w-0 flex-1">
             <div className="flex items-baseline gap-2"><span className="truncate font-display font-bold">{d.name}</span><span className="chip px-2 py-0.5 text-[11px]">Lv {d.levelId}</span></div>

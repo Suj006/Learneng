@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T04:32:46.572Z",
+  "generated_at": "2026-10-31T05:51:44.332Z",
   "base": "http://localhost:3000",
   "results": [
     {
@@ -136,7 +136,7 @@
       "severity": "Critical",
       "scenario": "Verification + consent creates an active Explorer",
       "status": "PASS",
-      "actual": "turbocomet802"
+      "actual": "braveowl626"
     },
     {
       "id": "AUTH-022",
@@ -1208,7 +1208,7 @@
       "severity": "High",
       "scenario": "Unfinished mission cannot be claimed",
       "status": "PASS",
-      "actual": "Keep going — this mission isn't finished yet!"
+      "actual": "That mission isn't available right now."
     },
     {
       "id": "GAM-023",

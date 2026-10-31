@@ -238,12 +238,12 @@ The end-to-end script runs against a running dev server. It covers registration 
 
 The official PING VIBE logo is the master asset. It must be used exactly as supplied: no recreation in HTML/CSS, no AI regeneration, and no recolouring, cropping, stretching or filters.
 
-1. Commit the original file unchanged as **`public/assets/brand/ping-vibe-logo.png`**.
-   - It is assumed to be 1536×1024.
-   - If it isn't, update `LOGO_WIDTH`/`LOGO_HEIGHT` in `src/components/PingVibeLogo.tsx` and `W`/`H` in `src/components/BrandLogo.tsx`.
-2. Run `npm run brand:assets`. This creates the favicon, app icons, a compact mark and the Open Graph image in `public/assets/brand/derived/`.
-   - It uses `sharp` with `fit: contain` on a padded canvas, so the original is never overwritten or cropped.
-3. Restart the server. The root layout detects the file and picks up the derived icons.
+The master is **`public/assets/brand/ping-vibe-logo.jpg`**: the official 1536×1024 JPEG, committed byte-for-byte as supplied.
+
+- **Derived assets.** `npm run brand:assets` writes the favicon, app icons and a 1200×630 Open Graph image to `public/assets/brand/derived/`. It uses `sharp` with `fit: contain` on a white canvas, so the master is only read, never cropped or overwritten.
+- **Replacing the logo.** Swap the file (keep the name), update `LOGO_WIDTH`/`LOGO_HEIGHT` in `src/components/PingVibeLogo.tsx` and `W`/`H` in `src/components/BrandLogo.tsx` if the size changes, re-run `npm run brand:assets`, and restart. The root layout picks up the derived icons automatically.
+- **Containers.** The artwork has a white background, so every placement sits in a solid-white rounded container.
+- **Compact mark.** No compact mark is derived. If the brand owner approves one, add it as a separate file.
 
 Where the logo appears:
 - Landing page header, hero, story section and footer.
@@ -252,7 +252,7 @@ Where the logo appears:
 - Welcome, loading, celebration, certificate, error and 404 pages.
 - E-mails.
 
-`<PingVibeLogo />` is used in server components and `<BrandLogo />` in client components. Until the file is present, both render the interim text wordmark instead of a broken image. See `public/assets/brand/README.md`.
+`<PingVibeLogo />` is used in server components and `<BrandLogo />` in client components. If the master file is ever missing, both fall back to a text wordmark instead of showing a broken image. See `public/assets/brand/README.md`.
 
 ## Quality assurance
 
@@ -319,7 +319,6 @@ Notes:
 ## Known limitations and next steps
 
 - **Open QA items:** see [`qa/BUG_REGISTER.md`](qa/BUG_REGISTER.md).
-  - The official logo file must be committed.
   - Live Claude tests are blocked until a key is provided.
   - 30-child load p95 must be re-checked on managed Postgres; embedded PGlite is single-connection.
 

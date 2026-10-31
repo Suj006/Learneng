@@ -35,7 +35,7 @@ export function Welcome({ name, kingdoms }: { name: string; kingdoms: { slug: st
         {step === 0 && (
           <motion.div key="s0" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, y: -20 }} className="flex flex-col items-center">
             <Burst />
-            <div className="mb-2 rounded-[2rem] bg-white/95 p-3 shadow-card"><BrandLogo width="min(360px, 80vw)" priority /></div>
+            <div className="mb-2 rounded-[2rem] bg-white p-3 shadow-card"><BrandLogo width="min(360px, 80vw)" priority /></div>
             <Character name="max" mood="excited" size={170} />
             <h1 className="title-lg mt-4">Hey {name}! Welcome to PING VIBE!</h1>
             <p className="mt-3 max-w-xl text-xl text-vibe-lavender">Your magical adventure starts right here! I'm MAX, your adventure buddy.</p>

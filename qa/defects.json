@@ -319,21 +319,21 @@
     "title": "API p95 at or above the 1.5s target with 30 concurrent children on embedded PGlite (unstable)",
     "steps": "node tests/perf.mjs (LOAD-002)",
     "expected": "p95 < 1500ms",
-    "actual": "Two production-build runs: p95 2,554 ms (fail) and 1,496 ms (pass by 4 ms); max 8–10 s. 0 errors and correct awards in both. PGlite is single-connection.",
+    "actual": "Four production-build runs: p95 2,554 / 1,496 / 2,038 / 1,943 ms (1 pass); max 8–10 s. 0 errors and correct awards in every run. PGlite is single-connection.",
     "fix": "Re-test on managed Postgres/Supabase with a connection pool before launch",
     "regression": "LOAD-002"
   },
   {
     "id": "OPEN-002",
     "severity": "High",
-    "status": "Open",
+    "status": "Fixed",
     "area": "Brand",
     "title": "Official master logo file not present in the repository",
     "steps": "ls public/assets/brand/ping-vibe-logo.png",
     "expected": "Official logo shown site-wide",
-    "actual": "Interim wordmark shown; favicon/OG derivatives not generated",
-    "fix": "Commit the original file, run npm run brand:assets",
-    "regression": "Manual brand review"
+    "actual": "Resolved 31 Oct 2026: the brand owner supplied pingvibe.jpg (1536×1024 JPEG). It is committed byte-for-byte as public/assets/brand/ping-vibe-logo.jpg (sha256 baee77b3…f6f5), never re-encoded.",
+    "fix": "Master committed unchanged; code points at .jpg; npm run brand:assets generated favicon, app icons and a 1200×630 OG image (JPEG, 105 KB) as separate derivatives; logo containers made solid white so the artwork's white background is seamless; header logos enlarged (96–120 px) for legibility",
+    "regression": "RSP-*/CON-* (no broken images or failed requests), VIS-* (new baselines), manual review of every placement"
   },
   {
     "id": "OPEN-003",

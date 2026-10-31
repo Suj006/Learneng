@@ -1,6 +1,6 @@
 # PING VIBE — Complete Test Cases (executed)
 
-Generated 2026-10-31T04:34:09.268Z by `node scripts/qa-report.mjs` from the raw results in `qa/results/`. Synthetic data only.
+Generated 2026-10-31T05:52:37.246Z by `node scripts/qa-report.mjs` from the raw results in `qa/results/`. Synthetic data only.
 
 **Totals:** 1449 executed · 1446 pass · 1 fail · 2 blocked (includes 21 vitest unit tests).
 
@@ -13,7 +13,7 @@ Generated 2026-10-31T04:34:09.268Z by `node scripts/qa-report.mjs` from the raw 
 
 ## API, database, security & learning
 
-_Run against http://localhost:3000 at 2026-10-31T04:32:46.572Z._
+_Run against http://localhost:3000 at 2026-10-31T05:51:44.332Z._
 
 ### Registration
 
@@ -40,7 +40,7 @@ _Run against http://localhost:3000 at 2026-10-31T04:32:46.572Z._
 | ID | Severity | Scenario | Status | Actual / notes |
 |---|---|---|---|---|
 | AUTH-020 | Critical | Invalid verification token → expired page, no session | ✅ PASS | http://localhost:3000/verify?expired=1 |
-| AUTH-021 | Critical | Verification + consent creates an active Explorer | ✅ PASS | turbocomet802 |
+| AUTH-021 | Critical | Verification + consent creates an active Explorer | ✅ PASS | braveowl626 |
 | AUTH-022 | Critical | Verification e-mail generated with link | ✅ PASS |  |
 
 ### Login & sessions
@@ -234,7 +234,7 @@ _Run against http://localhost:3000 at 2026-10-31T04:32:46.572Z._
 |---|---|---|---|---|
 | GAM-020 | High | Completed daily mission claimable | ✅ PASS |  |
 | GAM-021 | High | Mission reward idempotent (claim twice) | ✅ PASS |  |
-| GAM-022 | High | Unfinished mission cannot be claimed | ✅ PASS | Keep going — this mission isn't finished yet! |
+| GAM-022 | High | Unfinished mission cannot be claimed | ✅ PASS | That mission isn't available right now. |
 | GAM-023 | High | Unknown mission refused | ✅ PASS |  |
 
 ### Bosses, map & world
@@ -334,7 +334,7 @@ _Run against http://localhost:3000 at 2026-10-31T04:32:46.572Z._
 
 ## UI journeys, responsive, console, accessibility & visual
 
-_Run against http://localhost:3000 at 2026-10-31T04:32:30.471Z._
+_Run against http://localhost:3000 at 2026-10-31T05:51:27.443Z._
 
 ### Journey 1
 
@@ -342,10 +342,10 @@ _Run against http://localhost:3000 at 2026-10-31T04:32:30.471Z._
 |---|---|---|---|---|
 | UI-J1-01 | Critical | Homepage → Start Your Adventure → register via form | ✅ PASS |  |
 | UI-J1-02 | Critical | E-mail link → verify button → consent page | ✅ PASS |  |
-| UI-J1-03 | Critical | Consent + PIN shows Explorer name | ✅ PASS | turbotiger618 |
+| UI-J1-03 | Critical | Consent + PIN shows Explorer name | ✅ PASS | sunnymax321 |
 | UI-J1-04 | Critical | Child session starts at character welcome (no assessment) | ✅ PASS |  |
 | UI-J1-05 | High | Onboarding steps → first Daily Word Quest | ✅ PASS |  |
-| UI-J1-06 | Critical | Learn 10 words, answer all rounds, receive XP celebration | ✅ PASS | 16 questions; +53 XP |
+| UI-J1-06 | Critical | Learn 10 words, answer all rounds, receive XP celebration | ✅ PASS | 16 questions; +66 XP |
 | UI-J1-07 | High | Dashboard reflects XP & coins after reload | ✅ PASS |  |
 | UI-J1-08 | High | No uncaught JS errors during the journey | ✅ PASS |  |
 
@@ -626,28 +626,28 @@ _Run against http://localhost:3000 at 2026-10-31T04:32:30.471Z._
 | RSP-child-world-story-builder-1920 | Medium | child /world/story-builder @1920px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
 | RSP-child-world-boss-word-thief-1920 | Medium | child /world/boss/word-thief @1920px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
 | RSP-parent-parent-320 | Medium | parent /parent @320px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
-| RSP-parent-parent-child-82c84865-f0ec-4419-9721-f0e3b36ca428-320 | Medium | parent /parent/child/82c84865-f0ec-4419-9721-f0e3b36ca428 @320px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
+| RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-320 | Medium | parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @320px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
 | RSP-parent-parent-settings-320 | Medium | parent /parent/settings @320px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
 | RSP-parent-parent-375 | Medium | parent /parent @375px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
-| RSP-parent-parent-child-82c84865-f0ec-4419-9721-f0e3b36ca428-375 | Medium | parent /parent/child/82c84865-f0ec-4419-9721-f0e3b36ca428 @375px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
+| RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-375 | Medium | parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @375px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
 | RSP-parent-parent-settings-375 | Medium | parent /parent/settings @375px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
 | RSP-parent-parent-430 | Medium | parent /parent @430px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
-| RSP-parent-parent-child-82c84865-f0ec-4419-9721-f0e3b36ca428-430 | Medium | parent /parent/child/82c84865-f0ec-4419-9721-f0e3b36ca428 @430px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
+| RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-430 | Medium | parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @430px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
 | RSP-parent-parent-settings-430 | Medium | parent /parent/settings @430px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
 | RSP-parent-parent-768 | Medium | parent /parent @768px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
-| RSP-parent-parent-child-82c84865-f0ec-4419-9721-f0e3b36ca428-768 | Medium | parent /parent/child/82c84865-f0ec-4419-9721-f0e3b36ca428 @768px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
+| RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-768 | Medium | parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @768px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
 | RSP-parent-parent-settings-768 | Medium | parent /parent/settings @768px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
 | RSP-parent-parent-1024 | Medium | parent /parent @1024px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
-| RSP-parent-parent-child-82c84865-f0ec-4419-9721-f0e3b36ca428-1024 | Medium | parent /parent/child/82c84865-f0ec-4419-9721-f0e3b36ca428 @1024px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
+| RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-1024 | Medium | parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @1024px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
 | RSP-parent-parent-settings-1024 | Medium | parent /parent/settings @1024px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
 | RSP-parent-parent-1366 | Medium | parent /parent @1366px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
-| RSP-parent-parent-child-82c84865-f0ec-4419-9721-f0e3b36ca428-1366 | Medium | parent /parent/child/82c84865-f0ec-4419-9721-f0e3b36ca428 @1366px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
+| RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-1366 | Medium | parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @1366px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
 | RSP-parent-parent-settings-1366 | Medium | parent /parent/settings @1366px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
 | RSP-parent-parent-1440 | Medium | parent /parent @1440px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
-| RSP-parent-parent-child-82c84865-f0ec-4419-9721-f0e3b36ca428-1440 | Medium | parent /parent/child/82c84865-f0ec-4419-9721-f0e3b36ca428 @1440px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
+| RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-1440 | Medium | parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @1440px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
 | RSP-parent-parent-settings-1440 | Medium | parent /parent/settings @1440px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
 | RSP-parent-parent-1920 | Medium | parent /parent @1920px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
-| RSP-parent-parent-child-82c84865-f0ec-4419-9721-f0e3b36ca428-1920 | Medium | parent /parent/child/82c84865-f0ec-4419-9721-f0e3b36ca428 @1920px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
+| RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-1920 | Medium | parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @1920px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
 | RSP-parent-parent-settings-1920 | Medium | parent /parent/settings @1920px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
 | RSP-admin-admin-320 | Medium | admin /admin @320px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
 | RSP-admin-admin-content-320 | Medium | admin /admin/content @320px: no horizontal overflow, clipped controls or broken images | ✅ PASS | status 200 overflow 0px clipped [] broken [] |
@@ -975,28 +975,28 @@ _Run against http://localhost:3000 at 2026-10-31T04:32:30.471Z._
 | TGT-RSP-child-world-story-builder-1920 | Medium | child /world/story-builder @1920px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 0 |
 | TGT-RSP-child-world-boss-word-thief-1920 | Medium | child /world/boss/word-thief @1920px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 0 |
 | TGT-RSP-parent-parent-320 | Medium | parent /parent @320px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 0 |
-| TGT-RSP-parent-parent-child-82c84865-f0ec-4419-9721-f0e3b36ca428-320 | Medium | parent /parent/child/82c84865-f0ec-4419-9721-f0e3b36ca428 @320px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 10 |
+| TGT-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-320 | Medium | parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @320px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 10 |
 | TGT-RSP-parent-parent-settings-320 | Medium | parent /parent/settings @320px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 0 |
 | TGT-RSP-parent-parent-375 | Medium | parent /parent @375px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 0 |
-| TGT-RSP-parent-parent-child-82c84865-f0ec-4419-9721-f0e3b36ca428-375 | Medium | parent /parent/child/82c84865-f0ec-4419-9721-f0e3b36ca428 @375px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 10 |
+| TGT-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-375 | Medium | parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @375px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 10 |
 | TGT-RSP-parent-parent-settings-375 | Medium | parent /parent/settings @375px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 0 |
 | TGT-RSP-parent-parent-430 | Medium | parent /parent @430px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 0 |
-| TGT-RSP-parent-parent-child-82c84865-f0ec-4419-9721-f0e3b36ca428-430 | Medium | parent /parent/child/82c84865-f0ec-4419-9721-f0e3b36ca428 @430px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 10 |
+| TGT-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-430 | Medium | parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @430px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 10 |
 | TGT-RSP-parent-parent-settings-430 | Medium | parent /parent/settings @430px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 0 |
 | TGT-RSP-parent-parent-768 | Medium | parent /parent @768px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 0 |
-| TGT-RSP-parent-parent-child-82c84865-f0ec-4419-9721-f0e3b36ca428-768 | Medium | parent /parent/child/82c84865-f0ec-4419-9721-f0e3b36ca428 @768px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 10 |
+| TGT-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-768 | Medium | parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @768px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 10 |
 | TGT-RSP-parent-parent-settings-768 | Medium | parent /parent/settings @768px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 0 |
 | TGT-RSP-parent-parent-1024 | Medium | parent /parent @1024px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 0 |
-| TGT-RSP-parent-parent-child-82c84865-f0ec-4419-9721-f0e3b36ca428-1024 | Medium | parent /parent/child/82c84865-f0ec-4419-9721-f0e3b36ca428 @1024px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 10 |
+| TGT-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-1024 | Medium | parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @1024px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 10 |
 | TGT-RSP-parent-parent-settings-1024 | Medium | parent /parent/settings @1024px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 0 |
 | TGT-RSP-parent-parent-1366 | Medium | parent /parent @1366px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 0 |
-| TGT-RSP-parent-parent-child-82c84865-f0ec-4419-9721-f0e3b36ca428-1366 | Medium | parent /parent/child/82c84865-f0ec-4419-9721-f0e3b36ca428 @1366px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 10 |
+| TGT-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-1366 | Medium | parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @1366px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 10 |
 | TGT-RSP-parent-parent-settings-1366 | Medium | parent /parent/settings @1366px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 0 |
 | TGT-RSP-parent-parent-1440 | Medium | parent /parent @1440px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 0 |
-| TGT-RSP-parent-parent-child-82c84865-f0ec-4419-9721-f0e3b36ca428-1440 | Medium | parent /parent/child/82c84865-f0ec-4419-9721-f0e3b36ca428 @1440px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 10 |
+| TGT-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-1440 | Medium | parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @1440px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 10 |
 | TGT-RSP-parent-parent-settings-1440 | Medium | parent /parent/settings @1440px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 0 |
 | TGT-RSP-parent-parent-1920 | Medium | parent /parent @1920px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 0 |
-| TGT-RSP-parent-parent-child-82c84865-f0ec-4419-9721-f0e3b36ca428-1920 | Medium | parent /parent/child/82c84865-f0ec-4419-9721-f0e3b36ca428 @1920px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 10 |
+| TGT-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-1920 | Medium | parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @1920px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 10 |
 | TGT-RSP-parent-parent-settings-1920 | Medium | parent /parent/settings @1920px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 0 |
 | TGT-RSP-admin-admin-320 | Medium | admin /admin @320px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 0 |
 | TGT-RSP-admin-admin-content-320 | Medium | admin /admin/content @320px: interactive targets ≥ 24×24px (WCAG 2.5.8) | ✅ PASS | under 24px: []; under 32px tall: 0 |
@@ -1122,8 +1122,8 @@ _Run against http://localhost:3000 at 2026-10-31T04:32:30.471Z._
 | A11Y-child-reduced-motion | Medium | child: prefers-reduced-motion disables CSS animation | ✅ PASS | 1e-06s |
 | A11Y-parent--parent | Medium | parent /parent: no critical/serious axe violations (WCAG 2.2 AA) | ✅ PASS |  |
 | KBD-parent--parent | Medium | parent /parent: first Tab reaches skip link | ✅ PASS | Skip to content |
-| A11Y-parent--parent-child-82c84865-f0ec-4419-9721-f0e3b36ca428 | Medium | parent /parent/child/82c84865-f0ec-4419-9721-f0e3b36ca428: no critical/serious axe violations (WCAG 2.2 AA) | ✅ PASS |  |
-| KBD-parent--parent-child-82c84865-f0ec-4419-9721-f0e3b36ca428 | Medium | parent /parent/child/82c84865-f0ec-4419-9721-f0e3b36ca428: first Tab reaches skip link | ✅ PASS | Skip to content |
+| A11Y-parent--parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c | Medium | parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c: no critical/serious axe violations (WCAG 2.2 AA) | ✅ PASS |  |
+| KBD-parent--parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c | Medium | parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c: first Tab reaches skip link | ✅ PASS | Skip to content |
 | A11Y-parent--parent-settings | Medium | parent /parent/settings: no critical/serious axe violations (WCAG 2.2 AA) | ✅ PASS |  |
 | KBD-parent--parent-settings | Medium | parent /parent/settings: first Tab reaches skip link | ✅ PASS | Skip to content |
 | A11Y-parent-reduced-motion | Medium | parent: prefers-reduced-motion disables CSS animation | ✅ PASS | 1e-06s |
@@ -1418,28 +1418,28 @@ _Run against http://localhost:3000 at 2026-10-31T04:32:30.471Z._
 | CON-RSP-child-world-story-builder-1920 | Medium | child /world/story-builder @1920px: no console/network errors | ✅ PASS |  |
 | CON-RSP-child-world-boss-word-thief-1920 | Medium | child /world/boss/word-thief @1920px: no console/network errors | ✅ PASS |  |
 | CON-RSP-parent-parent-320 | Medium | parent /parent @320px: no console/network errors | ✅ PASS |  |
-| CON-RSP-parent-parent-child-82c84865-f0ec-4419-9721-f0e3b36ca428-320 | Medium | parent /parent/child/82c84865-f0ec-4419-9721-f0e3b36ca428 @320px: no console/network errors | ✅ PASS |  |
+| CON-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-320 | Medium | parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @320px: no console/network errors | ✅ PASS |  |
 | CON-RSP-parent-parent-settings-320 | Medium | parent /parent/settings @320px: no console/network errors | ✅ PASS |  |
 | CON-RSP-parent-parent-375 | Medium | parent /parent @375px: no console/network errors | ✅ PASS |  |
-| CON-RSP-parent-parent-child-82c84865-f0ec-4419-9721-f0e3b36ca428-375 | Medium | parent /parent/child/82c84865-f0ec-4419-9721-f0e3b36ca428 @375px: no console/network errors | ✅ PASS |  |
+| CON-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-375 | Medium | parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @375px: no console/network errors | ✅ PASS |  |
 | CON-RSP-parent-parent-settings-375 | Medium | parent /parent/settings @375px: no console/network errors | ✅ PASS |  |
 | CON-RSP-parent-parent-430 | Medium | parent /parent @430px: no console/network errors | ✅ PASS |  |
-| CON-RSP-parent-parent-child-82c84865-f0ec-4419-9721-f0e3b36ca428-430 | Medium | parent /parent/child/82c84865-f0ec-4419-9721-f0e3b36ca428 @430px: no console/network errors | ✅ PASS |  |
+| CON-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-430 | Medium | parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @430px: no console/network errors | ✅ PASS |  |
 | CON-RSP-parent-parent-settings-430 | Medium | parent /parent/settings @430px: no console/network errors | ✅ PASS |  |
 | CON-RSP-parent-parent-768 | Medium | parent /parent @768px: no console/network errors | ✅ PASS |  |
-| CON-RSP-parent-parent-child-82c84865-f0ec-4419-9721-f0e3b36ca428-768 | Medium | parent /parent/child/82c84865-f0ec-4419-9721-f0e3b36ca428 @768px: no console/network errors | ✅ PASS |  |
+| CON-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-768 | Medium | parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @768px: no console/network errors | ✅ PASS |  |
 | CON-RSP-parent-parent-settings-768 | Medium | parent /parent/settings @768px: no console/network errors | ✅ PASS |  |
 | CON-RSP-parent-parent-1024 | Medium | parent /parent @1024px: no console/network errors | ✅ PASS |  |
-| CON-RSP-parent-parent-child-82c84865-f0ec-4419-9721-f0e3b36ca428-1024 | Medium | parent /parent/child/82c84865-f0ec-4419-9721-f0e3b36ca428 @1024px: no console/network errors | ✅ PASS |  |
+| CON-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-1024 | Medium | parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @1024px: no console/network errors | ✅ PASS |  |
 | CON-RSP-parent-parent-settings-1024 | Medium | parent /parent/settings @1024px: no console/network errors | ✅ PASS |  |
 | CON-RSP-parent-parent-1366 | Medium | parent /parent @1366px: no console/network errors | ✅ PASS |  |
-| CON-RSP-parent-parent-child-82c84865-f0ec-4419-9721-f0e3b36ca428-1366 | Medium | parent /parent/child/82c84865-f0ec-4419-9721-f0e3b36ca428 @1366px: no console/network errors | ✅ PASS |  |
+| CON-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-1366 | Medium | parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @1366px: no console/network errors | ✅ PASS |  |
 | CON-RSP-parent-parent-settings-1366 | Medium | parent /parent/settings @1366px: no console/network errors | ✅ PASS |  |
 | CON-RSP-parent-parent-1440 | Medium | parent /parent @1440px: no console/network errors | ✅ PASS |  |
-| CON-RSP-parent-parent-child-82c84865-f0ec-4419-9721-f0e3b36ca428-1440 | Medium | parent /parent/child/82c84865-f0ec-4419-9721-f0e3b36ca428 @1440px: no console/network errors | ✅ PASS |  |
+| CON-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-1440 | Medium | parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @1440px: no console/network errors | ✅ PASS |  |
 | CON-RSP-parent-parent-settings-1440 | Medium | parent /parent/settings @1440px: no console/network errors | ✅ PASS |  |
 | CON-RSP-parent-parent-1920 | Medium | parent /parent @1920px: no console/network errors | ✅ PASS |  |
-| CON-RSP-parent-parent-child-82c84865-f0ec-4419-9721-f0e3b36ca428-1920 | Medium | parent /parent/child/82c84865-f0ec-4419-9721-f0e3b36ca428 @1920px: no console/network errors | ✅ PASS |  |
+| CON-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-1920 | Medium | parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @1920px: no console/network errors | ✅ PASS |  |
 | CON-RSP-parent-parent-settings-1920 | Medium | parent /parent/settings @1920px: no console/network errors | ✅ PASS |  |
 | CON-RSP-admin-admin-320 | Medium | admin /admin @320px: no console/network errors | ✅ PASS |  |
 | CON-RSP-admin-admin-content-320 | Medium | admin /admin/content @320px: no console/network errors | ✅ PASS |  |
@@ -1497,10 +1497,10 @@ _Run against http://localhost:3000 at 2026-10-31T04:32:30.471Z._
 | VIS-RSP-public-home-375 | Low | public / @375px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
 | VIS-RSP-public-signup-375 | Low | public /signup @375px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
 | VIS-RSP-public-login-375 | Low | public /login @375px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
-| VIS-RSP-public-login-as-parent-375 | Low | public /login?as=parent @375px matches baseline (<3% pixels changed) | ✅ PASS | 0.03% changed |
+| VIS-RSP-public-login-as-parent-375 | Low | public /login?as=parent @375px matches baseline (<3% pixels changed) | ✅ PASS | 0.04% changed |
 | VIS-RSP-public-privacy-375 | Low | public /privacy @375px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
-| VIS-RSP-public-forgot-password-375 | Low | public /forgot-password @375px matches baseline (<3% pixels changed) | ✅ PASS | 0.03% changed |
-| VIS-RSP-public-verify-expired-1-375 | Low | public /verify?expired=1 @375px matches baseline (<3% pixels changed) | ✅ PASS | 0.04% changed |
+| VIS-RSP-public-forgot-password-375 | Low | public /forgot-password @375px matches baseline (<3% pixels changed) | ✅ PASS | 0.04% changed |
+| VIS-RSP-public-verify-expired-1-375 | Low | public /verify?expired=1 @375px matches baseline (<3% pixels changed) | ✅ PASS | 0.05% changed |
 | VIS-RSP-public-home-768 | Low | public / @768px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
 | VIS-RSP-public-signup-768 | Low | public /signup @768px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
 | VIS-RSP-public-login-768 | Low | public /login @768px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
@@ -1509,11 +1509,11 @@ _Run against http://localhost:3000 at 2026-10-31T04:32:30.471Z._
 | VIS-RSP-public-forgot-password-768 | Low | public /forgot-password @768px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
 | VIS-RSP-public-verify-expired-1-768 | Low | public /verify?expired=1 @768px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
 | VIS-RSP-public-home-1440 | Low | public / @1440px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
-| VIS-RSP-public-signup-1440 | Low | public /signup @1440px matches baseline (<3% pixels changed) | ✅ PASS | 0.02% changed |
-| VIS-RSP-public-login-1440 | Low | public /login @1440px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
-| VIS-RSP-public-login-as-parent-1440 | Low | public /login?as=parent @1440px matches baseline (<3% pixels changed) | ✅ PASS | 0.02% changed |
+| VIS-RSP-public-signup-1440 | Low | public /signup @1440px matches baseline (<3% pixels changed) | ✅ PASS | 0.03% changed |
+| VIS-RSP-public-login-1440 | Low | public /login @1440px matches baseline (<3% pixels changed) | ✅ PASS | 0.02% changed |
+| VIS-RSP-public-login-as-parent-1440 | Low | public /login?as=parent @1440px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
 | VIS-RSP-public-privacy-1440 | Low | public /privacy @1440px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
-| VIS-RSP-public-forgot-password-1440 | Low | public /forgot-password @1440px matches baseline (<3% pixels changed) | ✅ PASS | 0.01% changed |
+| VIS-RSP-public-forgot-password-1440 | Low | public /forgot-password @1440px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
 | VIS-RSP-public-verify-expired-1-1440 | Low | public /verify?expired=1 @1440px matches baseline (<3% pixels changed) | ✅ PASS | 0.01% changed |
 | VIS-RSP-child-world-arcade-375 | Low | child /world/arcade @375px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
 | VIS-RSP-child-world-grammar-375 | Low | child /world/grammar @375px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
@@ -1526,7 +1526,7 @@ _Run against http://localhost:3000 at 2026-10-31T04:32:30.471Z._
 | VIS-RSP-child-world-collection-375 | Low | child /world/collection @375px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
 | VIS-RSP-child-world-companion-375 | Low | child /world/companion @375px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
 | VIS-RSP-child-world-arcade-768 | Low | child /world/arcade @768px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
-| VIS-RSP-child-world-grammar-768 | Low | child /world/grammar @768px matches baseline (<3% pixels changed) | ✅ PASS | 0.01% changed |
+| VIS-RSP-child-world-grammar-768 | Low | child /world/grammar @768px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
 | VIS-RSP-child-world-reading-768 | Low | child /world/reading @768px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
 | VIS-RSP-child-world-speaking-768 | Low | child /world/speaking @768px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
 | VIS-RSP-child-world-listening-768 | Low | child /world/listening @768px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
@@ -1536,8 +1536,8 @@ _Run against http://localhost:3000 at 2026-10-31T04:32:30.471Z._
 | VIS-RSP-child-world-collection-768 | Low | child /world/collection @768px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
 | VIS-RSP-child-world-companion-768 | Low | child /world/companion @768px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
 | VIS-RSP-child-world-arcade-1440 | Low | child /world/arcade @1440px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
-| VIS-RSP-child-world-grammar-1440 | Low | child /world/grammar @1440px matches baseline (<3% pixels changed) | ✅ PASS | 0.01% changed |
-| VIS-RSP-child-world-reading-1440 | Low | child /world/reading @1440px matches baseline (<3% pixels changed) | ✅ PASS | 0.01% changed |
+| VIS-RSP-child-world-grammar-1440 | Low | child /world/grammar @1440px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
+| VIS-RSP-child-world-reading-1440 | Low | child /world/reading @1440px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
 | VIS-RSP-child-world-speaking-1440 | Low | child /world/speaking @1440px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
 | VIS-RSP-child-world-listening-1440 | Low | child /world/listening @1440px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
 | VIS-RSP-child-world-rewards-1440 | Low | child /world/rewards @1440px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
@@ -1545,11 +1545,11 @@ _Run against http://localhost:3000 at 2026-10-31T04:32:30.471Z._
 | VIS-RSP-child-world-skills-1440 | Low | child /world/skills @1440px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
 | VIS-RSP-child-world-collection-1440 | Low | child /world/collection @1440px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
 | VIS-RSP-child-world-companion-1440 | Low | child /world/companion @1440px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
-| VIS-RSP-parent-parent-375 | Low | parent /parent @375px matches baseline (<3% pixels changed) | ✅ PASS | 0.62% changed |
+| VIS-RSP-parent-parent-375 | Low | parent /parent @375px matches baseline (<3% pixels changed) | ✅ PASS | 0.59% changed |
 | VIS-RSP-parent-parent-settings-375 | Low | parent /parent/settings @375px matches baseline (<3% pixels changed) | ✅ PASS | 0.32% changed |
-| VIS-RSP-parent-parent-768 | Low | parent /parent @768px matches baseline (<3% pixels changed) | ✅ PASS | 0.25% changed |
+| VIS-RSP-parent-parent-768 | Low | parent /parent @768px matches baseline (<3% pixels changed) | ✅ PASS | 0.24% changed |
 | VIS-RSP-parent-parent-settings-768 | Low | parent /parent/settings @768px matches baseline (<3% pixels changed) | ✅ PASS | 0.12% changed |
-| VIS-RSP-parent-parent-1440 | Low | parent /parent @1440px matches baseline (<3% pixels changed) | ✅ PASS | 0.15% changed |
+| VIS-RSP-parent-parent-1440 | Low | parent /parent @1440px matches baseline (<3% pixels changed) | ✅ PASS | 0.14% changed |
 | VIS-RSP-parent-parent-settings-1440 | Low | parent /parent/settings @1440px matches baseline (<3% pixels changed) | ✅ PASS | 0.07% changed |
 | VIS-RSP-admin-admin-economy-375 | Low | admin /admin/economy @375px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
 | VIS-RSP-admin-admin-events-375 | Low | admin /admin/events @375px matches baseline (<3% pixels changed) | ✅ PASS | 0.00% changed |
@@ -1566,17 +1566,17 @@ _Run against http://localhost:3000 at 2026-10-31T04:32:30.471Z._
 
 ## Performance & load
 
-_Run against http://localhost:3000 at 2026-10-31T04:33:13.076Z._
+_Run against http://localhost:3000 at 2026-10-31T05:52:12.894Z._
 
 ### Performance
 
 | ID | Severity | Scenario | Status | Actual / notes |
 |---|---|---|---|---|
-| PERF-home | Medium | /: LCP < 2.5s, TTFB < 800ms, CLS < 0.1 (warm) | ✅ PASS | cold TTFB 7ms LCP 284ms \| warm TTFB 8ms DCL 34ms LCP 112ms CLS 0.000 transfer 250KB |
-| PERF-login | Medium | /login: LCP < 2.5s, TTFB < 800ms, CLS < 0.1 (warm) | ✅ PASS | cold TTFB 14ms LCP 132ms \| warm TTFB 10ms DCL 42ms LCP 92ms CLS 0.000 transfer 255KB |
-| PERF-child-dashboard | Medium | /world: LCP < 2.5s, TTFB < 800ms, CLS < 0.1 (warm) | ✅ PASS | cold TTFB 102ms LCP 428ms \| warm TTFB 102ms DCL 139ms LCP 280ms CLS 0.000 transfer 270KB |
-| PERF-quest | Medium | /world/quest: LCP < 2.5s, TTFB < 800ms, CLS < 0.1 (warm) | ✅ PASS | cold TTFB 27ms LCP 304ms \| warm TTFB 31ms DCL 55ms LCP 164ms CLS 0.000 transfer 262KB |
-| PERF-parent-dashboard | Medium | /parent: LCP < 2.5s, TTFB < 800ms, CLS < 0.1 (warm) | ✅ PASS | cold TTFB 22ms LCP 132ms \| warm TTFB 28ms DCL 51ms LCP 80ms CLS 0.000 transfer 245KB |
-| LOAD-001 | Medium | 30 concurrent children (660 requests): no 5xx | ✅ PASS | 0 errors in 14.0s (47.1 req/s) |
-| LOAD-002 | Medium | 30 concurrent children: API p95 < 1500ms | ❌ FAIL | p50 355ms p95 2038ms max 8616ms |
+| PERF-home | Medium | /: LCP < 2.5s, TTFB < 800ms, CLS < 0.1 (warm) | ✅ PASS | cold TTFB 8ms LCP 300ms \| warm TTFB 5ms DCL 37ms LCP 216ms CLS 0.000 transfer 455KB |
+| PERF-login | Medium | /login: LCP < 2.5s, TTFB < 800ms, CLS < 0.1 (warm) | ✅ PASS | cold TTFB 12ms LCP 140ms \| warm TTFB 12ms DCL 33ms LCP 96ms CLS 0.000 transfer 460KB |
+| PERF-child-dashboard | Medium | /world: LCP < 2.5s, TTFB < 800ms, CLS < 0.1 (warm) | ✅ PASS | cold TTFB 138ms LCP 316ms \| warm TTFB 87ms DCL 117ms LCP 236ms CLS 0.000 transfer 270KB |
+| PERF-quest | Medium | /world/quest: LCP < 2.5s, TTFB < 800ms, CLS < 0.1 (warm) | ✅ PASS | cold TTFB 28ms LCP 244ms \| warm TTFB 24ms DCL 45ms LCP 160ms CLS 0.000 transfer 263KB |
+| PERF-parent-dashboard | Medium | /parent: LCP < 2.5s, TTFB < 800ms, CLS < 0.1 (warm) | ✅ PASS | cold TTFB 23ms LCP 128ms \| warm TTFB 22ms DCL 49ms LCP 76ms CLS 0.000 transfer 450KB |
+| LOAD-001 | Medium | 30 concurrent children (660 requests): no 5xx | ✅ PASS | 0 errors in 15.9s (41.6 req/s) |
+| LOAD-002 | Medium | 30 concurrent children: API p95 < 1500ms | ❌ FAIL | p50 389ms p95 1943ms max 10451ms |
 | LOAD-003 | Medium | Each child received exactly one quest XP award under triple concurrent completion | ✅ PASS | [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1] |

@@ -12,7 +12,7 @@ const bodyFont = Nunito({ subsets: ["latin"], variable: "--font-body", weight: [
 
 const derived = (f: string) => fs.existsSync(path.join(process.cwd(), "public/assets/brand/derived", f)) ? `/assets/brand/derived/${f}` : null;
 const description = "PING VIBE is a magical, gamified English-learning universe for children aged 5–13. Discover words, complete missions, unlock kingdoms and become a confident English champion.";
-const og = derived("og-image.png");
+const og = derived("og-image.jpg");
 
 /** Icons and social previews come from assets derived from the official master logo (npm run brand:assets). */
 export const metadata: Metadata = {

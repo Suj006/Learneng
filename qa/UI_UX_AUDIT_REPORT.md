@@ -17,7 +17,7 @@
 | Touch targets | Every page × viewport asserts the WCAG 2.2 target minimum of 24×24 px (TGT-*). Primary actions are 44–56 px. Two undersized read-aloud buttons (20 px and 17×20 px) were found and enlarged to 40 px (BUG-023). |
 | Motion | Framer Motion respects `prefers-reduced-motion`, and CSS animations collapse to 0.001 ms. Celebrations are short and skippable. |
 | Parent clarity | The parent dashboard explains that skills are "ongoing observations, not exam results", shows a weekly learning story in plain language, and keeps controls (PIN, companion, reminders, export, delete) in one place. |
-| Brand | The refined palette (purple → violet → magenta CTA, sky/lime accents) complements the supplied logo. The logo is shown exactly as supplied wherever the file exists (see the open item). |
+| Brand | The refined palette (purple → violet → magenta CTA, sky/lime accents) complements the official logo. The logo is shown exactly as supplied, with its original ratio, `object-fit: contain` and solid-white containers that match the artwork's background, so there is no visible frame. |
 
 ## Issues found and fixed in this audit
 
@@ -35,7 +35,7 @@
 1. **Pre-KG/UKG reading load.** Some mission descriptions and shop item text are still sentence-length. For non-readers, offer read-aloud on every card, not only on character speech.
 2. **Density on the Daily Adventure at 320–375 px.** All sections stack into a long scroll. Consider collapsing secondary rows (pets, museum) behind a "More adventures" control for the youngest grades.
 3. **Iconography consistency.** Emoji render differently on Android, iOS and Windows. Test on real devices, or switch to an SVG icon set.
-4. **Logo containers.** The white pills around the logo are designed for the official artwork. Review them once the real file is committed (OPEN-002).
+4. **Logo at small sizes.** The official artwork is detailed. In headers (96–120 px wide) the characters and 3D lettering stay recognisable, but the tagline is too small to read. Per the brand rules the master is never cropped, so an **approved compact mark** (for example, the lettering only) would improve small placements if the brand owner supplies one.
 5. **Error copy for parents.** It is friendly but generic for network failures. Add retry guidance.
 
 ## Visual regression
