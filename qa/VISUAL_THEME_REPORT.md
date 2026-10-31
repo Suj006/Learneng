@@ -101,7 +101,7 @@ Loading, error and success states:
 Final recorded numbers:
 - **Unit tests:** 29/29, including theme token and contrast tests.
 - **API suite:** 243 checks: 241 pass, 0 fail, 2 blocked (the Claude tests, because that run had no key).
-- **Accessibility per theme (axe, WCAG 2.2 AA):** 10 pages × 5 themes at 390 px. One violation was found and fixed; the re-run is recorded in `results/theme-audit.json`.
+- **Accessibility per theme (`tests/theme-audit.mjs`, axe WCAG 2.2 AA including contrast):** 13 pages × 5 themes × phone and desktop = **130 checks, 130 pass** (`results/theme-audit.json`, screenshots in `screenshots/themes/`). The one earlier violation ("Read to me" in Twilight) is fixed.
 - **Browser sweep** (journey, 8 viewports, console, axe, target size, visual): baselines were regenerated for the new default look (1,134 checks, 1,133 pass). The comparison run on the final code gave **1,203 checks: 1,202 pass, 1 fail** (`results/ui-audit.json`). The one failure was the decorative floating words on the home page, which faded to low contrast. They no longer fade (they still float) and are hidden from screen readers. A home-page re-run then passed 33/33, including axe.
 
 ## 7. Not done and why

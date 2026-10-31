@@ -1,17 +1,17 @@
 {
   "product": "PING VIBE",
-  "generated_at": "2026-10-31T09:28:00.563Z",
+  "generated_at": "2026-10-31T14:16:09.611Z",
   "environment": "Synthetic data only; local Next.js dev (UI) and production build (API/perf) on embedded PGlite. No real children's data used.",
   "totals": {
-    "total": 1449,
-    "passed": 1448,
-    "failed": 0,
-    "blocked": 1,
+    "total": 1613,
+    "passed": 1610,
+    "failed": 1,
+    "blocked": 2,
     "not_executed_areas": 9
   },
   "unit_tests": {
-    "total": 21,
-    "passed": 21,
+    "total": 29,
+    "passed": 29,
     "failed": 0
   },
   "suites": [
@@ -19,22 +19,22 @@
       "name": "API, database, security & learning",
       "command": "node tests/qa-api.mjs",
       "executed": true,
-      "generated_at": "2026-10-31T09:16:38.078Z",
+      "generated_at": "2026-10-31T13:35:52.821Z",
       "base": "http://localhost:3000",
-      "total": 217,
-      "passed": 216,
+      "total": 243,
+      "passed": 241,
       "failed": 0,
-      "blocked": 1
+      "blocked": 2
     },
     {
       "name": "UI journeys, responsive, console, accessibility & visual",
       "command": "node tests/ui-audit.mjs",
       "executed": true,
-      "generated_at": "2026-10-31T05:51:27.443Z",
+      "generated_at": "2026-10-31T14:08:40.019Z",
       "base": "http://localhost:3000",
       "total": 1203,
-      "passed": 1203,
-      "failed": 0,
+      "passed": 1202,
+      "failed": 1,
       "blocked": 0
     },
     {
@@ -47,14 +47,23 @@
       "passed": 8,
       "failed": 0,
       "blocked": 0
+    },
+    {
+      "name": "Colour themes (axe on every theme)",
+      "command": "node tests/theme-audit.mjs",
+      "executed": true,
+      "total": 130,
+      "passed": 130,
+      "failed": 0,
+      "blocked": 0
     }
   ],
   "by_module": [
     {
       "suite": "API, database, security & learning",
       "module": "Registration",
-      "total": 15,
-      "passed": 15,
+      "total": 19,
+      "passed": 19,
       "failed": 0,
       "blocked": 0
     },
@@ -102,9 +111,9 @@
       "suite": "API, database, security & learning",
       "module": "Creative Writing",
       "total": 9,
-      "passed": 9,
+      "passed": 8,
       "failed": 0,
-      "blocked": 0
+      "blocked": 1
     },
     {
       "suite": "API, database, security & learning",
@@ -142,9 +151,9 @@
       "suite": "API, database, security & learning",
       "module": "AI companion",
       "total": 5,
-      "passed": 5,
+      "passed": 4,
       "failed": 0,
-      "blocked": 0
+      "blocked": 1
     },
     {
       "suite": "API, database, security & learning",
@@ -157,8 +166,8 @@
     {
       "suite": "API, database, security & learning",
       "module": "Missions",
-      "total": 4,
-      "passed": 4,
+      "total": 5,
+      "passed": 5,
       "failed": 0,
       "blocked": 0
     },
@@ -189,8 +198,8 @@
     {
       "suite": "API, database, security & learning",
       "module": "Parent dashboard",
-      "total": 11,
-      "passed": 11,
+      "total": 18,
+      "passed": 18,
       "failed": 0,
       "blocked": 0
     },
@@ -198,9 +207,17 @@
       "suite": "API, database, security & learning",
       "module": "Administration",
       "total": 21,
-      "passed": 20,
+      "passed": 21,
       "failed": 0,
-      "blocked": 1
+      "blocked": 0
+    },
+    {
+      "suite": "API, database, security & learning",
+      "module": "Colour themes",
+      "total": 14,
+      "passed": 14,
+      "failed": 0,
+      "blocked": 0
     },
     {
       "suite": "API, database, security & learning",
@@ -230,8 +247,8 @@
       "suite": "UI journeys, responsive, console, accessibility & visual",
       "module": "Accessibility",
       "total": 438,
-      "passed": 438,
-      "failed": 0,
+      "passed": 437,
+      "failed": 1,
       "blocked": 0
     },
     {
@@ -257,15 +274,36 @@
       "passed": 8,
       "failed": 0,
       "blocked": 0
+    },
+    {
+      "suite": "Colour themes (axe on every theme)",
+      "module": "Colour themes",
+      "total": 130,
+      "passed": 130,
+      "failed": 0,
+      "blocked": 0
     }
   ],
-  "failed_tests": [],
+  "failed_tests": [
+    {
+      "id": "A11Y-public--",
+      "module": "Accessibility",
+      "scenario": "public /: no critical/serious axe violations (WCAG 2.2 AA)",
+      "actual": "serious:color-contrast(1)"
+    }
+  ],
   "blocked_tests": [
     {
-      "id": "ADM-014",
-      "module": "Administration",
-      "scenario": "Gen endpoint without AI key returns clear error",
-      "actual": ""
+      "id": "LRN-037",
+      "module": "Creative Writing",
+      "scenario": "Claude writing evaluation (real AI)",
+      "actual": "BLOCKED: no AI key configured (ANTHROPIC_API_KEY / PINGVIBE_ANTHROPIC_API_KEY) — offline evaluator used and labelled"
+    },
+    {
+      "id": "LRN-084",
+      "module": "AI companion",
+      "scenario": "Real Claude companion response",
+      "actual": "BLOCKED: no AI key configured (ANTHROPIC_API_KEY / PINGVIBE_ANTHROPIC_API_KEY) — dictionary mode verified instead"
     }
   ],
   "not_executed": [
@@ -297,7 +335,7 @@
     "open": []
   },
   "release_recommendation": {
-    "decision": "READY FOR CONTROLLED PILOT",
+    "decision": "NOT READY FOR PUBLIC RELEASE — READY FOR CONTROLLED PILOT AFTER BLOCKERS CLEARED",
     "blockers": [],
     "required_sign_offs": [
       "Technical QA",

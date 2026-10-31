@@ -1,0 +1,1046 @@
+{
+  "suite": "theme-audit",
+  "ranAt": "2026-10-31T14:15:44.263Z",
+  "results": [
+    {
+      "id": "THEME-rainbow-wonder-_-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "rainbow-wonder / @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 255)"
+    },
+    {
+      "id": "THEME-rainbow-wonder-_login-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "rainbow-wonder /login @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 255)"
+    },
+    {
+      "id": "THEME-rainbow-wonder-_signup-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "rainbow-wonder /signup @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 255)"
+    },
+    {
+      "id": "THEME-rainbow-wonder-_world-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "rainbow-wonder /world @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 255)"
+    },
+    {
+      "id": "THEME-rainbow-wonder-_world_look-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "rainbow-wonder /world/look @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 255)"
+    },
+    {
+      "id": "THEME-rainbow-wonder-_world_quest-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "rainbow-wonder /world/quest @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 255)"
+    },
+    {
+      "id": "THEME-rainbow-wonder-_world_map-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "rainbow-wonder /world/map @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 255)"
+    },
+    {
+      "id": "THEME-rainbow-wonder-_world_rewards-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "rainbow-wonder /world/rewards @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 255)"
+    },
+    {
+      "id": "THEME-rainbow-wonder-_world_missions-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "rainbow-wonder /world/missions @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 255)"
+    },
+    {
+      "id": "THEME-rainbow-wonder-_world_grammar-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "rainbow-wonder /world/grammar @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 255)"
+    },
+    {
+      "id": "THEME-rainbow-wonder-_world_reading-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "rainbow-wonder /world/reading @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 255)"
+    },
+    {
+      "id": "THEME-rainbow-wonder-_world_me-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "rainbow-wonder /world/me @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 255)"
+    },
+    {
+      "id": "THEME-rainbow-wonder-_parent-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "rainbow-wonder /parent @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 255)"
+    },
+    {
+      "id": "THEME-rainbow-wonder-_-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "rainbow-wonder / @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 255)"
+    },
+    {
+      "id": "THEME-rainbow-wonder-_login-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "rainbow-wonder /login @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 255)"
+    },
+    {
+      "id": "THEME-rainbow-wonder-_signup-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "rainbow-wonder /signup @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 255)"
+    },
+    {
+      "id": "THEME-rainbow-wonder-_world-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "rainbow-wonder /world @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 255)"
+    },
+    {
+      "id": "THEME-rainbow-wonder-_world_look-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "rainbow-wonder /world/look @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 255)"
+    },
+    {
+      "id": "THEME-rainbow-wonder-_world_quest-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "rainbow-wonder /world/quest @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 255)"
+    },
+    {
+      "id": "THEME-rainbow-wonder-_world_map-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "rainbow-wonder /world/map @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 255)"
+    },
+    {
+      "id": "THEME-rainbow-wonder-_world_rewards-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "rainbow-wonder /world/rewards @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 255)"
+    },
+    {
+      "id": "THEME-rainbow-wonder-_world_missions-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "rainbow-wonder /world/missions @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 255)"
+    },
+    {
+      "id": "THEME-rainbow-wonder-_world_grammar-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "rainbow-wonder /world/grammar @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 255)"
+    },
+    {
+      "id": "THEME-rainbow-wonder-_world_reading-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "rainbow-wonder /world/reading @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 255)"
+    },
+    {
+      "id": "THEME-rainbow-wonder-_world_me-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "rainbow-wonder /world/me @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 255)"
+    },
+    {
+      "id": "THEME-rainbow-wonder-_parent-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "rainbow-wonder /parent @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 255)"
+    },
+    {
+      "id": "THEME-ocean-splash-_-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "ocean-splash / @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(243, 251, 255)"
+    },
+    {
+      "id": "THEME-ocean-splash-_login-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "ocean-splash /login @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(243, 251, 255)"
+    },
+    {
+      "id": "THEME-ocean-splash-_signup-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "ocean-splash /signup @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(243, 251, 255)"
+    },
+    {
+      "id": "THEME-ocean-splash-_world-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "ocean-splash /world @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(243, 251, 255)"
+    },
+    {
+      "id": "THEME-ocean-splash-_world_look-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "ocean-splash /world/look @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(243, 251, 255)"
+    },
+    {
+      "id": "THEME-ocean-splash-_world_quest-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "ocean-splash /world/quest @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(243, 251, 255)"
+    },
+    {
+      "id": "THEME-ocean-splash-_world_map-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "ocean-splash /world/map @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(243, 251, 255)"
+    },
+    {
+      "id": "THEME-ocean-splash-_world_rewards-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "ocean-splash /world/rewards @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(243, 251, 255)"
+    },
+    {
+      "id": "THEME-ocean-splash-_world_missions-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "ocean-splash /world/missions @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(243, 251, 255)"
+    },
+    {
+      "id": "THEME-ocean-splash-_world_grammar-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "ocean-splash /world/grammar @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(243, 251, 255)"
+    },
+    {
+      "id": "THEME-ocean-splash-_world_reading-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "ocean-splash /world/reading @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(243, 251, 255)"
+    },
+    {
+      "id": "THEME-ocean-splash-_world_me-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "ocean-splash /world/me @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(243, 251, 255)"
+    },
+    {
+      "id": "THEME-ocean-splash-_parent-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "ocean-splash /parent @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(243, 251, 255)"
+    },
+    {
+      "id": "THEME-ocean-splash-_-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "ocean-splash / @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(243, 251, 255)"
+    },
+    {
+      "id": "THEME-ocean-splash-_login-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "ocean-splash /login @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(243, 251, 255)"
+    },
+    {
+      "id": "THEME-ocean-splash-_signup-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "ocean-splash /signup @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(243, 251, 255)"
+    },
+    {
+      "id": "THEME-ocean-splash-_world-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "ocean-splash /world @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(243, 251, 255)"
+    },
+    {
+      "id": "THEME-ocean-splash-_world_look-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "ocean-splash /world/look @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(243, 251, 255)"
+    },
+    {
+      "id": "THEME-ocean-splash-_world_quest-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "ocean-splash /world/quest @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(243, 251, 255)"
+    },
+    {
+      "id": "THEME-ocean-splash-_world_map-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "ocean-splash /world/map @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(243, 251, 255)"
+    },
+    {
+      "id": "THEME-ocean-splash-_world_rewards-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "ocean-splash /world/rewards @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(243, 251, 255)"
+    },
+    {
+      "id": "THEME-ocean-splash-_world_missions-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "ocean-splash /world/missions @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(243, 251, 255)"
+    },
+    {
+      "id": "THEME-ocean-splash-_world_grammar-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "ocean-splash /world/grammar @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(243, 251, 255)"
+    },
+    {
+      "id": "THEME-ocean-splash-_world_reading-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "ocean-splash /world/reading @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(243, 251, 255)"
+    },
+    {
+      "id": "THEME-ocean-splash-_world_me-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "ocean-splash /world/me @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(243, 251, 255)"
+    },
+    {
+      "id": "THEME-ocean-splash-_parent-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "ocean-splash /parent @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(243, 251, 255)"
+    },
+    {
+      "id": "THEME-candy-galaxy-_-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "candy-galaxy / @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 248, 253)"
+    },
+    {
+      "id": "THEME-candy-galaxy-_login-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "candy-galaxy /login @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 248, 253)"
+    },
+    {
+      "id": "THEME-candy-galaxy-_signup-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "candy-galaxy /signup @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 248, 253)"
+    },
+    {
+      "id": "THEME-candy-galaxy-_world-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "candy-galaxy /world @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 248, 253)"
+    },
+    {
+      "id": "THEME-candy-galaxy-_world_look-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "candy-galaxy /world/look @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 248, 253)"
+    },
+    {
+      "id": "THEME-candy-galaxy-_world_quest-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "candy-galaxy /world/quest @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 248, 253)"
+    },
+    {
+      "id": "THEME-candy-galaxy-_world_map-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "candy-galaxy /world/map @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 248, 253)"
+    },
+    {
+      "id": "THEME-candy-galaxy-_world_rewards-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "candy-galaxy /world/rewards @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 248, 253)"
+    },
+    {
+      "id": "THEME-candy-galaxy-_world_missions-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "candy-galaxy /world/missions @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 248, 253)"
+    },
+    {
+      "id": "THEME-candy-galaxy-_world_grammar-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "candy-galaxy /world/grammar @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 248, 253)"
+    },
+    {
+      "id": "THEME-candy-galaxy-_world_reading-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "candy-galaxy /world/reading @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 248, 253)"
+    },
+    {
+      "id": "THEME-candy-galaxy-_world_me-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "candy-galaxy /world/me @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 248, 253)"
+    },
+    {
+      "id": "THEME-candy-galaxy-_parent-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "candy-galaxy /parent @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 248, 253)"
+    },
+    {
+      "id": "THEME-candy-galaxy-_-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "candy-galaxy / @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 248, 253)"
+    },
+    {
+      "id": "THEME-candy-galaxy-_login-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "candy-galaxy /login @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 248, 253)"
+    },
+    {
+      "id": "THEME-candy-galaxy-_signup-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "candy-galaxy /signup @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 248, 253)"
+    },
+    {
+      "id": "THEME-candy-galaxy-_world-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "candy-galaxy /world @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 248, 253)"
+    },
+    {
+      "id": "THEME-candy-galaxy-_world_look-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "candy-galaxy /world/look @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 248, 253)"
+    },
+    {
+      "id": "THEME-candy-galaxy-_world_quest-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "candy-galaxy /world/quest @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 248, 253)"
+    },
+    {
+      "id": "THEME-candy-galaxy-_world_map-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "candy-galaxy /world/map @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 248, 253)"
+    },
+    {
+      "id": "THEME-candy-galaxy-_world_rewards-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "candy-galaxy /world/rewards @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 248, 253)"
+    },
+    {
+      "id": "THEME-candy-galaxy-_world_missions-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "candy-galaxy /world/missions @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 248, 253)"
+    },
+    {
+      "id": "THEME-candy-galaxy-_world_grammar-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "candy-galaxy /world/grammar @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 248, 253)"
+    },
+    {
+      "id": "THEME-candy-galaxy-_world_reading-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "candy-galaxy /world/reading @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 248, 253)"
+    },
+    {
+      "id": "THEME-candy-galaxy-_world_me-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "candy-galaxy /world/me @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 248, 253)"
+    },
+    {
+      "id": "THEME-candy-galaxy-_parent-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "candy-galaxy /parent @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 248, 253)"
+    },
+    {
+      "id": "THEME-sunshine-garden-_-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "sunshine-garden / @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 240)"
+    },
+    {
+      "id": "THEME-sunshine-garden-_login-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "sunshine-garden /login @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 240)"
+    },
+    {
+      "id": "THEME-sunshine-garden-_signup-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "sunshine-garden /signup @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 240)"
+    },
+    {
+      "id": "THEME-sunshine-garden-_world-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "sunshine-garden /world @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 240)"
+    },
+    {
+      "id": "THEME-sunshine-garden-_world_look-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "sunshine-garden /world/look @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 240)"
+    },
+    {
+      "id": "THEME-sunshine-garden-_world_quest-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "sunshine-garden /world/quest @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 240)"
+    },
+    {
+      "id": "THEME-sunshine-garden-_world_map-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "sunshine-garden /world/map @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 240)"
+    },
+    {
+      "id": "THEME-sunshine-garden-_world_rewards-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "sunshine-garden /world/rewards @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 240)"
+    },
+    {
+      "id": "THEME-sunshine-garden-_world_missions-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "sunshine-garden /world/missions @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 240)"
+    },
+    {
+      "id": "THEME-sunshine-garden-_world_grammar-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "sunshine-garden /world/grammar @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 240)"
+    },
+    {
+      "id": "THEME-sunshine-garden-_world_reading-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "sunshine-garden /world/reading @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 240)"
+    },
+    {
+      "id": "THEME-sunshine-garden-_world_me-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "sunshine-garden /world/me @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 240)"
+    },
+    {
+      "id": "THEME-sunshine-garden-_parent-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "sunshine-garden /parent @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 240)"
+    },
+    {
+      "id": "THEME-sunshine-garden-_-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "sunshine-garden / @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 240)"
+    },
+    {
+      "id": "THEME-sunshine-garden-_login-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "sunshine-garden /login @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 240)"
+    },
+    {
+      "id": "THEME-sunshine-garden-_signup-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "sunshine-garden /signup @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 240)"
+    },
+    {
+      "id": "THEME-sunshine-garden-_world-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "sunshine-garden /world @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 240)"
+    },
+    {
+      "id": "THEME-sunshine-garden-_world_look-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "sunshine-garden /world/look @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 240)"
+    },
+    {
+      "id": "THEME-sunshine-garden-_world_quest-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "sunshine-garden /world/quest @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 240)"
+    },
+    {
+      "id": "THEME-sunshine-garden-_world_map-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "sunshine-garden /world/map @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 240)"
+    },
+    {
+      "id": "THEME-sunshine-garden-_world_rewards-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "sunshine-garden /world/rewards @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 240)"
+    },
+    {
+      "id": "THEME-sunshine-garden-_world_missions-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "sunshine-garden /world/missions @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 240)"
+    },
+    {
+      "id": "THEME-sunshine-garden-_world_grammar-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "sunshine-garden /world/grammar @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 240)"
+    },
+    {
+      "id": "THEME-sunshine-garden-_world_reading-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "sunshine-garden /world/reading @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 240)"
+    },
+    {
+      "id": "THEME-sunshine-garden-_world_me-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "sunshine-garden /world/me @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 240)"
+    },
+    {
+      "id": "THEME-sunshine-garden-_parent-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "sunshine-garden /parent @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(255, 252, 240)"
+    },
+    {
+      "id": "THEME-twilight-magic-_-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "twilight-magic / @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(21, 17, 46)"
+    },
+    {
+      "id": "THEME-twilight-magic-_login-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "twilight-magic /login @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(21, 17, 46)"
+    },
+    {
+      "id": "THEME-twilight-magic-_signup-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "twilight-magic /signup @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(21, 17, 46)"
+    },
+    {
+      "id": "THEME-twilight-magic-_world-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "twilight-magic /world @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(21, 17, 46)"
+    },
+    {
+      "id": "THEME-twilight-magic-_world_look-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "twilight-magic /world/look @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(21, 17, 46)"
+    },
+    {
+      "id": "THEME-twilight-magic-_world_quest-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "twilight-magic /world/quest @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(21, 17, 46)"
+    },
+    {
+      "id": "THEME-twilight-magic-_world_map-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "twilight-magic /world/map @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(21, 17, 46)"
+    },
+    {
+      "id": "THEME-twilight-magic-_world_rewards-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "twilight-magic /world/rewards @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(21, 17, 46)"
+    },
+    {
+      "id": "THEME-twilight-magic-_world_missions-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "twilight-magic /world/missions @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(21, 17, 46)"
+    },
+    {
+      "id": "THEME-twilight-magic-_world_grammar-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "twilight-magic /world/grammar @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(21, 17, 46)"
+    },
+    {
+      "id": "THEME-twilight-magic-_world_reading-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "twilight-magic /world/reading @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(21, 17, 46)"
+    },
+    {
+      "id": "THEME-twilight-magic-_world_me-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "twilight-magic /world/me @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(21, 17, 46)"
+    },
+    {
+      "id": "THEME-twilight-magic-_parent-390",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "twilight-magic /parent @390px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(21, 17, 46)"
+    },
+    {
+      "id": "THEME-twilight-magic-_-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "twilight-magic / @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(21, 17, 46)"
+    },
+    {
+      "id": "THEME-twilight-magic-_login-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "twilight-magic /login @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(21, 17, 46)"
+    },
+    {
+      "id": "THEME-twilight-magic-_signup-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "twilight-magic /signup @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(21, 17, 46)"
+    },
+    {
+      "id": "THEME-twilight-magic-_world-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "twilight-magic /world @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(21, 17, 46)"
+    },
+    {
+      "id": "THEME-twilight-magic-_world_look-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "twilight-magic /world/look @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(21, 17, 46)"
+    },
+    {
+      "id": "THEME-twilight-magic-_world_quest-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "twilight-magic /world/quest @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(21, 17, 46)"
+    },
+    {
+      "id": "THEME-twilight-magic-_world_map-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "twilight-magic /world/map @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(21, 17, 46)"
+    },
+    {
+      "id": "THEME-twilight-magic-_world_rewards-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "twilight-magic /world/rewards @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(21, 17, 46)"
+    },
+    {
+      "id": "THEME-twilight-magic-_world_missions-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "twilight-magic /world/missions @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(21, 17, 46)"
+    },
+    {
+      "id": "THEME-twilight-magic-_world_grammar-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "twilight-magic /world/grammar @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(21, 17, 46)"
+    },
+    {
+      "id": "THEME-twilight-magic-_world_reading-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "twilight-magic /world/reading @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(21, 17, 46)"
+    },
+    {
+      "id": "THEME-twilight-magic-_world_me-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "twilight-magic /world/me @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(21, 17, 46)"
+    },
+    {
+      "id": "THEME-twilight-magic-_parent-1366",
+      "module": "Colour themes",
+      "severity": "High",
+      "scenario": "twilight-magic /parent @1366px: WCAG 2.2 AA (axe) incl. contrast",
+      "status": "PASS",
+      "actual": "bg rgb(21, 17, 46)"
+    }
+  ]
+}
