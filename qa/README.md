@@ -18,6 +18,7 @@ Start with **[PRODUCTION_READINESS_REPORT.md](PRODUCTION_READINESS_REPORT.md)**.
 | [BUG_REGISTER.md](BUG_REGISTER.md) / [defects.json](defects.json) | All defects, fixes and open items |
 | [REGRESSION_TEST_REPORT.md](REGRESSION_TEST_REPORT.md) | Post-fix regression runs |
 | [BEGINNER_LOCAL_SETUP.md](BEGINNER_LOCAL_SETUP.md) | First-time, step-by-step: install, run without Claude, check by hand and with the tests, then switch Claude on |
+| [WINDOWS_ZIP_SETUP.md](WINDOWS_ZIP_SETUP.md) | The same first-time steps for Windows, using the GitHub ZIP download instead of Git |
 | [LOCAL_TESTING_GUIDE.md](LOCAL_TESTING_GUIDE.md) | Step-by-step checks to run on your own machine: live Claude, Postgres/Supabase load, real devices, screen readers, e-mail, pen test, teacher and child reviews |
 | [results/test-execution-report.json](results/test-execution-report.json) | Machine-readable totals, defects by severity and release recommendation |
 
