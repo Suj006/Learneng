@@ -1,4 +1,5 @@
 "use client";
+import { coinPrice, CRYSTAL_TO_COINS } from "@/lib/economy";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -33,7 +34,7 @@ export function MissionCard({ m, compact = false }: { m: MissionData; compact?: 
         <p className="mt-1 text-sm text-vibe-lavender">{m.description}</p>
         <div className="mt-2 flex items-center gap-2"><Progress value={state.progress} max={m.target} className="h-2" label="Mission progress" /><span className="shrink-0 text-xs font-bold">{state.progress}/{m.target}</span></div>
         <div className="mt-2 flex flex-wrap items-center gap-2 text-xs">
-          <span className="text-vibe-lavender">Reward: ⚡{m.xp} 🪙{m.coins}{m.crystals ? ` 💎${m.crystals}` : ""}</span>
+          <span className="text-vibe-lavender">Reward: ⚡{m.xp} XP · 🪙{m.coins + m.crystals * CRYSTAL_TO_COINS}</span>
           {state.claimed ? <span className="chip text-vibe-mint-ink">✅ Claimed</span>
             : state.done ? <button onClick={claim} disabled={busy} aria-busy={busy} className="btn-sun btn-sm">{busy ? <><InlineSpinner /> Collecting…</> : err ? "Try again" : "Claim reward"}</button>
             : <Link href={m.href} className="btn-ghost btn-sm">Go →</Link>}

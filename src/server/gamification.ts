@@ -1,4 +1,5 @@
 import "server-only";
+import { CRYSTAL_TO_COINS } from "@/lib/economy";
 import { one, query, tx, type Queryable } from "./db";
 import { APP_TZ, addDays, todayKey } from "./time";
 import { evaluateUnlocks, type Unlock } from "./unlocks";
@@ -61,8 +62,9 @@ export async function award(
       [childId, APP_TZ, today])).rows[0].n;
     const xp = Math.max(0, Math.min(a.xp, ceiling - earned));
     const restReminder = xp < a.xp;
-    const coins = restReminder && xp === 0 ? 0 : a.coins;
-    const crystals = a.crystals ?? 0;
+    // Crystals are retired from the child interface: any crystal reward is paid as VIBE COINS instead.
+    const coins = restReminder && xp === 0 ? 0 : a.coins + (a.crystals ?? 0) * CRYSTAL_TO_COINS;
+    const crystals = 0;
     const ins = await q.query(
       `insert into xp_transactions (child_id, amount, coins, crystals, reason, source, idempotency_key)
        values ($1,$2,$3,$4,$5,$6,$7) on conflict (idempotency_key) do nothing returning id`,

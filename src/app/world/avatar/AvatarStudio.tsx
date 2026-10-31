@@ -1,4 +1,5 @@
 "use client";
+import { coinPrice, CRYSTAL_TO_COINS } from "@/lib/economy";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
@@ -43,12 +44,12 @@ export function AvatarStudio({ initial, items, hairColors, pet }: { initial: Ful
                 className={`card min-w-0 break-words border-2 p-3 text-center transition sm:p-4 ${RARITY[i.rarity].ring} ${on ? "ring-2 ring-vibe-aqua" : ""} ${i.owned ? "hover:-translate-y-0.5" : "opacity-50"}`}>
                 <div className="text-4xl">{i.emoji}</div><div className="mt-1 text-sm font-bold">{i.title}</div>
                 <div className={`text-[11px] ${RARITY[i.rarity].text}`}>{RARITY[i.rarity].label}</div>
-                {!i.owned && <div className="mt-1 text-[11px]">{i.level_exclusive ? `🔒 Level ${i.min_level} reward` : `🔒 ${i.cost_coins ? `🪙${i.cost_coins}` : ""}${i.cost_crystals ? ` 💎${i.cost_crystals}` : ""}${i.min_level > 1 ? ` · Lv ${i.min_level}` : ""}`}</div>}
+                {!i.owned && <div className="mt-1 text-[11px]">{i.level_exclusive ? `🔒 Level ${i.min_level} reward` : `🔒 🪙${coinPrice(i.cost_coins, i.cost_crystals)}${i.min_level > 1 ? ` · Lv ${i.min_level}` : ""}`}</div>}
               </button>
             );
           })}
         </div>
-        <p className="mt-4 text-sm text-vibe-lavender">Locked items can be unlocked in the <Link href="/world/rewards" className="text-vibe-aqua-ink underline">Reward Shop</Link> with coins and crystals you earn by learning.</p>
+        <p className="mt-4 text-sm text-vibe-lavender">Locked items can be unlocked in the <Link href="/world/rewards" className="text-vibe-aqua-ink underline">Reward Shop</Link> with VIBE COINS you earn by learning.</p>
       </div>
     </div>
   );

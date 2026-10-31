@@ -49,7 +49,6 @@ export function WorldHeader({ d }: { d: HeaderData }) {
           </div>
           <div className="flex items-center gap-1.5 text-sm font-bold sm:gap-2">
             <Link href="/world/rewards" className="chip bg-vibe-sun/15 text-vibe-sun-ink hover:bg-vibe-sun/25" title="Vibe Coins — open the Reward Shop" aria-label={`${d.coins} Vibe Coins. Open the Reward Shop`}>🪙 {d.coins}</Link>
-            <span className="chip hidden bg-vibe-aqua/15 text-vibe-aqua-ink sm:inline-flex" title="Magic Crystals">💎 {d.crystals}</span>
             <span className="chip hidden bg-vibe-coral/15 text-vibe-coral-ink sm:inline-flex" title="Learning rhythm (rest days don't break it)">🔥 {d.rhythm}</span>
             <AudioControls />
             <button onClick={openBell} className="relative rounded-full p-2 hover:bg-glass/10" aria-label={`Notifications${unread ? `, ${unread} new` : ""}`}>

@@ -1,4 +1,5 @@
 "use client";
+import { coinPrice, CRYSTAL_TO_COINS } from "@/lib/economy";
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -43,7 +44,7 @@ export function KingdomView({ k, level }: { k: { title: string; emoji: string; a
           <span className="text-4xl">{icon(sel)}</span>
           <div className="flex-1">
             <b className="font-display text-lg">{sel.hidden ? "A hidden place…" : sel.title}</b>
-            <p className="text-sm text-vibe-lavender">{sel.open ? (sel.kind === "treasure" ? (sel.claimed ? "You already opened this treasure." : `Contains 🪙${sel.reward_coins} and 💎${sel.reward_crystals}!`) : sel.kind === "boss" ? (sel.defeated ? "Boss defeated! Replay on a harder difficulty anytime." : "A boss battle awaits!") : "Open — go explore!") : `To unlock: ${sel.unlock_label} (${sel.progress}/${sel.unlock_target})`}</p>
+            <p className="text-sm text-vibe-lavender">{sel.open ? (sel.kind === "treasure" ? (sel.claimed ? "You already opened this treasure." : `Contains 🪙 ${sel.reward_coins + sel.reward_crystals * CRYSTAL_TO_COINS} VIBE COINS!`) : sel.kind === "boss" ? (sel.defeated ? "Boss defeated! Replay on a harder difficulty anytime." : "A boss battle awaits!") : "Open — go explore!") : `To unlock: ${sel.unlock_label} (${sel.progress}/${sel.unlock_target})`}</p>
             {!sel.open && <Progress value={sel.progress} max={sel.unlock_target} className="mt-2 h-2 max-w-xs" />}
             {sel.kind === "boss" && sel.bossLevel && level < sel.bossLevel && <p className="text-sm text-vibe-sun-ink">Reach Level {sel.bossLevel} to battle.</p>}
           </div>

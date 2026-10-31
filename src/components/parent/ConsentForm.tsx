@@ -30,10 +30,10 @@ export function ConsentForm({ child }: { child: { id: string; name: string } }) 
       <div className="card p-6">
         <CharacterSays who="max" mood="celebrating">{child.name}'s account is ready!</CharacterSays>
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
-          <div className="glass p-4"><div className="text-xs uppercase text-vibe-lavender">Explorer name</div><div className="font-display text-2xl font-bold text-vibe-sun-ink" data-testid="explorer-name">{done}</div></div>
+          <div className="glass p-4"><div className="text-xs uppercase text-vibe-lavender">Login name</div><div className="font-display text-2xl font-bold text-vibe-sun-ink" data-testid="explorer-name">{done}</div></div>
           <div className="glass p-4"><div className="text-xs uppercase text-vibe-lavender">Secret PIN</div><div className="font-display text-2xl font-bold">The 6 digits you chose</div></div>
         </div>
-        <p className="mt-3 text-sm text-vibe-lavender">Write these down for {child.name}. The Explorer name never contains their real name, for privacy. You can reset the PIN anytime.</p>
+        <p className="mt-3 text-sm text-vibe-lavender">Write these down for {child.name}. The login name is only for signing in and never contains their real name, for privacy. Inside PING VIBE we always greet {child.name} by name. You can reset the PIN anytime.</p>
         <div className="mt-5 flex flex-wrap gap-3"><button onClick={launch} className="btn-primary">Hand the device to {child.name} 🚀</button><button onClick={() => { router.push("/parent"); router.refresh(); }} className="btn-ghost">Go to parent dashboard</button></div>
       </div>
     );

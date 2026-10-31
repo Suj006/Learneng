@@ -43,8 +43,8 @@ export function LoginForm({ initialTab = "child" }: { initialTab?: "child" | "pa
       <form onSubmit={submit} className="space-y-4">
         {tab === "child" ? (
           <>
-            <div className="flex items-center gap-3"><Character name="lexi" mood="welcome" size={80} still /><p className="font-display text-lg">Welcome back, Explorer! Type your Explorer name and secret PIN.</p></div>
-            <div><label className="label" htmlFor="username">Explorer name</label><input id="username" className="input text-lg" value={username} onChange={(e) => setUsername(e.target.value)} autoCapitalize="none" autoComplete="username" placeholder="e.g. cosmiclexi427" /></div>
+            <div className="flex items-center gap-3"><Character name="lexi" mood="welcome" size={80} still /><p className="font-display text-lg">Welcome back! Type your login name and secret PIN.</p></div>
+            <div><label className="label" htmlFor="username">Login name</label><input id="username" className="input text-lg" value={username} onChange={(e) => setUsername(e.target.value)} autoCapitalize="none" autoComplete="username" placeholder="e.g. cosmiclexi427" /></div>
             <div>
               <label className="label" htmlFor="pin">Secret PIN (6 numbers)</label>
               <input id="pin" className="input text-center text-2xl tracking-[0.6em]" value={pin} onChange={(e) => setPin(e.target.value.replace(/\D/g, "").slice(0, 6))} inputMode="numeric" type="password" autoComplete="current-password" placeholder="••••••" />

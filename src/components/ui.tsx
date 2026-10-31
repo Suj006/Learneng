@@ -131,7 +131,7 @@ export function Portal({ children }: { children: React.ReactNode }) {
  */
 export function Celebration({ award, title, message, who = "max", onClose, celebration = "confetti", cta, reward, balance, sound }: {
   award?: AwardLike | null; title: string; message?: React.ReactNode; who?: CharacterName; onClose: () => void; celebration?: string; cta?: { href: string; label: string };
-  reward?: RewardInfo; balance?: { coins: number; crystals: number }; sound?: "treasure" | "unlock" | "complete" | "celebrate";
+  reward?: RewardInfo; balance?: { coins: number }; sound?: "treasure" | "unlock" | "complete" | "celebrate";
 }) {
   const level = award?.levelUp;
   const badges = award?.achievements?.length ?? 0;
@@ -169,15 +169,15 @@ export function Celebration({ award, title, message, who = "max", onClose, celeb
           {message && <div className="mt-2 text-vibe-lavender">{message}</div>}
           {award && (award.xp || award.coins || award.crystals) ? (
             <div className="mt-4 flex flex-wrap justify-center gap-2">
-              {!!award.xp && <span className="chip bg-vibe-purple/15 text-base text-vibe-purple-ink">⚡ +{award.xp} XP</span>}
-              {!!award.coins && <span className="chip bg-vibe-sun/20 text-base text-vibe-sun-ink">🪙 +{award.coins}</span>}
-              {!!award.crystals && <span className="chip bg-vibe-aqua/20 text-base text-vibe-aqua-ink">💎 +{award.crystals}</span>}
+              {!!award.xp && <span className="chip bg-vibe-purple/15 text-base text-vibe-purple-ink" title="XP = Your learning progress">⚡ +{award.xp} XP</span>}
+              {!!award.coins && <span className="chip bg-vibe-sun/20 text-base text-vibe-sun-ink" title="VIBE COINS = Your reward shopping power">🪙 +{award.coins} VIBE COINS</span>}
             </div>
           ) : null}
           {reward?.cost && (reward.cost.coins || reward.cost.crystals) ? (
             <p className="mt-3 text-sm text-vibe-lavender">Spent {reward.cost.coins ? `🪙 ${reward.cost.coins}` : ""}{reward.cost.crystals ? ` 💎 ${reward.cost.crystals}` : ""}</p>
           ) : null}
-          {balance && <p className="mt-1 text-sm font-semibold">Your treasure now: <span className="text-vibe-sun-ink">🪙 {balance.coins}</span> · <span className="text-vibe-aqua-ink">💎 {balance.crystals}</span></p>}
+          {balance && <p className="mt-1 text-sm font-semibold">Your VIBE COINS now: <span className="text-vibe-sun-ink">🪙 {balance.coins}</span></p>}
+          {award && !award.duplicate && (award.xp || award.coins) ? <p className="mt-2 text-sm font-semibold">MAX: “Awesome! You earned {[award.xp ? `${award.xp} XP` : "", award.coins ? `${award.coins} VIBE COINS` : ""].filter(Boolean).join(" and ")}!”</p> : null}
           {award?.duplicate && <p className="mt-3 text-sm text-vibe-lavender">Rewards for this were already collected — great practice!</p>}
           {award?.capped && <p className="mt-3 text-sm text-vibe-lavender">You've collected today's rewards for this activity. Practising still makes you stronger! 💪</p>}
           {award?.restReminder && <p className="mt-3 rounded-2xl bg-vibe-mint/15 p-3 text-sm text-vibe-mint-ink">🌿 You've learned SO much today! Time to rest your eyes, play outside or read a book. See you tomorrow!</p>}

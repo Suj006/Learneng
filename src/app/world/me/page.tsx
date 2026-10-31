@@ -24,12 +24,12 @@ export default async function Me() {
         <Avatar look={w.avatar} art={w.art} size={180} pet={w.pet?.emoji} />
         <div>
           <h2 className="title-lg">{child.display_name}</h2>
-          <p className="text-vibe-lavender">{gradeLabel(child.grade)} · Explorer name: <b className="text-ink">{child.username}</b></p>
+          <p className="text-vibe-lavender">{gradeLabel(child.grade)} · Login name: <b className="text-ink">{child.username}</b></p>
           <p className="mt-3 font-display text-xl text-vibe-sun-ink">Level {w.level.level_id}: {w.level.name}</p>
           <Progress value={w.level.pct} className="mt-2 max-w-md" />
           <p className="mt-1 text-sm text-vibe-lavender">{w.level.next_xp ? `${(w.level.next_xp - w.level.xp_total).toLocaleString()} XP to Level ${w.level.next_id}` : "Max level reached!"}{w.level.next_words ? ` · needs ${w.level.next_words} mastered words (you have ${w.level.mastered})` : ""}</p>
           <div className="mt-4 flex flex-wrap gap-2">
-            <span className="chip">⚡ {w.level.xp_total.toLocaleString()} XP</span><span className="chip">🪙 {w.level.coins}</span><span className="chip">💎 {w.crystals}</span>
+            <span className="chip" title="XP = Your learning progress">⚡ {w.level.xp_total.toLocaleString()} XP</span><span className="chip" title="VIBE COINS = Your reward shopping power">🪙 {w.level.coins} VIBE COINS</span>
             <span className="chip">📅 {w.learningDays} learning days</span><span className="chip">🔥 rhythm {w.streak.current}</span><span className="chip">🗝️ {v.discovered} words · 👑 {v.mastered} mastered</span>
           </div>
         </div>

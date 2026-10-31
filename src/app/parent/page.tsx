@@ -25,7 +25,7 @@ export default async function ParentHome() {
         {reports.map(({ k, r, skills }) => (
           <article key={k.id} className="card p-6">
             <div className="flex flex-wrap items-start justify-between gap-3">
-              <div><h2 className="title-md">{k.display_name}</h2><p className="text-sm text-vibe-lavender">{gradeLabel(k.grade)} · Explorer name: <b className="text-ink">{k.username}</b></p></div>
+              <div><h2 className="title-md">{k.display_name}</h2><p className="text-sm text-vibe-lavender">{gradeLabel(k.grade)} · Login name: <b className="text-ink">{k.username}</b></p></div>
               <span className="chip text-vibe-sun-ink">Level {r.level_id} · {r.level_name}</span>
             </div>
             <p className="mt-4 rounded-2xl bg-glass/5 p-4 text-sm leading-relaxed">📖 <b>Weekly Learning Story:</b> {weeklyStory(k.display_name, r)}</p>

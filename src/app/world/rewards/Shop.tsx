@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { api } from "@/lib/client";
+import { coinPrice } from "@/lib/economy";
 import { Celebration, ErrorNote, InlineSpinner, RarityBadge, RARITY } from "@/components/ui";
 
 type Item = { slug: string; title: string; category: string; emoji: string; rarity: string; description: string; cost_coins: number; cost_crystals: number; min_level: number; level_exclusive: boolean; owned: boolean };
@@ -30,7 +31,7 @@ export function Shop({ items, wallet, equipped }: { items: Item[]; wallet: { coi
   const list = items.filter((i) => cat === "all" || i.category === cat);
   return (
     <div>
-      <div className="mb-4 flex flex-wrap gap-2"><span className="chip bg-vibe-sun/15 text-base text-vibe-sun-ink">🪙 {wallet.coins} Vibe Coins</span><span className="chip bg-vibe-aqua/15 text-base text-vibe-aqua-ink">💎 {wallet.crystals} Magic Crystals</span><span className="chip text-base">⭐ Level {wallet.level}</span></div>
+      <div className="mb-4 flex flex-wrap gap-2"><span className="chip bg-vibe-sun/15 text-base text-vibe-sun-ink" title="VIBE COINS = Your reward shopping power">🪙 {wallet.coins} VIBE COINS</span><span className="chip text-base">⭐ Level {wallet.level}</span></div>
       <div className="row-scroll">{CATS.map(([k, l]) => <button key={k} onClick={() => setCat(k)} className={`btn btn-sm shrink-0 ${cat === k ? "bg-vibe-cta text-white" : "btn-ghost"}`}>{l}</button>)}</div>
       <div aria-live="polite"><ErrorNote error={err} /></div>
       <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
@@ -46,14 +47,14 @@ export function Shop({ items, wallet, equipped }: { items: Item[]; wallet: { coi
                 equippable ? <button disabled={isOn || busy === i.slug} aria-busy={busy === i.slug} className="btn-ghost btn-sm mt-3" onClick={() => equip(i)}>{isOn ? "In use ✅" : busy === i.slug ? <InlineSpinner /> : "Use"}</button> : <span className="chip mt-3 justify-center text-vibe-mint-ink">Owned ✅</span>
               ) : i.level_exclusive ? <span className="chip mt-3 justify-center">🔒 Reach Level {i.min_level}</span>
                 : <button disabled={locked || !!busy} aria-busy={busy === i.slug} aria-label={locked ? undefined : `Unlock ${i.title}`} className="btn-sun btn-sm mt-3" onClick={() => redeem(i)}>
-                    {locked ? `🔒 Level ${i.min_level}` : busy === i.slug ? <><InlineSpinner /> Unlocking…</> : <>{i.cost_coins ? `🪙 ${i.cost_coins}` : ""}{i.cost_crystals ? ` 💎 ${i.cost_crystals}` : ""}</>}
+                    {locked ? `🔒 Level ${i.min_level}` : busy === i.slug ? <><InlineSpinner /> Unlocking…</> : <>🪙 {coinPrice(i.cost_coins, i.cost_crystals)}</>}
                   </button>}
             </article>
           );
         })}
       </div>
-      {got && <Celebration title="Unlocked!" reward={{ emoji: got.item.emoji, title: got.item.title, category: catLabel(got.item.category), cost: { coins: got.item.cost_coins, crystals: got.item.cost_crystals } }}
-        balance={{ coins: got.coins, crystals: got.crystals }} message={got.item.category === "buddy" || got.item.category === "theme" ? "Tap “Use” to switch it on!" : "Find it in your Avatar Studio or your World."}
+      {got && <Celebration title="Unlocked!" reward={{ emoji: got.item.emoji, title: got.item.title, category: catLabel(got.item.category), cost: { coins: coinPrice(got.item.cost_coins, got.item.cost_crystals) } }}
+        balance={{ coins: got.coins }} message={got.item.category === "buddy" || got.item.category === "theme" ? "Tap “Use” to switch it on!" : "Find it in your Avatar Studio or your World."}
         cta={{ href: "/world/avatar", label: "🎨 Avatar Studio" }} onClose={() => { setGot(null); router.refresh(); }} />}
     </div>
   );

@@ -27,7 +27,7 @@ const UNIVERSE: { title: string; scene: SceneName; who: CharacterName; text: str
 const REWARDS = [
   ["⚡", "XP & 250 levels", "From Word Explorer to Grand English Champion."],
   ["🪙", "Vibe Coins", "Earned by learning — spend them on avatar styles and decorations."],
-  ["💎", "Magic Crystals", "Rare treasures from boss battles and big milestones."],
+  ["🪙", "VIBE COINS", "Your reward shopping power: unlock outfits, pets and more."],
   ["🐉", "Magical pets", "Unlock a dragon, unicorn or phoenix by reaching learning goals."],
   ["🃏", "Collectible cards", "Every mastered word becomes a card in your collection book."],
   ["🏰", "Your own world", "Build a treehouse, library and castle as you learn."],
