@@ -98,12 +98,14 @@ notepad .env.local
 Notepad opens the file.
 
 1. **Leave these two lines empty for now:** `ANTHROPIC_API_KEY=` and `PINGVIBE_ANTHROPIC_API_KEY=`.
-2. Scroll to the **very bottom** and add these two lines (for testing on your PC only, never on the live site):
+2. Scroll to the **very bottom**, to the section `# ── QA / staging only ──`. It already has two empty lines. Type the values straight after the `=` signs, with no spaces, so they read exactly:
 
    ```
    EMAIL_TRANSPORT=dev-mailbox
    IP_RATE_LIMIT_MULTIPLIER=100
    ```
+
+   These are for testing on your own computer only; never set them on the live website.
 
 3. Press **Ctrl + S** to save, then close Notepad.
 
