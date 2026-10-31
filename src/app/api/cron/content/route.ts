@@ -12,7 +12,7 @@ export const maxDuration = 300;
  */
 export async function GET(req: NextRequest) {
   if (!cronAuthorized(req)) return unauthorized();
-  if (!aiEnabled()) return NextResponse.json({ skipped: "no ANTHROPIC_API_KEY" });
+  if (!aiEnabled()) return NextResponse.json({ skipped: "no AI key (ANTHROPIC_API_KEY / PINGVIBE_ANTHROPIC_API_KEY)" });
   const pending = (await one<{ n: number }>(`select count(*)::int n from content_library where status = 'pending'`))!.n;
   if (pending > 200) return NextResponse.json({ skipped: "review queue already large", pending });
   const low = Array.from(new Set((await coverage()).filter((c) => c.vocabDays < 60).map((c) => c.band)));

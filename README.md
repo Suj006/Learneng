@@ -188,6 +188,7 @@ See `.env.example`.
 | `SESSION_SECRET` | Long random string |
 | `APP_URL` | Public URL used in e-mails |
 | `ANTHROPIC_API_KEY`, `AI_MODEL` | Claude (server-side only). Default model `claude-opus-5-5` |
+| `PINGVIBE_ANTHROPIC_API_KEY` | Same key under a different name, for hosts that reserve `ANTHROPIC_API_KEY` (such as Claude Code cloud environments). Used first when set |
 | `RESEND_API_KEY`, `EMAIL_FROM` | E-mail delivery. Required in production |
 | `ADMIN_EMAIL`, `ADMIN_PASSWORD` | Bootstrap administrator (only when none exists) |
 | `CRON_SECRET` | Bearer token for `/api/cron/*` |

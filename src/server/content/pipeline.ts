@@ -29,7 +29,7 @@ async function ask<T>(schema: z.ZodType<T>, prompt: string): Promise<T> {
 
 /** Generates a batch into content_library (status pending / auto-rejected). Nothing reaches children until an admin publishes it. */
 export async function runGeneration(kind: GenKind, band: number, opts: { category?: string; topic?: string; count?: number; requestedBy?: string }) {
-  if (!aiEnabled()) throw new Error("AI generation needs ANTHROPIC_API_KEY on the server.");
+  if (!aiEnabled()) throw new Error("AI generation needs ANTHROPIC_API_KEY (or PINGVIBE_ANTHROPIC_API_KEY) on the server.");
   const job = (await one<{ id: string }>(`insert into content_generation_jobs (kind, band, params, requested_by) values ($1,$2,$3,$4) returning id`,
     [kind, band, JSON.stringify(opts), opts.requestedBy ?? "admin"]))!;
   const n = Math.max(1, Math.min(10, opts.count ?? 5));

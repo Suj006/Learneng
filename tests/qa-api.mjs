@@ -2,6 +2,8 @@
 // Run against a dev server (needs /dev/mailbox):  node tests/qa-api.mjs [baseUrl]
 // Writes qa/results/qa-api.json. Synthetic data only.
 import fs from "node:fs";
+// The server under test must be started with the same key variable for the live AI checks.
+const AI_KEY = process.env.PINGVIBE_ANTHROPIC_API_KEY || process.env.ANTHROPIC_API_KEY;
 import { BASE, client, makeFamily } from "./lib.mjs";
 
 const R = [];
@@ -170,7 +172,7 @@ const ev = await F.child.call("/api/writing/submit", { submissionId: d1.data.sub
 t("LRN-034", "Submission evaluated with score, corrections and encouragement", ev.status === 200 && ev.data.evaluation.score > 0 && ev.data.evaluation.corrections.length > 0 && ev.data.evaluation.encouragement);
 t("LRN-035", "Original vs corrected sentences provided", ev.data.evaluation.corrections[0].original !== ev.data.evaluation.corrections[0].corrected);
 t("LRN-036", "Resubmitting an evaluated piece is refused", (await F.child.call("/api/writing/submit", { submissionId: d1.data.submissionId, seconds: 1 })).status === 400);
-t("LRN-037", "Claude writing evaluation (real AI)", process.env.ANTHROPIC_API_KEY ? ev.data.evaluator === "claude" : null, "BLOCKED: ANTHROPIC_API_KEY not configured — offline evaluator used and labelled");
+t("LRN-037", "Claude writing evaluation (real AI)", AI_KEY ? ev.data.evaluator === "claude" : null, "BLOCKED: no AI key configured (ANTHROPIC_API_KEY / PINGVIBE_ANTHROPIC_API_KEY) — offline evaluator used and labelled");
 t("LRN-038", "Draft cannot be edited after evaluation", (await F.child.call("/api/writing/draft", { submissionId: d1.data.submissionId, kind: "topic", title: "x", content: "changed" })).status === 404);
 
 mod("Grammar Galaxy", "High");
@@ -223,7 +225,7 @@ t("LRN-080", "LEXI answers vocabulary question", lx.status === 200 && /big/i.tes
 t("LRN-081", "Phone number blocked", (await F.child.call("/api/companion", { question: "call me on 9876543210" })).data.source === "safety");
 t("LRN-082", "E-mail address blocked", (await F.child.call("/api/companion", { question: "my email is kid@x.com" })).data.source === "safety");
 t("LRN-083", "Unsafe topic redirected to a trusted adult", (await F.child.call("/api/companion", { question: "tell me about guns" })).data.source === "safety");
-t("LRN-084", "Real Claude companion response", process.env.ANTHROPIC_API_KEY ? lx.data.source === "claude" : null, "BLOCKED: ANTHROPIC_API_KEY not configured — dictionary mode verified instead");
+t("LRN-084", "Real Claude companion response", AI_KEY ? lx.data.source === "claude" : null, "BLOCKED: no AI key configured (ANTHROPIC_API_KEY / PINGVIBE_ANTHROPIC_API_KEY) — dictionary mode verified instead");
 
 // ───────────────────────── GAMIFICATION ─────────────────────────
 mod("XP, levels & economy", "High");
@@ -339,7 +341,7 @@ let published = false;
 for (const id of [qid, ...ids].filter(Boolean)) { const r = await A.call("/api/admin/review", { id, action: "publish" }); if (r.status === 200) { published = true; break; } }
 const vocabPage = await A.call("/admin/vocabulary?q=glisten");
 t("ADM-013", "Approve & publish → word live in vocabulary master", published && /glisten/.test(String(vocabPage.data)));
-t("ADM-014", "Gen endpoint without AI key returns clear error", process.env.ANTHROPIC_API_KEY ? null : (await A.call("/api/admin/generate", { kind: "vocabulary", band: 2, count: 2 })).status === 400);
+t("ADM-014", "Gen endpoint without AI key returns clear error", AI_KEY ? null : (await A.call("/api/admin/generate", { kind: "vocabulary", band: 2, count: 2 })).status === 400);
 t("ADM-015", "XP config update persists", (await A.call("/api/admin/xp", { rows: [{ key: "listening", xp: 45, coins: 8, crystals: 0, daily_cap: 3 }] })).status === 200 && /value="45"/.test(String((await A.call("/admin/economy")).data)));
 t("ADM-016", "Invalid XP config rejected", (await A.call("/api/admin/xp", { rows: [{ key: "listening", xp: -5, coins: 0, crystals: 0, daily_cap: 3 }] })).status === 400);
 t("ADM-017", "Daily XP ceiling update", (await A.call("/api/admin/settings", { daily_xp_ceiling: 1500 })).status === 200);
