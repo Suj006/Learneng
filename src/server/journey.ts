@@ -2,7 +2,7 @@ import "server-only";
 import { one, query } from "./db";
 import { addDays, todayKey } from "./time";
 import { bandForGrade } from "@/lib/grades";
-import { GRAMMAR_SEQUENCE, THEMES, type PlanActivity } from "./content/curriculum";
+import { GAME_ROTATION, GRAMMAR_SEQUENCE, THEMES, type PlanActivity } from "./content/curriculum";
 
 export const YEAR_DAYS = 365;
 export type ActivityType = PlanActivity["type"];
@@ -16,6 +16,51 @@ export interface Journey {
 }
 
 const CORE: ActivityType[] = ["vocabulary", "weekly_assessment"];
+
+/** Grade-wise mix of daily missions (brief: LX 5.0). "a|b" alternates by plan day so activities rotate. */
+const MIX: Record<string, string[]> = {
+  PRE_KG: ["vocabulary", "game|listening"], LKG: ["vocabulary", "game|listening"], UKG: ["vocabulary", "game|listening"], G1: ["vocabulary", "game|listening"],
+  G2: ["vocabulary", "grammar|sentence", "game"],
+  G3: ["vocabulary", "grammar", "reading|game"],
+  G4: ["vocabulary", "grammar", "reading|writing", "game"],
+  G5: ["vocabulary", "grammar", "writing", "reading|speaking"],
+  G6: ["vocabulary", "grammar", "writing", "reading", "speaking|game"],
+  G7: ["vocabulary", "grammar", "writing", "reading", "speaking|game"],
+};
+const MIX_BY_BAND: Record<number, string[]> = { 1: MIX.UKG, 2: MIX.G2, 3: MIX.G4, 4: MIX.G6 };
+const EXTRAS = ["reading", "game", "speaking", "listening", "revision"];
+
+/**
+ * The day's missions, fitted to the grade's daily mission count (admin-configurable in grade_config).
+ * New-word count also comes from grade_config. Every fitted mission is part of "today's plan".
+ */
+export async function dayActivities(grade: string, planDay: number): Promise<PlanActivity[]> {
+  const [plan, cfg] = await Promise.all([
+    one<{ activities: PlanActivity[] }>(`select activities from learning_plans where grade = $1 and day_number = $2`, [grade, planDay]),
+    one<{ daily_missions: number; new_words_per_day: number; band: number }>(`select daily_missions, new_words_per_day, band from grade_config where grade = $1`, [grade]),
+  ]);
+  const acts = plan?.activities ?? [];
+  const n = Math.max(1, cfg?.daily_missions ?? 3);
+  const words = cfg?.new_words_per_day ?? 5;
+  const band = cfg?.band ?? bandForGrade(grade);
+  // Weekly assessment day keeps its shape (assessment first), trimmed to the count.
+  if (acts.some((a) => a.type === "weekly_assessment")) return acts.slice(0, n);
+  const pick = (type: string): PlanActivity => {
+    switch (type) {
+      case "vocabulary": return { type: "vocabulary", count: words };
+      case "game": return { type: "game", slug: (acts.find((a) => a.type === "game") as { slug: string } | undefined)?.slug ?? GAME_ROTATION[planDay % GAME_ROTATION.length] };
+      case "grammar": { const seq = GRAMMAR_SEQUENCE[band]; return { type: "grammar", topic: (acts.find((a) => a.type === "grammar") as { topic: string } | undefined)?.topic ?? seq[planDay % seq.length] }; }
+      case "writing": return { type: "writing", category: (acts.find((a) => a.type === "writing") as { category: string } | undefined)?.category ?? THEMES[Math.floor(planDay / 7) % THEMES.length].key };
+      default: return { type } as PlanActivity;
+    }
+  };
+  const mix = (MIX[grade] ?? MIX_BY_BAND[band]).map((m) => { const o = m.split("|"); return o[planDay % o.length]; });
+  for (const e of EXTRAS) if (mix.length < n && !mix.includes(e)) mix.push(e);
+  const out = mix.slice(0, n).map(pick);
+  // Special days (championship, events) stay available as a bonus beyond the mandatory count.
+  for (const a of acts) if (a.type === "monthly_championship" || a.type === "special") out.push(a);
+  return out;
+}
 
 /** Skill bands adapt independently: vocabulary uses vocab_band; grammar/writing shift ±1 from grade by skill score. */
 export function skillBand(gradeBand: number, skill: number) {
@@ -56,15 +101,16 @@ export async function getJourney(childId: string, grade: string): Promise<Journe
 
   const planDay = ((day - 1) % YEAR_DAYS) + 1;
   const year = Math.ceil(day / YEAR_DAYS);
-  const plan = await one<{ theme: string; focus: string; difficulty: number; activities: PlanActivity[] }>(
-    `select theme, focus, difficulty, activities from learning_plans where grade = $1 and day_number = $2`, [grade, planDay]);
+  const plan = await one<{ theme: string; focus: string; difficulty: number }>(
+    `select theme, focus, difficulty from learning_plans where grade = $1 and day_number = $2`, [grade, planDay]);
   const theme = THEMES.find((t) => t.key === plan?.theme) ?? THEMES[0];
-  const activities = plan?.activities ?? [{ type: "vocabulary", count: 10 } as PlanActivity];
+  const activities = await dayActivities(grade, planDay);
   const items = await resolveActivities(childId, grade, activities, row.done, p.skill_grammar, p.skill_writing, theme.key);
   const vocab = activities.find((a) => a.type === "vocabulary") as { count: number } | undefined;
   return {
     day, planDay, year, theme, focus: plan?.focus ?? "Learning", difficulty: Math.min(10, (plan?.difficulty ?? 1) + (year - 1)),
-    items, completedToday: row.completed_on === today, dayComplete: Boolean(row.completed_on), welcomeBack, newWords: vocab?.count ?? 0,
+    // "Today's plan" is complete when every mandatory mission is done (bonus specials don't count).
+    items, completedToday: row.completed_on === today && items.filter((i) => i.core).every((i) => i.done), dayComplete: Boolean(row.completed_on), welcomeBack, newWords: vocab?.count ?? 0,
   };
 }
 
@@ -77,7 +123,7 @@ async function resolveActivities(childId: string, grade: string, acts: PlanActiv
   for (const a of acts) {
     seen[a.type] = (seen[a.type] ?? 0) + 1;
     const isDone = (doneCount[a.type] ?? 0) >= seen[a.type];
-    const core = CORE.includes(a.type);
+    const core = a.type !== "special" && a.type !== "monthly_championship";
     switch (a.type) {
       case "vocabulary": items.push({ type: a.type, core, done: isDone, emoji: "🗝️", title: "Daily Word Quest", detail: `${a.count} new words with LEXI`, href: "/world/quest" }); break;
       case "listening": items.push({ type: a.type, core, done: isDone, emoji: "🎧", title: "Listening Lab", detail: "Hear it, then pick it", href: "/world/listening" }); break;
@@ -130,8 +176,7 @@ export async function markActivity(childId: string, type: ActivityType) {
     `select p.journey_day, c.grade from child_profiles p join children c on c.id = p.child_id where p.child_id = $1`, [childId]);
   if (!p) return;
   const planDay = ((p.journey_day - 1) % YEAR_DAYS) + 1;
-  const plan = await one<{ activities: PlanActivity[] }>(`select activities from learning_plans where grade = $1 and day_number = $2`, [p.grade, planDay]);
-  const planned = (plan?.activities ?? []).filter((a) => a.type === type).length;
+  const planned = (await dayActivities(p.grade, planDay)).filter((a) => a.type === type).length;
   await query(`insert into child_plan_days (child_id, day_number, started_on) values ($1,$2,$3::date) on conflict do nothing`, [childId, p.journey_day, today]);
   if (planned) {
     await query(

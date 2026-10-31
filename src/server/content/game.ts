@@ -104,7 +104,7 @@ const M = (slug: string, scope: string, character: string, title: string, descri
   ({ slug, scope, character, title, description, metric, target, href, xp, coins, crystals, band_min, band_max });
 
 export const MISSIONS = [
-  M("d-discover", "daily", "lexi", "Discover new words", "Discover 10 new words in today's Daily Word Quest.", "words_discovered", 10, "/world/quest", 30, 10),
+  M("d-discover", "daily", "lexi", "Discover new words", "Discover 5 new words in today's Daily Word Quest.", "words_discovered", 5, "/world/quest", 30, 10),
   M("d-master-3", "daily", "lexi", "Master 3 words", "Answer revision questions until 3 words become MASTERED.", "words_mastered", 3, "/world/revision", 40, 10, 0, 2),
   M("d-revise", "daily", "lexi", "Revision Boost", "Finish one Revision Boost.", "revision_done", 1, "/world/revision", 20, 5),
   M("d-grammar", "daily", "grammy", "Grammar spark", "Complete one grammar challenge.", "grammar_missions", 1, "/world/grammar", 25, 8, 0, 2),

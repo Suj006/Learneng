@@ -67,8 +67,9 @@ async function chunks<T>(rows: T[], size: number, fn: (part: T[]) => Promise<unk
 
 export async function seed(db: Queryable) {
   await db.query(
-    `insert into grade_config (grade, label, band, new_words_per_day, sort_order)
-     select * from jsonb_to_recordset($1::jsonb) as x(grade text, label text, band smallint, new_words_per_day smallint, sort_order smallint)
+    `insert into grade_config (grade, label, band, new_words_per_day, sort_order, daily_missions, lx5_applied)
+     select grade, label, band, new_words_per_day, sort_order, daily_missions, true from jsonb_to_recordset($1::jsonb)
+       as x(grade text, label text, band smallint, new_words_per_day smallint, sort_order smallint, daily_missions smallint)
      on conflict (grade) do nothing`,
     [j(GRADE_CONFIG)],
   );

@@ -9,7 +9,8 @@ export interface Word {
 }
 const WORD_COLS = `v.id, v.word, v.band, v.part_of_speech, v.phonetic, v.meaning, v.explanation, v.example, v.usage, v.synonyms, v.antonyms, v.emoji, v.difficulty`;
 
-export const NEW_WORDS_PER_DAY = 10;
+/** Default only — the real count comes from grade_config.new_words_per_day (5 for every grade by default). */
+export const NEW_WORDS_PER_DAY = 5;
 /** Leitner intervals in days, indexed by box. Box ≥ 4 = MASTERED (4 correct days, spaced). */
 const INTERVALS = [0, 1, 2, 4, 7, 14, 30];
 export const MASTERED_BOX = 4;
@@ -51,7 +52,7 @@ async function wordsByIds(ids: string[]): Promise<Word[]> {
   return ids.map((id) => byId.get(id)).filter(Boolean) as Word[];
 }
 
-/** Today's session: 10 never-seen words at the child's band (+ due revision words). Idempotent per day. */
+/** Today's session: the grade's count of never-seen words (5 by default) at the child's band (+ due revision words). Idempotent per day. */
 export async function getOrCreateDailySession(childId: string, newCount = NEW_WORDS_PER_DAY) {
   const today = todayKey();
   let s = await one<{ id: string; new_word_ids: string[]; review_word_ids: string[]; completed_at: string | null; correct: number; attempted: number; cards_viewed: number }>(
@@ -109,7 +110,9 @@ async function distractors(word: Word, field: "meaning" | "word", n: number): Pr
 export async function buildQuestions(newWords: Word[], reviewWords: Word[]): Promise<Question[]> {
   const qs: Question[] = [];
   const w = shuffle(newWords);
-  const r1 = w.slice(0, 4), r2 = w.slice(4, 7), r3 = w.slice(7, 10);
+  // Rounds scale with the day's word count (5 by default): every new word appears in round 1 or 2.
+  const half = Math.ceil(w.length / 2);
+  const r1 = w.slice(0, half), r2 = w.slice(half), r3 = shuffle(newWords).slice(0, 3);
   for (const x of r1) {
     qs.push({ key: `${x.id}:meaning`, wordId: x.id, type: "meaning", round: 1, prompt: `What does “${x.word}” mean?`, speak: x.word,
       options: shuffle([x.meaning, ...(await distractors(x, "meaning", 3))]) });

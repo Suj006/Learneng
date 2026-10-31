@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { api, speak, startTimer } from "@/lib/client";
 import { Celebration, CharacterSays, ErrorNote, Progress, Spinner, type AwardLike } from "@/components/ui";
 import { cheer } from "@/lib/audio/lines";
+import { mistakeWords, spellingTip } from "@/lib/feedback";
 
 /** Records an answer and gives gentle sound (and now and then voice) feedback — one place for every game. */
 function pushResult<T extends { correct: boolean }>(arr: T[], r: T) { arr.push(r); cheer(r.correct); }
@@ -18,9 +19,31 @@ const shuffle = <T,>(a: T[]) => { const x = [...a]; for (let i = x.length - 1; i
 const tokenOf = (w: W) => (w.example.match(/[A-Za-z'-]+/g) ?? []).find((t) => t.toLowerCase().startsWith(w.word.toLowerCase().slice(0, Math.max(3, w.word.length - 2)))) ?? null;
 const opts = (w: W, all: W[], f: (x: W) => string, n = 3) => shuffle([f(w), ...shuffle(all.filter((x) => x.id !== w.id)).slice(0, n).map(f)]);
 
-function MCQ({ prompt, options, answer, onPick, emoji, sentence }: { prompt: string; options: string[]; answer: string; onPick: (ok: boolean) => void; emoji?: string; sentence?: string }) {
+/**
+ * Shown after a wrong answer in every game: the child's choice, the correct answer, a short explanation and an
+ * explicit Continue button. The game never moves on by itself after a mistake.
+ */
+export function MistakeReview({ chosen, correct, explain, band = 2, onContinue }: { chosen: string; correct: string; explain?: string; band?: number; onContinue: () => void }) {
+  const m = mistakeWords(band, correct);
+  return (
+    <div className="mt-5 rounded-3xl border-2 border-vibe-sun/50 bg-vibe-sun/10 p-4 text-left" role="status" aria-live="polite">
+      <p className="font-display text-lg font-bold">{m.title}</p>
+      <p className="mt-1">You chose: <span className="font-semibold text-vibe-coral-ink line-through">{chosen}</span></p>
+      <p>Correct answer: <span className="font-display text-lg font-bold text-vibe-mint-ink">✓ {correct}</span></p>
+      {explain && <p className="mt-1 text-sm text-vibe-lavender">{explain}</p>}
+      <p className="mt-2 text-sm"><b className="text-vibe-aqua-ink">LEXI:</b> {m.line}</p>
+      <div className="mt-3 flex flex-wrap gap-2">
+        <button className="btn-ghost btn-sm" onClick={() => speak(correct, { rate: 0.8 })}>🔊 Hear it</button>
+        <button className="btn-primary btn-sm" onClick={onContinue} autoFocus>Continue →</button>
+      </div>
+    </div>
+  );
+}
+
+function MCQ({ prompt, options, answer, onPick, emoji, sentence, explain, band = 2 }: { prompt: string; options: string[]; answer: string; onPick: (ok: boolean) => void; emoji?: string; sentence?: string; explain?: string; band?: number }) {
   const [picked, setPicked] = useState<string | null>(null);
   useEffect(() => setPicked(null), [prompt, sentence, emoji]);
+  const wrong = picked !== null && picked !== answer;
   return (
     <div>
       <p className="font-display text-2xl font-bold">{prompt}</p>
@@ -28,15 +51,21 @@ function MCQ({ prompt, options, answer, onPick, emoji, sentence }: { prompt: str
       {sentence && <p className="glass my-3 p-4 text-lg font-semibold">{sentence}</p>}
       <div className="mt-4 grid gap-3 sm:grid-cols-2">
         {options.map((o) => (
-          <button key={o} disabled={!!picked} onClick={() => { setPicked(o); setTimeout(() => onPick(o === answer), 650); }}
-            className={`rounded-2xl border p-4 text-left font-semibold transition ${picked ? (o === answer ? "border-vibe-mint bg-vibe-mint/20" : o === picked ? "border-vibe-coral bg-vibe-coral/20" : "opacity-50") : "border-line/10 bg-glass/5 hover:bg-glass/10"}`}>{o}</button>
+          <button key={o} disabled={!!picked} onClick={() => { setPicked(o); if (o === answer) setTimeout(() => onPick(true), 650); }}
+            className={`rounded-2xl border p-4 text-left font-semibold transition ${picked ? (o === answer ? "border-vibe-mint bg-vibe-mint/20" : o === picked ? "border-vibe-coral bg-vibe-coral/20" : "opacity-50") : "border-line/10 bg-glass/5 hover:bg-glass/10"}`}>
+            {picked && o === answer ? "✓ " : picked && o === picked ? "✗ " : ""}{o}</button>
         ))}
       </div>
+      {wrong && <MistakeReview chosen={picked!} correct={answer} explain={explain} band={band} onContinue={() => onPick(false)} />}
     </div>
   );
 }
 
-function useRounds(words: W[], n: number) { return useMemo(() => shuffle(words).slice(0, Math.min(n, words.length)), [words, n]); }
+/**
+ * Picks a game's rounds ONCE per game. (Previously it re-shuffled whenever it received a new array; Word Detective
+ * passed a freshly filtered array on every render, so each letter guess silently swapped the secret word.)
+ */
+function useRounds(words: W[], n: number) { const [r] = useState(() => shuffle(words).slice(0, Math.min(n, words.length))); return r; }
 
 function SequenceGame({ words, onDone, n, render }: GameProps & { n: number; render: (w: W, done: (ok: boolean) => void) => React.ReactNode }) {
   const rounds = useRounds(words, n);
@@ -66,12 +95,14 @@ function PictureVocabulary({ words, band, onDone }: GameProps) {
   const w = rounds[i];
   const choices = useMemo(() => (w ? opts(w, words, (x) => x.word) : []), [w, words]);
   if (!w) return null;
+  const [chosen, setChosen] = useState<string | null>(null);
+  const advance = () => { setState("idle"); setDrag(null); setChosen(null); if (i + 1 < rounds.length) setI(i + 1); else onDone({ score: res.current.filter((r) => r.correct).length, max: rounds.length, results: res.current }); };
   const drop = (word: string) => {
     if (state !== "idle") return;
     const ok = word === w.word;
-    setState(ok ? "ok" : "no"); speak(w.word);
+    setState(ok ? "ok" : "no"); setChosen(word); speak(w.word);
     pushResult(res.current, { wordId: w.id, correct: ok });
-    setTimeout(() => { setState("idle"); setDrag(null); if (i + 1 < rounds.length) setI(i + 1); else onDone({ score: res.current.filter((r) => r.correct).length, max: rounds.length, results: res.current }); }, 900);
+    if (ok) setTimeout(advance, 900); // a mistake waits for Continue (MistakeReview)
   };
   return (
     <div>
@@ -87,12 +118,13 @@ function PictureVocabulary({ words, band, onDone }: GameProps) {
             className={`rounded-full border-2 px-5 py-3 font-display text-xl font-bold ${drag === c ? "border-vibe-aqua bg-vibe-aqua/30" : "border-line/20 bg-glass/10"}`}>{c}</button>
         ))}
       </div>
-      <p className="mt-4 text-center text-sm text-vibe-lavender">Tip: tap a word, then tap the picture.</p>
+      {state === "no" && chosen ? <MistakeReview chosen={chosen} correct={w.word} explain={`${w.emoji} ${w.word} means: ${w.meaning}`} band={band} onContinue={advance} />
+        : <p className="mt-4 text-center text-sm text-vibe-lavender">Tip: tap a word, then tap the picture.</p>}
     </div>
   );
 }
 
-function SpellMaster({ words, onDone }: GameProps) {
+function SpellMaster({ words, band, onDone }: GameProps) {
   const rounds = useRounds(words, 6);
   const [i, setI] = useState(0);
   const [typed, setTyped] = useState("");
@@ -112,10 +144,11 @@ function SpellMaster({ words, onDone }: GameProps) {
       {hint && <p className="mt-2 font-display text-2xl tracking-[0.4em]">{w.word[0]}{"_".repeat(w.word.length - 1)}</p>}
       <form className="mx-auto mt-4 flex max-w-md gap-2" onSubmit={(e) => { e.preventDefault(); if (fb !== null) return next(); const ok = typed.trim().toLowerCase() === w.word.toLowerCase(); setFb(ok); pushResult(res.current, { wordId: w.id, correct: ok && !hint }); }}>
         <input className="input text-center text-2xl font-bold tracking-widest" value={typed} onChange={(e) => setTyped(e.target.value)} autoCapitalize="none" autoComplete="off" spellCheck={false} aria-label="Spell the word" disabled={fb !== null} />
-        <button className="btn-primary">{fb === null ? "Check" : "Next"}</button>
+        {fb !== false && <button className="btn-primary">{fb === null ? "Check" : "Next"}</button>}
       </form>
       {fb === null && !hint && <button className="mt-2 text-sm text-vibe-aqua-ink underline" onClick={() => setHint(true)}>Need a hint?</button>}
-      {fb !== null && <p className={`mt-3 font-bold ${fb ? "text-vibe-mint-ink" : "text-vibe-coral-ink"}`}>{fb ? "Spelled perfectly! ✨" : `It's spelled: ${w.word.toUpperCase().split("").join(" ")}`}</p>}
+      {fb === true && <p className="mt-3 font-bold text-vibe-mint-ink">Spelled perfectly! ✨</p>}
+      {fb === false && <MistakeReview chosen={typed || "(nothing typed)"} correct={w.word.toUpperCase()} explain={spellingTip(typed, w.word)} band={band} onContinue={next} />}
     </div>
   );
 }

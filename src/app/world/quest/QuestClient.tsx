@@ -122,7 +122,7 @@ export function QuestClient() {
   return (
     <div className="mx-auto max-w-2xl">
       <PageTitle title="Daily Word Quest" />
-      <CharacterSays who="lexi" mood="celebrating">Quest complete for today! Your new words are in your Vocabulary Notebook. Come back tomorrow for {data.newWords.length || 10} more!</CharacterSays>
+      <CharacterSays who="lexi" mood="celebrating">Quest complete for today! Your new words are in your Vocabulary Notebook. Come back tomorrow for {data.newWords.length || 5} more!</CharacterSays>
       <div className="mt-6 flex flex-wrap gap-3"><Link href="/world" className="btn-primary">Open the Surprise Box 🎁</Link><Link href="/world/arcade" className="btn-ghost">Play word games</Link><Link href="/world/notebook" className="btn-ghost">My notebook</Link></div>
       {result && <Celebration award={result.award} who="lexi" title="Daily Word Quest complete!" message={<>Accuracy: <b>{result.accuracy}%</b>{result.bandChange && result.bandChange.to > result.bandChange.from ? " · 🚀 Challenge unlocked: harder words tomorrow!" : ""}</>} onClose={() => { setResult(null); router.refresh(); }} />}
     </div>

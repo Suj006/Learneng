@@ -16,7 +16,7 @@ const STORY = [
 ];
 
 const UNIVERSE: { title: string; scene: SceneName; who: CharacterName; text: string; tag: string }[] = [
-  { title: "Daily Word Quest", scene: "forest", who: "lexi", text: "10 brand-new words every day — hear them, say them, use them, master them.", tag: "Vocabulary Forest" },
+  { title: "Daily Word Quest", scene: "forest", who: "lexi", text: "5 brand-new words every day — hear them, say them, use them, master them.", tag: "Vocabulary Forest" },
   { title: "Grammar Galaxy", scene: "galaxy", who: "grammy", text: "Blast off on grammar missions with GRAMMY the wizard.", tag: "14 missions + endless drills" },
   { title: "Creative Writing Studio", scene: "castle", who: "story", text: "Write about 1,300+ topics and get kind, instant feedback.", tag: "Storytelling Castle" },
   { title: "Speaking Arena", scene: "mountains", who: "speaky", text: "Listen, repeat and talk your way through real-life adventures.", tag: "Speaking Mountains" },
@@ -131,7 +131,7 @@ export default function Landing() {
       <section className="mx-auto grid max-w-7xl items-center gap-10 px-4 py-20 sm:px-6 lg:grid-cols-2">
         <div>
           <span className="chip text-vibe-aqua-ink">Daily Word Quest</span>
-          <h2 className="title-lg mt-3">10 new words a day. Truly mastered, not just seen.</h2>
+          <h2 className="title-lg mt-3">5 new words a day. Truly mastered, not just seen.</h2>
           <p className="mt-4 text-vibe-lavender">Each word comes alive with pronunciation, a kid-friendly meaning, examples and real-life use. Words move from <b className="text-ink">Discovered</b> to <b className="text-ink">Practising</b> to <b className="text-vibe-sun-ink">Mastered</b> only when your child shows they know them on different days — powered by spaced repetition.</p>
         </div>
         <div className="card relative overflow-hidden p-6">

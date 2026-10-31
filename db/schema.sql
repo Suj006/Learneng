@@ -800,3 +800,13 @@ create table if not exists color_themes (
 );
 alter table child_profiles add column if not exists color_theme text;
 alter table child_profiles add column if not exists motion text not null default 'full';
+
+-- Learning Experience 5.0 (31 Oct 2026): five new words a day and grade-wise daily mission counts (admin-configurable).
+alter table grade_config add column if not exists daily_missions smallint not null default 3;
+alter table grade_config add column if not exists lx5_applied boolean not null default false;
+update grade_config set new_words_per_day = 5,
+  daily_missions = case grade when 'PRE_KG' then 2 when 'LKG' then 2 when 'UKG' then 2 when 'G1' then 2 when 'G2' then 3 when 'G3' then 3
+                              when 'G4' then 4 when 'G5' then 4 when 'G6' then 5 when 'G7' then 5 else daily_missions end,
+  lx5_applied = true
+where not lx5_applied;
+update missions set target = 5, description = 'Discover 5 new words in today''s Daily Word Quest.' where slug = 'd-discover' and target = 10;

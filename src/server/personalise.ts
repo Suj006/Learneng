@@ -30,7 +30,7 @@ export async function recommend(childId: string): Promise<Recommendation[]> {
   const n = (k: string) => Number(s[k] ?? 0);
   const recs: Recommendation[] = [];
 
-  if (!n("quest_done")) recs.push({ module: "quest", title: "Today's 10 new words", reason: "I found 10 magical new words for you today!", href: "/world/quest", priority: 100, emoji: "🗝️", who: "lexi" });
+  if (!n("quest_done")) recs.push({ module: "quest", title: "Today's 5 new words", reason: "I found 5 magical new words for you today!", href: "/world/quest", priority: 100, emoji: "🗝️", who: "lexi" });
   if (n("spelling_n") >= 3 && n("spelling_acc") < 0.6)
     recs.push({ module: "spelling", title: "Spell Master", reason: "Some sneaky words love to hide their letters. Let's catch them in Spell Master!", href: "/world/arcade/spell-master", priority: 90, emoji: "🔤", who: "lexi" });
   if (n("sentence_n") >= 3 && n("sentence_acc") < 0.6 && n("meaning_acc") >= 0.7)

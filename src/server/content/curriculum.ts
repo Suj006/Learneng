@@ -7,16 +7,16 @@
  * which the adaptive engine fills per child with unseen content at run time.
  */
 export const GRADE_CONFIG = [
-  { grade: "PRE_KG", label: "Pre-KG", band: 1, new_words_per_day: 10, sort_order: 0 },
-  { grade: "LKG", label: "LKG", band: 1, new_words_per_day: 10, sort_order: 1 },
-  { grade: "UKG", label: "UKG", band: 1, new_words_per_day: 10, sort_order: 2 },
-  { grade: "G1", label: "Grade 1", band: 2, new_words_per_day: 10, sort_order: 3 },
-  { grade: "G2", label: "Grade 2", band: 2, new_words_per_day: 10, sort_order: 4 },
-  { grade: "G3", label: "Grade 3", band: 3, new_words_per_day: 10, sort_order: 5 },
-  { grade: "G4", label: "Grade 4", band: 3, new_words_per_day: 10, sort_order: 6 },
-  { grade: "G5", label: "Grade 5", band: 4, new_words_per_day: 10, sort_order: 7 },
-  { grade: "G6", label: "Grade 6", band: 4, new_words_per_day: 10, sort_order: 8 },
-  { grade: "G7", label: "Grade 7", band: 4, new_words_per_day: 10, sort_order: 9 },
+  { grade: "PRE_KG", label: "Pre-KG", band: 1, new_words_per_day: 5, daily_missions: 2, sort_order: 0 },
+  { grade: "LKG", label: "LKG", band: 1, new_words_per_day: 5, daily_missions: 2, sort_order: 1 },
+  { grade: "UKG", label: "UKG", band: 1, new_words_per_day: 5, daily_missions: 2, sort_order: 2 },
+  { grade: "G1", label: "Grade 1", band: 2, new_words_per_day: 5, daily_missions: 2, sort_order: 3 },
+  { grade: "G2", label: "Grade 2", band: 2, new_words_per_day: 5, daily_missions: 3, sort_order: 4 },
+  { grade: "G3", label: "Grade 3", band: 3, new_words_per_day: 5, daily_missions: 3, sort_order: 5 },
+  { grade: "G4", label: "Grade 4", band: 3, new_words_per_day: 5, daily_missions: 4, sort_order: 6 },
+  { grade: "G5", label: "Grade 5", band: 4, new_words_per_day: 5, daily_missions: 4, sort_order: 7 },
+  { grade: "G6", label: "Grade 6", band: 4, new_words_per_day: 5, daily_missions: 5, sort_order: 8 },
+  { grade: "G7", label: "Grade 7", band: 4, new_words_per_day: 5, daily_missions: 5, sort_order: 9 },
 ];
 
 /** 18 writing/theme categories (rotated weekly; the topic engine is not limited to these). */
@@ -49,7 +49,7 @@ export const GRAMMAR_SEQUENCE: Record<number, string[]> = {
   4: ["tenses", "subject-verb-agreement", "conjunctions", "adverbs", "active-passive", "direct-indirect", "punctuation", "sentence-construction", "prepositions", "articles"],
 };
 
-const GAME_ROTATION = ["word-match", "picture-vocabulary", "missing-word", "word-race", "spell-master", "sentence-builder", "word-detective", "word-hunter", "treasure-hunt", "boss-battle"];
+export const GAME_ROTATION = ["word-match", "picture-vocabulary", "missing-word", "word-race", "spell-master", "sentence-builder", "word-detective", "word-hunter", "treasure-hunt", "boss-battle"];
 
 export type PlanActivity =
   | { type: "vocabulary"; count: number }
@@ -95,7 +95,7 @@ export function buildPlans(grades = GRADE_CONFIG, days = 365): PlanSeed[] {
 }
 
 export const KINGDOMS = [
-  { slug: "vocabulary-forest", title: "Vocabulary Forest", emoji: "🌲", art: "forest", description: "Discover 10 new words every day with LEXI.", href: "/world/quest", unlock_level: 1 },
+  { slug: "vocabulary-forest", title: "Vocabulary Forest", emoji: "🌲", art: "forest", description: "Discover 5 new words every day with LEXI.", href: "/world/quest", unlock_level: 1 },
   { slug: "word-wizards-arena", title: "Word Wizards Arena", emoji: "🏟️", art: "arena", description: "Play 10 word games with words you know.", href: "/world/arcade", unlock_level: 1 },
   { slug: "storytelling-castle", title: "Storytelling Castle", emoji: "🏰", art: "castle", description: "Write, imagine and build stories with STORY.", href: "/world/writing", unlock_level: 1 },
   { slug: "reading-ocean", title: "Reading Ocean", emoji: "🌊", art: "ocean", description: "Dive into illustrated stories and quizzes.", href: "/world/reading", unlock_level: 1 },

@@ -11,7 +11,7 @@ import { audio } from "@/lib/audio/manager";
 import { applyAppearance } from "@/lib/theme/client";
 
 const CAST: { who: CharacterName; line: string }[] = [
-  { who: "lexi", line: "I'm LEXI! Every day I bring you 10 magical new words." },
+  { who: "lexi", line: "I'm LEXI! Every day I bring you 5 magical new words." },
   { who: "grammy", line: "I'm GRAMMY, the Grammar Wizard. Together we'll make sentences sparkle!" },
   { who: "speaky", line: "I'm SPEAKY! Let's make your voice strong and confident." },
   { who: "story", line: "I'm STORY! We'll read amazing tales and write your very own." },
@@ -31,7 +31,7 @@ export function Welcome({ name, kingdoms, themes }: { name: string; kingdoms: { 
     if (step === 1) say(CAST[cast].line, CAST[cast].who);
     if (step === 2) say("Six magical kingdoms are waiting! Learn, play and explore to unlock secret places and treasures.");
     if (step === 3) say("Pick your favourite colours! You can change them any time.", "story");
-    if (step === 4) say("Let's discover your first ten magical words!", "lexi");
+    if (step === 4) say("Let's discover your first five magical words!", "lexi");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step, cast]);
   async function start() {
@@ -101,7 +101,7 @@ export function Welcome({ name, kingdoms, themes }: { name: string; kingdoms: { 
         {step === 4 && (
           <motion.div key="s3" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="flex flex-col items-center">
             <div className="flex items-end"><Character name="lexi" mood="excited" size={160} /><Character name="max" mood="celebrating" size={180} /></div>
-            <h2 className="title-lg mt-4">Let's discover your first 10 magical words!</h2>
+            <h2 className="title-lg mt-4">Let's discover your first 5 magical words!</h2>
             <p className="mt-2 text-lg text-vibe-lavender">You'll get a welcome gift too 🎁</p>
             <button className="btn-sun mt-6 px-10 py-4 text-xl" onClick={start} disabled={busy}>{busy ? "Opening the portal…" : "Start my first adventure ✨"}</button>
           </motion.div>

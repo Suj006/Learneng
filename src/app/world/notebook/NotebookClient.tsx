@@ -21,7 +21,7 @@ export function NotebookClient() {
     (!q || w.word.includes(q.toLowerCase()) || w.meaning.toLowerCase().includes(q.toLowerCase())) &&
     (filter === "all" || (filter === "due" ? isDue(w) : filter === "favourite" ? w.favourite : w.status === filter))), [words, q, filter, today]);
   if (!words) return <Spinner />;
-  if (!words.length) return <div><CharacterSays who="lexi" mood="thinking">Your notebook is empty! Discover your first 10 words in the Daily Word Quest.</CharacterSays><Link href="/world/quest" className="btn-primary mt-4">Start the quest</Link></div>;
+  if (!words.length) return <div><CharacterSays who="lexi" mood="thinking">Your notebook is empty! Discover your first 5 words in the Daily Word Quest.</CharacterSays><Link href="/world/quest" className="btn-primary mt-4">Start the quest</Link></div>;
   const due = list.filter(isDue).map((w) => w.id).slice(0, 12);
   return (
     <div>

@@ -50,7 +50,7 @@ export async function platformAnalytics() {
     objectives: [
       { name: "Content availability", target: "365+ planned days per grade", actual: `${Math.min(...cov.map((c) => c.plans))} plan days (min across grades); fresh vocabulary runway ${Math.min(...cov.map((c) => c.vocabDays))}–${Math.max(...cov.map((c) => c.vocabDays))} days`, ok: cov.every((c) => c.plans >= 365) },
       { name: "Game progression", target: "250+ levels", actual: `${levelCount} levels`, ok: levelCount >= 250 },
-      { name: "Daily content", target: "10 new vocabulary words", actual: `${minWords}+ new words per learning day (configurable)`, ok: minWords >= 10 },
+      { name: "Daily content", target: "5 new vocabulary words", actual: `${minWords}+ new words per learning day (configurable)`, ok: minWords >= 5 },
       { name: "Learning variety", target: "Multiple formats per skill", actual: `${formats} game formats, 14 activity types, 7 drill types, 6 boss formats`, ok: true },
       { name: "Personalisation", target: "Independent skill-wise difficulty", actual: "Vocabulary band, grammar/writing/reading/speaking bands and 5-level difficulty labels adapt independently", ok: true },
     ],
