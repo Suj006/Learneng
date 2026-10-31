@@ -76,8 +76,8 @@ export function Adventure({ d }: { d: AdventureData }) {
     <div className="space-y-10">
       {/* HERO GREETING */}
       <section className="card relative overflow-hidden p-5 sm:p-8">
-        <div className="absolute inset-0 opacity-30"><Scene name="islands" /></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-vibe-midnight via-vibe-midnight/80 to-transparent" />
+        <div className="absolute inset-0 opacity-40"><Scene name="islands" /></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-vibe-midnight/95 via-vibe-midnight/75 to-vibe-midnight/20" />
         <div className="relative grid items-center gap-6 md:grid-cols-[auto_1fr_auto]">
           <div className="relative mx-auto">
             <Character name={mem?.who ?? d.buddy} mood={d.welcomeBack ? "encouraging" : d.journey.completedToday ? "celebrating" : "welcome"} size={150} />
@@ -96,6 +96,7 @@ export function Adventure({ d }: { d: AdventureData }) {
           <div className="hidden md:block"><Avatar look={d.avatar} art={d.art} size={130} pet={d.pet?.emoji} /></div>
         </div>
       </section>
+      <div className="-mt-4 flex justify-end"><Link href="/world/look" className="btn-ghost btn-sm">🎨 My look</Link></div>
 
       {d.welcomeBack && (
         <section className="glass flex flex-wrap items-center gap-4 p-5">

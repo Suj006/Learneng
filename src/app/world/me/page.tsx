@@ -19,7 +19,7 @@ export default async function Me() {
   const [w, v] = await Promise.all([worldContext(child), vocabCounts(child.id)]);
   return (
     <div>
-      <PageTitle title="My Profile" right={<LogoutButton to="/login" />} />
+      <PageTitle title="My Profile" right={<div className="flex flex-wrap gap-2"><Link href="/world/look" className="btn-ghost btn-sm">🎨 My PING VIBE Look</Link><LogoutButton to="/login" /></div>} />
       <section className="card grid items-center gap-6 p-6 md:grid-cols-[auto_1fr]">
         <Avatar look={w.avatar} art={w.art} size={180} pet={w.pet?.emoji} />
         <div>

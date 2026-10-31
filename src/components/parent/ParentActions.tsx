@@ -96,3 +96,24 @@ export function SettingsForm({ initial }: { initial: { reminders_enabled: boolea
     </div>
   );
 }
+
+/** Parent view of the child's look: shows the selected theme and lets the parent guide it. */
+export function AppearanceGuide({ childId, themes, current, motion }: { childId: string; themes: { slug: string; name: string }[]; current: string; motion: "full" | "calm" | "off" }) {
+  const [t, setT] = useState(current); const [m, setM] = useState(motion);
+  const [msg, setMsg] = useState<string | null>(null); const [err, setErr] = useState<string | null>(null);
+  const save = async (body: { theme?: string; motion?: string }) => {
+    setMsg(null); setErr(null);
+    try { await api(`/api/parent/children/${childId}/appearance`, { body }); setMsg("Saved ✅ It applies the next time your child opens PING VIBE."); } catch (x) { setErr((x as Error).message); }
+  };
+  return (
+    <div className="grid gap-3 sm:grid-cols-2">
+      <label className="block"><span className="label">Colour theme</span>
+        <select className="select" value={t} onChange={(e) => { setT(e.target.value); save({ theme: e.target.value }); }}>{themes.map((x) => <option key={x.slug} value={x.slug}>{x.name}</option>)}</select></label>
+      <label className="block"><span className="label">Animations</span>
+        <select className="select" value={m} onChange={(e) => { const v = e.target.value as typeof m; setM(v); save({ motion: v }); }}>
+          <option value="full">Full sparkle</option><option value="calm">Calm (no looping decorations)</option><option value="off">Still (no movement)</option>
+        </select></label>
+      <div className="sm:col-span-2" aria-live="polite">{msg && <p className="text-sm text-vibe-mint-ink">{msg}</p>}<ErrorNote error={err} /></div>
+    </div>
+  );
+}

@@ -49,6 +49,21 @@ export function AudioControls() {
       {open && (
         <div className="absolute right-0 top-full z-50 mt-2 w-[min(88vw,320px)] space-y-3 rounded-3xl border border-line/10 bg-vibe-midnight-2 p-4 text-left shadow-card" role="dialog" aria-label="Sound settings">
           <b className="font-display">🎵 Sounds</b>
+          <SoundSettings />
+          <a href="/world/look" className="block text-sm font-bold text-vibe-purple-ink underline">🎨 Change my colours</a>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/** All sound settings (music, effects, voices, captions, volumes). Used in the header panel and on My PING VIBE Look. */
+export function SoundSettings() {
+  useAudioState();
+  const p = audio.prefs; const pol = audio.policy;
+  const set = (patch: Partial<AudioPrefs>) => { audio.unlock(); audio.setPrefs(patch); };
+  return (
+    <div className="space-y-3">
           <Toggle label="Background music" on={p.musicOn && pol.musicAllowed} disabled={!pol.musicAllowed} note={!pol.musicAllowed ? "Switched off by your parent" : undefined} onChange={(v) => set({ musicOn: v })} />
           <Toggle label="Sound effects" on={p.sfxOn} onChange={(v) => { set({ sfxOn: v }); if (v) setTimeout(() => audio.sfx("coin"), 50); }} />
           <Toggle label="Character voices" on={p.voiceOn && pol.voicesAllowed} disabled={!pol.voicesAllowed} note={!pol.voicesAllowed ? "Switched off by your parent" : undefined} onChange={(v) => { set({ voiceOn: v }); if (v) void audio.say("lexi", "Hi! I'm LEXI. I'll talk to you on your adventure!"); }} />
@@ -60,8 +75,6 @@ export function AudioControls() {
             <Slider label="Effects volume" value={p.sfx} disabled={!p.sfxOn} onChange={(v) => { set({ sfx: v }); audio.sfx("tap"); }} />
           </div>
           <p className="text-xs text-vibe-lavender">Sounds are optional — every activity works with sound off.</p>
-        </div>
-      )}
     </div>
   );
 }

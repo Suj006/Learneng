@@ -71,6 +71,7 @@ async function journey() {
     for (let i = 0; i < 3; i++) await page.getByRole("button", { name: /Next buddy/ }).click();
     await page.getByRole("button", { name: /Show me the worlds/ }).click();
     await page.getByRole("button", { name: /Let's go/ }).click();
+    await page.getByRole("button", { name: "Skip" }).click(); // optional colour theme step
     await page.getByRole("button", { name: /Start my first adventure/ }).click();
     await page.waitForURL("**/world/quest");
     t("UI-J1-05", "Journey 1", "High", "Onboarding steps → first Daily Word Quest", true);

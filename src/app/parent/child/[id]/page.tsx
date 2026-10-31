@@ -5,7 +5,8 @@ import { annualJourney, childReport, improvementAreas, weeklyStory } from "@/ser
 import { skillProfile, skillTree } from "@/server/skills";
 import { timeline } from "@/server/world";
 import { bandForGrade, gradeLabel } from "@/lib/grades";
-import { ChildAdmin, FamilyChallenge } from "@/components/parent/ParentActions";
+import { ChildAdmin, FamilyChallenge, AppearanceGuide } from "@/components/parent/ParentActions";
+import { activeThemes, resolveTheme } from "@/server/themes";
 import { BackLink, Progress } from "@/components/ui";
 
 export const metadata = { title: "Child report" };
@@ -32,6 +33,7 @@ export default async function ChildReportPage({ params }: { params: Promise<{ id
   const { id } = await params;
   const p = await requireParent();
   const c = await one<{ id: string; display_name: string; grade: string; username: string }>(`select id, display_name, grade, username from children where id = $1 and parent_id = $2 and status = 'active'`, [id, p.id]);
+  const look = c ? await one<{ color_theme: string | null; motion: "full" | "calm" | "off" }>(`select color_theme, motion from child_profiles where child_id = $1`, [c.id]) : null;
   if (!c) notFound();
   const [r, j, skills, tree, tl, writing, words] = await Promise.all([
     childReport(c.id), annualJourney(c.id, c.grade), skillProfile(c.id), skillTree(c.id, bandForGrade(c.grade)), timeline(c.id),
@@ -83,6 +85,10 @@ export default async function ChildReportPage({ params }: { params: Promise<{ id
       </section>
 
       <section className="card p-6"><h2 className="title-md">👨‍👩‍👧 Family challenge</h2><div className="mt-3"><FamilyChallenge childId={c.id} words={words} /></div></section>
+      <section className="card p-6"><h2 className="title-md">🎨 {c.display_name}'s PING VIBE look</h2>
+        <p className="mt-1 text-sm text-vibe-lavender">Children choose their own colours in “My PING VIBE Look”. You can guide it here; it never affects learning progress.</p>
+        <div className="mt-3"><AppearanceGuide childId={c.id} themes={(await activeThemes()).map((t) => ({ slug: t.slug, name: `${t.emoji} ${t.name}` }))} current={await resolveTheme(look?.color_theme)} motion={look?.motion ?? "full"} /></div>
+      </section>
       <section className="card p-6"><h2 className="title-md">Account & privacy controls</h2><div className="mt-3"><ChildAdmin childId={c.id} name={c.display_name} /></div></section>
     </div>
   );

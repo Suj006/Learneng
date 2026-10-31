@@ -8,6 +8,7 @@ import { Burst } from "@/components/ui";
 import { BrandLogo } from "@/components/BrandLogo";
 import { api } from "@/lib/client";
 import { audio } from "@/lib/audio/manager";
+import { applyAppearance } from "@/lib/theme/client";
 
 const CAST: { who: CharacterName; line: string }[] = [
   { who: "lexi", line: "I'm LEXI! Every day I bring you 10 magical new words." },
@@ -17,7 +18,7 @@ const CAST: { who: CharacterName; line: string }[] = [
 ];
 
 /** Play-based onboarding: character welcome → meet the buddies → kingdom tour → first adventure. */
-export function Welcome({ name, kingdoms }: { name: string; kingdoms: { slug: string; title: string; emoji: string; art: string; description: string }[] }) {
+export function Welcome({ name, kingdoms, themes }: { name: string; kingdoms: { slug: string; title: string; emoji: string; art: string; description: string }[]; themes: { slug: string; name: string; emoji: string; swatches: string[] }[] }) {
   const router = useRouter();
   const [step, setStep] = useState(0);
   const [cast, setCast] = useState(0);
@@ -29,7 +30,8 @@ export function Welcome({ name, kingdoms }: { name: string; kingdoms: { slug: st
   useEffect(() => {
     if (step === 1) say(CAST[cast].line, CAST[cast].who);
     if (step === 2) say("Six magical kingdoms are waiting! Learn, play and explore to unlock secret places and treasures.");
-    if (step === 3) say("Let's discover your first ten magical words!", "lexi");
+    if (step === 3) say("Pick your favourite colours! You can change them any time.", "story");
+    if (step === 4) say("Let's discover your first ten magical words!", "lexi");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [step, cast]);
   async function start() {
@@ -37,10 +39,12 @@ export function Welcome({ name, kingdoms }: { name: string; kingdoms: { slug: st
     try { const r = await api<{ redirect: string }>("/api/welcome", { body: {} }); router.push(r.redirect); router.refresh(); } catch { setBusy(false); }
   }
   const next = () => setStep((s) => s + 1);
+  const [look, setLook] = useState<string | null>(null);
+  const pickLook = (slug: string) => { setLook(slug); applyAppearance({ theme: slug }); api("/api/world/appearance", { body: { theme: slug } }).catch(() => {}); };
   return (
     <div className="relative mx-auto flex min-h-[70vh] max-w-4xl flex-col items-center justify-center text-center">
       <div className="absolute inset-0 -z-10 opacity-30"><Scene name="islands" /></div>
-      <div className="mb-6 flex gap-2" aria-hidden>{[0, 1, 2, 3].map((i) => <span key={i} className={`h-2 w-8 rounded-full ${i <= step ? "bg-vibe-sun" : "bg-glass/15"}`} />)}</div>
+      <div className="mb-6 flex gap-2" aria-hidden>{[0, 1, 2, 3, 4].map((i) => <span key={i} className={`h-2 w-8 rounded-full ${i <= step ? "bg-vibe-sun" : "bg-glass/15"}`} />)}</div>
       <AnimatePresence mode="wait">
         {step === 0 && (
           <motion.div key="s0" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, y: -20 }} className="flex flex-col items-center">
@@ -78,6 +82,23 @@ export function Welcome({ name, kingdoms }: { name: string; kingdoms: { slug: st
           </motion.div>
         )}
         {step === 3 && (
+          <motion.div key="s-look" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="w-full">
+            <h2 className="title-lg">Make PING VIBE your own!</h2>
+            <p className="mt-2 text-vibe-lavender">Choose your favourite adventure colours. You can change them any time in My PING VIBE Look.</p>
+            <div className="mx-auto mt-6 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-5" role="radiogroup" aria-label="Colour theme">
+              {themes.map((t) => (
+                <button key={t.slug} role="radio" aria-checked={look === t.slug} onClick={() => pickLook(t.slug)}
+                  className={`card flex flex-col items-center gap-2 p-3 transition ${look === t.slug ? "ring-4 ring-vibe-purple/60" : "hover:-translate-y-0.5"}`}>
+                  <span className="flex gap-1" aria-hidden>{t.swatches.map((c) => <span key={c} className="h-5 w-5 rounded-full" style={{ background: c }} />)}</span>
+                  <span className="font-display text-sm font-bold">{t.emoji} {t.name}</span>
+                  {look === t.slug && <span className="text-xs font-bold text-vibe-mint-ink">✓ Chosen</span>}
+                </button>
+              ))}
+            </div>
+            <div className="mt-8 flex justify-center gap-3"><button className="btn-ghost" onClick={next}>Skip</button><button className="btn-primary text-lg" onClick={next}>Looks great! →</button></div>
+          </motion.div>
+        )}
+        {step === 4 && (
           <motion.div key="s3" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="flex flex-col items-center">
             <div className="flex items-end"><Character name="lexi" mood="excited" size={160} /><Character name="max" mood="celebrating" size={180} /></div>
             <h2 className="title-lg mt-4">Let's discover your first 10 magical words!</h2>
