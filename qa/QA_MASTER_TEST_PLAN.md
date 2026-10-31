@@ -101,7 +101,7 @@
 - Lighthouse.
 - NVDA, VoiceOver or TalkBack screen-reader walkthroughs. Only automated axe checks and keyboard checks were run.
 - Load test on managed Postgres or Supabase.
-- Live Claude API: no key was available, so these are BLOCKED.
+- Live Claude API: executed on 31 Oct with `PINGVIBE_ANTHROPIC_API_KEY` (LRN-037, LRN-084 PASS). Larger-scale human review of AI feedback is still to do.
 - Live Resend e-mail delivery.
 - Third-party penetration test.
 - Teacher review of the content corpus.

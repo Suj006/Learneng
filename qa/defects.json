@@ -338,13 +338,25 @@
   {
     "id": "OPEN-003",
     "severity": "High",
-    "status": "Blocked",
+    "status": "Fixed",
     "area": "AI integration",
     "title": "Real Claude writing evaluation and companion not tested",
     "steps": "LRN-037, LRN-084",
     "expected": "Live AI responses validated",
-    "actual": "31 Oct: PINGVIBE_ANTHROPIC_API_KEY configured and used by the production build, but every Claude call is rejected (400 invalid_request_error: credit balance too low). LRN-037, LRN-084 and ADM-010 FAIL; offline fallbacks verified for all 10 grades (tests/ai-writing-grades.mjs).",
-    "fix": "Add credit to the key's Anthropic account, then re-run qa-api and ai-writing-grades on the production build",
+    "actual": "31 Oct 2026: first run with PINGVIBE_ANTHROPIC_API_KEY failed (Anthropic account credit balance too low; offline fallbacks labelled correctly, AI review gate failed closed). After credit was added: LRN-037, LRN-084, ADM-010 PASS on the production build; Claude evaluated all 10 grades in tests/ai-writing-grades.mjs.",
+    "fix": "Key configured as PINGVIBE_ANTHROPIC_API_KEY; account credit added; live suite re-run",
     "regression": "LRN-037, LRN-084, ADM-010, tests/ai-writing-grades.mjs"
+  },
+  {
+    "id": "OPEN-004",
+    "severity": "Low",
+    "status": "Open",
+    "area": "AI writing feedback",
+    "title": "improved_sample sometimes changes the kind of writing (opinion → story with invented character)",
+    "steps": "BASE_URL=… node tests/ai-writing-grades.mjs; read G6/G7 improved_sample in qa/results/ai-writing-grades.json",
+    "expected": "Improved sample keeps the child's own ideas, voice and type of writing",
+    "actual": "G6 and G7 opinion pieces rewritten as narratives featuring an invented character 'Riya'. G5: one explanation mentions 'would have' while the corrected sentence uses 'would go'.",
+    "fix": "Add a prompt rule in src/server/ai/writing.ts: keep the same type of writing, add no new characters, and make explanations match the correction; re-run and review",
+    "regression": "tests/ai-writing-grades.mjs (manual review)"
   }
 ]

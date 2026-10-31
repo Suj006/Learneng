@@ -6,9 +6,10 @@ Source of truth: `defects.json` (machine-readable). Severity scale:
 - **Medium:** degraded behaviour with a workaround.
 - **Low:** cosmetic or tooling.
 
-**Summary:** 29 entries.
+**Summary:** 30 entries.
 - 26 defects found and fixed: 1 Critical, 6 High, 10 Medium, 9 Low.
-- 2 open or blocked items: OPEN-001 Medium, OPEN-003 High (blocked).
+- 2 open items: OPEN-001 Medium, OPEN-004 Low.
+- Closed: OPEN-003 (live Claude untested). LRN-037, LRN-084 and ADM-010 pass with `PINGVIBE_ANTHROPIC_API_KEY` on the production build (31 Oct 2026).
 - Closed: OPEN-002 (official logo missing). The brand owner supplied the file on 31 Oct 2026, and it is committed unchanged.
 
 Every fixed defect was reproduced first, fixed at the root cause, and re-tested by a named regression check. No test was disabled, and no error was hidden, to get a pass.
@@ -50,11 +51,14 @@ Every fixed defect was reproduced first, fixed at the root cause, and re-tested 
 |---|---|---|---|
 | OPEN-002 | High | Official master logo not in the repository | The supplied `pingvibe.jpg` (1536×1024) is committed byte-for-byte as `public/assets/brand/ping-vibe-logo.jpg`. Favicon, app icons and the OG image are generated as separate derivatives. Logo containers are solid white so the artwork's background is seamless. Every placement was reviewed and re-audited. |
 
+| OPEN-003 | High | Live Claude writing evaluation and companion untested | 31 Oct: the first run failed only because the Anthropic account had no credit. After credit was added, LRN-037, LRN-084 and ADM-010 PASS on the production build, and Claude feedback was reviewed for all 10 grades (`tests/ai-writing-grades.mjs`). |
+
 ## Open / blocked
 
 | ID | Sev | Status | Item | Next action | Owner |
 |---|---|---|---|---|---|
-| OPEN-003 | High | Blocked | Live Claude writing evaluation and companion untested (LRN-037, LRN-084; ADM-010 with a key). 31 Oct: `PINGVIBE_ANTHROPIC_API_KEY` is configured and used, but the Anthropic account has no credit, so every call is rejected. | Add credit to the key's Anthropic account (Plans & Billing), then re-run `tests/qa-api.mjs` and `tests/ai-writing-grades.mjs` on the production build | Account owner / Engineering |
 | OPEN-001 | Medium | Open | API p95 above the 1.5 s target with 30 concurrent children on embedded PGlite: 2,554 / 1,496 / 2,038 / 1,943 ms across four runs, with a max of 8–10 s. Every run had 0 errors and correct awards. | Re-run `tests/perf.mjs` against managed Postgres with pooling | Engineering / DevOps |
+
+| OPEN-004 | Low | Open | AI writing `improved_sample` sometimes changes the kind of writing: the Grade 6 and Grade 7 opinion pieces became stories with an invented character. Grade 5 has a minor mismatch between an explanation and its correction. | Add a rule to the writing prompt (`src/server/ai/writing.ts`) to keep the same type of writing and add no new characters, then re-run `tests/ai-writing-grades.mjs` and review | Engineering / content |
 
 Full reproduction steps, expected and actual results for every entry are in `defects.json`.

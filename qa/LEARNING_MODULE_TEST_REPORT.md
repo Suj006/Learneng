@@ -1,6 +1,6 @@
 # PING VIBE — Learning Module Test Report
 
-**Result (API): 79 executed, 77 PASS, 2 FAIL (LRN-037, LRN-084: Anthropic account has no credit), 0 BLOCKED** (LRN-001…084), plus 6 grade-band checks (GRD-*, all PASS) and unit tests of the engines. Executed with synthetic Explorers across Pre-KG, UKG, Grade 1, Grade 3 and Grade 7.
+**Result (API): 79 executed, 79 PASS, 0 FAIL, 0 BLOCKED** (LRN-001…084), plus 6 grade-band checks (GRD-*, all PASS) and unit tests of the engines. Executed with synthetic Explorers across Pre-KG, UKG, Grade 1, Grade 3 and Grade 7.
 
 ## Onboarding (assessment removed)
 
@@ -34,8 +34,23 @@ Skill intelligence:
 - Topics, draft save/update, the empty-submit refusal and the 6,000-character limit all pass.
 - Evaluation provides a score, corrections with original vs corrected sentences, and encouragement.
 - An evaluated piece cannot be edited or resubmitted.
-- **LRN-037: FAIL (external, 31 Oct).** Re-run on the production build with `PINGVIBE_ANTHROPIC_API_KEY` set. The app called Claude, but the API rejected the call because the API key's Anthropic account has no credit (`invalid_request_error: Your credit balance is too low to access the Anthropic API`). The submission fell back to the offline evaluator and was labelled `offline`, so the child still got feedback. This is **not** evidence that the Claude integration works.
-- **AI writing feedback per grade (`tests/ai-writing-grades.mjs`):** one synthetic Explorer per grade (Pre-KG, LKG, UKG, Grade 1–7) submitted grade-typical writing. All 10 got HTTP 200 with a score, corrections and encouragement, but `evaluator=offline` for every grade (0/10 by Claude) for the same credit reason. Offline scores rose with grade (42 → 93) because they reflect text length and mechanics, not meaning. Tone and accuracy of Claude feedback per grade remain **unreviewed**. Raw output: `results/ai-writing-grades.json`.
+- **LRN-037: PASS (31 Oct, production build, `PINGVIBE_ANTHROPIC_API_KEY`).** Writing is evaluated by Claude (`evaluator=claude`) with schema-validated output. The first attempt that day failed because the Anthropic account had no credit; the offline fallback took over, correctly labelled, and the test passed once credit was added.
+- **AI writing feedback per grade (`tests/ai-writing-grades.mjs`, reviewed by hand):** one synthetic Explorer per grade submitted grade-typical writing. Claude evaluated all 10 (HTTP 200, `evaluator=claude`, no adult-attention flags). Raw output: `results/ai-writing-grades.json`.
+
+  | Grade | Score | Fixes | Review notes |
+  |---|---|---|---|
+  | Pre-KG | 72 | 2 | Very simple explanations ("big I", "love ends with an e"); 3-sentence sample; warm encouragement |
+  | LKG | 72 | 2 | Spelling fixes (have, ball, with) explained simply |
+  | UKG | 72 | 3 | Sample uses Indian context (rotis, dal) |
+  | Grade 1 | 66 | 2 | Subject–verb agreement ("he likes"); sample longer (6 sentences) but simple |
+  | Grade 2 | 62 | 2 | Past tense and "were" for plurals; capital for Sunday |
+  | Grade 3 | 62 | 3 | Festival and name capitals (Diwali, Lord Rama); "colourful" and "favourite" kept |
+  | Grade 4 | 72 | 3 | Past tense and adverb ("heavily"); clear |
+  | Grade 5 | 68 | 2 | Comma after the "If" clause; "would of" fixed, but the explanation says "would have" while the fix uses "would go" (minor) |
+  | Grade 6 | 76 | 3 | Correct plural and agreement fixes and the comma splice; **sample turns the opinion piece into a story with an invented character** |
+  | Grade 7 | 78 | 3 | Correct semicolon + "however", agreement; **same: sample adds a narrative character** |
+
+  Verdict: tone is warm and fits each grade, the corrections are accurate, and Indian English is respected. One quality issue is logged as **OPEN-004 (Low)**: the samples for older grades sometimes change the kind of writing. Suggested fix: add a rule to the writing prompt to keep the same type of writing (opinion, description, story) and not invent new characters.
 - AI output is schema-validated (zod structured output). Generated *content* never goes live without passing the 7 validation gates and admin approval (ADM-010…013).
 
 ## Grammar Galaxy
@@ -62,7 +77,7 @@ Skill intelligence:
 - Vocabulary help works in dictionary mode.
 - Phone numbers and e-mail addresses are blocked. Unsafe topics, including plural forms after the **BUG-004** fix, are redirected to a trusted adult.
 - The companion can be disabled by the parent, and the server enforces this (PAR-004).
-- **LRN-084: FAIL (external, 31 Oct).** With the key set, the companion call was rejected for lack of account credit. The reply came from dictionary mode (`source=dictionary`), and the safety filters still ran first.
+- **LRN-084: PASS (31 Oct).** The companion answered from Claude (`source=claude`), with the safety filters applied first.
 
 ## Curriculum scale (verified against records, not claims)
 

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T08:53:44.648Z",
+  "generated_at": "2026-10-31T08:56:58.845Z",
   "base": "http://localhost:3000",
   "results": [
     {
@@ -136,7 +136,7 @@
       "severity": "Critical",
       "scenario": "Verification + consent creates an active Explorer",
       "status": "PASS",
-      "actual": "zippyfalcon853"
+      "actual": "pixeldragon876"
     },
     {
       "id": "AUTH-022",
@@ -663,8 +663,8 @@
       "module": "Creative Writing",
       "severity": "High",
       "scenario": "Claude writing evaluation (real AI)",
-      "status": "FAIL",
-      "actual": "evaluator=offline (key set; see server log \"[ai] writing evaluation failed\")"
+      "status": "PASS",
+      "actual": "evaluator=claude (key set; see server log \"[ai] writing evaluation failed\")"
     },
     {
       "id": "LRN-038",
@@ -1087,8 +1087,8 @@
       "module": "AI companion",
       "severity": "Critical",
       "scenario": "Real Claude companion response",
-      "status": "FAIL",
-      "actual": "source=dictionary (key set; see server log \"[ai] companion failed\")"
+      "status": "PASS",
+      "actual": "source=claude (key set; see server log \"[ai] companion failed\")"
     },
     {
       "id": "GAM-001",
@@ -1527,8 +1527,8 @@
       "module": "Administration",
       "severity": "High",
       "scenario": "Manual vocabulary passes validation gates → review queue",
-      "status": "FAIL",
-      "actual": "independent AI review"
+      "status": "PASS",
+      "actual": ""
     },
     {
       "id": "ADM-011",

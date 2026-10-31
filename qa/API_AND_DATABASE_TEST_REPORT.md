@@ -1,6 +1,6 @@
 # PING VIBE — API & Database Test Report
 
-**API suite (`tests/qa-api.mjs`): 217 checks — 213 PASS · 3 FAIL · 1 BLOCKED** (31 Oct live-AI run; all 3 failures come from the Anthropic account having no credit, see below). Run against a production build (`next build` + `next start`) on a fresh embedded Postgres (PGlite). Raw results: `results/qa-api.json`.
+**API suite (`tests/qa-api.mjs`): 217 checks — 216 PASS · 0 FAIL · 1 BLOCKED** (31 Oct live-AI run with `PINGVIBE_ANTHROPIC_API_KEY`). Run against a production build (`next build` + `next start`) on a fresh embedded Postgres (PGlite). Raw results: `results/qa-api.json`.
 
 ## Coverage by module
 
@@ -57,8 +57,8 @@ Both have dedicated regression checks.
 
 ## Blocked
 
-- **LRN-037 and LRN-084** (live Claude) were run with `PINGVIBE_ANTHROPIC_API_KEY` set and FAIL, because the API key's Anthropic account has no credit (`invalid_request_error: Your credit balance is too low to access the Anthropic API`). Offline fallbacks pass, but they do **not** demonstrate the integration.
-- **ADM-010** FAILs in the same run: with a key configured, the independent AI review gate calls Claude, gets the credit error and fails closed (`Reviewer error`). The content is kept out of the review queue, which is the intended safe behaviour.
+- **LRN-037 and LRN-084** (live Claude) PASS with `PINGVIBE_ANTHROPIC_API_KEY` set. An earlier run that day failed only because the Anthropic account had no credit, which also showed that the fallbacks work: offline feedback is labelled as such, and the AI review gate (ADM-010) fails closed when the reviewer errors.
+- **ADM-010** PASSes with the independent AI review gate live.
 - **ADM-014** confirms that the generation endpoint returns a clear error, rather than fabricated content, when no key is set. It is BLOCKED in a run where a key is set; it passed in the previous no-key run.
 
 ## Limitations
