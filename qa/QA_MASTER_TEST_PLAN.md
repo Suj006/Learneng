@@ -91,7 +91,7 @@
 ## 7. Environment
 
 - **Final runs of every suite:** production build (`next build` and `next start`) on :3000 with a fresh database. Earlier iterations of the UI audit used `next dev`, but the dev badge, on-demand compilation and a memory-threshold restart made screenshots and timings noisy.
-- **Database:** embedded PGlite (Postgres 16 compatible), started fresh for each run.
+- **Database:** embedded PGlite (Postgres 16 compatible), started fresh for each run. The final API and performance runs on 31 Oct used a real PostgreSQL 16 server through `DATABASE_URL`.
 - **Rate limits:** `IP_RATE_LIMIT_MULTIPLIER=100` so that one test machine can create many synthetic families. Per-account limits (PIN lockout, sign-up) are unchanged and are tested.
 - **E-mail:** dev mailbox (`EMAIL_TRANSPORT=dev-mailbox`). No mail is sent externally.
 
@@ -100,7 +100,7 @@
 - Real iOS Safari, Android Chrome or physical tablets. Only Chromium device emulation was used.
 - Lighthouse.
 - NVDA, VoiceOver or TalkBack screen-reader walkthroughs. Only automated axe checks and keyboard checks were run.
-- Load test on managed Postgres or Supabase.
+- Load test on hosted Supabase. A real PostgreSQL 16 server was load-tested on 31 Oct (30 children: p95 762 ms).
 - Live Claude API: executed on 31 Oct with `PINGVIBE_ANTHROPIC_API_KEY` (LRN-037, LRN-084 PASS). Larger-scale human review of AI feedback is still to do.
 - Live Resend e-mail delivery.
 - Third-party penetration test.

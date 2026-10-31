@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T08:56:58.845Z",
+  "generated_at": "2026-10-31T09:16:38.078Z",
   "base": "http://localhost:3000",
   "results": [
     {
@@ -136,7 +136,7 @@
       "severity": "Critical",
       "scenario": "Verification + consent creates an active Explorer",
       "status": "PASS",
-      "actual": "pixeldragon876"
+      "actual": "bravedragon596"
     },
     {
       "id": "AUTH-022",
@@ -1288,7 +1288,7 @@
       "severity": "Critical",
       "scenario": "8 parallel quest completions → exactly one XP award",
       "status": "PASS",
-      "actual": "[91,0,0,0,0,0,0,0]"
+      "actual": "[0,0,0,0,0,91,0,0]"
     },
     {
       "id": "CON-002",
@@ -1296,7 +1296,7 @@
       "severity": "Critical",
       "scenario": "6 parallel mission claims → one reward",
       "status": "PASS",
-      "actual": "[30,0,0,0,0,0]"
+      "actual": "[0,0,0,30,0,0]"
     },
     {
       "id": "CON-003",

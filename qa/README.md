@@ -17,10 +17,11 @@ Start with **[PRODUCTION_READINESS_REPORT.md](PRODUCTION_READINESS_REPORT.md)**.
 | [ACCESSIBILITY_TEST_REPORT.md](ACCESSIBILITY_TEST_REPORT.md) | axe-core WCAG 2.x A/AA, keyboard, motion |
 | [BUG_REGISTER.md](BUG_REGISTER.md) / [defects.json](defects.json) | All defects, fixes and open items |
 | [REGRESSION_TEST_REPORT.md](REGRESSION_TEST_REPORT.md) | Post-fix regression runs |
+| [LOCAL_TESTING_GUIDE.md](LOCAL_TESTING_GUIDE.md) | Step-by-step checks to run on your own machine: live Claude, Postgres/Supabase load, real devices, screen readers, e-mail, pen test, teacher and child reviews |
 | [results/test-execution-report.json](results/test-execution-report.json) | Machine-readable totals, defects by severity and release recommendation |
 
 Raw results:
-- `results/qa-api.json`, `results/ui-audit.json`, `results/perf.json`, `results/axe-details.jsonl`
+- `results/qa-api.json`, `results/ui-audit.json`, `results/perf.json`, `results/axe-details.jsonl`, `results/ai-writing-grades.json`
 - Visual baselines in `screenshots/baseline/`
 
 To re-run everything, see *Quality assurance* in the root README.

@@ -1,19 +1,19 @@
 # PING VIBE — Complete Test Cases (executed)
 
-Generated 2026-10-31T08:59:33.266Z by `node scripts/qa-report.mjs` from the raw results in `qa/results/`. Synthetic data only.
+Generated 2026-10-31T09:28:00.563Z by `node scripts/qa-report.mjs` from the raw results in `qa/results/`. Synthetic data only.
 
-**Totals:** 1449 executed · 1447 pass · 1 fail · 1 blocked (includes 21 vitest unit tests).
+**Totals:** 1449 executed · 1448 pass · 0 fail · 1 blocked (includes 21 vitest unit tests).
 
 | Suite | Command | Total | Pass | Fail | Blocked |
 |---|---|---|---|---|---|
 | Unit (engines) | `npx vitest run` | 21 | 21 | 0 | 0 |
 | API, database, security & learning | `node tests/qa-api.mjs` | 217 | 216 | 0 | 1 |
 | UI journeys, responsive, console, accessibility & visual | `node tests/ui-audit.mjs` | 1203 | 1203 | 0 | 0 |
-| Performance & load | `node tests/perf.mjs` | 8 | 7 | 1 | 0 |
+| Performance & load | `node tests/perf.mjs` | 8 | 8 | 0 | 0 |
 
 ## API, database, security & learning
 
-_Run against http://localhost:3000 at 2026-10-31T08:56:58.845Z._
+_Run against http://localhost:3000 at 2026-10-31T09:16:38.078Z._
 
 ### Registration
 
@@ -40,7 +40,7 @@ _Run against http://localhost:3000 at 2026-10-31T08:56:58.845Z._
 | ID | Severity | Scenario | Status | Actual / notes |
 |---|---|---|---|---|
 | AUTH-020 | Critical | Invalid verification token → expired page, no session | ✅ PASS | http://localhost:3000/verify?expired=1 |
-| AUTH-021 | Critical | Verification + consent creates an active Explorer | ✅ PASS | pixeldragon876 |
+| AUTH-021 | Critical | Verification + consent creates an active Explorer | ✅ PASS | bravedragon596 |
 | AUTH-022 | Critical | Verification e-mail generated with link | ✅ PASS |  |
 
 ### Login & sessions
@@ -254,8 +254,8 @@ _Run against http://localhost:3000 at 2026-10-31T08:56:58.845Z._
 
 | ID | Severity | Scenario | Status | Actual / notes |
 |---|---|---|---|---|
-| CON-001 | Critical | 8 parallel quest completions → exactly one XP award | ✅ PASS | [91,0,0,0,0,0,0,0] |
-| CON-002 | Critical | 6 parallel mission claims → one reward | ✅ PASS | [30,0,0,0,0,0] |
+| CON-001 | Critical | 8 parallel quest completions → exactly one XP award | ✅ PASS | [0,0,0,0,0,91,0,0] |
+| CON-002 | Critical | 6 parallel mission claims → one reward | ✅ PASS | [0,0,0,30,0,0] |
 | CON-003 | Critical | 5 parallel purchases of same item → one success, no double spend | ✅ PASS | 200,400,400,400,400 |
 | CON-004 | Critical | 5 parallel Surprise Box opens → one award | ✅ PASS |  |
 | CON-005 | Critical | 3 children start quests simultaneously, each gets own words | ✅ PASS |  |
@@ -1566,17 +1566,17 @@ _Run against http://localhost:3000 at 2026-10-31T05:51:27.443Z._
 
 ## Performance & load
 
-_Run against http://localhost:3000 at 2026-10-31T05:52:12.894Z._
+_Run against http://localhost:3000 at 2026-10-31T09:20:16.361Z._
 
 ### Performance
 
 | ID | Severity | Scenario | Status | Actual / notes |
 |---|---|---|---|---|
-| PERF-home | Medium | /: LCP < 2.5s, TTFB < 800ms, CLS < 0.1 (warm) | ✅ PASS | cold TTFB 8ms LCP 300ms \| warm TTFB 5ms DCL 37ms LCP 216ms CLS 0.000 transfer 455KB |
-| PERF-login | Medium | /login: LCP < 2.5s, TTFB < 800ms, CLS < 0.1 (warm) | ✅ PASS | cold TTFB 12ms LCP 140ms \| warm TTFB 12ms DCL 33ms LCP 96ms CLS 0.000 transfer 460KB |
-| PERF-child-dashboard | Medium | /world: LCP < 2.5s, TTFB < 800ms, CLS < 0.1 (warm) | ✅ PASS | cold TTFB 138ms LCP 316ms \| warm TTFB 87ms DCL 117ms LCP 236ms CLS 0.000 transfer 270KB |
-| PERF-quest | Medium | /world/quest: LCP < 2.5s, TTFB < 800ms, CLS < 0.1 (warm) | ✅ PASS | cold TTFB 28ms LCP 244ms \| warm TTFB 24ms DCL 45ms LCP 160ms CLS 0.000 transfer 263KB |
-| PERF-parent-dashboard | Medium | /parent: LCP < 2.5s, TTFB < 800ms, CLS < 0.1 (warm) | ✅ PASS | cold TTFB 23ms LCP 128ms \| warm TTFB 22ms DCL 49ms LCP 76ms CLS 0.000 transfer 450KB |
-| LOAD-001 | Medium | 30 concurrent children (660 requests): no 5xx | ✅ PASS | 0 errors in 15.9s (41.6 req/s) |
-| LOAD-002 | Medium | 30 concurrent children: API p95 < 1500ms | ❌ FAIL | p50 389ms p95 1943ms max 10451ms |
+| PERF-home | Medium | /: LCP < 2.5s, TTFB < 800ms, CLS < 0.1 (warm) | ✅ PASS | cold TTFB 25ms LCP 572ms \| warm TTFB 11ms DCL 115ms LCP 264ms CLS 0.000 transfer 455KB |
+| PERF-login | Medium | /login: LCP < 2.5s, TTFB < 800ms, CLS < 0.1 (warm) | ✅ PASS | cold TTFB 26ms LCP 192ms \| warm TTFB 19ms DCL 50ms LCP 124ms CLS 0.000 transfer 460KB |
+| PERF-child-dashboard | Medium | /world: LCP < 2.5s, TTFB < 800ms, CLS < 0.1 (warm) | ✅ PASS | cold TTFB 147ms LCP 312ms \| warm TTFB 37ms DCL 107ms LCP 256ms CLS 0.000 transfer 476KB |
+| PERF-quest | Medium | /world/quest: LCP < 2.5s, TTFB < 800ms, CLS < 0.1 (warm) | ✅ PASS | cold TTFB 27ms LCP 384ms \| warm TTFB 30ms DCL 68ms LCP 228ms CLS 0.000 transfer 263KB |
+| PERF-parent-dashboard | Medium | /parent: LCP < 2.5s, TTFB < 800ms, CLS < 0.1 (warm) | ✅ PASS | cold TTFB 39ms LCP 224ms \| warm TTFB 26ms DCL 80ms LCP 128ms CLS 0.000 transfer 451KB |
+| LOAD-001 | Medium | 30 concurrent children (660 requests): no 5xx | ✅ PASS | 0 errors in 6.7s (98.1 req/s) |
+| LOAD-002 | Medium | 30 concurrent children: API p95 < 1500ms | ✅ PASS | p50 299ms p95 762ms max 880ms |
 | LOAD-003 | Medium | Each child received exactly one quest XP award under triple concurrent completion | ✅ PASS | [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1] |

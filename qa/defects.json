@@ -314,13 +314,13 @@
   {
     "id": "OPEN-001",
     "severity": "Medium",
-    "status": "Open",
+    "status": "Fixed",
     "area": "Performance / infrastructure",
     "title": "API p95 at or above the 1.5s target with 30 concurrent children on embedded PGlite (unstable)",
     "steps": "node tests/perf.mjs (LOAD-002)",
     "expected": "p95 < 1500ms",
-    "actual": "Four production-build runs: p95 2,554 / 1,496 / 2,038 / 1,943 ms (1 pass); max 8–10 s. 0 errors and correct awards in every run. PGlite is single-connection.",
-    "fix": "Re-test on managed Postgres/Supabase with a connection pool before launch",
+    "actual": "Four production-build runs: p95 2,554 / 1,496 / 2,038 / 1,943 ms (1 pass); max 8–10 s. 0 errors and correct awards in every run. PGlite is single-connection. 31 Oct 2026 on PostgreSQL 16 (DATABASE_URL, pool 5): p95 762 / 728 ms, 0 errors, 30/30 single awards. 100 children: p95 2.1–2.9 s, 0 errors, limited by the single Node process (4 vCPU), not the database.",
+    "fix": "Root cause: embedded single-connection PGlite in QA. Verified on PostgreSQL 16; DB_POOL_MAX made configurable (default 5). Confirm on hosted Supabase.",
     "regression": "LOAD-002"
   },
   {
@@ -350,13 +350,13 @@
   {
     "id": "OPEN-004",
     "severity": "Low",
-    "status": "Open",
+    "status": "Fixed",
     "area": "AI writing feedback",
     "title": "improved_sample sometimes changes the kind of writing (opinion → story with invented character)",
     "steps": "BASE_URL=… node tests/ai-writing-grades.mjs; read G6/G7 improved_sample in qa/results/ai-writing-grades.json",
     "expected": "Improved sample keeps the child's own ideas, voice and type of writing",
     "actual": "G6 and G7 opinion pieces rewritten as narratives featuring an invented character 'Riya'. G5: one explanation mentions 'would have' while the corrected sentence uses 'would go'.",
-    "fix": "Add a prompt rule in src/server/ai/writing.ts: keep the same type of writing, add no new characters, and make explanations match the correction; re-run and review",
+    "fix": "Prompt rules added in src/server/ai/writing.ts (keep the kind of writing, no new characters/names/events; each 'why' matches its correction). Re-run: 10/10 grades correct.",
     "regression": "tests/ai-writing-grades.mjs (manual review)"
   }
 ]

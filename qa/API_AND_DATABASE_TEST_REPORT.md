@@ -1,6 +1,6 @@
 # PING VIBE — API & Database Test Report
 
-**API suite (`tests/qa-api.mjs`): 217 checks — 216 PASS · 0 FAIL · 1 BLOCKED** (31 Oct live-AI run with `PINGVIBE_ANTHROPIC_API_KEY`). Run against a production build (`next build` + `next start`) on a fresh embedded Postgres (PGlite). Raw results: `results/qa-api.json`.
+**API suite (`tests/qa-api.mjs`): 217 checks — 216 PASS · 0 FAIL · 1 BLOCKED** (31 Oct live-AI run with `PINGVIBE_ANTHROPIC_API_KEY`, on **PostgreSQL 16** through `DATABASE_URL`; the earlier PGlite run gave the same result). Run against a production build (`next build` + `next start`) on a fresh embedded Postgres (PGlite). Raw results: `results/qa-api.json`.
 
 ## Coverage by module
 
@@ -63,5 +63,5 @@ Both have dedicated regression checks.
 
 ## Limitations
 
-- PGlite is single-connection. Behaviour under real connection pooling (Supabase/pgBouncer) and the p95 latency target are **not yet verified** (see OPEN-001).
+- The suite now also passes on PostgreSQL 16 with a real node-postgres pool (transactions, concurrent awards, idempotent ledger). Supabase's own pooler (pgBouncer/Supavisor) and RLS (`db/supabase-rls.sql`) still need a run on hosted Supabase; see `LOCAL_TESTING_GUIDE.md`.
 - No schema-migration rollback scripts. Migrations are additive only.

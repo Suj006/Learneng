@@ -185,6 +185,7 @@ See `.env.example`.
 | Variable | Purpose |
 |---|---|
 | `DATABASE_URL` | Postgres connection string (Supabase). Empty means embedded PGlite |
+| `DB_POOL_MAX` | Connections per server instance when `DATABASE_URL` is set (default 5). Keep it small on serverless |
 | `SESSION_SECRET` | Long random string |
 | `APP_URL` | Public URL used in e-mails |
 | `ANTHROPIC_API_KEY`, `AI_MODEL` | Claude (server-side only). Default model `claude-opus-5-5` |
@@ -326,8 +327,8 @@ Notes:
 ## Known limitations and next steps
 
 - **Open QA items:** see [`qa/BUG_REGISTER.md`](qa/BUG_REGISTER.md).
-  - Live Claude tests are blocked until a key is provided.
-  - 30-child load p95 must be re-checked on managed Postgres; embedded PGlite is single-connection.
+  - Live Claude tests pass with `PINGVIBE_ANTHROPIC_API_KEY` (31 Oct). Without a key they are reported as BLOCKED.
+  - 30-child load passes on PostgreSQL 16 (p95 762 ms); re-check on hosted Supabase. Embedded PGlite is single-connection, so do not use it for load tests.
 
 - **Vocabulary runway:** see *Content system and honest coverage*. It needs AI enrichment plus review of the 757 queued headwords and further batches.
 - **Illustrations** for words and story scenes use emoji. Commissioned artwork can be added to `vocabulary_master` and `reading_stories` later.

@@ -25,7 +25,8 @@ async function createDriver(): Promise<Driver> {
     const { Pool } = await import("pg");
     const pool = new Pool({
       connectionString: url,
-      max: 5,
+      // Per-instance pool size. Keep it small on serverless (many instances share the DB limit); raise it on a long-running server.
+      max: Number(process.env.DB_POOL_MAX) || 5,
       ssl: url.includes("localhost") || url.includes("127.0.0.1") ? undefined : { rejectUnauthorized: false },
     });
     return {

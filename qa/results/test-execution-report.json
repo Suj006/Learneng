@@ -1,11 +1,11 @@
 {
   "product": "PING VIBE",
-  "generated_at": "2026-10-31T08:59:33.266Z",
+  "generated_at": "2026-10-31T09:28:00.563Z",
   "environment": "Synthetic data only; local Next.js dev (UI) and production build (API/perf) on embedded PGlite. No real children's data used.",
   "totals": {
     "total": 1449,
-    "passed": 1447,
-    "failed": 1,
+    "passed": 1448,
+    "failed": 0,
     "blocked": 1,
     "not_executed_areas": 9
   },
@@ -19,7 +19,7 @@
       "name": "API, database, security & learning",
       "command": "node tests/qa-api.mjs",
       "executed": true,
-      "generated_at": "2026-10-31T08:56:58.845Z",
+      "generated_at": "2026-10-31T09:16:38.078Z",
       "base": "http://localhost:3000",
       "total": 217,
       "passed": 216,
@@ -41,11 +41,11 @@
       "name": "Performance & load",
       "command": "node tests/perf.mjs",
       "executed": true,
-      "generated_at": "2026-10-31T05:52:12.894Z",
+      "generated_at": "2026-10-31T09:20:16.361Z",
       "base": "http://localhost:3000",
       "total": 8,
-      "passed": 7,
-      "failed": 1,
+      "passed": 8,
+      "failed": 0,
       "blocked": 0
     }
   ],
@@ -254,19 +254,12 @@
       "suite": "Performance & load",
       "module": "Performance",
       "total": 8,
-      "passed": 7,
-      "failed": 1,
+      "passed": 8,
+      "failed": 0,
       "blocked": 0
     }
   ],
-  "failed_tests": [
-    {
-      "id": "LOAD-002",
-      "module": "Performance",
-      "scenario": "30 concurrent children: API p95 < 1500ms",
-      "actual": "p50 389ms p95 1943ms max 10451ms"
-    }
-  ],
+  "failed_tests": [],
   "blocked_tests": [
     {
       "id": "ADM-014",
@@ -294,30 +287,17 @@
       "Medium": 11,
       "Low": 10
     },
-    "fixed": 28,
+    "fixed": 30,
     "open_by_severity": {
       "Critical": 0,
       "High": 0,
-      "Medium": 1,
-      "Low": 1
+      "Medium": 0,
+      "Low": 0
     },
-    "open": [
-      {
-        "id": "OPEN-001",
-        "severity": "Medium",
-        "status": "Open",
-        "title": "API p95 at or above the 1.5s target with 30 concurrent children on embedded PGlite (unstable)"
-      },
-      {
-        "id": "OPEN-004",
-        "severity": "Low",
-        "status": "Open",
-        "title": "improved_sample sometimes changes the kind of writing (opinion → story with invented character)"
-      }
-    ]
+    "open": []
   },
   "release_recommendation": {
-    "decision": "NOT READY FOR PUBLIC RELEASE — READY FOR CONTROLLED PILOT AFTER BLOCKERS CLEARED",
+    "decision": "READY FOR CONTROLLED PILOT",
     "blockers": [],
     "required_sign_offs": [
       "Technical QA",

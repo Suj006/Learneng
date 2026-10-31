@@ -6,10 +6,10 @@ After each fix, the affected suite was re-run. After the last fix, every suite w
 
 | Suite | Environment | Result |
 |---|---|---|
-| Unit (vitest) | Node | 21 / 21 PASS |
-| API, DB, security, learning (`tests/qa-api.mjs`) | Production build, fresh DB, `QA_PRODUCTION=1`, `PINGVIBE_ANTHROPIC_API_KEY` set | **217 checks: 216 PASS · 0 FAIL · 1 BLOCKED.** LRN-037 and LRN-084 (live Claude) PASS. ADM-014 tests the no-key path, so it is BLOCKED when a key is set (it passed in the earlier no-key run). |
+| Unit (vitest) | Node | 21 / 21 PASS (re-run after the prompt and pool changes) |
+| API, DB, security, learning (`tests/qa-api.mjs`) | Production build, fresh **PostgreSQL 16** database (`DATABASE_URL`), `QA_PRODUCTION=1`, `PINGVIBE_ANTHROPIC_API_KEY` set | **217 checks: 216 PASS · 0 FAIL · 1 BLOCKED.** Same result as on PGlite. ADM-014 tests the no-key path, so it is BLOCKED while a key is set (it passed in the earlier no-key run). |
 | UI journey, responsive, console, accessibility, target size, visual (`tests/ui-audit.mjs`) | Production build, fresh DB | **1,203 checks: 1,203 PASS · 0 FAIL · 0 BLOCKED.** Journey 1: 8. Responsive: 344. Console: 344. Accessibility: 438 (45 axe + 45 keyboard + 4 reduced-motion + 344 target size). Visual regression: 69. |
-| Performance & load (`tests/perf.mjs`) | Production build | 7 of 8 PASS. **LOAD-002 FAIL** in the final run (p95 1,943 ms). Across four production-build runs: 2,554 / 1,496 / 2,038 / 1,943 ms (OPEN-001). |
+| Performance & load (`tests/perf.mjs`) | Production build, PostgreSQL 16, pool 5 | **8 / 8 PASS.** LOAD-002 p95 762 ms with 30 children (earlier PGlite runs: 1,496–2,554 ms, OPEN-001 now fixed). |
 | Type check (`tsc --noEmit`) | — | 0 errors |
 | Production build (`next build`) | — | Succeeds |
 | `npm audit --omit=dev` | — | 0 vulnerabilities |
@@ -40,6 +40,8 @@ After each fix, the affected suite was re-run. After the last fix, every suite w
 | BUG-022/025 harness | A11Y-*-reduced-motion, RSP-admin-economy-*, axe on every page | PASS |
 | BUG-023 target size | TGT-* | PASS |
 | BUG-026 quest answer reset | UI-J1-* journey | PASS (it failed in the run before the fix) |
+| OPEN-004 writing sample genre (fixed) | `tests/ai-writing-grades.mjs`, all 10 grades, reviewed by hand: samples keep the kind of writing, no invented characters, each `why` matches its correction | PASS |
+| OPEN-001 load p95 (fixed) | LOAD-002 on PostgreSQL 16 (762 / 728 ms) | PASS |
 | OPEN-002 official logo (closed) | RSP-*/CON-* (logo loads on every page, no failed requests), A11Y-* (contrast with the real artwork), VIS-* (new baselines) | PASS |
 
 ## Visual regression
@@ -54,5 +56,6 @@ After each fix, the affected suite was re-run. After the last fix, every suite w
 ## Known gaps in regression coverage
 
 - Live Claude (31 Oct): the first run with the key failed because the Anthropic account had no credit. After credit was added, the full suite was re-run on a fresh production build: LRN-037, LRN-084 and ADM-010 PASS. `tests/ai-writing-grades.mjs` got Claude feedback for all 10 grades (`results/ai-writing-grades.json`) and the results were reviewed by hand. OPEN-004 (Low): in the Grade 6 and Grade 7 samples, `improved_sample` turned an opinion piece into a short story by adding an invented character ("Riya"), which goes against the prompt rule to keep the child's own ideas and voice. In Grade 5, one explanation mentions "would have" while the corrected sentence uses "would go".
+- OPEN-004 was then fixed with two prompt rules in `src/server/ai/writing.ts`: keep the kind of writing the child chose and add no new characters, and make each `why` match its correction. The re-run on 31 Oct showed all 10 grades correct.
 - ADM-014 (no-key error path) cannot run in the same pass as the live-AI checks. Run the suite once without a key to cover it.
 - There is no CI pipeline yet. Add `vitest`, `qa-api` and `ui-audit` to CI so they run on every change.

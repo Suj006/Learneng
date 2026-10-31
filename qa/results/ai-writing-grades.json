@@ -1,5 +1,5 @@
 {
-  "ranAt": "2026-10-31T08:58:15.805Z",
+  "ranAt": "2026-10-31T09:25:05.797Z",
   "results": [
     {
       "grade": "PRE_KG",
@@ -10,16 +10,16 @@
         {
           "original": "i lov my cat.",
           "corrected": "I love my cat.",
-          "why": "We always write a big I, and love ends with an e."
+          "why": "We always write \"I\" as a big letter, and \"love\" ends with an \"e\"."
         },
         {
           "original": "she is big",
           "corrected": "She is big.",
-          "why": "Start with a big letter and end with a full stop."
+          "why": "A sentence starts with a big letter and ends with a full stop."
         }
       ],
-      "improved_sample": "I love my cat. She is big and fluffy. She likes to play with me.",
-      "encouragement": "Meow-velous work, little writer! GRAMMY loves your cat story!",
+      "improved_sample": "I love my cat. She is big and fluffy. My cat is my best friend.",
+      "encouragement": "Meow-velous work, little writer — GRAMMY loves your cat story!",
       "needs_adult_attention": false,
       "text": "i lov my cat. she is big"
     },
@@ -27,21 +27,21 @@
       "grade": "LKG",
       "status": 200,
       "evaluator": "claude",
-      "score": 72,
+      "score": 70,
       "corrections": [
         {
           "original": "i hav a red bal.",
           "corrected": "I have a red ball.",
-          "why": "Start with a big I, and 'have' and 'ball' need one more letter."
+          "why": "We write a big I, and spell the words as have and ball."
         },
         {
           "original": "i play wit it",
           "corrected": "I play with it.",
-          "why": "Use a big I, write 'with' with an h, and add a full stop at the end."
+          "why": "We write a big I, spell with, and put a full stop at the end."
         }
       ],
-      "improved_sample": "I have a big red ball. I play with it in the park. I bounce it up and down. My ball is fun!",
-      "encouragement": "Wow, what a bouncy start, little writer, keep those words rolling like your red ball!",
+      "improved_sample": "I have a red ball. I play with it. I bounce my ball. I am happy.",
+      "encouragement": "Bounce, bounce, hooray! You are a super little writer!",
       "needs_adult_attention": false,
       "text": "i hav a red bal. i play wit it"
     },
@@ -49,26 +49,26 @@
       "grade": "UKG",
       "status": 200,
       "evaluator": "claude",
-      "score": 72,
+      "score": 62,
       "corrections": [
         {
           "original": "my mom is good.",
           "corrected": "My mom is good.",
-          "why": "A sentence starts with a big capital letter."
+          "why": "A sentence starts with a capital letter, so 'my' becomes 'My'."
         },
         {
           "original": "she mak food for me.",
           "corrected": "She makes food for me.",
-          "why": "The word is spelled 'makes', and the sentence starts with a capital letter."
+          "why": "Start with a capital 'S', and 'mak' is spelled 'makes'."
         },
         {
           "original": "i lik her",
           "corrected": "I like her.",
-          "why": "'I' is always a capital letter, 'like' ends with an 'e', and a sentence ends with a full stop."
+          "why": "'I' is always a capital letter, 'lik' is spelled 'like', and we end with a full stop."
         }
       ],
-      "improved_sample": "My mom is kind. She makes yummy food for me. She makes hot rotis and dal. She hugs me every day. I love my mom very much.",
-      "encouragement": "Wow, what a sweet story! GRAMMY thinks your mom is lucky to have you! 🌟",
+      "improved_sample": "My mom is very kind. She makes yummy food for me. I love her very much.",
+      "encouragement": "Wow, what a loving writer you are! GRAMMY gives you a big golden star! ⭐",
       "needs_adult_attention": false,
       "text": "my mom is good. she mak food for me. i lik her"
     },
@@ -76,7 +76,7 @@
       "grade": "G1",
       "status": 200,
       "evaluator": "claude",
-      "score": 66,
+      "score": 68,
       "corrections": [
         {
           "original": "i have a dog.",
@@ -85,12 +85,12 @@
         },
         {
           "original": "he is very big and he like to run in the park with me",
-          "corrected": "He is very big, and he likes to run in the park with me.",
-          "why": "Start with a capital letter, use 'likes' with 'he', and end with a full stop."
+          "corrected": "He is very big and he likes to run in the park with me.",
+          "why": "Start with a capital 'He', say 'likes' for one dog, and end with a full stop."
         }
       ],
-      "improved_sample": "I have a dog named Bruno. He is very big and brown. He likes to run in the park with me. One day, he chased a red ball and jumped into the grass. I laughed and gave him a big hug. Bruno is my best friend!",
-      "encouragement": "Woof woof! Your dog story is super, and I can't wait to read more about him! 🐶✨",
+      "improved_sample": "I have a dog. He is huge and fluffy. He likes to run in the park with me. We race on the green grass. He wags his tail when he is happy. I love my big dog, and he loves me too!",
+      "encouragement": "Woof woof, superstar! GRAMMY loves your doggy story, keep writing and it will grow even bigger!",
       "needs_adult_attention": false,
       "text": "i have a dog. he is very big and he like to run in the park with me"
     },
@@ -98,21 +98,21 @@
       "grade": "G2",
       "status": 200,
       "evaluator": "claude",
-      "score": 62,
+      "score": 55,
       "corrections": [
         {
           "original": "Last sunday i go to the zoo with my family.",
-          "corrected": "Last Sunday, I went to the zoo with my family.",
-          "why": "Sunday and I always start with capital letters, and we use 'went' for things that already happened."
+          "corrected": "Last Sunday I went to the zoo with my family.",
+          "why": "Days and the word 'I' start with capital letters, and we use 'went' for something that already happened."
         },
         {
           "original": "i saw a big elephant and the monkeys was jumping",
-          "corrected": "I saw a big elephant, and the monkeys were jumping.",
-          "why": "Start with a capital I, use 'were' for many monkeys, and end with a full stop."
+          "corrected": "I saw a big elephant and the monkeys were jumping.",
+          "why": "'I' needs a capital letter, we say 'were' for many monkeys, and a sentence ends with a full stop."
         }
       ],
-      "improved_sample": "Last Sunday, I went to the zoo with my family. I saw a huge grey elephant splashing water with its trunk. The monkeys were jumping and swinging from tree to tree. They made us laugh! I also saw a sleepy lion. It was the best day ever, and I want to go again.",
-      "encouragement": "Wow, what a fun zoo trip! Keep writing, little star, your stories are getting brighter every day!",
+      "improved_sample": "Last Sunday, I went to the zoo with my family. I saw a huge, grey elephant with a long trunk. The monkeys were jumping from tree to tree. They looked so funny! It was a very happy day, and I want to go to the zoo again.",
+      "encouragement": "Wow, what a fun zoo trip! Keep writing, little star, your stories are getting better every day!",
       "needs_adult_attention": false,
       "text": "Last sunday i go to the zoo with my family. i saw a big elephant and the monkeys was jumping"
     },
@@ -120,7 +120,7 @@
       "grade": "G3",
       "status": 200,
       "evaluator": "claude",
-      "score": 62,
+      "score": 58,
       "corrections": [
         {
           "original": "My favourite festival is diwali.",
@@ -130,16 +130,16 @@
         {
           "original": "we lights diyas and eat sweets.",
           "corrected": "We light diyas and eat sweets.",
-          "why": "Start a sentence with a capital letter, and with 'we' we say 'light', not 'lights'."
+          "why": "A sentence starts with a capital letter, and with 'we' we say 'light', not 'lights'."
         },
         {
           "original": "my grandma tell us storys about lord rama",
           "corrected": "My grandma tells us stories about Lord Rama.",
-          "why": "Use 'tells' for one person, spell it 'stories', use capitals for names, and end with a full stop."
+          "why": "Start with a capital 'M', say 'tells' for one grandma, spell 'stories', capitalise 'Lord Rama', and end with a full stop."
         }
       ],
-      "improved_sample": "My favourite festival is Diwali. We light glowing diyas all around our house and make a colourful rangoli. Then we enjoy yummy laddoos and jalebis. At night, my grandma tells us exciting stories about Lord Rama. I feel so happy and excited when Diwali comes!",
-      "encouragement": "Wonderful work, little star! Your Diwali writing sparkles like a diya, so keep shining! ✨",
+      "improved_sample": "My favourite festival is Diwali. We light bright diyas all around our home and enjoy yummy sweets. My grandma tells us wonderful stories about Lord Rama. I listen carefully to every word. I love Diwali because it is full of light, sweets and happy stories.",
+      "encouragement": "Your Diwali writing shines as bright as a diya, keep writing, little star!",
       "needs_adult_attention": false,
       "text": "My favourite festival is diwali. we lights diyas and eat sweets. my grandma tell us storys about lord rama"
     },
@@ -147,26 +147,26 @@
       "grade": "G4",
       "status": 200,
       "evaluator": "claude",
-      "score": 72,
+      "score": 66,
       "corrections": [
         {
           "original": "Yesterday it rain very heavy in our town.",
           "corrected": "Yesterday it rained very heavily in our town.",
-          "why": "Add 'ed' for the past, and use 'heavily' to tell how it rained."
+          "why": "Use 'rained' for the past, and 'heavily' to tell how it rained."
         },
         {
           "original": "The roads was full of water and we cannot go to school.",
-          "corrected": "The roads were full of water, and we could not go to school.",
+          "corrected": "The roads were full of water and we could not go to school.",
           "why": "Use 'were' with 'roads', and 'could not' for the past."
         },
         {
           "original": "I made paper boats with my brother and we watch them float",
-          "corrected": "I made paper boats with my brother, and we watched them float.",
-          "why": "Use 'watched' for the past, and end every sentence with a full stop."
+          "corrected": "I made paper boats with my brother and we watched them float.",
+          "why": "Use 'watched' for the past and end the sentence with a full stop."
         }
       ],
-      "improved_sample": "Yesterday it rained very heavily in our town. The roads were flooded, and we could not go to school. So I made colourful paper boats with my brother. We watched them sail across the puddles and cheered loudly. It was the best rainy day ever!",
-      "encouragement": "Splish-splash, super writer! GRAMMY loved your paper boat story, so keep sailing ahead!",
+      "improved_sample": "Yesterday it rained very heavily in our town. The roads were flooded with water, so we could not go to school. I made paper boats with my brother. We put them in the water and watched them float away. It was the best rainy day ever!",
+      "encouragement": "Splish splash, super writer! Your paper boat story made GRAMMY smile, so keep sailing ahead!",
       "needs_adult_attention": false,
       "text": "Yesterday it rain very heavy in our town. The roads was full of water and we cannot go to school. I made paper boats with my brother and we watch them float"
     },
@@ -174,21 +174,21 @@
       "grade": "G5",
       "status": 200,
       "evaluator": "claude",
-      "score": 68,
+      "score": 70,
       "corrections": [
         {
           "original": "If I could fly I would visit every country in the world.",
           "corrected": "If I could fly, I would visit every country in the world.",
-          "why": "Put a comma after the 'If' part of the sentence."
+          "why": "Add a comma after 'If I could fly' to show a small pause."
         },
         {
           "original": "First I will go to Japan because I want to see the cherry blossoms, then I would of gone to Egypt to see the pyramids",
           "corrected": "First, I would go to Japan because I want to see the cherry blossoms. Then, I would go to Egypt to see the pyramids.",
-          "why": "Use 'would go' every time, say 'would have' instead of 'would of', and end with a full stop."
+          "why": "Change 'will go' and 'would of gone' to 'would go', add commas after 'First' and 'Then', and use full stops to split the long sentence."
         }
       ],
-      "improved_sample": "If I could fly, I would explore every country in the world. First, I would soar to Japan to admire the pink cherry blossoms. Then, I would zoom to Egypt to see the giant pyramids. Finally, I would land back home and tell my family all about my amazing trip!",
-      "encouragement": "Wow, young flyer, your story has wings — keep soaring with your words!",
+      "improved_sample": "If I could fly, I would explore every country in the world. First, I would soar to Japan because I want to see the pink cherry blossoms swaying in the breeze. Then, I would fly to Egypt to gaze at the giant pyramids standing tall in the golden desert.",
+      "encouragement": "Your imagination has wings, young writer, so keep flying high with your words!",
       "needs_adult_attention": false,
       "text": "If I could fly I would visit every country in the world. First I will go to Japan because I want to see the cherry blossoms, then I would of gone to Egypt to see the pyramids"
     },
@@ -196,26 +196,26 @@
       "grade": "G6",
       "status": 200,
       "evaluator": "claude",
-      "score": 76,
+      "score": 72,
       "corrections": [
         {
           "original": "Plastic pollution is one of the biggest problem today.",
           "corrected": "Plastic pollution is one of the biggest problems today.",
-          "why": "After \"one of the,\" we use the plural form, so \"problem\" becomes \"problems.\""
+          "why": "After 'one of the', the noun should be plural, so 'problem' becomes 'problems'."
         },
         {
           "original": "Many animals in the ocean eats plastic thinking it is food.",
           "corrected": "Many animals in the ocean eat plastic, thinking it is food.",
-          "why": "\"Animals\" is plural, so we use \"eat,\" not \"eats.\""
+          "why": "'Animals' is plural, so we use 'eat', and a comma before 'thinking' makes it easier to read."
         },
         {
           "original": "We should stop using plastic bags and carry cloth bags instead, this small step can make a big difference",
           "corrected": "We should stop using plastic bags and carry cloth bags instead. This small step can make a big difference.",
-          "why": "Two full sentences need a full stop between them, and every sentence needs a full stop at the end."
+          "why": "A full stop splits the two complete ideas into two sentences, and another full stop ends the last sentence."
         }
       ],
-      "improved_sample": "One morning, Riya saw a sea turtle on the beach, tangled in a plastic bag. Plastic pollution is one of the biggest problems today. Many ocean animals eat plastic because they think it is food. From that day, Riya carried a cloth bag everywhere. She knew this small step could make a huge difference.",
-      "encouragement": "Super work, eco-hero! GRAMMY is proud of you for caring about our oceans! 🌊🐢",
+      "improved_sample": "Plastic pollution is one of the biggest problems in the world today. Many sea animals, like turtles and fish, eat plastic, thinking it is food, and they become very sick. We should avoid plastic bags and carry cloth bags instead. This simple habit can make a huge difference to our oceans.",
+      "encouragement": "Wonderful thinking, young eco-hero! GRAMMY is proud of you for caring about our oceans!",
       "needs_adult_attention": false,
       "text": "Plastic pollution is one of the biggest problem today. Many animals in the ocean eats plastic thinking it is food. We should stop using plastic bags and carry cloth bags instead, this small step can make a big difference"
     },
@@ -223,17 +223,17 @@
       "grade": "G7",
       "status": 200,
       "evaluator": "claude",
-      "score": 78,
+      "score": 72,
       "corrections": [
         {
           "original": "Technology have changed the way students learn.",
           "corrected": "Technology has changed the way students learn.",
-          "why": "'Technology' is singular, so we use 'has'."
+          "why": "'Technology' is singular, so it takes 'has', not 'have'."
         },
         {
           "original": "Online classes allows us to study from home, however it also cause problems like screen fatigue and less interaction with friends.",
           "corrected": "Online classes allow us to study from home; however, they also cause problems like screen fatigue and less interaction with friends.",
-          "why": "'Classes' is plural, so use 'allow', 'they' and 'cause', and put a semicolon before 'however' and a comma after it."
+          "why": "Plural 'classes' needs 'allow' and 'they', and 'however' joining two sentences needs a semicolon before it and a comma after it."
         },
         {
           "original": "In my opinion a balance between online and offline learning is the best approach",
@@ -241,8 +241,8 @@
           "why": "Add a comma after 'In my opinion' and a full stop at the end."
         }
       ],
-      "improved_sample": "Riya rubbed her tired eyes after her fourth online class of the day. Technology has transformed the way students learn. Online classes allow us to study from home; however, they also cause challenges like screen fatigue and fewer chances to connect with friends. Riya missed laughing with her classmates at lunch. In my opinion, a balance between online and offline learning is the wisest choice.",
-      "encouragement": "Brilliant thinking, young writer! GRAMMY's wand is sparkling at your grown-up ideas, so keep writing! ✨",
+      "improved_sample": "Technology has transformed the way students learn. Online classes allow us to study from the comfort of our homes; however, they also bring challenges like screen fatigue and fewer chances to connect with friends. In my opinion, a balance between online and offline learning is the wisest solution, because it gives us the best of both worlds.",
+      "encouragement": "Brilliant thinking, young scholar! Fix those verb matches and your writing will shine like a wizard's wand! ✨",
       "needs_adult_attention": false,
       "text": "Technology have changed the way students learn. Online classes allows us to study from home, however it also cause problems like screen fatigue and less interaction with friends. In my opinion a balance between online and offline learning is the best approach"
     }

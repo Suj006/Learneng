@@ -8,7 +8,7 @@ Source of truth: `defects.json` (machine-readable). Severity scale:
 
 **Summary:** 30 entries.
 - 26 defects found and fixed: 1 Critical, 6 High, 10 Medium, 9 Low.
-- 2 open items: OPEN-001 Medium, OPEN-004 Low.
+- 0 open defects. OPEN-001 (load p95) and OPEN-004 (writing sample genre) were fixed on 31 Oct 2026.
 - Closed: OPEN-003 (live Claude untested). LRN-037, LRN-084 and ADM-010 pass with `PINGVIBE_ANTHROPIC_API_KEY` on the production build (31 Oct 2026).
 - Closed: OPEN-002 (official logo missing). The brand owner supplied the file on 31 Oct 2026, and it is committed unchanged.
 
@@ -50,15 +50,12 @@ Every fixed defect was reproduced first, fixed at the root cause, and re-tested 
 | ID | Sev | Item | Resolution |
 |---|---|---|---|
 | OPEN-002 | High | Official master logo not in the repository | The supplied `pingvibe.jpg` (1536×1024) is committed byte-for-byte as `public/assets/brand/ping-vibe-logo.jpg`. Favicon, app icons and the OG image are generated as separate derivatives. Logo containers are solid white so the artwork's background is seamless. Every placement was reviewed and re-audited. |
-
 | OPEN-003 | High | Live Claude writing evaluation and companion untested | 31 Oct: the first run failed only because the Anthropic account had no credit. After credit was added, LRN-037, LRN-084 and ADM-010 PASS on the production build, and Claude feedback was reviewed for all 10 grades (`tests/ai-writing-grades.mjs`). |
+| OPEN-001 | Medium | API p95 above 1.5 s with 30 concurrent children | Root cause was the embedded single-connection PGlite test database. On PostgreSQL 16 with a pool of 5: p95 762 / 728 ms, 0 errors, exactly-once awards. Pool size is now configurable (`DB_POOL_MAX`). Confirm on hosted Supabase before launch. |
+| OPEN-004 | Low | AI writing sample changed the kind of writing (Grades 6–7 became stories with an invented character) | Two prompt rules added in `src/server/ai/writing.ts`. Re-run of `tests/ai-writing-grades.mjs`: all 10 grades keep the kind of writing and add no new characters, and each `why` matches its correction. |
 
 ## Open / blocked
 
-| ID | Sev | Status | Item | Next action | Owner |
-|---|---|---|---|---|---|
-| OPEN-001 | Medium | Open | API p95 above the 1.5 s target with 30 concurrent children on embedded PGlite: 2,554 / 1,496 / 2,038 / 1,943 ms across four runs, with a max of 8–10 s. Every run had 0 errors and correct awards. | Re-run `tests/perf.mjs` against managed Postgres with pooling | Engineering / DevOps |
-
-| OPEN-004 | Low | Open | AI writing `improved_sample` sometimes changes the kind of writing: the Grade 6 and Grade 7 opinion pieces became stories with an invented character. Grade 5 has a minor mismatch between an explanation and its correction. | Add a rule to the writing prompt (`src/server/ai/writing.ts`) to keep the same type of writing and add no new characters, then re-run `tests/ai-writing-grades.mjs` and review | Engineering / content |
+No open defects. The remaining work is testing that needs people, real devices or external accounts; see `LOCAL_TESTING_GUIDE.md` and the production readiness report.
 
 Full reproduction steps, expected and actual results for every entry are in `defects.json`.

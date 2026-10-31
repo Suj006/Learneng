@@ -37,20 +37,34 @@ Skill intelligence:
 - **LRN-037: PASS (31 Oct, production build, `PINGVIBE_ANTHROPIC_API_KEY`).** Writing is evaluated by Claude (`evaluator=claude`) with schema-validated output. The first attempt that day failed because the Anthropic account had no credit; the offline fallback took over, correctly labelled, and the test passed once credit was added.
 - **AI writing feedback per grade (`tests/ai-writing-grades.mjs`, reviewed by hand):** one synthetic Explorer per grade submitted grade-typical writing. Claude evaluated all 10 (HTTP 200, `evaluator=claude`, no adult-attention flags). Raw output: `results/ai-writing-grades.json`.
 
+  First review (before the fix):
+
   | Grade | Score | Fixes | Review notes |
   |---|---|---|---|
-  | Pre-KG | 72 | 2 | Very simple explanations ("big I", "love ends with an e"); 3-sentence sample; warm encouragement |
-  | LKG | 72 | 2 | Spelling fixes (have, ball, with) explained simply |
-  | UKG | 72 | 3 | Sample uses Indian context (rotis, dal) |
-  | Grade 1 | 66 | 2 | Subject–verb agreement ("he likes"); sample longer (6 sentences) but simple |
-  | Grade 2 | 62 | 2 | Past tense and "were" for plurals; capital for Sunday |
-  | Grade 3 | 62 | 3 | Festival and name capitals (Diwali, Lord Rama); "colourful" and "favourite" kept |
-  | Grade 4 | 72 | 3 | Past tense and adverb ("heavily"); clear |
-  | Grade 5 | 68 | 2 | Comma after the "If" clause; "would of" fixed, but the explanation says "would have" while the fix uses "would go" (minor) |
-  | Grade 6 | 76 | 3 | Correct plural and agreement fixes and the comma splice; **sample turns the opinion piece into a story with an invented character** |
-  | Grade 7 | 78 | 3 | Correct semicolon + "however", agreement; **same: sample adds a narrative character** |
+  | Pre-KG–UKG | 72 / 72 / 72 | 2–3 | Very simple explanations ("big I"); Indian context (rotis, dal) |
+  | Grade 1–4 | 66 / 62 / 62 / 72 | 2–3 | Accurate agreement, tense, capitals (Diwali, Lord Rama); "favourite" kept |
+  | Grade 5 | 68 | 2 | One `why` mentioned "would have" while the fix used "would go" |
+  | Grade 6–7 | 76 / 78 | 3 | Accurate fixes, but **the sample turned the opinion piece into a story with an invented character** |
 
-  Verdict: tone is warm and fits each grade, the corrections are accurate, and Indian English is respected. One quality issue is logged as **OPEN-004 (Low)**: the samples for older grades sometimes change the kind of writing. Suggested fix: add a rule to the writing prompt to keep the same type of writing (opinion, description, story) and not invent new characters.
+  **OPEN-004 (Low) was fixed** with two rules added to the GRAMMY prompt (`src/server/ai/writing.ts`): keep the kind of writing the child chose and add no new characters, names or events; and each correction's `why` must describe exactly the change shown.
+
+  Re-run after the fix (production build, PostgreSQL 16, 31 Oct):
+
+  | Grade | Score | Fixes | Review notes |
+  |---|---|---|---|
+  | Pre-KG | 72 | 2 | "We always write I as a big letter"; 3 short sentences; same cat |
+  | LKG | 70 | 2 | Spelling (have, ball, with); 4 very short sentences |
+  | UKG | 62 | 3 | Capitals and spelling; same mom piece, a little richer |
+  | Grade 1 | 68 | 2 | "likes" for one dog; same dog, no name added |
+  | Grade 2 | 55 | 2 | "went" for the past, "were" for many monkeys; same zoo trip |
+  | Grade 3 | 58 | 3 | Diwali and Lord Rama capitalised; "favourite" kept |
+  | Grade 4 | 66 | 3 | rained, heavily, were, could not, watched; same rainy day |
+  | Grade 5 | 70 | 2 | The `why` now matches the fix ("would of gone" → "would go") |
+  | Grade 6 | 72 | 3 | Plural and agreement fixes, comma splice; **sample stays a persuasive piece** |
+  | Grade 7 | 72 | 3 | has/allow/they, semicolon + "however"; **sample stays an opinion essay** |
+
+  Verdict: warm tone that fits each grade, accurate corrections, Indian English respected, no adult-attention flags, and no invented content. A larger human review by a teacher is still recommended (see `LOCAL_TESTING_GUIDE.md`).
+
 - AI output is schema-validated (zod structured output). Generated *content* never goes live without passing the 7 validation gates and admin approval (ADM-010…013).
 
 ## Grammar Galaxy
