@@ -6,8 +6,8 @@ Source of truth: `defects.json` (machine-readable). Severity scale:
 - **Medium:** degraded behaviour with a workaround.
 - **Low:** cosmetic or tooling.
 
-**Summary:** 25 entries.
-- 22 defects found and fixed: 1 Critical, 6 High, 8 Medium, 7 Low.
+**Summary:** 26 entries.
+- 23 defects found and fixed: 1 Critical, 6 High, 8 Medium, 8 Low.
 - 3 open or blocked items: OPEN-001 Medium, OPEN-002 High, OPEN-003 High (blocked).
 
 Every fixed defect was reproduced first, fixed at the root cause, and re-tested by a named regression check. No test was disabled, and no error was hidden, to get a pass.
@@ -37,6 +37,7 @@ Every fixed defect was reproduced first, fixed at the root cause, and re-tested 
 | BUG-020 | Low | Responsive | Admin analytics overflow at 320px (51px) and 768px (42px) | Scroll wrapper, `min-w-0` grid items, responsive objective grid | RSP-admin-* |
 | BUG-021 | Low | Security | No HSTS on production builds | HSTS 2 years with `includeSubDomains` | SEC-014 |
 | BUG-022 | Low | Test harness | False results: the reduced-motion regex rejected 1e-06s; inputs in scrollable tables were counted as clipped; the logo exclusion masked BUG-015 | Numeric parse, scroll-aware check, exclusions removed | A11Y-*-reduced-motion, RSP-admin-economy-* |
+| BUG-023 | Low | Accessibility | Read-aloud buttons 20 px and 17×20 px tall (below WCAG 2.5.8); the audit computed small targets but never asserted them | Enlarged to 40 px; TGT-* assertion added | TGT-* |
 | BUG-016 | Low | Test harness | Visual baselines captured mid-animation | Settle animations before capture; baselines regenerated | VIS-* |
 
 ## Open / blocked

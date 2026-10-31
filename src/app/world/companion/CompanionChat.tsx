@@ -23,7 +23,7 @@ export function CompanionChat({ name, ai }: { name: string; ai: boolean }) {
           {msgs.map((m, i) => (
             <div key={i} className={`flex ${m.from === "me" ? "justify-end" : ""}`}>
               <div className={`max-w-[85%] rounded-3xl px-4 py-3 ${m.from === "me" ? "bg-vibe-purple text-white" : "bg-white text-vibe-midnight"}`}>
-                {m.text}{m.from === "lexi" && <button className="ml-2 text-sm" aria-label="Read aloud" onClick={() => speak(m.text)}>🔊</button>}
+                {m.text}{m.from === "lexi" && <button className="ml-1 inline-flex h-10 w-10 items-center justify-center rounded-full align-middle text-base hover:bg-white/10" aria-label="Read aloud" onClick={() => speak(m.text)}>🔊</button>}
               </div>
             </div>
           ))}

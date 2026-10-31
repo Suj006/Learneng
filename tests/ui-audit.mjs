@@ -143,12 +143,16 @@ async function sweep(label, pages, cookieStr) {
           return r.right > vw + 2 || r.left < -2;
         }).map((el) => (el.textContent || el.getAttribute("aria-label") || el.tagName).trim().slice(0, 30));
         const broken = [...document.images].filter((i) => i.complete && i.naturalWidth === 0).map((i) => i.src);
-        const small = [...document.querySelectorAll("button, a.btn, a[class*=btn]")].filter((b) => { const r = b.getBoundingClientRect(); return r.width > 0 && r.height > 0 && r.height < 32; }).length;
-        return { over, clipped, broken, small };
+        const targets = [...document.querySelectorAll("button, a.btn, a[class*=btn], [role=button]")].filter((b) => !b.closest("[aria-hidden=true], .sr-only")).map((b) => [b, b.getBoundingClientRect()]).filter(([, r]) => r.width > 0 && r.height > 0);
+        const small = targets.filter(([, r]) => r.height < 32).length;
+        // WCAG 2.2 AA 2.5.8 Target Size (Minimum): 24×24 CSS px
+        const tiny = targets.filter(([, r]) => r.height < 24 || r.width < 24).map(([b]) => (b.getAttribute("aria-label") || b.textContent || b.tagName).trim().slice(0, 24));
+        return { over, clipped, broken, small, tiny };
       });
       const id = `RSP-${label}-${p.replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "") || "home"}-${vp[0]}`;
       const ok = res.status() < 400 && m.over <= 1 && m.clipped.length === 0 && m.broken.length === 0;
       t(id, "Responsive", "Medium", `${label} ${p} @${vp[0]}px: no horizontal overflow, clipped controls or broken images`, ok, `status ${res.status()} overflow ${m.over}px clipped [${m.clipped.join(", ")}] broken [${m.broken.join(", ")}]`);
+      t(`TGT-${id}`, "Accessibility", "Medium", `${label} ${p} @${vp[0]}px: interactive targets ≥ 24×24px (WCAG 2.5.8)`, m.tiny.length === 0, `under 24px: [${m.tiny.slice(0, 6).join(", ")}]; under 32px tall: ${m.small}`);
       t(`CON-${id}`, "Console", "Medium", `${label} ${p} @${vp[0]}px: no console/network errors`, errs.length === 0, errs.slice(0, 3).join(" | "));
       if (BASELINE_VPS.has(String(vp[0]))) {
         const name = `${label}${p.replace(/[^a-z0-9]+/gi, "_")}_${vp[0]}.jpg`;

@@ -264,6 +264,18 @@
     "regression": "A11Y-*-reduced-motion, RSP-admin-economy-*"
   },
   {
+    "id": "BUG-023",
+    "severity": "Low",
+    "status": "Fixed",
+    "area": "Accessibility",
+    "title": "Read-aloud buttons below the WCAG 2.5.8 minimum target size",
+    "steps": "Measure interactive targets on /world/quest and /world/companion",
+    "expected": "≥ 24×24 px (40 px for young children)",
+    "actual": "'Read to me' 95×20 px; companion 🔊 17×20 px. The audit computed small targets but never asserted them.",
+    "fix": "Both enlarged to 40 px; TGT-* assertion added to ui-audit",
+    "regression": "TGT-*"
+  },
+  {
     "id": "OPEN-001",
     "severity": "Medium",
     "status": "Open",
