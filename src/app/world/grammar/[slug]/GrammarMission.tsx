@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { cheer } from "@/lib/audio/lines";
 import { useEffect, useState } from "react";
 import { CharacterSays, Celebration, ErrorNote, Progress, Spinner, type AwardLike } from "@/components/ui";
 import { api, startTimer } from "@/lib/client";
@@ -79,7 +80,7 @@ export function DrillRunner({ topic }: { topic: string }) {
       <div className="card mt-6 p-6">
         <p className="font-display text-2xl font-bold">{e.q}</p>
         <div className="mt-5 grid gap-3 sm:grid-cols-2">{e.options.map((o, k) => (
-          <button key={o} disabled={picked !== null} onClick={() => { setPicked(k); if (k === e.answer) setCorrect((c) => c + 1); }}
+          <button key={o} disabled={picked !== null} onClick={() => { setPicked(k); cheer(k === e.answer); if (k === e.answer) setCorrect((c) => c + 1); }}
             className={`rounded-2xl border p-4 text-left text-lg font-semibold ${picked === null ? "border-white/10 bg-white/5 hover:bg-white/10" : k === e.answer ? "border-vibe-mint bg-vibe-mint/20" : k === picked ? "border-vibe-coral bg-vibe-coral/20" : "opacity-50"}`}>{o}</button>
         ))}</div>
         {picked !== null && <><p className="mt-3 text-sm text-vibe-aqua">💡 {e.hint}</p><button className="btn-primary mt-4" autoFocus onClick={async () => {

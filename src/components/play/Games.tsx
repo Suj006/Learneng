@@ -5,6 +5,10 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { api, speak, startTimer } from "@/lib/client";
 import { Celebration, CharacterSays, ErrorNote, Progress, Spinner, type AwardLike } from "@/components/ui";
+import { cheer } from "@/lib/audio/lines";
+
+/** Records an answer and gives gentle sound (and now and then voice) feedback — one place for every game. */
+function pushResult<T extends { correct: boolean }>(arr: T[], r: T) { arr.push(r); cheer(r.correct); }
 
 type W = { id: string; word: string; meaning: string; example: string; emoji: string; synonyms: string[]; antonyms: string[]; band: number; phonetic: string };
 type Res = { score: number; max: number; results: { wordId: string; correct: boolean }[] };
@@ -39,7 +43,7 @@ function SequenceGame({ words, onDone, n, render }: GameProps & { n: number; ren
   const [i, setI] = useState(0);
   const res = useRef<Res["results"]>([]);
   const done = (ok: boolean) => {
-    res.current.push({ wordId: rounds[i].id, correct: ok });
+    pushResult(res.current, { wordId: rounds[i].id, correct: ok });
     if (i + 1 < rounds.length) setI(i + 1);
     else onDone({ score: res.current.filter((r) => r.correct).length, max: rounds.length, results: res.current });
   };
@@ -66,7 +70,7 @@ function PictureVocabulary({ words, band, onDone }: GameProps) {
     if (state !== "idle") return;
     const ok = word === w.word;
     setState(ok ? "ok" : "no"); speak(w.word);
-    res.current.push({ wordId: w.id, correct: ok });
+    pushResult(res.current, { wordId: w.id, correct: ok });
     setTimeout(() => { setState("idle"); setDrag(null); if (i + 1 < rounds.length) setI(i + 1); else onDone({ score: res.current.filter((r) => r.correct).length, max: rounds.length, results: res.current }); }, 900);
   };
   return (
@@ -106,7 +110,7 @@ function SpellMaster({ words, onDone }: GameProps) {
       <button className="btn-primary mt-4" onClick={() => speak(w.word, { rate: 0.7 })}>🔊 Hear the word</button>
       <p className="mt-3 text-vibe-lavender">Meaning: {w.meaning}</p>
       {hint && <p className="mt-2 font-display text-2xl tracking-[0.4em]">{w.word[0]}{"_".repeat(w.word.length - 1)}</p>}
-      <form className="mx-auto mt-4 flex max-w-md gap-2" onSubmit={(e) => { e.preventDefault(); if (fb !== null) return next(); const ok = typed.trim().toLowerCase() === w.word.toLowerCase(); setFb(ok); res.current.push({ wordId: w.id, correct: ok && !hint }); }}>
+      <form className="mx-auto mt-4 flex max-w-md gap-2" onSubmit={(e) => { e.preventDefault(); if (fb !== null) return next(); const ok = typed.trim().toLowerCase() === w.word.toLowerCase(); setFb(ok); pushResult(res.current, { wordId: w.id, correct: ok && !hint }); }}>
         <input className="input text-center text-2xl font-bold tracking-widest" value={typed} onChange={(e) => setTyped(e.target.value)} autoCapitalize="none" autoComplete="off" spellCheck={false} aria-label="Spell the word" disabled={fb !== null} />
         <button className="btn-primary">{fb === null ? "Check" : "Next"}</button>
       </form>
@@ -132,7 +136,7 @@ function WordRace({ words, onDone }: GameProps) {
   return (
     <div>
       <div className="mb-4 flex items-center gap-3"><span className="font-display text-3xl font-bold text-vibe-sun">⏱️ {left}s</span><Progress value={left} max={60} color="bg-vibe-sun" /><span className="chip">✅ {res.current.filter((r) => r.correct).length}</span></div>
-      <MCQ prompt={`What does “${q.word}” mean?`} options={options} answer={q.meaning} onPick={(ok) => { res.current.push({ wordId: q.id, correct: ok }); let n = shuffle(words)[0]; if (n.id === q.id && words.length > 1) n = words.find((x) => x.id !== q.id)!; setQ(n); }} />
+      <MCQ prompt={`What does “${q.word}” mean?`} options={options} answer={q.meaning} onPick={(ok) => { pushResult(res.current, { wordId: q.id, correct: ok }); let n = shuffle(words)[0]; if (n.id === q.id && words.length > 1) n = words.find((x) => x.id !== q.id)!; setQ(n); }} />
     </div>
   );
 }
@@ -157,7 +161,7 @@ function SentenceBuilder({ words, onDone }: GameProps) {
       <div className="mt-4 flex gap-2">
         <button className="btn-ghost btn-sm" disabled={!picked.length || fb !== null} onClick={() => setPicked(picked.slice(0, -1))}>↩ Undo</button>
         {fb === null
-          ? <button className="btn-primary btn-sm" disabled={picked.length !== tokens.length} onClick={() => { const ok = built.toLowerCase() === target.toLowerCase(); setFb(ok); res.current.push({ wordId: w.id, correct: ok }); }}>Check</button>
+          ? <button className="btn-primary btn-sm" disabled={picked.length !== tokens.length} onClick={() => { const ok = built.toLowerCase() === target.toLowerCase(); setFb(ok); pushResult(res.current, { wordId: w.id, correct: ok }); }}>Check</button>
           : <button className="btn-primary btn-sm" onClick={() => { setFb(null); setPicked([]); if (i + 1 < rounds.length) setI(i + 1); else onDone({ score: res.current.filter((r) => r.correct).length, max: rounds.length, results: res.current }); }}>Next →</button>}
       </div>
       {fb !== null && <p className={`mt-3 font-bold ${fb ? "text-vibe-mint" : "text-vibe-coral"}`}>{fb ? "Perfect sentence! 🧱" : `Correct order: “${w.example}”`}</p>}
@@ -176,7 +180,7 @@ function WordDetective({ words, onDone }: GameProps) {
   const solved = letters.every((l) => guessed.includes(l) || !/[a-z]/.test(l));
   const misses = guessed.filter((g) => !letters.includes(g)).length;
   const out = misses >= 6;
-  const next = () => { res.current.push({ wordId: w.id, correct: solved && misses <= 3 }); setGuessed([]); if (i + 1 < rounds.length) setI(i + 1); else onDone({ score: res.current.filter((r) => r.correct).length, max: rounds.length, results: res.current }); };
+  const next = () => { pushResult(res.current, { wordId: w.id, correct: solved && misses <= 3 }); setGuessed([]); if (i + 1 < rounds.length) setI(i + 1); else onDone({ score: res.current.filter((r) => r.correct).length, max: rounds.length, results: res.current }); };
   return (
     <div className="text-center">
       <Progress value={i} max={rounds.length} className="mb-4" />
@@ -315,7 +319,7 @@ function BossBattleGame({ words, onDone }: GameProps) {
   const kinds = ["meaning", "antonym", "picture"] as const;
   const kind = w && w.antonyms.length && i % 3 === 1 ? "antonym" : kinds[i % 3] === "antonym" ? "meaning" : kinds[i % 3];
   const pick = (ok: boolean) => {
-    res.current.push({ wordId: w.id, correct: ok });
+    pushResult(res.current, { wordId: w.id, correct: ok });
     const nh = ok ? Math.max(0, hp - Math.ceil(100 / rounds.length) - 2) : hp;
     setHp(nh);
     if (i + 1 < rounds.length && nh > 0) setI(i + 1);

@@ -19,6 +19,7 @@ export default function Privacy() {
           <li>No advertising, no tracking for ads, no selling or sharing data.</li>
           <li>No public profiles, public leaderboards, chat between children or contact with strangers.</li>
           <li>No voice recordings stored: speech recognition runs in your child's browser; only an accuracy score is saved.</li>
+          <li>Character voices and music are generated in your child's browser. If a neural voice service is enabled, only PING VIBE's own lines and learning content (words, stories) are sent to it to create audio — never your child's writing, name or answers. Sound preferences (volumes, on/off) are saved to your child's profile. Parents can switch music and voices off in Settings.</li>
           <li>No paid loot boxes or real-money purchases inside the child experience.</li>
         </ul></section>
         <section><h2 className="title-md text-white">AI feedback</h2><p className="mt-2">If you allow it, your child's writing and questions to LEXI are sent securely from our server to an AI provider (Anthropic's Claude) only to produce feedback. Messages to LEXI are not stored. You can switch the LEXI chat off anytime; writing then gets our built-in offline checker.</p></section>

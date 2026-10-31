@@ -780,3 +780,8 @@ create table if not exists events (
 alter table child_profiles add column if not exists onboarded_at timestamptz;
 alter table auth_tokens drop constraint if exists auth_tokens_purpose_check;
 alter table auth_tokens add constraint auth_tokens_purpose_check check (purpose in ('verify_email','reset_password'));
+
+-- Audio (31 Oct 2026): child's sound preferences (synced across devices) and the parent's sound controls.
+alter table child_profiles add column if not exists audio_prefs jsonb;
+alter table parents add column if not exists music_allowed boolean not null default true;
+alter table parents add column if not exists voices_allowed boolean not null default true;

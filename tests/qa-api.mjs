@@ -41,6 +41,15 @@ const dup = await reg({ parentEmail: dupEmail });
 t("AUTH-014", "Duplicate e-mail: same neutral response (no account enumeration)", dup.status === 200 && dup.data.ok === true);
 const nonJson = await fetch(BASE + "/api/auth/register", { method: "POST", headers: { "Content-Type": "application/json", Origin: BASE }, body: "{bad json" });
 t("AUTH-015", "Malformed JSON returns 400, not 500", nonJson.status === 400, nonJson.status);
+// Age rules (5–13 from birth month + year) — UX-002
+const mNow = new Date().getMonth() + 1;
+const four = await reg({ birthMonth: 12, birthYear: year - 5 }); // Dec, five years ago → still 4 unless it's December
+t("AUTH-016", "Child not yet 5 (by month and year) rejected with a clear message on birthYear", mNow === 12 ? four.status === 200 : four.status === 400 && four.data.field === "birthYear" && /aged 5–13/.test(four.data.error), `${four.status} ${four.data.field} ${four.data.error}`);
+const fourteen = await reg({ birthMonth: 1, birthYear: year - 14 });
+t("AUTH-017", "Child aged 14 rejected", fourteen.status === 400 && /aged 5–13/.test(fourteen.data.error), `${fourteen.status} ${fourteen.data.error}`);
+t("AUTH-018", "Child exactly 5 (birthday month already reached) accepted", (await reg({ birthMonth: 1, birthYear: year - 5 })).status === 200);
+const noMonth = await reg({ birthMonth: undefined });
+t("AUTH-019", "Missing month: friendly message names the field", noMonth.status === 400 && noMonth.data.field === "birthMonth" && /birth month/.test(noMonth.data.error), `${noMonth.data.field} ${noMonth.data.error}`);
 
 mod("E-mail verification", "Critical");
 const bogus = await anon.call("/api/auth/verify?token=not-a-real-token");
@@ -251,6 +260,10 @@ mod("Missions", "High");
 const claim = await F.child.call("/api/missions/claim", { slug: "d-discover" });
 t("GAM-020", "Completed daily mission claimable", claim.status === 200 && claim.data.result.xp >= 0);
 t("GAM-021", "Mission reward idempotent (claim twice)", (await F.child.call("/api/missions/claim", { slug: "d-discover" })).data.result.duplicate === true);
+// RW-003: two simultaneous purchases of the same item → one succeeds, the other gets a friendly 400 (never a 500)
+const buyFam = await makeFamily("G3", "Kavi"); await buyFam.child.call("/api/welcome", {});
+const [b1, b2] = await Promise.all([buyFam.child.call("/api/rewards/redeem", { slug: "expr-wink" }), buyFam.child.call("/api/rewards/redeem", { slug: "expr-wink" })]);
+t("GAM-022", "Double-tap purchase: exactly one succeeds, no 500", [b1.status, b2.status].sort().join() === "200,400", `${b1.status} ${b2.status} ${b2.data.error ?? ""}`);
 const notDone = await F.child.call("/api/missions/claim", { slug: "w-words-50" });
 t("GAM-022", "Unfinished mission cannot be claimed", notDone.status === 400, notDone.data.error);
 t("GAM-023", "Unknown mission refused", (await F.child.call("/api/missions/claim", { slug: "x" })).status === 400);
@@ -308,6 +321,18 @@ t("PAR-002", "Child report renders observations disclaimer", rep.status === 200 
 t("PAR-003", "Settings save", (await F.parent.call("/api/parent/settings", { reminders_enabled: true, reminder_hour: 19, companion_enabled: false })).status === 200);
 t("PAR-004", "Companion disabled by parent is enforced", (await F.child.call("/api/companion", { question: "What does big mean?" })).status === 403);
 await F.parent.call("/api/parent/settings", { reminders_enabled: true, reminder_hour: 19, companion_enabled: true });
+// Audio — AU-004 / AU-006
+const goodPrefs = { master: 0.7, music: 0.3, sfx: 0.5, voice: 0.9, musicOn: false, sfxOn: true, voiceOn: true, captions: true };
+t("AUD-001", "Child audio preferences saved", (await F.child.call("/api/world/audio", goodPrefs)).status === 200);
+t("AUD-002", "Invalid audio preferences rejected (volume > 1, unknown keys)", (await F.child.call("/api/world/audio", { ...goodPrefs, master: 5 })).status === 400 && (await F.child.call("/api/world/audio", { ...goodPrefs, hack: 1 })).status === 400);
+t("AUD-003", "Audio preferences require a child session", (await F.parent.call("/api/world/audio", goodPrefs)).status === 401);
+t("AUD-004", "Parent can switch music and voices off", (await F.parent.call("/api/parent/settings", { reminders_enabled: true, reminder_hour: 19, companion_enabled: true, music_allowed: false, voices_allowed: false })).status === 200);
+const setPage = String((await F.parent.call("/parent/settings")).data);
+t("AUD-005", "Parent sound settings persist", /Allow gentle background music/.test(setPage));
+await F.parent.call("/api/parent/settings", { reminders_enabled: true, reminder_hour: 19, companion_enabled: true, music_allowed: true, voices_allowed: true });
+const tts = await F.child.call("/api/tts", { who: "lexi", text: "Hello" });
+t("AUD-006", "Neural TTS endpoint is off unless configured (no key → 404, never fabricated audio)", process.env.AZURE_SPEECH_KEY ? tts.status === 200 : tts.status === 404, tts.status);
+t("AUD-007", "TTS endpoint requires a child session", (await anon.call("/api/tts", { who: "lexi", text: "Hello" })).status === 401);
 const fam = await F.parent.call("/api/parent/family", { childId: F.childId, title: "Family fun", message: "Go!", wordIds: wid.slice(0, 3) });
 t("PAR-005", "Family challenge created from child's words", fam.status === 200);
 t("PAR-006", "Family challenge rejects undiscovered words", (await F.parent.call("/api/parent/family", { childId: F.childId, title: "Nope", message: "", wordIds: [crypto.randomUUID(), crypto.randomUUID(), crypto.randomUUID()] })).status === 400);

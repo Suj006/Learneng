@@ -3,8 +3,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { api } from "@/lib/client";
 import { ErrorNote } from "@/components/ui";
-
-const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+import { MONTHS, birthYearOptions } from "@/lib/validation";
 
 export function LaunchButton({ childId, name }: { childId: string; name: string }) {
   const router = useRouter();
@@ -16,15 +15,14 @@ export function AddChild({ grades }: { grades: { grade: string; label: string }[
   const [open, setOpen] = useState(false);
   const [f, setF] = useState({ childName: "", birthMonth: "", birthYear: "", grade: "" });
   const [err, setErr] = useState<string | null>(null);
-  const y = new Date().getFullYear();
   if (!open) return <button className="btn-ghost" onClick={() => setOpen(true)}>＋ Add another Explorer</button>;
   return (
-    <form className="card grid gap-3 p-5 sm:grid-cols-5" onSubmit={async (e) => { e.preventDefault(); setErr(null); try { const r = await api<{ redirect: string }>("/api/parent/children", { body: { ...f, birthMonth: Number(f.birthMonth), birthYear: Number(f.birthYear) } }); router.push(r.redirect); } catch (x) { setErr((x as Error).message); } }}>
-      <input className="input sm:col-span-2" placeholder="First name" value={f.childName} onChange={(e) => setF({ ...f, childName: e.target.value })} />
-      <select aria-label="Birth month" className="input" value={f.birthMonth} onChange={(e) => setF({ ...f, birthMonth: e.target.value })}><option value="">Month</option>{MONTHS.map((m, i) => <option key={m} value={i + 1}>{m}</option>)}</select>
-      <select aria-label="Birth year" className="input" value={f.birthYear} onChange={(e) => setF({ ...f, birthYear: e.target.value })}><option value="">Year</option>{Array.from({ length: 12 }, (_, i) => y - 3 - i).map((v) => <option key={v}>{v}</option>)}</select>
-      <select aria-label="Grade" className="input" value={f.grade} onChange={(e) => setF({ ...f, grade: e.target.value })}><option value="">Grade</option>{grades.map((g) => <option key={g.grade} value={g.grade}>{g.label}</option>)}</select>
-      <div className="sm:col-span-5"><ErrorNote error={err} /><button className="btn-primary btn-sm mt-2">Continue to consent</button></div>
+    <form className="card grid gap-3 p-5 sm:grid-cols-2 lg:grid-cols-5" onSubmit={async (e) => { e.preventDefault(); setErr(null); try { const r = await api<{ redirect: string }>("/api/parent/children", { body: { ...f, birthMonth: Number(f.birthMonth), birthYear: Number(f.birthYear) } }); router.push(r.redirect); } catch (x) { setErr((x as Error).message); } }}>
+      <input aria-label="First name" className="input sm:col-span-2 lg:col-span-2" placeholder="First name" value={f.childName} onChange={(e) => setF({ ...f, childName: e.target.value })} />
+      <select aria-label="Birth month" className="select" value={f.birthMonth} onChange={(e) => setF({ ...f, birthMonth: e.target.value })}><option value="">Month</option>{MONTHS.map((m, i) => <option key={m} value={i + 1}>{m}</option>)}</select>
+      <select aria-label="Birth year" className="select" value={f.birthYear} onChange={(e) => setF({ ...f, birthYear: e.target.value })}><option value="">Year</option>{birthYearOptions().map((v) => <option key={v} value={v}>{v}</option>)}</select>
+      <select aria-label="Grade" className="select" value={f.grade} onChange={(e) => setF({ ...f, grade: e.target.value })}><option value="">Grade</option>{grades.map((g) => <option key={g.grade} value={g.grade}>{g.label}</option>)}</select>
+      <div className="sm:col-span-2 lg:col-span-5"><ErrorNote error={err} /><button className="btn-primary btn-sm mt-2">Continue to consent</button></div>
     </form>
   );
 }
@@ -72,7 +70,7 @@ export function FamilyChallenge({ childId, words }: { childId: string; words: { 
   );
 }
 
-export function SettingsForm({ initial }: { initial: { reminders_enabled: boolean; reminder_hour: number; companion_enabled: boolean } }) {
+export function SettingsForm({ initial }: { initial: { reminders_enabled: boolean; reminder_hour: number; companion_enabled: boolean; music_allowed: boolean; voices_allowed: boolean } }) {
   const router = useRouter();
   const [s, setS] = useState(initial);
   const [msg, setMsg] = useState<string | null>(null);
@@ -81,8 +79,12 @@ export function SettingsForm({ initial }: { initial: { reminders_enabled: boolea
       <form className="card space-y-4 p-6" onSubmit={async (e) => { e.preventDefault(); await api("/api/parent/settings", { body: s }); setMsg("Saved ✅"); }}>
         <h2 className="title-md">Learning settings</h2>
         <label className="flex items-center gap-3"><input type="checkbox" className="h-5 w-5 accent-vibe-purple" checked={s.reminders_enabled} onChange={(e) => setS({ ...s, reminders_enabled: e.target.checked })} /> Send me one gentle daily reminder e-mail if my child hasn't learned yet (never sent to children).</label>
-        <label className="flex items-center gap-3">Reminder time: <select aria-label="Reminder hour" className="input w-32" value={s.reminder_hour} onChange={(e) => setS({ ...s, reminder_hour: Number(e.target.value) })}>{Array.from({ length: 24 }, (_, h) => <option key={h} value={h}>{String(h).padStart(2, "0")}:00</option>)}</select></label>
+        <label className="flex items-center gap-3">Reminder time: <select aria-label="Reminder hour" className="select w-36" value={s.reminder_hour} onChange={(e) => setS({ ...s, reminder_hour: Number(e.target.value) })}>{Array.from({ length: 24 }, (_, h) => <option key={h} value={h}>{String(h).padStart(2, "0")}:00</option>)}</select></label>
         <label className="flex items-center gap-3"><input type="checkbox" className="h-5 w-5 accent-vibe-purple" checked={s.companion_enabled} onChange={(e) => setS({ ...s, companion_enabled: e.target.checked })} /> Allow LEXI AI chat (educational questions only, nothing stored).</label>
+        <h3 className="font-display font-bold">Sound</h3>
+        <label className="flex items-center gap-3"><input type="checkbox" className="h-5 w-5 accent-vibe-purple" checked={s.music_allowed} onChange={(e) => setS({ ...s, music_allowed: e.target.checked })} /> Allow gentle background music in my children's world.</label>
+        <label className="flex items-center gap-3"><input type="checkbox" className="h-5 w-5 accent-vibe-purple" checked={s.voices_allowed} onChange={(e) => setS({ ...s, voices_allowed: e.target.checked })} /> Allow character voices (spoken instructions are always shown as text too).</label>
+        <p className="text-xs text-vibe-lavender">Children can also turn music, sound effects and voices off themselves with the 🔊 button. Sound is never needed to complete an activity.</p>
         <p className="text-xs text-vibe-lavender">Healthy-use safeguards are always on: age-based break reminders (15–30 min), a daily reward ceiling, forgiving learning rhythm (rest days never reset progress) and no pressure notifications to children.</p>
         <button className="btn-primary btn-sm">Save settings</button>{msg && <span className="ml-3 text-sm text-vibe-mint">{msg}</span>}
       </form>

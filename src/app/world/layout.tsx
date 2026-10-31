@@ -5,6 +5,8 @@ import { worldContext } from "@/server/world-context";
 import { one } from "@/server/db";
 import { WorldHeader } from "@/components/world/WorldHeader";
 import { BreakReminder } from "@/components/ui";
+import { AudioProvider } from "@/components/audio/AudioProvider";
+import { ttsEnabled } from "@/server/tts";
 
 export const dynamic = "force-dynamic";
 
@@ -24,7 +26,9 @@ export default async function WorldLayout({ children }: { children: React.ReactN
   const child = await requireChild();
   const path = (await headers()).get("x-pathname") ?? "";
   // First login: a playful character welcome (never a test), then straight into the first adventure.
-  const p = await one<{ onboarded_at: string | null }>(`select onboarded_at from child_profiles where child_id = $1`, [child.id]);
+  const p = await one<{ onboarded_at: string | null; audio_prefs: Record<string, unknown> | null; music_allowed: boolean; voices_allowed: boolean }>(
+    `select cp.onboarded_at, cp.audio_prefs, pa.music_allowed, pa.voices_allowed
+       from child_profiles cp join children c on c.id = cp.child_id join parents pa on pa.id = c.parent_id where cp.child_id = $1`, [child.id]);
   if (!p?.onboarded_at && !path.startsWith("/world/welcome") && !path.startsWith("/world/quest")) redirect("/world/welcome");
   const w = await worldContext(child);
   const minutes = ({ 1: 15, 2: 20, 3: 25, 4: 30 } as Record<number, number>)[w.child.band] ?? 20;
@@ -37,6 +41,7 @@ export default async function WorldLayout({ children }: { children: React.ReactN
       }} />
       <main id="main" className="mx-auto max-w-7xl px-4 pb-28 pt-6 sm:px-6 lg:pb-12">{children}</main>
       <BreakReminder minutes={minutes} />
+      <AudioProvider initialPrefs={p?.audio_prefs ?? null} policy={{ musicAllowed: p?.music_allowed ?? true, voicesAllowed: p?.voices_allowed ?? true }} serverTts={ttsEnabled()} />
     </div>
   );
 }

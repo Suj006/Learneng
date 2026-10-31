@@ -52,7 +52,7 @@ export function StoryReader({ slug, pages, glossary, questions, known }: { slug:
       <motion.div key={page} initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} className="card mt-6 p-6 sm:p-10">
         <div className="text-center text-7xl tracking-widest sm:text-8xl" aria-hidden>{p.scene}</div>
         <p className="mt-6 text-xl leading-relaxed sm:text-2xl">{render(p.text)}</p>
-        <button className="btn-ghost btn-sm mt-6" onClick={() => speak(p.text, { rate: 0.85 })}>🔊 Read it to me</button>
+        <button className="btn-ghost btn-sm mt-6" onClick={() => speak(p.text, { who: "story", rate: 0.95, server: true })}>🔊 Read it to me</button>
         {tip && <p className="mt-3 rounded-2xl bg-vibe-sun/15 p-3 text-sm">📖 {tip}</p>}
       </motion.div>
       <p className="mt-2 text-xs text-vibe-lavender"><span className="text-vibe-sun">Yellow</span> = tap for meaning · <span className="text-vibe-aqua">Blue</span> = a word you've discovered</p>

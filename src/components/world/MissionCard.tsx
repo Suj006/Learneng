@@ -1,8 +1,9 @@
 "use client";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Character, type CharacterName } from "@/components/Character";
-import { Celebration, Progress, type AwardLike } from "@/components/ui";
+import { Celebration, Progress, InlineSpinner, type AwardLike } from "@/components/ui";
 import { api } from "@/lib/client";
 
 export interface MissionData { slug: string; scope: string; character: string; title: string; description: string; target: number; progress: number; done: boolean; claimed: boolean; href: string; xp: number; coins: number; crystals: number }
@@ -13,12 +14,16 @@ export function MissionCard({ m, compact = false }: { m: MissionData; compact?: 
   const [state, setState] = useState(m);
   const [award, setAward] = useState<{ result: AwardLike; card: { title: string; emoji: string } | null } | null>(null);
   const [err, setErr] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
+  const router = useRouter();
+  /** The reward is shown only after the server confirms it; a repeat claim is harmless (idempotent on the server). */
   async function claim() {
-    setErr(null);
+    if (busy) return;
+    setErr(null); setBusy(true);
     try {
       const r = await api<{ result: AwardLike; card: { title: string; emoji: string } | null }>("/api/missions/claim", { body: { slug: m.slug } });
       setAward(r); setState({ ...state, claimed: true });
-    } catch (e) { setErr((e as Error).message); }
+    } catch (e) { setErr(`${(e as Error).message} You can safely try again.`); } finally { setBusy(false); }
   }
   return (
     <div className={`glass relative flex gap-3 p-4 ${state.done && !state.claimed ? "ring-2 ring-vibe-sun/70" : ""}`}>
@@ -30,12 +35,12 @@ export function MissionCard({ m, compact = false }: { m: MissionData; compact?: 
         <div className="mt-2 flex flex-wrap items-center gap-2 text-xs">
           <span className="text-vibe-lavender">Reward: ⚡{m.xp} 🪙{m.coins}{m.crystals ? ` 💎${m.crystals}` : ""}</span>
           {state.claimed ? <span className="chip text-vibe-mint">✅ Claimed</span>
-            : state.done ? <button onClick={claim} className="btn-sun btn-sm">Claim reward</button>
+            : state.done ? <button onClick={claim} disabled={busy} aria-busy={busy} className="btn-sun btn-sm">{busy ? <><InlineSpinner /> Collecting…</> : err ? "Try again" : "Claim reward"}</button>
             : <Link href={m.href} className="btn-ghost btn-sm">Go →</Link>}
         </div>
         {err && <p className="mt-1 text-xs text-vibe-coral">{err}</p>}
       </div>
-      {award && <Celebration award={award.result} who={m.character as CharacterName} title="Mission complete!" message={award.card ? <>New collectible card: {award.card.emoji} <b>{award.card.title}</b></> : "MAX: Mission completed! Your next adventure is ready."} onClose={() => setAward(null)} />}
+      {award && <Celebration award={award.result} who={m.character as CharacterName} title="Mission complete!" message={award.card ? <>New collectible card: {award.card.emoji} <b>{award.card.title}</b></> : "MAX: Mission completed! Your next adventure is ready."} onClose={() => { setAward(null); router.refresh(); }} />}
     </div>
   );
 }

@@ -37,7 +37,7 @@ export async function body<T>(req: NextRequest, schema: ZodType<T>): Promise<T> 
     const field = first?.path.join(".") || "the form";
     // Custom messages are written for families; zod's technical defaults are replaced by a friendly one.
     const technical = !first?.message || /^Invalid|^Too (small|big)|expected|received/i.test(first.message);
-    throw new HttpError(400, technical ? `Please check “${field}”.` : first.message);
+    throw new HttpError(400, technical ? `Please check “${field}”.` : first.message, first?.path.length ? { field } : undefined);
   }
   return parsed.data;
 }

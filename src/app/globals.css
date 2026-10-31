@@ -7,6 +7,10 @@
 }
 
 html { scroll-behavior: smooth; }
+/* Every native dropdown gets opaque colours so Windows never draws white options on a white list (see .select). */
+select { color-scheme: dark; }
+select.input { background-color: #2C2452; }
+select option { background-color: #211B3F; color: #ffffff; }
 body {
   @apply bg-vibe-midnight text-white font-body antialiased;
   min-height: 100dvh;
@@ -32,6 +36,27 @@ body {
     min-height: 48px;
   }
   .label { @apply mb-2 block font-display text-sm font-semibold text-vibe-lavender; }
+
+  /*
+   * Dropdowns. The option list is drawn by the operating system, and on Windows (Chrome/Edge) it uses the
+   * select's own colours, so a translucent background with white text made the options invisible.
+   * Selects and options therefore get opaque colours, plus a custom chevron and a large touch target.
+   */
+  .select {
+    @apply input cursor-pointer appearance-none pr-12 font-semibold;
+    background-color: #2C2452;
+    color-scheme: dark;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2339D5E8' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.25rem;
+    min-height: 52px;
+  }
+  .select:invalid, .select[data-empty="true"] { color: rgba(234, 228, 255, 0.6); }
+  .select option { background-color: #211B3F; color: #ffffff; font-weight: 600; }
+  .select option[value=""] { color: rgba(234, 228, 255, 0.7); }
+  .field-error { @apply mt-1.5 text-sm font-semibold text-vibe-coral; }
+  [aria-invalid="true"] { @apply border-vibe-coral ring-2 ring-vibe-coral/30; }
 
   .chip { @apply inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-vibe-lavender; }
 

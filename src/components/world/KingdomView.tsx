@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Scene, type SceneName } from "@/components/Scenes";
-import { Celebration, ErrorNote, PageTitle, Progress, type AwardLike } from "@/components/ui";
+import { Celebration, ErrorNote, InlineSpinner, PageTitle, Progress, type AwardLike } from "@/components/ui";
 import { api } from "@/lib/client";
 
 export interface Loc { slug: string; title: string; emoji: string; kind: string; x: number; y: number; open: boolean; hidden: boolean; claimed: boolean; defeated: boolean; href: string | null; unlock_label: string; progress: number; unlock_target: number; reward_crystals: number; reward_coins: number; bossLevel: number | null }
@@ -14,10 +14,12 @@ export function KingdomView({ k, level }: { k: { title: string; emoji: string; a
   const [sel, setSel] = useState<Loc | null>(null);
   const [award, setAward] = useState<{ a: AwardLike; title: string } | null>(null);
   const [err, setErr] = useState<string | null>(null);
+  const [busy, setBusy] = useState(false);
   async function claim(l: Loc) {
-    setErr(null);
+    if (busy) return;
+    setErr(null); setBusy(true);
     try { const r = await api<{ result: AwardLike; title: string; emoji: string }>("/api/world/treasure", { body: { slug: l.slug } }); setAward({ a: r.result, title: `${r.emoji} ${r.title} opened!` }); }
-    catch (e) { setErr((e as Error).message); }
+    catch (e) { setErr(`${(e as Error).message} You can safely try again.`); } finally { setBusy(false); }
   }
   const icon = (l: Loc) => (l.hidden ? "❔" : !l.open ? "🔒" : l.kind === "treasure" ? (l.claimed ? "📭" : "🎁") : l.kind === "boss" ? (l.defeated ? "🏆" : l.emoji) : l.emoji);
   return (
@@ -45,13 +47,13 @@ export function KingdomView({ k, level }: { k: { title: string; emoji: string; a
             {!sel.open && <Progress value={sel.progress} max={sel.unlock_target} className="mt-2 h-2 max-w-xs" />}
             {sel.kind === "boss" && sel.bossLevel && level < sel.bossLevel && <p className="text-sm text-vibe-sun">Reach Level {sel.bossLevel} to battle.</p>}
           </div>
-          {sel.open && sel.kind === "treasure" && !sel.claimed && <button className="btn-sun" onClick={() => claim(sel)}>Open treasure!</button>}
+          {sel.open && sel.kind === "treasure" && !sel.claimed && <button className="btn-sun" disabled={busy} aria-busy={busy} onClick={() => claim(sel)}>{busy ? <><InlineSpinner /> Opening…</> : "Open treasure!"}</button>}
           {sel.open && (sel.kind === "secret" && !sel.claimed && sel.reward_crystals > 0) && <button className="btn-sun" onClick={() => claim(sel)}>Collect secret reward</button>}
           {sel.open && sel.href && <Link href={sel.href} className="btn-primary">{sel.kind === "boss" ? "Battle! ⚔️" : "Go →"}</Link>}
         </div>
       )}
       <ErrorNote error={err} />
-      {award && <Celebration award={award.a} who="max" title={award.title} onClose={() => { setAward(null); setSel(null); router.refresh(); }} />}
+      {award && <Celebration award={award.a} who="max" title={award.title} sound="treasure" onClose={() => { setAward(null); setSel(null); router.refresh(); }} />}
     </div>
   );
 }

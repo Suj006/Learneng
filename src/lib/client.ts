@@ -1,4 +1,5 @@
 "use client";
+import { audio, type Speaker } from "@/lib/audio/manager";
 
 /** JSON fetch helper with friendly error messages. */
 export async function api<T = any>(url: string, init?: { method?: string; body?: unknown }): Promise<T> {
@@ -19,18 +20,14 @@ export async function api<T = any>(url: string, init?: { method?: string; body?:
   return data as T;
 }
 
-/** Text-to-speech using the browser (no audio leaves the device). */
-export function speak(text: string, opts: { rate?: number } = {}) {
-  if (typeof window === "undefined" || !("speechSynthesis" in window)) return false;
-  window.speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(text);
-  const voices = window.speechSynthesis.getVoices();
-  u.voice = voices.find((v) => /en-IN/i.test(v.lang)) ?? voices.find((v) => /^en/i.test(v.lang)) ?? null;
-  u.lang = u.voice?.lang ?? "en-IN";
-  u.rate = opts.rate ?? 0.9;
-  u.pitch = 1.05;
-  window.speechSynthesis.speak(u);
-  return true;
+/**
+ * Read text aloud (words, examples, stories). Goes through the central AudioManager so music is ducked, lines
+ * never overlap, and the child's voice settings are respected. `who` picks a character voice.
+ */
+export function speak(text: string, opts: { rate?: number; who?: Speaker; server?: boolean } = {}) {
+  if (typeof window === "undefined") return false;
+  void audio.say(opts.who ?? "narrator", text, { rate: opts.rate ?? 0.9, caption: false, server: opts.server ?? false });
+  return "speechSynthesis" in window;
 }
 
 export const ttsSupported = () => typeof window !== "undefined" && "speechSynthesis" in window;

@@ -46,7 +46,7 @@ async function journey() {
     await page.fill("#parentEmail", email);
     await page.selectOption("#birthMonth", "4");
     await page.selectOption("#birthYear", String(new Date().getFullYear() - 7));
-    await page.getByRole("radio", { name: "Grade 2" }).click();
+    await page.selectOption("#grade", "G2");
     await page.fill("#password", "Secret123");
     await page.getByRole("checkbox").check();
     await page.getByRole("button", { name: /Create account/ }).click();

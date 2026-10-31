@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import { speak } from "@/lib/client";
+import { cheer } from "@/lib/audio/lines";
 
 export interface Q {
   type: string; prompt: string; options?: string[]; speak?: string; emoji?: string; sentence?: string; tokens?: string[]; passage?: string; round?: string | number;
@@ -17,6 +18,8 @@ export function Question({ q, onAnswer, disabled, feedback, big = false }: { q: 
   const [shown, setShown] = useState(q);
   if (shown !== q) { setShown(q); setTyped(""); setPicked([]); setChoice(null); }
   useEffect(() => { if (q.speak && (q.type === "spelling" || q.type.startsWith("listen"))) speak(q.speak); }, [q]);
+  // Answer feedback sound (and the occasional character cheer) whenever a result arrives.
+  useEffect(() => { if (feedback) cheer(feedback.correct); }, [feedback]);
 
   const optionClass = (o: string) => {
     const base = `w-full rounded-2xl border px-4 py-4 text-left font-semibold transition ${big ? "text-xl" : "text-base"} `;

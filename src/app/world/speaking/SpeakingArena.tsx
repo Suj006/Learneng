@@ -68,7 +68,7 @@ export function SpeakingArena({ scenarios, words }: { scenarios: Scenario[]; wor
       <div className="card mt-6 p-6 text-center">
         <p className="font-display text-3xl font-bold">“{line}”</p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">
-          <button className="btn-ghost" onClick={() => speak(line, { rate: 0.85 })}>🔊 Listen</button>
+          <button className="btn-ghost" onClick={() => speak(line, { who: "speaky", rate: 0.9, server: true })}>🔊 Listen</button>
           {supported ? (
             <button className="btn-primary" disabled={listening} onClick={async () => {
               setListening(true);

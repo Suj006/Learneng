@@ -185,6 +185,8 @@ See `.env.example`.
 | Variable | Purpose |
 |---|---|
 | `DATABASE_URL` | Postgres connection string (Supabase). Empty means embedded PGlite |
+| `AZURE_SPEECH_KEY`, `AZURE_SPEECH_REGION` | Optional neural character voices (Azure AI Speech). Empty means the browser's own voices are used |
+| `AZURE_TTS_VOICES` | Optional JSON to recast character voices, e.g. `{"lexi":{"voice":"en-IN-NeerjaNeural","style":"cheerful"}}` |
 | `DB_POOL_MAX` | Connections per server instance when `DATABASE_URL` is set (default 5). Keep it small on serverless |
 | `SESSION_SECRET` | Long random string |
 | `APP_URL` | Public URL used in e-mails |

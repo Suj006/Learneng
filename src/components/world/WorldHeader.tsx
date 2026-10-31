@@ -6,6 +6,7 @@ import { Avatar, type AvatarArt, type AvatarLook } from "@/components/Avatar";
 import { BrandLogo } from "@/components/BrandLogo";
 import { Progress } from "@/components/ui";
 import { api } from "@/lib/client";
+import { AudioControls } from "@/components/audio/AudioControls";
 
 export interface HeaderData {
   name: string; levelId: number; levelName: string; tierName: string; xp: number; pct: number; nextXp: number | null; coins: number; crystals: number;
@@ -45,9 +46,10 @@ export function WorldHeader({ d }: { d: HeaderData }) {
             <div className="flex items-center gap-2"><Progress value={d.pct} className="h-2 max-w-[180px]" label="XP to next level" /><span className="hidden text-[11px] text-vibe-lavender/80 sm:inline">{d.xp.toLocaleString()} XP</span></div>
           </div>
           <div className="flex items-center gap-1.5 text-sm font-bold sm:gap-2">
-            <span className="chip bg-vibe-sun/15 text-vibe-sun" title="Vibe Coins">🪙 {d.coins}</span>
+            <Link href="/world/rewards" className="chip bg-vibe-sun/15 text-vibe-sun hover:bg-vibe-sun/25" title="Vibe Coins — open the Reward Shop" aria-label={`${d.coins} Vibe Coins. Open the Reward Shop`}>🪙 {d.coins}</Link>
             <span className="chip hidden bg-vibe-aqua/15 text-vibe-aqua sm:inline-flex" title="Magic Crystals">💎 {d.crystals}</span>
             <span className="chip hidden bg-vibe-coral/15 text-vibe-coral sm:inline-flex" title="Learning rhythm (rest days don't break it)">🔥 {d.rhythm}</span>
+            <AudioControls />
             <button onClick={openBell} className="relative rounded-full p-2 hover:bg-white/10" aria-label={`Notifications${unread ? `, ${unread} new` : ""}`}>
               🔔{unread > 0 && <span className="absolute -right-0.5 -top-0.5 grid h-5 min-w-5 place-items-center rounded-full bg-vibe-coral px-1 text-[10px]">{unread}</span>}
             </button>

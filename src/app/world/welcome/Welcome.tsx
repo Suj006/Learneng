@@ -1,12 +1,13 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Character, CHARACTER_INFO, type CharacterName } from "@/components/Character";
 import { Scene, type SceneName } from "@/components/Scenes";
 import { Burst } from "@/components/ui";
 import { BrandLogo } from "@/components/BrandLogo";
-import { api, speak } from "@/lib/client";
+import { api } from "@/lib/client";
+import { audio } from "@/lib/audio/manager";
 
 const CAST: { who: CharacterName; line: string }[] = [
   { who: "lexi", line: "I'm LEXI! Every day I bring you 10 magical new words." },
@@ -21,7 +22,16 @@ export function Welcome({ name, kingdoms }: { name: string; kingdoms: { slug: st
   const [step, setStep] = useState(0);
   const [cast, setCast] = useState(0);
   const [busy, setBusy] = useState(false);
-  const say = (t: string) => speak(t);
+  // Each buddy speaks in their own voice. The text is always on screen, so no caption is needed.
+  // Lines containing the child's name use the on-device voice only (never sent to a voice service).
+  const say = (t: string, who: CharacterName = "max", server = true) => void audio.say(who, t, { server, caption: false });
+  useEffect(() => { audio.greetOnce("welcome", "max", `Hey ${name}! Welcome to PING VIBE! Your magical adventure starts right here!`, { server: false }); }, [name]);
+  useEffect(() => {
+    if (step === 1) say(CAST[cast].line, CAST[cast].who);
+    if (step === 2) say("Six magical kingdoms are waiting! Learn, play and explore to unlock secret places and treasures.");
+    if (step === 3) say("Let's discover your first ten magical words!", "lexi");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [step, cast]);
   async function start() {
     setBusy(true);
     try { const r = await api<{ redirect: string }>("/api/welcome", { body: {} }); router.push(r.redirect); router.refresh(); } catch { setBusy(false); }
@@ -39,7 +49,7 @@ export function Welcome({ name, kingdoms }: { name: string; kingdoms: { slug: st
             <Character name="max" mood="excited" size={170} />
             <h1 className="title-lg mt-4">Hey {name}! Welcome to PING VIBE!</h1>
             <p className="mt-3 max-w-xl text-xl text-vibe-lavender">Your magical adventure starts right here! I'm MAX, your adventure buddy.</p>
-            <div className="mt-6 flex gap-3"><button className="btn-ghost" onClick={() => say(`Hey ${name}! Welcome to PING VIBE! Your magical adventure starts right here!`)}>🔊 Hear MAX</button><button className="btn-primary text-lg" onClick={next}>Hi MAX! 👋</button></div>
+            <div className="mt-6 flex gap-3"><button className="btn-ghost" onClick={() => say(`Hey ${name}! Welcome to PING VIBE! Your magical adventure starts right here!`, "max", false)}>🔊 Hear MAX</button><button className="btn-primary text-lg" onClick={next}>Hi MAX! 👋</button></div>
           </motion.div>
         )}
         {step === 1 && (
@@ -48,7 +58,7 @@ export function Welcome({ name, kingdoms }: { name: string; kingdoms: { slug: st
             <Character name={CAST[cast].who} mood={(["excited", "welcome", "celebrating", "explaining"] as const)[cast]} size={200} className="mt-2" />
             <h2 className="title-lg mt-2" style={{ color: CHARACTER_INFO[CAST[cast].who].color }}>{CHARACTER_INFO[CAST[cast].who].name}</h2>
             <p className="mt-2 max-w-lg text-xl">{CAST[cast].line}</p>
-            <div className="mt-6 flex gap-3"><button className="btn-ghost" onClick={() => say(CAST[cast].line)}>🔊 Listen</button>
+            <div className="mt-6 flex gap-3"><button className="btn-ghost" onClick={() => say(CAST[cast].line, CAST[cast].who)}>🔊 Listen</button>
               <button className="btn-primary text-lg" onClick={() => (cast + 1 < CAST.length ? setCast(cast + 1) : next())}>{cast + 1 < CAST.length ? "Next buddy →" : "Show me the worlds! 🌍"}</button></div>
           </motion.div>
         )}

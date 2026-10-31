@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { Character, type CharacterName } from "@/components/Character";
 import { Avatar, type AvatarArt, type AvatarLook } from "@/components/Avatar";
 import { Scene, type SceneName } from "@/components/Scenes";
-import { Celebration, Progress, type AwardLike } from "@/components/ui";
+import { Celebration, InlineSpinner, Progress, type AwardLike } from "@/components/ui";
 import { MissionCard, type MissionData } from "./MissionCard";
 import { BrandLogo } from "@/components/BrandLogo";
 import { api } from "@/lib/client";
@@ -46,10 +46,12 @@ export function Adventure({ d }: { d: AdventureData }) {
     try { const r = await api<{ href: string }>("/api/adventure", { body: { choice: key } }); router.push(r.href); }
     catch (e) { setErr((e as Error).message); setBusyChoice(null); }
   }
+  const [opening, setOpening] = useState(false);
   async function surprise() {
-    setErr(null);
+    if (opening) return;
+    setErr(null); setOpening(true);
     try { const r = await api<{ award: AwardLike; fact: string }>("/api/surprise", { body: {} }); setStatus({ ...status, surprise_open: 1 }); setAward({ a: r.award, title: "Surprise Box opened! 🎁", msg: <>Word fact: {r.fact}</> }); }
-    catch (e) { setErr((e as Error).message); }
+    catch (e) { setErr(`${(e as Error).message} You can safely try again.`); } finally { setOpening(false); }
   }
   async function realLife() {
     try { const r = await api<{ award: AwardLike }>("/api/mission", { body: {} }); setStatus({ ...status, mission_done: 1 }); setAward({ a: r.award, title: "Real-life mission done! 🌍" }); }
@@ -138,7 +140,7 @@ export function Adventure({ d }: { d: AdventureData }) {
         <div className="card flex flex-col p-5">
           <div className="text-4xl">🎁</div><h3 className="title-md mt-2">Daily Surprise Box</h3>
           <p className="mt-1 flex-1 text-sm text-vibe-lavender">Finish today's Word Quest to open it: +50 XP and a fun word fact. Same reward for everyone, every day — no luck needed.</p>
-          <button onClick={surprise} disabled={!status.quest_done || !!status.surprise_open} className="btn-sun mt-4">{status.surprise_open ? "Opened today ✅" : status.quest_done ? "Open the box!" : "🔒 Complete the quest first"}</button>
+          <button onClick={surprise} disabled={!status.quest_done || !!status.surprise_open || opening} aria-busy={opening} className="btn-sun mt-4">{status.surprise_open ? "Opened today ✅" : opening ? <><InlineSpinner /> Opening…</> : status.quest_done ? "Open the box!" : "🔒 Complete the quest first"}</button>
         </div>
         <div className="card flex flex-col p-5">
           <div className="text-4xl">🌍</div><h3 className="title-md mt-2">Real-Life English Mission</h3>

@@ -10,9 +10,11 @@ export const POST = childRoute(async (req, child) => {
       `select cost_coins, cost_crystals, min_level, title, level_exclusive from rewards where slug = $1 and active`, [slug])).rows[0];
     if (!r) throw new HttpError(404, "Reward not found.");
     if (r.level_exclusive) throw new HttpError(400, `This is a Level ${r.min_level} reward — it unlocks automatically when you get there!`);
+    // Lock the wallet FIRST, then check ownership: two quick taps are serialised, so the second sees the first purchase
+    // and gets a friendly message instead of a duplicate-key error.
+    const p = (await q.query<{ coins: number; crystals: number; level_id: number }>(`select coins, crystals, level_id from child_profiles where child_id = $1 for update`, [child.id])).rows[0];
     const owned = (await q.query(`select 1 from child_rewards where child_id = $1 and slug = $2`, [child.id, slug])).rows.length;
     if (owned) throw new HttpError(400, "You already own this!");
-    const p = (await q.query<{ coins: number; crystals: number; level_id: number }>(`select coins, crystals, level_id from child_profiles where child_id = $1 for update`, [child.id])).rows[0];
     if (p.level_id < r.min_level) throw new HttpError(400, `Reach Level ${r.min_level} to unlock this!`);
     if (p.coins < r.cost_coins) throw new HttpError(400, `You need ${r.cost_coins - p.coins} more coins. Keep learning to earn them!`);
     if (p.crystals < r.cost_crystals) throw new HttpError(400, `You need ${r.cost_crystals - p.crystals} more Magic Crystals. Win boss battles and milestones to earn them!`);
