@@ -11,6 +11,7 @@ const { chromium } = require("playwright");
 const sharp = require("sharp");
 const AXE = fs.readFileSync(require.resolve("axe-core/axe.min.js"), "utf8");
 const UPDATE = process.argv.includes("--update-baseline");
+const ONLY = new RegExp(process.env.ONLY ?? ".");
 const OUT = "qa/results"; const SHOTS = "qa/screenshots/current"; const BASELINE = "qa/screenshots/baseline";
 for (const d of [OUT, SHOTS, BASELINE]) fs.mkdirSync(d, { recursive: true });
 
@@ -23,8 +24,8 @@ const t = (id, module, severity, scenario, cond, actual = "") => {
 const VIEWPORTS = [[320, 640], [375, 812], [430, 932], [768, 1024], [1024, 768], [1366, 768], [1440, 900], [1920, 1080]];
 const BASELINE_VPS = new Set(["375", "768", "1440"]);
 // Pages whose content is intentionally random/fresh (today's words, rotating topics, generated grids/questions,
-// animated maps) are screenshotted for manual review but excluded from automated pixel diffs.
-const DYNAMIC = /\/world($|\/(quest|map|missions|arcade\/|writing|grammar\/|notebook|story-builder|boss|calendar|my-world|avatar|museum|reading\/))|\/parent\/child|\/admin($|\/content)/;
+// animated maps, the profile with its random Explorer name) are screenshotted for manual review but excluded from automated pixel diffs.
+const DYNAMIC = /\/world($|\/(me$|quest|map|missions|arcade\/|writing|grammar\/|notebook|story-builder|boss|calendar|my-world|avatar|museum|reading\/))|\/parent\/child|\/admin($|\/content)/;
 
 let browser = await chromium.launch();
 const ensureBrowser = async () => { if (!browser.isConnected()) browser = await chromium.launch(); };
@@ -121,7 +122,7 @@ async function sweep(label, pages, cookieStr) {
   for (const vp of VIEWPORTS) {
     await ensureBrowser();
     const ctx = await cookieCtx(cookieStr, vp);
-    for (const p of pages) {
+    for (const p of pages.filter((x) => ONLY.test(x))) {
      try {
       const page = await ctx.newPage();
       const errs = [];
@@ -183,9 +184,12 @@ async function sweep(label, pages, cookieStr) {
 async function a11y(label, pages, cookieStr) {
   await ensureBrowser();
   const ctx = await cookieCtx(cookieStr, [1366, 900]);
-  for (const p of pages) {
-    const page = await ctx.newPage();
+  for (const p of pages.filter((x) => ONLY.test(x))) {
+   const page = await ctx.newPage();
+   try {
     await page.goto(BASE + p, { waitUntil: "networkidle" });
+    // contrast is only meaningful once entrance fades have finished
+    await page.waitForTimeout(1200);
     await page.addScriptTag({ content: AXE });
     const res = await page.evaluate(async () => {
       const r = await window.axe.run(document, { runOnly: { type: "tag", values: ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"] } });
@@ -198,7 +202,10 @@ async function a11y(label, pages, cookieStr) {
     const focus = await page.evaluate(() => ({ text: document.activeElement?.textContent?.trim().slice(0, 30), outline: getComputedStyle(document.activeElement).outlineStyle + "|" + getComputedStyle(document.activeElement).boxShadow }));
     t(`KBD-${label}-${p.replace(/[^a-z0-9]+/gi, "-") || "home"}`, "Accessibility", "Medium", `${label} ${p}: first Tab reaches skip link`, /Skip to content/.test(focus.text ?? ""), focus.text);
     fs.appendFileSync(`${OUT}/axe-details.jsonl`, JSON.stringify({ label, page: p, violations: res }) + "\n");
-    await page.close();
+   } catch (e) {
+    t(`A11Y-${label}-${p.replace(/[^a-z0-9]+/gi, "-") || "home"}-run`, "Accessibility", "Medium", `${label} ${p}: accessibility audit executed`, null, `BLOCKED by test harness: ${e.message.split("\n")[0]}`);
+   }
+   await page.close().catch(() => {});
   }
   // reduced motion honoured
   const page = await ctx.newPage();
@@ -216,7 +223,8 @@ fs.rmSync(`${OUT}/axe-details.jsonl`, { force: true });
   for (const p of ["/", "/signup", "/login", "/dev/mailbox", "/parent/consent", "/world/welcome", "/world/quest", "/world", "/api/quest", "/world/arcade/word-match"]) await w.child.call(p);
   for (const p of ["/parent", "/parent/consent"]) await w.parent.call(p);
 }
-await journey();
+// ONLY=<regex> limits the sweep to matching pages (e.g. to refresh selected baselines); the journey runs only in full audits.
+if (!process.env.ONLY) await journey();
 const fam = await makeFamily("G3", "Meera");
 await fam.child.call("/api/welcome", {});
 const childCookie = fam.child.cookie();
@@ -232,9 +240,10 @@ await sweep("public", PUBLIC, null);
 await sweep("child", CHILD, childCookie);
 await sweep("parent", PARENT, parentCookie);
 await sweep("admin", ADMIN, admin.cookie());
-await a11y("public", ["/", "/signup", "/login"], null);
-await a11y("child", ["/world", "/world/quest", "/world/arcade/word-match", "/world/writing", "/world/rewards", "/world/map"], childCookie);
-await a11y("parent", PARENT.slice(0, 2), parentCookie);
+await a11y("public", PUBLIC, null);
+await a11y("child", [...CHILD, "/world/arcade/word-match", "/world/listening"], childCookie);
+await a11y("parent", PARENT, parentCookie);
+await a11y("admin", ADMIN, admin.cookie());
 await browser.close();
 
 fs.writeFileSync(`${OUT}/ui-audit.json`, JSON.stringify({ generated_at: new Date().toISOString(), base: BASE, results: R }, null, 2));

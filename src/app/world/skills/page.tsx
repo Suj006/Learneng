@@ -25,7 +25,7 @@ export default async function Skills() {
                 {nodes.map((n) => (
                   <li key={n.slug} className="relative">
                     <span className={`absolute -left-[30px] top-1 grid h-6 w-6 place-items-center rounded-full text-xs ${n.status === "mastered" ? "bg-vibe-sun text-vibe-midnight" : n.status === "developing" ? "bg-vibe-aqua/30" : "bg-white/10"}`}>{n.status === "mastered" ? "★" : n.status === "developing" ? "•" : "🔒"}</span>
-                    <div className={n.status === "locked" ? "opacity-50" : ""}>
+                    <div className={n.status === "locked" ? "text-vibe-lavender" : ""}>
                       <b>{n.title}</b> <span className="text-xs text-vibe-lavender">— {n.description}</span>
                       {n.status !== "locked" && n.status !== "mastered" && (<div className="mt-1 flex items-center gap-2 text-xs"><Progress value={n.progress} className="h-1.5 max-w-[160px]" /><span>{n.attempts}/{n.min_attempts} tries · {n.accuracy}% (need {n.min_accuracy}%)</span></div>)}
                       {n.status === "mastered" && <div className="text-xs text-vibe-sun">Unlocked! {n.accuracy}% accuracy</div>}

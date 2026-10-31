@@ -31,8 +31,8 @@ export default async function Collection() {
       </section>
       <section><h2 className="title-md">Character, creature & event cards ({ownedCards}/{c.cards.length})</h2>
         <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{c.cards.map((k) => (
-          <article key={k.slug} className={`card border-2 p-4 ${k.owned ? `${RARITY[k.rarity].ring} ${RARITY[k.rarity].glow}` : "border-white/5 opacity-50"}`}>
-            <div className="flex justify-between"><span className="text-4xl">{k.owned ? k.emoji : "❔"}</span><RarityBadge rarity={k.rarity} /></div>
+          <article key={k.slug} className={`card border-2 p-4 ${k.owned ? `${RARITY[k.rarity].ring} ${RARITY[k.rarity].glow}` : "border-dashed border-white/20"}`}>
+            <div className="flex justify-between"><span className={`text-4xl ${k.owned ? "" : "opacity-50 grayscale"}`}>{k.owned ? k.emoji : "❔"}</span><RarityBadge rarity={k.rarity} /></div>
             <h3 className="mt-2 font-display font-bold">{k.owned ? k.title : "Undiscovered card"}</h3>
             <p className="mt-1 text-xs text-vibe-lavender">{k.owned ? k.fact : k.kind === "character" ? "Complete this character's mission." : k.kind === "creature" ? "Defeat this boss." : "Join this special event."}</p>
             {k.owned && <p className="mt-2 rounded-xl bg-white/5 p-2 text-xs">📘 {k.lesson}</p>}

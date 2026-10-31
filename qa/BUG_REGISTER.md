@@ -6,8 +6,8 @@ Source of truth: `defects.json` (machine-readable). Severity scale:
 - **Medium:** degraded behaviour with a workaround.
 - **Low:** cosmetic or tooling.
 
-**Summary:** 26 entries.
-- 23 defects found and fixed: 1 Critical, 6 High, 8 Medium, 8 Low.
+**Summary:** 29 entries.
+- 26 defects found and fixed: 1 Critical, 6 High, 10 Medium, 9 Low.
 - 3 open or blocked items: OPEN-001 Medium, OPEN-002 High, OPEN-003 High (blocked).
 
 Every fixed defect was reproduced first, fixed at the root cause, and re-tested by a named regression check. No test was disabled, and no error was hidden, to get a pass.
@@ -31,6 +31,8 @@ Every fixed defect was reproduced first, fixed at the root cause, and re-tested 
 | BUG-015 | Medium | Brand/UI | Missing logo rendered as a broken image with wrapping alt text; the audit had excluded the logo URL, which masked it | Server-side presence passed to `BrandAssetProvider`; post-mount check; audit exclusions removed | RSP-public-* broken-image, CON-* |
 | BUG-017 | Medium | Accessibility | Text contrast below AA: interim wordmark white-on-white (1.1:1), character name labels (1.77–2.77:1), Epic chip (3.62:1) | Wordmark in its own dark badge; dark-ink names with colour swatch; lighter Epic tint | A11Y-* |
 | BUG-018 | Medium | Accessibility | Progress bars, family-challenge inputs and 14 selects without accessible names | Default name and `aria-valuetext` on `Progress`; contextual labels; `aria-label` on controls | A11Y-* |
+| BUG-024 | Medium | Accessibility | Found once axe covered every page: locked cards dimmed by whole-card opacity (text 3.1–4.2:1), 'Admin' chip 4.48:1, 80 unlabelled economy inputs | Dim only the artwork, dashed locked border; lighter chip; `aria-label` on inputs | A11Y-child-world-skills/museum/collection, A11Y-admin-* |
+| BUG-026 | Medium | Word Quest | A typed spelling answer could be wiped just after a new question appeared (found by the browser journey) | Reset answer state during render instead of in an effect | UI-J1-* |
 | BUG-009 | Low | UI | `ref` passed as a regular prop | Renamed `refSlug` | CON-* |
 | BUG-010 | Low | Responsive | Avatar studio overflow at 320px | `min-w-0`, smaller preview | RSP-child-world-avatar-320 |
 | BUG-019 | Low | Accessibility | Landing carousel not keyboard-scrollable | Focusable labelled region with focus ring | A11Y-public-home |
@@ -38,6 +40,7 @@ Every fixed defect was reproduced first, fixed at the root cause, and re-tested 
 | BUG-021 | Low | Security | No HSTS on production builds | HSTS 2 years with `includeSubDomains` | SEC-014 |
 | BUG-022 | Low | Test harness | False results: the reduced-motion regex rejected 1e-06s; inputs in scrollable tables were counted as clipped; the logo exclusion masked BUG-015 | Numeric parse, scroll-aware check, exclusions removed | A11Y-*-reduced-motion, RSP-admin-economy-* |
 | BUG-023 | Low | Accessibility | Read-aloud buttons 20 px and 17×20 px tall (below WCAG 2.5.8); the audit computed small targets but never asserted them | Enlarged to 40 px; TGT-* assertion added | TGT-* |
+| BUG-025 | Low | Test harness | Accessibility audit covered only 11 of 45 pages, and one timeout could crash the run | axe and keyboard checks on every page; per-page BLOCKED recording; waits for fades | A11Y-*, KBD-* |
 | BUG-016 | Low | Test harness | Visual baselines captured mid-animation | Settle animations before capture; baselines regenerated | VIS-* |
 
 ## Open / blocked

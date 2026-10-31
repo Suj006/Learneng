@@ -276,6 +276,42 @@
     "regression": "TGT-*"
   },
   {
+    "id": "BUG-024",
+    "severity": "Medium",
+    "status": "Fixed",
+    "area": "Accessibility",
+    "title": "Contrast and labelling failures on pages the audit had not scanned (locked items, admin chip, economy inputs)",
+    "steps": "axe-core on /world/skills, /world/museum, /world/collection and all /admin pages",
+    "expected": "No serious/critical violations",
+    "actual": "Locked cards dimmed with whole-card opacity (text 3.1–4.2:1); 'Admin' chip 4.48:1; 80 unlabeled XP/coin/crystal/cap inputs (20 activities × 4; critical)",
+    "fix": "Only the artwork of locked items is dimmed (dashed border marks them); lighter chip tint; aria-labels on every economy input",
+    "regression": "A11Y-child-world-skills/museum/collection, A11Y-admin-*"
+  },
+  {
+    "id": "BUG-025",
+    "severity": "Low",
+    "status": "Fixed",
+    "area": "Test harness",
+    "title": "Accessibility audit covered only 11 of 45 pages and could crash the run",
+    "steps": "Read tests/ui-audit.mjs",
+    "expected": "axe on every page; one page failure recorded, not fatal",
+    "actual": "axe ran on 11 hand-picked pages; a navigation timeout aborted the whole audit",
+    "fix": "axe and keyboard checks on every public, child, parent and admin page; per-page try/catch records BLOCKED; waits for fades before measuring contrast",
+    "regression": "A11Y-*, KBD-*"
+  },
+  {
+    "id": "BUG-026",
+    "severity": "Medium",
+    "status": "Fixed",
+    "area": "Learning — Word Quest",
+    "title": "Typed spelling answer could be wiped right after a new question appeared",
+    "steps": "In the quest, start typing in a spelling round immediately after pressing Next (reproduced by the browser journey: input filled, then cleared, 'Check' stayed disabled)",
+    "expected": "Typed letters are kept",
+    "actual": "Answer state was reset in a useEffect that ran after the new question was painted, clearing anything typed in that window (more likely on slow devices)",
+    "fix": "Reset answer state during render when the question changes; the effect now only plays the audio (Question.tsx, used by quest, revision and all challenges)",
+    "regression": "UI-J1-* journey"
+  },
+  {
     "id": "OPEN-001",
     "severity": "Medium",
     "status": "Open",

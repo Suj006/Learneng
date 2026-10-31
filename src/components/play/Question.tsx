@@ -12,7 +12,11 @@ export function Question({ q, onAnswer, disabled, feedback, big = false }: { q: 
   const [picked, setPicked] = useState<string[]>([]);
   const [choice, setChoice] = useState<string | null>(null);
   const pool = useMemo(() => q.tokens ?? [], [q]);
-  useEffect(() => { setTyped(""); setPicked([]); setChoice(null); if (q.speak && (q.type === "spelling" || q.type.startsWith("listen"))) speak(q.speak); }, [q]);
+  // Reset answer state while rendering the new question (not in an effect), so nothing the
+  // child types after the question appears can be wiped by a late reset.
+  const [shown, setShown] = useState(q);
+  if (shown !== q) { setShown(q); setTyped(""); setPicked([]); setChoice(null); }
+  useEffect(() => { if (q.speak && (q.type === "spelling" || q.type.startsWith("listen"))) speak(q.speak); }, [q]);
 
   const optionClass = (o: string) => {
     const base = `w-full rounded-2xl border px-4 py-4 text-left font-semibold transition ${big ? "text-xl" : "text-base"} `;
