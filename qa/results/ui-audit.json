@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T05:51:27.443Z",
+  "generated_at": "2026-10-31T14:08:40.019Z",
   "base": "http://localhost:3000",
   "results": [
     {
@@ -24,7 +24,7 @@
       "severity": "Critical",
       "scenario": "Consent + PIN shows Explorer name",
       "status": "PASS",
-      "actual": "sunnymax321"
+      "actual": "pixelpanda574"
     },
     {
       "id": "UI-J1-04",
@@ -48,7 +48,7 @@
       "severity": "Critical",
       "scenario": "Learn 10 words, answer all rounds, receive XP celebration",
       "status": "PASS",
-      "actual": "16 questions; +66 XP"
+      "actual": "16 questions; +63 XP"
     },
     {
       "id": "UI-J1-07",
@@ -360,7 +360,7 @@
       "severity": "Low",
       "scenario": "public /login?as=parent @375px matches baseline (<3% pixels changed)",
       "status": "PASS",
-      "actual": "0.04% changed"
+      "actual": "0.00% changed"
     },
     {
       "id": "RSP-public-privacy-375",
@@ -424,7 +424,7 @@
       "severity": "Low",
       "scenario": "public /forgot-password @375px matches baseline (<3% pixels changed)",
       "status": "PASS",
-      "actual": "0.04% changed"
+      "actual": "0.00% changed"
     },
     {
       "id": "RSP-public-verify-expired-1-375",
@@ -456,7 +456,7 @@
       "severity": "Low",
       "scenario": "public /verify?expired=1 @375px matches baseline (<3% pixels changed)",
       "status": "PASS",
-      "actual": "0.05% changed"
+      "actual": "0.00% changed"
     },
     {
       "id": "RSP-public-home-430",
@@ -1248,7 +1248,7 @@
       "severity": "Low",
       "scenario": "public /signup @1440px matches baseline (<3% pixels changed)",
       "status": "PASS",
-      "actual": "0.03% changed"
+      "actual": "0.01% changed"
     },
     {
       "id": "RSP-public-login-1440",
@@ -1280,7 +1280,7 @@
       "severity": "Low",
       "scenario": "public /login @1440px matches baseline (<3% pixels changed)",
       "status": "PASS",
-      "actual": "0.02% changed"
+      "actual": "0.00% changed"
     },
     {
       "id": "RSP-public-login-as-parent-1440",
@@ -1408,7 +1408,7 @@
       "severity": "Low",
       "scenario": "public /verify?expired=1 @1440px matches baseline (<3% pixels changed)",
       "status": "PASS",
-      "actual": "0.01% changed"
+      "actual": "0.00% changed"
     },
     {
       "id": "RSP-public-home-1920",
@@ -3856,7 +3856,7 @@
       "severity": "Low",
       "scenario": "child /world/grammar @768px matches baseline (<3% pixels changed)",
       "status": "PASS",
-      "actual": "0.00% changed"
+      "actual": "0.01% changed"
     },
     {
       "id": "RSP-child-world-grammar-nouns-768",
@@ -3912,7 +3912,7 @@
       "severity": "Low",
       "scenario": "child /world/reading @768px matches baseline (<3% pixels changed)",
       "status": "PASS",
-      "actual": "0.00% changed"
+      "actual": "0.01% changed"
     },
     {
       "id": "RSP-child-world-reading-the-monsoon-puddle-768",
@@ -5936,7 +5936,7 @@
       "severity": "Low",
       "scenario": "child /world/reading @1440px matches baseline (<3% pixels changed)",
       "status": "PASS",
-      "actual": "0.00% changed"
+      "actual": "0.02% changed"
     },
     {
       "id": "RSP-child-world-reading-the-monsoon-puddle-1440",
@@ -7027,26 +7027,26 @@
       "actual": ""
     },
     {
-      "id": "RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-320",
+      "id": "RSP-parent-parent-child-e9650991-e06e-4032-8d6d-81d85877e50f-320",
       "module": "Responsive",
       "severity": "Medium",
-      "scenario": "parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @320px: no horizontal overflow, clipped controls or broken images",
+      "scenario": "parent /parent/child/e9650991-e06e-4032-8d6d-81d85877e50f @320px: no horizontal overflow, clipped controls or broken images",
       "status": "PASS",
       "actual": "status 200 overflow 0px clipped [] broken []"
     },
     {
-      "id": "TGT-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-320",
+      "id": "TGT-RSP-parent-parent-child-e9650991-e06e-4032-8d6d-81d85877e50f-320",
       "module": "Accessibility",
       "severity": "Medium",
-      "scenario": "parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @320px: interactive targets ≥ 24×24px (WCAG 2.5.8)",
+      "scenario": "parent /parent/child/e9650991-e06e-4032-8d6d-81d85877e50f @320px: interactive targets ≥ 24×24px (WCAG 2.5.8)",
       "status": "PASS",
       "actual": "under 24px: []; under 32px tall: 10"
     },
     {
-      "id": "CON-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-320",
+      "id": "CON-RSP-parent-parent-child-e9650991-e06e-4032-8d6d-81d85877e50f-320",
       "module": "Console",
       "severity": "Medium",
-      "scenario": "parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @320px: no console/network errors",
+      "scenario": "parent /parent/child/e9650991-e06e-4032-8d6d-81d85877e50f @320px: no console/network errors",
       "status": "PASS",
       "actual": ""
     },
@@ -7104,29 +7104,29 @@
       "severity": "Low",
       "scenario": "parent /parent @375px matches baseline (<3% pixels changed)",
       "status": "PASS",
-      "actual": "0.59% changed"
+      "actual": "0.38% changed"
     },
     {
-      "id": "RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-375",
+      "id": "RSP-parent-parent-child-e9650991-e06e-4032-8d6d-81d85877e50f-375",
       "module": "Responsive",
       "severity": "Medium",
-      "scenario": "parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @375px: no horizontal overflow, clipped controls or broken images",
+      "scenario": "parent /parent/child/e9650991-e06e-4032-8d6d-81d85877e50f @375px: no horizontal overflow, clipped controls or broken images",
       "status": "PASS",
       "actual": "status 200 overflow 0px clipped [] broken []"
     },
     {
-      "id": "TGT-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-375",
+      "id": "TGT-RSP-parent-parent-child-e9650991-e06e-4032-8d6d-81d85877e50f-375",
       "module": "Accessibility",
       "severity": "Medium",
-      "scenario": "parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @375px: interactive targets ≥ 24×24px (WCAG 2.5.8)",
+      "scenario": "parent /parent/child/e9650991-e06e-4032-8d6d-81d85877e50f @375px: interactive targets ≥ 24×24px (WCAG 2.5.8)",
       "status": "PASS",
       "actual": "under 24px: []; under 32px tall: 10"
     },
     {
-      "id": "CON-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-375",
+      "id": "CON-RSP-parent-parent-child-e9650991-e06e-4032-8d6d-81d85877e50f-375",
       "module": "Console",
       "severity": "Medium",
-      "scenario": "parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @375px: no console/network errors",
+      "scenario": "parent /parent/child/e9650991-e06e-4032-8d6d-81d85877e50f @375px: no console/network errors",
       "status": "PASS",
       "actual": ""
     },
@@ -7160,7 +7160,7 @@
       "severity": "Low",
       "scenario": "parent /parent/settings @375px matches baseline (<3% pixels changed)",
       "status": "PASS",
-      "actual": "0.32% changed"
+      "actual": "0.19% changed"
     },
     {
       "id": "RSP-parent-parent-430",
@@ -7187,26 +7187,26 @@
       "actual": ""
     },
     {
-      "id": "RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-430",
+      "id": "RSP-parent-parent-child-e9650991-e06e-4032-8d6d-81d85877e50f-430",
       "module": "Responsive",
       "severity": "Medium",
-      "scenario": "parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @430px: no horizontal overflow, clipped controls or broken images",
+      "scenario": "parent /parent/child/e9650991-e06e-4032-8d6d-81d85877e50f @430px: no horizontal overflow, clipped controls or broken images",
       "status": "PASS",
       "actual": "status 200 overflow 0px clipped [] broken []"
     },
     {
-      "id": "TGT-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-430",
+      "id": "TGT-RSP-parent-parent-child-e9650991-e06e-4032-8d6d-81d85877e50f-430",
       "module": "Accessibility",
       "severity": "Medium",
-      "scenario": "parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @430px: interactive targets ≥ 24×24px (WCAG 2.5.8)",
+      "scenario": "parent /parent/child/e9650991-e06e-4032-8d6d-81d85877e50f @430px: interactive targets ≥ 24×24px (WCAG 2.5.8)",
       "status": "PASS",
       "actual": "under 24px: []; under 32px tall: 10"
     },
     {
-      "id": "CON-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-430",
+      "id": "CON-RSP-parent-parent-child-e9650991-e06e-4032-8d6d-81d85877e50f-430",
       "module": "Console",
       "severity": "Medium",
-      "scenario": "parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @430px: no console/network errors",
+      "scenario": "parent /parent/child/e9650991-e06e-4032-8d6d-81d85877e50f @430px: no console/network errors",
       "status": "PASS",
       "actual": ""
     },
@@ -7264,29 +7264,29 @@
       "severity": "Low",
       "scenario": "parent /parent @768px matches baseline (<3% pixels changed)",
       "status": "PASS",
-      "actual": "0.24% changed"
+      "actual": "0.15% changed"
     },
     {
-      "id": "RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-768",
+      "id": "RSP-parent-parent-child-e9650991-e06e-4032-8d6d-81d85877e50f-768",
       "module": "Responsive",
       "severity": "Medium",
-      "scenario": "parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @768px: no horizontal overflow, clipped controls or broken images",
+      "scenario": "parent /parent/child/e9650991-e06e-4032-8d6d-81d85877e50f @768px: no horizontal overflow, clipped controls or broken images",
       "status": "PASS",
       "actual": "status 200 overflow 0px clipped [] broken []"
     },
     {
-      "id": "TGT-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-768",
+      "id": "TGT-RSP-parent-parent-child-e9650991-e06e-4032-8d6d-81d85877e50f-768",
       "module": "Accessibility",
       "severity": "Medium",
-      "scenario": "parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @768px: interactive targets ≥ 24×24px (WCAG 2.5.8)",
+      "scenario": "parent /parent/child/e9650991-e06e-4032-8d6d-81d85877e50f @768px: interactive targets ≥ 24×24px (WCAG 2.5.8)",
       "status": "PASS",
       "actual": "under 24px: []; under 32px tall: 10"
     },
     {
-      "id": "CON-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-768",
+      "id": "CON-RSP-parent-parent-child-e9650991-e06e-4032-8d6d-81d85877e50f-768",
       "module": "Console",
       "severity": "Medium",
-      "scenario": "parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @768px: no console/network errors",
+      "scenario": "parent /parent/child/e9650991-e06e-4032-8d6d-81d85877e50f @768px: no console/network errors",
       "status": "PASS",
       "actual": ""
     },
@@ -7320,7 +7320,7 @@
       "severity": "Low",
       "scenario": "parent /parent/settings @768px matches baseline (<3% pixels changed)",
       "status": "PASS",
-      "actual": "0.12% changed"
+      "actual": "0.07% changed"
     },
     {
       "id": "RSP-parent-parent-1024",
@@ -7347,26 +7347,26 @@
       "actual": ""
     },
     {
-      "id": "RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-1024",
+      "id": "RSP-parent-parent-child-e9650991-e06e-4032-8d6d-81d85877e50f-1024",
       "module": "Responsive",
       "severity": "Medium",
-      "scenario": "parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @1024px: no horizontal overflow, clipped controls or broken images",
+      "scenario": "parent /parent/child/e9650991-e06e-4032-8d6d-81d85877e50f @1024px: no horizontal overflow, clipped controls or broken images",
       "status": "PASS",
       "actual": "status 200 overflow 0px clipped [] broken []"
     },
     {
-      "id": "TGT-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-1024",
+      "id": "TGT-RSP-parent-parent-child-e9650991-e06e-4032-8d6d-81d85877e50f-1024",
       "module": "Accessibility",
       "severity": "Medium",
-      "scenario": "parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @1024px: interactive targets ≥ 24×24px (WCAG 2.5.8)",
+      "scenario": "parent /parent/child/e9650991-e06e-4032-8d6d-81d85877e50f @1024px: interactive targets ≥ 24×24px (WCAG 2.5.8)",
       "status": "PASS",
       "actual": "under 24px: []; under 32px tall: 10"
     },
     {
-      "id": "CON-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-1024",
+      "id": "CON-RSP-parent-parent-child-e9650991-e06e-4032-8d6d-81d85877e50f-1024",
       "module": "Console",
       "severity": "Medium",
-      "scenario": "parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @1024px: no console/network errors",
+      "scenario": "parent /parent/child/e9650991-e06e-4032-8d6d-81d85877e50f @1024px: no console/network errors",
       "status": "PASS",
       "actual": ""
     },
@@ -7419,26 +7419,26 @@
       "actual": ""
     },
     {
-      "id": "RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-1366",
+      "id": "RSP-parent-parent-child-e9650991-e06e-4032-8d6d-81d85877e50f-1366",
       "module": "Responsive",
       "severity": "Medium",
-      "scenario": "parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @1366px: no horizontal overflow, clipped controls or broken images",
+      "scenario": "parent /parent/child/e9650991-e06e-4032-8d6d-81d85877e50f @1366px: no horizontal overflow, clipped controls or broken images",
       "status": "PASS",
       "actual": "status 200 overflow 0px clipped [] broken []"
     },
     {
-      "id": "TGT-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-1366",
+      "id": "TGT-RSP-parent-parent-child-e9650991-e06e-4032-8d6d-81d85877e50f-1366",
       "module": "Accessibility",
       "severity": "Medium",
-      "scenario": "parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @1366px: interactive targets ≥ 24×24px (WCAG 2.5.8)",
+      "scenario": "parent /parent/child/e9650991-e06e-4032-8d6d-81d85877e50f @1366px: interactive targets ≥ 24×24px (WCAG 2.5.8)",
       "status": "PASS",
       "actual": "under 24px: []; under 32px tall: 10"
     },
     {
-      "id": "CON-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-1366",
+      "id": "CON-RSP-parent-parent-child-e9650991-e06e-4032-8d6d-81d85877e50f-1366",
       "module": "Console",
       "severity": "Medium",
-      "scenario": "parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @1366px: no console/network errors",
+      "scenario": "parent /parent/child/e9650991-e06e-4032-8d6d-81d85877e50f @1366px: no console/network errors",
       "status": "PASS",
       "actual": ""
     },
@@ -7496,29 +7496,29 @@
       "severity": "Low",
       "scenario": "parent /parent @1440px matches baseline (<3% pixels changed)",
       "status": "PASS",
-      "actual": "0.14% changed"
+      "actual": "0.09% changed"
     },
     {
-      "id": "RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-1440",
+      "id": "RSP-parent-parent-child-e9650991-e06e-4032-8d6d-81d85877e50f-1440",
       "module": "Responsive",
       "severity": "Medium",
-      "scenario": "parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @1440px: no horizontal overflow, clipped controls or broken images",
+      "scenario": "parent /parent/child/e9650991-e06e-4032-8d6d-81d85877e50f @1440px: no horizontal overflow, clipped controls or broken images",
       "status": "PASS",
       "actual": "status 200 overflow 0px clipped [] broken []"
     },
     {
-      "id": "TGT-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-1440",
+      "id": "TGT-RSP-parent-parent-child-e9650991-e06e-4032-8d6d-81d85877e50f-1440",
       "module": "Accessibility",
       "severity": "Medium",
-      "scenario": "parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @1440px: interactive targets ≥ 24×24px (WCAG 2.5.8)",
+      "scenario": "parent /parent/child/e9650991-e06e-4032-8d6d-81d85877e50f @1440px: interactive targets ≥ 24×24px (WCAG 2.5.8)",
       "status": "PASS",
       "actual": "under 24px: []; under 32px tall: 10"
     },
     {
-      "id": "CON-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-1440",
+      "id": "CON-RSP-parent-parent-child-e9650991-e06e-4032-8d6d-81d85877e50f-1440",
       "module": "Console",
       "severity": "Medium",
-      "scenario": "parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @1440px: no console/network errors",
+      "scenario": "parent /parent/child/e9650991-e06e-4032-8d6d-81d85877e50f @1440px: no console/network errors",
       "status": "PASS",
       "actual": ""
     },
@@ -7552,7 +7552,7 @@
       "severity": "Low",
       "scenario": "parent /parent/settings @1440px matches baseline (<3% pixels changed)",
       "status": "PASS",
-      "actual": "0.07% changed"
+      "actual": "0.04% changed"
     },
     {
       "id": "RSP-parent-parent-1920",
@@ -7579,26 +7579,26 @@
       "actual": ""
     },
     {
-      "id": "RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-1920",
+      "id": "RSP-parent-parent-child-e9650991-e06e-4032-8d6d-81d85877e50f-1920",
       "module": "Responsive",
       "severity": "Medium",
-      "scenario": "parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @1920px: no horizontal overflow, clipped controls or broken images",
+      "scenario": "parent /parent/child/e9650991-e06e-4032-8d6d-81d85877e50f @1920px: no horizontal overflow, clipped controls or broken images",
       "status": "PASS",
       "actual": "status 200 overflow 0px clipped [] broken []"
     },
     {
-      "id": "TGT-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-1920",
+      "id": "TGT-RSP-parent-parent-child-e9650991-e06e-4032-8d6d-81d85877e50f-1920",
       "module": "Accessibility",
       "severity": "Medium",
-      "scenario": "parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @1920px: interactive targets ≥ 24×24px (WCAG 2.5.8)",
+      "scenario": "parent /parent/child/e9650991-e06e-4032-8d6d-81d85877e50f @1920px: interactive targets ≥ 24×24px (WCAG 2.5.8)",
       "status": "PASS",
       "actual": "under 24px: []; under 32px tall: 10"
     },
     {
-      "id": "CON-RSP-parent-parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c-1920",
+      "id": "CON-RSP-parent-parent-child-e9650991-e06e-4032-8d6d-81d85877e50f-1920",
       "module": "Console",
       "severity": "Medium",
-      "scenario": "parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c @1920px: no console/network errors",
+      "scenario": "parent /parent/child/e9650991-e06e-4032-8d6d-81d85877e50f @1920px: no console/network errors",
       "status": "PASS",
       "actual": ""
     },
@@ -8879,8 +8879,8 @@
       "module": "Accessibility",
       "severity": "Medium",
       "scenario": "public /: no critical/serious axe violations (WCAG 2.2 AA)",
-      "status": "PASS",
-      "actual": ""
+      "status": "FAIL",
+      "actual": "serious:color-contrast(1)"
     },
     {
       "id": "KBD-public--",
@@ -9483,18 +9483,18 @@
       "actual": "Skip to content"
     },
     {
-      "id": "A11Y-parent--parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c",
+      "id": "A11Y-parent--parent-child-e9650991-e06e-4032-8d6d-81d85877e50f",
       "module": "Accessibility",
       "severity": "Medium",
-      "scenario": "parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c: no critical/serious axe violations (WCAG 2.2 AA)",
+      "scenario": "parent /parent/child/e9650991-e06e-4032-8d6d-81d85877e50f: no critical/serious axe violations (WCAG 2.2 AA)",
       "status": "PASS",
       "actual": ""
     },
     {
-      "id": "KBD-parent--parent-child-b925d79a-3114-4d96-9ced-d088b0b0310c",
+      "id": "KBD-parent--parent-child-e9650991-e06e-4032-8d6d-81d85877e50f",
       "module": "Accessibility",
       "severity": "Medium",
-      "scenario": "parent /parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c: first Tab reaches skip link",
+      "scenario": "parent /parent/child/e9650991-e06e-4032-8d6d-81d85877e50f: first Tab reaches skip link",
       "status": "PASS",
       "actual": "Skip to content"
     },

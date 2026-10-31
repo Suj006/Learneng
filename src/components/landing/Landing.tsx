@@ -64,7 +64,7 @@ export default function Landing() {
         {FLOATING.map((w, i) => (
           <motion.span key={w} aria-hidden className="pointer-events-none absolute hidden select-none rounded-full border border-line/10 bg-glass/5 px-3 py-1 font-display text-sm text-vibe-lavender backdrop-blur sm:block"
             style={{ left: `${(i * 97) % 92}%`, top: `${18 + ((i * 53) % 65)}%` }}
-            animate={{ y: [0, -18, 0], opacity: [0.4, 0.9, 0.4] }} transition={{ duration: 6 + (i % 4), repeat: Infinity, delay: i * 0.5 }}>
+            animate={{ y: [0, -18, 0] }} transition={{ duration: 6 + (i % 4), repeat: Infinity, delay: i * 0.5 }}>
             {w}
           </motion.span>
         ))}

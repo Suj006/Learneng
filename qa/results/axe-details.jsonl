@@ -1,4 +1,4 @@
-{"label":"public","page":"/","violations":[]}
+{"label":"public","page":"/","violations":[{"id":"color-contrast","impact":"serious","nodes":1,"help":"Elements must meet minimum color contrast ratio thresholds","targets":[{"target":".pointer-events-none.border.border-line\\/10:nth-child(10)","html":"<span aria-hidden=\"true\" class=\"pointer-events-none absolute hidden select-none rounded-full border border-line/10 bg-glass/5 px-3 py-1 font-display text-sm tex","why":"Fix any of the following:\n  Element has insufficient color contrast of 1.85 (foreground color: #bbbbc3, background color: #fdfbff, font size: 10.5pt (14px), font weight: normal). Expected contrast rat"}]}]}
 {"label":"public","page":"/signup","violations":[]}
 {"label":"public","page":"/login","violations":[]}
 {"label":"public","page":"/login?as=parent","violations":[]}
@@ -35,7 +35,7 @@
 {"label":"child","page":"/world/arcade/word-match","violations":[]}
 {"label":"child","page":"/world/listening","violations":[]}
 {"label":"parent","page":"/parent","violations":[]}
-{"label":"parent","page":"/parent/child/b925d79a-3114-4d96-9ced-d088b0b0310c","violations":[]}
+{"label":"parent","page":"/parent/child/e9650991-e06e-4032-8d6d-81d85877e50f","violations":[]}
 {"label":"parent","page":"/parent/settings","violations":[]}
 {"label":"admin","page":"/admin","violations":[]}
 {"label":"admin","page":"/admin/content","violations":[]}
