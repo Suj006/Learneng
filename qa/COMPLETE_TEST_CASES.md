@@ -1,19 +1,19 @@
 # PING VIBE — Complete Test Cases (executed)
 
-Generated 2026-10-31T05:52:37.246Z by `node scripts/qa-report.mjs` from the raw results in `qa/results/`. Synthetic data only.
+Generated 2026-10-31T08:55:01.147Z by `node scripts/qa-report.mjs` from the raw results in `qa/results/`. Synthetic data only.
 
-**Totals:** 1449 executed · 1446 pass · 1 fail · 2 blocked (includes 21 vitest unit tests).
+**Totals:** 1449 executed · 1444 pass · 4 fail · 1 blocked (includes 21 vitest unit tests).
 
 | Suite | Command | Total | Pass | Fail | Blocked |
 |---|---|---|---|---|---|
 | Unit (engines) | `npx vitest run` | 21 | 21 | 0 | 0 |
-| API, database, security & learning | `node tests/qa-api.mjs` | 217 | 215 | 0 | 2 |
+| API, database, security & learning | `node tests/qa-api.mjs` | 217 | 213 | 3 | 1 |
 | UI journeys, responsive, console, accessibility & visual | `node tests/ui-audit.mjs` | 1203 | 1203 | 0 | 0 |
 | Performance & load | `node tests/perf.mjs` | 8 | 7 | 1 | 0 |
 
 ## API, database, security & learning
 
-_Run against http://localhost:3000 at 2026-10-31T05:51:44.332Z._
+_Run against http://localhost:3000 at 2026-10-31T08:53:44.648Z._
 
 ### Registration
 
@@ -40,7 +40,7 @@ _Run against http://localhost:3000 at 2026-10-31T05:51:44.332Z._
 | ID | Severity | Scenario | Status | Actual / notes |
 |---|---|---|---|---|
 | AUTH-020 | Critical | Invalid verification token → expired page, no session | ✅ PASS | http://localhost:3000/verify?expired=1 |
-| AUTH-021 | Critical | Verification + consent creates an active Explorer | ✅ PASS | braveowl626 |
+| AUTH-021 | Critical | Verification + consent creates an active Explorer | ✅ PASS | zippyfalcon853 |
 | AUTH-022 | Critical | Verification e-mail generated with link | ✅ PASS |  |
 
 ### Login & sessions
@@ -131,7 +131,7 @@ _Run against http://localhost:3000 at 2026-10-31T05:51:44.332Z._
 | LRN-034 | High | Submission evaluated with score, corrections and encouragement | ✅ PASS |  |
 | LRN-035 | High | Original vs corrected sentences provided | ✅ PASS |  |
 | LRN-036 | High | Resubmitting an evaluated piece is refused | ✅ PASS |  |
-| LRN-037 | High | Claude writing evaluation (real AI) | ⛔ BLOCKED | BLOCKED: ANTHROPIC_API_KEY not configured — offline evaluator used and labelled |
+| LRN-037 | High | Claude writing evaluation (real AI) | ❌ FAIL | evaluator=offline (key set; see server log "[ai] writing evaluation failed") |
 | LRN-038 | High | Draft cannot be edited after evaluation | ✅ PASS |  |
 
 ### Grammar Galaxy
@@ -209,7 +209,7 @@ _Run against http://localhost:3000 at 2026-10-31T05:51:44.332Z._
 | LRN-081 | Critical | Phone number blocked | ✅ PASS |  |
 | LRN-082 | Critical | E-mail address blocked | ✅ PASS |  |
 | LRN-083 | Critical | Unsafe topic redirected to a trusted adult | ✅ PASS |  |
-| LRN-084 | Critical | Real Claude companion response | ⛔ BLOCKED | BLOCKED: ANTHROPIC_API_KEY not configured — dictionary mode verified instead |
+| LRN-084 | Critical | Real Claude companion response | ❌ FAIL | source=dictionary (key set; see server log "[ai] companion failed") |
 
 ### XP, levels & economy
 
@@ -234,7 +234,7 @@ _Run against http://localhost:3000 at 2026-10-31T05:51:44.332Z._
 |---|---|---|---|---|
 | GAM-020 | High | Completed daily mission claimable | ✅ PASS |  |
 | GAM-021 | High | Mission reward idempotent (claim twice) | ✅ PASS |  |
-| GAM-022 | High | Unfinished mission cannot be claimed | ✅ PASS | That mission isn't available right now. |
+| GAM-022 | High | Unfinished mission cannot be claimed | ✅ PASS | Keep going — this mission isn't finished yet! |
 | GAM-023 | High | Unknown mission refused | ✅ PASS |  |
 
 ### Bosses, map & world
@@ -299,11 +299,11 @@ _Run against http://localhost:3000 at 2026-10-31T05:51:44.332Z._
 | ADM-003-admin-events | High | Admin page /admin/events renders | ✅ PASS |  |
 | ADM-003-admin-vocabulary | High | Admin page /admin/vocabulary renders | ✅ PASS |  |
 | ADM-003-admin-grades | High | Admin page /admin/grades renders | ✅ PASS |  |
-| ADM-010 | High | Manual vocabulary passes validation gates → review queue | ✅ PASS |  |
+| ADM-010 | High | Manual vocabulary passes validation gates → review queue | ❌ FAIL | independent AI review |
 | ADM-011 | High | Unsafe/low-quality word fails safety, mechanics & difficulty gates | ✅ PASS |  |
 | ADM-012 | High | Pending item visible in review queue | ✅ PASS |  |
 | ADM-013 | High | Approve & publish → word live in vocabulary master | ✅ PASS |  |
-| ADM-014 | High | Gen endpoint without AI key returns clear error | ✅ PASS |  |
+| ADM-014 | High | Gen endpoint without AI key returns clear error | ⛔ BLOCKED |  |
 | ADM-015 | High | XP config update persists | ✅ PASS |  |
 | ADM-016 | High | Invalid XP config rejected | ✅ PASS |  |
 | ADM-017 | High | Daily XP ceiling update | ✅ PASS |  |

@@ -54,7 +54,7 @@ Every fixed defect was reproduced first, fixed at the root cause, and re-tested 
 
 | ID | Sev | Status | Item | Next action | Owner |
 |---|---|---|---|---|---|
-| OPEN-003 | High | Blocked | Live Claude writing evaluation and companion untested (LRN-037, LRN-084) | Provide a staging `ANTHROPIC_API_KEY` and re-run `tests/qa-api.mjs` | Engineering |
+| OPEN-003 | High | Blocked | Live Claude writing evaluation and companion untested (LRN-037, LRN-084; ADM-010 with a key). 31 Oct: `PINGVIBE_ANTHROPIC_API_KEY` is configured and used, but the Anthropic account has no credit, so every call is rejected. | Add credit to the key's Anthropic account (Plans & Billing), then re-run `tests/qa-api.mjs` and `tests/ai-writing-grades.mjs` on the production build | Account owner / Engineering |
 | OPEN-001 | Medium | Open | API p95 above the 1.5 s target with 30 concurrent children on embedded PGlite: 2,554 / 1,496 / 2,038 / 1,943 ms across four runs, with a max of 8–10 s. Every run had 0 errors and correct awards. | Re-run `tests/perf.mjs` against managed Postgres with pooling | Engineering / DevOps |
 
 Full reproduction steps, expected and actual results for every entry are in `defects.json`.

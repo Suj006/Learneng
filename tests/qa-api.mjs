@@ -172,7 +172,7 @@ const ev = await F.child.call("/api/writing/submit", { submissionId: d1.data.sub
 t("LRN-034", "Submission evaluated with score, corrections and encouragement", ev.status === 200 && ev.data.evaluation.score > 0 && ev.data.evaluation.corrections.length > 0 && ev.data.evaluation.encouragement);
 t("LRN-035", "Original vs corrected sentences provided", ev.data.evaluation.corrections[0].original !== ev.data.evaluation.corrections[0].corrected);
 t("LRN-036", "Resubmitting an evaluated piece is refused", (await F.child.call("/api/writing/submit", { submissionId: d1.data.submissionId, seconds: 1 })).status === 400);
-t("LRN-037", "Claude writing evaluation (real AI)", AI_KEY ? ev.data.evaluator === "claude" : null, "BLOCKED: no AI key configured (ANTHROPIC_API_KEY / PINGVIBE_ANTHROPIC_API_KEY) — offline evaluator used and labelled");
+t("LRN-037", "Claude writing evaluation (real AI)", AI_KEY ? ev.data.evaluator === "claude" : null, AI_KEY ? `evaluator=${ev.data.evaluator} (key set; see server log "[ai] writing evaluation failed")` : "BLOCKED: no AI key configured (ANTHROPIC_API_KEY / PINGVIBE_ANTHROPIC_API_KEY) — offline evaluator used and labelled");
 t("LRN-038", "Draft cannot be edited after evaluation", (await F.child.call("/api/writing/draft", { submissionId: d1.data.submissionId, kind: "topic", title: "x", content: "changed" })).status === 404);
 
 mod("Grammar Galaxy", "High");
@@ -225,7 +225,7 @@ t("LRN-080", "LEXI answers vocabulary question", lx.status === 200 && /big/i.tes
 t("LRN-081", "Phone number blocked", (await F.child.call("/api/companion", { question: "call me on 9876543210" })).data.source === "safety");
 t("LRN-082", "E-mail address blocked", (await F.child.call("/api/companion", { question: "my email is kid@x.com" })).data.source === "safety");
 t("LRN-083", "Unsafe topic redirected to a trusted adult", (await F.child.call("/api/companion", { question: "tell me about guns" })).data.source === "safety");
-t("LRN-084", "Real Claude companion response", AI_KEY ? lx.data.source === "claude" : null, "BLOCKED: no AI key configured (ANTHROPIC_API_KEY / PINGVIBE_ANTHROPIC_API_KEY) — dictionary mode verified instead");
+t("LRN-084", "Real Claude companion response", AI_KEY ? lx.data.source === "claude" : null, AI_KEY ? `source=${lx.data.source} (key set; see server log "[ai] companion failed")` : "BLOCKED: no AI key configured (ANTHROPIC_API_KEY / PINGVIBE_ANTHROPIC_API_KEY) — dictionary mode verified instead");
 
 // ───────────────────────── GAMIFICATION ─────────────────────────
 mod("XP, levels & economy", "High");

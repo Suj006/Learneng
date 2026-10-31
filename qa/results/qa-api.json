@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T05:51:44.332Z",
+  "generated_at": "2026-10-31T08:53:44.648Z",
   "base": "http://localhost:3000",
   "results": [
     {
@@ -136,7 +136,7 @@
       "severity": "Critical",
       "scenario": "Verification + consent creates an active Explorer",
       "status": "PASS",
-      "actual": "braveowl626"
+      "actual": "zippyfalcon853"
     },
     {
       "id": "AUTH-022",
@@ -663,8 +663,8 @@
       "module": "Creative Writing",
       "severity": "High",
       "scenario": "Claude writing evaluation (real AI)",
-      "status": "BLOCKED",
-      "actual": "BLOCKED: ANTHROPIC_API_KEY not configured — offline evaluator used and labelled"
+      "status": "FAIL",
+      "actual": "evaluator=offline (key set; see server log \"[ai] writing evaluation failed\")"
     },
     {
       "id": "LRN-038",
@@ -1087,8 +1087,8 @@
       "module": "AI companion",
       "severity": "Critical",
       "scenario": "Real Claude companion response",
-      "status": "BLOCKED",
-      "actual": "BLOCKED: ANTHROPIC_API_KEY not configured — dictionary mode verified instead"
+      "status": "FAIL",
+      "actual": "source=dictionary (key set; see server log \"[ai] companion failed\")"
     },
     {
       "id": "GAM-001",
@@ -1208,7 +1208,7 @@
       "severity": "High",
       "scenario": "Unfinished mission cannot be claimed",
       "status": "PASS",
-      "actual": "That mission isn't available right now."
+      "actual": "Keep going — this mission isn't finished yet!"
     },
     {
       "id": "GAM-023",
@@ -1527,8 +1527,8 @@
       "module": "Administration",
       "severity": "High",
       "scenario": "Manual vocabulary passes validation gates → review queue",
-      "status": "PASS",
-      "actual": ""
+      "status": "FAIL",
+      "actual": "independent AI review"
     },
     {
       "id": "ADM-011",
@@ -1559,7 +1559,7 @@
       "module": "Administration",
       "severity": "High",
       "scenario": "Gen endpoint without AI key returns clear error",
-      "status": "PASS",
+      "status": "BLOCKED",
       "actual": ""
     },
     {

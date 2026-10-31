@@ -1,6 +1,6 @@
 # PING VIBE — Learning Module Test Report
 
-**Result (API): 79 executed, 77 PASS, 0 FAIL, 2 BLOCKED** (LRN-001…084), plus 6 grade-band checks (GRD-*, all PASS) and unit tests of the engines. Executed with synthetic Explorers across Pre-KG, UKG, Grade 1, Grade 3 and Grade 7.
+**Result (API): 79 executed, 77 PASS, 2 FAIL (LRN-037, LRN-084: Anthropic account has no credit), 0 BLOCKED** (LRN-001…084), plus 6 grade-band checks (GRD-*, all PASS) and unit tests of the engines. Executed with synthetic Explorers across Pre-KG, UKG, Grade 1, Grade 3 and Grade 7.
 
 ## Onboarding (assessment removed)
 
@@ -34,7 +34,8 @@ Skill intelligence:
 - Topics, draft save/update, the empty-submit refusal and the 6,000-character limit all pass.
 - Evaluation provides a score, corrections with original vs corrected sentences, and encouragement.
 - An evaluated piece cannot be edited or resubmitted.
-- **LRN-037: BLOCKED.** Claude evaluation was not executed because `ANTHROPIC_API_KEY` is not configured. The rule-based offline evaluator was verified instead, and its output is labelled as offline in the UI. This is **not** evidence that the Claude integration works.
+- **LRN-037: FAIL (external, 31 Oct).** Re-run on the production build with `PINGVIBE_ANTHROPIC_API_KEY` set. The app called Claude, but the API rejected the call because the API key's Anthropic account has no credit (`invalid_request_error: Your credit balance is too low to access the Anthropic API`). The submission fell back to the offline evaluator and was labelled `offline`, so the child still got feedback. This is **not** evidence that the Claude integration works.
+- **AI writing feedback per grade (`tests/ai-writing-grades.mjs`):** one synthetic Explorer per grade (Pre-KG, LKG, UKG, Grade 1–7) submitted grade-typical writing. All 10 got HTTP 200 with a score, corrections and encouragement, but `evaluator=offline` for every grade (0/10 by Claude) for the same credit reason. Offline scores rose with grade (42 → 93) because they reflect text length and mechanics, not meaning. Tone and accuracy of Claude feedback per grade remain **unreviewed**. Raw output: `results/ai-writing-grades.json`.
 - AI output is schema-validated (zod structured output). Generated *content* never goes live without passing the 7 validation gates and admin approval (ADM-010…013).
 
 ## Grammar Galaxy
@@ -61,7 +62,7 @@ Skill intelligence:
 - Vocabulary help works in dictionary mode.
 - Phone numbers and e-mail addresses are blocked. Unsafe topics, including plural forms after the **BUG-004** fix, are redirected to a trusted adult.
 - The companion can be disabled by the parent, and the server enforces this (PAR-004).
-- **LRN-084: BLOCKED.** No real Claude response could be tested without a key.
+- **LRN-084: FAIL (external, 31 Oct).** With the key set, the companion call was rejected for lack of account credit. The reply came from dictionary mode (`source=dictionary`), and the safety filters still ran first.
 
 ## Curriculum scale (verified against records, not claims)
 

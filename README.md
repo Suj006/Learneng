@@ -273,6 +273,12 @@ Run it against any running server:
 BASE_URL=http://localhost:3000 node tests/qa-api.mjs
 ```
 
+The live-AI checks (LRN-037, LRN-084) need the server and the test run to share `PINGVIBE_ANTHROPIC_API_KEY` (or `ANTHROPIC_API_KEY`). To review Claude's writing feedback for every grade, run this; it writes `qa/results/ai-writing-grades.json`:
+
+```bash
+BASE_URL=http://localhost:3000 node tests/ai-writing-grades.mjs
+```
+
 **3. Browser checks**
 
 Covers the browser journey, 8 viewports, console errors, axe-core accessibility and visual regression:

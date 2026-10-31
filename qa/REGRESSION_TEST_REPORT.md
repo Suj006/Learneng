@@ -7,7 +7,7 @@ After each fix, the affected suite was re-run. After the last fix, every suite w
 | Suite | Environment | Result |
 |---|---|---|
 | Unit (vitest) | Node | 21 / 21 PASS |
-| API, DB, security, learning (`tests/qa-api.mjs`) | Production build, fresh DB, `QA_PRODUCTION=1` | **217 checks: 215 PASS · 0 FAIL · 2 BLOCKED** (live Claude) |
+| API, DB, security, learning (`tests/qa-api.mjs`) | Production build, fresh DB, `QA_PRODUCTION=1` | **217 checks: 213 PASS · 3 FAIL · 1 BLOCKED** (31 Oct live-AI run with `PINGVIBE_ANTHROPIC_API_KEY`). LRN-037, LRN-084 and ADM-010 FAIL because every Claude call is rejected for lack of account credit. ADM-014 (no-key path) is BLOCKED because a key is set. The previous no-key run was 215 PASS · 0 FAIL · 2 BLOCKED. |
 | UI journey, responsive, console, accessibility, target size, visual (`tests/ui-audit.mjs`) | Production build, fresh DB | **1,203 checks: 1,203 PASS · 0 FAIL · 0 BLOCKED.** Journey 1: 8. Responsive: 344. Console: 344. Accessibility: 438 (45 axe + 45 keyboard + 4 reduced-motion + 344 target size). Visual regression: 69. |
 | Performance & load (`tests/perf.mjs`) | Production build | 7 of 8 PASS. **LOAD-002 FAIL** in the final run (p95 1,943 ms). Across four production-build runs: 2,554 / 1,496 / 2,038 / 1,943 ms (OPEN-001). |
 | Type check (`tsc --noEmit`) | — | 0 errors |
@@ -53,5 +53,5 @@ After each fix, the affected suite was re-run. After the last fix, every suite w
 
 ## Known gaps in regression coverage
 
-- Live Claude API paths (LRN-037, LRN-084) are BLOCKED. Re-run with a staging key before launch.
+- Live Claude API paths are still unverified. On 31 Oct the suite was re-run on the production build with `PINGVIBE_ANTHROPIC_API_KEY` set. The server picked up the key and called the API, but every request was rejected because the API key's Anthropic account has no credit (`invalid_request_error: Your credit balance is too low to access the Anthropic API`). A direct API call outside the app got the same error, so this is an account or billing problem, not an app defect. LRN-037 and LRN-084 therefore FAIL, and ADM-010 FAILs because the independent AI review gate fails closed (as designed) when the reviewer errors. The per-grade writing check (`tests/ai-writing-grades.mjs`, `results/ai-writing-grades.json`) ran for all 10 grades. Each one returned 200 with offline feedback and correct labelling, but none was evaluated by Claude. Re-run both once the account has credit.
 - There is no CI pipeline yet. Add `vitest`, `qa-api` and `ui-audit` to CI so they run on every change.

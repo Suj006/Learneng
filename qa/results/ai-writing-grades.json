@@ -1,0 +1,210 @@
+{
+  "ranAt": "2026-10-31T08:53:51.094Z",
+  "results": [
+    {
+      "grade": "PRE_KG",
+      "status": 200,
+      "evaluator": "offline",
+      "score": 42,
+      "corrections": [
+        {
+          "original": "i lov my cat.",
+          "corrected": "I lov my cat.",
+          "why": "Remember to start with a capital letter and 'I' is always capital."
+        },
+        {
+          "original": "she is big",
+          "corrected": "She is big.",
+          "why": "Remember to start with a capital letter and end with a punctuation mark."
+        }
+      ],
+      "improved_sample": "I lov my cat. She is big.",
+      "encouragement": "Every great writer starts somewhere. Let's power up your words together! 💪",
+      "needs_adult_attention": false,
+      "text": "i lov my cat. she is big"
+    },
+    {
+      "grade": "LKG",
+      "status": 200,
+      "evaluator": "offline",
+      "score": 43,
+      "corrections": [
+        {
+          "original": "i hav a red bal.",
+          "corrected": "I hav a red bal.",
+          "why": "Remember to start with a capital letter and 'I' is always capital."
+        },
+        {
+          "original": "i play wit it",
+          "corrected": "I play wit it.",
+          "why": "Remember to start with a capital letter and 'I' is always capital and end with a punctuation mark."
+        }
+      ],
+      "improved_sample": "I hav a red bal. I play wit it.",
+      "encouragement": "Every great writer starts somewhere. Let's power up your words together! 💪",
+      "needs_adult_attention": false,
+      "text": "i hav a red bal. i play wit it"
+    },
+    {
+      "grade": "UKG",
+      "status": 200,
+      "evaluator": "offline",
+      "score": 49,
+      "corrections": [
+        {
+          "original": "my mom is good.",
+          "corrected": "My mom is good.",
+          "why": "Remember to start with a capital letter."
+        },
+        {
+          "original": "she mak food for me.",
+          "corrected": "She mak food for me.",
+          "why": "Remember to start with a capital letter."
+        },
+        {
+          "original": "i lik her",
+          "corrected": "I lik her.",
+          "why": "Remember to start with a capital letter and 'I' is always capital and end with a punctuation mark."
+        }
+      ],
+      "improved_sample": "My mom is good. She mak food for me. I lik her.",
+      "encouragement": "Every great writer starts somewhere. Let's power up your words together! 💪",
+      "needs_adult_attention": false,
+      "text": "my mom is good. she mak food for me. i lik her"
+    },
+    {
+      "grade": "G1",
+      "status": 200,
+      "evaluator": "offline",
+      "score": 54,
+      "corrections": [
+        {
+          "original": "i have a dog.",
+          "corrected": "I have a dog.",
+          "why": "Remember to start with a capital letter and 'I' is always capital."
+        },
+        {
+          "original": "he is very big and he like to run in the park with me",
+          "corrected": "He is very big and he like to run in the park with me.",
+          "why": "Remember to start with a capital letter and end with a punctuation mark."
+        }
+      ],
+      "improved_sample": "I have a dog. He is very big and he like to run in the park with me.",
+      "encouragement": "Every great writer starts somewhere. Let's power up your words together! 💪",
+      "needs_adult_attention": false,
+      "text": "i have a dog. he is very big and he like to run in the park with me"
+    },
+    {
+      "grade": "G2",
+      "status": 200,
+      "evaluator": "offline",
+      "score": 62,
+      "corrections": [
+        {
+          "original": "Last sunday i go to the zoo with my family.",
+          "corrected": "Last sunday I go to the zoo with my family.",
+          "why": "Remember to 'I' is always capital."
+        },
+        {
+          "original": "i saw a big elephant and the monkeys was jumping",
+          "corrected": "I saw a big elephant and the monkeys was jumping.",
+          "why": "Remember to start with a capital letter and 'I' is always capital and end with a punctuation mark."
+        }
+      ],
+      "improved_sample": "Last sunday I go to the zoo with my family. I saw a big elephant and the monkeys was jumping.",
+      "encouragement": "Great effort, Explorer! A few magic fixes and you'll shine even brighter! ✨",
+      "needs_adult_attention": false,
+      "text": "Last sunday i go to the zoo with my family. i saw a big elephant and the monkeys was jumping"
+    },
+    {
+      "grade": "G3",
+      "status": 200,
+      "evaluator": "offline",
+      "score": 60,
+      "corrections": [
+        {
+          "original": "we lights diyas and eat sweets.",
+          "corrected": "We lights diyas and eat sweets.",
+          "why": "Remember to start with a capital letter."
+        },
+        {
+          "original": "my grandma tell us storys about lord rama",
+          "corrected": "My grandma tell us storys about lord rama.",
+          "why": "Remember to start with a capital letter and end with a punctuation mark."
+        }
+      ],
+      "improved_sample": "My favourite festival is diwali. We lights diyas and eat sweets. My grandma tell us storys about lord rama.",
+      "encouragement": "Great effort, Explorer! A few magic fixes and you'll shine even brighter! ✨",
+      "needs_adult_attention": false,
+      "text": "My favourite festival is diwali. we lights diyas and eat sweets. my grandma tell us storys about lord rama"
+    },
+    {
+      "grade": "G4",
+      "status": 200,
+      "evaluator": "offline",
+      "score": 77,
+      "corrections": [
+        {
+          "original": "I made paper boats with my brother and we watch them float",
+          "corrected": "I made paper boats with my brother and we watch them float.",
+          "why": "Remember to end with a punctuation mark."
+        }
+      ],
+      "improved_sample": "Yesterday it rain very heavy in our town. The roads was full of water and we cannot go to school. I made paper boats with my brother and we watch them float.",
+      "encouragement": "Great effort, Explorer! A few magic fixes and you'll shine even brighter! ✨",
+      "needs_adult_attention": false,
+      "text": "Yesterday it rain very heavy in our town. The roads was full of water and we cannot go to school. I made paper boats with my brother and we watch them float"
+    },
+    {
+      "grade": "G5",
+      "status": 200,
+      "evaluator": "offline",
+      "score": 84,
+      "corrections": [
+        {
+          "original": "First I will go to Japan because I want to see the cherry blossoms, then I would of gone to Egypt to see the pyramids",
+          "corrected": "First I will go to Japan because I want to see the cherry blossoms, then I would of gone to Egypt to see the pyramids.",
+          "why": "Remember to end with a punctuation mark."
+        }
+      ],
+      "improved_sample": "If I could fly I would visit every country in the world. First I will go to Japan because I want to see the cherry blossoms, then I would of gone to Egypt to see the pyramids.",
+      "encouragement": "Spellbinding work! GRAMMY is doing a happy wizard dance! 🪄",
+      "needs_adult_attention": false,
+      "text": "If I could fly I would visit every country in the world. First I will go to Japan because I want to see the cherry blossoms, then I would of gone to Egypt to see the pyramids"
+    },
+    {
+      "grade": "G6",
+      "status": 200,
+      "evaluator": "offline",
+      "score": 90,
+      "corrections": [
+        {
+          "original": "We should stop using plastic bags and carry cloth bags instead, this small step can make a big difference",
+          "corrected": "We should stop using plastic bags and carry cloth bags instead, this small step can make a big difference.",
+          "why": "Remember to end with a punctuation mark."
+        }
+      ],
+      "improved_sample": "Plastic pollution is one of the biggest problem today. Many animals in the ocean eats plastic thinking it is food. We should stop using plastic bags and carry cloth bags instead, this small step can make a big difference.",
+      "encouragement": "Spellbinding work! GRAMMY is doing a happy wizard dance! 🪄",
+      "needs_adult_attention": false,
+      "text": "Plastic pollution is one of the biggest problem today. Many animals in the ocean eats plastic thinking it is food. We should stop using plastic bags and carry cloth bags instead, this small step can make a big difference"
+    },
+    {
+      "grade": "G7",
+      "status": 200,
+      "evaluator": "offline",
+      "score": 93,
+      "corrections": [
+        {
+          "original": "In my opinion a balance between online and offline learning is the best approach",
+          "corrected": "In my opinion a balance between online and offline learning is the best approach.",
+          "why": "Remember to end with a punctuation mark."
+        }
+      ],
+      "improved_sample": "Technology have changed the way students learn. Online classes allows us to study from home, however it also cause problems like screen fatigue and less interaction with friends. In my opinion a balance between online and offline learning is the best approach.",
+      "encouragement": "Spellbinding work! GRAMMY is doing a happy wizard dance! 🪄",
+      "needs_adult_attention": false,
+      "text": "Technology have changed the way students learn. Online classes allows us to study from home, however it also cause problems like screen fatigue and less interaction with friends. In my opinion a balance between online and offline learning is the best approach"
+    }
+  ]
+}

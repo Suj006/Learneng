@@ -343,8 +343,8 @@
     "title": "Real Claude writing evaluation and companion not tested",
     "steps": "LRN-037, LRN-084",
     "expected": "Live AI responses validated",
-    "actual": "ANTHROPIC_API_KEY not configured — offline evaluators verified only",
-    "fix": "Run qa-api with a staging key",
-    "regression": "LRN-037, LRN-084"
+    "actual": "31 Oct: PINGVIBE_ANTHROPIC_API_KEY configured and used by the production build, but every Claude call is rejected (400 invalid_request_error: credit balance too low). LRN-037, LRN-084 and ADM-010 FAIL; offline fallbacks verified for all 10 grades (tests/ai-writing-grades.mjs).",
+    "fix": "Add credit to the key's Anthropic account, then re-run qa-api and ai-writing-grades on the production build",
+    "regression": "LRN-037, LRN-084, ADM-010, tests/ai-writing-grades.mjs"
   }
 ]
