@@ -74,7 +74,7 @@ export const SHOP_ITEMS: R[] = [
 ];
 
 export const PETS = [
-  { slug: "hoot-owl", name: "Hoot", emoji: "🦉", personality: "Wise and sleepy, loves long words.", hint_style: "Hoot hoot! Try sounding it out slowly.", unlock_metric: "words_discovered", unlock_target: 10, unlock_label: "Discover 10 words", rarity: "common" },
+  { slug: "hoot-owl", name: "Hoot", emoji: "🦉", personality: "Wise and sleepy, loves long words.", hint_style: "Hoot hoot! Try sounding it out slowly.", unlock_metric: "words_discovered", unlock_target: 5, unlock_label: "Discover 5 words", rarity: "common" },
   { slug: "mango-panda", name: "Mango", emoji: "🐼", personality: "Cuddly reading buddy who adores stories.", hint_style: "Mango says: read the sentence again — the clue is hiding there!", unlock_metric: "quests_completed", unlock_target: 3, unlock_label: "Complete 3 Daily Word Quests", rarity: "common" },
   { slug: "bolt-robot", name: "Bolt", emoji: "🤖", personality: "Beeping game-lover who counts everything.", hint_style: "Beep! Check the first letter, then the last!", unlock_metric: "games_played", unlock_target: 10, unlock_label: "Play 10 word games", rarity: "common" },
   { slug: "zippy-fox", name: "Zippy", emoji: "🦊", personality: "Clever storyteller with a fluffy tail.", hint_style: "Zippy whispers: who, where, what happened?", unlock_metric: "writing_done", unlock_target: 3, unlock_label: "Finish 3 writing missions", rarity: "rare" },

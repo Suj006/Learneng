@@ -810,3 +810,4 @@ update grade_config set new_words_per_day = 5,
   lx5_applied = true
 where not lx5_applied;
 update missions set target = 5, description = 'Discover 5 new words in today''s Daily Word Quest.' where slug = 'd-discover' and target = 10;
+update pets set unlock_target = 5, unlock_label = 'Discover 5 words' where slug = 'hoot-owl' and unlock_target = 10;

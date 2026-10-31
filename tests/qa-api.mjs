@@ -137,7 +137,7 @@ t("LRN-004", "Daily Adventure renders after onboarding", (await F.child.call("/w
 
 mod("Daily Word Quest", "High");
 const q = await F.child.call("/api/quest");
-t("LRN-010", "10 new words generated", q.data.newWords.length === 10, q.data.newWords.length);
+t("LRN-010", "Exactly 5 new words generated (LX 5.0)", q.data.newWords.length === 5, q.data.newWords.length);
 t("LRN-011", "Words match grade band (G3 → band 3)", q.data.newWords.every((w) => w.band === 3), q.data.newWords.map((w) => w.band).join(","));
 t("LRN-012", "Each word has meaning, phonetic, example, emoji", q.data.newWords.every((w) => w.meaning && w.phonetic && w.example && w.emoji));
 t("LRN-013", "Five challenge rounds generated", new Set(q.data.questions.map((x) => x.round)).size === 5 || new Set(q.data.questions.map((x) => x.round)).size >= 4);
@@ -159,7 +159,7 @@ const done = await F.child.call("/api/quest/complete", { seconds: 400 });
 t("LRN-019", "Quest completion awards XP scaled by accuracy", done.status === 200 && done.data.award.xp >= 50 && done.data.award.xp <= 100, done.data.award?.xp);
 t("LRN-020", "Quest XP not duplicated", (await F.child.call("/api/quest/complete", { seconds: 1 })).data.award.xp === 0);
 const words = await F.child.call("/api/words");
-t("LRN-021", "Vocabulary history: 10 words discovered, none mastered on day 1", words.data.words.length === 10 && words.data.words.every((w) => w.status !== "mastered"));
+t("LRN-021", "Vocabulary history: 5 words discovered, none mastered on day 1", words.data.words.length === 5 && words.data.words.every((w) => w.status !== "mastered"));
 const rev = await F.child.call("/api/revision");
 t("LRN-022", "Revision set available from discovered words", rev.status === 200 && rev.data.questions.length > 0);
 const rw = rev.data.words[0];
@@ -246,7 +246,8 @@ const buy = await F.child.call("/api/rewards/redeem", { slug: "acc-party-hat" })
 t("GAM-003", "Redeem affordable item deducts coins", buy.status === 200 && typeof buy.data.coins === "number");
 t("GAM-004", "Cannot buy the same item twice", (await F.child.call("/api/rewards/redeem", { slug: "acc-party-hat" })).status === 400);
 t("GAM-005", "Level-exclusive reward cannot be bought", (await F.child.call("/api/rewards/redeem", { slug: "theme-aurora" })).status === 400);
-t("GAM-006", "Crystal item refused without crystals", (await F.child.call("/api/rewards/redeem", { slug: "expr-star" })).status === 400);
+const cs = await F.child.call("/api/rewards/redeem", { slug: "expr-star" });
+t("GAM-006", "Crystal-priced item is charged in VIBE COINS only (bought, or refused with a VIBE COINS message)", (cs.status === 200 && typeof cs.data.coins === "number") || (cs.status === 400 && /VIBE COINS|Level/.test(cs.data.error)), `${cs.status} ${cs.data.error ?? ""}`);
 t("GAM-007", "Invalid reward slug → 404", (await F.child.call("/api/rewards/redeem", { slug: "free-money" })).status === 404);
 const look = { skin: "tone-5", hair: "hair-patka", hair_color: "#2B1B12", outfit: "outfit-kurta", shoes: "shoes-sandals", accessory: "acc-party-hat", background: "bg-sky", expression: "expr-grin", magic_object: null, celebration: "anim-confetti" };
 t("GAM-008", "Avatar saved with owned items", (await F.child.call("/api/avatar", look)).status === 200);
@@ -278,7 +279,7 @@ t("GAM-033", "Locked treasure cannot be claimed", (await F.child.call("/api/worl
 t("GAM-034", "Non-treasure location cannot be claimed", (await F.child.call("/api/world/treasure", { slug: "vf-gate" })).status === 400);
 t("GAM-035", "Pet choose refused when not unlocked", (await F.child.call("/api/pets", { slug: "nova-phoenix" })).status === 400);
 const pets = await F.child.call("/world/pets");
-t("GAM-036", "First pet (Hoot, 10 words) unlocked from learning", /With you/.test(String(pets.data)));
+t("GAM-036", "First pet (Hoot, 5 words) unlocked from learning on day 1", /With you/.test(String(pets.data)));
 t("GAM-037", "Unlock notifications created (pets/milestones)", /joined you|First 10 words/.test(String((await F.child.call("/world")).data)));
 
 // ───────────────────────── CONCURRENCY ─────────────────────────
@@ -299,7 +300,7 @@ const par4 = await Promise.all(Array.from({ length: 5 }, () => H.child.call("/ap
 t("CON-004", "5 parallel Surprise Box opens → one award", par4.filter((r) => r.data?.award?.xp > 0).length === 1);
 const kids = await Promise.all(["PRE_KG", "UKG", "G7"].map((g) => makeFamily(g, "Ira")));
 const runs = await Promise.all(kids.map(async (k) => { await k.child.call("/api/welcome", {}); return k.child.call("/api/quest"); }));
-t("CON-005", "3 children start quests simultaneously, each gets own words", runs.every((r) => r.status === 200 && r.data.newWords.length === 10));
+t("CON-005", "3 children start quests simultaneously, each gets own words", runs.every((r) => r.status === 200 && r.data.newWords.length === 5));
 
 // ───────────────────────── GRADE JOURNEYS ─────────────────────────
 mod("Grade journeys", "High");
@@ -315,7 +316,7 @@ for (const [k, g] of [[kids[0], "PRE_KG"], [kids[2], "G7"]]) {
 // ───────────────────────── PARENT ─────────────────────────
 mod("Parent dashboard", "High");
 const pd = await F.parent.call("/parent");
-t("PAR-001", "Dashboard shows the child's real data (words introduced = 10)", pd.status === 200 && /Words introduced<\/dt><dd[^>]*>10</.test(String(pd.data)), pd.status);
+t("PAR-001", "Dashboard shows the child's real data (words introduced = 5)", pd.status === 200 && /Words introduced<\/dt><dd[^>]*>5</.test(String(pd.data)), pd.status);
 const rep = await F.parent.call(`/parent/child/${F.childId}`);
 t("PAR-002", "Child report renders observations disclaimer", rep.status === 200 && /ongoing learning observations/i.test(String(rep.data)));
 t("PAR-003", "Settings save", (await F.parent.call("/api/parent/settings", { reminders_enabled: true, reminder_hour: 19, companion_enabled: false })).status === 200);
@@ -339,9 +340,9 @@ t("PAR-006", "Family challenge rejects undiscovered words", (await F.parent.call
 const pinr = await F.parent.call(`/api/parent/children/${F.childId}/pin`, { pin: "591736" });
 t("PAR-007", "PIN reset signs the child out", pinr.status === 200 && (await F.child.call("/api/words")).status === 401);
 await F.child.call("/api/auth/login-child", { username: F.username, pin: "591736" });
-t("PAR-008", "Regression BUG-006: after PIN reset the locked-out child can log in; progress intact", (await F.child.call("/api/words")).data?.words?.length === 10);
+t("PAR-008", "Regression BUG-006: after PIN reset the locked-out child can log in; progress intact", (await F.child.call("/api/words")).data?.words?.length === 5);
 const ex = await F.parent.call(`/api/parent/children/${F.childId}/export`);
-t("PAR-009", "DPDP export contains learning data, no PIN/password hashes", ex.status === 200 && ex.data.vocabulary.length === 10 && !JSON.stringify(ex.data).includes("scrypt$"));
+t("PAR-009", "DPDP export contains learning data, no PIN/password hashes", ex.status === 200 && ex.data.vocabulary.length === 5 && !JSON.stringify(ex.data).includes("scrypt$"));
 const add = await F.parent.call("/api/parent/children", { childName: "Rohan", birthMonth: 2, birthYear: year - 6, grade: "G1" });
 t("PAR-010", "Parent adds a second child (pending consent)", add.status === 200 && add.data.redirect === "/parent/consent");
 const del = await G.parent.call(`/api/parent/children/${G.childId}`, undefined, "DELETE");
@@ -378,6 +379,17 @@ t("ADM-020", "Invalid event slug rejected", (await A.call("/api/admin/events", {
 const gr8 = await A.call("/api/admin/grades", { grade: "G8", label: "Grade 8", band: 4, new_words_per_day: 10, sort_order: 10, active: false });
 t("ADM-021", "Add new grade generates its 365-day plan", gr8.status === 200 && gr8.data.plans === 365);
 t("ADM-022", "Admin vocabulary edit validates input", (await A.call("/api/admin/vocabulary", { id: crypto.randomUUID(), meaning: "", explanation: "", example: "", phonetic: "", emoji: "", status: "published" })).status === 400);
+
+// ───────────────────────── LEARNING EXPERIENCE 5.0 ─────────────────────────
+mod("Learning Experience 5.0", "High");
+for (const [grade, n] of [["PRE_KG", 2], ["G1", 2], ["G2", 3], ["G3", 3], ["G4", 4], ["G5", 4], ["G6", 5], ["G7", 5]]) {
+  const k = await makeFamily(grade, "Jia"); await k.child.call("/api/welcome", {});
+  const home = String((await k.child.call("/")).data).replace(/<!-- -->/g, "");
+  const qd = await k.child.call("/api/quest");
+  t(`LX5-${grade}`, `${grade}: ${n} daily missions, 5 new words, greeted by real name`, new RegExp(`>0/${n}<`).test(home) && qd.data.newWords.length === 5 && /Welcome back, Jia!/.test(home), `${home.match(/>\d\/\d</)?.[0]} words=${qd.data.newWords?.length}`);
+}
+const pub = await (await fetch(BASE + "/api/public/discover?band=1")).json();
+t("LX5-HOME-1", "Public Word of the Day, puzzle and Story of the Day (band 1 content only)", pub.word?.band === 1 && pub.puzzle?.options?.includes(pub.puzzle.answer) && pub.story?.band >= 1 && pub.cloud.every((c) => c.band === 1));
 
 // ───────────────────────── COLOUR THEMES ─────────────────────────
 mod("Colour themes", "High");

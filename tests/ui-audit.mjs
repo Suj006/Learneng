@@ -33,6 +33,7 @@ const ensureBrowser = async () => { if (!browser.isConnected()) browser = await 
 // ── Journey 1: brand-new family entirely through the UI ─────────────────────
 async function journey() {
   const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
+  await ctx.addInitScript(() => { try { localStorage.setItem("pv-intro-seen", "1"); } catch {} }); // the once-per-device intro is tested separately
   const page = await ctx.newPage();
   page.setDefaultTimeout(90000);
   const errors = [];
@@ -76,7 +77,8 @@ async function journey() {
     await page.waitForURL("**/world/quest");
     t("UI-J1-05", "Journey 1", "High", "Onboarding steps → first Daily Word Quest", true);
     await page.getByRole("button", { name: /Meet today's words/ }).click();
-    for (let i = 0; i < 9; i++) await page.getByRole("button", { name: /Next word/ }).click();
+    let cards = 1;
+    while (await page.getByRole("button", { name: /Next word/ }).count()) { await page.getByRole("button", { name: /Next word/ }).click(); cards++; }
     await page.getByRole("button", { name: /Start the challenge rounds/ }).click();
     let answered = 0;
     for (let i = 0; i < 25; i++) {
@@ -96,7 +98,7 @@ async function journey() {
     await page.getByRole("button", { name: /Finish quest/ }).click();
     await page.getByRole("dialog").waitFor();
     const xpText = await page.getByRole("dialog").textContent();
-    t("UI-J1-06", "Journey 1", "Critical", "Learn 10 words, answer all rounds, receive XP celebration", /XP/.test(xpText), `${answered} questions; ${xpText?.match(/\+\d+ XP/)?.[0]}`);
+    t("UI-J1-06", "Journey 1", "Critical", "Meet exactly 5 new words, answer all rounds, receive XP celebration", /XP/.test(xpText) && cards === 5, `${cards} word cards; ${answered} questions; ${xpText?.match(/\+\d+ XP/)?.[0]}`);
     await page.getByRole("button", { name: "Awesome!" }).click();
     await page.goto(BASE + "/world");
     const hdr = await page.locator("header").textContent();
@@ -113,7 +115,7 @@ async function journey() {
 async function cookieCtx(cookieStr, vp) {
   const ctx = await browser.newContext({ viewport: { width: vp[0], height: vp[1] }, reducedMotion: "reduce" });
   // Screenshots must be deterministic: start with music and voices off so no audio hint or caption appears mid-capture.
-  await ctx.addInitScript(() => { try { localStorage.setItem("pv-audio-v1", JSON.stringify({ musicOn: false, voiceOn: false })); } catch {} });
+  await ctx.addInitScript(() => { try { localStorage.setItem("pv-audio-v1", JSON.stringify({ musicOn: false, voiceOn: false })); localStorage.setItem("pv-intro-seen", "1"); } catch {} });
   if (cookieStr) {
     const [name, value] = cookieStr.split("=");
     await ctx.addCookies([{ name, value, url: BASE }]);
@@ -228,6 +230,7 @@ fs.rmSync(`${OUT}/axe-details.jsonl`, { force: true });
 }
 // ONLY=<regex> limits the sweep to matching pages (e.g. to refresh selected baselines); the journey runs only in full audits.
 if (!process.env.ONLY) await journey();
+if (process.env.JOURNEY_ONLY) { for (const r of R) if (r.status !== "PASS") process.exitCode = 1; console.log(`\nTOTAL ${R.length} · PASS ${R.filter((r) => r.status === "PASS").length}`); await browser.close(); process.exit(); }
 const fam = await makeFamily("G3", "Meera");
 await fam.child.call("/api/welcome", {});
 const childCookie = fam.child.cookie();

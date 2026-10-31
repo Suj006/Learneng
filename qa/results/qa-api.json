@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T13:35:52.821Z",
+  "generated_at": "2026-10-31T16:05:52.229Z",
   "base": "http://localhost:3000",
   "results": [
     {
@@ -168,7 +168,7 @@
       "severity": "Critical",
       "scenario": "Verification + consent creates an active Explorer",
       "status": "PASS",
-      "actual": "cosmicdragon915"
+      "actual": "starcomet907"
     },
     {
       "id": "AUTH-022",
@@ -526,9 +526,9 @@
       "id": "LRN-010",
       "module": "Daily Word Quest",
       "severity": "High",
-      "scenario": "10 new words generated",
+      "scenario": "Exactly 5 new words generated (LX 5.0)",
       "status": "PASS",
-      "actual": "10"
+      "actual": "5"
     },
     {
       "id": "LRN-011",
@@ -536,7 +536,7 @@
       "severity": "High",
       "scenario": "Words match grade band (G3 → band 3)",
       "status": "PASS",
-      "actual": "3,3,3,3,3,3,3,3,3,3"
+      "actual": "3,3,3,3,3"
     },
     {
       "id": "LRN-012",
@@ -584,7 +584,7 @@
       "severity": "High",
       "scenario": "Server validates correct answers",
       "status": "PASS",
-      "actual": "11"
+      "actual": "9"
     },
     {
       "id": "LRN-018",
@@ -614,7 +614,7 @@
       "id": "LRN-021",
       "module": "Daily Word Quest",
       "severity": "High",
-      "scenario": "Vocabulary history: 10 words discovered, none mastered on day 1",
+      "scenario": "Vocabulary history: 5 words discovered, none mastered on day 1",
       "status": "PASS",
       "actual": ""
     },
@@ -1166,9 +1166,9 @@
       "id": "GAM-006",
       "module": "XP, levels & economy",
       "severity": "High",
-      "scenario": "Crystal item refused without crystals",
+      "scenario": "Crystal-priced item is charged in VIBE COINS only (bought, or refused with a VIBE COINS message)",
       "status": "PASS",
-      "actual": ""
+      "actual": "200 "
     },
     {
       "id": "GAM-007",
@@ -1248,7 +1248,7 @@
       "severity": "High",
       "scenario": "Unfinished mission cannot be claimed",
       "status": "PASS",
-      "actual": "Keep going — this mission isn't finished yet!"
+      "actual": "That mission isn't available right now."
     },
     {
       "id": "GAM-023",
@@ -1310,7 +1310,7 @@
       "id": "GAM-036",
       "module": "Bosses, map & world",
       "severity": "High",
-      "scenario": "First pet (Hoot, 10 words) unlocked from learning",
+      "scenario": "First pet (Hoot, 5 words) unlocked from learning on day 1",
       "status": "PASS",
       "actual": ""
     },
@@ -1328,7 +1328,7 @@
       "severity": "Critical",
       "scenario": "8 parallel quest completions → exactly one XP award",
       "status": "PASS",
-      "actual": "[91,0,0,0,0,0,0,0]"
+      "actual": "[89,0,0,0,0,0,0,0]"
     },
     {
       "id": "CON-002",
@@ -1344,7 +1344,7 @@
       "severity": "Critical",
       "scenario": "5 parallel purchases of same item → one success, no double spend",
       "status": "PASS",
-      "actual": "200,400,400,400,400"
+      "actual": "400,400,400,400,400"
     },
     {
       "id": "CON-004",
@@ -1368,7 +1368,7 @@
       "severity": "High",
       "scenario": "PRE_KG child receives band-1 words",
       "status": "PASS",
-      "actual": "1111111111"
+      "actual": "11111"
     },
     {
       "id": "GRD-UKG",
@@ -1376,7 +1376,7 @@
       "severity": "High",
       "scenario": "UKG child receives band-1 words",
       "status": "PASS",
-      "actual": "1111111111"
+      "actual": "11111"
     },
     {
       "id": "GRD-G7",
@@ -1384,7 +1384,7 @@
       "severity": "High",
       "scenario": "G7 child receives band-4 words",
       "status": "PASS",
-      "actual": "4444444444"
+      "actual": "44444"
     },
     {
       "id": "GRD-G1",
@@ -1414,7 +1414,7 @@
       "id": "PAR-001",
       "module": "Parent dashboard",
       "severity": "High",
-      "scenario": "Dashboard shows the child's real data (words introduced = 10)",
+      "scenario": "Dashboard shows the child's real data (words introduced = 5)",
       "status": "PASS",
       "actual": "200"
     },
@@ -1688,7 +1688,7 @@
       "severity": "High",
       "scenario": "Append levels beyond 250 (unlimited progression)",
       "status": "PASS",
-      "actual": "255"
+      "actual": "260"
     },
     {
       "id": "ADM-019",
@@ -1719,6 +1719,78 @@
       "module": "Administration",
       "severity": "High",
       "scenario": "Admin vocabulary edit validates input",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LX5-PRE_KG",
+      "module": "Learning Experience 5.0",
+      "severity": "High",
+      "scenario": "PRE_KG: 2 daily missions, 5 new words, greeted by real name",
+      "status": "PASS",
+      "actual": ">0/2< words=5"
+    },
+    {
+      "id": "LX5-G1",
+      "module": "Learning Experience 5.0",
+      "severity": "High",
+      "scenario": "G1: 2 daily missions, 5 new words, greeted by real name",
+      "status": "PASS",
+      "actual": ">0/2< words=5"
+    },
+    {
+      "id": "LX5-G2",
+      "module": "Learning Experience 5.0",
+      "severity": "High",
+      "scenario": "G2: 3 daily missions, 5 new words, greeted by real name",
+      "status": "PASS",
+      "actual": ">0/3< words=5"
+    },
+    {
+      "id": "LX5-G3",
+      "module": "Learning Experience 5.0",
+      "severity": "High",
+      "scenario": "G3: 3 daily missions, 5 new words, greeted by real name",
+      "status": "PASS",
+      "actual": ">0/3< words=5"
+    },
+    {
+      "id": "LX5-G4",
+      "module": "Learning Experience 5.0",
+      "severity": "High",
+      "scenario": "G4: 4 daily missions, 5 new words, greeted by real name",
+      "status": "PASS",
+      "actual": ">0/4< words=5"
+    },
+    {
+      "id": "LX5-G5",
+      "module": "Learning Experience 5.0",
+      "severity": "High",
+      "scenario": "G5: 4 daily missions, 5 new words, greeted by real name",
+      "status": "PASS",
+      "actual": ">0/4< words=5"
+    },
+    {
+      "id": "LX5-G6",
+      "module": "Learning Experience 5.0",
+      "severity": "High",
+      "scenario": "G6: 5 daily missions, 5 new words, greeted by real name",
+      "status": "PASS",
+      "actual": ">0/5< words=5"
+    },
+    {
+      "id": "LX5-G7",
+      "module": "Learning Experience 5.0",
+      "severity": "High",
+      "scenario": "G7: 5 daily missions, 5 new words, greeted by real name",
+      "status": "PASS",
+      "actual": ">0/5< words=5"
+    },
+    {
+      "id": "LX5-HOME-1",
+      "module": "Learning Experience 5.0",
+      "severity": "High",
+      "scenario": "Public Word of the Day, puzzle and Story of the Day (band 1 content only)",
       "status": "PASS",
       "actual": ""
     },
