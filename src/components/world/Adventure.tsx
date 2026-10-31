@@ -195,7 +195,7 @@ export function Adventure({ d }: { d: AdventureData }) {
         <div className="row-scroll mt-4">{d.kingdoms.map((k) => (
           <Link key={k.slug} href={k.unlocked ? `/world/map/${k.slug}` : "/world/map"} className="card relative h-44 w-72 shrink-0 snap-start overflow-hidden">
             <div className={k.unlocked ? "" : "grayscale"}><Scene name={k.art as SceneName} /></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-vibe-midnight via-vibe-midnight/30 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-vibe-midnight via-vibe-midnight/85 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-4"><b className="font-display text-lg">{k.emoji} {k.title}</b>
               {k.unlocked ? <Progress value={k.progress} className="mt-2 h-2" label={`${k.title} progress`} /> : <span className="mt-1 block text-sm text-vibe-sun-ink">🔒 Unlocks at Level {k.unlock_level}</span>}</div>
           </Link>

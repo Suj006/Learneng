@@ -49,6 +49,10 @@ select option { background-color: rgb(var(--pv-surface-2)); color: rgb(var(--pv-
     border-color: rgb(var(--pv-line) / var(--pv-line-alpha));
   }
   .card { @apply glass shadow-card; }
+  /* Micro-interaction for every tappable card: gentle lift on hover, press on tap. */
+  a.card, button.card, a.glass, button.glass { transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease; }
+  a.card:hover, button.card:not(:disabled):hover, a.glass:hover, button.glass:not(:disabled):hover { transform: translateY(-2px); box-shadow: 0 22px 44px -18px rgb(var(--pv-shadow) / calc(var(--pv-shadow-alpha) + 0.08)); }
+  a.card:active, button.card:not(:disabled):active, a.glass:active, button.glass:not(:disabled):active { transform: translateY(0) scale(0.985); }
 
   .input {
     @apply w-full rounded-2xl border px-4 py-3 text-base text-ink outline-none transition focus:border-vibe-aqua focus:ring-4 focus:ring-vibe-aqua/25;
@@ -124,3 +128,10 @@ html[data-motion="off"] *, html[data-motion="off"] *::before, html[data-motion="
     scroll-behavior: auto !important;
   }
 }
+
+/* Decorative background scenes: only visible where the theme allows (dark themes). */
+.pv-deco { opacity: var(--pv-scene-alpha, 0); }
+
+/* Page entrance for world pages (see src/app/world/template.tsx). */
+@keyframes pv-enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.pv-enter { animation: pv-enter 0.28s ease-out both; }

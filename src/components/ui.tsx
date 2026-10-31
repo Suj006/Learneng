@@ -34,7 +34,7 @@ export function CharacterSays({ who, mood = "welcome", children, size = 110, spe
 export function Progress({ value, max = 100, color = "bg-vibe-cta", className = "", label }: { value: number; max?: number; color?: string; className?: string; label?: string }) {
   const pct = Math.max(0, Math.min(100, (value / Math.max(1, max)) * 100));
   return (
-    <div className={`h-3 w-full overflow-hidden rounded-full bg-glass/10 ${className}`} role="progressbar" aria-valuenow={Math.round(pct)} aria-valuemin={0} aria-valuemax={100} aria-valuetext={max === 100 ? `${Math.round(pct)}%` : `${value} of ${max}`} aria-label={label ?? "Progress"}>
+    <div className={`h-3 w-full overflow-hidden rounded-full bg-glass/15 ${className}`} role="progressbar" aria-valuenow={Math.round(pct)} aria-valuemin={0} aria-valuemax={100} aria-valuetext={max === 100 ? `${Math.round(pct)}%` : `${value} of ${max}`} aria-label={label ?? "Progress"}>
       <motion.div className={`h-full rounded-full ${color}`} initial={{ width: 0 }} animate={{ width: `${pct}%` }} transition={{ duration: 0.8, ease: "easeOut" }} />
     </div>
   );

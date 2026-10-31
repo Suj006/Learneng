@@ -73,7 +73,7 @@ export function Welcome({ name, kingdoms, themes }: { name: string; kingdoms: { 
             <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-3">
               {kingdoms.map((k, i) => (
                 <motion.div key={k.slug} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.12 }} className="card relative h-36 overflow-hidden text-left">
-                  <Scene name={k.art as SceneName} /><div className="absolute inset-0 bg-gradient-to-t from-vibe-midnight to-transparent" />
+                  <Scene name={k.art as SceneName} /><div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-vibe-midnight via-vibe-midnight/85 to-transparent" />
                   <div className="absolute bottom-0 p-3"><b className="font-display">{k.emoji} {k.title}</b><p className="text-[11px] text-vibe-lavender">{k.description}</p></div>
                 </motion.div>
               ))}

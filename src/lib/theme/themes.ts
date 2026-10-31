@@ -69,7 +69,7 @@ export const THEME_SEED: ThemeDef[] = [
     tokens: {
       mode: "light", bg: "#FFFCF0", bg2: "#EEF9E8", surface: "#FFFFFF", surfaceAlpha: 0.94, surface2: "#FFFFFF", surface3: "#FFF6DD",
       ink: "#27310F", inkSoft: "#52583E", line: "#27310F", lineAlpha: 0.13, glass: "#5E9A16",
-      primary: "#2F9E2F", secondary: "#FF9B24", accent: "#FFD33F", ctaFrom: "#21842A", ctaTo: "#B85A00", onPrimary: "#FFFFFF",
+      primary: "#2F9E2F", secondary: "#FF9B24", accent: "#FFD33F", ctaFrom: "#23862C", ctaTo: "#0B7A55", onPrimary: "#FFFFFF",
       success: "#55D934", reward: "#FFD33F", error: "#E0473A", orange: "#FF9B24", pink: "#FF6FA0",
       primaryInk: "#1D6E22", secondaryInk: "#9C4D00", successInk: "#22760F", rewardInk: "#765000", errorInk: "#B42318", orangeInk: "#9C4D00", pinkInk: "#B4234F", accentInk: "#765000",
       glowA: "#FFD33F", glowB: "#55D934", glowC: "#FF9B24", shadow: "#27310F", shadowAlpha: 0.16,
@@ -115,6 +115,8 @@ export function themeVars(t: ThemeTokens): string {
     "--color-success": t.successInk, "--color-warning": t.rewardInk, "--color-error": t.errorInk, "--color-border": t.line,
     "--color-button-primary": t.ctaFrom, "--color-button-secondary": t.surface3,
   };
+  // Large background scenes suit dark themes; light themes keep only the soft colour glows (calmer composition).
+  v["--pv-scene-alpha"] = t.mode === "dark" ? "0.35" : "0";
   return Object.entries(v).map(([k, val]) => `${k}:${val}`).join(";") + `;color-scheme:${t.mode}`;
 }
 

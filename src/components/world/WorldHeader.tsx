@@ -26,6 +26,8 @@ export function WorldHeader({ d }: { d: HeaderData }) {
   const [open, setOpen] = useState(false);
   const [unread, setUnread] = useState(d.unread);
   const path = usePathname();
+  // Sub-pages light up their section (e.g. a kingdom page highlights "Map").
+  const isActive = (href: string) => path === href || (href !== "/world" && path.startsWith(href + "/"));
   const router = useRouter();
   async function openBell() {
     setOpen(!open);
@@ -55,7 +57,7 @@ export function WorldHeader({ d }: { d: HeaderData }) {
             </button>
           </div>
           <nav className="ml-2 hidden items-center gap-1 lg:flex" aria-label="Main">
-            {NAV.map((n) => <Link key={n.href} href={n.href} className={`rounded-full px-3 py-2 text-sm font-bold ${path === n.href ? "bg-glass/10 text-ink" : "text-vibe-lavender hover:text-ink"}`}>{n.icon} {n.label}</Link>)}
+            {NAV.map((n) => <Link key={n.href} href={n.href} aria-current={isActive(n.href) ? "page" : undefined} className={`rounded-full px-3 py-2 text-sm font-bold transition ${isActive(n.href) ? "bg-vibe-purple/15 text-vibe-purple-ink" : "text-vibe-lavender hover:bg-glass/[0.08] hover:text-ink"}`}>{n.icon} {n.label}</Link>)}
           </nav>
         </div>
         {open && (
@@ -71,8 +73,9 @@ export function WorldHeader({ d }: { d: HeaderData }) {
       <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-line/10 bg-vibe-midnight/95 backdrop-blur lg:hidden" aria-label="Main">
         <div className="mx-auto grid max-w-lg grid-cols-5">
           {NAV.map((n) => (
-            <Link key={n.href} href={n.href} className={`flex flex-col items-center gap-0.5 py-2.5 text-[11px] font-bold ${path === n.href ? "text-ink" : "text-vibe-lavender"}`}>
-              <span className="text-xl">{n.icon}</span>{n.label}
+            <Link key={n.href} href={n.href} aria-current={isActive(n.href) ? "page" : undefined}
+              className={`group flex flex-col items-center gap-0.5 py-2 text-[11px] font-bold transition ${isActive(n.href) ? "text-vibe-purple-ink" : "text-vibe-lavender hover:text-ink"}`}>
+              <span className={`grid h-8 w-12 place-items-center rounded-full text-xl transition ${isActive(n.href) ? "-translate-y-0.5 bg-vibe-purple/15" : "group-active:scale-90"}`}>{n.icon}</span>{n.label}
             </Link>
           ))}
         </div>

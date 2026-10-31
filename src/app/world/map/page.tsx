@@ -32,7 +32,7 @@ export default async function MapPage() {
       <div className="grid gap-4 md:hidden">
         {map.map((k) => (
           <Link key={k.slug} href={k.unlocked ? `/world/map/${k.slug}` : "#"} className={`card relative h-36 overflow-hidden ${k.unlocked ? "" : "pointer-events-none grayscale"}`}>
-            <Scene name={k.art as SceneName} /><div className="absolute inset-0 bg-gradient-to-t from-vibe-midnight to-transparent" />
+            <Scene name={k.art as SceneName} /><div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-vibe-midnight via-vibe-midnight/85 to-transparent" />
             <div className="absolute bottom-0 p-4"><b className="font-display text-lg">{k.emoji} {k.title}</b><p className="text-xs text-vibe-lavender">{k.unlocked ? `${k.progress}% explored` : `🔒 Unlocks at Level ${k.unlock_level}`}</p></div>
           </Link>
         ))}

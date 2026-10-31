@@ -59,7 +59,7 @@ export default function Landing() {
 
       {/* HERO */}
       <section className="relative min-h-[100dvh] bg-vibe-hero pt-24">
-        <div className="absolute inset-0 opacity-40"><Scene name="islands" /></div>
+        <div className="pv-deco absolute inset-0"><Scene name="islands" /></div>
         <div className="absolute inset-0 bg-gradient-to-b from-vibe-midnight/30 via-vibe-midnight/40 to-vibe-midnight" />
         {FLOATING.map((w, i) => (
           <motion.span key={w} className="pointer-events-none absolute hidden select-none rounded-full border border-line/10 bg-glass/5 px-3 py-1 font-display text-sm text-vibe-lavender backdrop-blur sm:block"
@@ -115,7 +115,7 @@ export default function Landing() {
           {UNIVERSE.map((u, i) => (
             <motion.article key={u.title} whileHover={{ y: -6 }} initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }}
               className="card group relative w-[78vw] max-w-[340px] shrink-0 snap-start overflow-hidden">
-              <div className="relative h-44"><Scene name={u.scene} /><div className="absolute inset-0 bg-gradient-to-t from-vibe-midnight via-transparent" />
+              <div className="relative h-44"><Scene name={u.scene} /><div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-vibe-midnight via-vibe-midnight/85 to-transparent" />
                 <div className="absolute bottom-0 right-2"><Character name={u.who} mood="welcome" size={86} still /></div></div>
               <div className="p-5">
                 <span className="chip">{u.tag}</span>
