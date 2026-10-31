@@ -6,7 +6,8 @@ import { PageTitle } from "@/components/ui";
 import { AvatarStudio } from "./AvatarStudio";
 
 export const metadata = { title: "Avatar Studio" };
-export default async function AvatarPage() {
+export default async function AvatarPage({ searchParams }: { searchParams: Promise<{ tab?: string; try?: string }> }) {
+  const sp = await searchParams;
   const child = await requireChild();
   const [avatar, items, w] = await Promise.all([
     getAvatar(child.id),
@@ -17,5 +18,5 @@ export default async function AvatarPage() {
        order by r.category, r.starter desc, r.cost_crystals, r.cost_coins`, [child.id]),
     worldContext(child),
   ]);
-  return <><PageTitle title="🎨 Avatar Studio" subtitle="Create your adventure character. Unlock more styles with Vibe Coins and Magic Crystals!" /><AvatarStudio initial={avatar} items={items} hairColors={HAIR_COLORS} pet={w.pet?.emoji ?? null} /></>;
+  return <><PageTitle title="🎨 Avatar Studio" subtitle="Create your adventure character. Unlock more styles with VIBE COINS you earn by learning!" /><AvatarStudio initial={avatar} startTab={sp.tab} tryOn={sp.try} items={items} hairColors={HAIR_COLORS} pet={w.pet?.emoji ?? null} /></>;
 }

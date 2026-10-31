@@ -15,10 +15,20 @@ const TABS: { key: string; label: string; field: keyof Full; optional?: boolean 
   { key: "magic_object", label: "Magic objects", field: "magic_object", optional: true }, { key: "background", label: "Background", field: "background" }, { key: "animation", label: "Celebration", field: "celebration" },
 ];
 
-export function AvatarStudio({ initial, items, hairColors, pet }: { initial: Full; items: Item[]; hairColors: string[]; pet: string | null }) {
+/** Which studio tab shows each reward category (level-reward costumes are worn in the accessory slot). */
+const TAB_FOR: Record<string, string> = { costume: "accessory" };
+// Matches the child_avatars defaults in db/schema.sql.
+const DEFAULT_LOOK = { hair: "hair-short", outfit: "outfit-hoodie-purple", shoes: "shoes-sneakers", expression: "expr-smile", accessory: null, magic_object: null, background: "bg-sky", celebration: "anim-confetti" } as const;
+
+export function AvatarStudio({ initial, items, hairColors, pet, startTab, tryOn }: { initial: Full; items: Item[]; hairColors: string[]; pet: string | null; startTab?: string; tryOn?: string }) {
   const router = useRouter();
-  const [look, setLook] = useState<Full>(initial);
-  const [tab, setTab] = useState("hair");
+  // "Wear it now" from a reward celebration opens the right tab with the new item already tried on (unsaved).
+  const tried = items.find((i) => i.slug === tryOn && i.owned);
+  const triedTab = tried ? TAB_FOR[tried.category] ?? tried.category : undefined;
+  const triedField = TABS.find((x) => x.key === triedTab)?.field;
+  const [look, setLook] = useState<Full>(tried && triedField ? { ...initial, [triedField]: tried.slug } : initial);
+  const [tab, setTab] = useState(triedTab ?? (TABS.some((x) => x.key === startTab) ? startTab! : "hair"));
+  const dirty = JSON.stringify(look) !== JSON.stringify(initial);
   const [msg, setMsg] = useState<string | null>(null);
   const [err, setErr] = useState<string | null>(null);
   const art = useMemo(() => Object.fromEntries(items.map((i) => [i.slug, { art: i.art, emoji: i.emoji }])), [items]);
@@ -31,6 +41,9 @@ export function AvatarStudio({ initial, items, hairColors, pet }: { initial: Ful
         <div><div className="label text-center">Skin tone</div><div className="flex flex-wrap justify-center gap-2">{Object.entries(SKIN).map(([k, c]) => <button key={k} aria-label={`Skin tone ${k}`} onClick={() => setLook({ ...look, skin: k })} className={`h-9 w-9 rounded-full border-4 ${look.skin === k ? "border-vibe-aqua" : "border-transparent"}`} style={{ background: c }} />)}</div></div>
         <div><div className="label text-center">Hair colour</div><div className="flex flex-wrap justify-center gap-2">{hairColors.map((c) => <button key={c} aria-label={`Hair colour ${c}`} onClick={() => setLook({ ...look, hair_color: c })} className={`h-8 w-8 rounded-full border-4 ${look.hair_color === c ? "border-vibe-aqua" : "border-transparent"}`} style={{ background: c }} />)}</div></div>
         <button className="btn-primary w-full" onClick={async () => { setErr(null); try { await api("/api/avatar", { body: look }); setMsg("Saved! Looking awesome ✨"); router.refresh(); } catch (e) { setErr((e as Error).message); } }}>Save my look</button>
+        {dirty && !msg && <p className="text-sm font-semibold text-vibe-sun-ink">Preview — tap Save to keep this look.</p>}
+        <button className="btn-ghost btn-sm w-full" onClick={() => { const owned = new Set(items.filter((i) => i.owned).map((i) => i.slug)); const d: Partial<Full> = {};
+          for (const [k, v] of Object.entries(DEFAULT_LOOK)) if (v === null || owned.has(v)) (d as Record<string, unknown>)[k] = v; setLook({ ...look, ...d }); setMsg(null); }}>↺ Reset to default</button>
         {msg && <p className="text-sm text-vibe-mint-ink">{msg}</p>}<ErrorNote error={err} />
       </div>
       <div className="min-w-0">

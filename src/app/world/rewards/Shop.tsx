@@ -6,6 +6,7 @@ import { coinPrice } from "@/lib/economy";
 import { Celebration, ErrorNote, InlineSpinner, RarityBadge, RARITY } from "@/components/ui";
 
 type Item = { slug: string; title: string; category: string; emoji: string; rarity: string; description: string; cost_coins: number; cost_crystals: number; min_level: number; level_exclusive: boolean; owned: boolean };
+const AVATAR_CATS = new Set(["hair", "outfit", "shoes", "expression", "accessory", "magic_object", "background", "animation", "costume"]);
 const CATS: [string, string][] = [["all", "All"], ["buddy", "Buddies"], ["outfit", "Costumes"], ["hair", "Hair"], ["expression", "Expressions"], ["shoes", "Shoes"], ["accessory", "Accessories"], ["magic_object", "Magic objects"], ["background", "Backgrounds"], ["theme", "World themes"], ["decoration", "Decorations"], ["animation", "Animations"], ["stories", "Stories"], ["costume", "Level rewards"]];
 
 export function Shop({ items, wallet, equipped }: { items: Item[]; wallet: { coins: number; crystals: number; level: number }; equipped: { buddy: string; theme: string } }) {
@@ -55,7 +56,7 @@ export function Shop({ items, wallet, equipped }: { items: Item[]; wallet: { coi
       </div>
       {got && <Celebration title="Unlocked!" reward={{ emoji: got.item.emoji, title: got.item.title, category: catLabel(got.item.category), cost: { coins: coinPrice(got.item.cost_coins, got.item.cost_crystals) } }}
         balance={{ coins: got.coins }} message={got.item.category === "buddy" || got.item.category === "theme" ? "Tap “Use” to switch it on!" : "Find it in your Avatar Studio or your World."}
-        cta={{ href: "/world/avatar", label: "🎨 Avatar Studio" }} onClose={() => { setGot(null); router.refresh(); }} />}
+        cta={AVATAR_CATS.has(got.item.category) ? { href: `/world/avatar?try=${got.item.slug}`, label: "✨ Wear it now" } : { href: "/world/avatar", label: "🎨 Avatar Studio" }} onClose={() => { setGot(null); router.refresh(); }} />}
     </div>
   );
 }
