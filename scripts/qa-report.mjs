@@ -10,6 +10,7 @@ const suites = [
   ["API, database, security & learning", "qa/results/qa-api.json", "node tests/qa-api.mjs"],
   ["UI journeys, responsive, console, accessibility & visual", "qa/results/ui-audit.json", "node tests/ui-audit.mjs"],
   ["Performance & load", "qa/results/perf.json", "node tests/perf.mjs"],
+  ["Colour themes (axe on every theme)", "qa/results/theme-audit.json", "node tests/theme-audit.mjs"],
 ];
 
 let unit = { total: 0, passed: 0, failed: 0 };

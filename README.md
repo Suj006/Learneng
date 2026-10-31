@@ -238,6 +238,28 @@ node tests/e2e-api.mjs http://localhost:3000
 
 The end-to-end script runs against a running dev server. It covers registration → verification → consent → child login → welcome → quest → rewards → challenges → missions → writing → shop → avatar → companion safety, every child, parent and admin page, DPDP export, family challenges and admin validation.
 
+## Colour themes and design tokens
+
+Every colour in the interface comes from the active **colour theme**. Children pick one in **My PING VIBE Look** (`/world/look`, also reachable from the profile, the dashboard and the 🔊 panel). Themes are free and change instantly, with no reload.
+
+| Theme | Feel |
+|---|---|
+| 🌈 **Rainbow Wonder** (default) | The official logo palette: Vibe Pink #F52F83, Electric Blue #16B9E9, Magic Purple #852DEB, Fresh Green #55D934, Sunshine Yellow #FFD33F, Playful Orange #FF9B24, on cloud white and soft lavender |
+| 🌊 Ocean Splash | Ocean blue, aqua, turquoise and coral on light blue |
+| 🍭 Candy Galaxy | Pink, lavender, violet and peach on light purple |
+| 🌻 Sunshine Garden | Yellow, green and orange on warm cream and mint |
+| 🌙 Twilight Magic | Deep purple and midnight blue with electric blue and glowing pink (dark theme) |
+
+How it works:
+- **Tokens** live in `src/lib/theme/themes.ts`. The engine writes them as CSS variables (`--pv-*`, plus `--color-primary`, `--color-background` and the other documented aliases). Tailwind's `vibe-*` colours read those variables, so components never hard-code a theme colour.
+- **Text-safe shades.** Each accent has a fill colour (buttons, badges, bars) and an "ink" colour for text (`text-vibe-sun-ink` and so on). Every theme must pass WCAG AA contrast for each text pair; `tests/themes.test.ts` enforces it.
+- **Admin-managed registry.** Themes are stored in the `color_themes` table and served at `/theme.css`; a built-in copy is inlined so the first paint is already themed. Admins can show or hide themes, choose the default, edit colours and add new themes under **Admin → Themes**. Saves are refused unless every contrast check passes.
+- **Choices.** The child's choice is stored in `child_profiles.color_theme` (no choice means the default) and `child_profiles.motion` (full, calm or still). Parents can guide both from the child's page. A theme never changes learning data.
+- **The official logo is never themed.** It is always the original image on its white container.
+- **Testing.** `node tests/theme-audit.mjs` runs axe (WCAG 2.2 AA, including contrast) on key pages in every theme and saves screenshots to `qa/screenshots/themes/`.
+
+To add a theme in code, append it to `THEME_SEED`. It is seeded on the next start, or you can create it in Admin → Themes.
+
 ## Brand assets (official logo)
 
 The official PING VIBE logo is the master asset. It must be used exactly as supplied: no recreation in HTML/CSS, no AI regeneration, and no recolouring, cropping, stretching or filters.

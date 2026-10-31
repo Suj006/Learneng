@@ -24,7 +24,7 @@ export function CharacterSays({ who, mood = "welcome", children, size = 110, spe
       <motion.div initial={{ opacity: 0, y: 10, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} className="relative mb-6 max-w-xl rounded-3xl bg-white px-5 py-4 text-vibe-night shadow-card">
         <div className="mb-1 flex items-center gap-1.5 font-display text-xs font-bold uppercase tracking-wider text-vibe-night/80"><span className="h-2.5 w-2.5 rounded-full" style={{ background: CHARACTER_INFO[who].color }} aria-hidden />{CHARACTER_INFO[who].name}</div>
         <div className="text-base font-semibold leading-snug sm:text-lg">{children}</div>
-        {speakText && <button type="button" onClick={() => speak(speakText, { who: who as Speaker, rate: 1, server: true })} className="-ml-2 mt-1 inline-flex min-h-[40px] items-center gap-1 rounded-full px-2 text-sm font-bold text-vibe-purple-ink hover:bg-vibe-purple/10" aria-label="Read aloud">🔊 Read to me</button>}
+        {speakText && <button type="button" onClick={() => speak(speakText, { who: who as Speaker, rate: 1, server: true })} className="-ml-2 mt-1 inline-flex min-h-[40px] items-center gap-1 rounded-full px-2 text-sm font-bold text-[#6E1FCC] hover:bg-[#6E1FCC]/10" aria-label="Read aloud">🔊 Read to me</button>}
         <span className={`absolute bottom-3 h-4 w-4 rotate-45 bg-white ${align === "right" ? "-right-1.5" : "-left-1.5"}`} />
       </motion.div>
     </div>

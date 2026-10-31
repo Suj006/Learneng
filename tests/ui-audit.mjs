@@ -62,7 +62,7 @@ async function journey() {
     await page.locator("input[type=password]").nth(0).fill("739164");
     await page.locator("input[type=password]").nth(1).fill("739164");
     await page.getByRole("button", { name: /Give consent/ }).click();
-    const uname = await page.locator(".text-vibe-sun.font-display, .font-display.text-vibe-sun").first().textContent();
+    const uname = await page.getByTestId("explorer-name").textContent();
     t("UI-J1-03", "Journey 1", "Critical", "Consent + PIN shows Explorer name", !!uname, uname);
     await page.getByRole("button", { name: /Hand the device/ }).click();
     await page.waitForURL("**/world/welcome");

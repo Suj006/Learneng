@@ -30,7 +30,7 @@ export function ConsentForm({ child }: { child: { id: string; name: string } }) 
       <div className="card p-6">
         <CharacterSays who="max" mood="celebrating">{child.name}'s account is ready!</CharacterSays>
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
-          <div className="glass p-4"><div className="text-xs uppercase text-vibe-lavender">Explorer name</div><div className="font-display text-2xl font-bold text-vibe-sun-ink">{done}</div></div>
+          <div className="glass p-4"><div className="text-xs uppercase text-vibe-lavender">Explorer name</div><div className="font-display text-2xl font-bold text-vibe-sun-ink" data-testid="explorer-name">{done}</div></div>
           <div className="glass p-4"><div className="text-xs uppercase text-vibe-lavender">Secret PIN</div><div className="font-display text-2xl font-bold">The 6 digits you chose</div></div>
         </div>
         <p className="mt-3 text-sm text-vibe-lavender">Write these down for {child.name}. The Explorer name never contains their real name, for privacy. You can reset the PIN anytime.</p>

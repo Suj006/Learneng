@@ -379,6 +379,33 @@ const gr8 = await A.call("/api/admin/grades", { grade: "G8", label: "Grade 8", b
 t("ADM-021", "Add new grade generates its 365-day plan", gr8.status === 200 && gr8.data.plans === 365);
 t("ADM-022", "Admin vocabulary edit validates input", (await A.call("/api/admin/vocabulary", { id: crypto.randomUUID(), meaning: "", explanation: "", example: "", phonetic: "", emoji: "", status: "published" })).status === 400);
 
+// ───────────────────────── COLOUR THEMES ─────────────────────────
+mod("Colour themes", "High");
+const css = await (await fetch(BASE + "/theme.css")).text();
+t("THM-001", "Theme stylesheet serves all five themes with Rainbow Wonder as the default", ["rainbow-wonder", "ocean-splash", "candy-galaxy", "sunshine-garden", "twilight-magic"].every((x) => css.includes(`[data-theme="${x}"]`)) && css.startsWith(":root{--pv-bg:255 252 255"));
+const TF = await makeFamily("G2", "Tara"); await TF.child.call("/api/welcome", {});
+const xpBefore = String((await TF.child.call("/world/me")).data).match(/(\d+) XP/)?.[1];
+t("THM-002", "Child can choose a theme (free, no coins needed)", (await TF.child.call("/api/world/appearance", { theme: "twilight-magic" })).status === 200);
+t("THM-003", "Chosen theme is applied server-side on world pages", /data-theme="twilight-magic"/.test(String((await TF.child.call("/world")).data)));
+t("THM-004", "Unknown theme rejected", (await TF.child.call("/api/world/appearance", { theme: "neon-chaos" })).status === 400);
+t("THM-005", "Animation intensity saved; invalid value rejected", (await TF.child.call("/api/world/appearance", { motion: "calm" })).status === 200 && (await TF.child.call("/api/world/appearance", { motion: "turbo" })).status === 400);
+const xpAfter = String((await TF.child.call("/world/me")).data).match(/(\d+) XP/)?.[1];
+t("THM-006", "Changing the theme does not change XP or progress", xpBefore === xpAfter, `${xpBefore} → ${xpAfter}`);
+t("THM-007", "Reset to default theme", (await TF.child.call("/api/world/appearance", { theme: null })).status === 200 && /data-theme="rainbow-wonder"/.test(String((await TF.child.call("/world")).data)));
+t("THM-008", "Parent can guide their own child's theme", (await TF.parent.call(`/api/parent/children/${TF.childId}/appearance`, { theme: "ocean-splash", motion: "full" })).status === 200 && /data-theme="ocean-splash"/.test(String((await TF.child.call("/world")).data)));
+t("THM-009", "Parent cannot change another family's child", (await F.parent.call(`/api/parent/children/${TF.childId}/appearance`, { theme: "candy-galaxy" })).status === 404);
+const pchild = String((await TF.parent.call(`/parent/child/${TF.childId}`)).data);
+t("THM-010", "Parent dashboard shows the child's look section and themes", /PING VIBE look/.test(pchild) && /Ocean Splash/.test(pchild));
+const thAdmin = (await A.call("/admin/themes")).status;
+t("THM-011", "Admin Themes page renders", thAdmin === 200, thAdmin);
+const tokens = { mode: "light", bg: "#FFFFFF", bg2: "#FFFFFF", surface: "#FFFFFF", surfaceAlpha: 1, surface2: "#FFFFFF", surface3: "#FFFFFF", ink: "#DDDDDD", inkSoft: "#EEEEEE", line: "#000000", lineAlpha: 0.1, glass: "#000000",
+  primary: "#FFFF00", secondary: "#00FFFF", accent: "#FF00FF", ctaFrom: "#FFFF00", ctaTo: "#FFFF00", onPrimary: "#FFFFFF", success: "#00FF00", reward: "#FFFF00", error: "#FF0000", orange: "#FFA500", pink: "#FFC0CB",
+  primaryInk: "#FFFF00", secondaryInk: "#00FFFF", successInk: "#00FF00", rewardInk: "#FFFF00", errorInk: "#FF8888", orangeInk: "#FFA500", pinkInk: "#FFC0CB", accentInk: "#FF00FF", glowA: "#FF0000", glowB: "#00FF00", glowC: "#0000FF", shadow: "#000000", shadowAlpha: 0.2 };
+const unreadable = await A.call("/api/admin/themes", { action: "create", slug: "qa-unreadable", name: "QA Unreadable", tokens });
+t("THM-012", "Admin cannot publish an unreadable theme (contrast checks enforced)", unreadable.status === 400 && /Not readable enough/.test(unreadable.data.error), unreadable.data.error?.slice(0, 80));
+t("THM-013", "Admin cannot hide the default theme", (await A.call("/api/admin/themes", { action: "update", slug: "rainbow-wonder", active: false })).status === 400);
+t("THM-014", "Theme admin API requires an admin", (await TF.parent.call("/api/admin/themes", { action: "update", slug: "ocean-splash", active: false })).status === 401);
+
 // ───────────────────────── SECURITY ─────────────────────────
 mod("Security", "Critical");
 const xs = client();
