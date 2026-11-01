@@ -1,0 +1,60 @@
+// Cambridge reference integration — acceptance checks. Writes qa/results/qa-cambridge.json.
+import fs from "node:fs";
+import { BASE, client, makeFamily } from "./lib.mjs";
+const R = [];
+const t = (id, name, cond, actual = "") => { const s = cond === null ? "BLOCKED" : cond ? "PASS" : "FAIL"; R.push({ id, name, status: s, actual: String(actual).slice(0, 300) }); console.log(`${s.padEnd(7)} ${id} ${name}${s !== "PASS" ? ` — ${actual}` : ""}`); };
+
+const AD = client();
+await AD.call("/api/auth/login-admin", { email: "admin@pingvibe.local", password: "ChangeMe!2026" });
+const studio = String((await AD.call("/admin/content")).data);
+const m = studio.match(/Cambridge-reference-derived queued: (\d+)/);
+t("CAM-01", "Cambridge-derived candidates are in the existing review queue (not published)", m && Number(m[1]) >= 500, m?.[0]);
+t("CAM-02", "Content Studio labels provenance and non-endorsement", /not endorsed by Cambridge/.test(studio));
+
+const Y = await makeFamily("G1", "Asha"); await Y.child.call("/api/welcome", {});
+const O = await makeFamily("G6", "Ravi"); await O.child.call("/api/welcome", {});
+const q = await Y.child.call("/api/quest");
+t("CAM-03", "Five-new-words-per-day rule unchanged", q.data.newWords.length === 5, q.data.newWords.length);
+const W = Object.fromEntries(q.data.newWords.map((w) => [w.id, w]));
+const ans = (x) => { const w = W[x.wordId]; return x.type === "meaning" ? w.meaning : x.type === "usage" ? w.example : x.type === "fill_blank" ? x.options.find((o) => w.example.toLowerCase().includes(o.toLowerCase())) : w.word; };
+for (const x of q.data.questions) await Y.child.call("/api/quest/answer", { wordId: x.wordId, type: x.type, answer: ans(x) });
+await Y.child.call("/api/quest/complete", { seconds: 200 });
+const words = (await Y.child.call("/api/words")).data;
+const wl = words.words ?? words;
+t("CAM-04", "Published words now carry dictionary-verified IPA (CMU) in the notebook data", Array.isArray(wl) && wl.some((w) => /^\/.+\/$/.test(w.ipa ?? "")), JSON.stringify(wl[0]).slice(0, 200));
+t("CAM-05", "No Cambridge candidate became a child's word (only published words are taught)", wl.length === 5);
+
+// Word Scenes
+const hub = String((await Y.child.call("/world/word-scenes")).data);
+t("CAM-06", "Word Scenes hub lists 8 original scenes", (hub.match(/href="\/world\/word-scenes\/[a-z-]+"/g) ?? []).length === 8);
+const pageY = String((await Y.child.call("/world/word-scenes/toy-shop")).data), pageO = String((await O.child.call("/world/word-scenes/toy-shop")).data);
+t("CAM-07", "Age adaptation: young and older explorers get different questions", pageY.includes("Which toy flies in the wind?") && pageO.includes("Which toy needs patience to finish?") && !pageO.includes("Which toy flies in the wind?"));
+t("CAM-08", "Answers are not sent to the browser", !/\\"answer\\"|\\"answers\\"/.test(pageY));
+const few = await Y.child.call("/api/word-scenes/toy-shop", { explored: ["kite"], sentence: "x", answers: ["kite", "drum"], describe: "" });
+t("CAM-09", "Must explore the scene before finishing (≥6 things)", few.status === 400, few.status);
+const items = ["teddy bear", "kite", "robot", "puzzle", "drum", "doll"];
+const pii = await Y.child.call("/api/word-scenes/toy-shop", { explored: items, sentence: "I like the robot.", answers: ["kite", "drum"], describe: "call me 9876543210" });
+t("CAM-10", "Personal information in the description is caught", pii.status === 200 && !!pii.data.safety);
+const done = await Y.child.call("/api/word-scenes/toy-shop", { explored: items, sentence: "I like the robot.", answers: ["kite", "drum"], describe: "I see a robot and a kite." });
+t("CAM-11", "Young explorer completes the scene: sentence, questions and description checked on the server", done.status === 200 && done.data.score === 100 && done.data.sentenceOk && done.data.describe.ok, JSON.stringify(done.data).slice(0, 200));
+t("CAM-12", "Scene rewards XP through the ledger", done.data.award?.xp > 0, JSON.stringify(done.data.award));
+const again = await Y.child.call("/api/word-scenes/toy-shop", { explored: items, sentence: "the robot like I.", answers: ["doll", "drum"], describe: "" });
+t("CAM-13", "Repeat the same day: no second reward; wrong answers are marked with the right answer", again.data.award?.xp === 0 && again.data.sentenceOk === false && again.data.marks[0].answer === "kite", JSON.stringify(again.data).slice(0, 200));
+const od = await O.child.call("/api/word-scenes/weather-station", { explored: ["sunny", "cloudy", "rainy", "windy", "storm", "snow"], sentence: "It will be cloudy and windy tomorrow.", answers: ["what the weather will be like", "thunder"], describe: "Tomorrow will be cloudy and windy with a temperature of twenty degrees." });
+t("CAM-14", "Older explorer: valid alternative sentence order accepted; description needs 2+ scene words", od.data.sentenceOk && od.data.describe.ok && od.data.score === 100, JSON.stringify(od.data).slice(0, 200));
+const wl2 = ((await Y.child.call("/api/words")).data.words ?? (await Y.child.call("/api/words")).data);
+t("CAM-15", "Exploring scenes does not add new words (daily five preserved)", wl2.length === 5, wl2.length);
+const pr = String((await Y.parent.call(`/parent/child/${Y.childId}`)).data);
+const vocabRow = pr.match(/Vocabulary<\/td><td>.*?<\/td><td>.*?<\/td><td>(\d+)<\/td>/);
+t("CAM-16", "Scene answers count as vocabulary evidence in the parent dashboard", Number(vocabRow?.[1] ?? 0) > 0, vocabRow?.[1]);
+const pass = String((await Y.child.call("/world/passport")).data);
+t("CAM-17", "Passport ‘Scene Explorer’ stamp earned once", (pass.match(/data-stamp="ws-1"/g) ?? []).length === 1);
+const notebook = String((await Y.child.call("/world/notebook")).data);
+t("CAM-18", "Notebook and Me page link to Word Scenes", notebook.includes("/world/word-scenes") && String((await Y.child.call("/world/me")).data).includes("/world/word-scenes"));
+const rv = await Y.child.call("/world/revision");
+t("CAM-19", "Revision page still works", rv.status === 200);
+t("CAM-20", "Unauthenticated scene completion refused", (await client().call("/api/word-scenes/toy-shop", { explored: items, sentence: "", answers: [], describe: "" })).status === 401);
+fs.mkdirSync("qa/results", { recursive: true });
+fs.writeFileSync("qa/results/qa-cambridge.json", JSON.stringify({ generated_at: new Date().toISOString(), base: BASE, results: R }, null, 2));
+const n = (s) => R.filter((r) => r.status === s).length;
+console.log(`\nCAMBRIDGE TOTAL ${R.length} · PASS ${n("PASS")} · FAIL ${n("FAIL")} · BLOCKED ${n("BLOCKED")}`);

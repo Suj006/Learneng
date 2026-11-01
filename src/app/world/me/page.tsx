@@ -10,7 +10,7 @@ import { gradeLabel } from "@/lib/grades";
 export const metadata = { title: "My Profile" };
 const LINKS = [
   ["/world/avatar", "🎨", "Avatar Studio"], ["/world/pets", "🐾", "Pets"], ["/world/museum", "🏛️", "Achievement Museum"], ["/world/collection", "🃏", "Collection Book"],
-  ["/world/skills", "🌳", "Skill Tree"], ["/world/passport", "🛂", "Adventure Passport"], ["/world/phonics", "🎶", "Phonics & Sound Valley"], ["/world/real-life", "🌍", "VIBE Real Life"], ["/world/writing/improve", "✨", "Improve My Sentence"], ["/world/calendar", "🗓️", "365-Day Calendar"], ["/world/rewards", "🎁", "Reward Shop"], ["/world/notebook", "📒", "Vocabulary Notebook"],
+  ["/world/skills", "🌳", "Skill Tree"], ["/world/passport", "🛂", "Adventure Passport"], ["/world/phonics", "🎶", "Phonics & Sound Valley"], ["/world/word-scenes", "🖼️", "Word Scenes"], ["/world/real-life", "🌍", "VIBE Real Life"], ["/world/writing/improve", "✨", "Improve My Sentence"], ["/world/calendar", "🗓️", "365-Day Calendar"], ["/world/rewards", "🎁", "Reward Shop"], ["/world/notebook", "📒", "Vocabulary Notebook"],
   ["/world/companion", "🤖", "Ask LEXI"], ["/world/missions", "🎯", "Missions"], ["/world/my-world", "🏡", "My World"], ["/world/map", "🗺️", "Adventure Map"],
 ];
 

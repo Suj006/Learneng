@@ -6,13 +6,14 @@ import { GenerateForm, ManualVocab, ReviewButtons } from "@/components/admin/Adm
 
 export const metadata = { title: "Content Studio" };
 export default async function ContentStudio() {
-  const [cov, pending, rejected, jobs, grammar, cands] = await Promise.all([
+  const [cov, pending, rejected, jobs, grammar, cands, sources] = await Promise.all([
     coverage(),
     query<{ id: string; kind: string; title: string; band: number; body: any; validation: { passed: boolean; checks: { name: string; passed: boolean; detail: string }[] }; source: string; created_at: string }>(`select * from content_library where status = 'pending' order by created_at desc limit 50`),
     query<{ id: string; kind: string; title: string; validation: any }>(`select id, kind, title, validation from content_library where status = 'rejected' order by created_at desc limit 10`),
     query<{ kind: string; band: number; status: string; produced: number; rejected: number; error: string | null; created_at: string }>(`select * from content_generation_jobs order by created_at desc limit 8`),
     query<{ slug: string; title: string }>(`select slug, title from grammar_topics order by sort_order`),
     query<{ band: number; status: string; n: number }>(`select band, status, count(*)::int n from vocabulary_candidates group by band, status order by band, status`),
+    query<{ source: string; status: string; n: number }>(`select split_part(source, ':', 1) source, status, count(*)::int n from vocabulary_candidates group by 1, 2 order by 1, 2`),
   ]);
   return (
     <div className="space-y-10">
@@ -22,6 +23,7 @@ export default async function ContentStudio() {
         <div className="mt-4 overflow-x-auto"><table className="w-full min-w-[820px] text-left text-sm"><thead className="text-vibe-lavender"><tr><th>Grade</th><th>Band</th><th>Plan days</th><th>Words in band</th><th>Words available (band+)</th><th>Fresh vocab days</th><th>Queued headwords</th><th>Writing topics</th><th>Stories</th><th>Grammar ex.</th><th>Speaking</th></tr></thead>
           <tbody>{cov.map((c) => <tr key={c.grade} className="border-t border-line/5"><td className="py-1.5 font-bold">{c.label}</td><td>{c.band}</td><td className={c.plans >= 365 ? "text-vibe-mint-ink" : "text-vibe-coral-ink"}>{c.plans}</td><td>{c.wordsInBand}</td><td>{c.wordsAvailable}</td><td className={c.vocabDays >= 365 ? "text-vibe-mint-ink" : "text-vibe-sun-ink"}>{c.vocabDays}</td><td>{c.candidates}</td><td>{c.topics}</td><td>{c.stories}</td><td>{c.grammarExercises}</td><td>{c.speaking}</td></tr>)}</tbody></table></div>
         <p className="mt-2 text-xs text-vibe-lavender">Headword pipeline: {cands.map((c) => `band ${c.band} ${c.status}: ${c.n}`).join(" · ")}</p>
+        <p className="mt-1 text-xs text-vibe-lavender" data-testid="candidate-sources">Candidate sources: {sources.map((c) => `${c.source === "cambridge-reference" ? "Cambridge-reference-derived" : "PING VIBE"} ${c.status}: ${c.n}`).join(" · ")} — Cambridge-derived entries are headwords only (no copied content), not endorsed by Cambridge, and need enrichment + human approval like every other word.</p>
       </section>
       <section><h2 className="title-md">Generate with AI (validated, then reviewed)</h2>
         <p className="text-sm text-vibe-lavender">Each item passes 7 gates — safety, readability/grade, grammar & mechanics, spelling (AI reviewer), duplicates, difficulty, age suitability — before entering the queue. Nothing reaches children until approved here.</p>

@@ -1,0 +1,126 @@
+{
+  "generated_at": "2026-11-01T13:18:24.146Z",
+  "base": "http://localhost:3000",
+  "results": [
+    {
+      "id": "CAM-01",
+      "name": "Cambridge-derived candidates are in the existing review queue (not published)",
+      "status": "PASS",
+      "actual": "Cambridge-reference-derived queued: 520"
+    },
+    {
+      "id": "CAM-02",
+      "name": "Content Studio labels provenance and non-endorsement",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "CAM-03",
+      "name": "Five-new-words-per-day rule unchanged",
+      "status": "PASS",
+      "actual": "5"
+    },
+    {
+      "id": "CAM-04",
+      "name": "Published words now carry dictionary-verified IPA (CMU) in the notebook data",
+      "status": "PASS",
+      "actual": "{\"id\":\"c5b417e8-486c-4038-b201-b1016e024b08\",\"word\":\"collect\",\"band\":2,\"part_of_speech\":\"verb\",\"phonetic\":\"kuh-LEKT\",\"meaning\":\"To bring things together and keep them.\",\"explanation\":\"Some children co"
+    },
+    {
+      "id": "CAM-05",
+      "name": "No Cambridge candidate became a child's word (only published words are taught)",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "CAM-06",
+      "name": "Word Scenes hub lists 8 original scenes",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "CAM-07",
+      "name": "Age adaptation: young and older explorers get different questions",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "CAM-08",
+      "name": "Answers are not sent to the browser",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "CAM-09",
+      "name": "Must explore the scene before finishing (≥6 things)",
+      "status": "PASS",
+      "actual": "400"
+    },
+    {
+      "id": "CAM-10",
+      "name": "Personal information in the description is caught",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "CAM-11",
+      "name": "Young explorer completes the scene: sentence, questions and description checked on the server",
+      "status": "PASS",
+      "actual": "{\"score\":100,\"marks\":[{\"q\":\"Which toy flies in the wind?\",\"given\":\"kite\",\"answer\":\"kite\",\"correct\":true},{\"q\":\"What do you hit to make a beat?\",\"given\":\"drum\",\"answer\":\"drum\",\"correct\":true}],\"sentenc"
+    },
+    {
+      "id": "CAM-12",
+      "name": "Scene rewards XP through the ledger",
+      "status": "PASS",
+      "actual": "{\"xp\":30,\"coins\":8,\"crystals\":0,\"capped\":false,\"duplicate\":false,\"restReminder\":false,\"levelUp\":null,\"achievements\":[],\"unlocks\":[]}"
+    },
+    {
+      "id": "CAM-13",
+      "name": "Repeat the same day: no second reward; wrong answers are marked with the right answer",
+      "status": "PASS",
+      "actual": "{\"score\":25,\"marks\":[{\"q\":\"Which toy flies in the wind?\",\"given\":\"doll\",\"answer\":\"kite\",\"correct\":false},{\"q\":\"What do you hit to make a beat?\",\"given\":\"drum\",\"answer\":\"drum\",\"correct\":true}],\"sentenc"
+    },
+    {
+      "id": "CAM-14",
+      "name": "Older explorer: valid alternative sentence order accepted; description needs 2+ scene words",
+      "status": "PASS",
+      "actual": "{\"score\":100,\"marks\":[{\"q\":\"What does a forecast tell you?\",\"given\":\"what the weather will be like\",\"answer\":\"what the weather will be like\",\"correct\":true},{\"q\":\"What is the loud noise in a storm?\",\""
+    },
+    {
+      "id": "CAM-15",
+      "name": "Exploring scenes does not add new words (daily five preserved)",
+      "status": "PASS",
+      "actual": "5"
+    },
+    {
+      "id": "CAM-16",
+      "name": "Scene answers count as vocabulary evidence in the parent dashboard",
+      "status": "PASS",
+      "actual": "16"
+    },
+    {
+      "id": "CAM-17",
+      "name": "Passport ‘Scene Explorer’ stamp earned once",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "CAM-18",
+      "name": "Notebook and Me page link to Word Scenes",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "CAM-19",
+      "name": "Revision page still works",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "CAM-20",
+      "name": "Unauthenticated scene completion refused",
+      "status": "PASS",
+      "actual": ""
+    }
+  ]
+}

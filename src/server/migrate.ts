@@ -12,6 +12,8 @@ import { GRAMMAR_TOPICS } from "./content/grammar";
 import { STORIES } from "./content/stories";
 import { hashPassword } from "./crypto";
 import { DEFAULT_THEME, THEME_SEED } from "@/lib/theme/themes";
+import { CAMBRIDGE_CANDIDATES } from "./content/cambridge-candidates";
+import { PRONUNCIATION } from "./content/pronunciation";
 import { REAL_LIFE_SEED } from "./content/reallife";
 
 /**
@@ -32,7 +34,26 @@ export async function migrate(db: Queryable) {
   }
   await seedThemes(db);
   await seedRealLife(db);
+  await seedCambridge(db);
   await bootstrapAdmin(db);
+}
+
+/**
+ * Cambridge-reference vocabulary candidates → the existing review queue (status 'queued'; never published directly), and
+ * dictionary-verified IPA/syllables for published words where none is stored yet. Admin edits are never overwritten.
+ */
+async function seedCambridge(db: Queryable) {
+  await db.query(
+    `insert into vocabulary_candidates (word, band, category, source, source_ref, candidate_id, part_of_speech, grade_range, difficulty_label, receptive_productive, scene, priority, linked_word)
+     select x.word, x.band, x.category, 'cambridge-reference:' || x.source, x.ref, x.id, x.pos, x.grades, x.difficulty, x.rp, x.scene, x.priority, x.link
+       from jsonb_to_recordset($1::jsonb) as x(id text, word text, band smallint, category text, pos text, grades text, difficulty text, rp text, scene text, priority numeric, source text, ref text, link text)
+      where not exists (select 1 from vocabulary_master v where lower(v.word) = x.word)
+     on conflict (word) do nothing`, [JSON.stringify(CAMBRIDGE_CANDIDATES)]);
+  const rows = Object.entries(PRONUNCIATION).map(([word, p]) => ({ word, ...p }));
+  await db.query(
+    `update vocabulary_master v set ipa = x.ipa, syllables = x.syllables, pronunciation_source = 'CMU Pronouncing Dictionary (US English)'
+       from jsonb_to_recordset($1::jsonb) as x(word text, ipa text, syllables text)
+      where lower(v.word) = lower(x.word) and v.ipa is null and x.ipa is not null`, [JSON.stringify(rows)]);
 }
 
 /** Adds any built-in VIBE REAL LIFE scenario that is missing (admin edits are kept). */

@@ -70,6 +70,7 @@ export function Adventure({ d }: { d: AdventureData }) {
     { title: "Word Games Arcade", emoji: "🕹️", href: "/world/arcade", desc: "10 games with your words", status: `${status.games} games played`, pct: Math.min(100, status.games * 5) },
     { title: "Story Builder", emoji: "📜", href: "/world/story-builder", desc: "Mix a character, place & object", status: `${status.stories} stories`, pct: Math.min(100, status.stories * 20), skill: "writing" },
     { title: "Listening Lab", emoji: "🎧", href: "/world/listening", desc: "Train your super-ears", status: "Hear it, pick it", pct: 0, skill: "listening" },
+    { title: "Word Scenes", emoji: "🖼️", href: "/world/word-scenes", desc: "Explore places and use new words", status: "8 scenes", pct: 0, skill: "vocabulary" },
     { title: "Phonics & Sound Valley", emoji: "🎶", href: "/world/phonics", desc: "Letter sounds, blending and rhymes", status: "12 sound paths", pct: 0, skill: "phonics" },
     { title: "My Rewards", emoji: "🎁", href: "/world/rewards", desc: "Shop, achievements & museum", status: `${status.rewards} items owned`, pct: 0 },
   ];

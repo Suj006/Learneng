@@ -1,0 +1,6584 @@
+{
+ "rows": [
+  {
+   "word": "bag",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 0
+  },
+  {
+   "word": "bed",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 1
+  },
+  {
+   "word": "bell",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 2
+  },
+  {
+   "word": "boat",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 3
+  },
+  {
+   "word": "bowl",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 4
+  },
+  {
+   "word": "box",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 5
+  },
+  {
+   "word": "bread",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 6
+  },
+  {
+   "word": "brush",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 7
+  },
+  {
+   "word": "bus",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 8
+  },
+  {
+   "word": "button",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 9
+  },
+  {
+   "word": "chair",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 10
+  },
+  {
+   "word": "clock",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 11
+  },
+  {
+   "word": "coat",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 12
+  },
+  {
+   "word": "comb",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 13
+  },
+  {
+   "word": "cup",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 14
+  },
+  {
+   "word": "cupboard",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 15
+  },
+  {
+   "word": "door",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 16
+  },
+  {
+   "word": "doll",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 17
+  },
+  {
+   "word": "drum",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 18
+  },
+  {
+   "word": "fan",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 19
+  },
+  {
+   "word": "flag",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 20
+  },
+  {
+   "word": "fork",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 21
+  },
+  {
+   "word": "gate",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 22
+  },
+  {
+   "word": "glass",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 23
+  },
+  {
+   "word": "hand",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 24
+  },
+  {
+   "word": "home",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 25
+  },
+  {
+   "word": "house",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 26
+  },
+  {
+   "word": "jam",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 27
+  },
+  {
+   "word": "juice",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 28
+  },
+  {
+   "word": "key",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 29
+  },
+  {
+   "word": "kite",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 30
+  },
+  {
+   "word": "lamp",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 31
+  },
+  {
+   "word": "leaf",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 32
+  },
+  {
+   "word": "letter",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 33
+  },
+  {
+   "word": "lock",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 34
+  },
+  {
+   "word": "mango",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 35
+  },
+  {
+   "word": "map",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 36
+  },
+  {
+   "word": "mat",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 37
+  },
+  {
+   "word": "mirror",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 38
+  },
+  {
+   "word": "nest",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 39
+  },
+  {
+   "word": "note",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 40
+  },
+  {
+   "word": "orange",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 41
+  },
+  {
+   "word": "pan",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 42
+  },
+  {
+   "word": "pen",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 43
+  },
+  {
+   "word": "pencil",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 44
+  },
+  {
+   "word": "pillow",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 45
+  },
+  {
+   "word": "plate",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 46
+  },
+  {
+   "word": "pot",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 47
+  },
+  {
+   "word": "rice",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 48
+  },
+  {
+   "word": "road",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 49
+  },
+  {
+   "word": "rock",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 50
+  },
+  {
+   "word": "roof",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 51
+  },
+  {
+   "word": "room",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 52
+  },
+  {
+   "word": "rope",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 53
+  },
+  {
+   "word": "sand",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 54
+  },
+  {
+   "word": "school",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 55
+  },
+  {
+   "word": "shoe",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 56
+  },
+  {
+   "word": "shop",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 57
+  },
+  {
+   "word": "sock",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 58
+  },
+  {
+   "word": "soap",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 59
+  },
+  {
+   "word": "spoon",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 60
+  },
+  {
+   "word": "stone",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 61
+  },
+  {
+   "word": "sweet",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 62
+  },
+  {
+   "word": "table",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 63
+  },
+  {
+   "word": "teeth",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 64
+  },
+  {
+   "word": "tent",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 65
+  },
+  {
+   "word": "towel",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 66
+  },
+  {
+   "word": "toy",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 67
+  },
+  {
+   "word": "train",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 68
+  },
+  {
+   "word": "truck",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 69
+  },
+  {
+   "word": "van",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 70
+  },
+  {
+   "word": "wall",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 71
+  },
+  {
+   "word": "watch",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 72
+  },
+  {
+   "word": "water",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 73
+  },
+  {
+   "word": "window",
+   "band": 1,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 74
+  },
+  {
+   "word": "bake",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 75
+  },
+  {
+   "word": "blow",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 76
+  },
+  {
+   "word": "catch",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 77
+  },
+  {
+   "word": "climb",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 78
+  },
+  {
+   "word": "cook",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 79
+  },
+  {
+   "word": "crawl",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 80
+  },
+  {
+   "word": "cry",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 81
+  },
+  {
+   "word": "cut",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 82
+  },
+  {
+   "word": "dance",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 83
+  },
+  {
+   "word": "dig",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 84
+  },
+  {
+   "word": "draw",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 85
+  },
+  {
+   "word": "drink",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 86
+  },
+  {
+   "word": "drive",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 87
+  },
+  {
+   "word": "eat",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 88
+  },
+  {
+   "word": "fall",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 89
+  },
+  {
+   "word": "fly",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 90
+  },
+  {
+   "word": "give",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 91
+  },
+  {
+   "word": "grow",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 92
+  },
+  {
+   "word": "hide",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 93
+  },
+  {
+   "word": "hop",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 94
+  },
+  {
+   "word": "hug",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 95
+  },
+  {
+   "word": "kick",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 96
+  },
+  {
+   "word": "kiss",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 97
+  },
+  {
+   "word": "laugh",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 98
+  },
+  {
+   "word": "look",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 99
+  },
+  {
+   "word": "open",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 100
+  },
+  {
+   "word": "paint",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 101
+  },
+  {
+   "word": "play",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 102
+  },
+  {
+   "word": "pull",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 103
+  },
+  {
+   "word": "push",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 104
+  },
+  {
+   "word": "read",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 105
+  },
+  {
+   "word": "ride",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 106
+  },
+  {
+   "word": "sit",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 107
+  },
+  {
+   "word": "skip",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 108
+  },
+  {
+   "word": "sleep",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 109
+  },
+  {
+   "word": "slide",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 110
+  },
+  {
+   "word": "splash",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 111
+  },
+  {
+   "word": "stand",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 112
+  },
+  {
+   "word": "swim",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 113
+  },
+  {
+   "word": "swing",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 114
+  },
+  {
+   "word": "talk",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 115
+  },
+  {
+   "word": "throw",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 116
+  },
+  {
+   "word": "tickle",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 117
+  },
+  {
+   "word": "walk",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 118
+  },
+  {
+   "word": "wash",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 119
+  },
+  {
+   "word": "wave",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 120
+  },
+  {
+   "word": "write",
+   "band": 1,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 121
+  },
+  {
+   "word": "clean",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 122
+  },
+  {
+   "word": "dark",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 123
+  },
+  {
+   "word": "dirty",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 124
+  },
+  {
+   "word": "dry",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 125
+  },
+  {
+   "word": "fast",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 126
+  },
+  {
+   "word": "full",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 127
+  },
+  {
+   "word": "funny",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 128
+  },
+  {
+   "word": "furry",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 129
+  },
+  {
+   "word": "good",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 130
+  },
+  {
+   "word": "hard",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 131
+  },
+  {
+   "word": "kind",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 132
+  },
+  {
+   "word": "light",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 133
+  },
+  {
+   "word": "little",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 134
+  },
+  {
+   "word": "long",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 135
+  },
+  {
+   "word": "loud",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 136
+  },
+  {
+   "word": "new",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 137
+  },
+  {
+   "word": "old",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 138
+  },
+  {
+   "word": "pretty",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 139
+  },
+  {
+   "word": "round",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 140
+  },
+  {
+   "word": "shiny",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 141
+  },
+  {
+   "word": "short",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 142
+  },
+  {
+   "word": "slow",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 143
+  },
+  {
+   "word": "soft",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 144
+  },
+  {
+   "word": "sour",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 145
+  },
+  {
+   "word": "spicy",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 146
+  },
+  {
+   "word": "sticky",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 147
+  },
+  {
+   "word": "tall",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 148
+  },
+  {
+   "word": "thin",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 149
+  },
+  {
+   "word": "warm",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 150
+  },
+  {
+   "word": "wet",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 151
+  },
+  {
+   "word": "yummy",
+   "band": 1,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 152
+  },
+  {
+   "word": "ant",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 153
+  },
+  {
+   "word": "bee",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 154
+  },
+  {
+   "word": "butterfly",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 155
+  },
+  {
+   "word": "cloud",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 156
+  },
+  {
+   "word": "cow",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 157
+  },
+  {
+   "word": "crab",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 158
+  },
+  {
+   "word": "elephant",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 159
+  },
+  {
+   "word": "frog",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 160
+  },
+  {
+   "word": "goat",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 161
+  },
+  {
+   "word": "grass",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 162
+  },
+  {
+   "word": "hen",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 163
+  },
+  {
+   "word": "hill",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 164
+  },
+  {
+   "word": "horse",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 165
+  },
+  {
+   "word": "lion",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 166
+  },
+  {
+   "word": "monkey",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 167
+  },
+  {
+   "word": "mouse",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 168
+  },
+  {
+   "word": "owl",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 169
+  },
+  {
+   "word": "parrot",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 170
+  },
+  {
+   "word": "peacock",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 171
+  },
+  {
+   "word": "pig",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 172
+  },
+  {
+   "word": "pond",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 173
+  },
+  {
+   "word": "rabbit",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 174
+  },
+  {
+   "word": "river",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 175
+  },
+  {
+   "word": "sea",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 176
+  },
+  {
+   "word": "sheep",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 177
+  },
+  {
+   "word": "snail",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 178
+  },
+  {
+   "word": "snake",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 179
+  },
+  {
+   "word": "snow",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 180
+  },
+  {
+   "word": "squirrel",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 181
+  },
+  {
+   "word": "tiger",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 182
+  },
+  {
+   "word": "tortoise",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 183
+  },
+  {
+   "word": "wind",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 184
+  },
+  {
+   "word": "zebra",
+   "band": 1,
+   "source_category": "nature",
+   "origin": "existing_queue",
+   "work_id": 185
+  },
+  {
+   "word": "backpack",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 186
+  },
+  {
+   "word": "balcony",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 187
+  },
+  {
+   "word": "blanket",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 188
+  },
+  {
+   "word": "breakfast",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 189
+  },
+  {
+   "word": "bucket",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 190
+  },
+  {
+   "word": "calendar",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 191
+  },
+  {
+   "word": "candle",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 192
+  },
+  {
+   "word": "carpet",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 193
+  },
+  {
+   "word": "ceiling",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 194
+  },
+  {
+   "word": "chalk",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 195
+  },
+  {
+   "word": "cushion",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 196
+  },
+  {
+   "word": "dinner",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 197
+  },
+  {
+   "word": "envelope",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 198
+  },
+  {
+   "word": "eraser",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 199
+  },
+  {
+   "word": "feather",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 200
+  },
+  {
+   "word": "gift",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 201
+  },
+  {
+   "word": "hammer",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 202
+  },
+  {
+   "word": "helmet",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 203
+  },
+  {
+   "word": "jacket",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 204
+  },
+  {
+   "word": "kitchen",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 205
+  },
+  {
+   "word": "ladder",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 206
+  },
+  {
+   "word": "lunchbox",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 207
+  },
+  {
+   "word": "medicine",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 208
+  },
+  {
+   "word": "notebook",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 209
+  },
+  {
+   "word": "parcel",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 210
+  },
+  {
+   "word": "picnic",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 211
+  },
+  {
+   "word": "pocket",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 212
+  },
+  {
+   "word": "poster",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 213
+  },
+  {
+   "word": "puzzle",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 214
+  },
+  {
+   "word": "ribbon",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 215
+  },
+  {
+   "word": "ruler",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 216
+  },
+  {
+   "word": "sandwich",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 217
+  },
+  {
+   "word": "scissors",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 218
+  },
+  {
+   "word": "shelf",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 219
+  },
+  {
+   "word": "sticker",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 220
+  },
+  {
+   "word": "stool",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 221
+  },
+  {
+   "word": "suitcase",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 222
+  },
+  {
+   "word": "sweater",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 223
+  },
+  {
+   "word": "thermometer",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 224
+  },
+  {
+   "word": "ticket",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 225
+  },
+  {
+   "word": "tiffin",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 226
+  },
+  {
+   "word": "torch",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 227
+  },
+  {
+   "word": "umbrella",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 228
+  },
+  {
+   "word": "uniform",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 229
+  },
+  {
+   "word": "wallet",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 230
+  },
+  {
+   "word": "whistle",
+   "band": 2,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 231
+  },
+  {
+   "word": "arrive",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 232
+  },
+  {
+   "word": "borrow",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 233
+  },
+  {
+   "word": "bounce",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 234
+  },
+  {
+   "word": "build",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 235
+  },
+  {
+   "word": "carry",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 236
+  },
+  {
+   "word": "chase",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 237
+  },
+  {
+   "word": "cheer",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 238
+  },
+  {
+   "word": "choose",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 239
+  },
+  {
+   "word": "crunch",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 240
+  },
+  {
+   "word": "decide",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 241
+  },
+  {
+   "word": "discover",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 242
+  },
+  {
+   "word": "enjoy",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 243
+  },
+  {
+   "word": "fetch",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 244
+  },
+  {
+   "word": "float",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 245
+  },
+  {
+   "word": "gallop",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 246
+  },
+  {
+   "word": "gather",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 247
+  },
+  {
+   "word": "glide",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 248
+  },
+  {
+   "word": "hurry",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 249
+  },
+  {
+   "word": "invite",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 250
+  },
+  {
+   "word": "juggle",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 251
+  },
+  {
+   "word": "knock",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 252
+  },
+  {
+   "word": "learn",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 253
+  },
+  {
+   "word": "listen",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 254
+  },
+  {
+   "word": "march",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 255
+  },
+  {
+   "word": "measure",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 256
+  },
+  {
+   "word": "mix",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 257
+  },
+  {
+   "word": "nibble",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 258
+  },
+  {
+   "word": "notice",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 259
+  },
+  {
+   "word": "pour",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 260
+  },
+  {
+   "word": "practise",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 261
+  },
+  {
+   "word": "promise",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 262
+  },
+  {
+   "word": "race",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 263
+  },
+  {
+   "word": "reach",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 264
+  },
+  {
+   "word": "remember",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 265
+  },
+  {
+   "word": "repair",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 266
+  },
+  {
+   "word": "scribble",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 267
+  },
+  {
+   "word": "search",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 268
+  },
+  {
+   "word": "sneeze",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 269
+  },
+  {
+   "word": "squeeze",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 270
+  },
+  {
+   "word": "stretch",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 271
+  },
+  {
+   "word": "sweep",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 272
+  },
+  {
+   "word": "travel",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 273
+  },
+  {
+   "word": "visit",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 274
+  },
+  {
+   "word": "wiggle",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 275
+  },
+  {
+   "word": "wonder",
+   "band": 2,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 276
+  },
+  {
+   "word": "afraid",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 277
+  },
+  {
+   "word": "angry",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 278
+  },
+  {
+   "word": "busy",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 279
+  },
+  {
+   "word": "calm",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 280
+  },
+  {
+   "word": "cheerful",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 281
+  },
+  {
+   "word": "clever",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 282
+  },
+  {
+   "word": "colourful",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 283
+  },
+  {
+   "word": "crunchy",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 284
+  },
+  {
+   "word": "dusty",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 285
+  },
+  {
+   "word": "excited",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 286
+  },
+  {
+   "word": "fluffy",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 287
+  },
+  {
+   "word": "foggy",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 288
+  },
+  {
+   "word": "fresh",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 289
+  },
+  {
+   "word": "grumpy",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 290
+  },
+  {
+   "word": "healthy",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 291
+  },
+  {
+   "word": "hungry",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 292
+  },
+  {
+   "word": "icy",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 293
+  },
+  {
+   "word": "juicy",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 294
+  },
+  {
+   "word": "lazy",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 295
+  },
+  {
+   "word": "lonely",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 296
+  },
+  {
+   "word": "lucky",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 297
+  },
+  {
+   "word": "messy",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 298
+  },
+  {
+   "word": "muddy",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 299
+  },
+  {
+   "word": "narrow",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 300
+  },
+  {
+   "word": "noisy",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 301
+  },
+  {
+   "word": "plain",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 302
+  },
+  {
+   "word": "proud",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 303
+  },
+  {
+   "word": "rough",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 304
+  },
+  {
+   "word": "rusty",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 305
+  },
+  {
+   "word": "scary",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 306
+  },
+  {
+   "word": "silly",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 307
+  },
+  {
+   "word": "sleepy",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 308
+  },
+  {
+   "word": "smooth",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 309
+  },
+  {
+   "word": "sparkly",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 310
+  },
+  {
+   "word": "stormy",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 311
+  },
+  {
+   "word": "surprised",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 312
+  },
+  {
+   "word": "thirsty",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 313
+  },
+  {
+   "word": "tidy",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 314
+  },
+  {
+   "word": "tired",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 315
+  },
+  {
+   "word": "useful",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 316
+  },
+  {
+   "word": "wide",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 317
+  },
+  {
+   "word": "wild",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 318
+  },
+  {
+   "word": "windy",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 319
+  },
+  {
+   "word": "wise",
+   "band": 2,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 320
+  },
+  {
+   "word": "ate",
+   "band": 2,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 321
+  },
+  {
+   "word": "eight",
+   "band": 2,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 322
+  },
+  {
+   "word": "blue",
+   "band": 2,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 323
+  },
+  {
+   "word": "blew",
+   "band": 2,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 324
+  },
+  {
+   "word": "flour",
+   "band": 2,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 325
+  },
+  {
+   "word": "hear",
+   "band": 2,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 326
+  },
+  {
+   "word": "here",
+   "band": 2,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 327
+  },
+  {
+   "word": "knight",
+   "band": 2,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 328
+  },
+  {
+   "word": "night",
+   "band": 2,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 329
+  },
+  {
+   "word": "meat",
+   "band": 2,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 330
+  },
+  {
+   "word": "meet",
+   "band": 2,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 331
+  },
+  {
+   "word": "one",
+   "band": 2,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 332
+  },
+  {
+   "word": "won",
+   "band": 2,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 333
+  },
+  {
+   "word": "pair",
+   "band": 2,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 334
+  },
+  {
+   "word": "pear",
+   "band": 2,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 335
+  },
+  {
+   "word": "right",
+   "band": 2,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 336
+  },
+  {
+   "word": "see",
+   "band": 2,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 337
+  },
+  {
+   "word": "son",
+   "band": 2,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 338
+  },
+  {
+   "word": "tail",
+   "band": 2,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 339
+  },
+  {
+   "word": "tale",
+   "band": 2,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 340
+  },
+  {
+   "word": "to",
+   "band": 2,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 341
+  },
+  {
+   "word": "two",
+   "band": 2,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 342
+  },
+  {
+   "word": "week",
+   "band": 2,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 343
+  },
+  {
+   "word": "weak",
+   "band": 2,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 344
+  },
+  {
+   "word": "sunflower",
+   "band": 2,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 345
+  },
+  {
+   "word": "football",
+   "band": 2,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 346
+  },
+  {
+   "word": "toothbrush",
+   "band": 2,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 347
+  },
+  {
+   "word": "bedroom",
+   "band": 2,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 348
+  },
+  {
+   "word": "cupcake",
+   "band": 2,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 349
+  },
+  {
+   "word": "doorbell",
+   "band": 2,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 350
+  },
+  {
+   "word": "sunshine",
+   "band": 2,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 351
+  },
+  {
+   "word": "snowman",
+   "band": 2,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 352
+  },
+  {
+   "word": "popcorn",
+   "band": 2,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 353
+  },
+  {
+   "word": "starfish",
+   "band": 2,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 354
+  },
+  {
+   "word": "playground",
+   "band": 2,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 355
+  },
+  {
+   "word": "goldfish",
+   "band": 2,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 356
+  },
+  {
+   "word": "raincoat",
+   "band": 2,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 357
+  },
+  {
+   "word": "ladybug",
+   "band": 2,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 358
+  },
+  {
+   "word": "appointment",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 359
+  },
+  {
+   "word": "architect",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 360
+  },
+  {
+   "word": "audience",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 361
+  },
+  {
+   "word": "avenue",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 362
+  },
+  {
+   "word": "bakery",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 363
+  },
+  {
+   "word": "biography",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 364
+  },
+  {
+   "word": "celebration",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 365
+  },
+  {
+   "word": "ceremony",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 366
+  },
+  {
+   "word": "committee",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 367
+  },
+  {
+   "word": "competition",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 368
+  },
+  {
+   "word": "costume",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 369
+  },
+  {
+   "word": "custom",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 370
+  },
+  {
+   "word": "department",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 371
+  },
+  {
+   "word": "distance",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 372
+  },
+  {
+   "word": "emergency",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 373
+  },
+  {
+   "word": "excursion",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 374
+  },
+  {
+   "word": "experiment",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 375
+  },
+  {
+   "word": "exhibition",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 376
+  },
+  {
+   "word": "fortnight",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 377
+  },
+  {
+   "word": "headline",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 378
+  },
+  {
+   "word": "hospital",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 379
+  },
+  {
+   "word": "invitation",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 380
+  },
+  {
+   "word": "journal",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 381
+  },
+  {
+   "word": "landmark",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 382
+  },
+  {
+   "word": "luggage",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 383
+  },
+  {
+   "word": "magazine",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 384
+  },
+  {
+   "word": "mechanic",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 385
+  },
+  {
+   "word": "messenger",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 386
+  },
+  {
+   "word": "neighbourhood",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 387
+  },
+  {
+   "word": "orchestra",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 388
+  },
+  {
+   "word": "passenger",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 389
+  },
+  {
+   "word": "pharmacy",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 390
+  },
+  {
+   "word": "postcard",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 391
+  },
+  {
+   "word": "recipe",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 392
+  },
+  {
+   "word": "reporter",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 393
+  },
+  {
+   "word": "scholarship",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 394
+  },
+  {
+   "word": "souvenir",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 395
+  },
+  {
+   "word": "stadium",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 396
+  },
+  {
+   "word": "sunscreen",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 397
+  },
+  {
+   "word": "telescope",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 398
+  },
+  {
+   "word": "tournament",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 399
+  },
+  {
+   "word": "volunteer",
+   "band": 3,
+   "source_category": "everyday",
+   "origin": "existing_queue",
+   "work_id": 400
+  },
+  {
+   "word": "accomplish",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 401
+  },
+  {
+   "word": "admire",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 402
+  },
+  {
+   "word": "announce",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 403
+  },
+  {
+   "word": "approach",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 404
+  },
+  {
+   "word": "assemble",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 405
+  },
+  {
+   "word": "attempt",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 406
+  },
+  {
+   "word": "avoid",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 407
+  },
+  {
+   "word": "balance",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 408
+  },
+  {
+   "word": "budge",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 409
+  },
+  {
+   "word": "capture",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 410
+  },
+  {
+   "word": "collapse",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 411
+  },
+  {
+   "word": "compare",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 412
+  },
+  {
+   "word": "complain",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 413
+  },
+  {
+   "word": "concentrate",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 414
+  },
+  {
+   "word": "create",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 415
+  },
+  {
+   "word": "defend",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 416
+  },
+  {
+   "word": "describe",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 417
+  },
+  {
+   "word": "disappear",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 418
+  },
+  {
+   "word": "encourage",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 419
+  },
+  {
+   "word": "escape",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 420
+  },
+  {
+   "word": "examine",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 421
+  },
+  {
+   "word": "explain",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 422
+  },
+  {
+   "word": "flutter",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 423
+  },
+  {
+   "word": "gasp",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 424
+  },
+  {
+   "word": "glance",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 425
+  },
+  {
+   "word": "gobble",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 426
+  },
+  {
+   "word": "grumble",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 427
+  },
+  {
+   "word": "hesitate",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 428
+  },
+  {
+   "word": "identify",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 429
+  },
+  {
+   "word": "improve",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 430
+  },
+  {
+   "word": "investigate",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 431
+  },
+  {
+   "word": "migrate",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 432
+  },
+  {
+   "word": "mumble",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 433
+  },
+  {
+   "word": "observe",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 434
+  },
+  {
+   "word": "organise",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 435
+  },
+  {
+   "word": "persuade",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 436
+  },
+  {
+   "word": "predict",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 437
+  },
+  {
+   "word": "prepare",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 438
+  },
+  {
+   "word": "recognise",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 439
+  },
+  {
+   "word": "rummage",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 440
+  },
+  {
+   "word": "scramble",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 441
+  },
+  {
+   "word": "shiver",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 442
+  },
+  {
+   "word": "stumble",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 443
+  },
+  {
+   "word": "suggest",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 444
+  },
+  {
+   "word": "surround",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 445
+  },
+  {
+   "word": "tremble",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 446
+  },
+  {
+   "word": "whimper",
+   "band": 3,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 447
+  },
+  {
+   "word": "adventurous",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 448
+  },
+  {
+   "word": "ambitious",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 449
+  },
+  {
+   "word": "anxious",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 450
+  },
+  {
+   "word": "awkward",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 451
+  },
+  {
+   "word": "bold",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 452
+  },
+  {
+   "word": "brilliant",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 453
+  },
+  {
+   "word": "clumsy",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 454
+  },
+  {
+   "word": "confident",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 455
+  },
+  {
+   "word": "cunning",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 456
+  },
+  {
+   "word": "dazzling",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 457
+  },
+  {
+   "word": "delicate",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 458
+  },
+  {
+   "word": "dreadful",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 459
+  },
+  {
+   "word": "elegant",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 460
+  },
+  {
+   "word": "energetic",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 461
+  },
+  {
+   "word": "exhausted",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 462
+  },
+  {
+   "word": "famous",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 463
+  },
+  {
+   "word": "fearless",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 464
+  },
+  {
+   "word": "ferocious",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 465
+  },
+  {
+   "word": "fierce",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 466
+  },
+  {
+   "word": "frantic",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 467
+  },
+  {
+   "word": "furious",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 468
+  },
+  {
+   "word": "gigantic",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 469
+  },
+  {
+   "word": "glamorous",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 470
+  },
+  {
+   "word": "graceful",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 471
+  },
+  {
+   "word": "grateful",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 472
+  },
+  {
+   "word": "hilarious",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 473
+  },
+  {
+   "word": "humble",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 474
+  },
+  {
+   "word": "immense",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 475
+  },
+  {
+   "word": "jealous",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 476
+  },
+  {
+   "word": "majestic",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 477
+  },
+  {
+   "word": "miserable",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 478
+  },
+  {
+   "word": "modern",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 479
+  },
+  {
+   "word": "patient",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 480
+  },
+  {
+   "word": "precious",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 481
+  },
+  {
+   "word": "puzzled",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 482
+  },
+  {
+   "word": "reliable",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 483
+  },
+  {
+   "word": "sensible",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 484
+  },
+  {
+   "word": "splendid",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 485
+  },
+  {
+   "word": "sturdy",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 486
+  },
+  {
+   "word": "thoughtful",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 487
+  },
+  {
+   "word": "tremendous",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 488
+  },
+  {
+   "word": "unusual",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 489
+  },
+  {
+   "word": "vast",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 490
+  },
+  {
+   "word": "weary",
+   "band": 3,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 491
+  },
+  {
+   "word": "allowed",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 492
+  },
+  {
+   "word": "aloud",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 493
+  },
+  {
+   "word": "bare",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 494
+  },
+  {
+   "word": "bear",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 495
+  },
+  {
+   "word": "brake",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 496
+  },
+  {
+   "word": "break",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 497
+  },
+  {
+   "word": "buy",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 498
+  },
+  {
+   "word": "by",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 499
+  },
+  {
+   "word": "cell",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 500
+  },
+  {
+   "word": "sell",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 501
+  },
+  {
+   "word": "cereal",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 502
+  },
+  {
+   "word": "serial",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 503
+  },
+  {
+   "word": "flew",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 504
+  },
+  {
+   "word": "flu",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 505
+  },
+  {
+   "word": "grate",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 506
+  },
+  {
+   "word": "great",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 507
+  },
+  {
+   "word": "hole",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 508
+  },
+  {
+   "word": "whole",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 509
+  },
+  {
+   "word": "mail",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 510
+  },
+  {
+   "word": "male",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 511
+  },
+  {
+   "word": "peace",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 512
+  },
+  {
+   "word": "piece",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 513
+  },
+  {
+   "word": "plane",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 514
+  },
+  {
+   "word": "principal",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 515
+  },
+  {
+   "word": "principle",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 516
+  },
+  {
+   "word": "stair",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 517
+  },
+  {
+   "word": "stare",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 518
+  },
+  {
+   "word": "their",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 519
+  },
+  {
+   "word": "there",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 520
+  },
+  {
+   "word": "weather",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 521
+  },
+  {
+   "word": "whether",
+   "band": 3,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 522
+  },
+  {
+   "word": "breakthrough",
+   "band": 3,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 523
+  },
+  {
+   "word": "countryside",
+   "band": 3,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 524
+  },
+  {
+   "word": "earthquake",
+   "band": 3,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 525
+  },
+  {
+   "word": "fingerprint",
+   "band": 3,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 526
+  },
+  {
+   "word": "grasshopper",
+   "band": 3,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 527
+  },
+  {
+   "word": "handwriting",
+   "band": 3,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 528
+  },
+  {
+   "word": "headquarters",
+   "band": 3,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 529
+  },
+  {
+   "word": "lighthouse",
+   "band": 3,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 530
+  },
+  {
+   "word": "moonlight",
+   "band": 3,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 531
+  },
+  {
+   "word": "newspaper",
+   "band": 3,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 532
+  },
+  {
+   "word": "overcome",
+   "band": 3,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 533
+  },
+  {
+   "word": "rattlesnake",
+   "band": 3,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 534
+  },
+  {
+   "word": "skyscraper",
+   "band": 3,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 535
+  },
+  {
+   "word": "thunderstorm",
+   "band": 3,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 536
+  },
+  {
+   "word": "underground",
+   "band": 3,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 537
+  },
+  {
+   "word": "waterfall",
+   "band": 3,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 538
+  },
+  {
+   "word": "wheelchair",
+   "band": 3,
+   "source_category": "compound",
+   "origin": "existing_queue",
+   "work_id": 539
+  },
+  {
+   "word": "break down",
+   "band": 3,
+   "source_category": "phrasal_verb",
+   "origin": "existing_queue",
+   "work_id": 540
+  },
+  {
+   "word": "calm down",
+   "band": 3,
+   "source_category": "phrasal_verb",
+   "origin": "existing_queue",
+   "work_id": 541
+  },
+  {
+   "word": "carry on",
+   "band": 3,
+   "source_category": "phrasal_verb",
+   "origin": "existing_queue",
+   "work_id": 542
+  },
+  {
+   "word": "cheer up",
+   "band": 3,
+   "source_category": "phrasal_verb",
+   "origin": "existing_queue",
+   "work_id": 543
+  },
+  {
+   "word": "find out",
+   "band": 3,
+   "source_category": "phrasal_verb",
+   "origin": "existing_queue",
+   "work_id": 544
+  },
+  {
+   "word": "give up",
+   "band": 3,
+   "source_category": "phrasal_verb",
+   "origin": "existing_queue",
+   "work_id": 545
+  },
+  {
+   "word": "look after",
+   "band": 3,
+   "source_category": "phrasal_verb",
+   "origin": "existing_queue",
+   "work_id": 546
+  },
+  {
+   "word": "look for",
+   "band": 3,
+   "source_category": "phrasal_verb",
+   "origin": "existing_queue",
+   "work_id": 547
+  },
+  {
+   "word": "pick up",
+   "band": 3,
+   "source_category": "phrasal_verb",
+   "origin": "existing_queue",
+   "work_id": 548
+  },
+  {
+   "word": "put on",
+   "band": 3,
+   "source_category": "phrasal_verb",
+   "origin": "existing_queue",
+   "work_id": 549
+  },
+  {
+   "word": "run out",
+   "band": 3,
+   "source_category": "phrasal_verb",
+   "origin": "existing_queue",
+   "work_id": 550
+  },
+  {
+   "word": "set off",
+   "band": 3,
+   "source_category": "phrasal_verb",
+   "origin": "existing_queue",
+   "work_id": 551
+  },
+  {
+   "word": "take off",
+   "band": 3,
+   "source_category": "phrasal_verb",
+   "origin": "existing_queue",
+   "work_id": 552
+  },
+  {
+   "word": "turn off",
+   "band": 3,
+   "source_category": "phrasal_verb",
+   "origin": "existing_queue",
+   "work_id": 553
+  },
+  {
+   "word": "wake up",
+   "band": 3,
+   "source_category": "phrasal_verb",
+   "origin": "existing_queue",
+   "work_id": 554
+  },
+  {
+   "word": "a piece of cake",
+   "band": 3,
+   "source_category": "idiom",
+   "origin": "existing_queue",
+   "work_id": 555
+  },
+  {
+   "word": "break the ice",
+   "band": 3,
+   "source_category": "idiom",
+   "origin": "existing_queue",
+   "work_id": 556
+  },
+  {
+   "word": "over the moon",
+   "band": 3,
+   "source_category": "idiom",
+   "origin": "existing_queue",
+   "work_id": 557
+  },
+  {
+   "word": "raining cats and dogs",
+   "band": 3,
+   "source_category": "idiom",
+   "origin": "existing_queue",
+   "work_id": 558
+  },
+  {
+   "word": "under the weather",
+   "band": 3,
+   "source_category": "idiom",
+   "origin": "existing_queue",
+   "work_id": 559
+  },
+  {
+   "word": "abstract",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 560
+  },
+  {
+   "word": "accumulate",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 561
+  },
+  {
+   "word": "advocate",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 562
+  },
+  {
+   "word": "allocate",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 563
+  },
+  {
+   "word": "analyse",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 564
+  },
+  {
+   "word": "anticipate",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 565
+  },
+  {
+   "word": "assess",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 566
+  },
+  {
+   "word": "attribute",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 567
+  },
+  {
+   "word": "bias",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 568
+  },
+  {
+   "word": "capacity",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 569
+  },
+  {
+   "word": "circumstance",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 570
+  },
+  {
+   "word": "coherent",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 571
+  },
+  {
+   "word": "comprehensive",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 572
+  },
+  {
+   "word": "concept",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 573
+  },
+  {
+   "word": "conclude",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 574
+  },
+  {
+   "word": "contradict",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 575
+  },
+  {
+   "word": "criteria",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 576
+  },
+  {
+   "word": "crucial",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 577
+  },
+  {
+   "word": "debate",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 578
+  },
+  {
+   "word": "deduce",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 579
+  },
+  {
+   "word": "derive",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 580
+  },
+  {
+   "word": "dilemma",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 581
+  },
+  {
+   "word": "distinguish",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 582
+  },
+  {
+   "word": "diverse",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 583
+  },
+  {
+   "word": "elaborate",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 584
+  },
+  {
+   "word": "emerge",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 585
+  },
+  {
+   "word": "emphasise",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 586
+  },
+  {
+   "word": "establish",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 587
+  },
+  {
+   "word": "evaluate",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 588
+  },
+  {
+   "word": "evidence",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 589
+  },
+  {
+   "word": "exaggerate",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 590
+  },
+  {
+   "word": "excerpt",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 591
+  },
+  {
+   "word": "feasible",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 592
+  },
+  {
+   "word": "fluctuate",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 593
+  },
+  {
+   "word": "fundamental",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 594
+  },
+  {
+   "word": "generate",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 595
+  },
+  {
+   "word": "hierarchy",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 596
+  },
+  {
+   "word": "hypothetical",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 597
+  },
+  {
+   "word": "illustrate",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 598
+  },
+  {
+   "word": "implement",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 599
+  },
+  {
+   "word": "implication",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 600
+  },
+  {
+   "word": "imply",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 601
+  },
+  {
+   "word": "infer",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 602
+  },
+  {
+   "word": "inherent",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 603
+  },
+  {
+   "word": "integrate",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 604
+  },
+  {
+   "word": "interpret",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 605
+  },
+  {
+   "word": "justify",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 606
+  },
+  {
+   "word": "legitimate",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 607
+  },
+  {
+   "word": "magnitude",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 608
+  },
+  {
+   "word": "methodology",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 609
+  },
+  {
+   "word": "minimise",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 610
+  },
+  {
+   "word": "modify",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 611
+  },
+  {
+   "word": "objective",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 612
+  },
+  {
+   "word": "obsolete",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 613
+  },
+  {
+   "word": "paradox",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 614
+  },
+  {
+   "word": "perceive",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 615
+  },
+  {
+   "word": "perspective",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 616
+  },
+  {
+   "word": "phenomenon",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 617
+  },
+  {
+   "word": "precise",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 618
+  },
+  {
+   "word": "predominant",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 619
+  },
+  {
+   "word": "priority",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 620
+  },
+  {
+   "word": "proportion",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 621
+  },
+  {
+   "word": "rational",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 622
+  },
+  {
+   "word": "reinforce",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 623
+  },
+  {
+   "word": "relevant",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 624
+  },
+  {
+   "word": "reluctance",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 625
+  },
+  {
+   "word": "resolve",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 626
+  },
+  {
+   "word": "scenario",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 627
+  },
+  {
+   "word": "significant",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 628
+  },
+  {
+   "word": "simulate",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 629
+  },
+  {
+   "word": "speculate",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 630
+  },
+  {
+   "word": "subsequent",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 631
+  },
+  {
+   "word": "substantial",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 632
+  },
+  {
+   "word": "summarise",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 633
+  },
+  {
+   "word": "supplement",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 634
+  },
+  {
+   "word": "synthesis",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 635
+  },
+  {
+   "word": "tangible",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 636
+  },
+  {
+   "word": "theory",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 637
+  },
+  {
+   "word": "thorough",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 638
+  },
+  {
+   "word": "transform",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 639
+  },
+  {
+   "word": "undermine",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 640
+  },
+  {
+   "word": "validate",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 641
+  },
+  {
+   "word": "verify",
+   "band": 4,
+   "source_category": "academic",
+   "origin": "existing_queue",
+   "work_id": 642
+  },
+  {
+   "word": "adamant",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 643
+  },
+  {
+   "word": "affluent",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 644
+  },
+  {
+   "word": "amiable",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 645
+  },
+  {
+   "word": "arduous",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 646
+  },
+  {
+   "word": "audacious",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 647
+  },
+  {
+   "word": "authentic",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 648
+  },
+  {
+   "word": "candid",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 649
+  },
+  {
+   "word": "compassionate",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 650
+  },
+  {
+   "word": "conscientious",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 651
+  },
+  {
+   "word": "conspicuous",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 652
+  },
+  {
+   "word": "credible",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 653
+  },
+  {
+   "word": "cynical",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 654
+  },
+  {
+   "word": "diplomatic",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 655
+  },
+  {
+   "word": "eccentric",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 656
+  },
+  {
+   "word": "eminent",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 657
+  },
+  {
+   "word": "exemplary",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 658
+  },
+  {
+   "word": "exuberant",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 659
+  },
+  {
+   "word": "formidable",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 660
+  },
+  {
+   "word": "gregarious",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 661
+  },
+  {
+   "word": "immaculate",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 662
+  },
+  {
+   "word": "impartial",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 663
+  },
+  {
+   "word": "impeccable",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 664
+  },
+  {
+   "word": "indifferent",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 665
+  },
+  {
+   "word": "industrious",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 666
+  },
+  {
+   "word": "intrepid",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 667
+  },
+  {
+   "word": "lucid",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 668
+  },
+  {
+   "word": "melancholy",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 669
+  },
+  {
+   "word": "nonchalant",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 670
+  },
+  {
+   "word": "obstinate",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 671
+  },
+  {
+   "word": "optimistic",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 672
+  },
+  {
+   "word": "pessimistic",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 673
+  },
+  {
+   "word": "plausible",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 674
+  },
+  {
+   "word": "prudent",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 675
+  },
+  {
+   "word": "quaint",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 676
+  },
+  {
+   "word": "radiant",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 677
+  },
+  {
+   "word": "robust",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 678
+  },
+  {
+   "word": "scrupulous",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 679
+  },
+  {
+   "word": "spontaneous",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 680
+  },
+  {
+   "word": "steadfast",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 681
+  },
+  {
+   "word": "subtle",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 682
+  },
+  {
+   "word": "tranquil",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 683
+  },
+  {
+   "word": "vibrant",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 684
+  },
+  {
+   "word": "vigilant",
+   "band": 4,
+   "source_category": "descriptive",
+   "origin": "existing_queue",
+   "work_id": 685
+  },
+  {
+   "word": "acknowledge",
+   "band": 4,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 686
+  },
+  {
+   "word": "alleviate",
+   "band": 4,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 687
+  },
+  {
+   "word": "amplify",
+   "band": 4,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 688
+  },
+  {
+   "word": "commemorate",
+   "band": 4,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 689
+  },
+  {
+   "word": "compensate",
+   "band": 4,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 690
+  },
+  {
+   "word": "comprehend",
+   "band": 4,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 691
+  },
+  {
+   "word": "consolidate",
+   "band": 4,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 692
+  },
+  {
+   "word": "deteriorate",
+   "band": 4,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 693
+  },
+  {
+   "word": "disseminate",
+   "band": 4,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 694
+  },
+  {
+   "word": "eliminate",
+   "band": 4,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 695
+  },
+  {
+   "word": "endeavour",
+   "band": 4,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 696
+  },
+  {
+   "word": "enhance",
+   "band": 4,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 697
+  },
+  {
+   "word": "flourish",
+   "band": 4,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 698
+  },
+  {
+   "word": "formulate",
+   "band": 4,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 699
+  },
+  {
+   "word": "hinder",
+   "band": 4,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 700
+  },
+  {
+   "word": "illuminate",
+   "band": 4,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 701
+  },
+  {
+   "word": "innovate",
+   "band": 4,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 702
+  },
+  {
+   "word": "intervene",
+   "band": 4,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 703
+  },
+  {
+   "word": "liberate",
+   "band": 4,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 704
+  },
+  {
+   "word": "mediate",
+   "band": 4,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 705
+  },
+  {
+   "word": "negotiate",
+   "band": 4,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 706
+  },
+  {
+   "word": "persevere",
+   "band": 4,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 707
+  },
+  {
+   "word": "prioritise",
+   "band": 4,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 708
+  },
+  {
+   "word": "reconcile",
+   "band": 4,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 709
+  },
+  {
+   "word": "rectify",
+   "band": 4,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 710
+  },
+  {
+   "word": "scrutinise",
+   "band": 4,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 711
+  },
+  {
+   "word": "substantiate",
+   "band": 4,
+   "source_category": "action",
+   "origin": "existing_queue",
+   "work_id": 712
+  },
+  {
+   "word": "affect",
+   "band": 4,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 713
+  },
+  {
+   "word": "effect",
+   "band": 4,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 714
+  },
+  {
+   "word": "complement",
+   "band": 4,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 715
+  },
+  {
+   "word": "compliment",
+   "band": 4,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 716
+  },
+  {
+   "word": "council",
+   "band": 4,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 717
+  },
+  {
+   "word": "counsel",
+   "band": 4,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 718
+  },
+  {
+   "word": "desert",
+   "band": 4,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 719
+  },
+  {
+   "word": "dessert",
+   "band": 4,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 720
+  },
+  {
+   "word": "stationary",
+   "band": 4,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 721
+  },
+  {
+   "word": "stationery",
+   "band": 4,
+   "source_category": "homophone",
+   "origin": "existing_queue",
+   "work_id": 722
+  },
+  {
+   "word": "bring about",
+   "band": 4,
+   "source_category": "phrasal_verb",
+   "origin": "existing_queue",
+   "work_id": 723
+  },
+  {
+   "word": "carry out",
+   "band": 4,
+   "source_category": "phrasal_verb",
+   "origin": "existing_queue",
+   "work_id": 724
+  },
+  {
+   "word": "come across",
+   "band": 4,
+   "source_category": "phrasal_verb",
+   "origin": "existing_queue",
+   "work_id": 725
+  },
+  {
+   "word": "figure out",
+   "band": 4,
+   "source_category": "phrasal_verb",
+   "origin": "existing_queue",
+   "work_id": 726
+  },
+  {
+   "word": "get across",
+   "band": 4,
+   "source_category": "phrasal_verb",
+   "origin": "existing_queue",
+   "work_id": 727
+  },
+  {
+   "word": "look into",
+   "band": 4,
+   "source_category": "phrasal_verb",
+   "origin": "existing_queue",
+   "work_id": 728
+  },
+  {
+   "word": "point out",
+   "band": 4,
+   "source_category": "phrasal_verb",
+   "origin": "existing_queue",
+   "work_id": 729
+  },
+  {
+   "word": "put off",
+   "band": 4,
+   "source_category": "phrasal_verb",
+   "origin": "existing_queue",
+   "work_id": 730
+  },
+  {
+   "word": "rule out",
+   "band": 4,
+   "source_category": "phrasal_verb",
+   "origin": "existing_queue",
+   "work_id": 731
+  },
+  {
+   "word": "set up",
+   "band": 4,
+   "source_category": "phrasal_verb",
+   "origin": "existing_queue",
+   "work_id": 732
+  },
+  {
+   "word": "take after",
+   "band": 4,
+   "source_category": "phrasal_verb",
+   "origin": "existing_queue",
+   "work_id": 733
+  },
+  {
+   "word": "turn down",
+   "band": 4,
+   "source_category": "phrasal_verb",
+   "origin": "existing_queue",
+   "work_id": 734
+  },
+  {
+   "word": "hit the nail on the head",
+   "band": 4,
+   "source_category": "idiom",
+   "origin": "existing_queue",
+   "work_id": 735
+  },
+  {
+   "word": "once in a blue moon",
+   "band": 4,
+   "source_category": "idiom",
+   "origin": "existing_queue",
+   "work_id": 736
+  },
+  {
+   "word": "the ball is in your court",
+   "band": 4,
+   "source_category": "idiom",
+   "origin": "existing_queue",
+   "work_id": 737
+  },
+  {
+   "word": "bite off more than you can chew",
+   "band": 4,
+   "source_category": "idiom",
+   "origin": "existing_queue",
+   "work_id": 738
+  },
+  {
+   "word": "every cloud has a silver lining",
+   "band": 4,
+   "source_category": "idiom",
+   "origin": "existing_queue",
+   "work_id": 739
+  },
+  {
+   "word": "actions speak louder than words",
+   "band": 4,
+   "source_category": "idiom",
+   "origin": "existing_queue",
+   "work_id": 740
+  },
+  {
+   "word": "burn the midnight oil",
+   "band": 4,
+   "source_category": "idiom",
+   "origin": "existing_queue",
+   "work_id": 741
+  },
+  {
+   "word": "cost an arm and a leg",
+   "band": 4,
+   "source_category": "idiom",
+   "origin": "existing_queue",
+   "work_id": 742
+  },
+  {
+   "word": "nose",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 743
+  },
+  {
+   "word": "ear",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 744
+  },
+  {
+   "word": "eye",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 745
+  },
+  {
+   "word": "mouth",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 746
+  },
+  {
+   "word": "knee",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 747
+  },
+  {
+   "word": "red",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 748
+  },
+  {
+   "word": "yellow",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 749
+  },
+  {
+   "word": "green",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 750
+  },
+  {
+   "word": "circle",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 751
+  },
+  {
+   "word": "square",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 752
+  },
+  {
+   "word": "heart",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 753
+  },
+  {
+   "word": "triangle",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 754
+  },
+  {
+   "word": "cap",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 755
+  },
+  {
+   "word": "dress",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 756
+  },
+  {
+   "word": "shirt",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 757
+  },
+  {
+   "word": "skirt",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 758
+  },
+  {
+   "word": "morning",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 759
+  },
+  {
+   "word": "today",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 760
+  },
+  {
+   "word": "doctor",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 761
+  },
+  {
+   "word": "teacher",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 762
+  },
+  {
+   "word": "farmer",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 763
+  },
+  {
+   "word": "baker",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 764
+  },
+  {
+   "word": "park",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 765
+  },
+  {
+   "word": "zoo",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 766
+  },
+  {
+   "word": "ship",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 767
+  },
+  {
+   "word": "bicycle",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 768
+  },
+  {
+   "word": "song",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 769
+  },
+  {
+   "word": "sorry",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 770
+  },
+  {
+   "word": "thank",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 771
+  },
+  {
+   "word": "please",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 772
+  },
+  {
+   "word": "mother",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 773
+  },
+  {
+   "word": "father",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 774
+  },
+  {
+   "word": "baby",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 775
+  },
+  {
+   "word": "sister",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 776
+  },
+  {
+   "word": "brother",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 777
+  },
+  {
+   "word": "cheek",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 778
+  },
+  {
+   "word": "elbow",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 779
+  },
+  {
+   "word": "pink",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 780
+  },
+  {
+   "word": "brown",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 781
+  },
+  {
+   "word": "spring",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 782
+  },
+  {
+   "word": "shell",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 783
+  },
+  {
+   "word": "bubble",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 784
+  },
+  {
+   "word": "balloon",
+   "band": 1,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 785
+  },
+  {
+   "word": "problem",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_seed",
+   "work_id": 786
+  },
+  {
+   "word": "nurse",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 787
+  },
+  {
+   "word": "pilot",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 788
+  },
+  {
+   "word": "police",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 789
+  },
+  {
+   "word": "firefighter",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 790
+  },
+  {
+   "word": "postman",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 791
+  },
+  {
+   "word": "dentist",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 792
+  },
+  {
+   "word": "ambulance",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 793
+  },
+  {
+   "word": "station",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 794
+  },
+  {
+   "word": "airport",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 795
+  },
+  {
+   "word": "library",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 796
+  },
+  {
+   "word": "market",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 797
+  },
+  {
+   "word": "temple",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 798
+  },
+  {
+   "word": "purple",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 799
+  },
+  {
+   "word": "oval",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 800
+  },
+  {
+   "word": "rectangle",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 801
+  },
+  {
+   "word": "diamond",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 802
+  },
+  {
+   "word": "scarf",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 803
+  },
+  {
+   "word": "boots",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 804
+  },
+  {
+   "word": "gloves",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 805
+  },
+  {
+   "word": "yesterday",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 806
+  },
+  {
+   "word": "tomorrow",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 807
+  },
+  {
+   "word": "weekend",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 808
+  },
+  {
+   "word": "minute",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 809
+  },
+  {
+   "word": "thunder",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 810
+  },
+  {
+   "word": "breeze",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 811
+  },
+  {
+   "word": "guitar",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 812
+  },
+  {
+   "word": "flute",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 813
+  },
+  {
+   "word": "piano",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 814
+  },
+  {
+   "word": "computer",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 815
+  },
+  {
+   "word": "phone",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 816
+  },
+  {
+   "word": "camera",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 817
+  },
+  {
+   "word": "coin",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 818
+  },
+  {
+   "word": "price",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 819
+  },
+  {
+   "word": "honest",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 820
+  },
+  {
+   "word": "careless",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 821
+  },
+  {
+   "word": "cottage",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 822
+  },
+  {
+   "word": "village",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 823
+  },
+  {
+   "word": "harbour",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 824
+  },
+  {
+   "word": "signal",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 825
+  },
+  {
+   "word": "chapter",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 826
+  },
+  {
+   "word": "riddle",
+   "band": 2,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 827
+  },
+  {
+   "word": "environment",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_seed",
+   "work_id": 828
+  },
+  {
+   "word": "solution",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_seed",
+   "work_id": 829
+  },
+  {
+   "word": "creative",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_seed",
+   "work_id": 830
+  },
+  {
+   "word": "celebrate",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_seed",
+   "work_id": 831
+  },
+  {
+   "word": "habitat",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_seed",
+   "work_id": 832
+  },
+  {
+   "word": "destination",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_seed",
+   "work_id": 833
+  },
+  {
+   "word": "planet",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 834
+  },
+  {
+   "word": "magnet",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 835
+  },
+  {
+   "word": "energy",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 836
+  },
+  {
+   "word": "oxygen",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 837
+  },
+  {
+   "word": "volcano",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 838
+  },
+  {
+   "word": "continent",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 839
+  },
+  {
+   "word": "island",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 840
+  },
+  {
+   "word": "ocean",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 841
+  },
+  {
+   "word": "forest",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 842
+  },
+  {
+   "word": "recycle",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 843
+  },
+  {
+   "word": "pollution",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 844
+  },
+  {
+   "word": "climate",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 845
+  },
+  {
+   "word": "rocket",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 846
+  },
+  {
+   "word": "keyboard",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 847
+  },
+  {
+   "word": "internet",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 848
+  },
+  {
+   "word": "message",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 849
+  },
+  {
+   "word": "culture",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 850
+  },
+  {
+   "word": "painting",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 851
+  },
+  {
+   "word": "sculpture",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 852
+  },
+  {
+   "word": "rhythm",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 853
+  },
+  {
+   "word": "melody",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 854
+  },
+  {
+   "word": "budget",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 855
+  },
+  {
+   "word": "customer",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 856
+  },
+  {
+   "word": "receipt",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 857
+  },
+  {
+   "word": "season",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 858
+  },
+  {
+   "word": "temperature",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 859
+  },
+  {
+   "word": "humid",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 860
+  },
+  {
+   "word": "vaccine",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 861
+  },
+  {
+   "word": "skeleton",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 862
+  },
+  {
+   "word": "muscle",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 863
+  },
+  {
+   "word": "respect",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 864
+  },
+  {
+   "word": "fairness",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 865
+  },
+  {
+   "word": "honesty",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 866
+  },
+  {
+   "word": "teamwork",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 867
+  },
+  {
+   "word": "fossil",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 868
+  },
+  {
+   "word": "orbit",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 869
+  },
+  {
+   "word": "galaxy",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 870
+  },
+  {
+   "word": "predator",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 871
+  },
+  {
+   "word": "canyon",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 872
+  },
+  {
+   "word": "glacier",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 873
+  },
+  {
+   "word": "tradition",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 874
+  },
+  {
+   "word": "genuine",
+   "band": 3,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 875
+  },
+  {
+   "word": "extraordinary",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_seed",
+   "work_id": 876
+  },
+  {
+   "word": "responsibility",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_seed",
+   "work_id": 877
+  },
+  {
+   "word": "determination",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_seed",
+   "work_id": 878
+  },
+  {
+   "word": "conservation",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_seed",
+   "work_id": 879
+  },
+  {
+   "word": "communicate",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_seed",
+   "work_id": 880
+  },
+  {
+   "word": "independent",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_seed",
+   "work_id": 881
+  },
+  {
+   "word": "biodiversity",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_seed",
+   "work_id": 882
+  },
+  {
+   "word": "transformation",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_seed",
+   "work_id": 883
+  },
+  {
+   "word": "interpretation",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_seed",
+   "work_id": 884
+  },
+  {
+   "word": "appreciation",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_seed",
+   "work_id": 885
+  },
+  {
+   "word": "opportunity",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_seed",
+   "work_id": 886
+  },
+  {
+   "word": "achievement",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_seed",
+   "work_id": 887
+  },
+  {
+   "word": "ecosystem",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 888
+  },
+  {
+   "word": "photosynthesis",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 889
+  },
+  {
+   "word": "gravity",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 890
+  },
+  {
+   "word": "evaporation",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 891
+  },
+  {
+   "word": "condensation",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 892
+  },
+  {
+   "word": "latitude",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 893
+  },
+  {
+   "word": "longitude",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 894
+  },
+  {
+   "word": "hemisphere",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 895
+  },
+  {
+   "word": "renewable",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 896
+  },
+  {
+   "word": "carbon",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 897
+  },
+  {
+   "word": "technology",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 898
+  },
+  {
+   "word": "innovation",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 899
+  },
+  {
+   "word": "algorithm",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 900
+  },
+  {
+   "word": "database",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 901
+  },
+  {
+   "word": "democracy",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 902
+  },
+  {
+   "word": "heritage",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 903
+  },
+  {
+   "word": "architecture",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 904
+  },
+  {
+   "word": "symphony",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 905
+  },
+  {
+   "word": "economy",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 906
+  },
+  {
+   "word": "investment",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 907
+  },
+  {
+   "word": "profit",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 908
+  },
+  {
+   "word": "strategy",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 909
+  },
+  {
+   "word": "reflect",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 910
+  },
+  {
+   "word": "integrity",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 911
+  },
+  {
+   "word": "resilience",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 912
+  },
+  {
+   "word": "compassion",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 913
+  },
+  {
+   "word": "generosity",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 914
+  },
+  {
+   "word": "accountability",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 915
+  },
+  {
+   "word": "tolerance",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 916
+  },
+  {
+   "word": "infrastructure",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 917
+  },
+  {
+   "word": "prototype",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 918
+  },
+  {
+   "word": "epidemic",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 919
+  },
+  {
+   "word": "philanthropy",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 920
+  },
+  {
+   "word": "sovereignty",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 921
+  },
+  {
+   "word": "diplomacy",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 922
+  },
+  {
+   "word": "catastrophe",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 923
+  },
+  {
+   "word": "meteorology",
+   "band": 4,
+   "source_category": null,
+   "origin": "phase1_gapfill",
+   "work_id": 924
+  }
+ ],
+ "dedupe": {
+  "queue_already_published": [
+   "bright",
+   "quiet",
+   "flower",
+   "garden",
+   "clap",
+   "giggle",
+   "sparkle",
+   "gloomy",
+   "sun",
+   "rainbow",
+   "protect",
+   "articulate",
+   "collaborate",
+   "contemplate"
+  ],
+  "queue_internal_duplicates": [],
+  "supplementary_skipped_as_duplicates": [
+   "cat",
+   "sun",
+   "cup",
+   "ball",
+   "tree",
+   "fish",
+   "book",
+   "rain",
+   "happy",
+   "jump",
+   "soft",
+   "small",
+   "friend",
+   "flower",
+   "water",
+   "star",
+   "night",
+   "car",
+   "plane",
+   "drum",
+   "share",
+   "puddle",
+   "picnic",
+   "smile",
+   "curious",
+   "journey",
+   "careful",
+   "whisper",
+   "borrow",
+   "helpful",
+   "excited",
+   "collect",
+   "describe",
+   "compare",
+   "imagine",
+   "organise",
+   "remember",
+   "prepare",
+   "doctor",
+   "hospital",
+   "raincoat",
+   "rainbow",
+   "sunshine",
+   "brave",
+   "gentle",
+   "polite",
+   "patient",
+   "nervous",
+   "delighted",
+   "adventure",
+   "discover",
+   "explore",
+   "enormous",
+   "confident",
+   "protect",
+   "experiment",
+   "courage",
+   "investigate",
+   "desert",
+   "telescope",
+   "letter",
+   "invitation",
+   "festival",
+   "patient",
+   "grateful",
+   "ancient",
+   "migrate",
+   "ceremony",
+   "fragile",
+   "magnificent",
+   "perseverance",
+   "sustainable",
+   "hypothesis",
+   "orchestra",
+   "debate",
+   "persuade",
+   "negotiate",
+   "analyse",
+   "evaluate",
+   "empathy",
+   "meticulous",
+   "ambiguous",
+   "phenomenon",
+   "collaborate"
+  ]
+ }
+}

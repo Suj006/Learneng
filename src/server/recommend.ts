@@ -8,6 +8,7 @@ import { skillBand } from "./journey";
 import { suggestLevel, type Level } from "@/lib/reallife";
 import { realWorldScore } from "./reallife";
 import { phonicsUnits } from "./phonics";
+import { SCENES } from "@/lib/scenes";
 
 const excludedOk = <T extends { slug: string }>(u: T | undefined, ex: string[]) => (u && !ex.includes(u.slug) ? u : undefined);
 
@@ -15,9 +16,9 @@ export type RecKind = "learn_next" | "practise_more" | "revise_now" | "explore_n
 export interface Rec { kind: RecKind; title: string; reason: string; href: string; emoji: string; who: "max" | "lexi" | "grammy" | "speaky" | "story"; skill: string; difficulty?: string; minutes?: number; done?: boolean }
 
 /** Typical minutes per activity (shown to children as "about N min"). */
-const MINUTES: [RegExp, number][] = [[/quest/, 10], [/revision/, 5], [/grammar/, 8], [/reading/, 10], [/real-life/, 6], [/writing\/improve/, 5], [/writing/, 15], [/phonics/, 6], [/arcade|discoveries/, 5], [/speaking|listening/, 6]];
+const MINUTES: [RegExp, number][] = [[/word-scenes/, 8], [/quest/, 10], [/revision/, 5], [/grammar/, 8], [/reading/, 10], [/real-life/, 6], [/writing\/improve/, 5], [/writing/, 15], [/phonics/, 6], [/arcade|discoveries/, 5], [/speaking|listening/, 6]];
 /** Activity-log modules that count as "done today" for a link. */
-const DONE_BY: [RegExp, string[]][] = [[/quest/, ["daily_word_quest"]], [/revision/, ["revision"]], [/grammar/, ["grammar", "grammar_drill"]], [/reading/, ["reading"]],
+const DONE_BY: [RegExp, string[]][] = [[/word-scenes/, ["word_scene"]], [/quest/, ["daily_word_quest"]], [/revision/, ["revision"]], [/grammar/, ["grammar", "grammar_drill"]], [/reading/, ["reading"]],
   [/real-life/, ["real_life"]], [/writing\/improve/, ["improve_sentence"]], [/phonics/, ["phonics"]], [/arcade|discoveries/, ["word_games"]], [/speaking/, ["speaking"]], [/listening/, ["challenge_listening"]]];
 export const REC_LABELS: Record<RecKind, string> = {
   learn_next: "Learn next", practise_more: "Practise more", revise_now: "Revise now", explore_new: "Explore something new", challenge: "Challenge yourself",
@@ -102,7 +103,11 @@ export async function recommendations(child: { id: string; grade: string }, opts
   const exploreScene = scene ? { kind: "explore_new" as const, skill: "real_world", title: scene.title, reason: "Try a brand-new real-life adventure!", href: `/world/real-life/${scene.slug}?level=${level}`, emoji: scene.emoji, who: "max" as const } : null;
   const exploreStory = story ? { kind: "explore_new" as const, skill: "reading", title: story.title, reason: "You are ready for a new reading adventure.", href: `/world/reading/${story.slug}`, emoji: story.emoji, who: "story" as const } : null;
   // Rotate daily between story and scenario so exploring stays fresh.
-  const pick = new Date(today).getDate() % 2 === 0 ? [exploreScene, exploreStory] : [exploreStory, exploreScene];
+  const doneScenes = new Set((await query<{ slug: string }>(`select slug from scene_progress where child_id = $1`, [child.id])).map((r) => r.slug));
+  const ws = SCENES.find((s) => !doneScenes.has(s.slug));
+  const exploreWords = ws ? { kind: "explore_new" as const, skill: "vocabulary", title: `Word Scene: ${ws.title}`, reason: "Explore a new place and discover its words!", href: `/world/word-scenes/${ws.slug}`, emoji: ws.emoji, who: "lexi" as const } : null;
+  const day = new Date(today).getDate() % 3;
+  const pick = day === 0 ? [exploreScene, exploreWords, exploreStory] : day === 1 ? [exploreStory, exploreScene, exploreWords] : [exploreWords, exploreStory, exploreScene];
   const explore = pick.find(Boolean);
   if (explore) out.push(explore);
 

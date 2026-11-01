@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T10:22:09.481Z",
+  "generated_at": "2026-11-01T13:19:12.101Z",
   "base": "http://localhost:3000",
   "results": [
     {
@@ -168,7 +168,7 @@
       "severity": "Critical",
       "scenario": "Verification + consent creates an active Explorer",
       "status": "PASS",
-      "actual": "cosmicotter835"
+      "actual": "comettiger484"
     },
     {
       "id": "AUTH-022",
@@ -1248,7 +1248,7 @@
       "severity": "High",
       "scenario": "Unfinished mission cannot be claimed",
       "status": "PASS",
-      "actual": "Keep going — this mission isn't finished yet!"
+      "actual": "That mission isn't available right now."
     },
     {
       "id": "GAM-023",

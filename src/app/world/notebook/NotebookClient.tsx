@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { api, speak } from "@/lib/client";
 import { CharacterSays, Spinner } from "@/components/ui";
 
-type W = { id: string; word: string; emoji: string; phonetic: string; meaning: string; example: string; status: string; favourite: boolean; due_on: string; correct_count: number; wrong_count: number; first_seen?: string; last_practised?: string | null; used_in_writing?: number; used_in_speaking?: number };
+type W = { id: string; word: string; emoji: string; phonetic: string; meaning: string; example: string; status: string; favourite: boolean; due_on: string; correct_count: number; wrong_count: number; first_seen?: string; last_practised?: string | null; used_in_writing?: number; used_in_speaking?: number; ipa?: string | null; syllables?: string | null };
 const FILTERS = [["all", "All"], ["due", "Due for revision"], ["discovered", "Discovered"], ["practising", "Practising"], ["mastered", "Mastered 👑"], ["favourite", "Favourites ❤️"]];
 const BADGE: Record<string, string> = { discovered: "🌱 Discovered", practising: "🔁 Practising", mastered: "👑 Mastered" };
 
@@ -36,13 +36,14 @@ export function NotebookClient() {
           <article key={w.id} className="glass p-4">
             <div className="flex items-start gap-3">
               <span className="text-4xl">{w.emoji}</span>
-              <div className="min-w-0 flex-1"><b className="font-display text-xl">{w.word}</b> <span className="text-xs text-vibe-aqua-ink">{w.phonetic}</span><p className="text-sm">{w.meaning}</p></div>
+              <div className="min-w-0 flex-1"><b className="font-display text-xl">{w.word}</b> <span className="text-xs text-vibe-aqua-ink">{w.phonetic}</span>{w.ipa && <span className="ml-1 text-xs text-vibe-lavender" title="IPA (CMU Pronouncing Dictionary, US English)">{w.ipa}</span>}<p className="text-sm">{w.meaning}</p></div>
               <button aria-label={w.favourite ? "Remove favourite" : "Add favourite"} onClick={async () => { await api("/api/words/favourite", { body: { wordId: w.id, favourite: !w.favourite } }); setWords(words.map((x) => (x.id === w.id ? { ...x, favourite: !x.favourite } : x))); }} className="text-2xl">{w.favourite ? "❤️" : "🤍"}</button>
             </div>
             <p className="mt-2 text-xs italic text-vibe-lavender">“{w.example}”</p>
             <details className="mt-2 text-xs" data-testid="word-history">
               <summary className="cursor-pointer font-bold text-vibe-aqua-ink">📅 Word history</summary>
               <ul className="mt-1 space-y-0.5 text-vibe-lavender">
+                {w.syllables && w.syllables.includes("·") && <li>Syllables: {w.syllables}</li>}
                 {w.first_seen && <li>Discovered: {fmt(w.first_seen)}</li>}
                 <li>Last practised: {w.last_practised ? fmt(w.last_practised) : "not yet"}</li>
                 <li>Next revision: {w.status === "mastered" && w.due_on > today ? `${fmt(w.due_on)} (memory check)` : isDue(w) ? "today — ready now!" : fmt(w.due_on)}</li>

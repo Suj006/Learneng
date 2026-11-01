@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T10:21:45.734Z",
+  "generated_at": "2026-11-01T13:18:49.275Z",
   "base": "http://localhost:3000",
   "results": [
     {
@@ -30,7 +30,7 @@
       "id": "LX6-02b",
       "name": "Notebook words carry history (date discovered, next revision, practice counts)",
       "status": "PASS",
-      "actual": "{\"id\":\"6f20912c-6573-4b8d-872a-c16d6b85f0a7\",\"word\":\"delighted\",\"band\":3,\"part_of_speech\":\"adjective\",\"phonetic\":\"dih-LY-tid\",\"meaning\":\"Very pleased and happy.\",\"explanation\":\"When you get exactly th"
+      "actual": "{\"id\":\"486ef1d5-fd3e-4cf1-b494-cdba15f3b567\",\"word\":\"determined\",\"band\":3,\"part_of_speech\":\"adjective\",\"phonetic\":\"dih-TUR-mind\",\"meaning\":\"Not giving up until you succeed.\",\"explanation\":\"Trying agai"
     },
     {
       "id": "LX6-02c",
@@ -48,7 +48,7 @@
       "id": "LX6-04",
       "name": "Improve My Sentence keeps the original and gives explained suggestions",
       "status": "PASS",
-      "actual": "{\"id\":\"61d64f23-fdc3-49bd-b7e3-7e4edc633791\",\"original\":\"i saw a big dog in the park\",\"praise\":\"What a lovely, full sentence! Let's make it shine even more.\",\"suggestions\":[{\"kind\":\"fix\",\"idea\":\"Check"
+      "actual": "{\"id\":\"4d23dd36-b7b2-4a4b-aa46-c8aba8222df1\",\"original\":\"i saw a big dog in the park\",\"praise\":\"What a lovely, full sentence! Let's make it shine even more.\",\"suggestions\":[{\"kind\":\"fix\",\"idea\":\"Check"
     },
     {
       "id": "LX6-04b",

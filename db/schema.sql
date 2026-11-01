@@ -931,3 +931,40 @@ insert into kingdoms (slug, title, emoji, art, description, href, unlock_level, 
   on conflict (slug) do nothing;
 -- Phonics Valley evidence now feeds the second phonics node (listen-and-spell still feeds the first).
 update skill_nodes set evidence = 'phonics' where slug = 'ph-blend' and evidence = 'listen_spell';
+
+-- Cambridge reference integration (additive). Candidates keep provenance and mapping; nothing is published without review.
+alter table vocabulary_candidates add column if not exists source text not null default 'pingvibe';
+alter table vocabulary_candidates add column if not exists source_ref text;
+alter table vocabulary_candidates add column if not exists candidate_id text;
+alter table vocabulary_candidates add column if not exists part_of_speech text;
+alter table vocabulary_candidates add column if not exists grade_range text;
+alter table vocabulary_candidates add column if not exists difficulty_label text;
+alter table vocabulary_candidates add column if not exists receptive_productive text;
+alter table vocabulary_candidates add column if not exists scene text;
+alter table vocabulary_candidates add column if not exists priority numeric;
+alter table vocabulary_candidates add column if not exists linked_word text;
+-- Richer word records (all nullable; existing words keep their IDs, progress and schedules).
+alter table vocabulary_master add column if not exists ipa text;
+alter table vocabulary_master add column if not exists syllables text;
+alter table vocabulary_master add column if not exists pronunciation_source text;
+alter table vocabulary_master add column if not exists grade_range text;
+alter table vocabulary_master add column if not exists receptive_productive text;
+alter table vocabulary_master add column if not exists scene text;
+alter table vocabulary_master add column if not exists word_family text[];
+alter table vocabulary_master add column if not exists collocations text[];
+alter table vocabulary_master add column if not exists common_mistakes text;
+alter table vocabulary_master add column if not exists audio_status text not null default 'tts';
+alter table vocabulary_master add column if not exists illustration_status text not null default 'emoji_placeholder';
+alter table vocabulary_master add column if not exists provenance text;
+alter table vocabulary_master add column if not exists content_version integer not null default 1;
+
+-- Word Scenes (contextual vocabulary). Exploring never adds to the child's five new words per day.
+create table if not exists scene_progress (
+  child_id     uuid not null references children(id) on delete cascade,
+  slug         text not null,
+  best_score   smallint not null default 0,
+  completions  integer not null default 0,
+  last_at      timestamptz not null default now(),
+  primary key (child_id, slug)
+);
+insert into xp_config (key, label, xp, coins, daily_cap) values ('word_scene', 'Word Scene explored', 30, 8, 4) on conflict (key) do nothing;
