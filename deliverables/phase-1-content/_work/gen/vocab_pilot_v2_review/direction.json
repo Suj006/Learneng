@@ -1,0 +1,58 @@
+{
+ "candidate_id": "PV-CAM-3-0235",
+ "word": "direction",
+ "band": 3,
+ "content_version": 2,
+ "review": {
+  "grammar_ok": true,
+  "spelling_ok": true,
+  "age_appropriate": true,
+  "educational": true,
+  "meaning_accurate": true,
+  "synonyms_antonyms_accurate": true,
+  "indian_british_usage_ok": true,
+  "culturally_sensitive_ok": true,
+  "issues": [
+   "Explanation mixes senses: 'Directions tell us which way to go' leans towards the 'instructions' sense (plural 'directions'), while 'north, south, left or right' illustrates the compass/way sense; slightly confusing for ages 8-10.",
+   "Word family item 'director' relates to the 'manage/guide' sense of 'direct', not the 'way' sense taught here; acceptable morphologically but may confuse.",
+   "Collocation 'ask for directions' uses the 'instructions' sense, which is not explained in the meaning."
+  ],
+  "suggested_fixes": [
+   "Rephrase explanation: 'A direction tells us which way to go, such as north, south, left or right. A compass helps us find the right direction.'",
+   "Optionally replace 'director' with 'directions', or add a note that 'director' comes from a different meaning of 'direct'.",
+   "Add a short note: 'Directions (plural) can also mean instructions that tell you how to get somewhere.'"
+  ]
+ },
+ "reviewer_model": "claude-opus-5-5",
+ "reviewer_stop": "end_turn",
+ "usage": {
+  "input_tokens": 1135,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 1135,
+    "output_tokens": 410,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 410,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ }
+}

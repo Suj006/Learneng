@@ -1,0 +1,58 @@
+{
+ "candidate_id": "PV-CAM-2-0054",
+ "word": "comic",
+ "band": 2,
+ "content_version": 2,
+ "review": {
+  "grammar_ok": true,
+  "spelling_ok": true,
+  "age_appropriate": true,
+  "educational": true,
+  "meaning_accurate": true,
+  "synonyms_antonyms_accurate": true,
+  "indian_british_usage_ok": true,
+  "culturally_sensitive_ok": true,
+  "issues": [
+   "Word family lists 'comical (= funny)', which is accurate but derives from the adjective sense of 'comic' (funny), not the noun sense taught here. This may confuse young learners.",
+   "Collocation 'comic book' duplicates the synonym field.",
+   "Spelling guidance: 'picnic' ends in 'ic' but 'music' is pronounced differently at the start, which is fine. However, 'picnic' may be a weak rhyme model; this is minor."
+  ],
+  "suggested_fixes": [
+   "Keep 'comics (plural)' and either drop 'comical' or label it clearly: 'comical (adjective, means funny)'.",
+   "Replace 'comic book' in collocations with another phrase, e.g. 'buy a comic'.",
+   "Optionally use 'music' and 'magic' as the 'ic' examples."
+  ]
+ },
+ "reviewer_model": "claude-opus-5-5",
+ "reviewer_stop": "end_turn",
+ "usage": {
+  "input_tokens": 1150,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 1150,
+    "output_tokens": 364,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 364,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ }
+}
