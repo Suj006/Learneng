@@ -186,7 +186,29 @@ grades: suitable grades. prerequisites: use unit ids such as ${prev.join(", ") |
   });
 }
 
+/** PILOT: 40 version-2 "Use" candidates (10 per band) from pilot/pilot_words.json → 4 calls (one per band). Writes gen/vocab_pilot/. */
+async function vocabPilot(conc: number) {
+  const words = JSON.parse(fs.readFileSync("deliverables/phase-1-content/pilot/pilot_words.json", "utf8")) as { candidate_id: string; word: string; band: number; category: string }[];
+  const batches = [1, 2, 3, 4].map((band) => ({ id: `pilot-b${band}`, band, rows: words.filter((w) => w.band === band) }));
+  const todo = batches.filter((b) => b.rows.length && !done("vocab_pilot", b.id));
+  console.log(`pilot batches ${batches.length}, to do ${todo.length} (model ${MODEL})`);
+  return pool(todo, conc, async (b) => {
+    const out = await ask(z.object({ items: z.array(Vocab) }), `Create complete word cards for children in ${BAND_DESC[b.band]} (Indian school learners; Indian/British English) for EXACTLY these ${b.rows.length} headwords, in this order, one card each:
+${b.rows.map((r) => `- ${r.word} (reviewed category: ${r.category})`).join("\n")}
+Rules:
+- "word" must be exactly the headword as given. Use the single most common, child-relevant meaning; do not mix meanings on one card.
+- simple_meaning: one short, accurate sentence. explanation: 1–2 child-friendly sentences for the age band. example_sentence MUST contain the exact headword, end with punctuation, and use a natural Indian everyday context (school, home, festivals, cricket, monsoon) without stereotypes.
+- real_world_usage: a natural sentence a child could say. synonyms/antonyms/word_family/collocations: only real, age-appropriate items (empty arrays if none).
+- spelling_guidance: one useful tip, or "" if very simple. category: use the reviewed category given above. difficulty: ${DIFF_FOR_BAND[b.band]}. applicable_grades: subset of ${BAND_GRADES[b.band].join(", ")}.
+- learning_objective: one sentence. illustration_brief: what an original illustration should show (no text in the image). emoji: one relevant emoji.
+- No people may be described by body size, appearance judgements, caste, religion or diet. No brands or real people.
+- Do NOT include pronunciation, IPA or etymology (added from the CMU Pronouncing Dictionary separately).`, 16000);
+    save("vocab_pilot", b.id, { band: b.band, requested: b.rows, ...out });
+    process.stdout.write(".");
+  });
+}
+
 const kind = process.argv[2]; const conc = Number(process.argv[3] ?? 6);
-const fn = { vocab, story, story_enrich: storyEnrich, grammar, phonics }[kind as "vocab"];
+const fn = { vocab, vocab_pilot: vocabPilot, story, story_enrich: storyEnrich, grammar, phonics }[kind as "vocab"];
 if (!fn) { console.error("kind?"); process.exit(1); }
 fn(conc).then((errs) => { console.log(`\n${kind}: done, errors ${errs.length}`); errs.slice(0, 5).forEach((e) => console.log(" -", e)); });

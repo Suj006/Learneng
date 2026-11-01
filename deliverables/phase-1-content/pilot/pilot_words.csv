@@ -1,0 +1,41 @@
+﻿candidate_id,word,band,grade_range,part_of_speech,category,v2_decision,provenance,publication_status
+PV-CAM-1-0013,doctor,1,UKG–G2,noun,Body and Health,Use,Movers 2014 + Preliminary 2012,not_published
+PV-CAM-1-0015,driver,1,UKG–G2,noun,Transport,Use,Movers 2014 + Preliminary 2012,not_published
+PV-CAM-1-0017,neck,1,UKG–G2,noun,Body and Health,Use,Movers 2014 + Preliminary 2012,not_published
+PV-CAM-1-0003,market,1,UKG–G2,noun,Places,Use,Movers 2014 + Preliminary 2012,not_published
+PV-CAM-1-0034,farm,1,UKG–G2,noun,Nature,Use,Movers 2014 + Preliminary 2012,not_published
+PV-CAM-1-0035,mountain,1,UKG–G2,noun,Nature,Use,Movers 2014 + Preliminary 2012,not_published
+PV-CAM-1-0038,bottle,1,UKG–G2,noun,Food and Nutrition,Use,Movers 2014 + Preliminary 2012,not_published
+PV-CAM-1-0040,shower,1,UKG–G2,noun,Home and Family,Use,Movers 2014 + Preliminary 2012,not_published
+PV-CAM-1-0007,daughter,1,UKG–G2,noun,Relationships,Use,Movers 2014 + Preliminary 2012,not_published
+PV-CAM-1-0033,seat,1,UKG–G2,noun,Home and Family,Use,Movers 2014 + Preliminary 2012,not_published
+PV-CAM-2-0041,call,2,G1–G3,verb,Technology,Use,Movers 2014 + Preliminary 2012,not_published
+PV-CAM-2-0042,video,2,G1–G3,"noun, verb",Arts and Culture,Use,Movers 2014 + Preliminary 2012,not_published
+PV-CAM-2-0043,website,2,G1–G3,noun,Technology,Use,Movers 2014 + Preliminary 2012,not_published
+PV-CAM-2-0044,straight,2,G1–G3,adjective,Places,Use,Movers 2014 + Preliminary 2012,not_published
+PV-CAM-2-0046,drop,2,G1–G3,verb,Actions,Use,Movers 2014 + Preliminary 2012,not_published
+PV-CAM-2-0047,hurt,2,G1–G3,verb,Body and Health,Use,Movers 2014 + Preliminary 2012,not_published
+PV-CAM-2-0048,library,2,G1–G3,noun,Places,Use,Movers 2014 + Preliminary 2012,not_published
+PV-CAM-2-0051,holiday,2,G1–G3,noun,Travel,Use,Movers 2014 + Preliminary 2012,not_published
+PV-CAM-2-0052,temperature,2,G1–G3,noun,Weather and Seasons,Use,Movers 2014 + Preliminary 2012,not_published
+PV-CAM-2-0054,comic,2,G1–G3,noun,Arts and Culture,Use,Movers 2014 + Preliminary 2012,not_published
+PV-CAM-3-0221,information,3,G3–G5,noun,School and Education,Use,Preliminary 2012,not_published
+PV-CAM-3-0222,history,3,G3–G5,noun,School and Education,Use,Preliminary 2012,not_published
+PV-CAM-3-0226,minute,3,G3–G5,noun,Time,Use,Preliminary 2012,not_published
+PV-CAM-3-0228,computer,3,G3–G5,noun,Technology,Use,Preliminary 2012,not_published
+PV-CAM-3-0229,manager,3,G3–G5,noun,Community Helpers,Use,Preliminary 2012,not_published
+PV-CAM-3-0230,scene,3,G3–G5,noun,Arts and Culture,Use,Preliminary 2012,not_published
+PV-CAM-3-0231,spend,3,G3–G5,verb,Money and Shopping,Use,Preliminary 2012,not_published
+PV-CAM-3-0233,material,3,G3–G5,noun,Clothing,Use,Preliminary 2012,not_published
+PV-CAM-3-0235,direction,3,G3–G5,noun,Travel,Use,Preliminary 2012,not_published
+PV-CAM-3-0284,museum,3,G3–G5,noun,Arts and Culture,Use,Preliminary 2012,not_published
+PV-CAM-4-0486,translate,4,G5–G7,verb,Communication,Use,Preliminary 2012,not_published
+PV-CAM-4-0447,communicate,4,G5–G7,verb,Communication,Use,Preliminary 2012,not_published
+PV-CAM-4-0435,breathe,4,G5–G7,verb,Body and Health,Use,Preliminary 2012,not_published
+PV-CAM-4-0431,recover,4,G5–G7,verb,Body and Health,Use,Preliminary 2012,not_published
+PV-CAM-4-0442,delete,4,G5–G7,verb,Technology,Use,Preliminary 2012,not_published
+PV-CAM-4-0502,satisfied,4,G5–G7,adjective,Emotions and Feelings,Use,Preliminary 2012,not_published
+PV-CAM-4-0507,challenging,4,G5–G7,adjective,Descriptions,Use,Preliminary 2012,not_published
+PV-CAM-4-0518,forgive,4,G5–G7,verb,Values and Character,Use,Preliminary 2012,not_published
+PV-CAM-4-0498,succeed,4,G5–G7,verb,Actions,Use,Preliminary 2012,not_published
+PV-CAM-4-0516,realise,4,G5–G7,verb,Thinking and Problem-solving,Use,Preliminary 2012,not_published
