@@ -1,0 +1,619 @@
+{
+ "band": 4,
+ "requested": [
+  {
+   "candidate_id": "PV-CAM-4-0486",
+   "word": "translate",
+   "band": 4,
+   "grade_range": "G5–G7",
+   "part_of_speech": "verb",
+   "category": "Communication",
+   "v2_decision": "Use",
+   "provenance": "Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-4-0447",
+   "word": "communicate",
+   "band": 4,
+   "grade_range": "G5–G7",
+   "part_of_speech": "verb",
+   "category": "Communication",
+   "v2_decision": "Use",
+   "provenance": "Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-4-0435",
+   "word": "breathe",
+   "band": 4,
+   "grade_range": "G5–G7",
+   "part_of_speech": "verb",
+   "category": "Body and Health",
+   "v2_decision": "Use",
+   "provenance": "Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-4-0431",
+   "word": "recover",
+   "band": 4,
+   "grade_range": "G5–G7",
+   "part_of_speech": "verb",
+   "category": "Body and Health",
+   "v2_decision": "Use",
+   "provenance": "Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-4-0442",
+   "word": "delete",
+   "band": 4,
+   "grade_range": "G5–G7",
+   "part_of_speech": "verb",
+   "category": "Technology",
+   "v2_decision": "Use",
+   "provenance": "Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-4-0502",
+   "word": "satisfied",
+   "band": 4,
+   "grade_range": "G5–G7",
+   "part_of_speech": "adjective",
+   "category": "Emotions and Feelings",
+   "v2_decision": "Use",
+   "provenance": "Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-4-0507",
+   "word": "challenging",
+   "band": 4,
+   "grade_range": "G5–G7",
+   "part_of_speech": "adjective",
+   "category": "Descriptions",
+   "v2_decision": "Use",
+   "provenance": "Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-4-0518",
+   "word": "forgive",
+   "band": 4,
+   "grade_range": "G5–G7",
+   "part_of_speech": "verb",
+   "category": "Values and Character",
+   "v2_decision": "Use",
+   "provenance": "Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-4-0498",
+   "word": "succeed",
+   "band": 4,
+   "grade_range": "G5–G7",
+   "part_of_speech": "verb",
+   "category": "Actions",
+   "v2_decision": "Use",
+   "provenance": "Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-4-0516",
+   "word": "realise",
+   "band": 4,
+   "grade_range": "G5–G7",
+   "part_of_speech": "verb",
+   "category": "Thinking and Problem-solving",
+   "v2_decision": "Use",
+   "provenance": "Preliminary 2012",
+   "publication_status": "not_published"
+  }
+ ],
+ "items": [
+  {
+   "word": "translate",
+   "part_of_speech": "verb",
+   "simple_meaning": "To change words from one language into another language.",
+   "explanation": "When you translate, you keep the meaning the same but say or write it in a different language. In India, many people translate between Hindi, English and their home language every day.",
+   "example_sentence": "Meera helped her grandmother translate the English school notice into Tamil.",
+   "real_world_usage": "Can you translate this Marathi song into English for me?",
+   "synonyms": [
+    "interpret",
+    "convert",
+    "render"
+   ],
+   "antonyms": [],
+   "word_family": [
+    "translates",
+    "translated",
+    "translating",
+    "translation",
+    "translator"
+   ],
+   "collocations": [
+    "translate into",
+    "translate from",
+    "translate a sentence",
+    "translate a story"
+   ],
+   "spelling_guidance": "Think of it as 'trans' (across) + 'late'; the noun 'translation' drops the final 'e' before adding '-ion'.",
+   "related_words": [
+    "language",
+    "meaning",
+    "dictionary",
+    "bilingual"
+   ],
+   "category": "Communication",
+   "difficulty": "Intermediate",
+   "learning_objective": "Learners will use 'translate' to describe changing words or ideas from one language into another.",
+   "illustration_brief": "A girl sitting beside her grandmother at a table, pointing at a printed notice, with two speech bubbles showing different script shapes (no readable words) linked by an arrow.",
+   "emoji": "🌐",
+   "applicable_grades": [
+    "G5",
+    "G6",
+    "G7"
+   ]
+  },
+  {
+   "word": "communicate",
+   "part_of_speech": "verb",
+   "simple_meaning": "To share ideas, information or feelings with others.",
+   "explanation": "We communicate by speaking, writing, using gestures or even drawing pictures. Good communication helps people understand each other and work well together.",
+   "example_sentence": "Our cricket team learnt to communicate with hand signals so the fielders knew where to stand.",
+   "real_world_usage": "I communicate with my cousin in Pune by writing letters during the holidays.",
+   "synonyms": [
+    "share",
+    "express",
+    "convey",
+    "talk"
+   ],
+   "antonyms": [
+    "withhold",
+    "conceal"
+   ],
+   "word_family": [
+    "communicates",
+    "communicated",
+    "communicating",
+    "communication",
+    "communicative"
+   ],
+   "collocations": [
+    "communicate clearly",
+    "communicate with someone",
+    "communicate ideas",
+    "communicate effectively"
+   ],
+   "spelling_guidance": "Remember the double 'm': com-MU-ni-cate.",
+   "related_words": [
+    "message",
+    "conversation",
+    "listen",
+    "signal"
+   ],
+   "category": "Communication",
+   "difficulty": "Intermediate",
+   "learning_objective": "Learners will use 'communicate' to talk about different ways people share ideas and feelings.",
+   "illustration_brief": "Children on a cricket field using hand signals to each other, with small arrows showing the message passing from one child to another.",
+   "emoji": "💬",
+   "applicable_grades": [
+    "G5",
+    "G6",
+    "G7"
+   ]
+  },
+  {
+   "word": "breathe",
+   "part_of_speech": "verb",
+   "simple_meaning": "To take air into your body and let it out again.",
+   "explanation": "You breathe in air through your nose or mouth, and your lungs take in oxygen your body needs. Then you breathe out the used air.",
+   "example_sentence": "After running in the school race, Arjun sat under the neem tree to breathe slowly and rest.",
+   "real_world_usage": "Our yoga teacher tells us to breathe in deeply and breathe out slowly.",
+   "synonyms": [
+    "inhale and exhale",
+    "respire"
+   ],
+   "antonyms": [],
+   "word_family": [
+    "breathes",
+    "breathed",
+    "breathing",
+    "breath",
+    "breathless"
+   ],
+   "collocations": [
+    "breathe in",
+    "breathe out",
+    "breathe deeply",
+    "fresh air to breathe"
+   ],
+   "spelling_guidance": "'Breathe' (verb) ends with an 'e'; 'breath' (noun) does not. You take a breath, but you breathe.",
+   "related_words": [
+    "lungs",
+    "oxygen",
+    "air",
+    "nose"
+   ],
+   "category": "Body and Health",
+   "difficulty": "Intermediate",
+   "learning_objective": "Learners will use 'breathe' correctly and tell it apart from the noun 'breath'.",
+   "illustration_brief": "A child sitting cross-legged on a mat in a garden, eyes calm, with soft curved lines showing air flowing in and out of the nose.",
+   "emoji": "🌬️",
+   "applicable_grades": [
+    "G5",
+    "G6",
+    "G7"
+   ]
+  },
+  {
+   "word": "recover",
+   "part_of_speech": "verb",
+   "simple_meaning": "To become healthy again after being ill or hurt.",
+   "explanation": "When you recover, your body slowly gets better after a fever, cold or injury. Rest, good food and medicine from a doctor can help you recover.",
+   "example_sentence": "Priya stayed home with a fever during the monsoon, but she will recover in time for the school trip.",
+   "real_world_usage": "I drank warm soup and rested so I could recover from my cold.",
+   "synonyms": [
+    "get better",
+    "heal",
+    "improve"
+   ],
+   "antonyms": [
+    "worsen",
+    "weaken"
+   ],
+   "word_family": [
+    "recovers",
+    "recovered",
+    "recovering",
+    "recovery"
+   ],
+   "collocations": [
+    "recover quickly",
+    "recover from an illness",
+    "recover fully",
+    "make a recovery"
+   ],
+   "spelling_guidance": "Split it into re + cover; the 'y' in 'recovery' makes the noun.",
+   "related_words": [
+    "rest",
+    "health",
+    "doctor",
+    "medicine"
+   ],
+   "category": "Body and Health",
+   "difficulty": "Intermediate",
+   "learning_objective": "Learners will use 'recover' to describe getting better after an illness or injury.",
+   "illustration_brief": "A child resting in bed by a window with rain outside, a glass of water and a bowl of soup on a small table, looking relaxed and comfortable.",
+   "emoji": "🩹",
+   "applicable_grades": [
+    "G5",
+    "G6",
+    "G7"
+   ]
+  },
+  {
+   "word": "delete",
+   "part_of_speech": "verb",
+   "simple_meaning": "To remove something, such as a word or a file, from a computer or device.",
+   "explanation": "When you delete something on a computer, you take it away so it no longer appears. It is a good idea to check carefully before you delete anything important.",
+   "example_sentence": "Kabir had to delete an extra photo from his project slides before showing them in class.",
+   "real_world_usage": "I will delete this wrong spelling and type the word again.",
+   "synonyms": [
+    "erase",
+    "remove",
+    "cancel"
+   ],
+   "antonyms": [
+    "add",
+    "insert",
+    "save"
+   ],
+   "word_family": [
+    "deletes",
+    "deleted",
+    "deleting",
+    "deletion"
+   ],
+   "collocations": [
+    "delete a file",
+    "delete a message",
+    "press delete",
+    "delete by mistake"
+   ],
+   "spelling_guidance": "Both vowels after 'l' are 'e': de-LE-te.",
+   "related_words": [
+    "computer",
+    "file",
+    "keyboard",
+    "undo"
+   ],
+   "category": "Technology",
+   "difficulty": "Intermediate",
+   "learning_objective": "Learners will use 'delete' to describe removing items on a computer or device.",
+   "illustration_brief": "A child at a school computer lab pressing a key, with a simple picture icon on the screen fading into a small bin symbol.",
+   "emoji": "🗑️",
+   "applicable_grades": [
+    "G5",
+    "G6",
+    "G7"
+   ]
+  },
+  {
+   "word": "satisfied",
+   "part_of_speech": "adjective",
+   "simple_meaning": "Feeling pleased because you got what you wanted or needed.",
+   "explanation": "You feel satisfied when something turns out well, like finishing work you are proud of. It is a calm, happy feeling of being content.",
+   "example_sentence": "After decorating the rangoli for Diwali, Ananya stepped back and felt satisfied with the bright pattern.",
+   "real_world_usage": "I am satisfied with my science model because I worked hard on it.",
+   "synonyms": [
+    "pleased",
+    "content",
+    "happy",
+    "fulfilled"
+   ],
+   "antonyms": [
+    "dissatisfied",
+    "disappointed",
+    "unhappy"
+   ],
+   "word_family": [
+    "satisfy",
+    "satisfies",
+    "satisfying",
+    "satisfaction",
+    "dissatisfied"
+   ],
+   "collocations": [
+    "feel satisfied",
+    "satisfied with",
+    "fully satisfied",
+    "a satisfied smile"
+   ],
+   "spelling_guidance": "The 'y' in 'satisfy' changes to 'i' before adding '-ed': satisfy → satisfied.",
+   "related_words": [
+    "proud",
+    "content",
+    "grateful",
+    "pleased"
+   ],
+   "category": "Emotions and Feelings",
+   "difficulty": "Intermediate",
+   "learning_objective": "Learners will use 'satisfied' to describe feeling pleased with a result or effort.",
+   "illustration_brief": "A child kneeling beside a colourful finished rangoli at a doorstep, smiling calmly, with small diyas glowing around it.",
+   "emoji": "😌",
+   "applicable_grades": [
+    "G5",
+    "G6",
+    "G7"
+   ]
+  },
+  {
+   "word": "challenging",
+   "part_of_speech": "adjective",
+   "simple_meaning": "Difficult in a way that tests your skill or effort.",
+   "explanation": "Something challenging is hard but possible if you try your best. Challenging tasks help us learn and grow stronger in our skills.",
+   "example_sentence": "The maths puzzle in today's class was challenging, but our group solved it together.",
+   "real_world_usage": "Learning to bowl a spin ball is challenging, but I keep practising.",
+   "synonyms": [
+    "difficult",
+    "demanding",
+    "tough",
+    "testing"
+   ],
+   "antonyms": [
+    "easy",
+    "simple",
+    "effortless"
+   ],
+   "word_family": [
+    "challenge",
+    "challenges",
+    "challenged",
+    "challenger"
+   ],
+   "collocations": [
+    "a challenging task",
+    "challenging question",
+    "find something challenging",
+    "challenging but fun"
+   ],
+   "spelling_guidance": "Remember 'll' in the middle: cha-LL-enging, and drop the 'e' of 'challenge' before adding '-ing'.",
+   "related_words": [
+    "effort",
+    "practice",
+    "problem",
+    "goal"
+   ],
+   "category": "Descriptions",
+   "difficulty": "Advanced",
+   "learning_objective": "Learners will use 'challenging' to describe tasks that are difficult but achievable with effort.",
+   "illustration_brief": "A small group of students around a desk working on a puzzle sheet with shapes and numbers, looking focused and determined.",
+   "emoji": "🧩",
+   "applicable_grades": [
+    "G5",
+    "G6",
+    "G7"
+   ]
+  },
+  {
+   "word": "forgive",
+   "part_of_speech": "verb",
+   "simple_meaning": "To stop being angry with someone who has done something wrong.",
+   "explanation": "When you forgive someone, you let go of hurt feelings and give them another chance. Forgiving helps friendships stay strong.",
+   "example_sentence": "Rohan said sorry for breaking my kite before Makar Sankranti, so I decided to forgive him.",
+   "real_world_usage": "It's okay, I forgive you for forgetting to bring my book.",
+   "synonyms": [
+    "pardon",
+    "excuse",
+    "let go"
+   ],
+   "antonyms": [
+    "blame",
+    "resent"
+   ],
+   "word_family": [
+    "forgives",
+    "forgave",
+    "forgiven",
+    "forgiving",
+    "forgiveness"
+   ],
+   "collocations": [
+    "forgive someone",
+    "forgive and forget",
+    "ask someone to forgive you",
+    "forgive a mistake"
+   ],
+   "spelling_guidance": "Think 'for' + 'give'; the past tense is irregular: forgave, forgiven.",
+   "related_words": [
+    "apologise",
+    "sorry",
+    "kindness",
+    "friendship"
+   ],
+   "category": "Values and Character",
+   "difficulty": "Intermediate",
+   "learning_objective": "Learners will use 'forgive' to talk about letting go of anger and repairing friendships.",
+   "illustration_brief": "Two children on a rooftop, one holding a torn kite and the other offering a new one, both smiling as they shake hands.",
+   "emoji": "🤝",
+   "applicable_grades": [
+    "G5",
+    "G6",
+    "G7"
+   ]
+  },
+  {
+   "word": "succeed",
+   "part_of_speech": "verb",
+   "simple_meaning": "To achieve what you were trying to do.",
+   "explanation": "You succeed when your hard work helps you reach your goal. Sometimes you need to try many times before you succeed.",
+   "example_sentence": "After weeks of practice, Fatima finally managed to succeed in playing the whole tune on her harmonium.",
+   "real_world_usage": "If we plan well, our team will succeed in the science quiz.",
+   "synonyms": [
+    "achieve",
+    "accomplish",
+    "manage",
+    "win"
+   ],
+   "antonyms": [
+    "fail",
+    "lose"
+   ],
+   "word_family": [
+    "succeeds",
+    "succeeded",
+    "succeeding",
+    "success",
+    "successful",
+    "successfully"
+   ],
+   "collocations": [
+    "succeed in",
+    "finally succeed",
+    "succeed at something",
+    "work hard to succeed"
+   ],
+   "spelling_guidance": "Double 'c' and double 'e': su-CC-EE-d.",
+   "related_words": [
+    "goal",
+    "effort",
+    "practice",
+    "achievement"
+   ],
+   "category": "Actions",
+   "difficulty": "Advanced",
+   "learning_objective": "Learners will use 'succeed' and 'succeed in' to describe reaching a goal through effort.",
+   "illustration_brief": "A child playing a harmonium in a cosy living room with a proud family member clapping nearby and music note shapes floating in the air.",
+   "emoji": "🏆",
+   "applicable_grades": [
+    "G5",
+    "G6",
+    "G7"
+   ]
+  },
+  {
+   "word": "realise",
+   "part_of_speech": "verb",
+   "simple_meaning": "To suddenly understand or become aware of something.",
+   "explanation": "When you realise something, a fact becomes clear in your mind. You might realise you forgot something or understand the answer to a problem.",
+   "example_sentence": "Halfway to school, Dev began to realise he had left his tiffin box on the kitchen table.",
+   "real_world_usage": "I just realise now that the answer was in the first paragraph!",
+   "synonyms": [
+    "understand",
+    "notice",
+    "recognise",
+    "become aware"
+   ],
+   "antonyms": [
+    "overlook",
+    "miss",
+    "ignore"
+   ],
+   "word_family": [
+    "realises",
+    "realised",
+    "realising",
+    "realisation",
+    "real"
+   ],
+   "collocations": [
+    "suddenly realise",
+    "realise a mistake",
+    "come to realise",
+    "realise that"
+   ],
+   "spelling_guidance": "In Indian/British English it is spelt with 's': realise, realised, realisation.",
+   "related_words": [
+    "understand",
+    "notice",
+    "think",
+    "idea"
+   ],
+   "category": "Thinking and Problem-solving",
+   "difficulty": "Advanced",
+   "learning_objective": "Learners will use 'realise' to describe the moment of understanding or becoming aware of something.",
+   "illustration_brief": "A boy with a school bag stopping on a path, hand on his forehead, with a thought bubble showing a tiffin box on a kitchen table.",
+   "emoji": "💡",
+   "applicable_grades": [
+    "G5",
+    "G6",
+    "G7"
+   ]
+  }
+ ],
+ "_model": "claude-opus-5-5",
+ "_usage": {
+  "input_tokens": 2111,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 2111,
+    "output_tokens": 4505,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4505,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "_stop": "end_turn"
+}

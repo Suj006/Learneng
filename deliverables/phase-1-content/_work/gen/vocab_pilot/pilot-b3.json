@@ -1,0 +1,548 @@
+{
+ "band": 3,
+ "requested": [
+  {
+   "candidate_id": "PV-CAM-3-0221",
+   "word": "information",
+   "band": 3,
+   "grade_range": "G3–G5",
+   "part_of_speech": "noun",
+   "category": "School and Education",
+   "v2_decision": "Use",
+   "provenance": "Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-3-0222",
+   "word": "history",
+   "band": 3,
+   "grade_range": "G3–G5",
+   "part_of_speech": "noun",
+   "category": "School and Education",
+   "v2_decision": "Use",
+   "provenance": "Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-3-0226",
+   "word": "minute",
+   "band": 3,
+   "grade_range": "G3–G5",
+   "part_of_speech": "noun",
+   "category": "Time",
+   "v2_decision": "Use",
+   "provenance": "Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-3-0228",
+   "word": "computer",
+   "band": 3,
+   "grade_range": "G3–G5",
+   "part_of_speech": "noun",
+   "category": "Technology",
+   "v2_decision": "Use",
+   "provenance": "Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-3-0229",
+   "word": "manager",
+   "band": 3,
+   "grade_range": "G3–G5",
+   "part_of_speech": "noun",
+   "category": "Community Helpers",
+   "v2_decision": "Use",
+   "provenance": "Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-3-0230",
+   "word": "scene",
+   "band": 3,
+   "grade_range": "G3–G5",
+   "part_of_speech": "noun",
+   "category": "Arts and Culture",
+   "v2_decision": "Use",
+   "provenance": "Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-3-0231",
+   "word": "spend",
+   "band": 3,
+   "grade_range": "G3–G5",
+   "part_of_speech": "verb",
+   "category": "Money and Shopping",
+   "v2_decision": "Use",
+   "provenance": "Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-3-0233",
+   "word": "material",
+   "band": 3,
+   "grade_range": "G3–G5",
+   "part_of_speech": "noun",
+   "category": "Clothing",
+   "v2_decision": "Use",
+   "provenance": "Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-3-0235",
+   "word": "direction",
+   "band": 3,
+   "grade_range": "G3–G5",
+   "part_of_speech": "noun",
+   "category": "Travel",
+   "v2_decision": "Use",
+   "provenance": "Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-3-0284",
+   "word": "museum",
+   "band": 3,
+   "grade_range": "G3–G5",
+   "part_of_speech": "noun",
+   "category": "Arts and Culture",
+   "v2_decision": "Use",
+   "provenance": "Preliminary 2012",
+   "publication_status": "not_published"
+  }
+ ],
+ "items": [
+  {
+   "word": "information",
+   "part_of_speech": "noun",
+   "simple_meaning": "Information is facts or details about something.",
+   "explanation": "When you learn facts about a topic, you are getting information. We can find information in books, from teachers, or by asking questions.",
+   "example_sentence": "Our teacher gave us information about the school trip to the planetarium.",
+   "real_world_usage": "I need more information about tigers for my project.",
+   "synonyms": [
+    "facts",
+    "details",
+    "knowledge"
+   ],
+   "antonyms": [],
+   "word_family": [
+    "inform",
+    "informative",
+    "informed"
+   ],
+   "collocations": [
+    "useful information",
+    "get information",
+    "find information",
+    "give information"
+   ],
+   "spelling_guidance": "Break it into parts: in-for-ma-tion. It ends with '-tion', which sounds like 'shun'.",
+   "related_words": [
+    "fact",
+    "news",
+    "report",
+    "library"
+   ],
+   "category": "School and Education",
+   "difficulty": "Intermediate",
+   "learning_objective": "Children will use 'information' to talk about finding and sharing facts.",
+   "illustration_brief": "A child in a school library reading a large book about animals, with small floating picture bubbles of a tiger, an elephant and a map around the book.",
+   "emoji": "ℹ️",
+   "applicable_grades": [
+    "G3",
+    "G4"
+   ]
+  },
+  {
+   "word": "history",
+   "part_of_speech": "noun",
+   "simple_meaning": "History is the study of things that happened in the past.",
+   "explanation": "History tells us about people, places and events from long ago. In history lessons, we learn how people lived in earlier times.",
+   "example_sentence": "In our history class, we learnt how people built forts long ago.",
+   "real_world_usage": "History is my favourite subject because I love stories about the past.",
+   "synonyms": [
+    "the past"
+   ],
+   "antonyms": [
+    "future"
+   ],
+   "word_family": [
+    "historian",
+    "historical",
+    "historic"
+   ],
+   "collocations": [
+    "history lesson",
+    "history book",
+    "learn history",
+    "local history"
+   ],
+   "spelling_guidance": "Remember the 'y' at the end: his-to-ry. Don't forget the 'o' in the middle.",
+   "related_words": [
+    "past",
+    "fort",
+    "monument",
+    "timeline"
+   ],
+   "category": "School and Education",
+   "difficulty": "Developing",
+   "learning_objective": "Children will understand 'history' as learning about the past and use it in school contexts.",
+   "illustration_brief": "A classroom with a timeline poster on the wall showing an old fort, a bullock cart and a steam train, while children look at it with interest.",
+   "emoji": "📜",
+   "applicable_grades": [
+    "G3",
+    "G4"
+   ]
+  },
+  {
+   "word": "minute",
+   "part_of_speech": "noun",
+   "simple_meaning": "A minute is a unit of time equal to sixty seconds.",
+   "explanation": "There are sixty minutes in one hour. We use minutes to measure short amounts of time, like how long it takes to brush our teeth.",
+   "example_sentence": "The school bus will arrive in five minutes, so please pack your tiffin quickly.",
+   "real_world_usage": "Can I play for ten more minutes, please?",
+   "synonyms": [],
+   "antonyms": [],
+   "word_family": [
+    "minutes"
+   ],
+   "collocations": [
+    "one minute",
+    "a few minutes",
+    "last minute",
+    "wait a minute"
+   ],
+   "spelling_guidance": "It is spelt min-ute, with 'ute' at the end even though it sounds like 'it'.",
+   "related_words": [
+    "second",
+    "hour",
+    "clock",
+    "time"
+   ],
+   "category": "Time",
+   "difficulty": "Developing",
+   "learning_objective": "Children will use 'minute' to measure and talk about short periods of time.",
+   "illustration_brief": "A large round wall clock with the minute hand highlighted, beside a child waiting at a school bus stop with a backpack.",
+   "emoji": "⏱️",
+   "applicable_grades": [
+    "G3",
+    "G4"
+   ]
+  },
+  {
+   "word": "computer",
+   "part_of_speech": "noun",
+   "simple_meaning": "A computer is a machine that stores information and helps us do tasks like typing, drawing and calculating.",
+   "explanation": "A computer follows instructions to help us work, learn and play. It has a screen, a keyboard and a mouse.",
+   "example_sentence": "We typed a short story on the computer in our school lab.",
+   "real_world_usage": "I learnt how to draw shapes on the computer today.",
+   "synonyms": [
+    "PC"
+   ],
+   "antonyms": [],
+   "word_family": [
+    "compute",
+    "computing",
+    "computers"
+   ],
+   "collocations": [
+    "computer lab",
+    "computer class",
+    "use a computer",
+    "computer screen"
+   ],
+   "spelling_guidance": "Split it into com-pu-ter. It ends in '-er'.",
+   "related_words": [
+    "keyboard",
+    "mouse",
+    "screen",
+    "laptop"
+   ],
+   "category": "Technology",
+   "difficulty": "Developing",
+   "learning_objective": "Children will name a computer and describe how it is used for learning.",
+   "illustration_brief": "Children sitting at desks in a bright school computer lab, one child using a mouse while a colourful drawing appears on the screen.",
+   "emoji": "💻",
+   "applicable_grades": [
+    "G3",
+    "G4"
+   ]
+  },
+  {
+   "word": "manager",
+   "part_of_speech": "noun",
+   "simple_meaning": "A manager is a person who is in charge of a shop, team or workplace.",
+   "explanation": "A manager plans the work and helps the people in a team do their jobs well. A bank, a hotel or a cricket team can have a manager.",
+   "example_sentence": "The bank manager helped Papa open a savings account for me.",
+   "real_world_usage": "The manager of the shop helped us find the right size.",
+   "synonyms": [
+    "boss",
+    "supervisor",
+    "head"
+   ],
+   "antonyms": [
+    "worker"
+   ],
+   "word_family": [
+    "manage",
+    "management",
+    "managing"
+   ],
+   "collocations": [
+    "bank manager",
+    "shop manager",
+    "team manager",
+    "store manager"
+   ],
+   "spelling_guidance": "Think of the word 'manage' and add 'r': manage + r = manager.",
+   "related_words": [
+    "team",
+    "office",
+    "leader",
+    "staff"
+   ],
+   "category": "Community Helpers",
+   "difficulty": "Intermediate",
+   "learning_objective": "Children will understand that a manager leads and organises work in a place.",
+   "illustration_brief": "A friendly manager at a bank counter showing a form to a parent and child, with staff working at desks in the background.",
+   "emoji": "🧑‍💼",
+   "applicable_grades": [
+    "G3",
+    "G4"
+   ]
+  },
+  {
+   "word": "scene",
+   "part_of_speech": "noun",
+   "simple_meaning": "A scene is one part of a play, film or story that happens in one place.",
+   "explanation": "A play is made of many scenes. Each scene shows what happens at one place and time in the story.",
+   "example_sentence": "In the school play, I acted in the scene where the clever rabbit tricks the lion.",
+   "real_world_usage": "The forest scene was my favourite part of the drama.",
+   "synonyms": [
+    "part",
+    "episode"
+   ],
+   "antonyms": [],
+   "word_family": [
+    "scenes",
+    "scenery",
+    "scenic"
+   ],
+   "collocations": [
+    "opening scene",
+    "final scene",
+    "act a scene",
+    "funny scene"
+   ],
+   "spelling_guidance": "Scene has a silent 'c': s-c-e-n-e. It sounds like 'seen'.",
+   "related_words": [
+    "play",
+    "stage",
+    "actor",
+    "drama"
+   ],
+   "category": "Arts and Culture",
+   "difficulty": "Intermediate",
+   "learning_objective": "Children will use 'scene' to describe a part of a play or story.",
+   "illustration_brief": "Children performing on a school stage with a painted forest backdrop, one dressed as a rabbit and another as a lion, with an audience watching.",
+   "emoji": "🎭",
+   "applicable_grades": [
+    "G3",
+    "G4"
+   ]
+  },
+  {
+   "word": "spend",
+   "part_of_speech": "verb",
+   "simple_meaning": "To spend means to use money to buy things.",
+   "explanation": "When you spend money, you give it to someone to get something you want or need. It is wise to spend money carefully.",
+   "example_sentence": "I will spend my pocket money on new colour pencils for Diwali drawings.",
+   "real_world_usage": "I don't want to spend all my money at the fair.",
+   "synonyms": [
+    "pay",
+    "use"
+   ],
+   "antonyms": [
+    "save",
+    "earn"
+   ],
+   "word_family": [
+    "spent",
+    "spending",
+    "spender"
+   ],
+   "collocations": [
+    "spend money",
+    "spend wisely",
+    "spend less",
+    "spend on"
+   ],
+   "spelling_guidance": "The past form is 'spent', not 'spended'.",
+   "related_words": [
+    "money",
+    "buy",
+    "price",
+    "shop"
+   ],
+   "category": "Money and Shopping",
+   "difficulty": "Developing",
+   "learning_objective": "Children will use 'spend' to talk about using money and making choices.",
+   "illustration_brief": "A child at a small stationery shop counter handing coins to the shopkeeper in exchange for a box of colour pencils.",
+   "emoji": "💸",
+   "applicable_grades": [
+    "G3",
+    "G4"
+   ]
+  },
+  {
+   "word": "material",
+   "part_of_speech": "noun",
+   "simple_meaning": "Material is cloth used to make clothes and other things.",
+   "explanation": "Clothes are made from different materials like cotton, silk or wool. Some materials are soft and light, while others are thick and warm.",
+   "example_sentence": "Mummy bought soft cotton material to stitch my new kurta for the festival.",
+   "real_world_usage": "This material feels very smooth.",
+   "synonyms": [
+    "fabric",
+    "cloth"
+   ],
+   "antonyms": [],
+   "word_family": [
+    "materials"
+   ],
+   "collocations": [
+    "cotton material",
+    "dress material",
+    "soft material",
+    "thick material"
+   ],
+   "spelling_guidance": "Break it into ma-te-ri-al. It ends with '-al'.",
+   "related_words": [
+    "cotton",
+    "silk",
+    "wool",
+    "tailor"
+   ],
+   "category": "Clothing",
+   "difficulty": "Intermediate",
+   "learning_objective": "Children will use 'material' to talk about the cloth that clothes are made from.",
+   "illustration_brief": "A cloth shop with colourful rolls of cotton and silk material stacked on shelves, and a child touching a soft piece of fabric.",
+   "emoji": "🧵",
+   "applicable_grades": [
+    "G3",
+    "G4"
+   ]
+  },
+  {
+   "word": "direction",
+   "part_of_speech": "noun",
+   "simple_meaning": "A direction is the way something is moving or facing.",
+   "explanation": "Directions tell us which way to go, like north, south, left or right. A compass helps us find the right direction.",
+   "example_sentence": "On our trip to the hill station, Papa checked the map to find the right direction.",
+   "real_world_usage": "Which direction is the railway station?",
+   "synonyms": [
+    "way",
+    "route"
+   ],
+   "antonyms": [],
+   "word_family": [
+    "direct",
+    "directions",
+    "directly"
+   ],
+   "collocations": [
+    "right direction",
+    "wrong direction",
+    "opposite direction",
+    "ask for directions"
+   ],
+   "spelling_guidance": "Remember 'direct' + 'ion' = direction. It ends with '-tion'.",
+   "related_words": [
+    "north",
+    "south",
+    "east",
+    "west",
+    "compass",
+    "map"
+   ],
+   "category": "Travel",
+   "difficulty": "Intermediate",
+   "learning_objective": "Children will use 'direction' to talk about which way to go when travelling.",
+   "illustration_brief": "A family car paused by a road signpost with arrows pointing different ways, and a child holding a map and a compass.",
+   "emoji": "🧭",
+   "applicable_grades": [
+    "G3",
+    "G4"
+   ]
+  },
+  {
+   "word": "museum",
+   "part_of_speech": "noun",
+   "simple_meaning": "A museum is a building where interesting old or special objects are kept for people to see.",
+   "explanation": "In a museum, you can see things like old coins, paintings, tools and even dinosaur bones. People visit museums to learn about history, art and science.",
+   "example_sentence": "Our class went to the museum to see old coins and ancient pots.",
+   "real_world_usage": "I saw a huge dinosaur skeleton at the museum!",
+   "synonyms": [
+    "gallery"
+   ],
+   "antonyms": [],
+   "word_family": [
+    "museums"
+   ],
+   "collocations": [
+    "science museum",
+    "visit a museum",
+    "museum trip",
+    "art museum"
+   ],
+   "spelling_guidance": "Spell it mu-se-um. It ends with '-um', not '-ium'.",
+   "related_words": [
+    "exhibit",
+    "history",
+    "gallery",
+    "guide"
+   ],
+   "category": "Arts and Culture",
+   "difficulty": "Intermediate",
+   "learning_objective": "Children will describe a museum as a place to see and learn about special objects.",
+   "illustration_brief": "A group of school children with a guide looking at a glass case of ancient pots and coins inside a bright museum hall, with a dinosaur skeleton in the background.",
+   "emoji": "🏛️",
+   "applicable_grades": [
+    "G3",
+    "G4"
+   ]
+  }
+ ],
+ "_model": "claude-opus-5-5",
+ "_usage": {
+  "input_tokens": 2092,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 2092,
+    "output_tokens": 3849,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3849,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "_stop": "end_turn"
+}

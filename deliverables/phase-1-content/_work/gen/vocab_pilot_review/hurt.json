@@ -1,0 +1,101 @@
+{
+ "candidate_id": "PV-CAM-2-0047",
+ "band": 2,
+ "word": "hurt",
+ "gates": [
+  {
+   "gate": "1 safety moderation",
+   "passed": true,
+   "detail": "No unsafe terms."
+  },
+  {
+   "gate": "2 grade readability",
+   "passed": true,
+   "detail": "≈ grade 3.8 (max 5)"
+  },
+  {
+   "gate": "3 grammar & mechanics",
+   "passed": true,
+   "detail": "Example sentence capitals/punctuation and contains the word."
+  },
+  {
+   "gate": "4 independent spelling & grammar review (AI)",
+   "passed": true,
+   "detail": "OK"
+  },
+  {
+   "gate": "5 duplicate detection",
+   "passed": true,
+   "detail": "New word"
+  },
+  {
+   "gate": "6 difficulty validation",
+   "passed": true,
+   "detail": "Beginner (band 2 allows Beginner/Developing/Intermediate)"
+  },
+  {
+   "gate": "7 age suitability (AI)",
+   "passed": true,
+   "detail": "OK"
+  }
+ ],
+ "extra": [
+  {
+   "check": "meaning accuracy (AI)",
+   "passed": false
+  },
+  {
+   "check": "synonyms/antonyms/word family accuracy (AI)",
+   "passed": false
+  },
+  {
+   "check": "Indian/British usage (AI)",
+   "passed": true
+  }
+ ],
+ "issues": [
+  "The simple meaning is imprecise. In the card's own examples it is the body part that hurts ('my knee began to hurt', 'my finger hurts'), so 'hurt' means 'to be painful'. The card also omits the common meaning 'to cause pain' (e.g. 'hurt your knee').",
+  "The synonym 'pain' is mainly a noun. Using it as a verb ('it pains') is formal and unusual, so it is a poor synonym for the verb 'hurt' at this level.",
+  "The antonym 'heal' is not a true opposite of 'hurt'. It describes recovery, not the absence or opposite of pain.",
+  "The antonym 'feel better' is a phrase and only a loose contrast, not a precise antonym.",
+  "The word-family item 'hurtful' means emotionally unkind. This differs from the physical-pain focus of the card and may confuse 6-8-year-olds without an explanation."
+ ],
+ "suggested_fixes": [
+  "Change the simple meaning to: \"When a part of your body hurts, it feels painful. To hurt can also mean to cause pain.\"",
+  "Replace 'pain' in the synonyms with 'be sore', keeping 'ache' and 'sting'.",
+  "Remove 'heal' and 'feel better' as antonyms, or relabel them as 'opposite ideas', e.g. 'feel fine', 'feel better'.",
+  "Replace 'hurtful' with 'hurt (past)', or add a short note: \"hurtful = unkind words that make someone feel sad\"."
+ ],
+ "reviewer_model": "claude-opus-5-5",
+ "reviewer_stop": "end_turn",
+ "usage": {
+  "input_tokens": 1201,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 1201,
+    "output_tokens": 920,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 920,
+  "output_tokens_details": {
+   "thinking_tokens": 328
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ }
+}

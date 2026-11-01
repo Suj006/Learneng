@@ -1,0 +1,100 @@
+{
+ "candidate_id": "PV-CAM-4-0498",
+ "band": 4,
+ "word": "succeed",
+ "gates": [
+  {
+   "gate": "1 safety moderation",
+   "passed": true,
+   "detail": "No unsafe terms."
+  },
+  {
+   "gate": "2 grade readability",
+   "passed": true,
+   "detail": "≈ grade 5.8 (max 11)"
+  },
+  {
+   "gate": "3 grammar & mechanics",
+   "passed": true,
+   "detail": "Example sentence capitals/punctuation and contains the word."
+  },
+  {
+   "gate": "4 independent spelling & grammar review (AI)",
+   "passed": false,
+   "detail": "The example sentence 'finally managed to succeed in playing' is redundant and awkward: 'managed to' and 'succeed' mean the same thing, so it is a poor model for learners.; 'win' is not a true synonym of 'succeed'; it only overlaps in competitive contexts. Likewise, 'lose' is mainly the antonym of 'win', not of 'succeed'.; 'achieve' and 'accomplish' need an object ('achieve a goal'), whereas 'succeed' does not, so they cannot be swapped in directly. Learners may produce errors like 'Fatima finally achieved.'; The difficulty label 'Advanced' seems high for a common word like 'succeed' at ages 10-13."
+  },
+  {
+   "gate": "5 duplicate detection",
+   "passed": true,
+   "detail": "New word"
+  },
+  {
+   "gate": "6 difficulty validation",
+   "passed": true,
+   "detail": "Advanced (band 4 allows Intermediate/Advanced/Challenge)"
+  },
+  {
+   "gate": "7 age suitability (AI)",
+   "passed": true,
+   "detail": "OK"
+  }
+ ],
+ "extra": [
+  {
+   "check": "meaning accuracy (AI)",
+   "passed": true
+  },
+  {
+   "check": "synonyms/antonyms/word family accuracy (AI)",
+   "passed": false
+  },
+  {
+   "check": "Indian/British usage (AI)",
+   "passed": true
+  }
+ ],
+ "issues": [
+  "The example sentence 'finally managed to succeed in playing' is redundant and awkward: 'managed to' and 'succeed' mean the same thing, so it is a poor model for learners.",
+  "'win' is not a true synonym of 'succeed'; it only overlaps in competitive contexts. Likewise, 'lose' is mainly the antonym of 'win', not of 'succeed'.",
+  "'achieve' and 'accomplish' need an object ('achieve a goal'), whereas 'succeed' does not, so they cannot be swapped in directly. Learners may produce errors like 'Fatima finally achieved.'",
+  "The difficulty label 'Advanced' seems high for a common word like 'succeed' at ages 10-13."
+ ],
+ "suggested_fixes": [
+  "Rewrite the example as: 'After weeks of practice, Fatima finally succeeded in playing the whole tune on her harmonium.'",
+  "Replace 'win' with 'do well' or 'prosper', and remove 'lose' or replace it with 'fall short'.",
+  "Add a note that 'achieve' and 'accomplish' need an object (e.g. 'achieve your goal'), or replace one of them with 'make it'.",
+  "Change the difficulty to 'Intermediate'."
+ ],
+ "reviewer_model": "claude-opus-5-5",
+ "reviewer_stop": "end_turn",
+ "usage": {
+  "input_tokens": 1216,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 1216,
+    "output_tokens": 840,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 840,
+  "output_tokens_details": {
+   "thinking_tokens": 337
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ }
+}

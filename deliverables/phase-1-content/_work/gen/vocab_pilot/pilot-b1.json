@@ -1,0 +1,522 @@
+{
+ "band": 1,
+ "requested": [
+  {
+   "candidate_id": "PV-CAM-1-0013",
+   "word": "doctor",
+   "band": 1,
+   "grade_range": "UKG–G2",
+   "part_of_speech": "noun",
+   "category": "Body and Health",
+   "v2_decision": "Use",
+   "provenance": "Movers 2014 + Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-1-0015",
+   "word": "driver",
+   "band": 1,
+   "grade_range": "UKG–G2",
+   "part_of_speech": "noun",
+   "category": "Transport",
+   "v2_decision": "Use",
+   "provenance": "Movers 2014 + Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-1-0017",
+   "word": "neck",
+   "band": 1,
+   "grade_range": "UKG–G2",
+   "part_of_speech": "noun",
+   "category": "Body and Health",
+   "v2_decision": "Use",
+   "provenance": "Movers 2014 + Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-1-0003",
+   "word": "market",
+   "band": 1,
+   "grade_range": "UKG–G2",
+   "part_of_speech": "noun",
+   "category": "Places",
+   "v2_decision": "Use",
+   "provenance": "Movers 2014 + Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-1-0034",
+   "word": "farm",
+   "band": 1,
+   "grade_range": "UKG–G2",
+   "part_of_speech": "noun",
+   "category": "Nature",
+   "v2_decision": "Use",
+   "provenance": "Movers 2014 + Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-1-0035",
+   "word": "mountain",
+   "band": 1,
+   "grade_range": "UKG–G2",
+   "part_of_speech": "noun",
+   "category": "Nature",
+   "v2_decision": "Use",
+   "provenance": "Movers 2014 + Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-1-0038",
+   "word": "bottle",
+   "band": 1,
+   "grade_range": "UKG–G2",
+   "part_of_speech": "noun",
+   "category": "Food and Nutrition",
+   "v2_decision": "Use",
+   "provenance": "Movers 2014 + Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-1-0040",
+   "word": "shower",
+   "band": 1,
+   "grade_range": "UKG–G2",
+   "part_of_speech": "noun",
+   "category": "Home and Family",
+   "v2_decision": "Use",
+   "provenance": "Movers 2014 + Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-1-0007",
+   "word": "daughter",
+   "band": 1,
+   "grade_range": "UKG–G2",
+   "part_of_speech": "noun",
+   "category": "Relationships",
+   "v2_decision": "Use",
+   "provenance": "Movers 2014 + Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-1-0033",
+   "word": "seat",
+   "band": 1,
+   "grade_range": "UKG–G2",
+   "part_of_speech": "noun",
+   "category": "Home and Family",
+   "v2_decision": "Use",
+   "provenance": "Movers 2014 + Preliminary 2012",
+   "publication_status": "not_published"
+  }
+ ],
+ "items": [
+  {
+   "word": "doctor",
+   "part_of_speech": "noun",
+   "simple_meaning": "A doctor is a person who helps sick people get well.",
+   "explanation": "When you feel unwell, a doctor checks you and tells you how to feel better. Doctors work in clinics and hospitals.",
+   "example_sentence": "The doctor checked my throat when I had a cold in the monsoon.",
+   "real_world_usage": "Mummy, I want to be a doctor when I grow up!",
+   "synonyms": [],
+   "antonyms": [
+    "patient"
+   ],
+   "word_family": [
+    "doctors"
+   ],
+   "collocations": [
+    "visit the doctor",
+    "family doctor",
+    "doctor's clinic"
+   ],
+   "spelling_guidance": "Doctor ends with 'or', not 'er': d-o-c-t-o-r.",
+   "related_words": [
+    "nurse",
+    "hospital",
+    "medicine",
+    "clinic"
+   ],
+   "category": "Body and Health",
+   "difficulty": "Beginner",
+   "learning_objective": "Children will name a doctor and say how a doctor helps people.",
+   "illustration_brief": "A friendly doctor with a stethoscope gently listening to a smiling child's heartbeat in a bright, cheerful clinic.",
+   "emoji": "🩺",
+   "applicable_grades": [
+    "PRE_KG",
+    "LKG",
+    "UKG"
+   ]
+  },
+  {
+   "word": "driver",
+   "part_of_speech": "noun",
+   "simple_meaning": "A driver is a person who makes a car, bus or other vehicle move and go places.",
+   "explanation": "A driver sits at the steering wheel and takes people where they need to go. The school bus driver takes children to school safely.",
+   "example_sentence": "Our school bus driver waves to us every morning.",
+   "real_world_usage": "Thank you, driver uncle, for taking us to school!",
+   "synonyms": [],
+   "antonyms": [
+    "passenger"
+   ],
+   "word_family": [
+    "drive",
+    "drives",
+    "driving",
+    "drivers"
+   ],
+   "collocations": [
+    "bus driver",
+    "auto driver",
+    "careful driver"
+   ],
+   "spelling_guidance": "Driver is 'drive' + 'r': d-r-i-v-e-r.",
+   "related_words": [
+    "bus",
+    "car",
+    "road",
+    "steering wheel"
+   ],
+   "category": "Transport",
+   "difficulty": "Beginner",
+   "learning_objective": "Children will name a driver and understand that a driver controls a vehicle.",
+   "illustration_brief": "A smiling driver at the wheel of a yellow school bus, with happy children sitting in their seats behind.",
+   "emoji": "🚌",
+   "applicable_grades": [
+    "PRE_KG",
+    "LKG",
+    "UKG"
+   ]
+  },
+  {
+   "word": "neck",
+   "part_of_speech": "noun",
+   "simple_meaning": "The neck is the part of the body that joins your head to your shoulders.",
+   "explanation": "Your neck helps you turn your head to look left and right. You can wear a scarf around your neck in winter.",
+   "example_sentence": "Dadi wrapped a warm scarf around my neck on the cold winter morning.",
+   "real_world_usage": "Look, I can turn my neck to see the birds!",
+   "synonyms": [],
+   "antonyms": [],
+   "word_family": [
+    "necks",
+    "necklace"
+   ],
+   "collocations": [
+    "long neck",
+    "around the neck",
+    "bend your neck"
+   ],
+   "spelling_guidance": "Neck ends with 'ck', like duck and rock.",
+   "related_words": [
+    "head",
+    "shoulders",
+    "throat",
+    "scarf"
+   ],
+   "category": "Body and Health",
+   "difficulty": "Beginner",
+   "learning_objective": "Children will point to and name their neck as a body part.",
+   "illustration_brief": "A child gently touching their neck with a cosy scarf around it, alongside a giraffe stretching its long neck.",
+   "emoji": "🦒",
+   "applicable_grades": [
+    "PRE_KG",
+    "LKG",
+    "UKG"
+   ]
+  },
+  {
+   "word": "market",
+   "part_of_speech": "noun",
+   "simple_meaning": "A market is a place where people buy and sell things.",
+   "explanation": "At a market, there are many shops or stalls selling fruits, vegetables, clothes and more. People go there to buy what they need.",
+   "example_sentence": "We went to the market to buy flowers and sweets for Diwali.",
+   "real_world_usage": "Can I come with you to the market, Papa?",
+   "synonyms": [
+    "bazaar"
+   ],
+   "antonyms": [],
+   "word_family": [
+    "markets"
+   ],
+   "collocations": [
+    "vegetable market",
+    "go to the market",
+    "fruit market"
+   ],
+   "spelling_guidance": "Break it into two parts: mar + ket.",
+   "related_words": [
+    "shop",
+    "stall",
+    "buy",
+    "sell"
+   ],
+   "category": "Places",
+   "difficulty": "Beginner",
+   "learning_objective": "Children will name a market as a place to buy and sell things.",
+   "illustration_brief": "A busy, colourful market with stalls of fruits, vegetables and flowers, and a family carrying a cloth shopping bag.",
+   "emoji": "🛒",
+   "applicable_grades": [
+    "PRE_KG",
+    "LKG",
+    "UKG"
+   ]
+  },
+  {
+   "word": "farm",
+   "part_of_speech": "noun",
+   "simple_meaning": "A farm is land where people grow crops or keep animals.",
+   "explanation": "Farmers grow rice, wheat and vegetables on a farm. Some farms also have cows, goats and hens.",
+   "example_sentence": "During the holidays, we saw cows and green rice fields at Nana's farm.",
+   "real_world_usage": "I saw a hen and her chicks at the farm!",
+   "synonyms": [],
+   "antonyms": [],
+   "word_family": [
+    "farms",
+    "farmer",
+    "farming"
+   ],
+   "collocations": [
+    "on the farm",
+    "farm animals",
+    "visit a farm"
+   ],
+   "spelling_guidance": "Farm has the sound 'ar' like in car: f-a-r-m.",
+   "related_words": [
+    "farmer",
+    "field",
+    "crops",
+    "cow"
+   ],
+   "category": "Nature",
+   "difficulty": "Beginner",
+   "learning_objective": "Children will describe a farm as a place with crops and animals.",
+   "illustration_brief": "A sunny farm with green fields, a cow, a goat, hens and a small farmhouse under a blue sky.",
+   "emoji": "🚜",
+   "applicable_grades": [
+    "PRE_KG",
+    "LKG",
+    "UKG"
+   ]
+  },
+  {
+   "word": "mountain",
+   "part_of_speech": "noun",
+   "simple_meaning": "A mountain is very high land that rises far above the ground around it.",
+   "explanation": "Mountains are much taller than hills. Some mountains have snow on top.",
+   "example_sentence": "On our holiday, we saw a tall mountain with white snow on top.",
+   "real_world_usage": "Look, that mountain is touching the clouds!",
+   "synonyms": [],
+   "antonyms": [
+    "valley"
+   ],
+   "word_family": [
+    "mountains",
+    "mountainous"
+   ],
+   "collocations": [
+    "high mountain",
+    "snowy mountain",
+    "top of the mountain"
+   ],
+   "spelling_guidance": "Split it: moun + tain. Remember 'ai' in the second part.",
+   "related_words": [
+    "hill",
+    "snow",
+    "valley",
+    "river"
+   ],
+   "category": "Nature",
+   "difficulty": "Developing",
+   "learning_objective": "Children will recognise and name a mountain as very high land.",
+   "illustration_brief": "Tall green and grey mountains with snowy peaks, a river flowing in the valley and soft clouds around the tops.",
+   "emoji": "⛰️",
+   "applicable_grades": [
+    "LKG",
+    "UKG"
+   ]
+  },
+  {
+   "word": "bottle",
+   "part_of_speech": "noun",
+   "simple_meaning": "A bottle is a container used to hold water, milk or other drinks.",
+   "explanation": "A bottle has a narrow top and a lid. You carry a water bottle to school to drink when you are thirsty.",
+   "example_sentence": "I fill my water bottle before I go to school.",
+   "real_world_usage": "Mumma, please put my bottle in my school bag.",
+   "synonyms": [],
+   "antonyms": [],
+   "word_family": [
+    "bottles",
+    "bottled"
+   ],
+   "collocations": [
+    "water bottle",
+    "milk bottle",
+    "fill the bottle"
+   ],
+   "spelling_guidance": "Bottle has double 't' and ends with 'le': b-o-t-t-l-e.",
+   "related_words": [
+    "water",
+    "lid",
+    "cup",
+    "drink"
+   ],
+   "category": "Food and Nutrition",
+   "difficulty": "Beginner",
+   "learning_objective": "Children will name a bottle and say what it holds.",
+   "illustration_brief": "A colourful water bottle with a lid standing next to a school bag and a tiffin box.",
+   "emoji": "🍼",
+   "applicable_grades": [
+    "PRE_KG",
+    "LKG",
+    "UKG"
+   ]
+  },
+  {
+   "word": "shower",
+   "part_of_speech": "noun",
+   "simple_meaning": "A shower is a place in the bathroom where water sprays down to wash your body.",
+   "explanation": "When you turn on the shower, water comes down from above like rain. You can take a shower to get clean.",
+   "example_sentence": "After playing cricket in the park, I took a shower at home.",
+   "real_world_usage": "I want to take a shower now, I am all sweaty!",
+   "synonyms": [],
+   "antonyms": [],
+   "word_family": [
+    "showers",
+    "showered",
+    "showering"
+   ],
+   "collocations": [
+    "take a shower",
+    "hot shower",
+    "shower water"
+   ],
+   "spelling_guidance": "Shower has 'ow' like in cow, then 'er': sh-ow-er.",
+   "related_words": [
+    "bath",
+    "soap",
+    "towel",
+    "bathroom"
+   ],
+   "category": "Home and Family",
+   "difficulty": "Beginner",
+   "learning_objective": "Children will name a shower and link it to keeping clean.",
+   "illustration_brief": "A clean bathroom with water gently spraying from a shower head, with soap, a bucket and a fluffy towel nearby.",
+   "emoji": "🚿",
+   "applicable_grades": [
+    "PRE_KG",
+    "LKG",
+    "UKG"
+   ]
+  },
+  {
+   "word": "daughter",
+   "part_of_speech": "noun",
+   "simple_meaning": "A daughter is a girl child of a mother and father.",
+   "explanation": "If a family has a girl child, she is their daughter. A girl is always her parents' daughter, even when she grows up.",
+   "example_sentence": "Meera is the daughter of Aunty Priya and Uncle Raj.",
+   "real_world_usage": "I am Mummy and Papa's daughter.",
+   "synonyms": [],
+   "antonyms": [
+    "son"
+   ],
+   "word_family": [
+    "daughters",
+    "granddaughter"
+   ],
+   "collocations": [
+    "only daughter",
+    "younger daughter",
+    "elder daughter"
+   ],
+   "spelling_guidance": "Daughter has silent 'gh': d-a-u-g-h-t-e-r.",
+   "related_words": [
+    "son",
+    "mother",
+    "father",
+    "family"
+   ],
+   "category": "Relationships",
+   "difficulty": "Developing",
+   "learning_objective": "Children will understand that a daughter is a girl child in a family.",
+   "illustration_brief": "A happy family of a mother, a father and their young daughter holding hands together in a garden.",
+   "emoji": "👧",
+   "applicable_grades": [
+    "LKG",
+    "UKG"
+   ]
+  },
+  {
+   "word": "seat",
+   "part_of_speech": "noun",
+   "simple_meaning": "A seat is a place where you can sit.",
+   "explanation": "Chairs, benches and sofas all have seats. In a bus or car, you sit on a seat.",
+   "example_sentence": "Please sit on your seat while Teacher reads the story.",
+   "real_world_usage": "Dadi, you can have my seat.",
+   "synonyms": [
+    "chair"
+   ],
+   "antonyms": [],
+   "word_family": [
+    "seats",
+    "seated",
+    "seating"
+   ],
+   "collocations": [
+    "take a seat",
+    "front seat",
+    "window seat"
+   ],
+   "spelling_guidance": "Seat has 'ea' that says the long 'ee' sound.",
+   "related_words": [
+    "chair",
+    "sit",
+    "bench",
+    "sofa"
+   ],
+   "category": "Home and Family",
+   "difficulty": "Beginner",
+   "learning_objective": "Children will name a seat and use it in a polite sentence.",
+   "illustration_brief": "A cosy living room with a chair and a sofa, and a child kindly offering a seat to a grandparent.",
+   "emoji": "💺",
+   "applicable_grades": [
+    "PRE_KG",
+    "LKG",
+    "UKG"
+   ]
+  }
+ ],
+ "_model": "claude-opus-5-5",
+ "_usage": {
+  "input_tokens": 2099,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 2099,
+    "output_tokens": 3734,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3734,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "_stop": "end_turn"
+}

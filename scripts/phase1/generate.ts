@@ -28,7 +28,7 @@ async function ask<T>(schema: z.ZodType<T>, prompt: string, maxTokens = 16000): 
     messages: [{ role: "user", content: prompt }],
   } as any);
   if (r.stop_reason === "refusal" || !r.parsed_output) throw new Error(`no output (${r.stop_reason})`);
-  return { ...(r.parsed_output as any), _model: r.model } as T;
+  return { ...(r.parsed_output as any), _model: r.model, _usage: r.usage, _stop: r.stop_reason } as T;
 }
 
 async function pool<T>(items0: T[], n: number, fn: (x: T) => Promise<void>) {

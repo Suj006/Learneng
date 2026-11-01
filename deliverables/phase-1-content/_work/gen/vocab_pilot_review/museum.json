@@ -1,0 +1,98 @@
+{
+ "candidate_id": "PV-CAM-3-0284",
+ "band": 3,
+ "word": "museum",
+ "gates": [
+  {
+   "gate": "1 safety moderation",
+   "passed": true,
+   "detail": "No unsafe terms."
+  },
+  {
+   "gate": "2 grade readability",
+   "passed": true,
+   "detail": "≈ grade 5.9 (max 7.5)"
+  },
+  {
+   "gate": "3 grammar & mechanics",
+   "passed": true,
+   "detail": "Example sentence capitals/punctuation and contains the word."
+  },
+  {
+   "gate": "4 independent spelling & grammar review (AI)",
+   "passed": true,
+   "detail": "OK"
+  },
+  {
+   "gate": "5 duplicate detection",
+   "passed": true,
+   "detail": "New word"
+  },
+  {
+   "gate": "6 difficulty validation",
+   "passed": true,
+   "detail": "Intermediate (band 3 allows Developing/Intermediate/Advanced)"
+  },
+  {
+   "gate": "7 age suitability (AI)",
+   "passed": true,
+   "detail": "OK"
+  }
+ ],
+ "extra": [
+  {
+   "check": "meaning accuracy (AI)",
+   "passed": true
+  },
+  {
+   "check": "synonyms/antonyms/word family accuracy (AI)",
+   "passed": false
+  },
+  {
+   "check": "Indian/British usage (AI)",
+   "passed": true
+  }
+ ],
+ "issues": [
+  "'gallery' is not a true synonym of 'museum'. It means a place mainly for showing art, so it is only a partial or near-synonym.",
+  "'gallery' appears in both synonyms and related_words, which is redundant.",
+  "The word_family list contains only the plural 'museums', which is an inflection rather than a related word-family member."
+ ],
+ "suggested_fixes": [
+  "Remove 'gallery' from synonyms and leave the list empty, or label it as a near-synonym ('gallery – for art').",
+  "Keep 'gallery' only in related_words.",
+  "Change word_family to something like ['museums (plural)'] with a note, or add related forms such as 'museum-goer', 'curator' under related_words instead."
+ ],
+ "reviewer_model": "claude-opus-5-5",
+ "reviewer_stop": "end_turn",
+ "usage": {
+  "input_tokens": 1186,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 1186,
+    "output_tokens": 482,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 482,
+  "output_tokens_details": {
+   "thinking_tokens": 158
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ }
+}

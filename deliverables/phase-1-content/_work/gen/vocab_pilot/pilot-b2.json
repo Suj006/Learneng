@@ -1,0 +1,553 @@
+{
+ "band": 2,
+ "requested": [
+  {
+   "candidate_id": "PV-CAM-2-0041",
+   "word": "call",
+   "band": 2,
+   "grade_range": "G1–G3",
+   "part_of_speech": "verb",
+   "category": "Technology",
+   "v2_decision": "Use",
+   "provenance": "Movers 2014 + Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-2-0042",
+   "word": "video",
+   "band": 2,
+   "grade_range": "G1–G3",
+   "part_of_speech": "noun, verb",
+   "category": "Arts and Culture",
+   "v2_decision": "Use",
+   "provenance": "Movers 2014 + Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-2-0043",
+   "word": "website",
+   "band": 2,
+   "grade_range": "G1–G3",
+   "part_of_speech": "noun",
+   "category": "Technology",
+   "v2_decision": "Use",
+   "provenance": "Movers 2014 + Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-2-0044",
+   "word": "straight",
+   "band": 2,
+   "grade_range": "G1–G3",
+   "part_of_speech": "adjective",
+   "category": "Places",
+   "v2_decision": "Use",
+   "provenance": "Movers 2014 + Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-2-0046",
+   "word": "drop",
+   "band": 2,
+   "grade_range": "G1–G3",
+   "part_of_speech": "verb",
+   "category": "Actions",
+   "v2_decision": "Use",
+   "provenance": "Movers 2014 + Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-2-0047",
+   "word": "hurt",
+   "band": 2,
+   "grade_range": "G1–G3",
+   "part_of_speech": "verb",
+   "category": "Body and Health",
+   "v2_decision": "Use",
+   "provenance": "Movers 2014 + Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-2-0048",
+   "word": "library",
+   "band": 2,
+   "grade_range": "G1–G3",
+   "part_of_speech": "noun",
+   "category": "Places",
+   "v2_decision": "Use",
+   "provenance": "Movers 2014 + Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-2-0051",
+   "word": "holiday",
+   "band": 2,
+   "grade_range": "G1–G3",
+   "part_of_speech": "noun",
+   "category": "Travel",
+   "v2_decision": "Use",
+   "provenance": "Movers 2014 + Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-2-0052",
+   "word": "temperature",
+   "band": 2,
+   "grade_range": "G1–G3",
+   "part_of_speech": "noun",
+   "category": "Weather and Seasons",
+   "v2_decision": "Use",
+   "provenance": "Movers 2014 + Preliminary 2012",
+   "publication_status": "not_published"
+  },
+  {
+   "candidate_id": "PV-CAM-2-0054",
+   "word": "comic",
+   "band": 2,
+   "grade_range": "G1–G3",
+   "part_of_speech": "noun",
+   "category": "Arts and Culture",
+   "v2_decision": "Use",
+   "provenance": "Movers 2014 + Preliminary 2012",
+   "publication_status": "not_published"
+  }
+ ],
+ "items": [
+  {
+   "word": "call",
+   "part_of_speech": "verb",
+   "simple_meaning": "To call someone is to talk to them using a phone.",
+   "explanation": "When you call someone, you use a phone so you can hear their voice and talk, even if they are far away.",
+   "example_sentence": "On Diwali morning, I call my grandmother to wish her a happy festival.",
+   "real_world_usage": "Mummy, can we call Nani on the phone today?",
+   "synonyms": [
+    "phone",
+    "ring"
+   ],
+   "antonyms": [],
+   "word_family": [
+    "calls",
+    "called",
+    "calling",
+    "caller"
+   ],
+   "collocations": [
+    "call someone",
+    "make a call",
+    "phone call",
+    "video call"
+   ],
+   "spelling_guidance": "Call ends with a double 'l' — c-a-l-l.",
+   "related_words": [
+    "phone",
+    "talk",
+    "message",
+    "ring"
+   ],
+   "category": "Technology",
+   "difficulty": "Beginner",
+   "learning_objective": "Children will use 'call' to describe talking to someone on a phone.",
+   "illustration_brief": "A smiling child at home holding a phone to their ear, with a small picture bubble showing a happy grandmother talking back.",
+   "emoji": "📞",
+   "applicable_grades": [
+    "G1",
+    "G2"
+   ]
+  },
+  {
+   "word": "video",
+   "part_of_speech": "noun",
+   "simple_meaning": "A video is a recording of moving pictures, often with sound.",
+   "explanation": "A video shows things moving, like a short film. You can watch a video on a television, computer or phone.",
+   "example_sentence": "Our teacher showed us a video about how butterflies grow.",
+   "real_world_usage": "Papa, can we watch the video of my school sports day again?",
+   "synonyms": [
+    "film",
+    "clip",
+    "recording"
+   ],
+   "antonyms": [],
+   "word_family": [
+    "videos",
+    "videotape"
+   ],
+   "collocations": [
+    "watch a video",
+    "make a video",
+    "short video",
+    "video call"
+   ],
+   "spelling_guidance": "Video has two vowel sounds at the end: v-i-d-e-o.",
+   "related_words": [
+    "film",
+    "camera",
+    "screen",
+    "picture"
+   ],
+   "category": "Arts and Culture",
+   "difficulty": "Beginner",
+   "learning_objective": "Children will identify a video as moving pictures they can watch and talk about.",
+   "illustration_brief": "A classroom where children sit together watching a screen that shows a colourful butterfly coming out of a cocoon.",
+   "emoji": "🎬",
+   "applicable_grades": [
+    "G1",
+    "G2"
+   ]
+  },
+  {
+   "word": "website",
+   "part_of_speech": "noun",
+   "simple_meaning": "A website is a group of pages you can look at on the internet.",
+   "explanation": "A website has pages with words, pictures and games that you open on a computer, tablet or phone. Each website has its own name and address.",
+   "example_sentence": "My sister and I looked at a website about animals to finish our school project.",
+   "real_world_usage": "Didi, can you open the website with the space pictures?",
+   "synonyms": [
+    "site",
+    "web page"
+   ],
+   "antonyms": [],
+   "word_family": [
+    "websites",
+    "web"
+   ],
+   "collocations": [
+    "visit a website",
+    "open a website",
+    "school website",
+    "safe website"
+   ],
+   "spelling_guidance": "Website is two small words joined together: web + site.",
+   "related_words": [
+    "internet",
+    "computer",
+    "page",
+    "screen"
+   ],
+   "category": "Technology",
+   "difficulty": "Developing",
+   "learning_objective": "Children will understand that a website is a set of pages on the internet that they visit with an adult's help.",
+   "illustration_brief": "A child and a parent sitting together at a computer showing a bright page with pictures of animals, with no readable text.",
+   "emoji": "💻",
+   "applicable_grades": [
+    "G1",
+    "G2"
+   ]
+  },
+  {
+   "word": "straight",
+   "part_of_speech": "adverb",
+   "simple_meaning": "Straight means going in one direction without turning.",
+   "explanation": "If you go straight, you keep walking forward and do not turn left or right. It helps you give and follow directions to a place.",
+   "example_sentence": "To reach the school gate, walk straight past the big neem tree.",
+   "real_world_usage": "Go straight down the road and the park is right there.",
+   "synonyms": [
+    "directly",
+    "ahead"
+   ],
+   "antonyms": [
+    "crooked",
+    "curved"
+   ],
+   "word_family": [
+    "straighten",
+    "straighter",
+    "straightest"
+   ],
+   "collocations": [
+    "go straight",
+    "walk straight",
+    "straight ahead",
+    "straight line"
+   ],
+   "spelling_guidance": "Straight has a silent 'gh' in the middle: s-t-r-a-i-g-h-t.",
+   "related_words": [
+    "left",
+    "right",
+    "turn",
+    "road"
+   ],
+   "category": "Places",
+   "difficulty": "Intermediate",
+   "learning_objective": "Children will use 'straight' to give and follow simple directions to places.",
+   "illustration_brief": "A long road with an arrow pointing forward, a child walking ahead past a big tree towards a school gate.",
+   "emoji": "⬆️",
+   "applicable_grades": [
+    "G1",
+    "G2"
+   ]
+  },
+  {
+   "word": "drop",
+   "part_of_speech": "verb",
+   "simple_meaning": "To drop something is to let it fall.",
+   "explanation": "When you drop something, it slips out of your hand and falls down. Sometimes we drop things by mistake.",
+   "example_sentence": "Be careful not to drop your tiffin box on the way to school.",
+   "real_world_usage": "Oops, I drop my pencil every time I laugh!",
+   "synonyms": [
+    "let fall",
+    "release"
+   ],
+   "antonyms": [
+    "catch",
+    "hold",
+    "pick up"
+   ],
+   "word_family": [
+    "drops",
+    "dropped",
+    "dropping"
+   ],
+   "collocations": [
+    "drop something",
+    "drop the ball",
+    "drop by mistake"
+   ],
+   "spelling_guidance": "When you add -ed or -ing, double the 'p': dropped, dropping.",
+   "related_words": [
+    "fall",
+    "catch",
+    "slip",
+    "hold"
+   ],
+   "category": "Actions",
+   "difficulty": "Beginner",
+   "learning_objective": "Children will use 'drop' to describe letting something fall.",
+   "illustration_brief": "A child with a surprised face as a tiffin box slips from their hands towards the ground, with motion lines showing it falling.",
+   "emoji": "⬇️",
+   "applicable_grades": [
+    "G1",
+    "G2"
+   ]
+  },
+  {
+   "word": "hurt",
+   "part_of_speech": "verb",
+   "simple_meaning": "To hurt means to feel pain in a part of your body.",
+   "explanation": "When something hurts, it feels sore or painful. If you get hurt, tell a grown-up so they can help you feel better.",
+   "example_sentence": "My knee began to hurt after I slipped while playing cricket, so Papa put a bandage on it.",
+   "real_world_usage": "Ma'am, my finger hurts — can you help me?",
+   "synonyms": [
+    "ache",
+    "pain",
+    "sting"
+   ],
+   "antonyms": [
+    "heal",
+    "feel better"
+   ],
+   "word_family": [
+    "hurts",
+    "hurting",
+    "hurtful"
+   ],
+   "collocations": [
+    "get hurt",
+    "hurt your knee",
+    "it hurts",
+    "badly hurt"
+   ],
+   "spelling_guidance": "Hurt is spelt with 'ur' like in 'turn' and 'burn'.",
+   "related_words": [
+    "pain",
+    "bandage",
+    "doctor",
+    "care"
+   ],
+   "category": "Body and Health",
+   "difficulty": "Beginner",
+   "learning_objective": "Children will use 'hurt' to tell an adult when a part of their body feels pain.",
+   "illustration_brief": "A child sitting on a step while a caring parent gently puts a bandage on their knee, with a cricket bat nearby.",
+   "emoji": "🩹",
+   "applicable_grades": [
+    "G1",
+    "G2"
+   ]
+  },
+  {
+   "word": "library",
+   "part_of_speech": "noun",
+   "simple_meaning": "A library is a place where you can read and borrow books.",
+   "explanation": "A library has many shelves full of books. You can read there quietly or take a book home and bring it back later.",
+   "example_sentence": "Every Friday, our class goes to the school library to choose a new storybook.",
+   "real_world_usage": "I want to borrow a book about dinosaurs from the library.",
+   "synonyms": [],
+   "antonyms": [],
+   "word_family": [
+    "libraries",
+    "librarian"
+   ],
+   "collocations": [
+    "school library",
+    "public library",
+    "library book",
+    "library card"
+   ],
+   "spelling_guidance": "Don't forget the first 'r': li-brar-y, not 'libary'.",
+   "related_words": [
+    "book",
+    "shelf",
+    "read",
+    "borrow"
+   ],
+   "category": "Places",
+   "difficulty": "Developing",
+   "learning_objective": "Children will recognise a library as a place to read and borrow books.",
+   "illustration_brief": "A bright school library with tall colourful bookshelves and children sitting on mats happily reading books.",
+   "emoji": "📚",
+   "applicable_grades": [
+    "G1",
+    "G2"
+   ]
+  },
+  {
+   "word": "holiday",
+   "part_of_speech": "noun",
+   "simple_meaning": "A holiday is a time when you do not go to school or work, often to travel or rest.",
+   "explanation": "During a holiday, families may visit new places, see relatives or just relax. Summer holidays are a fun break from school.",
+   "example_sentence": "During the summer holiday, we took a train to visit my cousins in the hills.",
+   "real_world_usage": "We are going to the beach on holiday next week!",
+   "synonyms": [
+    "vacation",
+    "break",
+    "trip"
+   ],
+   "antonyms": [
+    "school day",
+    "workday"
+   ],
+   "word_family": [
+    "holidays"
+   ],
+   "collocations": [
+    "summer holiday",
+    "go on holiday",
+    "family holiday",
+    "holiday trip"
+   ],
+   "spelling_guidance": "Holiday has one 'l': h-o-l-i-d-a-y.",
+   "related_words": [
+    "travel",
+    "trip",
+    "suitcase",
+    "train"
+   ],
+   "category": "Travel",
+   "difficulty": "Beginner",
+   "learning_objective": "Children will use 'holiday' to talk about a break from school and family trips.",
+   "illustration_brief": "A family with suitcases looking out of a train window at green hills, with smiling faces.",
+   "emoji": "🏖️",
+   "applicable_grades": [
+    "G1",
+    "G2"
+   ]
+  },
+  {
+   "word": "temperature",
+   "part_of_speech": "noun",
+   "simple_meaning": "Temperature is how hot or cold something is.",
+   "explanation": "We use temperature to tell how hot or cold the weather is. A thermometer measures the temperature.",
+   "example_sentence": "In May, the temperature gets very high, so we drink lots of water.",
+   "real_world_usage": "The temperature is so cold today that I need my sweater.",
+   "synonyms": [
+    "heat"
+   ],
+   "antonyms": [],
+   "word_family": [
+    "temperatures"
+   ],
+   "collocations": [
+    "high temperature",
+    "low temperature",
+    "check the temperature",
+    "room temperature"
+   ],
+   "spelling_guidance": "Break it into parts: tem-per-a-ture, and remember the 'a' in the middle.",
+   "related_words": [
+    "hot",
+    "cold",
+    "thermometer",
+    "weather"
+   ],
+   "category": "Weather and Seasons",
+   "difficulty": "Intermediate",
+   "learning_objective": "Children will use 'temperature' to describe how hot or cold the weather is.",
+   "illustration_brief": "A large outdoor thermometer beside a sunny scene on one side and a chilly winter scene on the other.",
+   "emoji": "🌡️",
+   "applicable_grades": [
+    "G1",
+    "G2"
+   ]
+  },
+  {
+   "word": "comic",
+   "part_of_speech": "noun",
+   "simple_meaning": "A comic is a book or story told with pictures in boxes and speech bubbles.",
+   "explanation": "A comic tells a story using drawings in small boxes. The characters talk in speech bubbles.",
+   "example_sentence": "After finishing my homework, I read a funny comic about a clever monkey.",
+   "real_world_usage": "Can I draw my own comic about our cricket match?",
+   "synonyms": [
+    "comic book",
+    "cartoon strip"
+   ],
+   "antonyms": [],
+   "word_family": [
+    "comics",
+    "comical"
+   ],
+   "collocations": [
+    "read a comic",
+    "comic book",
+    "comic strip",
+    "funny comic"
+   ],
+   "spelling_guidance": "Comic ends with 'ic', just like 'music' and 'picnic'.",
+   "related_words": [
+    "cartoon",
+    "story",
+    "picture",
+    "speech bubble"
+   ],
+   "category": "Arts and Culture",
+   "difficulty": "Developing",
+   "learning_objective": "Children will recognise a comic as a story told with pictures and speech bubbles.",
+   "illustration_brief": "A child sitting on a bed reading an open comic book with colourful picture boxes and empty speech bubbles showing a cheerful monkey.",
+   "emoji": "💬",
+   "applicable_grades": [
+    "G1",
+    "G2"
+   ]
+  }
+ ],
+ "_model": "claude-opus-5-5",
+ "_usage": {
+  "input_tokens": 2091,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 2091,
+    "output_tokens": 3802,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3802,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "_stop": "end_turn"
+}

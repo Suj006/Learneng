@@ -1,0 +1,96 @@
+{
+ "candidate_id": "PV-CAM-1-0034",
+ "band": 1,
+ "word": "farm",
+ "gates": [
+  {
+   "gate": "1 safety moderation",
+   "passed": true,
+   "detail": "No unsafe terms."
+  },
+  {
+   "gate": "2 grade readability",
+   "passed": true,
+   "detail": "≈ grade 3.4 (max 3.5)"
+  },
+  {
+   "gate": "3 grammar & mechanics",
+   "passed": true,
+   "detail": "Example sentence capitals/punctuation and contains the word."
+  },
+  {
+   "gate": "4 independent spelling & grammar review (AI)",
+   "passed": true,
+   "detail": "OK"
+  },
+  {
+   "gate": "5 duplicate detection",
+   "passed": true,
+   "detail": "New word"
+  },
+  {
+   "gate": "6 difficulty validation",
+   "passed": true,
+   "detail": "Beginner (band 1 allows Beginner/Developing)"
+  },
+  {
+   "gate": "7 age suitability (AI)",
+   "passed": true,
+   "detail": "OK"
+  }
+ ],
+ "extra": [
+  {
+   "check": "meaning accuracy (AI)",
+   "passed": true
+  },
+  {
+   "check": "synonyms/antonyms/word family accuracy (AI)",
+   "passed": true
+  },
+  {
+   "check": "Indian/British usage (AI)",
+   "passed": true
+  }
+ ],
+ "issues": [
+  "'Crops' in simple_meaning may be unfamiliar to 3–6-year-olds.",
+  "Category 'Nature' is a loose fit; a farm is a place people make and work on."
+ ],
+ "suggested_fixes": [
+  "Rephrase as: 'A farm is land where people grow food and keep animals.'",
+  "Change the category to 'Places' or 'Places Around Us'."
+ ],
+ "reviewer_model": "claude-opus-5-5",
+ "reviewer_stop": "end_turn",
+ "usage": {
+  "input_tokens": 1155,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 1155,
+    "output_tokens": 418,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 418,
+  "output_tokens_details": {
+   "thinking_tokens": 197
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ }
+}

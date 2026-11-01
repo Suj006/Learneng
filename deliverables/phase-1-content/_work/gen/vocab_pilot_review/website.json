@@ -1,0 +1,94 @@
+{
+ "candidate_id": "PV-CAM-2-0043",
+ "band": 2,
+ "word": "website",
+ "gates": [
+  {
+   "gate": "1 safety moderation",
+   "passed": true,
+   "detail": "No unsafe terms."
+  },
+  {
+   "gate": "2 grade readability",
+   "passed": false,
+   "detail": "≈ grade 6.5 (max 5)"
+  },
+  {
+   "gate": "3 grammar & mechanics",
+   "passed": true,
+   "detail": "Example sentence capitals/punctuation and contains the word."
+  },
+  {
+   "gate": "4 independent spelling & grammar review (AI)",
+   "passed": true,
+   "detail": "OK"
+  },
+  {
+   "gate": "5 duplicate detection",
+   "passed": true,
+   "detail": "New word"
+  },
+  {
+   "gate": "6 difficulty validation",
+   "passed": true,
+   "detail": "Developing (band 2 allows Beginner/Developing/Intermediate)"
+  },
+  {
+   "gate": "7 age suitability (AI)",
+   "passed": true,
+   "detail": "OK"
+  }
+ ],
+ "extra": [
+  {
+   "check": "meaning accuracy (AI)",
+   "passed": true
+  },
+  {
+   "check": "synonyms/antonyms/word family accuracy (AI)",
+   "passed": false
+  },
+  {
+   "check": "Indian/British usage (AI)",
+   "passed": true
+  }
+ ],
+ "issues": [
+  "'web page' is listed as a synonym, but it is not one. A web page is a single page within a website, so it is a part, not an equivalent. This contradicts the card's own meaning ('a group of pages')."
+ ],
+ "suggested_fixes": [
+  "Remove 'web page' from synonyms and keep only 'site'. 'Web page' could go into related_words instead."
+ ],
+ "reviewer_model": "claude-opus-5-5",
+ "reviewer_stop": "end_turn",
+ "usage": {
+  "input_tokens": 1137,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 1137,
+    "output_tokens": 382,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 382,
+  "output_tokens_details": {
+   "thinking_tokens": 167
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ }
+}

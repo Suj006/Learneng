@@ -1,0 +1,102 @@
+{
+ "candidate_id": "PV-CAM-2-0042",
+ "band": 2,
+ "word": "video",
+ "gates": [
+  {
+   "gate": "1 safety moderation",
+   "passed": true,
+   "detail": "No unsafe terms."
+  },
+  {
+   "gate": "2 grade readability",
+   "passed": false,
+   "detail": "≈ grade 6.3 (max 5)"
+  },
+  {
+   "gate": "3 grammar & mechanics",
+   "passed": true,
+   "detail": "Example sentence capitals/punctuation and contains the word."
+  },
+  {
+   "gate": "4 independent spelling & grammar review (AI)",
+   "passed": true,
+   "detail": "OK"
+  },
+  {
+   "gate": "5 duplicate detection",
+   "passed": true,
+   "detail": "New word"
+  },
+  {
+   "gate": "6 difficulty validation",
+   "passed": true,
+   "detail": "Beginner (band 2 allows Beginner/Developing/Intermediate)"
+  },
+  {
+   "gate": "7 age suitability (AI)",
+   "passed": true,
+   "detail": "OK"
+  }
+ ],
+ "extra": [
+  {
+   "check": "meaning accuracy (AI)",
+   "passed": true
+  },
+  {
+   "check": "synonyms/antonyms/word family accuracy (AI)",
+   "passed": false
+  },
+  {
+   "check": "Indian/British usage (AI)",
+   "passed": true
+  }
+ ],
+ "issues": [
+  "Illustration brief says a butterfly comes out of a 'cocoon'; butterflies emerge from a chrysalis (moths make cocoons). This contradicts the science-themed example.",
+  "'recording' is not a true synonym. It can also mean an audio-only recording, which may confuse young learners.",
+  "'videotape' is an outdated word that children aged 6-8 are unlikely to know, so it adds little value to the word family.",
+  "Spelling guidance is unclear. 'Two vowel sounds at the end' does not match the letter breakdown, and it never mentions that the word has three vowels (i, e, o).",
+  "The category 'Arts and Culture' fits poorly; videos are more about media and technology."
+ ],
+ "suggested_fixes": [
+  "Change 'cocoon' to 'chrysalis', or simply say 'coming out and spreading its wings'.",
+  "Replace 'recording' with a closer synonym, or remove it and keep 'film' and 'clip'.",
+  "Replace 'videotape' with 'videos' only, or add 'video call' as the child-relevant form.",
+  "Rewrite the spelling guidance as: 'Say it in parts: vid-ee-oh. Spell it v-i-d-e-o. It ends with the letters e and o.'",
+  "Change the category to 'Technology and Media'."
+ ],
+ "reviewer_model": "claude-opus-5-5",
+ "reviewer_stop": "end_turn",
+ "usage": {
+  "input_tokens": 1144,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 1144,
+    "output_tokens": 781,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 781,
+  "output_tokens_details": {
+   "thinking_tokens": 264
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ }
+}

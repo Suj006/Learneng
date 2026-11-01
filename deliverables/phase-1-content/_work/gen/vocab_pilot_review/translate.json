@@ -1,0 +1,100 @@
+{
+ "candidate_id": "PV-CAM-4-0486",
+ "band": 4,
+ "word": "translate",
+ "gates": [
+  {
+   "gate": "1 safety moderation",
+   "passed": true,
+   "detail": "No unsafe terms."
+  },
+  {
+   "gate": "2 grade readability",
+   "passed": true,
+   "detail": "≈ grade 7.6 (max 11)"
+  },
+  {
+   "gate": "3 grammar & mechanics",
+   "passed": true,
+   "detail": "Example sentence capitals/punctuation and contains the word."
+  },
+  {
+   "gate": "4 independent spelling & grammar review (AI)",
+   "passed": true,
+   "detail": "OK"
+  },
+  {
+   "gate": "5 duplicate detection",
+   "passed": true,
+   "detail": "New word"
+  },
+  {
+   "gate": "6 difficulty validation",
+   "passed": true,
+   "detail": "Intermediate (band 4 allows Intermediate/Advanced/Challenge)"
+  },
+  {
+   "gate": "7 age suitability (AI)",
+   "passed": true,
+   "detail": "OK"
+  }
+ ],
+ "extra": [
+  {
+   "check": "meaning accuracy (AI)",
+   "passed": true
+  },
+  {
+   "check": "synonyms/antonyms/word family accuracy (AI)",
+   "passed": false
+  },
+  {
+   "check": "Indian/British usage (AI)",
+   "passed": true
+  }
+ ],
+ "issues": [
+  "Synonym 'convert' is not a true synonym for translating between languages; it means changing form or type in general.",
+  "The spelling guidance splits the word into 'trans' (across) + 'late' but does not explain 'late'. Children may link it to 'late' meaning delayed, which is misleading.",
+  "The explanation assumes Hindi is part of everyone's daily translation, which is not true across India (e.g. in southern and north-eastern states). This is slightly Hindi-centric.",
+  "The example sentence is a little unclear: it suggests the grandmother is translating with Meera's help. More likely, Meera is translating for her grandmother."
+ ],
+ "suggested_fixes": [
+  "Replace 'convert' with a better fit (e.g. 'put into another language'), or keep only 'interpret' and 'render'.",
+  "Rewrite the guidance as: \"Split it as 'trans' + 'late'. 'Trans' means across, so you carry words across languages. 'Translation' drops the final 'e' before '-ion'.\"",
+  "Change to: 'In India, many people translate between their home language, English and other Indian languages every day.'",
+  "Rephrase to: 'Meera translated the English school notice into Tamil for her grandmother.'"
+ ],
+ "reviewer_model": "claude-opus-5-5",
+ "reviewer_stop": "end_turn",
+ "usage": {
+  "input_tokens": 1219,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 1219,
+    "output_tokens": 925,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 925,
+  "output_tokens_details": {
+   "thinking_tokens": 434
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ }
+}
