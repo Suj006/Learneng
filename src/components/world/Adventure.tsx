@@ -15,7 +15,7 @@ export interface AdventureData {
   name: string; buddy: CharacterName; evolution: number; avatar: AvatarLook; art: AvatarArt; pet: { emoji: string; name: string; nickname: string | null; hint_style: string } | null;
   memory: { who: CharacterName; line: string }[]; welcomeBack: number | null;
   journey: { day: number; planDay: number; year: number; theme: { title: string; emoji: string }; focus: string; items: { type: string; title: string; emoji: string; href: string; detail: string; done: boolean; core: boolean; adapted?: string }[]; dayComplete: boolean; completedToday: boolean };
-  missions: MissionData[]; recs: { title: string; reason: string; href: string; emoji: string; who: CharacterName }[];
+  missions: MissionData[]; recs: { kind: "learn_next" | "practise_more" | "revise_now" | "explore_new" | "challenge"; title: string; reason: string; href: string; emoji: string; who: CharacterName }[];
   events: { slug: string; title: string; emoji: string; description: string }[];
   kingdoms: { slug: string; title: string; emoji: string; art: string; unlocked: boolean; unlock_level: number; progress: number; href: string }[];
   status: Record<string, number>; skills: { key: string; title: string; level: string }[]; missionOfDay: string; dueWords: number;
@@ -24,6 +24,8 @@ export interface AdventureData {
 }
 
 const EVOLUTION = ["", "🌟", "👑", "🌈"];
+
+const REC_LABEL = { learn_next: "Learn next", practise_more: "Practise more", revise_now: "Revise now", explore_new: "Explore something new", challenge: "Challenge yourself" } as const;
 
 export function Adventure({ d }: { d: AdventureData }) {
   const router = useRouter();
@@ -97,6 +99,26 @@ export function Adventure({ d }: { d: AdventureData }) {
         </div>
       </section>
       <div className="-mt-4 flex justify-end"><Link href="/world/look" className="btn-ghost btn-sm">🎨 My look</Link></div>
+
+      {/* RECOMMENDED FOR YOU — Learning Intelligence (five balanced categories, specific content, friendly reasons) */}
+      {d.recs.length > 0 && (
+        <section aria-labelledby="recs-h"><h2 id="recs-h" className="title-md">✨ Recommended for you</h2>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{d.recs.map((r, i) => (
+            <Link key={r.kind + r.title} href={r.href} className={`card flex gap-3 p-4 ${i === 0 ? "ring-2 ring-vibe-purple/40" : ""}`}>
+              <Character name={r.who} mood="hint" size={56} still className="shrink-0" />
+              <span className="min-w-0"><span className="chip px-2 py-0.5 text-[10px] uppercase">{REC_LABEL[r.kind]}</span>
+                <b className="mt-1 block font-display">{r.emoji} {r.title}</b><span className="mt-0.5 block text-sm text-vibe-lavender">“{r.reason}”</span></span>
+            </Link>
+          ))}</div>
+        </section>
+      )}
+
+      {/* REAL LIFE ADVENTURES */}
+      <Link href="/world/real-life" className="card module-speaking flex items-center gap-4 p-5">
+        <span className="text-5xl" aria-hidden>🌍</span>
+        <span className="min-w-0 flex-1"><b className="font-display text-lg">VIBE Real Life</b><span className="block text-sm text-vibe-lavender">Order at a café, shop for groceries, catch a train: practise English for real life!</span></span>
+        <span className="btn-primary btn-sm hidden sm:inline-flex">Play →</span>
+      </Link>
 
       {d.welcomeBack && (
         <section className="glass flex flex-wrap items-center gap-4 p-5">
@@ -175,18 +197,6 @@ export function Adventure({ d }: { d: AdventureData }) {
             <div className="flex-1"><span className="chip">Special event</span><h2 className="title-md mt-1">{d.events[0].title}</h2><p className="text-vibe-lavender">{d.events[0].description}</p></div>
             <Link href="/world/challenge/special" className="btn-sun">Join the event</Link>
           </div>
-        </section>
-      )}
-
-      {/* PICKED FOR YOU */}
-      {d.recs.length > 0 && (
-        <section><h2 className="title-md">💡 Your buddies suggest…</h2>
-          <div className="row-scroll mt-4">{d.recs.map((r) => (
-            <Link key={r.title} href={r.href} className="glass flex w-72 shrink-0 snap-start gap-3 p-4 hover:bg-glass/10">
-              <Character name={r.who} mood="hint" size={60} still className="shrink-0" />
-              <span><span className="text-xs font-bold uppercase" style={{ color: "var(--tw-prose-body)" }}>{r.emoji} {r.title}</span><span className="mt-1 block text-sm">“{r.reason}”</span></span>
-            </Link>
-          ))}</div>
         </section>
       )}
 

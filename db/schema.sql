@@ -811,3 +811,53 @@ update grade_config set new_words_per_day = 5,
 where not lx5_applied;
 update missions set target = 5, description = 'Discover 5 new words in today''s Daily Word Quest.' where slug = 'd-discover' and target = 10;
 update pets set unlock_target = 5, unlock_label = 'Discover 5 words' where slug = 'hoot-owl' and unlock_target = 10;
+
+-- Learning Experience 6.0 (1 Nov 2026) ────────────────────────────────────
+-- VIBE REAL LIFE: scenarios are content (editable without code), plus play sessions and per-level progress.
+create table if not exists real_life_scenarios (
+  slug        text primary key,
+  title       text not null,
+  emoji       text not null,
+  band_min    smallint not null default 1,
+  content     jsonb not null,
+  active      boolean not null default true,
+  sort_order  smallint not null default 0,
+  version     integer not null default 1,
+  updated_at  timestamptz not null default now()
+);
+create table if not exists real_life_runs (
+  id           uuid primary key default gen_random_uuid(),
+  child_id     uuid not null references children(id) on delete cascade,
+  slug         text not null references real_life_scenarios(slug) on delete cascade,
+  level        text not null check (level in ('beginner','developing','advanced')),
+  turn_index   smallint not null default 0,
+  turns_total  smallint not null,
+  turn_tries   smallint not null default 0,
+  great        smallint not null default 0,
+  ok           smallint not null default 0,
+  retries      smallint not null default 0,
+  mode         text not null default 'choice',
+  started_at   timestamptz not null default now(),
+  completed_at timestamptz
+);
+create index if not exists real_life_runs_child_idx on real_life_runs (child_id, started_at desc);
+create table if not exists real_life_progress (
+  child_id          uuid not null references children(id) on delete cascade,
+  slug              text not null references real_life_scenarios(slug) on delete cascade,
+  level             text not null,
+  completions       integer not null default 0,
+  best_score        smallint not null default 0,
+  last_completed_at timestamptz,
+  primary key (child_id, slug, level)
+);
+-- Adventure Passport: one stamp per milestone, recorded once.
+create table if not exists passport_stamps (
+  child_id   uuid not null references children(id) on delete cascade,
+  slug       text not null,
+  title      text not null,
+  emoji      text not null,
+  kind       text not null,
+  created_at timestamptz not null default now(),
+  primary key (child_id, slug)
+);
+insert into xp_config (key, label, xp, coins, daily_cap) values ('real_life', 'VIBE Real Life scenario', 40, 15, 4) on conflict (key) do nothing;

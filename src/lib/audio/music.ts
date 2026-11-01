@@ -39,7 +39,7 @@ export function themeForPath(path: string): ThemeName {
   if (/^\/world\/(grammar|map\/grammar-galaxy)/.test(path)) return "galaxy";
   if (/^\/world\/(writing|story-builder|map\/storytelling-castle)/.test(path)) return "castle";
   if (/^\/world\/(arcade|challenge|boss|map\/word-wizards-arena)/.test(path)) return "arcade";
-  if (/^\/world\/(speaking|listening)/.test(path)) return "speaking";
+  if (/^\/world\/(speaking|listening|real-life)/.test(path)) return "speaking";
   if (/^\/world\/(reading|map\/reading-ocean)/.test(path)) return "reading";
   return "dashboard";
 }

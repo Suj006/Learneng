@@ -12,6 +12,7 @@ import { GRAMMAR_TOPICS } from "./content/grammar";
 import { STORIES } from "./content/stories";
 import { hashPassword } from "./crypto";
 import { DEFAULT_THEME, THEME_SEED } from "@/lib/theme/themes";
+import { REAL_LIFE_SEED } from "./content/reallife";
 
 /**
  * Applies the idempotent schema, then inserts seed content that is missing.
@@ -30,7 +31,16 @@ export async function migrate(db: Queryable) {
     await db.query(`insert into seed_meta (key, value) values ('version', $1) on conflict (key) do update set value = $1`, [SEED_VERSION]);
   }
   await seedThemes(db);
+  await seedRealLife(db);
   await bootstrapAdmin(db);
+}
+
+/** Adds any built-in VIBE REAL LIFE scenario that is missing (admin edits are kept). */
+async function seedRealLife(db: Queryable) {
+  for (const [i, sc] of REAL_LIFE_SEED.entries()) {
+    await db.query(`insert into real_life_scenarios (slug, title, emoji, band_min, content, sort_order) values ($1,$2,$3,$4,$5,$6) on conflict (slug) do nothing`,
+      [sc.slug, sc.title, sc.emoji, sc.band_min, JSON.stringify(sc), i]);
+  }
 }
 
 /** Adds any built-in colour theme that is missing (admin edits are never overwritten). Rainbow Wonder is the default. */

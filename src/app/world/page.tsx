@@ -2,7 +2,7 @@ import { requireChild } from "@/server/session";
 import { worldContext } from "@/server/world-context";
 import { getJourney } from "@/server/journey";
 import { missionsFor } from "@/server/missions";
-import { recommend } from "@/server/personalise";
+import { recommendations } from "@/server/recommend";
 import { activeEvents } from "@/server/events";
 import { kingdomMap } from "@/server/world";
 import { ADVENTURE_CHOICES, buddyMemory, missionOfTheDay, moduleStatus } from "@/server/adventure";
@@ -17,7 +17,7 @@ export default async function WorldHome() {
   const child = await requireChild();
   const w = await worldContext(child);
   const [journey, missions, recs, memory, events, kingdoms, status, skills, counts, family] = await Promise.all([
-    getJourney(child.id, child.grade), missionsFor(child.id, child.grade), recommend(child.id), buddyMemory(child.id, child.display_name),
+    getJourney(child.id, child.grade), missionsFor(child.id, child.grade), recommendations(child), buddyMemory(child.id, child.display_name),
     activeEvents(), kingdomMap(child.id, w.level.level_id), moduleStatus(child.id), skillProfile(child.id), vocabCounts(child.id),
     query<{ id: string; title: string; message: string }>(`select id, title, message from family_challenges where child_id = $1 and completed_at is null order by created_at desc`, [child.id]),
   ]);

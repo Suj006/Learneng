@@ -14,16 +14,19 @@ export async function recordEvidence(childId: string, skill: string, correct: nu
   await refreshProficiency(childId);
 }
 
-/** Eight independent skill areas and the gameplay evidence that informs each. */
+/** Eleven independent skill areas and the gameplay evidence that informs each. */
 export const AREAS = [
   { key: "vocabulary", title: "Vocabulary", who: "lexi", column: "skill_vocabulary", evidence: ["meaning", "picture", "usage", "fill_blank", "synonyms", "opposites", "advanced"] },
   { key: "grammar", title: "Grammar", who: "grammy", column: "skill_grammar", evidence: ["grammar_parts", "grammar_articles", "grammar_sentences", "grammar_tenses", "grammar_advanced"] },
   { key: "spelling", title: "Spelling", who: "lexi", column: null, evidence: ["spelling", "spelling_advanced", "writing_spelling"] },
   { key: "writing", title: "Writing", who: "story", column: "skill_writing", evidence: ["writing_sentences", "writing_creativity", "writing_vocabulary", "writing_paragraph", "story_builder"] },
   { key: "reading", title: "Reading", who: "story", column: "skill_reading", evidence: ["reading", "reading_glossary"] },
-  { key: "speaking", title: "Speaking", who: "speaky", column: "skill_speaking", evidence: ["pronunciation", "speaking_lines", "conversation"] },
+  { key: "speaking", title: "Speaking", who: "speaky", column: "skill_speaking", evidence: ["speaking_lines", "conversation"] },
+  { key: "pronunciation", title: "Pronunciation", who: "speaky", column: null, evidence: ["pronunciation"] },
+  { key: "phonics", title: "Phonics", who: "lexi", column: null, evidence: ["listen_spell", "phonics"] },
   { key: "listening", title: "Listening", who: "speaky", column: null, evidence: ["listening", "listening_sentences"] },
   { key: "comprehension", title: "Comprehension", who: "grammy", column: null, evidence: ["comprehension", "inference"] },
+  { key: "real_world", title: "Real-world English", who: "max", column: null, evidence: ["real_world"] },
 ] as const;
 
 /** Evidence needed before an estimate is trusted enough to change difficulty (no jumps after 1–2 answers). */
@@ -58,6 +61,8 @@ export function evidenceForAnswer(type: string, band: number): string[] {
   const keys = [...(map[type] ?? [])];
   if (band >= 3 && (type === "meaning" || type === "usage" || type === "fill_blank")) keys.push("advanced");
   if (band >= 3 && type === "spelling") keys.push("spelling_advanced");
+  // "Listen and spell" is sound-to-letter work: it also informs phonics.
+  if (type === "spelling") keys.push("listen_spell");
   return keys;
 }
 
