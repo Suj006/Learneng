@@ -214,6 +214,10 @@ export const SKILL_NODES = [
   S("sp-advanced", "spelling", "Spelling Pro", "Spell tricky words.", "spelling_advanced", 10, 75, "sp-basic", 2),
   S("c-literal", "comprehension", "Finding Facts", "Answer 'who/what/where' questions.", "comprehension", 10, 70),
   S("c-inference", "comprehension", "Reading Between the Lines", "Infer meaning and lessons.", "inference", 8, 70, "c-literal", 3),
+  S("ph-sounds", "phonics", "Letter Sounds", "Hear the sounds inside words.", "listen_spell", 10, 70),
+  S("ph-blend", "phonics", "Sound It Out", "Blend sounds to spell words you hear.", "listen_spell", 25, 75, "ph-sounds"),
+  S("rw-everyday", "real_world", "Everyday Conversations", "Order food, ask for help, greet people.", "real_world", 4, 70),
+  S("rw-confident", "real_world", "Confident in Real Life", "Handle longer, trickier conversations.", "real_world", 15, 75, "rw-everyday", 2),
 ];
 export const SKILL_BRANCHES = [
   { key: "vocabulary", title: "Vocabulary", emoji: "🗝️", character: "lexi" },
@@ -224,6 +228,8 @@ export const SKILL_BRANCHES = [
   { key: "listening", title: "Listening", emoji: "🎧", character: "speaky" },
   { key: "spelling", title: "Spelling", emoji: "🔤", character: "lexi" },
   { key: "comprehension", title: "Comprehension", emoji: "🧠", character: "grammy" },
+  { key: "phonics", title: "Phonics", emoji: "👂", character: "lexi" },
+  { key: "real_world", title: "Real-World English", emoji: "🌍", character: "max" },
 ];
 
 /** Round types are scored server-side by server/challenge.ts. */

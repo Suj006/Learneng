@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T16:05:52.229Z",
+  "generated_at": "2026-11-01T10:22:09.481Z",
   "base": "http://localhost:3000",
   "results": [
     {
@@ -168,7 +168,7 @@
       "severity": "Critical",
       "scenario": "Verification + consent creates an active Explorer",
       "status": "PASS",
-      "actual": "starcomet907"
+      "actual": "cosmicotter835"
     },
     {
       "id": "AUTH-022",
@@ -1248,7 +1248,7 @@
       "severity": "High",
       "scenario": "Unfinished mission cannot be claimed",
       "status": "PASS",
-      "actual": "That mission isn't available right now."
+      "actual": "Keep going — this mission isn't finished yet!"
     },
     {
       "id": "GAM-023",
@@ -1688,7 +1688,7 @@
       "severity": "High",
       "scenario": "Append levels beyond 250 (unlimited progression)",
       "status": "PASS",
-      "actual": "260"
+      "actual": "255"
     },
     {
       "id": "ADM-019",
@@ -1785,6 +1785,14 @@
       "scenario": "G7: 5 daily missions, 5 new words, greeted by real name",
       "status": "PASS",
       "actual": ">0/5< words=5"
+    },
+    {
+      "id": "LX5-DISC",
+      "module": "Learning Experience 5.0",
+      "severity": "High",
+      "scenario": "My Learning Discoveries renders for the child and is private (parent session redirected)",
+      "status": "PASS",
+      "actual": ""
     },
     {
       "id": "LX5-HOME-1",

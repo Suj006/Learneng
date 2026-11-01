@@ -212,8 +212,9 @@ export async function adaptBand(childId: string, grade: string) {
 }
 
 export async function myWords(childId: string) {
-  return query<Word & { status: string; favourite: boolean; correct_count: number; wrong_count: number; due_on: string; box: number }>(
-    `select ${WORD_COLS}, p.status, p.favourite, p.correct_count, p.wrong_count, p.box, to_char(p.due_on,'YYYY-MM-DD') due_on
+  return query<Word & { status: string; favourite: boolean; correct_count: number; wrong_count: number; due_on: string; box: number; first_seen: string; last_practised: string | null; used_in_writing: number; used_in_speaking: number }>(
+    `select ${WORD_COLS}, p.status, p.favourite, p.correct_count, p.wrong_count, p.box, to_char(p.due_on,'YYYY-MM-DD') due_on,
+            to_char(p.first_seen_at,'YYYY-MM-DD') first_seen, to_char(p.last_practised_at,'YYYY-MM-DD') last_practised, p.used_in_writing, p.used_in_speaking
      from child_vocabulary_progress p join vocabulary_master v on v.id = p.word_id
      where p.child_id = $1 order by p.first_seen_at desc, v.word`,
     [childId],

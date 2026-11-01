@@ -5,10 +5,11 @@ import { useSearchParams } from "next/navigation";
 import { api, speak } from "@/lib/client";
 import { CharacterSays, Spinner } from "@/components/ui";
 
-type W = { id: string; word: string; emoji: string; phonetic: string; meaning: string; example: string; status: string; favourite: boolean; due_on: string; correct_count: number; wrong_count: number };
+type W = { id: string; word: string; emoji: string; phonetic: string; meaning: string; example: string; status: string; favourite: boolean; due_on: string; correct_count: number; wrong_count: number; first_seen?: string; last_practised?: string | null; used_in_writing?: number; used_in_speaking?: number };
 const FILTERS = [["all", "All"], ["due", "Due for revision"], ["discovered", "Discovered"], ["practising", "Practising"], ["mastered", "Mastered 👑"], ["favourite", "Favourites ❤️"]];
 const BADGE: Record<string, string> = { discovered: "🌱 Discovered", practising: "🔁 Practising", mastered: "👑 Mastered" };
 
+const fmt = (d: string) => new Date(`${d}T00:00:00`).toLocaleDateString(undefined, { day: "numeric", month: "short" });
 export function NotebookClient() {
   const params = useSearchParams();
   const [words, setWords] = useState<W[] | null>(null);
@@ -39,6 +40,16 @@ export function NotebookClient() {
               <button aria-label={w.favourite ? "Remove favourite" : "Add favourite"} onClick={async () => { await api("/api/words/favourite", { body: { wordId: w.id, favourite: !w.favourite } }); setWords(words.map((x) => (x.id === w.id ? { ...x, favourite: !x.favourite } : x))); }} className="text-2xl">{w.favourite ? "❤️" : "🤍"}</button>
             </div>
             <p className="mt-2 text-xs italic text-vibe-lavender">“{w.example}”</p>
+            <details className="mt-2 text-xs" data-testid="word-history">
+              <summary className="cursor-pointer font-bold text-vibe-aqua-ink">📅 Word history</summary>
+              <ul className="mt-1 space-y-0.5 text-vibe-lavender">
+                {w.first_seen && <li>Discovered: {fmt(w.first_seen)}</li>}
+                <li>Last practised: {w.last_practised ? fmt(w.last_practised) : "not yet"}</li>
+                <li>Next revision: {w.status === "mastered" && w.due_on > today ? `${fmt(w.due_on)} (memory check)` : isDue(w) ? "today — ready now!" : fmt(w.due_on)}</li>
+                <li>Practice: {w.correct_count} right · {w.wrong_count} to learn from</li>
+                {(w.used_in_writing || w.used_in_speaking) ? <li>Used in writing {w.used_in_writing ?? 0}× · speaking {w.used_in_speaking ?? 0}×</li> : null}
+              </ul>
+            </details>
             <div className="mt-3 flex items-center justify-between"><span className="chip">{BADGE[w.status]}</span><button className="btn-ghost btn-sm" onClick={() => speak(w.word)}>🔊</button></div>
           </article>
         ))}

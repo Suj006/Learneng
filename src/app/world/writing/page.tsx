@@ -18,7 +18,7 @@ export default async function Writing({ searchParams }: { searchParams: Promise<
   ]);
   return (
     <div>
-      <PageTitle title="✍️ Creative Writing Studio" subtitle={`${count[0].n.toLocaleString()} topics in the library — and you'll always get fresh ones.`} right={<Link href="/world/story-builder" className="btn-ghost btn-sm">📜 Story Builder</Link>} />
+      <PageTitle title="✍️ Creative Writing Studio" subtitle={`${count[0].n.toLocaleString()} topics in the library — and you'll always get fresh ones.`} right={<span className="flex gap-2"><Link href="/world/writing/improve" className="btn-ghost btn-sm">✨ Improve My Sentence</Link><Link href="/world/story-builder" className="btn-ghost btn-sm">📜 Story Builder</Link></span>} />
       <CharacterSays who="story" mood="welcome">Pick a topic that sparks your imagination! I'll suggest power words, and GRAMMY will give you kind feedback.</CharacterSays>
       <div className="row-scroll mt-6">
         <Link href="/world/writing" className={`btn btn-sm shrink-0 ${!cat ? "bg-vibe-cta text-white" : "btn-ghost"}`}>🎲 Surprise me</Link>

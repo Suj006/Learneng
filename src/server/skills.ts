@@ -95,6 +95,8 @@ export async function skillProfile(childId: string) {
   });
 }
 
+export type Stage = "locked" | "ready" | "started" | "practising" | "developing" | "mastered";
+export const STAGE_LABEL: Record<Stage, string> = { locked: "Locked", ready: "Ready to start", started: "Started", practising: "Practising", developing: "Developing", mastered: "Demonstrated mastery" };
 export async function skillTree(childId: string, band: number) {
   const [nodes, ev] = await Promise.all([
     query<{ slug: string; branch: string; title: string; description: string; evidence: string; min_attempts: number; min_accuracy: number; prereq: string | null; band_min: number }>(
@@ -112,7 +114,10 @@ export async function skillTree(childId: string, band: number) {
     const mastered = prereqOk && band >= n.band_min && attempts >= n.min_attempts && accuracy >= n.min_accuracy;
     const st = mastered ? "mastered" : prereqOk && band >= n.band_min ? "developing" : "locked";
     status.set(n.slug, st);
-    out.push({ ...n, attempts, accuracy, status: st, progress: Math.min(100, Math.round((attempts / n.min_attempts) * 100)) });
+    // Growth stage comes ONLY from learning evidence (attempts + accuracy), never from XP or coins.
+    const stage: Stage = st === "mastered" ? "mastered" : st === "locked" ? "locked" : attempts === 0 ? "ready"
+      : attempts < Math.ceil(n.min_attempts / 2) ? "started" : attempts < n.min_attempts ? "practising" : "developing";
+    out.push({ ...n, attempts, accuracy, status: st, stage, progress: Math.min(100, Math.round((attempts / n.min_attempts) * 100)) });
   }
   return out;
 }

@@ -98,7 +98,7 @@ export function Adventure({ d }: { d: AdventureData }) {
           <div className="hidden md:block"><Avatar look={d.avatar} art={d.art} size={130} pet={d.pet?.emoji} /></div>
         </div>
       </section>
-      <div className="-mt-4 flex justify-end"><Link href="/world/look" className="btn-ghost btn-sm">🎨 My look</Link></div>
+      <div className="-mt-4 flex justify-end"><Link href="/world/passport" className="btn-ghost btn-sm">🛂 My passport</Link><Link href="/world/look" className="btn-ghost btn-sm ml-2">🎨 My look</Link></div>
 
       {/* RECOMMENDED FOR YOU — Learning Intelligence (five balanced categories, specific content, friendly reasons) */}
       {d.recs.length > 0 && (

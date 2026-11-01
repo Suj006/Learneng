@@ -238,7 +238,7 @@ const parentCookie = fam.parent.cookie();
 const admin = client(); await admin.call("/api/auth/login-admin", { email: "admin@pingvibe.local", password: "ChangeMe!2026" });
 
 const PUBLIC = ["/", "/signup", "/login", "/login?as=parent", "/privacy", "/forgot-password", "/verify?expired=1"];
-const CHILD = ["/world", "/world/quest", "/world/map", "/world/map/vocabulary-forest", "/world/my-world", "/world/missions", "/world/arcade", "/world/arcade/word-hunter", "/world/writing", "/world/grammar", "/world/grammar/nouns", "/world/reading", "/world/reading/the-monsoon-puddle", "/world/speaking", "/world/listening", "/world/rewards", "/world/avatar", "/world/pets", "/world/skills", "/world/calendar", "/world/museum", "/world/collection", "/world/notebook", "/world/companion", "/world/me", "/world/story-builder", "/world/boss/word-thief"];
+const CHILD = ["/world", "/world/quest", "/world/map", "/world/map/vocabulary-forest", "/world/my-world", "/world/missions", "/world/arcade", "/world/arcade/word-hunter", "/world/writing", "/world/grammar", "/world/grammar/nouns", "/world/reading", "/world/reading/the-monsoon-puddle", "/world/speaking", "/world/listening", "/world/rewards", "/world/avatar", "/world/pets", "/world/skills", "/world/calendar", "/world/museum", "/world/collection", "/world/notebook", "/world/companion", "/world/me", "/world/story-builder", "/world/boss/word-thief", "/world/real-life", "/world/real-life/restaurant", "/world/writing/improve", "/world/passport"];
 const PARENT = ["/parent", `/parent/child/${fam.childId}`, "/parent/settings"];
 const ADMIN = ["/admin", "/admin/content", "/admin/economy", "/admin/events", "/admin/vocabulary", "/admin/grades"];
 

@@ -861,3 +861,18 @@ create table if not exists passport_stamps (
   primary key (child_id, slug)
 );
 insert into xp_config (key, label, xp, coins, daily_cap) values ('real_life', 'VIBE Real Life scenario', 40, 15, 4) on conflict (key) do nothing;
+
+-- LX6: Improve My Sentence. The child's original is always kept; suggestions are ideas, the child writes "mine".
+create table if not exists sentence_improvements (
+  id          uuid primary key default gen_random_uuid(),
+  child_id    uuid not null references children(id) on delete cascade,
+  original    text not null,
+  suggestions jsonb not null,
+  evaluator   text not null,
+  mine        text,
+  improved    boolean,
+  created_at  timestamptz not null default now(),
+  saved_at    timestamptz
+);
+create index if not exists sentence_improvements_child on sentence_improvements (child_id, created_at desc);
+insert into xp_config (key, label, xp, coins, daily_cap) values ('improve_sentence', 'Improve My Sentence', 15, 5, 5) on conflict (key) do nothing;

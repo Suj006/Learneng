@@ -1,0 +1,192 @@
+{
+  "generated_at": "2026-11-01T10:21:45.734Z",
+  "base": "http://localhost:3000",
+  "results": [
+    {
+      "id": "LX6-01",
+      "name": "Two G3 children with different activity get different recommendations",
+      "status": "PASS",
+      "actual": "A=learn_next:/world/grammar/articles|explore_new:/world/reading/the-clockwork-elephant|challenge:/world/arcade/boss-battle B=learn_next:/world/quest|explore_new:/world/reading/the-clockwork-elephant"
+    },
+    {
+      "id": "LX6-01b",
+      "name": "Every recommendation has a category and a child-friendly reason",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LX6-01c",
+      "name": "Recommendations link only to pages that exist",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LX6-02",
+      "name": "Maximum 5 new words per day",
+      "status": "PASS",
+      "actual": "5"
+    },
+    {
+      "id": "LX6-02b",
+      "name": "Notebook words carry history (date discovered, next revision, practice counts)",
+      "status": "PASS",
+      "actual": "{\"id\":\"6f20912c-6573-4b8d-872a-c16d6b85f0a7\",\"word\":\"delighted\",\"band\":3,\"part_of_speech\":\"adjective\",\"phonetic\":\"dih-LY-tid\",\"meaning\":\"Very pleased and happy.\",\"explanation\":\"When you get exactly th"
+    },
+    {
+      "id": "LX6-02c",
+      "name": "Notebook page renders",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LX6-03",
+      "name": "Reader shows reading level, text size controls and sentence replay",
+      "status": "PASS",
+      "actual": "200"
+    },
+    {
+      "id": "LX6-04",
+      "name": "Improve My Sentence keeps the original and gives explained suggestions",
+      "status": "PASS",
+      "actual": "{\"id\":\"61d64f23-fdc3-49bd-b7e3-7e4edc633791\",\"original\":\"i saw a big dog in the park\",\"praise\":\"What a lovely, full sentence! Let's make it shine even more.\",\"suggestions\":[{\"kind\":\"fix\",\"idea\":\"Check"
+    },
+    {
+      "id": "LX6-04b",
+      "name": "Suggestions are ideas, not a silent full rewrite",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LX6-04c",
+      "name": "Unchanged sentence is not counted as improved (no reward)",
+      "status": "PASS",
+      "actual": "{\"improved\":false,\"notes\":[\"Your sentence is the same as before — try changing one small thing.\"],\"original\":\"i saw a big dog in the park\",\"mine\":\"i saw a big d"
+    },
+    {
+      "id": "LX6-04d",
+      "name": "Child's own rewrite saved next to the original and rewarded once",
+      "status": "PASS",
+      "actual": "{\"improved\":true,\"notes\":[\"You added more detail. 🌟\",\"You used a power word. 💪\",\"Capital letter and end punctuation — perfect. ✅\"],\"original\":\"i saw a big dog"
+    },
+    {
+      "id": "LX6-04e",
+      "name": "Saving the same sentence twice is refused",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LX6-04f",
+      "name": "Private information is caught before any AI call",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LX6-05",
+      "name": "Real Life completes without a microphone (typed / choice mode)",
+      "status": "PASS",
+      "actual": "{\"result\":\"ok\",\"tip\":null,\"reply\":\"Here is your bill. Thank you for visiting Sunny Café!\",\"next\":null,\"done\":true,\"summary\":{\"great\":0,\"ok\":4,\"retries\":6,\"total\":4,\"slug\":\"restaurant\",\"level\":\"beginne"
+    },
+    {
+      "id": "LX6-06",
+      "name": "Restaurant: a natural alternative answer is accepted (not one exact sentence)",
+      "status": "PASS",
+      "actual": "{\"result\":\"great\",\"tip\":null,\"reply\":\"Great choice! One sandwich coming right up.\",\"next\":{\"index\":1,\"say\":\"Would you like something to drink?\",\"task\":\"Ask for a drink.\",\"options\":[{\"text\":\"Yes, could"
+    },
+    {
+      "id": "LX6-06b",
+      "name": "Suggested level adapts to age (Pre-KG beginner, G3 developing)",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LX6-06c",
+      "name": "Advanced level is a longer conversation",
+      "status": "PASS",
+      "actual": "5 vs 4"
+    },
+    {
+      "id": "LX6-06d",
+      "name": "Answers are never sent to the browser",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LX6-07",
+      "name": "Parent report: real-life scenarios and improved sentences counted from real data",
+      "status": "PASS",
+      "actual": "rl=1,1 imp=1,1 words=5,5"
+    },
+    {
+      "id": "LX6-07b",
+      "name": "Parent report lists recommended next activities",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LX6-07c",
+      "name": "A parent cannot open another family's child report",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LX6-08",
+      "name": "Skill tree shows growth stages and new branches (phonics, real world)",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LX6-08b",
+      "name": "Skill stages say they come from answers, not XP",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LX6-09",
+      "name": "Real-life passport stamp appears exactly once (also after reloading)",
+      "status": "PASS",
+      "actual": "1 1"
+    },
+    {
+      "id": "LX6-09b",
+      "name": "Replaying a scenario does not add a second stamp",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LX6-10",
+      "name": "Story Builder creation appears in the personal Story Gallery",
+      "status": "PASS",
+      "actual": "200"
+    },
+    {
+      "id": "LX6-10b",
+      "name": "Another child's gallery does not show it",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LX6-11",
+      "name": "Another child's Real Life run is refused",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LX6-12",
+      "name": "Another child's sentence cannot be saved",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LX6-13",
+      "name": "Unauthenticated access to LX6 APIs is refused",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "LX6-14",
+      "name": "Invalid input rejected with 400 (not 500)",
+      "status": "PASS",
+      "actual": ""
+    }
+  ]
+}

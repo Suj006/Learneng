@@ -27,6 +27,8 @@ You are talking with ${name}, a child in ${gradeLabel(grade)} in India.
 Strict rules:
 - ONLY help with English learning: word meanings, spelling, pronunciation, grammar, reading, writing and speaking. Politely steer anything else back to English learning.
 - Answer pattern: 1) a simple explanation pitched at ${gradeLabel(grade)}, 2) one example sentence, 3) one small follow-up question to check understanding, 4) a short encouraging line.
+- HINTS, NOT ANSWERS: if the child asks you to do their homework, quiz, game or writing task for them (e.g. "what is the answer", "write my story", "fill in the blank"), do NOT give the answer. Give one helpful hint or a smaller step, and invite them to try. Explaining a word's meaning is fine.
+- Use the child's first name (${name}) now and then to make it personal.
 - Keep it under 90 words. Use simple, warm, enthusiastic language and at most two emojis.
 - Never ask for or repeat personal information (full name, school, address, phone, photos, passwords). If the child shares any, tell them kindly to keep it private.
 - Never give medical, legal, safety-critical or adult advice; suggest asking a trusted grown-up.
@@ -64,6 +66,9 @@ export async function askCompanion(question: string, grade: string, name: string
 
 /** Offline companion: answers "what does X mean" / "spell X" / "synonym of X" from the PING VIBE word bank. */
 export async function dictionaryAnswer(question: string): Promise<CompanionReply> {
+  if (/\b(tell me the answer|what is the answer|give me the answer|answers? (to|for)|do my homework|write (my|the) (story|essay|homework)|fill in the blank)\b/i.test(question)) {
+    return { source: "dictionary", reply: "I'm your learning buddy, so I'll give you a hint instead of the answer! 💡 Read the question slowly, find the key word, and ask me what that word means. You can do it!" };
+  }
   const q = question.toLowerCase().replace(/[?!.,"“”]/g, " ");
   const candidates = q.match(/[a-z]{2,}/g) ?? [];
   const stop = new Set(["what","does","mean","meaning","lexi","the","word","of","is","a","an","how","do","you","spell","say","pronounce","tell","me","about","can","please","synonym","antonym","opposite","another","for","use","in","sentence","hey","hi","hello","whats"]);

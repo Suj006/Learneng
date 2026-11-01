@@ -1,5 +1,5 @@
 import { requireChild } from "@/server/session";
-import { skillProfile, skillTree } from "@/server/skills";
+import { skillProfile, skillTree, STAGE_LABEL } from "@/server/skills";
 import { SKILL_BRANCHES } from "@/server/content/game";
 import { bandForGrade } from "@/lib/grades";
 import { Character, type CharacterName } from "@/components/Character";
@@ -13,6 +13,7 @@ export default async function Skills() {
   return (
     <div>
       <PageTitle title="My English Skill Tree" subtitle="Your skills grow as you play. Every branch grows at its own speed — keep exploring!" />
+      <p className="mb-4 text-xs text-vibe-lavender">Stages: 🌱 Started → 🌿 Practising → 🌳 Developing → ★ Demonstrated mastery. Stages grow from your answers, not from XP or coins.</p>
       <div className="mb-8 flex flex-wrap gap-2">{profile.map((p) => <span key={p.key} className="chip text-sm">{p.title}: <b className="text-ink">{p.growth}</b></span>)}</div>
       <div className="grid gap-6 lg:grid-cols-2">
         {SKILL_BRANCHES.map((b) => {
@@ -26,7 +27,7 @@ export default async function Skills() {
                   <li key={n.slug} className="relative">
                     <span className={`absolute -left-[30px] top-1 grid h-6 w-6 place-items-center rounded-full text-xs ${n.status === "mastered" ? "bg-vibe-sun text-vibe-night" : n.status === "developing" ? "bg-vibe-aqua/30" : "bg-glass/10"}`}>{n.status === "mastered" ? "★" : n.status === "developing" ? "•" : "🔒"}</span>
                     <div className={n.status === "locked" ? "text-vibe-lavender" : ""}>
-                      <b>{n.title}</b> <span className="text-xs text-vibe-lavender">— {n.description}</span>
+                      <b>{n.title}</b> <span className="chip ml-1 text-[10px]" data-stage={n.stage}>{({ ready: "", started: "🌱 ", practising: "🌿 ", developing: "🌳 ", mastered: "★ ", locked: "🔒 " } as Record<string, string>)[n.stage]}{STAGE_LABEL[n.stage]}</span> <span className="text-xs text-vibe-lavender">— {n.description}</span>
                       {n.status !== "locked" && n.status !== "mastered" && (<div className="mt-1 flex items-center gap-2 text-xs"><Progress value={n.progress} className="h-1.5 max-w-[160px]" /><span>{n.attempts}/{n.min_attempts} tries · {n.accuracy}% (need {n.min_accuracy}%)</span></div>)}
                       {n.status === "mastered" && <div className="text-xs text-vibe-sun-ink">Unlocked! {n.accuracy}% accuracy</div>}
                       {n.status === "locked" && <div className="text-xs">{n.prereq ? "Unlock the skill above first" : "Coming at a higher grade"}</div>}

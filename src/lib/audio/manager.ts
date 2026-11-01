@@ -143,7 +143,7 @@ class AudioManager {
    * `server`: allow the server neural voice (only for PING VIBE's own lines and content, never children's text).
    * `caption`: show the words on screen (important instructions and character lines).
    */
-  async say(who: Speaker, text: string, opts: { rate?: number; server?: boolean; caption?: boolean } = {}): Promise<boolean> {
+  async say(who: Speaker, text: string, opts: { rate?: number; server?: boolean; caption?: boolean; onEnd?: () => void } = {}): Promise<boolean> {
     if (!text) return false;
     if (opts.caption !== false) this.showCaption(who, text);
     if (!this.voiceActive) return false;
@@ -151,12 +151,13 @@ class AudioManager {
     this.stopVoice();
     const token = ++this.speaking;
     this.duckMusic(true);
-    const end = () => { if (this.speaking === token) { this.speaking = 0; this.duckMusic(false); } };
+    const end = () => { if (this.speaking === token) { this.speaking = 0; this.duckMusic(false); opts.onEnd?.(); } };
     if (opts.server && this.serverTts) {
       try { await this.playServer(who, text, end); return true; } catch { /* fall back to the browser voice */ }
       if (this.speaking !== token) return false;
     }
     if (typeof window === "undefined" || !("speechSynthesis" in window)) { end(); return false; }
+    // (onEnd is not called when a newer line interrupts this one: callers treat that as "stopped")
     const p = PROFILES[who];
     const u = new SpeechSynthesisUtterance(shapeLine(text));
     const v = await voiceFor(who);

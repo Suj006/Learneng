@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { requireParent } from "@/server/session";
 import { one, query } from "@/server/db";
-import { annualJourney, childReport, improvementAreas, weeklyStory } from "@/server/reports";
+import { annualJourney, childReport, improvementAreas, periodInsights, recentRecommendations, weeklyStory } from "@/server/reports";
 import { skillProfile, skillTree } from "@/server/skills";
 import { timeline } from "@/server/world";
 import { bandForGrade, gradeLabel } from "@/lib/grades";
@@ -35,10 +35,11 @@ export default async function ChildReportPage({ params }: { params: Promise<{ id
   const c = await one<{ id: string; display_name: string; grade: string; username: string }>(`select id, display_name, grade, username from children where id = $1 and parent_id = $2 and status = 'active'`, [id, p.id]);
   const look = c ? await one<{ color_theme: string | null; motion: "full" | "calm" | "off" }>(`select color_theme, motion from child_profiles where child_id = $1`, [c.id]) : null;
   if (!c) notFound();
-  const [r, j, skills, tree, tl, writing, words] = await Promise.all([
+  const [r, j, skills, tree, tl, writing, words, wk, mo, recs] = await Promise.all([
     childReport(c.id), annualJourney(c.id, c.grade), skillProfile(c.id), skillTree(c.id, bandForGrade(c.grade)), timeline(c.id),
     query<{ title: string; content: string; score: number | null; submitted_at: string }>(`select w.title, w.content, e.score, w.submitted_at from writing_submissions w left join writing_evaluations e on e.submission_id = w.id where w.child_id = $1 and w.status = 'evaluated' order by w.submitted_at desc limit 5`, [c.id]),
     query<{ id: string; word: string; emoji: string }>(`select v.id, v.word, v.emoji from child_vocabulary_progress p join vocabulary_master v on v.id = p.word_id where p.child_id = $1 order by p.first_seen_at desc limit 60`, [c.id]),
+    periodInsights(c.id, 7), periodInsights(c.id, 30), recentRecommendations(c.id),
   ]);
   const masteredNodes = tree.filter((n) => n.status === "mastered").length;
   return (
@@ -56,6 +57,21 @@ export default async function ChildReportPage({ params }: { params: Promise<{ id
           </div>
         </div>
         <div className="card p-6"><h2 className="title-md">Last 7 days</h2><div className="mt-3"><Bars label="Minutes per day" value="Minutes learning per day" rows={r.daily.map((d) => ({ key: d.day.slice(8), v: d.minutes }))} /></div></div>
+      </section>
+
+      <section className="card p-6" data-testid="parent-insights">
+        <h2 className="title-md">This week and this month</h2>
+        <p className="mt-1 text-sm text-vibe-lavender">Counted from {c.display_name}&apos;s real activity. Nothing here is estimated.</p>
+        <div className="mt-4 overflow-x-auto"><table className="w-full min-w-[480px] text-left text-sm"><thead className="text-vibe-lavender"><tr><th className="py-2">Activity</th><th>Last 7 days</th><th>Last 30 days</th></tr></thead>
+          <tbody>{([
+            ["New words learned", wk.words_new, mo.words_new], ["Words revised", wk.words_revised, mo.words_revised],
+            ["Real-life scenarios completed", wk.real_life, mo.real_life], ["Speaking sessions", wk.speaking, mo.speaking],
+            ["Listening challenges", wk.listening, mo.listening], ["Stories read", wk.reading, mo.reading], ["Sentences improved", wk.improved, mo.improved],
+          ] as [string, number, number][]).map(([k, a, b]) => <tr key={k} className="border-t border-line/5"><td className="py-2">{k}</td><td>{a}</td><td>{b}</td></tr>)}</tbody></table></div>
+        {mo.scenarios.length > 0 && <p className="mt-3 text-sm">🌍 Real-life practice this month: {mo.scenarios.join(", ")}.</p>}
+        <p className="mt-2 text-sm">🧠 Word retention: {mo.retention === null ? "not enough words yet to measure (needs at least 5 words older than 3 days)" : `${mo.retention}% of older words were answered correctly again on a later day`}.</p>
+        {recs.length > 0 && (<><h3 className="mt-4 font-display font-bold">Recommended next activities</h3>
+          <ul className="mt-2 space-y-1 text-sm">{recs.map((x) => <li key={x.module}>• <b>{x.title}</b> <span className="text-vibe-lavender">— {x.reason}</span></li>)}</ul></>)}
       </section>
 
       <section className="card p-6">

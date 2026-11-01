@@ -34,7 +34,7 @@ export const THEMES: Record<ThemeName, Theme> = {
 
 /** Which theme plays on which page. */
 export function themeForPath(path: string): ThemeName {
-  if (/^\/world\/(rewards|museum|collection|certificate|avatar|pets)/.test(path)) return "rewards";
+  if (/^\/world\/(rewards|passport|museum|collection|certificate|avatar|pets)/.test(path)) return "rewards";
   if (/^\/world\/(quest|notebook|revision|map\/vocabulary-forest|companion)/.test(path)) return "forest";
   if (/^\/world\/(grammar|map\/grammar-galaxy)/.test(path)) return "galaxy";
   if (/^\/world\/(writing|story-builder|map\/storytelling-castle)/.test(path)) return "castle";

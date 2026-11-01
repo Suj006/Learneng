@@ -97,3 +97,29 @@ export async function annualJourney(childId: string, grade: string) {
      from m order by m.month`, [childId, APP_TZ]);
   return { ...j!, months };
 }
+
+/**
+ * LX6 parent insights for a period (7 or 30 days), all from real activity rows — nothing estimated or invented.
+ */
+export async function periodInsights(childId: string, days: 7 | 30) {
+  const r = (await one<{ real_life: number; scenarios: string[]; words_new: number; words_revised: number; speaking: number; listening: number; improved: number; reading: number; words_total: number; words_retained: number }>(
+    `select
+      (select count(*)::int from real_life_runs where child_id = $1 and completed_at > now() - make_interval(days => $2)) real_life,
+      array(select distinct s.title from real_life_runs r join real_life_scenarios s on s.slug = r.slug where r.child_id = $1 and r.completed_at > now() - make_interval(days => $2)) scenarios,
+      (select count(*)::int from child_vocabulary_progress where child_id = $1 and first_seen_at > now() - make_interval(days => $2)) words_new,
+      (select count(*)::int from child_vocabulary_progress where child_id = $1 and last_practised_at > now() - make_interval(days => $2) and last_practised_at::date > first_seen_at::date) words_revised,
+      (select count(*)::int from speaking_sessions where child_id = $1 and created_at > now() - make_interval(days => $2)) speaking,
+      (select count(*)::int from activity_log where child_id = $1 and created_at > now() - make_interval(days => $2) and module = 'challenge_listening') listening,
+      (select count(*)::int from sentence_improvements where child_id = $1 and improved and saved_at > now() - make_interval(days => $2)) improved,
+      (select count(*)::int from story_progress p where p.child_id = $1 and p.completed_at > now() - make_interval(days => $2)) reading,
+      (select count(*)::int from child_vocabulary_progress where child_id = $1 and first_seen_at < now() - interval '3 days') words_total,
+      (select count(*)::int from child_vocabulary_progress where child_id = $1 and first_seen_at < now() - interval '3 days' and correct_count > wrong_count and last_correct_on is not null and last_correct_on > first_seen_at::date) words_retained`,
+    [childId, days]))!;
+  return { ...r, retention: r.words_total >= 5 ? Math.round((100 * r.words_retained) / r.words_total) : null };
+}
+
+/** Today's recommended next activities for the child (the same ones the child sees). */
+export async function recentRecommendations(childId: string) {
+  return query<{ module: string; title: string; reason: string }>(
+    `select module, title, reason from personalised_recommendations where child_id = $1 and created_on = (select max(created_on) from personalised_recommendations where child_id = $1) order by priority desc`, [childId]);
+}
