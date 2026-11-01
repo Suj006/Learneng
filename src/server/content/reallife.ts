@@ -1,4 +1,5 @@
 import type { Scenario } from "@/lib/reallife";
+import { REAL_LIFE_MORE } from "./reallife2";
 
 /**
  * VIBE REAL LIFE starter scenarios (seeded into real_life_scenarios; admins can add or edit scenarios as data).
@@ -281,4 +282,5 @@ export const REAL_LIFE_SEED: Scenario[] = [
     ],
     reflection: ["You asked helpers “What do you do?”.", "You sent a letter with “I would like to send…”.", "You thanked people who help our community."],
   },
+  ...REAL_LIFE_MORE,
 ];

@@ -6,7 +6,7 @@ import { Scene, type SceneName } from "@/components/Scenes";
 import { PageTitle, Progress } from "@/components/ui";
 
 export const metadata = { title: "Adventure Map" };
-const POS = [{ x: 8, y: 52 }, { x: 36, y: 14 }, { x: 64, y: 50 }, { x: 40, y: 72 }, { x: 70, y: 10 }, { x: 8, y: 8 }];
+const POS = [{ x: 8, y: 52 }, { x: 36, y: 14 }, { x: 64, y: 50 }, { x: 40, y: 72 }, { x: 70, y: 10 }, { x: 8, y: 8 }, { x: 74, y: 76 }];
 
 export default async function MapPage() {
   const child = await requireChild();

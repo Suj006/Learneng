@@ -20,8 +20,8 @@ describe("VIBE REAL LIFE answer evaluation", () => {
     const r = evaluateAnswer(order, "Can I have a pizza please");
     expect(fillReply(order.reply, r.item)).toBe("Great choice! One pizza coming right up.");
   });
-  it("all 12 scenarios: every model answer is accepted and every 'great' option passes", () => {
-    expect(REAL_LIFE_SEED).toHaveLength(12);
+  it("all 24 scenarios: every model answer is accepted and every 'great' option passes", () => {
+    expect(REAL_LIFE_SEED).toHaveLength(24);
     for (const s of REAL_LIFE_SEED) for (const t of s.turns) {
       expect(evaluateAnswer(t, t.model).result, `${s.slug}: ${t.model}`).toBe("great");
       for (const o of t.options.filter((x) => x.result === "great")) expect(["great", "ok"], `${s.slug}: ${o.text}`).toContain(evaluateAnswer(t, o.text).result);

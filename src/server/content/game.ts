@@ -140,6 +140,10 @@ const L = (slug: string, kingdom: string, title: string, emoji: string, kind: st
   ({ slug, kingdom, title, emoji, kind, x, y, unlock_metric, unlock_target, unlock_label, href, reward_crystals, reward_coins });
 
 export const LOCATIONS = [
+  L("pv-gate", "phonics-valley", "Echo Gate", "🎶", "mission", 14, 70, "always", 0, "Open", "/world/phonics"),
+  L("pv-rhyme", "phonics-valley", "Rhyming River", "🎵", "mission", 40, 50, "phonics_units", 3, "Pass 3 sound paths", "/world/phonics/rhyming"),
+  L("pv-treasure", "phonics-valley", "Singing Shell Treasure", "🐚", "treasure", 64, 72, "phonics_units", 6, "Pass 6 sound paths", null, 2, 30),
+  L("pv-secret", "phonics-valley", "Secret Sound Cave", "🕳️", "secret", 82, 38, "phonics_units", 10, "Pass 10 sound paths", "/world/phonics/decoding", 3, 0),
   L("vf-gate", "vocabulary-forest", "Whispering Gate", "🌿", "mission", 12, 78, "always", 0, "Open", "/world/quest"),
   L("vf-notebook", "vocabulary-forest", "Word Tree Hollow", "🌳", "mission", 34, 55, "words_discovered", 10, "Discover 10 words", "/world/notebook"),
   L("vf-treasure", "vocabulary-forest", "Mushroom Treasure", "🍄", "treasure", 55, 72, "words_discovered", 30, "Discover 30 words", null, 2, 30),

@@ -1,0 +1,174 @@
+{
+  "generated_at": "2026-11-01T12:49:58.115Z",
+  "base": "http://localhost:3000",
+  "results": [
+    {
+      "id": "5M-01",
+      "name": "5-new-words limit still enforced",
+      "status": "PASS",
+      "actual": "5"
+    },
+    {
+      "id": "5M-02",
+      "name": "Every recommendation carries skill, difficulty, expected minutes and completion status",
+      "status": "PASS",
+      "actual": "{\"kind\":\"learn_next\",\"skill\":\"phonics\",\"title\":\"Phonics: Letter Sounds\",\"reason\":\"LEXI has a new sound path ready for you!\",\"href\":\"/world/phonics/letter-sounds\",\"emoji\":\"🔤\",\"who\":\"lexi\",\"difficulty\":\"Developing\",\"minutes\":6,\"done\":false}"
+    },
+    {
+      "id": "5M-03",
+      "name": "Different children get different recommendations (G1 after quest vs fresh G6)",
+      "status": "PASS",
+      "actual": "/world/phonics/letter-sounds,/world/reading/the-honest-potter | /world/quest,/world/reading/signal-from-the-reef"
+    },
+    {
+      "id": "5M-04",
+      "name": "Young child is offered foundational phonics as Learn Next once the quest is done",
+      "status": "PASS",
+      "actual": "learn_next:phonics,explore_new:reading"
+    },
+    {
+      "id": "5M-05",
+      "name": "Parent skill dashboard shows all 11 skills with evidence counts from real answers",
+      "status": "PASS",
+      "actual": "<span class=\"text-vibe-lavender\">Not enough evidence yet</span> | — | 11"
+    },
+    {
+      "id": "5M-06",
+      "name": "Insufficient evidence is stated, not hidden behind a percentage",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "5M-07",
+      "name": "Parent tips are generated from the child's activity",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "5M-08",
+      "name": "Revision overview (revise now / waiting / upcoming / memory checks) renders",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "5M-09",
+      "name": "Admin can preview a child's recommendations",
+      "status": "PASS",
+      "actual": "200"
+    },
+    {
+      "id": "5M-10",
+      "name": "Excluding content removes it from recommendations",
+      "status": "PASS",
+      "actual": "signal-from-the-reef → /world/quest,/world/reading/the-clockwork-elephant"
+    },
+    {
+      "id": "5M-11",
+      "name": "Recommendations admin page lists rules and analytics",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "5M-12",
+      "name": "Children cannot use the admin recommendations API",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "5M-13",
+      "name": "Phonics Valley has 12 units; only the first is open for a fresh Grade 6 child (ability, not grade)",
+      "status": "PASS",
+      "actual": "100000000000"
+    },
+    {
+      "id": "5M-14",
+      "name": "A locked unit cannot be started",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "5M-15",
+      "name": "Phonics questions never include the answer key",
+      "status": "PASS",
+      "actual": "200"
+    },
+    {
+      "id": "5M-16",
+      "name": "Answers must be in order (no skipping)",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "5M-17",
+      "name": "Another child cannot answer this attempt",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "5M-18",
+      "name": "Each answer gets feedback with an explanation; completion scores the unit",
+      "status": "PASS",
+      "actual": "{\"right\":false,\"answer\":\"m\",\"explain\":\"“moon” starts with the sound of the letter M.\",\"done\":true,\"correct\":0,\"total\":6,\"unit\":\"letter-sounds\",\"score\":0,\"passed"
+    },
+    {
+      "id": "5M-19",
+      "name": "Phonics completion awards XP through the ledger",
+      "status": "PASS",
+      "actual": "{\"xp\":20,\"coins\":4,\"crystals\":0,\"capped\":false,\"duplicate\":false,\"restReminder\":false,\"levelUp\":null,\"achievements\":[],\"unlocks\":[]}"
+    },
+    {
+      "id": "5M-20",
+      "name": "Repeating the same unit the same day does not pay twice",
+      "status": "PASS",
+      "actual": "{\"xp\":0,\"coins\":0,\"crystals\":0,\"capped\":false,\"duplicate\":true,\"restReminder\":false,\"levelUp\":null,\"achievements\":[],\"unlocks\":[]}"
+    },
+    {
+      "id": "5M-21",
+      "name": "Finished attempt refuses more answers",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "5M-22",
+      "name": "Phonics practice is recorded as phonics evidence",
+      "status": "PASS",
+      "actual": "12"
+    },
+    {
+      "id": "5M-23",
+      "name": "Valley page and map include Phonics & Sound Valley",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "5M-24",
+      "name": "Phonics kingdom view (locations) renders",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "5M-25",
+      "name": "Passport stamp for Phonics Valley is earned once",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "5M-26",
+      "name": "All 24 Real Life scenarios available to a Grade 6 child",
+      "status": "PASS",
+      "actual": ""
+    },
+    {
+      "id": "5M-27",
+      "name": "New scenario accepts a natural alternative answer",
+      "status": "PASS",
+      "actual": "{\"result\":\"great\",\"tip\":null,\"reply\":\"The class is listening carefully.\",\"next\":{\"index\":1,\"say\":\"Tell us something interesting.\",\"task\":\"Share a fact.\",\"option"
+    },
+    {
+      "id": "5M-28",
+      "name": "Key child pages render",
+      "status": "PASS",
+      "actual": ""
+    }
+  ]
+}

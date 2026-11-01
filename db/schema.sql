@@ -876,3 +876,58 @@ create table if not exists sentence_improvements (
 );
 create index if not exists sentence_improvements_child on sentence_improvements (child_id, created_at desc);
 insert into xp_config (key, label, xp, coins, daily_cap) values ('improve_sentence', 'Improve My Sentence', 15, 5, 5) on conflict (key) do nothing;
+
+-- Milestone 1: unified learning history — one timestamped row per server-validated evidence event.
+create table if not exists learning_events (
+  id          bigserial primary key,
+  child_id    uuid not null references children(id) on delete cascade,
+  skill       text not null,
+  area        text,
+  correct     integer not null,
+  attempts    integer not null,
+  source      text,
+  content_id  text,
+  difficulty  text,
+  created_at  timestamptz not null default now()
+);
+create index if not exists learning_events_child on learning_events (child_id, created_at desc);
+create index if not exists learning_events_area on learning_events (child_id, area, created_at desc);
+
+-- Milestone 1.8: admin control over recommended content (prioritise / exclude a specific item).
+create table if not exists recommendation_rules (
+  id          uuid primary key default gen_random_uuid(),
+  kind        text not null check (kind in ('story','scenario','grammar','phonics','game')),
+  ref         text not null,
+  action      text not null check (action in ('prioritise','exclude')),
+  note        text,
+  created_at  timestamptz not null default now(),
+  unique (kind, ref)
+);
+
+-- Milestone 2.6: Phonics & Sound Valley. Answer keys stay on the server; units open by demonstrated ability.
+create table if not exists phonics_attempts (
+  id           uuid primary key default gen_random_uuid(),
+  child_id     uuid not null references children(id) on delete cascade,
+  unit         text not null,
+  key          jsonb not null,
+  answers      jsonb not null default '[]'::jsonb,
+  correct      integer not null default 0,
+  total        integer not null,
+  created_at   timestamptz not null default now(),
+  completed_at timestamptz
+);
+create index if not exists phonics_attempts_child on phonics_attempts (child_id, created_at desc);
+create table if not exists phonics_progress (
+  child_id     uuid not null references children(id) on delete cascade,
+  unit         text not null,
+  best_score   smallint not null default 0,
+  completions  integer not null default 0,
+  last_at      timestamptz not null default now(),
+  primary key (child_id, unit)
+);
+insert into xp_config (key, label, xp, coins, daily_cap) values ('phonics', 'Phonics & Sound Valley', 40, 8, 4) on conflict (key) do nothing;
+insert into kingdoms (slug, title, emoji, art, description, href, unlock_level, sort_order)
+  values ('phonics-valley', 'Phonics & Sound Valley', '🎶', 'valley', 'Letter sounds, blending, rhymes and reading with LEXI.', '/world/phonics', 1, 6)
+  on conflict (slug) do nothing;
+-- Phonics Valley evidence now feeds the second phonics node (listen-and-spell still feeds the first).
+update skill_nodes set evidence = 'phonics' where slug = 'ph-blend' and evidence = 'listen_spell';

@@ -15,7 +15,7 @@ export interface AdventureData {
   name: string; buddy: CharacterName; evolution: number; avatar: AvatarLook; art: AvatarArt; pet: { emoji: string; name: string; nickname: string | null; hint_style: string } | null;
   memory: { who: CharacterName; line: string }[]; welcomeBack: number | null;
   journey: { day: number; planDay: number; year: number; theme: { title: string; emoji: string }; focus: string; items: { type: string; title: string; emoji: string; href: string; detail: string; done: boolean; core: boolean; adapted?: string }[]; dayComplete: boolean; completedToday: boolean };
-  missions: MissionData[]; recs: { kind: "learn_next" | "practise_more" | "revise_now" | "explore_new" | "challenge"; title: string; reason: string; href: string; emoji: string; who: CharacterName }[];
+  missions: MissionData[]; recs: { kind: "learn_next" | "practise_more" | "revise_now" | "explore_new" | "challenge"; title: string; reason: string; href: string; emoji: string; who: CharacterName; minutes?: number; done?: boolean }[];
   events: { slug: string; title: string; emoji: string; description: string }[];
   kingdoms: { slug: string; title: string; emoji: string; art: string; unlocked: boolean; unlock_level: number; progress: number; href: string }[];
   status: Record<string, number>; skills: { key: string; title: string; level: string }[]; missionOfDay: string; dueWords: number;
@@ -70,6 +70,7 @@ export function Adventure({ d }: { d: AdventureData }) {
     { title: "Word Games Arcade", emoji: "🕹️", href: "/world/arcade", desc: "10 games with your words", status: `${status.games} games played`, pct: Math.min(100, status.games * 5) },
     { title: "Story Builder", emoji: "📜", href: "/world/story-builder", desc: "Mix a character, place & object", status: `${status.stories} stories`, pct: Math.min(100, status.stories * 20), skill: "writing" },
     { title: "Listening Lab", emoji: "🎧", href: "/world/listening", desc: "Train your super-ears", status: "Hear it, pick it", pct: 0, skill: "listening" },
+    { title: "Phonics & Sound Valley", emoji: "🎶", href: "/world/phonics", desc: "Letter sounds, blending and rhymes", status: "12 sound paths", pct: 0, skill: "phonics" },
     { title: "My Rewards", emoji: "🎁", href: "/world/rewards", desc: "Shop, achievements & museum", status: `${status.rewards} items owned`, pct: 0 },
   ];
   const skillOf = (k?: string) => d.skills.find((s) => s.key === k)?.level;
@@ -107,7 +108,8 @@ export function Adventure({ d }: { d: AdventureData }) {
             <Link key={r.kind + r.title} href={r.href} className={`card flex gap-3 p-4 ${i === 0 ? "ring-2 ring-vibe-purple/40" : ""}`}>
               <Character name={r.who} mood="hint" size={56} still className="shrink-0" />
               <span className="min-w-0"><span className="chip px-2 py-0.5 text-[10px] uppercase">{REC_LABEL[r.kind]}</span>
-                <b className="mt-1 block font-display">{r.emoji} {r.title}</b><span className="mt-0.5 block text-sm text-vibe-lavender">“{r.reason}”</span></span>
+                <b className="mt-1 block font-display">{r.emoji} {r.title}</b><span className="mt-0.5 block text-sm text-vibe-lavender">“{r.reason}”</span>
+                <span className="mt-1 block text-xs text-vibe-lavender">{r.done ? "✅ Done today — great job!" : r.minutes ? `⏱️ about ${r.minutes} min` : null}</span></span>
             </Link>
           ))}</div>
         </section>

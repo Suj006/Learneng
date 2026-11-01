@@ -5,13 +5,22 @@ import { one, query } from "./db";
  * Records evidence from ordinary gameplay (server-validated answers only) and
  * quietly refreshes the child's skill proficiency. Children never see this as a test.
  */
-export async function recordEvidence(childId: string, skill: string, correct: number, attempts: number) {
+export async function recordEvidence(childId: string, skill: string, correct: number, attempts: number, meta: { source?: string; contentId?: string; difficulty?: string } = {}) {
   if (attempts <= 0) return;
+  const c = Math.max(0, Math.min(correct, attempts));
   await query(
     `insert into skill_evidence (child_id, skill, correct, attempts) values ($1,$2,$3,$4)
      on conflict (child_id, skill) do update set correct = skill_evidence.correct + $3, attempts = skill_evidence.attempts + $4, updated_at = now()`,
-    [childId, skill, Math.max(0, correct), attempts]);
+    [childId, skill, c, attempts]);
+  // Unified learning history: one timestamped row per evidence event (trends, last activity, recent accuracy).
+  await query(`insert into learning_events (child_id, skill, area, correct, attempts, source, content_id, difficulty) values ($1,$2,$3,$4,$5,$6,$7,$8)`,
+    [childId, skill, areaOf(skill), c, attempts, meta.source ?? null, meta.contentId ?? null, meta.difficulty ?? null]);
   await refreshProficiency(childId);
+}
+
+/** Which of the 11 skill areas a micro-skill evidence key belongs to (first match). */
+export function areaOf(skill: string): string | null {
+  return AREAS.find((a) => (a.evidence as readonly string[]).includes(skill))?.key ?? null;
 }
 
 /** Eleven independent skill areas and the gameplay evidence that informs each. */
@@ -74,14 +83,65 @@ export const GRAMMAR_EVIDENCE: Record<string, string> = {
   opposites: "opposites", synonyms: "synonyms", sentence: "fill_blank",
 };
 
-/** Internal challenge level per skill (used for adaptation and in parent observations). */
-export const DIFFICULTY = ["Beginner", "Easy", "Intermediate", "Advanced", "Expert"] as const;
-export const difficultyLabel = (score: number): (typeof DIFFICULTY)[number] =>
-  score < 30 ? "Beginner" : score < 50 ? "Easy" : score < 70 ? "Intermediate" : score < 85 ? "Advanced" : "Expert";
+/** Five adaptive difficulty levels (used for adaptation and in parent observations). */
+export const DIFFICULTY = ["Beginner", "Developing", "Intermediate", "Advanced", "Challenge"] as const;
+export type Difficulty = (typeof DIFFICULTY)[number];
+export const difficultyLabel = (score: number): Difficulty =>
+  score < 30 ? "Beginner" : score < 50 ? "Developing" : score < 70 ? "Intermediate" : score < 85 ? "Advanced" : "Challenge";
 /** What a CHILD sees: always encouraging, never a ranking or a deficit label. */
-export const GROWTH: Record<(typeof DIFFICULTY)[number], string> = {
-  Beginner: "🌱 Sprouting", Easy: "🌿 Growing", Intermediate: "🌳 Progressing well", Advanced: "⭐ Strong", Expert: "🌟 Shining",
+export const GROWTH: Record<Difficulty, string> = {
+  Beginner: "🌱 Sprouting", Developing: "🌿 Growing", Intermediate: "🌳 Progressing well", Advanced: "⭐ Strong", Challenge: "🌟 Shining",
 };
+
+/** Confidence in an estimate, from the amount of evidence (never a conclusion from one or two answers). */
+export const confidenceOf = (attempts: number): "insufficient" | "low" | "medium" | "high" =>
+  attempts < MIN_EVIDENCE ? "insufficient" : attempts < 40 ? "low" : attempts < 100 ? "medium" : "high";
+
+/**
+ * Trend: compares the last 14 days with everything before, only when both windows have enough evidence.
+ * A difference under 8 points is "steady" (normal day-to-day variation).
+ */
+export function trendOf(recent: { c: number; n: number }, before: { c: number; n: number }): "improving" | "steady" | "needs_practice" | "unknown" {
+  if (recent.n < 8 || before.n < MIN_EVIDENCE) return "unknown";
+  const d = (recent.c / recent.n - before.c / before.n) * 100;
+  return d >= 8 ? "improving" : d <= -8 ? "needs_practice" : "steady";
+}
+
+/**
+ * Skill intelligence for all 11 areas: estimate, confidence, attempts, accuracy, recent vs historical accuracy,
+ * difficulty level, trend and last activity. Built from the aggregate evidence plus the timestamped learning history.
+ */
+export async function skillIntelligence(childId: string) {
+  const [profile, ev] = await Promise.all([
+    skillProfile(childId),
+    query<{ area: string; recent_c: number; recent_n: number; old_c: number; old_n: number; last_at: string | null }>(
+      `select area,
+              coalesce(sum(correct) filter (where created_at > now() - interval '14 days'),0)::int recent_c,
+              coalesce(sum(attempts) filter (where created_at > now() - interval '14 days'),0)::int recent_n,
+              coalesce(sum(correct) filter (where created_at <= now() - interval '14 days'),0)::int old_c,
+              coalesce(sum(attempts) filter (where created_at <= now() - interval '14 days'),0)::int old_n,
+              to_char(max(created_at),'YYYY-MM-DD') last_at
+         from learning_events where child_id = $1 and area is not null group by area`, [childId]),
+  ]);
+  const ev0 = await query<{ skill: string; correct: number; attempts: number }>(`select skill, correct, attempts from skill_evidence where child_id = $1`, [childId]);
+  return profile.map((p) => {
+    const e = ev.find((x) => x.area === p.key);
+    const area = AREAS.find((a) => a.key === p.key)!;
+    const rows = ev0.filter((r) => (area.evidence as readonly string[]).includes(r.skill));
+    const correct = rows.reduce((s, r) => s + r.correct, 0);
+    // Evidence recorded before the learning history existed counts as "historical".
+    const histN = p.attempts - (e?.recent_n ?? 0), histC = correct - (e?.recent_c ?? 0);
+    return {
+      ...p, correct,
+      accuracy: p.attempts ? Math.round((100 * correct) / p.attempts) : null,
+      confidence: confidenceOf(p.attempts),
+      recentAccuracy: e && e.recent_n >= 5 ? Math.round((100 * e.recent_c) / e.recent_n) : null,
+      recentAttempts: e?.recent_n ?? 0,
+      trend: trendOf({ c: e?.recent_c ?? 0, n: e?.recent_n ?? 0 }, { c: histC, n: histN }),
+      lastActivity: e?.last_at ?? null,
+    };
+  });
+}
 
 export async function skillProfile(childId: string) {
   const ev = await query<{ skill: string; correct: number; attempts: number }>(`select skill, correct, attempts from skill_evidence where child_id = $1`, [childId]);

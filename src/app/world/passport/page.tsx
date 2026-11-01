@@ -3,7 +3,7 @@ import { passport } from "@/server/passport";
 import { CharacterSays, PageTitle } from "@/components/ui";
 
 export const metadata = { title: "Adventure Passport" };
-const KIND: Record<string, string> = { kingdom: "Kingdoms visited", real_life: "Real-life places", words: "Word milestones", stories: "Stories", writing: "Writing", achievement: "Achievements" };
+const KIND: Record<string, string> = { kingdom: "Kingdoms visited", real_life: "Real-life places", words: "Word milestones", stories: "Reading", phonics: "Phonics", grammar: "Grammar", writing: "Writing & stories", speaking: "Speaking", listening: "Listening", skills: "Skill tree", achievement: "Achievements" };
 const fmt = (d: string) => new Date(`${d}T00:00:00`).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
 
 export default async function Passport() {

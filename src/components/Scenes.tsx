@@ -1,7 +1,7 @@
 "use client";
 import { useId } from "react";
 /** Original illustrated scenes for PING VIBE kingdoms (pure SVG, no external assets). */
-export type SceneName = "forest" | "galaxy" | "castle" | "mountains" | "ocean" | "arena" | "islands";
+export type SceneName = "forest" | "galaxy" | "castle" | "mountains" | "ocean" | "arena" | "islands" | "valley";
 
 const Stars = ({ n = 24, seed = 1 }: { n?: number; seed?: number }) => (
   <g fill="#fff">
@@ -29,6 +29,24 @@ export function Scene({ name, className = "" }: { name: SceneName; className?: s
   const uid = useId().replace(/[^a-zA-Z0-9]/g, "");
   const common = { viewBox: "0 0 400 220", preserveAspectRatio: "xMidYMid slice", className: `h-full w-full ${className}`, "aria-hidden": true } as const;
   switch (name) {
+    case "valley":
+      // Phonics & Sound Valley: rolling hills, a winding river of letters and floating music notes.
+      return (
+        <svg {...common}>
+          <defs><linearGradient id={`sv${uid}`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#7AD7F0" /><stop offset="1" stopColor="#C8F3E1" /></linearGradient></defs>
+          <rect width="400" height="220" fill={`url(#sv${uid})`} />
+          <circle cx="60" cy="48" r="22" fill="#FFD65A" />
+          <path d="M0 150 Q 80 110 160 145 T 320 140 T 400 130 V220 H0Z" fill="#7BD88F" />
+          <path d="M0 175 Q 100 145 200 175 T 400 165 V220 H0Z" fill="#4CB872" />
+          <path d="M120 220 C 150 190, 230 200, 260 170 S 330 150, 360 140" stroke="#5CC8F0" strokeWidth="14" fill="none" strokeLinecap="round" />
+          {[["a", 150, 196], ["b", 210, 188], ["c", 262, 168], ["s", 318, 150]].map(([l, x, y], i) => <text key={i} x={x as number} y={y as number} fontSize="13" fontWeight="700" fill="#fff" textAnchor="middle">{l}</text>)}
+          {[[110, 70], [200, 50], [290, 80], [350, 45]].map(([x, y], i) => (
+            <g key={i} transform={`translate(${x} ${y})`} className="animate-twinkle" style={{ animationDelay: `${i * 0.5}s` }}>
+              <ellipse cx="0" cy="10" rx="6" ry="4.5" fill={i % 2 ? "#852DEB" : "#F52F83"} /><rect x="4.5" y="-12" width="2" height="22" fill={i % 2 ? "#852DEB" : "#F52F83"} />
+            </g>
+          ))}
+        </svg>
+      );
     case "forest":
       return (
         <svg {...common}>

@@ -11,7 +11,7 @@ export type Metrics = Record<string, number>;
 export const METRIC_KEYS = [
   "always", "words_discovered", "words_mastered", "quests_completed", "learning_days", "grammar_missions", "grammar_80",
   "writing_done", "writing_sentences", "stories_built", "reading_done", "speaking_done", "listening_done", "revision_done",
-  "games_played", "bosses_defeated", "mystery_solved", "special_passed", "level", "treasures_claimed", "cards_collected", "pets_unlocked",
+  "games_played", "phonics_units", "bosses_defeated", "mystery_solved", "special_passed", "level", "treasures_claimed", "cards_collected", "pets_unlocked",
 ] as const;
 
 export async function metrics(childId: string, since: Date | null = null): Promise<Metrics> {
@@ -33,6 +33,7 @@ export async function metrics(childId: string, since: Date | null = null): Promi
       (select count(*)::int from activity_log where child_id = $1 and module = 'listening' and created_at >= $2) listening_done,
       (select count(*)::int from activity_log where child_id = $1 and module = 'revision' and created_at >= $2) revision_done,
       (select count(*)::int from game_sessions where child_id = $1 and created_at >= $2) games_played,
+      (select count(*)::int from phonics_progress where child_id = $1 and best_score >= 60) phonics_units,
       (select count(distinct ref)::int from challenge_attempts where child_id = $1 and kind = 'boss' and passed and submitted_at >= $2) bosses_defeated,
       (select coalesce(sum(correct),0)::int from challenge_attempts where child_id = $1 and kind = 'mystery' and submitted_at >= $2) mystery_solved,
       (select count(*)::int from challenge_attempts where child_id = $1 and kind = 'special' and passed and submitted_at >= $2) special_passed,

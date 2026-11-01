@@ -123,3 +123,31 @@ export async function recentRecommendations(childId: string) {
   return query<{ module: string; title: string; reason: string }>(
     `select module, title, reason from personalised_recommendations where child_id = $1 and created_on = (select max(created_on) from personalised_recommendations where child_id = $1) order by priority desc`, [childId]);
 }
+
+const TIP_BY_SKILL: Record<string, (n: string) => string> = {
+  vocabulary: (n) => `Ask ${n} to teach you one new word from PING VIBE each day and use it in a sentence together.`,
+  grammar: (n) => `Play "fix my sentence": say a sentence with a small mistake and let ${n} correct it.`,
+  spelling: (n) => `Spell three of ${n}'s tricky words aloud together, then write them on a sticky note.`,
+  phonics: (n) => `Play "I spy" with sounds ("something that starts with /b/") to build ${n}'s phonics.`,
+  writing: (n) => `Ask ${n} to write a 3-sentence note or shopping list for the family.`,
+  reading: (n) => `Read a short story together and take turns reading a page aloud.`,
+  comprehension: (n) => `After reading together, ask ${n} "Why do you think that happened?"`,
+  speaking: (n) => `Encourage ${n} to give a 30-second self-introduction to a relative.`,
+  pronunciation: (n) => `Read a few words slowly together and let ${n} copy your sounds — keep it playful.`,
+  listening: (n) => `Give ${n} a two-step instruction in English ("Bring a spoon and close the door") and celebrate success.`,
+  real_world: (n) => `Let ${n} order something politely in English at a shop or café with your help.`,
+};
+
+/** Practical, evidence-linked suggestions for parents (never judgemental; only from recorded activity). */
+export function parentTips(name: string, intel: { key: string; title: string; confident: boolean; score: number; trend: string }[], wk: { words_new: number; reading: number; real_life: number }, mo: { words_new: number }) {
+  const out: string[] = [];
+  const weak = intel.filter((s) => s.confident && s.score < 60).sort((a, b) => a.score - b.score)[0];
+  if (weak) out.push(`${weak.title} is a good focus right now. ${TIP_BY_SKILL[weak.key]?.(name) ?? ""}`.trim());
+  const improving = intel.find((s) => s.trend === "improving");
+  if (improving) out.push(`${name}'s ${improving.title.toLowerCase()} has improved recently. Notice it and praise the effort!`);
+  if (wk.words_new > 0) out.push(`${name} learned ${wk.words_new} new word${wk.words_new > 1 ? "s" : ""} this week. Encourage using them in daily conversation.`);
+  if (wk.reading === 0) out.push(TIP_BY_SKILL.reading(name));
+  if (wk.real_life === 0 && intel.some((s) => s.key === "speaking")) out.push(TIP_BY_SKILL.speaking(name));
+  if (!out.length || mo.words_new === 0) out.push(`There is not much activity yet. About 10 minutes a day helps PING VIBE understand what ${name} needs.`);
+  return out.slice(0, 4);
+}

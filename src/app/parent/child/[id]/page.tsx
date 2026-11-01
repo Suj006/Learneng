@@ -2,7 +2,8 @@ import { notFound } from "next/navigation";
 import { requireParent } from "@/server/session";
 import { one, query } from "@/server/db";
 import { annualJourney, childReport, improvementAreas, periodInsights, recentRecommendations, weeklyStory } from "@/server/reports";
-import { skillProfile, skillTree } from "@/server/skills";
+import { skillIntelligence, skillProfile, skillTree } from "@/server/skills";
+import { parentTips } from "@/server/reports";
 import { timeline } from "@/server/world";
 import { bandForGrade, gradeLabel } from "@/lib/grades";
 import { ChildAdmin, FamilyChallenge, AppearanceGuide } from "@/components/parent/ParentActions";
@@ -41,6 +42,8 @@ export default async function ChildReportPage({ params }: { params: Promise<{ id
     query<{ id: string; word: string; emoji: string }>(`select v.id, v.word, v.emoji from child_vocabulary_progress p join vocabulary_master v on v.id = p.word_id where p.child_id = $1 order by p.first_seen_at desc limit 60`, [c.id]),
     periodInsights(c.id, 7), periodInsights(c.id, 30), recentRecommendations(c.id),
   ]);
+  const intel = await skillIntelligence(c.id);
+  const tips = parentTips(c.display_name, intel, wk, mo);
   const masteredNodes = tree.filter((n) => n.status === "mastered").length;
   return (
     <div className="space-y-8">
@@ -82,14 +85,29 @@ export default async function ChildReportPage({ params }: { params: Promise<{ id
       </section>
 
       <section className="grid gap-6 lg:grid-cols-2">
-        <div className="card p-6">
-          <h2 className="title-md">Skill-wise development</h2>
-          <p className="text-sm text-vibe-lavender">Each skill adapts independently. {masteredNodes}/{tree.length} skill-tree milestones achieved.</p>
-          <ul className="mt-4 space-y-2 text-sm">{skills.map((s) => <li key={s.key} className="flex items-center gap-3"><span className="w-28">{s.title}</span>{s.confident ? <><Progress value={s.score} className="h-2" /><span className="chip w-36 justify-center">{s.level} · {s.growth}</span></> : <span className="text-xs text-vibe-lavender">Still observing ({s.attempts} interactions so far)</span>}</li>)}</ul>
-          <p className="mt-4 rounded-2xl bg-glass/5 p-3 text-xs text-vibe-lavender">ℹ️ These are <b>ongoing learning observations</b> gathered quietly from everyday games, quests, reading, writing and speaking — not examination results or standardised proficiency scores. Estimates start neutral and only change after enough activity ({"≥"}15 interactions per skill), and PING VIBE never compares your child with other children. Your child sees only encouraging growth labels.</p>
+        <div className="card p-6 lg:col-span-2" data-testid="skill-intel">
+          <h2 className="title-md">Skill-wise development (all 11 skills)</h2>
+          <p className="text-sm text-vibe-lavender">Each skill is estimated separately from real answers. {masteredNodes}/{tree.length} skill-tree milestones demonstrated.</p>
+          <div className="mt-4 overflow-x-auto"><table className="w-full min-w-[720px] text-left text-sm">
+            <thead className="text-vibe-lavender"><tr><th className="py-2">Skill</th><th>Current level</th><th>Confidence</th><th>Answers</th><th>Accuracy</th><th>Last 14 days</th><th>Trend</th><th>Last practised</th></tr></thead>
+            <tbody>{intel.map((s) => (
+              <tr key={s.key} className="border-t border-line/5">
+                <td className="py-2 font-semibold">{s.title}</td>
+                <td>{s.confident ? s.level : <span className="text-vibe-lavender">Not enough evidence yet</span>}</td>
+                <td>{({ insufficient: "—", low: "Low", medium: "Medium", high: "High" } as Record<string, string>)[s.confidence]}</td>
+                <td>{s.attempts}</td>
+                <td>{s.confident && s.accuracy !== null ? `${s.accuracy}%` : "—"}</td>
+                <td>{s.recentAccuracy !== null ? `${s.recentAccuracy}% (${s.recentAttempts})` : "—"}</td>
+                <td>{({ improving: "📈 Improving", steady: "➡️ Steady", needs_practice: "🔁 Needs practice", unknown: "—" } as Record<string, string>)[s.trend]}</td>
+                <td>{s.lastActivity ?? "—"}</td>
+              </tr>
+            ))}</tbody></table></div>
+          <p className="mt-4 rounded-2xl bg-glass/5 p-3 text-xs text-vibe-lavender">ℹ️ These are <b>ongoing learning observations</b> from everyday activities, not examination results. A level appears only after {"≥"}15 answers in a skill; confidence grows with more evidence; a trend needs enough answers both in the last 14 days and before. Speaking and pronunciation use the browser&apos;s speech recognition (word matching), which is an indicator only, not a phoneme-level assessment. PING VIBE never compares your child with other children.</p>
         </div>
         <div className="card p-6">
-          <h2 className="title-md">Areas requiring improvement</h2>
+          <h2 className="title-md">How you can help this week</h2>
+          <ul className="mt-3 list-disc space-y-2 pl-5 text-sm" data-testid="parent-tips">{tips.map((t) => <li key={t}>{t}</li>)}</ul>
+          <h2 className="title-md mt-6">Areas requiring improvement</h2>
           <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-vibe-lavender">{(improvementAreas(r).length ? improvementAreas(r) : ["No concerns right now — keep the gentle daily rhythm going!"]).map((a) => <li key={a}>{a}</li>)}</ul>
           <h3 className="mt-5 font-display font-bold">Milestones</h3>
           <ul className="mt-2 space-y-1 text-sm">{tl.slice(-6).reverse().map((t) => <li key={t.kind}>{t.emoji} {t.title} <span className="text-vibe-lavender">· {new Date(t.achieved_at).toLocaleDateString()}</span></li>)}</ul>

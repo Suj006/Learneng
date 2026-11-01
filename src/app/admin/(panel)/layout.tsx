@@ -4,7 +4,7 @@ import { PingVibeLogo } from "@/components/PingVibeLogo";
 import { LogoutButton } from "@/components/parent/LogoutButton";
 
 export const dynamic = "force-dynamic";
-const NAV = [["/admin", "Analytics"], ["/admin/content", "Content Studio"], ["/admin/vocabulary", "Vocabulary"], ["/admin/economy", "Rewards & Levels"], ["/admin/events", "Events"], ["/admin/grades", "Grades"], ["/admin/themes", "Themes"]];
+const NAV = [["/admin", "Analytics"], ["/admin/content", "Content Studio"], ["/admin/vocabulary", "Vocabulary"], ["/admin/economy", "Rewards & Levels"], ["/admin/events", "Events"], ["/admin/grades", "Grades"], ["/admin/themes", "Themes"], ["/admin/recommendations", "Recommendations"]];
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const a = await requireAdmin();

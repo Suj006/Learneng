@@ -101,6 +101,7 @@ export const KINGDOMS = [
   { slug: "reading-ocean", title: "Reading Ocean", emoji: "🌊", art: "ocean", description: "Dive into illustrated stories and quizzes.", href: "/world/reading", unlock_level: 1 },
   { slug: "grammar-galaxy", title: "Grammar Galaxy", emoji: "🪐", art: "galaxy", description: "Grammar missions with GRAMMY the wizard.", href: "/world/grammar", unlock_level: 3 },
   { slug: "speaking-mountains", title: "Speaking Mountains", emoji: "🏔️", art: "mountains", description: "Speak, listen and shine with SPEAKY.", href: "/world/speaking", unlock_level: 5 },
+  { slug: "phonics-valley", title: "Phonics & Sound Valley", emoji: "🎶", art: "valley", description: "Letter sounds, blending, rhymes and reading with LEXI.", href: "/world/phonics", unlock_level: 1 },
 ];
 
 /** Recurring events by calendar date (lunar festivals like Diwali/Holi/Eid are added yearly by admins). */
