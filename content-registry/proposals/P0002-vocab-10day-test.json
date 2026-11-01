@@ -1,0 +1,667 @@
+{
+ "proposal_id": "P0002-vocab-10day-test",
+ "status": "proposed — awaiting approval of generation (no cards generated)",
+ "note": "15 words per selected grade (UKG, G1, G4, G5) to reach 45 unique words with the 30 published words per band.",
+ "candidates": [
+  {
+   "word": "back",
+   "band": 1,
+   "category": "Body and Health",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0001",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "place",
+   "band": 1,
+   "category": "Places",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0002",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "town",
+   "band": 1,
+   "category": "Places",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0004",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "present",
+   "band": 1,
+   "category": "Relationships",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0005",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "station",
+   "band": 1,
+   "category": "Places",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0008",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "weekend",
+   "band": 1,
+   "category": "Time",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0010",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "square",
+   "band": 1,
+   "category": "Colours and Shapes",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0014",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "parent",
+   "band": 1,
+   "category": "Relationships",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0018",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "world",
+   "band": 1,
+   "category": "Geography",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0025",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "top",
+   "band": 1,
+   "category": "Descriptions",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0024",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "message",
+   "band": 1,
+   "category": "Technology",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0022",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "shoulder",
+   "band": 1,
+   "category": "Body and Health",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0023",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "field",
+   "band": 1,
+   "category": "Nature",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0026",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "grown-up",
+   "band": 1,
+   "category": "Relationships",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0027",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "ground",
+   "band": 1,
+   "category": "Nature",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0028",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "bank",
+   "band": 2,
+   "category": "Places",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0006",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "text",
+   "band": 2,
+   "category": "School and Education",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0045",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "band",
+   "band": 2,
+   "category": "Music",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0011",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "address",
+   "band": 2,
+   "category": "Places",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0012",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "email",
+   "band": 2,
+   "category": "Technology",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0050",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "stomach",
+   "band": 2,
+   "category": "Body and Health",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0055",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "bat",
+   "band": 2,
+   "category": "Sports and Hobbies",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0056",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "farmer",
+   "band": 2,
+   "category": "Community Helpers",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0057",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "awake",
+   "band": 2,
+   "category": "Descriptions",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0058",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "cage",
+   "band": 2,
+   "category": "Animals",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0059",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "sunny",
+   "band": 2,
+   "category": "Weather and Seasons",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0060",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "sail",
+   "band": 2,
+   "category": "Travel",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0061",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "well",
+   "band": 2,
+   "category": "Body and Health",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0066",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "work",
+   "band": 2,
+   "category": "Community Helpers",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0067",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "second",
+   "band": 2,
+   "category": "Time",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0065",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "university",
+   "band": 3,
+   "category": "School and Education",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0223",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "get down",
+   "band": 3,
+   "category": "Transport",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0385",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "put up",
+   "band": 3,
+   "category": "School and Education",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0400",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "technology",
+   "band": 3,
+   "category": "School and Education",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0225",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "fit",
+   "band": 3,
+   "category": "Clothing",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0232",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "cash",
+   "band": 3,
+   "category": "Money and Shopping",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0236",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "closed",
+   "band": 3,
+   "category": "Money and Shopping",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0238",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "professor",
+   "band": 3,
+   "category": "Community Helpers",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0239",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "captain",
+   "band": 3,
+   "category": "Community Helpers",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0240",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "equipment",
+   "band": 3,
+   "category": "Technology",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0241",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "sick",
+   "band": 3,
+   "category": "Body and Health",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0242",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "camera",
+   "band": 3,
+   "category": "Arts and Culture",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0243",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "meaning",
+   "band": 3,
+   "category": "Communication",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0244",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "evening",
+   "band": 3,
+   "category": "Time",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0246",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "interview",
+   "band": 3,
+   "category": "Arts and Culture",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0247",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "go out",
+   "band": 4,
+   "category": "Actions",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0371",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "try on",
+   "band": 4,
+   "category": "Actions",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0373",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "check in",
+   "band": 4,
+   "category": "Actions",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0374",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "operation",
+   "band": 4,
+   "category": "Body and Health",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0237",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "application",
+   "band": 4,
+   "category": "Technology",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0245",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "boss",
+   "band": 4,
+   "category": "Community Helpers",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0268",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "blog",
+   "band": 4,
+   "category": "Technology",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0273",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "candidate",
+   "band": 4,
+   "category": "Community Helpers",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0297",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "employment",
+   "band": 4,
+   "category": "Community Helpers",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0313",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "immigration",
+   "band": 4,
+   "category": "Travel",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0338",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "economics",
+   "band": 4,
+   "category": "School and Education",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0351",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "luxury",
+   "band": 4,
+   "category": "Money and Shopping",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0366",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "drag",
+   "band": 4,
+   "category": "Technology",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0430",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "logo",
+   "band": 4,
+   "category": "Money and Shopping",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0432",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  },
+  {
+   "word": "opera",
+   "band": 4,
+   "category": "Music",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0434",
+    "provenance": "Cambridge reference word list, reviewed v2 'Use', reviewed band"
+   }
+  }
+ ]
+}

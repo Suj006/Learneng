@@ -1,0 +1,801 @@
+{
+ "calls": [
+  {
+   "step": "generate band 1",
+   "band": 1,
+   "in": 2582,
+   "out": 8508,
+   "usd": 0.18049,
+   "at": "2026-11-01T17:09:05.815Z"
+  },
+  {
+   "step": "generate band 2",
+   "band": 2,
+   "in": 2577,
+   "out": 7729,
+   "usd": 0.16489,
+   "at": "2026-11-01T17:10:11.799Z"
+  },
+  {
+   "step": "generate band 3",
+   "band": 3,
+   "in": 2590,
+   "out": 8333,
+   "usd": 0.17702,
+   "at": "2026-11-01T17:11:24.044Z"
+  },
+  {
+   "step": "generate band 4",
+   "band": 4,
+   "in": 2591,
+   "out": 9321,
+   "usd": 0.19678,
+   "at": "2026-11-01T17:12:47.055Z"
+  },
+  {
+   "step": "review",
+   "word": "station",
+   "band": 1,
+   "in": 1170,
+   "out": 114,
+   "usd": 0.00696,
+   "at": "2026-11-01T17:12:49.769Z"
+  },
+  {
+   "step": "review",
+   "word": "present",
+   "band": 1,
+   "in": 1184,
+   "out": 224,
+   "usd": 0.00922,
+   "at": "2026-11-01T17:12:50.560Z"
+  },
+  {
+   "step": "review",
+   "word": "back",
+   "band": 1,
+   "in": 1193,
+   "out": 364,
+   "usd": 0.01205,
+   "at": "2026-11-01T17:12:51.741Z"
+  },
+  {
+   "step": "review",
+   "word": "town",
+   "band": 1,
+   "in": 1190,
+   "out": 492,
+   "usd": 0.0146,
+   "at": "2026-11-01T17:12:53.121Z"
+  },
+  {
+   "step": "review",
+   "word": "top",
+   "band": 1,
+   "in": 1150,
+   "out": 345,
+   "usd": 0.0115,
+   "at": "2026-11-01T17:12:57.522Z"
+  },
+  {
+   "step": "review",
+   "word": "square",
+   "band": 1,
+   "in": 1192,
+   "out": 435,
+   "usd": 0.01347,
+   "at": "2026-11-01T17:12:58.141Z"
+  },
+  {
+   "step": "review",
+   "word": "parent",
+   "band": 1,
+   "in": 1187,
+   "out": 557,
+   "usd": 0.01589,
+   "at": "2026-11-01T17:12:59.514Z"
+  },
+  {
+   "step": "fix",
+   "word": "weekend",
+   "band": 1,
+   "in": 2602,
+   "out": 729,
+   "usd": 0.02499,
+   "at": "2026-11-01T17:13:03.949Z"
+  },
+  {
+   "step": "fix",
+   "word": "parent",
+   "band": 1,
+   "in": 2623,
+   "out": 653,
+   "usd": 0.02355,
+   "at": "2026-11-01T17:13:05.903Z"
+  },
+  {
+   "step": "review",
+   "word": "weekend",
+   "band": 1,
+   "in": 1179,
+   "out": 267,
+   "usd": 0.01006,
+   "at": "2026-11-01T17:13:07.277Z"
+  },
+  {
+   "step": "review",
+   "word": "parent",
+   "band": 1,
+   "in": 1185,
+   "out": 290,
+   "usd": 0.01054,
+   "at": "2026-11-01T17:13:09.955Z"
+  },
+  {
+   "step": "review",
+   "word": "field",
+   "band": 1,
+   "in": 1174,
+   "out": 114,
+   "usd": 0.00698,
+   "at": "2026-11-01T17:13:12.502Z"
+  },
+  {
+   "step": "review",
+   "word": "shoulder",
+   "band": 1,
+   "in": 1184,
+   "out": 399,
+   "usd": 0.01272,
+   "at": "2026-11-01T17:13:14.504Z"
+  },
+  {
+   "step": "review",
+   "word": "ground",
+   "band": 1,
+   "in": 1201,
+   "out": 453,
+   "usd": 0.01386,
+   "at": "2026-11-01T17:13:15.480Z"
+  },
+  {
+   "step": "fix",
+   "word": "ground",
+   "band": 1,
+   "in": 2647,
+   "out": 553,
+   "usd": 0.02165,
+   "at": "2026-11-01T17:13:20.920Z"
+  },
+  {
+   "step": "fix",
+   "word": "grown-up",
+   "band": 1,
+   "in": 2642,
+   "out": 1282,
+   "usd": 0.03621,
+   "at": "2026-11-01T17:13:23.068Z"
+  },
+  {
+   "step": "review",
+   "word": "ground",
+   "band": 1,
+   "in": 1198,
+   "out": 114,
+   "usd": 0.00707,
+   "at": "2026-11-01T17:13:23.101Z"
+  },
+  {
+   "step": "review",
+   "word": "grown-up",
+   "band": 1,
+   "in": 1245,
+   "out": 190,
+   "usd": 0.00878,
+   "at": "2026-11-01T17:13:25.889Z"
+  },
+  {
+   "step": "review",
+   "word": "lake",
+   "band": 1,
+   "in": 1203,
+   "out": 114,
+   "usd": 0.00709,
+   "at": "2026-11-01T17:13:27.764Z"
+  },
+  {
+   "step": "review",
+   "word": "plant",
+   "band": 1,
+   "in": 1194,
+   "out": 334,
+   "usd": 0.01146,
+   "at": "2026-11-01T17:13:29.984Z"
+  },
+  {
+   "step": "review",
+   "word": "floor",
+   "band": 1,
+   "in": 1205,
+   "out": 296,
+   "usd": 0.01074,
+   "at": "2026-11-01T17:13:30.061Z"
+  },
+  {
+   "step": "review",
+   "word": "bat",
+   "band": 2,
+   "in": 1183,
+   "out": 597,
+   "usd": 0.01667,
+   "at": "2026-11-01T17:13:32.859Z"
+  },
+  {
+   "step": "fix",
+   "word": "plant",
+   "band": 1,
+   "in": 2626,
+   "out": 627,
+   "usd": 0.02304,
+   "at": "2026-11-01T17:13:36.181Z"
+  },
+  {
+   "step": "review",
+   "word": "plant",
+   "band": 1,
+   "in": 1190,
+   "out": 114,
+   "usd": 0.00704,
+   "at": "2026-11-01T17:13:38.499Z"
+  },
+  {
+   "step": "review",
+   "word": "stomach",
+   "band": 2,
+   "in": 1220,
+   "out": 292,
+   "usd": 0.01072,
+   "at": "2026-11-01T17:13:42.437Z"
+  },
+  {
+   "step": "review",
+   "word": "awake",
+   "band": 2,
+   "in": 1199,
+   "out": 218,
+   "usd": 0.00916,
+   "at": "2026-11-01T17:13:42.634Z"
+  },
+  {
+   "step": "review",
+   "word": "cage",
+   "band": 2,
+   "in": 1207,
+   "out": 330,
+   "usd": 0.01143,
+   "at": "2026-11-01T17:13:42.861Z"
+  },
+  {
+   "step": "review",
+   "word": "sail",
+   "band": 2,
+   "in": 1214,
+   "out": 357,
+   "usd": 0.012,
+   "at": "2026-11-01T17:13:42.992Z"
+  },
+  {
+   "step": "fix",
+   "word": "sail",
+   "band": 2,
+   "in": 2538,
+   "out": 378,
+   "usd": 0.01771,
+   "at": "2026-11-01T17:13:46.503Z"
+  },
+  {
+   "step": "review",
+   "word": "sail",
+   "band": 2,
+   "in": 1215,
+   "out": 278,
+   "usd": 0.01042,
+   "at": "2026-11-01T17:13:50.117Z"
+  },
+  {
+   "step": "review",
+   "word": "puppy",
+   "band": 2,
+   "in": 1175,
+   "out": 287,
+   "usd": 0.01044,
+   "at": "2026-11-01T17:13:53.305Z"
+  },
+  {
+   "step": "review",
+   "word": "band",
+   "band": 2,
+   "in": 1149,
+   "out": 252,
+   "usd": 0.00964,
+   "at": "2026-11-01T17:13:53.856Z"
+  },
+  {
+   "step": "review",
+   "word": "second",
+   "band": 2,
+   "in": 1185,
+   "out": 316,
+   "usd": 0.01106,
+   "at": "2026-11-01T17:13:54.117Z"
+  },
+  {
+   "step": "review",
+   "word": "whale",
+   "band": 2,
+   "in": 1193,
+   "out": 487,
+   "usd": 0.01451,
+   "at": "2026-11-01T17:13:58.100Z"
+  },
+  {
+   "step": "review",
+   "word": "party",
+   "band": 2,
+   "in": 1171,
+   "out": 114,
+   "usd": 0.00696,
+   "at": "2026-11-01T17:14:00.662Z"
+  },
+  {
+   "step": "review",
+   "word": "panda",
+   "band": 2,
+   "in": 1184,
+   "out": 114,
+   "usd": 0.00702,
+   "at": "2026-11-01T17:14:00.817Z"
+  },
+  {
+   "step": "review",
+   "word": "nurse",
+   "band": 2,
+   "in": 1221,
+   "out": 685,
+   "usd": 0.01858,
+   "at": "2026-11-01T17:14:05.463Z"
+  },
+  {
+   "step": "review",
+   "word": "kitten",
+   "band": 2,
+   "in": 1158,
+   "out": 397,
+   "usd": 0.01257,
+   "at": "2026-11-01T17:14:06.051Z"
+  },
+  {
+   "step": "fix",
+   "word": "kitten",
+   "band": 2,
+   "in": 2586,
+   "out": 334,
+   "usd": 0.01702,
+   "at": "2026-11-01T17:14:09.367Z"
+  },
+  {
+   "step": "fix",
+   "word": "nurse",
+   "band": 2,
+   "in": 2781,
+   "out": 421,
+   "usd": 0.01954,
+   "at": "2026-11-01T17:14:09.638Z"
+  },
+  {
+   "step": "review",
+   "word": "nurse",
+   "band": 2,
+   "in": 1248,
+   "out": 114,
+   "usd": 0.00727,
+   "at": "2026-11-01T17:14:11.921Z"
+  },
+  {
+   "step": "review",
+   "word": "kitten",
+   "band": 2,
+   "in": 1161,
+   "out": 230,
+   "usd": 0.00924,
+   "at": "2026-11-01T17:14:12.403Z"
+  },
+  {
+   "step": "review",
+   "word": "technology",
+   "band": 3,
+   "in": 1225,
+   "out": 114,
+   "usd": 0.00718,
+   "at": "2026-11-01T17:14:14.669Z"
+  },
+  {
+   "step": "review",
+   "word": "scarf",
+   "band": 2,
+   "in": 1224,
+   "out": 561,
+   "usd": 0.01612,
+   "at": "2026-11-01T17:14:19.297Z"
+  },
+  {
+   "step": "fix",
+   "word": "university",
+   "band": 3,
+   "in": 2613,
+   "out": 948,
+   "usd": 0.02941,
+   "at": "2026-11-01T17:14:22.161Z"
+  },
+  {
+   "step": "fix",
+   "word": "soup",
+   "band": 2,
+   "in": 2615,
+   "out": 1018,
+   "usd": 0.03082,
+   "at": "2026-11-01T17:14:23.966Z"
+  },
+  {
+   "step": "review",
+   "word": "soup",
+   "band": 2,
+   "in": 1231,
+   "out": 183,
+   "usd": 0.00858,
+   "at": "2026-11-01T17:14:26.273Z"
+  },
+  {
+   "step": "fix",
+   "word": "university",
+   "band": 3,
+   "in": 2605,
+   "out": 858,
+   "usd": 0.02758,
+   "at": "2026-11-01T17:14:30.683Z"
+  },
+  {
+   "step": "review",
+   "word": "fit",
+   "band": 3,
+   "in": 1206,
+   "out": 114,
+   "usd": 0.0071,
+   "at": "2026-11-01T17:14:32.885Z"
+  },
+  {
+   "step": "review",
+   "word": "professor",
+   "band": 3,
+   "in": 1203,
+   "out": 114,
+   "usd": 0.00709,
+   "at": "2026-11-01T17:14:32.942Z"
+  },
+  {
+   "step": "review",
+   "word": "cash",
+   "band": 3,
+   "in": 1196,
+   "out": 184,
+   "usd": 0.00846,
+   "at": "2026-11-01T17:14:36.388Z"
+  },
+  {
+   "step": "review",
+   "word": "closed",
+   "band": 3,
+   "in": 1214,
+   "out": 319,
+   "usd": 0.01124,
+   "at": "2026-11-01T17:14:38.391Z"
+  },
+  {
+   "step": "review",
+   "word": "equipment",
+   "band": 3,
+   "in": 1234,
+   "out": 174,
+   "usd": 0.00842,
+   "at": "2026-11-01T17:14:40.974Z"
+  },
+  {
+   "step": "review",
+   "word": "sick",
+   "band": 3,
+   "in": 1243,
+   "out": 379,
+   "usd": 0.01255,
+   "at": "2026-11-01T17:14:43.075Z"
+  },
+  {
+   "step": "fix",
+   "word": "camera",
+   "band": 3,
+   "in": 2597,
+   "out": 898,
+   "usd": 0.02835,
+   "at": "2026-11-01T17:14:47.496Z"
+  },
+  {
+   "step": "review",
+   "word": "captain",
+   "band": 3,
+   "in": 1217,
+   "out": 563,
+   "usd": 0.01613,
+   "at": "2026-11-01T17:14:47.957Z"
+  },
+  {
+   "step": "review",
+   "word": "camera",
+   "band": 3,
+   "in": 1223,
+   "out": 287,
+   "usd": 0.01063,
+   "at": "2026-11-01T17:14:51.318Z"
+  },
+  {
+   "step": "review",
+   "word": "invention",
+   "band": 3,
+   "in": 1224,
+   "out": 323,
+   "usd": 0.01136,
+   "at": "2026-11-01T17:14:55.611Z"
+  },
+  {
+   "step": "review",
+   "word": "scientist",
+   "band": 3,
+   "in": 1235,
+   "out": 330,
+   "usd": 0.01154,
+   "at": "2026-11-01T17:14:55.894Z"
+  },
+  {
+   "step": "review",
+   "word": "evening",
+   "band": 3,
+   "in": 1220,
+   "out": 460,
+   "usd": 0.01408,
+   "at": "2026-11-01T17:14:56.352Z"
+  },
+  {
+   "step": "fix",
+   "word": "interview",
+   "band": 3,
+   "in": 2647,
+   "out": 870,
+   "usd": 0.02799,
+   "at": "2026-11-01T17:15:00.151Z"
+  },
+  {
+   "step": "review",
+   "word": "interview",
+   "band": 3,
+   "in": 1252,
+   "out": 114,
+   "usd": 0.00729,
+   "at": "2026-11-01T17:15:02.427Z"
+  },
+  {
+   "step": "review",
+   "word": "grow up",
+   "band": 4,
+   "in": 1255,
+   "out": 284,
+   "usd": 0.0107,
+   "at": "2026-11-01T17:15:06.413Z"
+  },
+  {
+   "step": "review",
+   "word": "get along",
+   "band": 4,
+   "in": 1192,
+   "out": 310,
+   "usd": 0.01097,
+   "at": "2026-11-01T17:15:06.501Z"
+  },
+  {
+   "step": "review",
+   "word": "look forward to",
+   "band": 4,
+   "in": 1283,
+   "out": 548,
+   "usd": 0.01609,
+   "at": "2026-11-01T17:15:08.370Z"
+  },
+  {
+   "step": "review",
+   "word": "guitar",
+   "band": 3,
+   "in": 1224,
+   "out": 506,
+   "usd": 0.01502,
+   "at": "2026-11-01T17:15:10.496Z"
+  },
+  {
+   "step": "fix",
+   "word": "look forward to",
+   "band": 4,
+   "in": 2880,
+   "out": 448,
+   "usd": 0.02048,
+   "at": "2026-11-01T17:15:12.536Z"
+  },
+  {
+   "step": "review",
+   "word": "look forward to",
+   "band": 4,
+   "in": 1279,
+   "out": 114,
+   "usd": 0.0074,
+   "at": "2026-11-01T17:15:14.660Z"
+  },
+  {
+   "step": "review",
+   "word": "upload",
+   "band": 4,
+   "in": 1232,
+   "out": 114,
+   "usd": 0.00721,
+   "at": "2026-11-01T17:15:17.123Z"
+  },
+  {
+   "step": "review",
+   "word": "hand in",
+   "band": 4,
+   "in": 1221,
+   "out": 114,
+   "usd": 0.00716,
+   "at": "2026-11-01T17:15:17.372Z"
+  },
+  {
+   "step": "review",
+   "word": "cross out",
+   "band": 4,
+   "in": 1267,
+   "out": 287,
+   "usd": 0.01081,
+   "at": "2026-11-01T17:15:18.300Z"
+  },
+  {
+   "step": "review",
+   "word": "password",
+   "band": 4,
+   "in": 1216,
+   "out": 297,
+   "usd": 0.0108,
+   "at": "2026-11-01T17:15:18.756Z"
+  },
+  {
+   "step": "review",
+   "word": "install",
+   "band": 4,
+   "in": 1222,
+   "out": 114,
+   "usd": 0.00717,
+   "at": "2026-11-01T17:15:21.088Z"
+  },
+  {
+   "step": "review",
+   "word": "intelligent",
+   "band": 4,
+   "in": 1254,
+   "out": 229,
+   "usd": 0.0096,
+   "at": "2026-11-01T17:15:21.970Z"
+  },
+  {
+   "step": "review",
+   "word": "poet",
+   "band": 4,
+   "in": 1254,
+   "out": 381,
+   "usd": 0.01264,
+   "at": "2026-11-01T17:15:23.205Z"
+  },
+  {
+   "step": "review",
+   "word": "sculpture",
+   "band": 4,
+   "in": 1297,
+   "out": 114,
+   "usd": 0.00747,
+   "at": "2026-11-01T17:15:23.843Z"
+  },
+  {
+   "step": "review",
+   "word": "tune",
+   "band": 4,
+   "in": 1243,
+   "out": 283,
+   "usd": 0.01063,
+   "at": "2026-11-01T17:15:27.518Z"
+  },
+  {
+   "step": "review",
+   "word": "convince",
+   "band": 4,
+   "in": 1249,
+   "out": 329,
+   "usd": 0.01158,
+   "at": "2026-11-01T17:15:27.996Z"
+  },
+  {
+   "step": "review",
+   "word": "mild",
+   "band": 4,
+   "in": 1266,
+   "out": 467,
+   "usd": 0.0144,
+   "at": "2026-11-01T17:15:29.377Z"
+  },
+  {
+   "step": "fix",
+   "word": "mild",
+   "band": 4,
+   "in": 2714,
+   "out": 548,
+   "usd": 0.02182,
+   "at": "2026-11-01T17:15:34.512Z"
+  },
+  {
+   "step": "review",
+   "word": "spare",
+   "band": 4,
+   "in": 1233,
+   "out": 574,
+   "usd": 0.01641,
+   "at": "2026-11-01T17:15:34.667Z"
+  },
+  {
+   "step": "review",
+   "word": "mild",
+   "band": 4,
+   "in": 1267,
+   "out": 352,
+   "usd": 0.01211,
+   "at": "2026-11-01T17:15:38.352Z"
+  },
+  {
+   "step": "generate replacement artist",
+   "band": 3,
+   "in": 2132,
+   "out": 511,
+   "usd": 0.01875,
+   "at": "2026-11-01T17:15:44.339Z"
+  },
+  {
+   "step": "fix",
+   "word": "artist",
+   "band": 3,
+   "in": 2729,
+   "out": 827,
+   "usd": 0.02746,
+   "at": "2026-11-01T17:15:52.959Z"
+  },
+  {
+   "step": "review",
+   "word": "artist",
+   "band": 3,
+   "in": 1293,
+   "out": 389,
+   "usd": 0.01295,
+   "at": "2026-11-01T17:15:57.478Z"
+  }
+ ],
+ "usd": 1.87216
+}

@@ -1,0 +1,580 @@
+{
+ "checked_at": "2026-11-01T17:00:53.105Z",
+ "proposal": "content-registry/proposals/P0002-vocab-10day-test.json",
+ "portal": ".data/pilot-test",
+ "registry_lines": 41,
+ "summary": {
+  "clear": 53,
+  "flag": 7,
+  "exclude": 0
+ },
+ "results": [
+  {
+   "word": "back",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "place",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "town",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "present",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "station",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "weekend",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "square",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "parent",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "world",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "top",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "message",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "shoulder",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "field",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "grown-up",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "ground",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "bank",
+   "band": 2,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "text",
+   "band": 2,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "band",
+   "band": 2,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "address",
+   "band": 2,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "email",
+   "band": 2,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "stomach",
+   "band": 2,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "bat",
+   "band": 2,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "farmer",
+   "band": 2,
+   "result": "flag",
+   "exact": [],
+   "variants": [],
+   "related": [
+    "farm — cambridge (Use), band 1",
+    "farm — registry B0001-cambridge-pilot-v4-localtest (local-test/in-review), band 1",
+    "farm — portal:vocabulary_candidates(cambridge-reference:Movers 2014+Preliminary 2012, queued), band 1",
+    "farm — portal:content_library(pending), band 1"
+   ],
+   "notes": []
+  },
+  {
+   "word": "awake",
+   "band": 2,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "cage",
+   "band": 2,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "sunny",
+   "band": 2,
+   "result": "flag",
+   "exact": [],
+   "variants": [],
+   "related": [
+    "sun — published (seed), band 1",
+    "sun — pingvibe-queue (homophone), band 2",
+    "sun — portal:vocabulary_master(published), band 1",
+    "sun — portal:vocabulary_candidates(pingvibe, queued), band 2"
+   ],
+   "notes": []
+  },
+  {
+   "word": "sail",
+   "band": 2,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "well",
+   "band": 2,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "work",
+   "band": 2,
+   "result": "flag",
+   "exact": [],
+   "variants": [],
+   "related": [
+    "worker — cambridge (Use), band 3",
+    "worker — portal:vocabulary_candidates(cambridge-reference:Preliminary 2012, queued), band 3"
+   ],
+   "notes": []
+  },
+  {
+   "word": "second",
+   "band": 2,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "university",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "get down",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "put up",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "technology",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "fit",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "cash",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "closed",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "professor",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "captain",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "equipment",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "sick",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "camera",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "meaning",
+   "band": 3,
+   "result": "flag",
+   "exact": [],
+   "variants": [],
+   "related": [
+    "mean — cambridge (Use), band 2",
+    "mean — portal:vocabulary_candidates(cambridge-reference:Movers 2014+Preliminary 2012, queued), band 2"
+   ],
+   "notes": []
+  },
+  {
+   "word": "evening",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "interview",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "go out",
+   "band": 4,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "try on",
+   "band": 4,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "check in",
+   "band": 4,
+   "result": "flag",
+   "exact": [],
+   "variants": [
+    "check-in — cambridge (Revise), band 3",
+    "check-in — portal:vocabulary_candidates(cambridge-reference:Preliminary 2012, queued), band 3"
+   ],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "operation",
+   "band": 4,
+   "result": "flag",
+   "exact": [],
+   "variants": [],
+   "related": [
+    "operate — cambridge (Use), band 3",
+    "operate — portal:vocabulary_candidates(cambridge-reference:Preliminary 2012, queued), band 3"
+   ],
+   "notes": []
+  },
+  {
+   "word": "application",
+   "band": 4,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "boss",
+   "band": 4,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "blog",
+   "band": 4,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "candidate",
+   "band": 4,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "employment",
+   "band": 4,
+   "result": "flag",
+   "exact": [],
+   "variants": [],
+   "related": [
+    "employer — cambridge (Use), band 4",
+    "employ — cambridge (Use), band 4",
+    "employer — portal:vocabulary_candidates(cambridge-reference:Preliminary 2012, queued), band 4",
+    "employ — portal:vocabulary_candidates(cambridge-reference:Preliminary 2012, queued), band 4"
+   ],
+   "notes": []
+  },
+  {
+   "word": "immigration",
+   "band": 4,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "economics",
+   "band": 4,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "luxury",
+   "band": 4,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "drag",
+   "band": 4,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "logo",
+   "band": 4,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "opera",
+   "band": 4,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  }
+ ]
+}

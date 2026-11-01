@@ -1,0 +1,1228 @@
+{
+ "generated": "2026-11-01",
+ "disclaimer": "Internal research mapping. PING VIBE is not affiliated with or endorsed by Cambridge. Candidates are unpublished and awaiting educational review.",
+ "note": "LOCAL TEST ONLY — AI-generated drafts with AI-assisted validation. Status: local-test / in review. Not approved, not published, not imported.",
+ "rules": "5 new words per new-word day; day 7 is a review/test day with no new words; 45 unique words per grade (30 published + 15 new cards). Days 8–10 use the B0002 cards, which are in review and NOT in the portal; they need human approval before a test learner can receive them.",
+ "schedules": {
+  "UKG": {
+   "grade": "UKG",
+   "band": 1,
+   "unique_new_words": 45,
+   "published_words": 30,
+   "new_cards": 15,
+   "days": [
+    {
+     "day": 1,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "apple",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "ball",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "big",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "bird",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "book",
+       "source": "published (already in the local test portal)"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 2,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "cake",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "car",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "cat",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "clap",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "cold",
+       "source": "published (already in the local test portal)"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 3,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "dog",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "duck",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "fish",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "flower",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "friend",
+       "source": "published (already in the local test portal)"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 4,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "happy",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "hat",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "hot",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "jump",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "milk",
+       "source": "published (already in the local test portal)"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 5,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "moon",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "rain",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "run",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "sad",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "sing",
+       "source": "published (already in the local test portal)"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 6,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "small",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "smile",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "star",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "sun",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "tree",
+       "source": "published (already in the local test portal)"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 7,
+     "type": "weekly review / test day",
+     "new_words": [],
+     "review_words": [
+      "apple",
+      "ball",
+      "big",
+      "bird",
+      "book",
+      "cake",
+      "car",
+      "cat",
+      "clap",
+      "cold",
+      "dog",
+      "duck",
+      "fish",
+      "flower",
+      "friend",
+      "happy",
+      "hat",
+      "hot",
+      "jump",
+      "milk",
+      "moon",
+      "rain",
+      "run",
+      "sad",
+      "sing",
+      "small",
+      "smile",
+      "star",
+      "sun",
+      "tree"
+     ],
+     "note": "No new words. Weekly Vocabulary Quest (10 questions) and Revision Boost use only words introduced on days 1–6."
+    },
+    {
+     "day": 8,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "back",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-1-0001"
+      },
+      {
+       "word": "field",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-1-0026"
+      },
+      {
+       "word": "floor",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-1-0030"
+      },
+      {
+       "word": "ground",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-1-0028"
+      },
+      {
+       "word": "lake",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-1-0032"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 9,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "parent",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-1-0018"
+      },
+      {
+       "word": "plant",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-1-0031"
+      },
+      {
+       "word": "present",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-1-0005"
+      },
+      {
+       "word": "square",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-1-0014"
+      },
+      {
+       "word": "top",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-1-0024"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 10,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "town",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-1-0004"
+      },
+      {
+       "word": "grown-up",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-1-0027"
+      },
+      {
+       "word": "shoulder",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-1-0023"
+      },
+      {
+       "word": "station",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-1-0008"
+      },
+      {
+       "word": "weekend",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-1-0010"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    }
+   ]
+  },
+  "G1": {
+   "grade": "G1",
+   "band": 2,
+   "unique_new_words": 45,
+   "published_words": 30,
+   "new_cards": 15,
+   "days": [
+    {
+     "day": 1,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "brave",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "bright",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "careful",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "collect",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "cozy",
+       "source": "published (already in the local test portal)"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 2,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "curious",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "delicious",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "empty",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "explore",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "festival",
+       "source": "published (already in the local test portal)"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 3,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "garden",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "gentle",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "giggle",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "heavy",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "helpful",
+       "source": "published (already in the local test portal)"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 4,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "journey",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "neighbour",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "polite",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "puddle",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "quick",
+       "source": "published (already in the local test portal)"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 5,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "quiet",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "rainbow",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "share",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "shout",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "sparkle",
+       "source": "published (already in the local test portal)"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 6,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "strong",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "tiny",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "tumble",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "whisper",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "wobble",
+       "source": "published (already in the local test portal)"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 7,
+     "type": "weekly review / test day",
+     "new_words": [],
+     "review_words": [
+      "brave",
+      "bright",
+      "careful",
+      "collect",
+      "cozy",
+      "curious",
+      "delicious",
+      "empty",
+      "explore",
+      "festival",
+      "garden",
+      "gentle",
+      "giggle",
+      "heavy",
+      "helpful",
+      "journey",
+      "neighbour",
+      "polite",
+      "puddle",
+      "quick",
+      "quiet",
+      "rainbow",
+      "share",
+      "shout",
+      "sparkle",
+      "strong",
+      "tiny",
+      "tumble",
+      "whisper",
+      "wobble"
+     ],
+     "note": "No new words. Weekly Vocabulary Quest (10 questions) and Revision Boost use only words introduced on days 1–6."
+    },
+    {
+     "day": 8,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "band",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-1-0011"
+      },
+      {
+       "word": "bat",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-2-0056"
+      },
+      {
+       "word": "kitten",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-2-0082"
+      },
+      {
+       "word": "nurse",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-2-0075"
+      },
+      {
+       "word": "panda",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-2-0094"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 9,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "party",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-2-0068"
+      },
+      {
+       "word": "puppy",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-2-0064"
+      },
+      {
+       "word": "soup",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-2-0096"
+      },
+      {
+       "word": "awake",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-2-0058"
+      },
+      {
+       "word": "cage",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-2-0059"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 10,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "sail",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-2-0061"
+      },
+      {
+       "word": "scarf",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-2-0174"
+      },
+      {
+       "word": "second",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-2-0065"
+      },
+      {
+       "word": "stomach",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-2-0055"
+      },
+      {
+       "word": "whale",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-2-0069"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    }
+   ]
+  },
+  "G4": {
+   "grade": "G4",
+   "band": 3,
+   "unique_new_words": 45,
+   "published_words": 30,
+   "new_cards": 15,
+   "days": [
+    {
+     "day": 1,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "adventure",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "ancient",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "astonished",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "cautious",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "courage",
+       "source": "published (already in the local test portal)"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 2,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "delighted",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "determined",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "eager",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "enormous",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "fascinating",
+       "source": "published (already in the local test portal)"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 3,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "fragile",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "generous",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "glimmer",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "gloomy",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "harvest",
+       "source": "published (already in the local test portal)"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 4,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "imagine",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "loyal",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "magnificent",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "marvellous",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "mysterious",
+       "source": "published (already in the local test portal)"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 5,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "nervous",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "peculiar",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "protect",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "remarkable",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "rescue",
+       "source": "published (already in the local test portal)"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 6,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "scatter",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "swift",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "timid",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "vanish",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "wander",
+       "source": "published (already in the local test portal)"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 7,
+     "type": "weekly review / test day",
+     "new_words": [],
+     "review_words": [
+      "adventure",
+      "ancient",
+      "astonished",
+      "cautious",
+      "courage",
+      "delighted",
+      "determined",
+      "eager",
+      "enormous",
+      "fascinating",
+      "fragile",
+      "generous",
+      "glimmer",
+      "gloomy",
+      "harvest",
+      "imagine",
+      "loyal",
+      "magnificent",
+      "marvellous",
+      "mysterious",
+      "nervous",
+      "peculiar",
+      "protect",
+      "remarkable",
+      "rescue",
+      "scatter",
+      "swift",
+      "timid",
+      "vanish",
+      "wander"
+     ],
+     "note": "No new words. Weekly Vocabulary Quest (10 questions) and Revision Boost use only words introduced on days 1–6."
+    },
+    {
+     "day": 8,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "artist",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-3-0262"
+      },
+      {
+       "word": "camera",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-3-0243"
+      },
+      {
+       "word": "captain",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-3-0240"
+      },
+      {
+       "word": "cash",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-3-0236"
+      },
+      {
+       "word": "closed",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-3-0238"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 9,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "evening",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-3-0246"
+      },
+      {
+       "word": "fit",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-3-0232"
+      },
+      {
+       "word": "guitar",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-3-0337"
+      },
+      {
+       "word": "sick",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-3-0242"
+      },
+      {
+       "word": "equipment",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-3-0241"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 10,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "interview",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-3-0247"
+      },
+      {
+       "word": "invention",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-4-0470"
+      },
+      {
+       "word": "professor",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-3-0239"
+      },
+      {
+       "word": "scientist",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-4-0446"
+      },
+      {
+       "word": "technology",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-3-0225"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    }
+   ]
+  },
+  "G5": {
+   "grade": "G5",
+   "band": 4,
+   "unique_new_words": 45,
+   "published_words": 30,
+   "new_cards": 15,
+   "days": [
+    {
+     "day": 1,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "abundant",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "ambiguous",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "articulate",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "benevolent",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "collaborate",
+       "source": "published (already in the local test portal)"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 2,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "consequence",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "contemplate",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "diligent",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "eloquent",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "empathy",
+       "source": "published (already in the local test portal)"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 3,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "frugal",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "hypothesis",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "inevitable",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "innovative",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "jubilant",
+       "source": "published (already in the local test portal)"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 4,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "lethargic",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "meticulous",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "ominous",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "perseverance",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "pragmatic",
+       "source": "published (already in the local test portal)"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 5,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "reluctant",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "resilient",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "serene",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "sustainable",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "tenacious",
+       "source": "published (already in the local test portal)"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 6,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "transparent",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "versatile",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "vivid",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "wary",
+       "source": "published (already in the local test portal)"
+      },
+      {
+       "word": "zealous",
+       "source": "published (already in the local test portal)"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 7,
+     "type": "weekly review / test day",
+     "new_words": [],
+     "review_words": [
+      "abundant",
+      "ambiguous",
+      "articulate",
+      "benevolent",
+      "collaborate",
+      "consequence",
+      "contemplate",
+      "diligent",
+      "eloquent",
+      "empathy",
+      "frugal",
+      "hypothesis",
+      "inevitable",
+      "innovative",
+      "jubilant",
+      "lethargic",
+      "meticulous",
+      "ominous",
+      "perseverance",
+      "pragmatic",
+      "reluctant",
+      "resilient",
+      "serene",
+      "sustainable",
+      "tenacious",
+      "transparent",
+      "versatile",
+      "vivid",
+      "wary",
+      "zealous"
+     ],
+     "note": "No new words. Weekly Vocabulary Quest (10 questions) and Revision Boost use only words introduced on days 1–6."
+    },
+    {
+     "day": 8,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "cross out",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-4-0420"
+      },
+      {
+       "word": "get along",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-4-0409"
+      },
+      {
+       "word": "grow up",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-4-0423"
+      },
+      {
+       "word": "hand in",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-4-0406"
+      },
+      {
+       "word": "install",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-4-0453"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 9,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "look forward to",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-4-0418"
+      },
+      {
+       "word": "mild",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-4-0458"
+      },
+      {
+       "word": "password",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-4-0465"
+      },
+      {
+       "word": "poet",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-4-0445"
+      },
+      {
+       "word": "spare",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-4-0504"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    },
+    {
+     "day": 10,
+     "type": "new-word day",
+     "new_words": [
+      {
+       "word": "tune",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-4-0511"
+      },
+      {
+       "word": "upload",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-4-0476"
+      },
+      {
+       "word": "convince",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-4-0513"
+      },
+      {
+       "word": "intelligent",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-4-0495"
+      },
+      {
+       "word": "sculpture",
+       "source": "new card B0002-vocab-10day-test-localtest (local-test, in review)",
+       "candidate_id": "PV-CAM-4-0488"
+      }
+     ],
+     "review_words": "due words chosen by the portal's spaced-repetition schedule (up to 8 in the Daily Word Quest)"
+    }
+   ]
+  }
+ }
+}

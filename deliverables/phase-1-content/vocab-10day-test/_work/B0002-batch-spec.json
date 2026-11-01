@@ -1,0 +1,848 @@
+{
+ "batch_id": "B0002-vocab-10day-test-localtest",
+ "created_at": "2026-11-01T17:17:09+00:00",
+ "description": "10-day local-test vocabulary pack: 15 new cards each for UKG (Band 1), G1 (Band 2), G4 (Band 3), G5 (Band 4). All seven content gates and per-card AI checks passed. Local test, in review; not approved, not published, not imported.",
+ "cards_source": "deliverables/phase-1-content/vocab-10day-test/PINGVIBE_Vocab_10Day_Test_Cards.json",
+ "entries": [
+  {
+   "word": "back",
+   "band": 1,
+   "sense": "Your back is the part of your body behind you.",
+   "part_of_speech": "noun",
+   "category": "Body and Health",
+   "grade_range": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0001",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 0
+  },
+  {
+   "word": "field",
+   "band": 1,
+   "sense": "A field is a big open piece of land with grass or crops.",
+   "part_of_speech": "noun",
+   "category": "Nature",
+   "grade_range": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0026",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 1
+  },
+  {
+   "word": "floor",
+   "band": 1,
+   "sense": "The floor is the part of a room you walk on.",
+   "part_of_speech": "noun",
+   "category": "Home and Family",
+   "grade_range": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0030",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 2
+  },
+  {
+   "word": "ground",
+   "band": 1,
+   "sense": "The ground is the land under your feet.",
+   "part_of_speech": "noun",
+   "category": "Nature",
+   "grade_range": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0028",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 3
+  },
+  {
+   "word": "lake",
+   "band": 1,
+   "sense": "A lake is a big area of water with land all around it.",
+   "part_of_speech": "noun",
+   "category": "Nature",
+   "grade_range": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0032",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 4
+  },
+  {
+   "word": "parent",
+   "band": 1,
+   "sense": "A parent is a mother or a father.",
+   "part_of_speech": "noun",
+   "category": "Relationships",
+   "grade_range": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0018",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 5
+  },
+  {
+   "word": "plant",
+   "band": 1,
+   "sense": "A plant is a living thing that grows in soil.",
+   "part_of_speech": "noun",
+   "category": "Nature",
+   "grade_range": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0031",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 6
+  },
+  {
+   "word": "present",
+   "band": 1,
+   "sense": "A present is a gift you give to someone.",
+   "part_of_speech": "noun",
+   "category": "Relationships",
+   "grade_range": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0005",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 7
+  },
+  {
+   "word": "square",
+   "band": 1,
+   "sense": "A square is a shape with four sides that are all the same length.",
+   "part_of_speech": "noun",
+   "category": "Colours and Shapes",
+   "grade_range": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0014",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 8
+  },
+  {
+   "word": "top",
+   "band": 1,
+   "sense": "The top is the highest part of something.",
+   "part_of_speech": "noun",
+   "category": "Descriptions",
+   "grade_range": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0024",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 9
+  },
+  {
+   "word": "town",
+   "band": 1,
+   "sense": "A town is a place with homes, shops and roads where people live.",
+   "part_of_speech": "noun",
+   "category": "Places",
+   "grade_range": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0004",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 10
+  },
+  {
+   "word": "grown-up",
+   "band": 1,
+   "sense": "A grown-up is a big person, not a child.",
+   "part_of_speech": "noun",
+   "category": "Relationships",
+   "grade_range": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0027",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 11
+  },
+  {
+   "word": "shoulder",
+   "band": 1,
+   "sense": "Your shoulder is where your arm joins your body.",
+   "part_of_speech": "noun",
+   "category": "Body and Health",
+   "grade_range": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0023",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 12
+  },
+  {
+   "word": "station",
+   "band": 1,
+   "sense": "A station is a place where trains stop so people can get on and off.",
+   "part_of_speech": "noun",
+   "category": "Places",
+   "grade_range": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0008",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 13
+  },
+  {
+   "word": "weekend",
+   "band": 1,
+   "sense": "The weekend is Saturday and Sunday.",
+   "part_of_speech": "noun",
+   "category": "Time",
+   "grade_range": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0010",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 14
+  },
+  {
+   "word": "band",
+   "band": 2,
+   "sense": "A band is a group of people who play music together.",
+   "part_of_speech": "noun",
+   "category": "Music",
+   "grade_range": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0011",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 15
+  },
+  {
+   "word": "bat",
+   "band": 2,
+   "sense": "A bat is a wooden stick used to hit the ball in cricket.",
+   "part_of_speech": "noun",
+   "category": "Sports and Hobbies",
+   "grade_range": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0056",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 16
+  },
+  {
+   "word": "kitten",
+   "band": 2,
+   "sense": "A kitten is a young cat.",
+   "part_of_speech": "noun",
+   "category": "Animals",
+   "grade_range": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0082",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 17
+  },
+  {
+   "word": "nurse",
+   "band": 2,
+   "sense": "A nurse is a person who looks after people who are sick or hurt.",
+   "part_of_speech": "noun",
+   "category": "Body and Health",
+   "grade_range": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0075",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 18
+  },
+  {
+   "word": "panda",
+   "band": 2,
+   "sense": "A panda is a large black-and-white bear that eats bamboo.",
+   "part_of_speech": "noun",
+   "category": "Animals",
+   "grade_range": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0094",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 19
+  },
+  {
+   "word": "party",
+   "band": 2,
+   "sense": "A party is a happy time when friends or family meet to celebrate.",
+   "part_of_speech": "noun",
+   "category": "Relationships",
+   "grade_range": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0068",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 20
+  },
+  {
+   "word": "puppy",
+   "band": 2,
+   "sense": "A puppy is a young dog.",
+   "part_of_speech": "noun",
+   "category": "Animals",
+   "grade_range": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0064",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 21
+  },
+  {
+   "word": "soup",
+   "band": 2,
+   "sense": "Soup is a liquid food made by cooking vegetables or other foods in water.",
+   "part_of_speech": "noun",
+   "category": "Food and Nutrition",
+   "grade_range": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0096",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 22
+  },
+  {
+   "word": "awake",
+   "band": 2,
+   "sense": "Awake means not sleeping.",
+   "part_of_speech": "adjective",
+   "category": "Descriptions",
+   "grade_range": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0058",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 23
+  },
+  {
+   "word": "cage",
+   "band": 2,
+   "sense": "A cage is a box or room with bars that keeps an animal or bird inside.",
+   "part_of_speech": "noun",
+   "category": "Animals",
+   "grade_range": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0059",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 24
+  },
+  {
+   "word": "sail",
+   "band": 2,
+   "sense": "To sail means to travel across water in a boat that has sails.",
+   "part_of_speech": "verb",
+   "category": "Travel",
+   "grade_range": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0061",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 25
+  },
+  {
+   "word": "scarf",
+   "band": 2,
+   "sense": "A scarf is a long piece of cloth that you wear around your neck.",
+   "part_of_speech": "noun",
+   "category": "Clothing",
+   "grade_range": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0174",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 26
+  },
+  {
+   "word": "second",
+   "band": 2,
+   "sense": "A second is a very short amount of time; there are 60 seconds in one minute.",
+   "part_of_speech": "noun",
+   "category": "Time",
+   "grade_range": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0065",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 27
+  },
+  {
+   "word": "stomach",
+   "band": 2,
+   "sense": "Your stomach is the part inside your body where food goes after you swallow it.",
+   "part_of_speech": "noun",
+   "category": "Body and Health",
+   "grade_range": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0055",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 28
+  },
+  {
+   "word": "whale",
+   "band": 2,
+   "sense": "A whale is a very big animal that lives in the sea and breathes air.",
+   "part_of_speech": "noun",
+   "category": "Animals",
+   "grade_range": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0069",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 29
+  },
+  {
+   "word": "artist",
+   "band": 3,
+   "sense": "An artist is a person who makes art, such as paintings, drawings or clay models.",
+   "part_of_speech": "noun",
+   "category": "Community Helpers",
+   "grade_range": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0262",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 30
+  },
+  {
+   "word": "camera",
+   "band": 3,
+   "sense": "A camera is a machine that takes photos or videos.",
+   "part_of_speech": "noun",
+   "category": "Arts and Culture",
+   "grade_range": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0243",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 31
+  },
+  {
+   "word": "captain",
+   "band": 3,
+   "sense": "A captain is the leader of a sports team.",
+   "part_of_speech": "noun",
+   "category": "Community Helpers",
+   "grade_range": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0240",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 32
+  },
+  {
+   "word": "cash",
+   "band": 3,
+   "sense": "Cash is money in the form of coins and notes.",
+   "part_of_speech": "noun",
+   "category": "Money and Shopping",
+   "grade_range": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0236",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 33
+  },
+  {
+   "word": "closed",
+   "band": 3,
+   "sense": "Closed means not open.",
+   "part_of_speech": "adjective",
+   "category": "Money and Shopping",
+   "grade_range": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0238",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 34
+  },
+  {
+   "word": "evening",
+   "band": 3,
+   "sense": "Evening is the time of day between afternoon and night.",
+   "part_of_speech": "noun",
+   "category": "Time",
+   "grade_range": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0246",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 35
+  },
+  {
+   "word": "fit",
+   "band": 3,
+   "sense": "If clothes fit you, they are the right size for you.",
+   "part_of_speech": "verb",
+   "category": "Clothing",
+   "grade_range": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0232",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 36
+  },
+  {
+   "word": "guitar",
+   "band": 3,
+   "sense": "A guitar is a musical instrument with strings that you play with your fingers.",
+   "part_of_speech": "noun",
+   "category": "Music",
+   "grade_range": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0337",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 37
+  },
+  {
+   "word": "sick",
+   "band": 3,
+   "sense": "If you are sick, you feel ill.",
+   "part_of_speech": "adjective",
+   "category": "Body and Health",
+   "grade_range": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0242",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 38
+  },
+  {
+   "word": "equipment",
+   "band": 3,
+   "sense": "Equipment is the tools and things you need to do a particular activity.",
+   "part_of_speech": "noun",
+   "category": "Technology",
+   "grade_range": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0241",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 39
+  },
+  {
+   "word": "interview",
+   "band": 3,
+   "sense": "An interview is a meeting where one person asks questions and another person answers them.",
+   "part_of_speech": "noun",
+   "category": "Arts and Culture",
+   "grade_range": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0247",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 40
+  },
+  {
+   "word": "invention",
+   "band": 3,
+   "sense": "An invention is something new that someone has made or designed for the first time.",
+   "part_of_speech": "noun",
+   "category": "Science",
+   "grade_range": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0470",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 41
+  },
+  {
+   "word": "professor",
+   "band": 3,
+   "sense": "A professor is a teacher at a university or college.",
+   "part_of_speech": "noun",
+   "category": "Community Helpers",
+   "grade_range": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0239",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 42
+  },
+  {
+   "word": "scientist",
+   "band": 3,
+   "sense": "A scientist is a person who studies the world by asking questions and doing experiments.",
+   "part_of_speech": "noun",
+   "category": "Science",
+   "grade_range": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0446",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 43
+  },
+  {
+   "word": "technology",
+   "band": 3,
+   "sense": "Technology is the tools, machines and computers that people make using science to solve problems.",
+   "part_of_speech": "noun",
+   "category": "School and Education",
+   "grade_range": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0225",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 44
+  },
+  {
+   "word": "cross out",
+   "band": 4,
+   "sense": "To draw a line through a written word to show it is wrong or not needed.",
+   "part_of_speech": "phrasal verb",
+   "category": "Actions",
+   "grade_range": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0420",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 45
+  },
+  {
+   "word": "get along",
+   "band": 4,
+   "sense": "To be friendly with someone and have a good relationship.",
+   "part_of_speech": "phrasal verb",
+   "category": "Actions",
+   "grade_range": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0409",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 46
+  },
+  {
+   "word": "grow up",
+   "band": 4,
+   "sense": "To become older and change from a child into an adult.",
+   "part_of_speech": "phrasal verb",
+   "category": "Actions",
+   "grade_range": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0423",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 47
+  },
+  {
+   "word": "hand in",
+   "band": 4,
+   "sense": "To give your finished work to a teacher or another person in charge.",
+   "part_of_speech": "phrasal verb",
+   "category": "Actions",
+   "grade_range": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0406",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 48
+  },
+  {
+   "word": "install",
+   "band": 4,
+   "sense": "To put a program or app onto a computer or phone so it can be used.",
+   "part_of_speech": "verb",
+   "category": "Technology",
+   "grade_range": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0453",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 49
+  },
+  {
+   "word": "look forward to",
+   "band": 4,
+   "sense": "To feel happy and excited about something that is going to happen.",
+   "part_of_speech": "phrasal verb",
+   "category": "Actions",
+   "grade_range": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0418",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 50
+  },
+  {
+   "word": "mild",
+   "band": 4,
+   "sense": "Not very hot and not very cold; pleasant.",
+   "part_of_speech": "adjective",
+   "category": "Weather and Seasons",
+   "grade_range": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0458",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 51
+  },
+  {
+   "word": "password",
+   "band": 4,
+   "sense": "A secret word or set of characters that you type to open an account.",
+   "part_of_speech": "noun",
+   "category": "Technology",
+   "grade_range": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0465",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 52
+  },
+  {
+   "word": "poet",
+   "band": 4,
+   "sense": "A person who writes poems.",
+   "part_of_speech": "noun",
+   "category": "Community Helpers",
+   "grade_range": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0445",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 53
+  },
+  {
+   "word": "spare",
+   "band": 4,
+   "sense": "Extra and kept in case it is needed.",
+   "part_of_speech": "adjective",
+   "category": "Descriptions",
+   "grade_range": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0504",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 54
+  },
+  {
+   "word": "tune",
+   "band": 4,
+   "sense": "A series of musical notes that make a song.",
+   "part_of_speech": "noun",
+   "category": "Music",
+   "grade_range": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0511",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 55
+  },
+  {
+   "word": "upload",
+   "band": 4,
+   "sense": "To send a file from your computer or phone to the internet.",
+   "part_of_speech": "verb",
+   "category": "Technology",
+   "grade_range": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0476",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 56
+  },
+  {
+   "word": "convince",
+   "band": 4,
+   "sense": "To make someone believe that something is true.",
+   "part_of_speech": "verb",
+   "category": "Communication",
+   "grade_range": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0513",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 57
+  },
+  {
+   "word": "intelligent",
+   "band": 4,
+   "sense": "Able to learn, understand and think well.",
+   "part_of_speech": "adjective",
+   "category": "Descriptions",
+   "grade_range": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0495",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 58
+  },
+  {
+   "word": "sculpture",
+   "band": 4,
+   "sense": "A piece of art made by carving or shaping stone, wood, clay or metal.",
+   "part_of_speech": "noun",
+   "category": "Arts and Culture",
+   "grade_range": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0488",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   },
+   "card_index": 59
+  }
+ ]
+}

@@ -1,0 +1,41 @@
+﻿grade,band,day,type,words,word_sources
+UKG,1,1,new-word day,apple; ball; big; bird; book,published
+UKG,1,2,new-word day,cake; car; cat; clap; cold,published
+UKG,1,3,new-word day,dog; duck; fish; flower; friend,published
+UKG,1,4,new-word day,happy; hat; hot; jump; milk,published
+UKG,1,5,new-word day,moon; rain; run; sad; sing,published
+UKG,1,6,new-word day,small; smile; star; sun; tree,published
+UKG,1,7,weekly review / test day,"(review: apple, ball, big, bird, book, cake, car, cat, clap, cold, dog, duck, fish, flower, friend, happy, hat, hot, jump, milk, moon, rain, run, sad, sing, small, smile, star, sun, tree)",
+UKG,1,8,new-word day,back; field; floor; ground; lake,new card B0002-vocab-10day-test-localtest
+UKG,1,9,new-word day,parent; plant; present; square; top,new card B0002-vocab-10day-test-localtest
+UKG,1,10,new-word day,town; grown-up; shoulder; station; weekend,new card B0002-vocab-10day-test-localtest
+G1,2,1,new-word day,brave; bright; careful; collect; cozy,published
+G1,2,2,new-word day,curious; delicious; empty; explore; festival,published
+G1,2,3,new-word day,garden; gentle; giggle; heavy; helpful,published
+G1,2,4,new-word day,journey; neighbour; polite; puddle; quick,published
+G1,2,5,new-word day,quiet; rainbow; share; shout; sparkle,published
+G1,2,6,new-word day,strong; tiny; tumble; whisper; wobble,published
+G1,2,7,weekly review / test day,"(review: brave, bright, careful, collect, cozy, curious, delicious, empty, explore, festival, garden, gentle, giggle, heavy, helpful, journey, neighbour, polite, puddle, quick, quiet, rainbow, share, shout, sparkle, strong, tiny, tumble, whisper, wobble)",
+G1,2,8,new-word day,band; bat; kitten; nurse; panda,new card B0002-vocab-10day-test-localtest
+G1,2,9,new-word day,party; puppy; soup; awake; cage,new card B0002-vocab-10day-test-localtest
+G1,2,10,new-word day,sail; scarf; second; stomach; whale,new card B0002-vocab-10day-test-localtest
+G4,3,1,new-word day,adventure; ancient; astonished; cautious; courage,published
+G4,3,2,new-word day,delighted; determined; eager; enormous; fascinating,published
+G4,3,3,new-word day,fragile; generous; glimmer; gloomy; harvest,published
+G4,3,4,new-word day,imagine; loyal; magnificent; marvellous; mysterious,published
+G4,3,5,new-word day,nervous; peculiar; protect; remarkable; rescue,published
+G4,3,6,new-word day,scatter; swift; timid; vanish; wander,published
+G4,3,7,weekly review / test day,"(review: adventure, ancient, astonished, cautious, courage, delighted, determined, eager, enormous, fascinating, fragile, generous, glimmer, gloomy, harvest, imagine, loyal, magnificent, marvellous, mysterious, nervous, peculiar, protect, remarkable, rescue, scatter, swift, timid, vanish, wander)",
+G4,3,8,new-word day,artist; camera; captain; cash; closed,new card B0002-vocab-10day-test-localtest
+G4,3,9,new-word day,evening; fit; guitar; sick; equipment,new card B0002-vocab-10day-test-localtest
+G4,3,10,new-word day,interview; invention; professor; scientist; technology,new card B0002-vocab-10day-test-localtest
+G5,4,1,new-word day,abundant; ambiguous; articulate; benevolent; collaborate,published
+G5,4,2,new-word day,consequence; contemplate; diligent; eloquent; empathy,published
+G5,4,3,new-word day,frugal; hypothesis; inevitable; innovative; jubilant,published
+G5,4,4,new-word day,lethargic; meticulous; ominous; perseverance; pragmatic,published
+G5,4,5,new-word day,reluctant; resilient; serene; sustainable; tenacious,published
+G5,4,6,new-word day,transparent; versatile; vivid; wary; zealous,published
+G5,4,7,weekly review / test day,"(review: abundant, ambiguous, articulate, benevolent, collaborate, consequence, contemplate, diligent, eloquent, empathy, frugal, hypothesis, inevitable, innovative, jubilant, lethargic, meticulous, ominous, perseverance, pragmatic, reluctant, resilient, serene, sustainable, tenacious, transparent, versatile, vivid, wary, zealous)",
+G5,4,8,new-word day,cross out; get along; grow up; hand in; install,new card B0002-vocab-10day-test-localtest
+G5,4,9,new-word day,look forward to; mild; password; poet; spare,new card B0002-vocab-10day-test-localtest
+G5,4,10,new-word day,tune; upload; convince; intelligent; sculpture,new card B0002-vocab-10day-test-localtest

@@ -1,0 +1,553 @@
+{
+ "checked_at": "2026-11-01T17:05:09.568Z",
+ "proposal": "content-registry/proposals/P0003-vocab-10day-test-final.json",
+ "portal": ".data/pilot-test",
+ "registry_lines": 41,
+ "summary": {
+  "clear": 60,
+  "flag": 0,
+  "exclude": 0
+ },
+ "results": [
+  {
+   "word": "back",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "town",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "present",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "station",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "weekend",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "square",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "parent",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "top",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "shoulder",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "field",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "grown-up",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "ground",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "floor",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "plant",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "lake",
+   "band": 1,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "bat",
+   "band": 2,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "cage",
+   "band": 2,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "awake",
+   "band": 2,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "sail",
+   "band": 2,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "stomach",
+   "band": 2,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "band",
+   "band": 2,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "second",
+   "band": 2,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "puppy",
+   "band": 2,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "whale",
+   "band": 2,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "party",
+   "band": 2,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "nurse",
+   "band": 2,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "kitten",
+   "band": 2,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "panda",
+   "band": 2,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "soup",
+   "band": 2,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "scarf",
+   "band": 2,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "university",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "technology",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "fit",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "cash",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "closed",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "professor",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "captain",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "equipment",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "sick",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "camera",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "evening",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "interview",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "scientist",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "invention",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "guitar",
+   "band": 3,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "look forward to",
+   "band": 4,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "grow up",
+   "band": 4,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "get along",
+   "band": 4,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "hand in",
+   "band": 4,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "cross out",
+   "band": 4,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "password",
+   "band": 4,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "upload",
+   "band": 4,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "install",
+   "band": 4,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "poet",
+   "band": 4,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "sculpture",
+   "band": 4,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "intelligent",
+   "band": 4,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "spare",
+   "band": 4,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "mild",
+   "band": 4,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "tune",
+   "band": 4,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  },
+  {
+   "word": "convince",
+   "band": 4,
+   "result": "clear",
+   "exact": [],
+   "variants": [],
+   "related": [],
+   "notes": []
+  }
+ ]
+}

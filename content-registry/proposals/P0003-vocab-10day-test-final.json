@@ -1,0 +1,668 @@
+{
+ "proposal_id": "P0003-vocab-10day-test-final",
+ "status": "final word list for batch B0002 (approved generation)",
+ "supersedes": "P0002-vocab-10day-test",
+ "changes": "check in replaced; adult-focused Band 4 words replaced; flagged overlaps replaced; UKG list made more concrete",
+ "candidates": [
+  {
+   "word": "back",
+   "band": 1,
+   "category": "Body and Health",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0001",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "town",
+   "band": 1,
+   "category": "Places",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0004",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "present",
+   "band": 1,
+   "category": "Relationships",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0005",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "station",
+   "band": 1,
+   "category": "Places",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0008",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "weekend",
+   "band": 1,
+   "category": "Time",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0010",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "square",
+   "band": 1,
+   "category": "Colours and Shapes",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0014",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "parent",
+   "band": 1,
+   "category": "Relationships",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0018",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "top",
+   "band": 1,
+   "category": "Descriptions",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0024",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "shoulder",
+   "band": 1,
+   "category": "Body and Health",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0023",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "field",
+   "band": 1,
+   "category": "Nature",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0026",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "grown-up",
+   "band": 1,
+   "category": "Relationships",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0027",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "ground",
+   "band": 1,
+   "category": "Nature",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0028",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "floor",
+   "band": 1,
+   "category": "Home and Family",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0030",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "plant",
+   "band": 1,
+   "category": "Nature",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0031",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "lake",
+   "band": 1,
+   "category": "Nature",
+   "for_grade": "UKG",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0032",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "bat",
+   "band": 2,
+   "category": "Sports and Hobbies",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0056",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "cage",
+   "band": 2,
+   "category": "Animals",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0059",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "awake",
+   "band": 2,
+   "category": "Descriptions",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0058",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "sail",
+   "band": 2,
+   "category": "Travel",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0061",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "stomach",
+   "band": 2,
+   "category": "Body and Health",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0055",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "band",
+   "band": 2,
+   "category": "Music",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-1-0011",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "second",
+   "band": 2,
+   "category": "Time",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0065",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "puppy",
+   "band": 2,
+   "category": "Animals",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0064",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "whale",
+   "band": 2,
+   "category": "Animals",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0069",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "party",
+   "band": 2,
+   "category": "Relationships",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0068",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "nurse",
+   "band": 2,
+   "category": "Body and Health",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0075",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "kitten",
+   "band": 2,
+   "category": "Animals",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0082",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "panda",
+   "band": 2,
+   "category": "Animals",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0094",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "soup",
+   "band": 2,
+   "category": "Food and Nutrition",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0096",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "scarf",
+   "band": 2,
+   "category": "Clothing",
+   "for_grade": "G1",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-2-0174",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "university",
+   "band": 3,
+   "category": "School and Education",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0223",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "technology",
+   "band": 3,
+   "category": "School and Education",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0225",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "fit",
+   "band": 3,
+   "category": "Clothing",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0232",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "cash",
+   "band": 3,
+   "category": "Money and Shopping",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0236",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "closed",
+   "band": 3,
+   "category": "Money and Shopping",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0238",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "professor",
+   "band": 3,
+   "category": "Community Helpers",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0239",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "captain",
+   "band": 3,
+   "category": "Community Helpers",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0240",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "equipment",
+   "band": 3,
+   "category": "Technology",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0241",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "sick",
+   "band": 3,
+   "category": "Body and Health",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0242",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "camera",
+   "band": 3,
+   "category": "Arts and Culture",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0243",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "evening",
+   "band": 3,
+   "category": "Time",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0246",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "interview",
+   "band": 3,
+   "category": "Arts and Culture",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0247",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "scientist",
+   "band": 3,
+   "category": "Science",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0446",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "invention",
+   "band": 3,
+   "category": "Science",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0470",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "guitar",
+   "band": 3,
+   "category": "Music",
+   "for_grade": "G4",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-3-0337",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "look forward to",
+   "band": 4,
+   "category": "Actions",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0418",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "grow up",
+   "band": 4,
+   "category": "Actions",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0423",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "get along",
+   "band": 4,
+   "category": "Actions",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0409",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "hand in",
+   "band": 4,
+   "category": "Actions",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0406",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "cross out",
+   "band": 4,
+   "category": "Actions",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0420",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "password",
+   "band": 4,
+   "category": "Technology",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0465",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "upload",
+   "band": 4,
+   "category": "Technology",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0476",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "install",
+   "band": 4,
+   "category": "Technology",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0453",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "poet",
+   "band": 4,
+   "category": "Community Helpers",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0445",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "sculpture",
+   "band": 4,
+   "category": "Arts and Culture",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0488",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "intelligent",
+   "band": 4,
+   "category": "Descriptions",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0495",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "spare",
+   "band": 4,
+   "category": "Descriptions",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0504",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "mild",
+   "band": 4,
+   "category": "Weather and Seasons",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0458",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "tune",
+   "band": 4,
+   "category": "Music",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0511",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  },
+  {
+   "word": "convince",
+   "band": 4,
+   "category": "Communication",
+   "for_grade": "G5",
+   "source": {
+    "kind": "cambridge",
+    "candidate_id": "PV-CAM-4-0513",
+    "provenance": "Cambridge reference word list (headword only), reviewed v2 'Use' at reviewed band; card authored by PING VIBE"
+   }
+  }
+ ]
+}
